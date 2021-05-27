@@ -1,0 +1,592 @@
+{{!--
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard || admin</title>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/design.css">
+</head>
+
+<body>
+    <section>
+        <div class="ct_dash_board_slider">
+
+            <ul>
+                <li>
+                    <ion-icon name="home"></ion-icon>
+                    <p>Home</p>
+                </li>
+                <li>
+                    <ion-icon name="contrast"></ion-icon>
+                    <p>Overview</p>
+                </li>
+                <li>
+                    <ion-icon name="alert"></ion-icon>
+                    <p>Notifications</p>
+                </li>
+
+
+
+
+            </ul>
+
+        </div>
+    </section>
+    <section class="section_dash">
+
+        {{!-- <div class="ct_info_block">
+            <h4>You have a notification</h4>
+            <p>Erak have 1 delivery of birthday party event have total 12 items </p>
+            <span>
+                <ion-icon name="location"></ion-icon>to:Badharghat,agartala,tripura
+            </span>
+            <span>3 min ago</span>
+            <button>Check</button>
+            <button>Cancel</button>
+        </div> --}}
+        {{!-- <div class="cur_information_block">
+            <ion-icon name="home"></ion-icon>
+
+            <h2>Home</h2>
+        </div>
+        <div class="welcome_msg">
+            <ion-icon name="person-outline"></ion-icon>
+            <h3>Welcome back, kabir</h3>
+
+        </div> --}}
+
+
+        <div class="food_list_ek">
+            <div class="dt_food_list_ek">
+                <h3>Manage stock </h3>
+                {{!-- <h4>Birthday party</h4>
+                <span>24 items</span> --}}
+            </div>
+
+            <div class="food_list_nav_dash">
+                <ul>
+
+                    <li>
+                        <p>sort by</p>
+                        <ion-icon name="chevron-down-sharp"></ion-icon>
+
+                    </li>
+                    <li>
+                        <p>add</p>
+                        <ion- name="chevron-down-sharp">
+                            </ion-icon>
+                    </li>
+                    <li>
+                        <ion-icon name="trash-outline"></ion-icon>
+                    </li>
+                </ul>
+            </div>
+            <div class="ct_custm_card card_dash_mang">
+                <ul>
+                    <li>
+                        <p> manage stock</p>
+
+                    </li>
+                    <li>
+                        <p> manage others</p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="ct_custm_card_food card_dash_mang">
+                <ul>
+                    <li>
+                        <p>Event food lists</p>
+
+                    </li>
+                    <li>
+                        <p>Packed food lists</p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="sordt_by card_dash_mang">
+                <ul>
+                    <li>
+                        <p>category</p>
+
+                    </li>
+                    <li>
+                        <p>stock</p>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="nav_bar_food_list_dash">
+                <ul>
+                    <li>
+                        <p>Manage stock</p>
+                    </li>
+                    <li>
+                        <p>Events food lists</p>
+                    </li>
+                    <li>
+                        <p>Packed food lists</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="ct_food_list_dash_evt">
+                <ul class="food_list">
+                    <li>
+                        <div class="ct_food_itm_dash">
+                            <img class="main_img_dash_food" src="../img/im9.jpg">
+                            <div class="ct_ct_food_itm_dash_fd_dt">
+                                <h4>Chiken cury</h4>
+                                <p>₹ 126</p>
+
+                            </div>
+                            <div class="ct_other_ness_dt_dash_food">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#099f49">
+                                            <path
+                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                            </path>
+                                            <path
+                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+
+
+                                <div class="ct_other_dt_othr">
+                                    <p>quanity</p>
+                                    <span>full plate</span>
+                                </div>
+
+                                <div class="ct_other_dt_othr">
+                                    <p>Category</p>
+                                    <span>snacks</span>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="ct_food_itm_dash">
+                            <img class="main_img_dash_food" src="../img/im27.jpg">
+                            <div class="ct_ct_food_itm_dash_fd_dt">
+                                <h4>Chiken cury</h4>
+                                <p>₹ 126</p>
+
+                            </div>
+                            <div class="ct_other_ness_dt_dash_food">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#099f49">
+                                            <path
+                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                            </path>
+                                            <path
+                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <img src="https://img.icons8.com/color/23/000000/non-vegetarian-food-symbol.png" />
+
+                                <div class="ct_other_dt_othr">
+                                    <p>quanity</p>
+                                    <span>full plate</span>
+                                </div>
+
+                                <div class="ct_other_dt_othr">
+                                    <p>Category</p>
+                                    <span>snacks</span>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="ct_food_itm_dash">
+                            <img class="main_img_dash_food" src="../img/im33.jpg">
+                            <div class="ct_ct_food_itm_dash_fd_dt">
+                                <h4>Chiken cury</h4>
+                                <p>₹ 126</p>
+
+                            </div>
+                            <div class="ct_other_ness_dt_dash_food">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23"
+                                    viewBox="0 0 172 172" style=" fill:#000000;">
+                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                        font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                        <g fill="#099f49">
+                                            <path
+                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                            </path>
+                                            <path
+                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                                <img src="https://img.icons8.com/color/23/000000/non-vegetarian-food-symbol.png" />
+
+                                <div class="ct_other_dt_othr">
+                                    <p>quanity</p>
+                                    <span>full plate</span>
+                                </div>
+
+                                <div class="ct_other_dt_othr">
+                                    <p>Category</p>
+                                    <span>snacks</span>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div class="ct_all_notificaions">
+            <div class="ov_ct_all_notificaions">
+                <h4>New Notifications</h4>
+                <span>24</span>
+            </div>
+
+            <ul>
+
+                <li>
+                    <div class="ct_notifications">
+                        <div class="notiftion_itm">
+                            <ion-icon class="remove_icon" name="close-outline"></ion-icon>
+                            <h4>
+                                <ion-icon name="alert-outline"></ion-icon> order for birthday party event.
+                            </h4>
+                            <p>hello,pritam you have a order for birthday party event from tripura,agartala of 20 items
+                            </p>
+                            <span>3 min ago</span>
+                        </div>
+
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var io = io()
+        io.on('test', (rs) => {
+            document.querySelector('.tot_p').innerHTML = rs
+        })
+    </script>
+</body>
+
+</html> --}}
+
+<section class="ov_portifolio_2">
+
+    <div class="ct_abt_ek_hm">
+        <h3>What is Erak ?</h3>
+
+
+        <p>ptatibus, quibusdam ratione
+            necessitatibus unde temporibus sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Distinctio dignissimos reiciendis quos et iusto ipsa debitis enim qui, veniam laboriosam maiores,
+            suscipit doloribus dolorem perferendis quis facilis rem, numquam impedit?</p>
+    </div>
+    {{!-- <div class="service_ek">
+        <h2>Our sevices</h2>
+
+    </div>
+    <div class="list_service">
+        <div class="ct_one_collection_serv">
+            <div class="ct_service_by_ek">
+                <h3>heading</h3>
+                <p>Helps on building QSR for restaurants owner restaurant owners will choose their recipe and we
+                    built
+                    QSR
+                    as per their request</p>
+
+            </div>
+            <div class="ct_service_by_ek">
+                <h3>heading</h3>
+
+                <p>Provide the best version of Inventory benifits where it solves the complete problems related to
+                    raw
+                    materials management.</p>
+
+            </div>
+        </div>
+        <div class="ct_two_collection_serv">
+            <div class="ct_service_by_ek">
+                <h3>heading</h3>
+
+                <p>Provide our partnered restaurants with tempting and delicious food recipes. </p>
+
+            </div>
+            <div class="ct_service_by_ek">
+                <h3>heading</h3>
+
+                <p>Provide restaurants with the kitchen and dinning setups which becomes helpfull to attract more
+                    customers
+                </p>
+
+            </div>
+        </div>
+
+
+    </div> --}}
+ <div class="ct_events_ov">
+                
+                <div class="ct_block_events_ov">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#fff" fill-opacity="1"
+                            d="M0,256L40,256C80,256,160,256,240,250.7C320,245,400,235,480,213.3C560,192,640,160,720,176C800,192,880,256,960,240C1040,224,1120,128,1200,112C1280,96,1360,160,1400,192L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+                        </path>
+                    </svg>
+                </div>
+
+                {{!-- <div class="ct_crosel_events_list">
+                    <div class="slider_cell">
+                        <div class="ct_itm_dt">
+
+                            <h3>Poster</h3>
+                            <div class="ct_dt_event">
+                                <h4>Celebrate Birthday party.</h4>
+                                <p>Available every thing that you need for birthday party event. </p>
+
+                            </div>
+                            <button>Show Me.</button>
+                        </div>
+                        <div class="ct_itm_dt">
+
+                            <h3>Poster</h3>
+                            <div class="ct_dt_event">
+                                <h4>Celebrate Birthday party.</h4>
+                                <p>Available every thing that you need for birthday party event. </p>
+
+                            </div>
+                            <button>Show Me.</button>
+                        </div>
+                        <div class="ct_itm_dt">
+
+                            <h3>Poster</h3>
+                            <div class="ct_dt_event">
+                                <h4>Celebrate Birthday party.</h4>
+                                <p>Available every thing that you need for birthday party event. </p>
+
+                            </div>
+                            <button>Show Me.</button>
+                        </div>
+                    </div>
+
+                </div> --}}
+                <div class="ct_buttons_slider_food_evt evt_trans ">
+                    <button id="btn_prev_evt">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </button>
+                    <button class="btn_next_ct_buttons_slider_food_evt" id="btn_next_evt">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+
+                </div>
+            </div>
+
+    <div class="ct_slider">
+
+
+
+
+        <div class="ct_buttons_over_heading">
+
+            <button id="prev">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div class="slider_image">
+                <div class="ct_start_svg_des">
+                    <svg class="ot_color_imgWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#e20d0d" fill-opacity="1"
+                            d="M0,96L20,85.3C40,75,80,53,120,74.7C160,96,200,160,240,181.3C280,203,320,181,360,165.3C400,149,440,139,480,160C520,181,560,235,600,240C640,245,680,203,720,165.3C760,128,800,96,840,117.3C880,139,920,213,960,213.3C1000,213,1040,139,1080,138.7C1120,139,1160,213,1200,245.3C1240,277,1280,267,1320,234.7C1360,203,1400,149,1420,122.7L1440,96L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+                        </path>
+                    </svg>
+                    <svg class="wh_color_imgWave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#fff" fill-opacity="1"
+                            d="M0,96L20,85.3C40,75,80,53,120,74.7C160,96,200,160,240,181.3C280,203,320,181,360,165.3C400,149,440,139,480,160C520,181,560,235,600,240C640,245,680,203,720,165.3C760,128,800,96,840,117.3C880,139,920,213,960,213.3C1000,213,1040,139,1080,138.7C1120,139,1160,213,1200,245.3C1240,277,1280,267,1320,234.7C1360,203,1400,149,1420,122.7L1440,96L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+                        </path>
+                    </svg>
+                </div>
+
+
+                <div class="ct_img_ct">
+
+                    <div class="ct_itm_criusdel_problem">
+                        {{!-- <div class="frame_like_structure">
+                            f
+                        </div> --}}
+                        <div class="ct_bx_problem_list_itm">
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </p>
+
+                            </div>
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                </p>
+
+                            </div>
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam libero
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="ct_about_problem">
+                            <h4>Head</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eaque saepe vero
+                                eligendi, porro numquam doloribus veritatis architecto iure quod rem nostrum nihil
+                                consectetur deserunt sunt, modi quis, consequuntur dolorem.</p>
+                        </div>
+                    </div>
+                    <div class="ct_itm_criusdel_problem">
+                        {{!-- <div class="frame_like_structure">
+                            f
+                        </div> --}}
+                        <div class="ct_bx_problem_list_itm">
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </p>
+
+                            </div>
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur
+                                </p>
+
+                            </div>
+                            <div class="problem_itm">
+                                <h4>Head</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam libero
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="ct_about_problem">
+                            <h4>Head</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eaque saepe vero
+                                eligendi, porro numquam doloribus veritatis architecto iure quod rem nostrum nihil
+                                consectetur deserunt sunt, modi quis, consequuntur dolorem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ct_end_svg_des">
+
+
+
+                    <svg class="ext_svg_wave_crou_wh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#fff" fill-opacity="1"
+                            d="M0,96L20,85.3C40,75,80,53,120,74.7C160,96,200,160,240,181.3C280,203,320,181,360,165.3C400,149,440,139,480,160C520,181,560,235,600,240C640,245,680,203,720,165.3C760,128,800,96,840,117.3C880,139,920,213,960,213.3C1000,213,1040,139,1080,138.7C1120,139,1160,213,1200,245.3C1240,277,1280,267,1320,234.7C1360,203,1400,149,1420,122.7L1440,96L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+                        </path>
+                    </svg>
+                    <svg class="ext_svg_wave_crou_rd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#e20d0d" fill-opacity="1"
+                            d="M0,96L20,85.3C40,75,80,53,120,74.7C160,96,200,160,240,181.3C280,203,320,181,360,165.3C400,149,440,139,480,160C520,181,560,235,600,240C640,245,680,203,720,165.3C760,128,800,96,840,117.3C880,139,920,213,960,213.3C1000,213,1040,139,1080,138.7C1120,139,1160,213,1200,245.3C1240,277,1280,267,1320,234.7C1360,203,1400,149,1420,122.7L1440,96L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <button id='next'>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+
+        </div>
+    </div>
+    <div class="ct_events_ov">
+        <h4>Erak events</h4>
+        <div class="ct_crosel_events_list">
+            <div class="slider_cell">
+                <div class="ct_itm_dt">
+
+                    <h3>Poster</h3>
+                    <div class="ct_dt_event">
+                        <h4>Celebrate Birthday party.</h4>
+                        <p>Available every thing that you need for birthday party event. </p>
+
+                    </div>
+                    <button>Show Me.</button>
+                </div>
+                <div class="ct_itm_dt">
+
+                    <h3>Poster</h3>
+                    <div class="ct_dt_event">
+                        <h4>Celebrate Birthday party.</h4>
+                        <p>Available every thing that you need for birthday party event. </p>
+
+                    </div>
+                    <button>Show Me.</button>
+                </div>
+                <div class="ct_itm_dt">
+
+                    <h3>Poster</h3>
+                    <div class="ct_dt_event">
+                        <h4>Celebrate Birthday party.</h4>
+                        <p>Available every thing that you need for birthday party event. </p>
+
+                    </div>
+                    <button>Show Me.</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="ct_buttons_slider_food_evt evt_trans ">
+            <button id="btn_prev_evt">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <button class="btn_next_ct_buttons_slider_food_evt" id="btn_next_evt">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
+
+        </div>
+    </div>
+
+</section>

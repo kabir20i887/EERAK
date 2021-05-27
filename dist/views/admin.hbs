@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <audio class="audio_wh">
+        <source src="../img//whatsapp.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="ct_bx_stock_message">
+        <ion-icon class="succ_stk" name="checkmark-circle-outline"></ion-icon>
+        <p>Successfully added to stock</p>
+        <div class="ct_bx_remove_msg_stk">
+            <ion-icon name="close-outline"></ion-icon>
+
+        </div>
+    </div>
+    <div class="ct_bx_message_adm2">
+        <span class="material-icons info_inon">
+            priority_high
+        </span>
+        <div class="ct_bx_inner_msg">
+            <p>Order has been Canceled.</p>
+            <span>Please refresh the page to load orders.</span>
+        </div>
+        <span class="material-icons close_msg_icon">
+            close
+        </span>
+
+    </div>
+    <div class="ct_bx_message_adm">
+        <span class="material-icons info_inon">
+            priority_high
+        </span>
+        <div class="ct_bx_inner_msg">
+            <p>1 New Order</p>
+            <span>Please refresh the page to load orders.</span>
+        </div>
+        <span class="material-icons close_msg_icon">
+            close
+        </span>
+
+    </div>
+    <div class="ct_nav_mobile_adm">
+        <div class="ct_bx_show_nav_adm">
+            <ion-icon name="menu-outline"></ion-icon>
+
+        </div>
+        <a href="/" class="logo for_sign_up_log for_admin_erak_ob">
+
+            <h4><span>E</span>
+                <p>rak</p>
+            </h4>
+
+            <p class="tag_line_brand">&mdash;be the change &mdash;</p>
+        </a>
+    </div>
+    <div class="ct_side_bar">
+        <a href="/" class="logo for_sign_up_log for_ain_home_logo3">
+
+            <h4><span>E</span>
+                <p>rak</p>
+            </h4>
+
+            <p class="tag_line_brand">&mdash;be the change &mdash;</p>
+        </a>
+
+
+        <ul class="side_nav_bar_adm ">
+            <li>
+                <ion-icon name="cellular-outline"></ion-icon>
+                <p>Manage Stock</p>
+            </li>
+            <li class="act_bx_adm">
+                <ion-icon name="cart-outline"></ion-icon>
+                <p>View Order</p>
+            </li>
+            <li>
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <p>Users</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ct_bx_panel_main">
+        <h3>Manage Stock</h3>
+        <div class="ct_x_users">
+            <div class="ct_all_users">
+                <div class="nav_user_data">
+                    <ul>
+                        <li class="name_user">
+                            <p>Name</p>
+                        </li>
+                        <li class='orders_user'>
+                            <p>orders in 7 days</p>
+                        </li>
+                        <li class='phone_num_user'>
+                            <p>phone number</p>
+                        </li>
+                    </ul>
+                </div>
+                <h1>No user found yet.</h1>
+                <div class="loader_cart for_users loading_spinner_login2">
+
+                </div>
+            </div>
+        </div>
+        <div class="bx_show_stock_cat">
+            <ul>
+                <li class="active_cat_stock">
+                    <p>Foods</p>
+
+                </li>
+                <li class="unactive_cat_stock">
+                    <p>Grocery</p>
+                </li>
+            </ul>
+        </div>
+        <div class="ct_bx_for_orders_page">
+
+            <div class="ct_inner_part_adm">
+
+                <div class="ct_selected_date_order">
+                    <h4>Today &mdash; 2/04/21</h4>
+
+                </div>
+                <div class="ct_upper_bx_nav_panel">
+                    <ul>
+
+                        <li class="refreshBtn">
+                            <span class="material-icons">
+                                refresh
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ct_slect_date_bx">
+                    <div class="ct_calicon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+
+                    </div>
+                    <div class="ct_bx_dt_sle_date nottog_date_select">
+                        <p>Today</p>
+                        <span>2/04/21</span>
+                    </div>
+                    <div class="ct_sld_icon_order">
+
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                    <div class="ct_select_dat">
+
+                    </div>
+                </div>
+                <div class="ct_view_order">
+
+                    <div class="ctguide_nav_order">
+                        <ul>
+
+                            <li class="specific_no">
+                                <p>Customer</p>
+                            </li>
+                            <li class="specific_no">
+                                <p>Orders</p>
+                            </li>
+                            <li class="specific2">
+                                <p>Amount</p>
+                            </li>
+                            <li class="specific">
+                                <p>Time</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ct_as_per_date_order">
+                        <ul>
+                            <h1></h1>
+                            <div class="loader_cart for_orders loading_spinner_login2">
+
+                            </div>
+                            <li class="main_li_itm_order notselected_order_itm new_ly_added">
+                                <div class="ct_bx_outer_order_itm">
+
+
+                                    <div class="ct_bx_dt_fd_order">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                        <p>pritam bhattacharya</p>
+                                    </div>
+                                    <div class="ctdt_order_ext">
+                                        <p>sss</p>
+
+                                    </div>
+                                    <div class="ctdt_order_ext ctdt_order_ext2">
+                                        <p>₹ 1,200</p>
+                                        <span>12:01 AM</span>
+                                    </div>
+                                    <div class="ct_tog_slide_bar_fd_order">
+                                        <ion-icon name="chevron-down-outline"></ion-icon>
+
+                                    </div>
+                                </div>
+                                <div class=" ct_bx_inner_order_itm">
+                                    <div class="c_cust_dt">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                        <div class="ct_bx_inner_ac_dt">
+                                            <h2> Lorem
+                                            </h2>
+                                            <p>Address: badharghat tripura agartala
+                                            </p>
+                                            <span>Suggestion: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                Reprehenderit soluta nulla perferendis sapiente officia tenetur harum,
+                                                unde dolores dignissimos aspernatur ipsum accusamus voluptatibus ad
+                                                asperiores quidem explicabo ipsa ipsam nostrum?
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="ctbx_cancel_btn_andbx">
+                                        <div class="ct_bx_cancel_bx_confirm">
+                                            <h2>Please give a reason</h2>
+                                            <p>Let your customer know why.</p>
+                                            <textarea cols="30" rows="7"
+                                                placeholder="Your order has been canceled."></textarea>
+                                            <button class="send_btn">Send</button>
+                                            <button class="cancel_btn">Cancel</button>
+                                        </div>
+                                        <button class="cnacel_bn_main">Cancel this order</button>
+                                    </div>
+<div class="ct_bx_amount_total">
+    <h4>Total amount </h4>
+    <p>₹ 1,200</p>
+</div>
+                                    <div class="ct_bx_foods_list">
+                                        <h2>Items Ordered</h2>
+                                        <div class="ct_bx_foods_mobile_version">
+                                            <h4>Item:-</h4>
+                                            <div class="ct_inner_foods">
+                                                <div class="ct_bx_food_itm">
+                                                    <p>Food name</p>
+                                                    <div class="ct_fd_name_order">
+                                                        <com>Fortune</com>
+                                                        <span>Hydrabadi dum biryani</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="ct_bx_food_itm">
+                                                    <p>quantity</p>
+                                                    <span>3</span>
+                                                </div>
+                                                <div class="ct_bx_food_itm">
+                                                    <p>amount</p>
+                                                    <span>₹ 300</span>
+                                                </div>
+                                                <div class="ct_bx_food_itm">
+                                                    <p>unit</p>
+                                                    <span>&mdash;</span>
+                                                </div>
+                                                <div class="ct_bx_food_itm">
+                                                    <p>offer</p>
+                                                    <span>10%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="ct_contact_ifo_user">
+                                        <ul>
+                                            <li>
+                                                <ion-icon name="mail-outline"></ion-icon>
+                                                <p>bhattacharyapritam@gmail.com</p>
+                                            </li>
+                                            <li>
+                                                <ion-icon name="call-outline"></ion-icon>
+                                                <p> 9612690240</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ct_bx_for_stock_management">
+            <div class="ct_nav_panel">
+                <ul>
+                    <li class="fdN_adm">
+                        <p>Food Name</p>
+                    </li>
+                    <li class="Stk_adm">
+                        <p>In Stock</p>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="ct_items_main_adm for_groc_fd_stock">
+                <ul>
+                    <li class="main_listock">
+                        <div class="ct_ibnner_li_fd">
+                            <ul>
+                                <div class="ct_bx_alert_tock">
+                                    <ion-icon name="alert-circle" role="img" class="md hydrated"
+                                        aria-label="alert circle"></ion-icon>
+                                </div>
+                                <li>
+                                    <p>pakora</p>
+                                    <span class="catId_stk">1</span>
+
+                                </li>
+                                <li class="stk_inp">
+                                    <input type="text" value="0">
+                                    <button class="update_btn_stk">Update</button>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="loader_cart for_stk_load loading_spinner_login2">
+
+                </div>
+            </div>
+            <div class="ct_items_main_adm for_ek_fd_stock">
+                <ul>
+                    {{!--
+                    <li class="main_listock">
+                        <div class="ct_ibnner_li_fd">
+                            <ul>
+                                <div class="ct_bx_alert_tock">
+                                    <ion-icon name="alert-circle-outline"></ion-icon>
+                                </div>
+                                <li>
+                                    <p>Hydrabadi Dum biryani special fff fff fff fff</p>
+
+                                </li>
+                                <li class="stk_inp">
+                                    <input type="text" value="100">
+                                    <button class="update_btn_stk">Update</button>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="main_listock">
+                        <div class="ct_ibnner_li_fd for_groc_adm">
+                            <ul>
+                                <li>
+                                    <span>Ashirbad</span>
+                                    <p>Atta</p>
+
+                                </li>
+                                <li class="stk_inp">
+                                    <input type="text" value="100">
+                                    <button class="update_btn_stk">Update</button>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </li> --}}
+
+                </ul>
+                <div class="loader_cart for_stk_load loading_spinner_login2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</section>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+<script>
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+        authDomain: "test-2ecee.firebaseapp.com",
+        projectId: "test-2ecee",
+        storageBucket: "test-2ecee.appspot.com",
+        messagingSenderId: "390719540957",
+        appId: "1:390719540957:web:04e268380d6e77c4241534",
+        measurementId: "G-8Z1P10SQ9T"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore()
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../others/js/jquery.waypoints.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="../js/jQery.js"></script>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src="../js/msg.js"></script>
+
+</html>

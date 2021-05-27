@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERAK'S packed food</title>
+    <link rel="stylesheet" href="../css/design.css">
+    <link rel="stylesheet" href="../css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="erak_fd_body">
+    {{>nav}}
+
+    <div class="ct_bx_ov_packed_food">
+        {{!-- <div class="main-carousel " data-flickity='{ "cellAlign": "left", "contain": true ,"autoPlay":2000}'>
+            <div class="carousel-cell for_ov"><img src="../img/t.jpg" alt=""></div>
+            <div class="carousel-cell for_ov"><img src="../img/mKof.jpg" alt=""></div>
+        </div> --}}
+    </div>
+
+    <div class="ct_bx_slide_nav_mob">
+
+        <ul>
+            <li>
+                <a href="/aboutus">About us</a>
+            </li>
+            <li>
+                <a href="/foods">Erak's food</a>
+            </li>
+            <li>
+                <a href="/grocery">Grocery</a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <section id="ek_res_ev">
+        <div class="ct_error_stock for_items">
+            <div class="ct_inner_msg">
+
+                <ion-icon class="icon_check alert_icon md hydrated" name="checkmark-circle" role="img"
+                    aria-label="checkmark circle"></ion-icon>
+                <p>You've successfully logged out of ERAK.Come back soon. </p>
+            </div>
+
+        </div>
+        {{!-- <div class="ct_bx_qtfood relative_width1  tog_for_ek_pk_fd for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+            <div class="bx_rem_field_qt_num bx_op">
+
+                <ion-icon class="remove_field_num" name="remove"></ion-icon>
+            </div>
+
+            <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="911">
+            <div class="bx_ad_field_qt_num bx_op">
+                <ion-icon class="add_field_num" name="add"></ion-icon>
+
+            </div>
+
+        </div> --}}
+        {{!-- <div class="list_food_at_ov groc_list" id="biryani">
+
+            <h3>biryani</h3>
+
+
+            <div class="ct_cat_by_list">
+                <div class="itm_food_list_ek added_itm_ek_fd">
+                    <a
+                        href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImltZyI6Ii4uL2ltZy9iaXJ5YW5pX2ltZy5wbmciLCJuYW1lIjoiQWxvbyBQYXJhdGhhMiIsInJhdGUiOjQuNCwicHJpY2UiOiI3OSIsImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwidHlwZSI6InZlZyIsIm9mZmVyIjoiMTQiLCJmZEluc2lkZSI6WyJtYXJpbmF0ZWQgY2hpa2VuIiwiZ3JhdnkiLCJ1c2VyIG1hbnVhbCJdLCJyZXZpZXciOltdLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxOX0seyJzdGFyIjo0LCJyYXRpbmdzIjoxN30seyJzdGFyIjozLCJyYXRpbmdzIjo4fSx7InN0YXIiOjIsInJhdGluZ3MiOjV9LHsic3RhciI6NCwicmF0aW5ncyI6M31dfSwiaWF0IjoxNjE3NzI4MjEzfQ.vBof3vJHnY-a9KiD7Jx5iAyu1qGLOL9dYQBaAYBlGCo&amp;qt=1&amp;sk=8&amp;cid=1">
+                        <div class="ct_offer_box_cook2">
+                            <span>12%</span>
+                            <p> off</p>
+                        </div>
+                    </a>
+                    <div class="ct_inner_fd_dt_grid"><a
+                            href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImltZyI6Ii4uL2ltZy9iaXJ5YW5pX2ltZy5wbmciLCJuYW1lIjoiQWxvbyBQYXJhdGhhMiIsInJhdGUiOjQuNCwicHJpY2UiOiI3OSIsImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwidHlwZSI6InZlZyIsIm9mZmVyIjoiMTQiLCJmZEluc2lkZSI6WyJtYXJpbmF0ZWQgY2hpa2VuIiwiZ3JhdnkiLCJ1c2VyIG1hbnVhbCJdLCJyZXZpZXciOltdLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxOX0seyJzdGFyIjo0LCJyYXRpbmdzIjoxN30seyJzdGFyIjozLCJyYXRpbmdzIjo4fSx7InN0YXIiOjIsInJhdGluZ3MiOjV9LHsic3RhciI6NCwicmF0aW5ncyI6M31dfSwiaWF0IjoxNjE3NzI4MjEzfQ.vBof3vJHnY-a9KiD7Jx5iAyu1qGLOL9dYQBaAYBlGCo&amp;qt=1&amp;sk=8&amp;cid=1">
+                            <div class="ct_img_res_main">
+                                <img src="../img/biryani.jpeg">
+
+                            </div>
+
+                        </a>
+                        <div class="ct_inner_fd1_dt_grid"><a
+                                href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImltZyI6Ii4uL2ltZy9iaXJ5YW5pX2ltZy5wbmciLCJuYW1lIjoiQWxvbyBQYXJhdGhhMiIsInJhdGUiOjQuNCwicHJpY2UiOiI3OSIsImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwidHlwZSI6InZlZyIsIm9mZmVyIjoiMTQiLCJmZEluc2lkZSI6WyJtYXJpbmF0ZWQgY2hpa2VuIiwiZ3JhdnkiLCJ1c2VyIG1hbnVhbCJdLCJyZXZpZXciOltdLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxOX0seyJzdGFyIjo0LCJyYXRpbmdzIjoxN30seyJzdGFyIjozLCJyYXRpbmdzIjo4fSx7InN0YXIiOjIsInJhdGluZ3MiOjV9LHsic3RhciI6NCwicmF0aW5ncyI6M31dfSwiaWF0IjoxNjE3NzI4MjEzfQ.vBof3vJHnY-a9KiD7Jx5iAyu1qGLOL9dYQBaAYBlGCo&amp;qt=1&amp;sk=8&amp;cid=1">
+
+                                <div class="ct_dt_tm_food_res">
+                                    <h4>Tajdare Hyderabadi Dum chicken Biryani with 2 leg piece</h4>
+
+
+                                </div>
+                                <div class="ct_bx_ratings">
+                                    <span>
+                                        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img"
+                                            aria-label="star"></ion-icon>
+                                    </span>
+
+                                    <span>
+                                        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img"
+                                            aria-label="star"></ion-icon>
+                                    </span>
+
+                                    <span>
+                                        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img"
+                                            aria-label="star"></ion-icon>
+                                    </span>
+
+
+                                    <span>
+                                        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img"
+                                            aria-label="star"></ion-icon>
+                                    </span>
+
+                                    <span>
+                                        <ion-icon class="filed_rating_itm md hydrated" name="star-half" role="img"
+                                            aria-label="star half"></ion-icon>
+                                    </span>
+                                </div>
+                            </a>
+                            <div class="ct_bx_hw_cook"><a
+                                    href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImltZyI6Ii4uL2ltZy9iaXJ5YW5pX2ltZy5wbmciLCJuYW1lIjoiQWxvbyBQYXJhdGhhMiIsInJhdGUiOjQuNCwicHJpY2UiOiI3OSIsImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwidHlwZSI6InZlZyIsIm9mZmVyIjoiMTQiLCJmZEluc2lkZSI6WyJtYXJpbmF0ZWQgY2hpa2VuIiwiZ3JhdnkiLCJ1c2VyIG1hbnVhbCJdLCJyZXZpZXciOltdLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxOX0seyJzdGFyIjo0LCJyYXRpbmdzIjoxN30seyJzdGFyIjozLCJyYXRpbmdzIjo4fSx7InN0YXIiOjIsInJhdGluZ3MiOjV9LHsic3RhciI6NCwicmF0aW5ncyI6M31dfSwiaWF0IjoxNjE3NzI4MjEzfQ.vBof3vJHnY-a9KiD7Jx5iAyu1qGLOL9dYQBaAYBlGCo&amp;qt=1&amp;sk=8&amp;cid=1">
+                                </a><a href="../img/chickem_kabab.jpg">How to cook?</a>
+                            </div>
+                            <p class="price_food for_oly_ekfd_price"><span>₹ 265</span></p>
+
+                            <div class="ct_type_bx_item_food">
+                                <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png">
+
+                                <p>non-veg</p>
+
+                            </div>
+                            <p class="bx_cat_item">1</p>
+                            <div class="ct_time_it_takes">
+                                <ion-icon name="alarm-outline" role="img" class="md hydrated"
+                                    aria-label="alarm outline"></ion-icon>
+                                <p>45 min</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div> --}}
+        <div class="ct_list_food_res_ek">
+
+            <div class="upper_ct_cat_by_list">
+
+                <div class="ct_bx_search for_fixed_search">
+                    <ion-icon name="search-sharp"></ion-icon>
+
+                    <input type="text" spellcheck="false" placeholder="Search for your's favorate grocery..">
+                </div>
+                <div class="ct_all_list_food">
+
+                </div>
+                <div class="ct_loading_bx_categories">
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+                    <div class="ct_loading_cat"></div>
+
+
+
+                </div>
+                <div class="ct_full_loading_box for_ek_fd_full_load">
+
+                    <div class="ct_loading_bx_all for_ek_foods_load">
+                        <div class="ct_loading_bx rd3_block_load only_for_specific_bx ">
+                            <div class="for_load_bx_grid">
+
+                                <div class="ct_for_img_load">
+
+                                </div>
+                                <div class="for_load_bx_grid_inner">
+
+                                    <div class="ct_for_p_load">
+
+                                    </div>
+                                    <div class="ct_for_p_load2">
+
+                                    </div>
+
+                                    <div class="ct_for_price_load">
+
+                                    </div>
+
+                                    <div class="ct_for_type_load">
+
+                                    </div>
+
+                                    <div class="ct_for_time_load">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="ct_loading_bx rd3_block_load only_for_specific_bx ">
+                            <div class="for_load_bx_grid">
+
+                                <div class="ct_for_img_load">
+
+                                </div>
+                                <div class="for_load_bx_grid_inner">
+
+                                    <div class="ct_for_p_load">
+
+                                    </div>
+                                    <div class="ct_for_p_load2">
+
+                                    </div>
+
+                                    <div class="ct_for_price_load">
+
+                                    </div>
+
+                                    <div class="ct_for_type_load">
+
+                                    </div>
+
+                                    <div class="ct_for_time_load">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="ct_loading_bx rd3_block_load only_for_specific_bx ">
+                            <div class="for_load_bx_grid">
+
+                                <div class="ct_for_img_load">
+
+                                </div>
+                                <div class="for_load_bx_grid_inner">
+
+                                    <div class="ct_for_p_load">
+
+                                    </div>
+                                    <div class="ct_for_p_load2">
+
+                                    </div>
+
+                                    <div class="ct_for_price_load">
+
+                                    </div>
+
+                                    <div class="ct_for_type_load">
+
+                                    </div>
+
+                                    <div class="ct_for_time_load">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="ct_loading_bx rd3_block_load only_for_specific_bx ">
+                            <div class="for_load_bx_grid">
+
+                                <div class="ct_for_img_load">
+
+                                </div>
+                                <div class="for_load_bx_grid_inner">
+
+                                    <div class="ct_for_p_load">
+
+                                    </div>
+                                    <div class="ct_for_p_load2">
+
+                                    </div>
+
+                                    <div class="ct_for_price_load">
+
+                                    </div>
+
+                                    <div class="ct_for_type_load">
+
+                                    </div>
+
+                                    <div class="ct_for_time_load">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="ct_loading_bx rd3_block_load only_for_specific_bx special_bx_load ">
+                            <div class="for_load_bx_grid">
+
+                                <div class="ct_for_img_load">
+
+                                </div>
+                                <div class="for_load_bx_grid_inner">
+
+                                    <div class="ct_for_p_load">
+
+                                    </div>
+                                    <div class="ct_for_p_load2">
+
+                                    </div>
+
+                                    <div class="ct_for_price_load">
+
+                                    </div>
+
+                                    <div class="ct_for_type_load">
+
+                                    </div>
+
+                                    <div class="ct_for_time_load">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ct_ct_cate_lis_ev list_food_p_g">
+
+
+                    <div class="evt_list_food_cat">
+
+                        {{!-- <a class="active_a_cat_ck_fd" href="#snacks_list">Snacks &mdash; 12)</a>
+                        <a class="not_active_a_cat" href="#tandori">mid meals &mdash; (12)</a>
+                        <a class="not_active_a_cat" href="#">Special &mdash; (12)</a>
+                        <a class="not_active_a_cat" href="#">Hot & spicy &mdash; (12)</a>
+                        --}}
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+        <div class="ct_bx_footer">
+            <div class="ct_bx_foot_inner">
+                <div class="logo for_ain_home_logo">
+
+                    <a href="/">
+                        <h4><span>E</span>
+                            <p>rak</p>
+                        </h4>
+
+                        <p class="tag_line_brand">&mdash;Create future&mdash;</p>
+                    </a>
+
+                </div>
+                <div class="ct_bx_follow_social_icon">
+                    <p>Follow us on </p>
+                    <div class="ct_icons_logs">
+                        <a href='#' class="ct_bx_itm_soc">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+
+                        <a href='#' class="ct_bx_itm_soc">
+
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ct_bx_copy_right">
+                <p> &copy; 2021.All right reserved</p>
+                <span>customer care&mdash; 7005328132</span>
+            </div>
+        </div>
+    </section>
+ <div class="ct_bx_messgae">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+  <circle class="path circle" fill="none" stroke="#3ba81f" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+  <polyline class="path check" fill="none" stroke="#3ba81f" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+</svg>
+<p class="success">You successfully logged out of ERAK.Come Back soon.</p>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+            authDomain: "test-2ecee.firebaseapp.com",
+            projectId: "test-2ecee",
+            storageBucket: "test-2ecee.appspot.com",
+            messagingSenderId: "390719540957",
+            appId: "1:390719540957:web:04e268380d6e77c4241534",
+            measurementId: "G-8Z1P10SQ9T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../others/js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="../js/observeLoad.js"></script>
+
+    <script src="../js/jQery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/design.css">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+</head>
+<script>
+
+</script>
+
+<body>
+    <div class="ct_bx_signup_box_overall">
+
+        <div class="ct_signup only_for_sig">
+            <div class="ct_bx_side_ov_login">
+                <div class="ct_inner_bx_top">
+<a href="/" class="logo for_sign_up_log for_ain_home_logo2">
+
+                    <h4><span>E</span>
+                        <p>rak</p>
+                    </h4>
+
+                    <p>&mdash;Create future&mdash;</p>
+                </a>
+                <div class="bx_text_sign_up_login">
+                    <h3>create </h3>
+                    <h2>Future</h2>
+                </div>
+                </div>
+                
+
+            </div>
+            <div class="ct_acc">
+
+                <div class="ct_create_acc ov_welcome_acxc">
+                    <h3>Welcome To Erak</h3>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque suscipit odit be, sit amet
+                        consectetur adipisicing elit. Itaque suscipit odit be,</p>
+                </div>
+                <div class="ct_go_back_acc">
+                    <ion-icon name="arrow-back-sharp"></ion-icon>
+                    <span>GO BACK</span>
+                </div>
+                <div class="ct_error_other_signup pin_error">
+                    <ion-icon name="warning-sharp"></ion-icon>
+                    <p>Sorry we donnot deliver to your provide PIN code location.</p>
+                </div>
+                <div class="ct_error_other_signup phoneum_error">
+                    <ion-icon name="warning-sharp"></ion-icon>
+                    <p>Provided phone number already exist.</p>
+                </div>
+                <div class="ct_error_other_signup pass_error">
+                    <ion-icon name="warning-sharp"></ion-icon>
+                    <p>Your provided password is already exist,please try again.</p>
+                </div>
+
+                <form onkeydown="return event.key != 'Enter';" action="/signup" method="POST" class="form_acc">
+
+                    <span class="error_acc">
+                        <ion-icon name="alert-circle-sharp"></ion-icon>Error !:Please fill the form fields correctly.
+                    </span>
+                    <div class="ct_create_acc ">
+                        <h1 class="logo_acc verif_logo">Erak</h1>
+                        <div class="ct_ot_check_ov">
+                            <h2>Enter The Verification Code.</span> </h2>
+                        </div>
+
+                        <span class="if_has_ald_acc">Already have an account ?<a href="/login"> Log in.</a></span>
+                        <div class="ct_verify_otp">
+
+                            <h3>Please wait for a minute while the otp is sent to <span class="for_numb_acc">+91
+                                    7005328132(whatsapp )
+                                    .</span> <span class="for_gmail_acc">bhattacharya@gmail.com</span> </h3>
+
+
+
+                        </div>
+                        <div class="ct_bx_account">
+
+                            <div class="ct_field_first_acc">
+
+                                <div class="gt_first_nam_second_name">
+                                    <div class="nick_name bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
+
+                                        <input name='name_user' class="name_of_user ac_setup" id="name_inp"
+                                            maxlength="9" spellcheck="false" type="text" required>
+                                        <label for="name_inp"> Nick name</label>
+
+
+                                    </div>
+                                    <div class="nick_name last_name bx_acc">
+                                        <input name='lastname' class="last_of_user ac_setup" id="last_nam_inp"
+                                            spellcheck="false" type="text" required>
+
+                                        <label for="last_nam_inp"> last name</label>
+                                        <input type="text" name='last_user' hidden>
+
+
+                                    </div>
+                                </div>
+                                <div class="gt_first_nam_second_name bx2_gmail">
+                                    <div class="nick_name  bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="location-outline"></ion-icon>
+                                        <input name='address_user' class="address_of_user ac_setup" spellcheck="false"
+                                            id="address" type="text" required>
+                                        <label for="address">address</label>
+
+                                    </div>
+                                    <div class="gmail_acc">
+                                        <ion-icon name="mail-outline"></ion-icon>
+
+                                        <div class="nick_name phone_number_inp">
+                                            <input name='phonenum_user_acc' class="phoneNum_of_user ac_setup"
+                                                id="gmail_inp" spellcheck="false" type="email" required>
+                                            <label for="gmail_inp">Gamil</label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="gt_first_nam_second_name bx2_gmail g2">
+
+                                    <div class="ct_phone_input_field">
+                                        <div class="phone_num">
+                                            <ion-icon name="call-outline"></ion-icon>
+                                            <span>+91</span>
+                                        </div>
+
+                                        <div class="nick_name phone_number_inp">
+                                            <input name='phonenum_user_acc' class="phoneNum_of_user ac_setup str_to_num"
+                                                id="phone_num_inp" maxlength="10" spellcheck="false" type="text"
+                                                required>
+                                            <label for="phone_num_inp"> phone number</label>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="gmail_acc pincode">
+                                        <ion-icon name="location-outline"></ion-icon>
+
+                                        <div class="nick_name phone_number_inp">
+                                            <input name='pin' class="phoneNum_of_user ac_setup" id="pin_user_acc"
+                                                spellcheck="false" type="text" required>
+                                            <label for="pin_user_acc">PIN code (agartala)</label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="pass_bx_field gt_first_nam_second_name">
+
+                                    <div class="nick_name gmail_inp_fl  bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
+                                        <input name="password_login" minlength="9" class="email_of_user" id="gmail"
+                                            type="password" required>
+                                        <label class="email_of_user" for="gmail">Password</label>
+                                        <div class="ct_bx_show_password">
+                                            <ion-icon class="not_hide" name="eye-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_nhide_pass">
+                                            <ion-icon class="hide-sharp" name="eye-off-outline"></ion-icon>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+<div class="ct_btn_acc">
+ <button class="cont_btn_acc  account_cont" name='continue_verify'
+                                    type="submit"><span>Continue</span></button>
+</div>
+                               
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                   
+            </div>
+ <div class="ct_bx_bottom_account">
+                        <div class="ct_bx_other_nav">
+                            <div class="bbx_bx_itm_nav">
+                                <p>Support</p>
+                                <a href="tel:7005328132">+91(7005328132)</a>
+                            </div>
+                            <div class="bbx_bx_itm_nav">
+                                <p>&copy;2021 eerak.com</p>
+                            </div>
+                            <div class="bbx_bx_itm_nav">
+                                <a href="#">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                                <a href="#">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+
+    </div>
+
+    <div class="ct_field_set_which_service">
+
+        <div class="ct_itm_service serv2_wh">
+
+            <input name="service" value='for_whatsapp' id="for_whatsapp_inp" type="checkbox">
+            <label for="for_whatsapp_inp">we will send the verification to provided phone number via SMS.
+            </label>
+        </div>
+
+    </div>
+
+    {{!-- <button class="btn_verif" type='submit'>
+        <ion-icon name="lock-closed"></ion-icon> Sign Up
+    </button> --}}
+
+    </form>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- <div class="veri_acc_otp">
+            <p>please provide your most useable phone number for one-time-password or OTP verification</p>
+            <div class="phone_num">
+                <ion-icon name="call-outline"></ion-icon>
+                <span>+91</span>
+            </div>
+            <input type="text" id="phone_icon" required>
+            <label for="phone_icon">Phone number</label>
+
+            <div id='recaptcha-container'></div>
+            <button>Verify</button>
+            <span class="resend_otp">Do not get any OTP <a href="#">resend it.</a></span>
+
+
+        </div> -->
+
+    </div>
+    <div class="ct_bx_messgae">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+  <circle class="path circle" fill="none" stroke="#3ba81f" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+  <polyline class="path check" fill="none" stroke="#3ba81f" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+</svg>
+<p class="success">Account successfully updated.</p>
+<p class="success">Redirecting...</p>
+
+    </div>
+    <div class="ct_bx_overlay_cart_signup for_signup_ov">
+        <div class="loader_cart for_cart_load_full loading_spinner_login2">
+
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+            authDomain: "test-2ecee.firebaseapp.com",
+            projectId: "test-2ecee",
+            storageBucket: "test-2ecee.appspot.com",
+            messagingSenderId: "390719540957",
+            appId: "1:390719540957:web:04e268380d6e77c4241534",
+            measurementId: "G-8Z1P10SQ9T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../others/js/jquery.waypoints.min.js"></script>
+
+    <script src="../js/jQery.js"></script>
+            <script src='/socket.io/socket.io.js'></script>
+    <script src="../js/msg.js"></script>
+</body>
+
+</html>

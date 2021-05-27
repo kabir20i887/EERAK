@@ -1,0 +1,1531 @@
+else if(el.fdName !== name) {
+                num++
+                console.log('num at else',num)
+                                if (allReady === 0) {
+
+                    let htmlMain = `     <div class="list_food_at_ov groc_list" id='${fdGroup, fdGroup.split(' ').join('')
+                        }'>
+
+<h3>${fdGroup}</h3>
+
+
+<div class="ct_cat_by_list">
+
+</div>
+</div>
+
+`
+                    document.querySelector('.ct_all_list_food').insertAdjacentHTML('beforeend', htmlMain)
+                }
+
+                allReady += 1
+                if (offer !== 'null') {
+                    if (includes !== null) {
+                        inside = includes.map(cur2 => {
+                            let html1 = ` <li>
+
+${cur2}
+</li>`
+                            return html1
+                        })
+                        if (group === 'veg') {
+                            html = `
+<div class="itm_food_list_ek ">
+<div class="ct_offer_box_cook2">
+
+<p> ${offer}% off</p>
+</div>
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+<div class="ct_food_list_inside">
+<ul>
+${inside.join('')}
+</ul>
+</div>
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+style=" fill:#000000;">
+<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+font-family="none" font-weight="none" font-size="none" text-anchor="none"
+style="mix-blend-mode: normal">
+<path d="M0,172v-172h172v172z" fill="none"></path>
+<g fill="#099f49">
+<path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+</path>
+<path
+d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+</path>
+</g>
+</g>
+</svg>
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        } else {
+                            html = `
+<div class="itm_food_list_ek">
+<div class="ct_offer_box_cook2">
+
+<p> ${offer}% off</p>
+</div>
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+<div class="ct_food_list_inside">
+<ul>
+${inside.join('')}
+</ul>
+</div>
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        }
+                    } else {
+                        if (group === 'veg') {
+                            html = `
+<div class="itm_food_list_ek">
+<div class="ct_offer_box_cook2">
+
+<p> ${offer}% off</p>
+</div>
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+style=" fill:#000000;">
+<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+font-family="none" font-weight="none" font-size="none" text-anchor="none"
+style="mix-blend-mode: normal">
+<path d="M0,172v-172h172v172z" fill="none"></path>
+<g fill="#099f49">
+<path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+</path>
+<path
+d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+</path>
+</g>
+</g>
+</svg>
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        } else {
+                            html = `
+<div class="itm_food_list_ek">
+<div class="ct_offer_box_cook2">
+
+<p> ${offer}% off</p>
+</div>
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        }
+                    }
+                } else {
+                    if (includes !== null) {
+                        inside = includes.map(cur2 => {
+                            let html1 = ` <li>
+
+${cur2}
+</li>`
+                            return html1
+                        })
+                        if (group === 'veg') {
+                            html = `
+<div class="itm_food_list_ek">
+
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+<div class="ct_food_list_inside">
+<ul>
+${inside.join('')}
+</ul>
+</div>
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+style=" fill:#000000;">
+<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+font-family="none" font-weight="none" font-size="none" text-anchor="none"
+style="mix-blend-mode: normal">
+<path d="M0,172v-172h172v172z" fill="none"></path>
+<g fill="#099f49">
+<path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+</path>
+<path
+d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+</path>
+</g>
+</g>
+</svg>
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        } else {
+                            html = `
+<div class="itm_food_list_ek">
+
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+<div class="ct_food_list_inside">
+<ul>
+${inside.join('')}
+</ul>
+</div>
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        }
+                    } else {
+                        if (group === 'veg') {
+                            html = `
+<div class="itm_food_list_ek">
+
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+style=" fill:#000000;">
+<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+font-family="none" font-weight="none" font-size="none" text-anchor="none"
+style="mix-blend-mode: normal">
+<path d="M0,172v-172h172v172z" fill="none"></path>
+<g fill="#099f49">
+<path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+</path>
+<path
+d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+</path>
+</g>
+</g>
+</svg>
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        } else {
+                            html = `
+<div class="itm_food_list_ek">
+
+<div class="ct_img_res_main">
+<img src=${img}>
+
+</div>
+<div class="ct_dt_tm_food_res">
+<h4>${name}</h4>
+
+
+</div>
+
+
+
+<p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+
+<div class="ct_type_bx_item_food">
+<img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+<p>veg</p>
+
+</div>
+<p class="sk_itm">${stock}</p>
+<p class="bx_cat_item">${groping}</p>
+
+<div class="ct_time_it_takes">
+<ion-icon name="alarm-outline"></ion-icon>
+<p>10 min</p>
+</div>
+
+<div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+<div class="bx_rem_field_qt_num bx_op">
+
+<ion-icon class="remove_field_num" name="remove"></ion-icon>
+</div>
+
+<input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+<div class="bx_ad_field_qt_num bx_op">
+<ion-icon class="add_field_num" name="add"></ion-icon>
+
+</div>
+
+</div>
+
+<span class="stock_err">
+<ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+out of stock
+</span>
+
+
+</div>`
+                        }
+                    }
+                }
+                document.querySelector('.for_ek_fd_full_load').style.display = 'none'
+
+                document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="list_food_at_ov groc_list" id='snacks_list'>
+
+    <h3>Rice</h3>
+
+
+    <div class="ct_cat_by_list">
+
+
+
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            {{!-- <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div> --}}
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/onion.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul class="not_tog_dpd">
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+                <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            {{!-- <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div> --}}
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/egg.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+
+                <h4>egg</h4>
+
+
+            </div>
+            <span class="unit">500g</span>
+
+            <div class="ct_set_qt_for_groc">
+
+                <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                <div class="bx_rem_field_qt_num bx_op">
+
+                    <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                </div>
+
+                <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                </div>
+
+            </div>
+            <p class="price_food"><del>₹ 179</del><span>₹ 159</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            <div class="ct_offer_box_cook2 less_than_12_off">
+
+                <p> 13% off</p>
+            </div>
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/onion.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+
+            <div class="ct_offer_box_cook2 ">
+
+                <p> 14% off</p>
+            </div>
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/img_oil.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="list_food_at_ov groc_list" id='snacks_list'>
+
+    <h3>Rice</h3>
+
+
+    <div class="ct_cat_by_list">
+
+
+
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            {{!-- <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div> --}}
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/onion.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul class="not_tog_dpd">
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+                <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            {{!-- <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div> --}}
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/egg.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+
+                <h4>egg</h4>
+
+
+            </div>
+            <span class="unit">500g</span>
+
+            <div class="ct_set_qt_for_groc">
+
+                <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="relative_width1 for_ek_pk_fd for_grocery_qt">
+                <div class="bx_rem_field_qt_num bx_op">
+
+                    <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                </div>
+
+                <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                </div>
+
+            </div>
+            <p class="price_food"><del>₹ 179</del><span>₹ 159</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+            <div class="ct_offer_box_cook2 less_than_12_off">
+
+                <p> 13% off</p>
+            </div>
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/onion.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is out of
+                stock
+            </span>
+            <span class="stk_groc">100</span>
+
+
+
+
+
+
+
+        </div>
+        <div class="itm_food_list_ek for_groc_itm itm_not_selected" id='itm_food_list_ek'>
+
+            <div class="ct_offer_box_cook2 ">
+
+                <p> 14% off</p>
+            </div>
+            <div class="ct_img_res_main">
+                <img class="main_img_groc_itm" src="../img/img_oil.jpg">
+
+            </div>
+            <div class="ct_type_fd_cart_itm2">
+                <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <span>Fortune</span>
+                <h4>sunflower oil</h4>
+
+
+            </div>
+
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 18</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+
+            </div>
+            <p class="price_food"><del>₹ 119</del><span>₹ 99</span></p>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="list_food_at_ov groc_list" id='snacks_list'>
+
+    <h3>Start from Royal biryani</h3>
+
+
+    <div class="ct_cat_by_list">
+
+
+        <div class="itm_food_list_ek">
+            {{!-- <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div> --}}
+            <div class="ct_img_res_main">
+                <img src="../img/burger.jpg">
+
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <h4>Chicken Burger and franch fries </h4>
+
+
+            </div>
+            <div class="ct_food_list_inside">
+                <ul>
+                    <li>
+                        marinated chicken
+                    </li>
+                    <li>
+                        gravy
+                    </li>
+                </ul>
+            </div>
+
+
+            <p class="price_food for_oly_ekfd_price"><span>₹ 239</span></p>
+
+            <div class="ct_type_bx_item_food">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <p>veg</p>
+
+            </div>
+            <p class="sk_itm">15</p>
+
+            <div class="ct_time_it_takes">
+                <ion-icon name="alarm-outline"></ion-icon>
+                <p>10 min</p>
+            </div>
+
+            <div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+                <div class="bx_rem_field_qt_num bx_op">
+
+                    <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                </div>
+                <div class="spiner ">
+                </div>
+                <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                </div>
+
+            </div>
+
+            <span class="stock_err">
+                <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+                out of stock
+            </span>
+
+
+        </div>
+        <div class="itm_food_list_ek">
+            <div class="ct_offer_box_cook2">
+
+                <p> 13% off</p>
+            </div>
+            <div class="ct_img_res_main">
+                <img src="../img/chickem_kabab.jpg">
+
+            </div>
+            <div class="ct_dt_tm_food_res">
+                <h4>chicken kabbab </h4>
+
+
+            </div>
+            <div class="ct_food_list_inside">
+                <ul>
+                    <li>
+                        marinated chicken
+                    </li>
+                    <li>
+                        gravy
+                    </li>
+                </ul>
+            </div>
+
+
+            <p class="price_food for_oly_ekfd_price"><span>₹ 199</span></p>
+
+            <div class="ct_type_bx_item_food">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <p>veg</p>
+
+            </div>
+            <p class="sk_itm">15</p>
+
+            <div class="ct_time_it_takes">
+                <ion-icon name="alarm-outline"></ion-icon>
+                <p>10 min</p>
+            </div>
+            {{!-- <div class="ct_bx_qtfood"> --}}
+
+                <div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+                    <div class="spiner ">
+                    </div>
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+
+                <span class="stock_err">
+                    <ion-icon name="alert-outline"></ion-icon>&ThinSpace;Quantity of items is
+                    out of stock
+                </span>
+
+
+            </div>
+            <div class="itm_food_list_ek">
+                <div class="ct_offer_box_cook2">
+
+                    <p> 13% off</p>
+                </div>
+                <div class="ct_img_res_main">
+                    <img src="../img/biryani_img.jpg">
+
+                </div>
+                <div class="ct_dt_tm_food_res">
+                    <h4>Hidrabadi biryani extra </h4>
+
+
+                </div>
+                <div class="ct_food_list_inside">
+                    <ul>
+                        <li>
+                            marinated chicken
+                        </li>
+                        <li>
+                            gravy
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="price_food for_oly_ekfd_price"><span>₹ 99</span></p>
+
+                <div class="ct_type_bx_item_food">
+                    <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+                    <p>non-veg</p>
+
+                </div>
+                <p class="sk_itm">10</p>
+
+                <div class="ct_time_it_takes">
+                    <ion-icon name="alarm-outline"></ion-icon>
+                    <p>10 min</p>
+                </div>
+                <div class="ct_bx_qtfood relative_width1 for_ek_pk_fd for_mob_ver_qt for_ek_qt">
+                    <div class="bx_rem_field_qt_num bx_op">
+
+                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                    </div>
+                    <div class="spiner ">
+                    </div>
+                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="1">
+                    <div class="bx_ad_field_qt_num bx_op">
+                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                    </div>
+
+                </div>
+
+                <span class="stock_err">
+                    <ion-icon name="alert-outline"></ion-icon>&ThinSpace; we donot have more
+                    than 12 items
+                    in the stock
+                </span>
+
+
+            </div>
+            <div class="ct_loading_bx only_for_mob_load">
+                <div class="ct_for_img_load">
+
+                </div>
+                <div class="ct_for_p_load">
+
+                </div>
+                <div class="ct_for_price_load">
+
+                </div>
+                <div class="ct_for_type_load">
+
+                </div>
+                <div class="ct_for_time_load">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ct_bx_act_cart_itm">
+
+
+        <div class="remove_fd_itm_ct">
+            <ion-icon name="trash-outline"></ion-icon>
+        </div>
+
+    </div>
+    <div class="whats_inc_items">
+        <h3>Inside this pack</h3>
+        <ul>
+            <li>
+                <div class="bx_dot"></div>
+                <p>Gravy</p>
+            </li>
+            <li>
+                <div class="bx_dot"></div>
+
+                <p>marinated chicken </p>
+
+            </li>
+        </ul>
+    </div>
+
+    </li>
+    <li class="main_li_cart_fd_lis groc_bx">
+
+        <div class="ct_itm_food_cart">
+
+
+            <img class="main_cart_img2" src="../img/img_oil.jpg">
+            <div class="ct_bx_food_groc_casrt">
+                <span>Fortune</span>
+                <h4>Sunflower oil </h4>
+
+            </div>
+            <div class="ct_type_fd_cart_itm3">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                    style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g fill="#099f49">
+                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                            </path>
+                            <path
+                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <p class="price_am_cart_fd"><del>₹ 120</del> <span>₹105</span> </p>
+
+        </div>
+
+        <div class="ct_bx_quant_itm_cart">
+
+            <div class="for_cart_qt">
+                <div class="bx_rem_field_qt_num bx_op">
+
+                    <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                </div>
+                <input type="text" value="1">
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="ct_bx_related_itm_dt_cart2">
+            <div class="ct_set_qt_for_groc">
+                <div class="field_bx_qt">
+                    <p>1kg</p>
+                    <span>₹ 68</span>
+                    <div class="ct_bx_drop">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                    </div>
+                </div>
+                <ul class="not_tog_dpd">
+                    <li>
+                        <p>1kg</p>
+                        <span>₹ 18</span>
+                    </li>
+                    <li>
+                        <p>3kg</p>
+                        <span>₹ 28</span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="ct_oferr">
+                <img src="../img/offer.png" alt="">
+                <p>10 % off</p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="ct_bx_act_cart_itm2">
+
+
+            <div class="remove_fd_itm_ct">
+                <ion-icon name="trash-outline"></ion-icon>
+            </div>
+
+        </div>
+
+    </li>

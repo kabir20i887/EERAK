@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in </title>
+    <link rel="stylesheet" href="../css/design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+
+<body class="body_login">
+    <div class="ct_bx_signup_box_overall">
+
+        <div class="ct_signup for_login2">
+            <div class="ct_bx_side_ov_login">
+               <div class="ct_inner_bx_top">
+<a href="/" class="logo for_sign_up_log for_ain_home_logo2">
+
+                    <h4><span>E</span>
+                        <p>rak</p>
+                    </h4>
+
+                    <p>&mdash;Create future&mdash;</p>
+                </a>
+                <div class="bx_text_sign_up_login">
+                    <h3>create </h3>
+                    <h2>Future</h2>
+                </div>
+                </div>
+            </div>
+
+            <div class="ct_acc">
+                <div class="ct_bx_subinner_acc">
+
+
+                    <div class="ct_go_back_acc_fortgot">
+                        <ion-icon name="arrow-back-sharp"></ion-icon>
+                        <span>GO BACK</span>
+                    </div>
+                    <div class="ct_create_acc ov_welcome_acxc">
+                        <h3 class="verif_fp">
+                            Enter the verification code
+                        </h3>
+                        <h3 class="norm_login">
+                            <t>Login To ERAK </t>
+                        </h3>
+
+                        <p>You are just one step away from great deals on fresh half done foods. </p>
+                    </div>
+
+                    <form action="#">
+
+                        <span class=" for_login_signup">Donot have any account ?<a href="/signup"> create
+                                one.</a></span>
+
+                        <span class="error_login  password_err">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er>Password</er> or nick name does not match.
+                        </span>
+                        <span class="error_login  password_err_exsist">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er>Password</er> already exist.Please try again.
+                        </span>
+                        <span class="error_login name_err">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er>Nick name</er> or password does not match.
+                        </span>
+                        <span class="error_login lstname_err">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er>Last Name</er> does not match.
+                        </span>
+
+                        <span class="error_login phonenum">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er>Phone Number </er> does not match.
+                        </span>
+                        <span class="error_login lstname_err2">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            <er> password</er> does not match.
+                        </span>
+
+                        <span class="error_login lstname_err3">
+                            <ion-icon name="alert-outline"></ion-icon>
+                            Password length have to be equal or more than 9
+                        </span>
+                        <div class="ct_create_acc ">
+
+                            <div class="ct_field_first_acc">
+                                <a class="goback">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>Go Back
+                                </a>
+                                <div class="gt_first_nam_second_name">
+                                    <div class="nick_name bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
+
+                                        <input name="usfstnm" class="name_of_user" id="name_inp_main" maxlength="9"
+                                            spellcheck="false" type="text" required>
+                                        <label for="name_inp_main"> Nick name</label>
+
+
+                                    </div>
+                                    <div class="nick_name last_name bx_acc">
+                                        <input name="uslstnm" class="last_of_user" id="last_nam_inp" spellcheck="false"
+                                            type="text" required>
+                                        <label for="last_nam_inp"> last name</label>
+
+                                    </div>
+                                </div>
+
+                                <div class="ct_field_first_acc new_pass_bx">
+
+                                    <div class="gt_first_nam_second_name">
+                                        <div class="nick_name bx_acc">
+                                            <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
+
+                                            <input name="usfstnm1" class="name_of_user new_pass_bx1" id="name_inp2"
+                                                spellcheck="false" type="password" required>
+                                            <label for="name_inp2">new Password</label>
+
+
+                                        </div>
+                                        <div class="nick_name last_name bx_acc">
+                                            <input name="uslstnm" class="last_of_user new_pass_bx2" id="last_nam_inp2"
+                                                spellcheck="false" type="password" required>
+                                            <label for="last_nam_inp2">confirm password</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nick_name phone_number_login_forg">
+                                    <ion-icon class="main_icon_acc_log" name="call-outline"></ion-icon>
+
+                                    <input class="phone_numforg str_to_num" id="phone_num_forg" spellcheck="false"
+                                        type="text" required>
+                                    <label for="phone_num_forg">Phone Number</label>
+
+
+                                </div>
+                                <div class="pass_bx_field gt_first_nam_second_name">
+
+                                    <div class="nick_name gmail_inp_fl  bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
+                                        <input name="password_login" class="email_of_user" id="gmail" type="password"
+                                            required>
+                                        <label class="email_of_user" for="gmail"> password</label>
+                                        <div class="ct_bx_show_password">
+                                            <ion-icon class="not_hide" name="eye-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_nhide_pass">
+                                            <ion-icon class="hide-sharp" name="eye-off-outline"></ion-icon>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class=" nick_name verfiy_otp_inp_field only_for_forgot_pass">
+
+                                    <input name='providedOTP' class="str_to_num" id="last_nam_inp_verif"
+                                        spellcheck="false" type="text" required>
+                                    <span class="error_login">
+                                        <ion-icon name="alert-outline"></ion-icon>
+                                        <er> Provided OTP</er> does not match.
+                                    </span>
+                                </div>
+                                {{!-- loading_spinner_login --}}
+                                <button type="button" class="login_now for_login ">Log In
+                                </button>
+                                <div class="ct_only_for_forgot_pass">
+                                    <button type="button" class="login_now hiden_update ">Update Now
+                                    </button>
+                                    <p>Do not recived any OTP? <a href="#">Resend</a></p>
+                                </div>
+
+
+                                <a class="login_now hiden_update2 ">Continue
+                                </a>
+
+                                <div class="ct_bx_forgot">
+                                    <span class="or">Or </span>
+                                    <a href="#forgot" class="forgot_pass">Forgot Password ?</a>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="ct_bx_verify for_login_verif">
+                                <span class='go_back'>
+                                    <ion-icon name="arrow-back-outline"></ion-icon> Go Back
+                                </span>
+
+                                <div class="ct_bx_icons_verif">
+                                    <div class="ct_bx1">
+                                        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+
+                                    </div>
+                                    <div class="ct_bx2">
+                                        <ion-icon name="phone-portrait-outline"></ion-icon>
+
+                                    </div>
+                                </div>
+
+                                <h4>We sent you a OTP.</h4>
+                                <p>Enter it below to verify this number <strong> +91 772zxzyx48</strong>
+                                </p>
+                                <div class="ct_bx_verif2">
+                                    <form action="/login" method="GET">
+
+                                        <div class="nick_name gmail_inp_fl  bx_acc">
+                                            <input name="number_verif" class="str_to_num email_of_user" id="verify"
+                                                type="text" required>
+                                            <label class="email_of_user" for="verify">Please type here</label>
+
+
+
+
+                                        </div>
+                                        <span class="error_login otp_err1  otp_err">
+                                            <ion-icon name="alert-outline"></ion-icon>
+                                            OTP does not matched
+                                        </span>
+                                        <span class="error_login otp_err2 otp_err">
+                                            <ion-icon name="alert-outline"></ion-icon>
+                                            This field is required
+                                        </span>
+                                        <div class="ct_btn_acc">
+
+
+                                            <button class="cont_btn_acc  account_cont11" name='continue_verify'
+                                                type="button"><span>
+                                                    <ion-icon name="person-add-sharp"></ion-icon> Update account
+                                                </span></button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <p class='send_again'>Do not recived any OTP? <a
+                                        href="/signup?authUser=${window.location.search.split('?')[1].split('=')[1]}&rd=true">Resend</a>
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+        </div>
+
+
+
+                <div class="ct_bx_bottom_account">
+                    <div class="ct_bx_other_nav">
+                        <div class="bbx_bx_itm_nav">
+                            <p>Support</p>
+                            <a href="tel:7005328132">+91(7005328132)</a>
+                        </div>
+                        <div class="bbx_bx_itm_nav">
+                            <p>&copy;2021 eerak.com</p>
+                        </div>
+                        <div class="bbx_bx_itm_nav">
+                            <a href="#">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                            <a href="#">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+    </div>
+
+    <div class="ct_bx_messgae">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#3ba81f" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+                cy="65.1" r="62.1" />
+            <polyline class="path check" fill="none" stroke="#3ba81f" stroke-width="6" stroke-linecap="round"
+                stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+        </svg>
+        <p class="success">Account successfully updated.</p>
+
+    </div>
+    <div class="ct_bx_overlay_cart_signup for_login_ov">
+        <div class="loader_cart for_cart_load_full loading_spinner_login2">
+
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+            authDomain: "test-2ecee.firebaseapp.com",
+            projectId: "test-2ecee",
+            storageBucket: "test-2ecee.appspot.com",
+            messagingSenderId: "390719540957",
+            appId: "1:390719540957:web:04e268380d6e77c4241534",
+            measurementId: "G-8Z1P10SQ9T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../others/js/jquery.waypoints.min.js"></script>
+    <script src="../js/jQery.js"></script>
+
+
+</body>
+
+</html>

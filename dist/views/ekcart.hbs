@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERAK'S Event cart</title>
+
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/design.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+</head>
+
+
+<body class="body_cart">
+    {{>nav}}
+
+    <div class="ct_bx_help">
+        <p>Contact us on</p>
+        <div class="ct_help_line_one">
+            <ion-icon name="call-outline"></ion-icon>
+            <span>+91 9612690240</span>
+
+        </div>
+        <div class="ct_help_line_one">
+            <ion-icon name="mail-outline"></ion-icon>
+            <span>erak@mail.com</span>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="ct_bx_all_upper_av">
+
+        <div class="ct_account_cart stblock_nav_art">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <p>Account</p>
+
+        </div>
+        <div class="ct_account_cart st2block_nav_art">
+            <ion-icon name="cart-outline"></ion-icon>
+            <p>Shopping Cart</p>
+
+        </div>
+        {{!-- <div class="ct_account_cart lstblock_nav_art">
+
+            <img src="https://img.icons8.com/pastel-glyph/34/000000/delivery-scooter--v3.png" />
+            <p>track delivery</p>
+        </div> --}}
+
+    </div>
+ <div class="ct_bx_locate_bill">
+        <div class="ct_bx_inner_box_locate">
+            <h4>Subtotal</h4>
+
+            <p>₹ 500</p>
+        </div>
+        <div class="ct_bx_slide_down_btn">
+            <ion-icon name="chevron-down-outline"></ion-icon>
+
+        </div>
+    </div>
+    <section class="ek_cart">
+
+        <div class="ct_bx_message_canceled_ordered ">
+            <div class="ct_flex_bx_msg">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                <h2>Your order has been canceled.</h2>
+
+            </div>
+            <p>you just canceled the order of amount <strong>₹2,400</strong> on date 21 april 2021
+
+
+
+
+        </div>
+        <div class="ct_bx_message_succesfully_ordered for_erak_cart">
+            <div class="ct_flex_bx_msg">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                <h2>Thank You for ordering online from us.</h2>
+
+            </div>
+            <p>Kabir your order has been successfully placed,your order wil be delivered on or before 12th March 2021
+
+
+                .</span>We just send the bill to <span>bhattacharyapritam58@gmail.com</span>. </p>
+
+        </div>
+        <div class="ct_shopping_cart">
+            <div class="ct_l">
+
+            </div>
+            {{!-- <img src="../img/cart.png" alt=""> --}}
+            <h1>Erak's Shopping Cart</h1>
+        </div>
+        <div class="ct_bx_flex_sub_list">
+
+            <div class="ct_list_food">
+
+
+                <a href="#">
+                    {{!-- <ion-icon name="arrow-back-outline"></ion-icon> Continue Shopping --}}
+
+                </a>
+                <div class="ct_acount_details_cart">
+                    <div class="ct_no_accc_full_bx">
+                        <h2>
+                            <ion-icon name="person-remove-outline"></ion-icon>
+                        </h2>
+                        <div class="ct_ct_text_about_acc">
+                            <h3>Opps! you donot have any account.</h3>
+                            <p>Please sign up or login ,so that we can create a safe and a secure account for You.</p>
+                            <a href="/login" class="btn_sign_up_cart for_login_only_cart">
+                                <span2> Have an account ?</span2> <span>Log In</span>
+                            </a>
+
+                            <a href="/signup" class="btn_sign_up_cart for_signup_only_cart">
+                                <span2>New to ERAK ?</span2> <span>Sign up</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="ct_full_cart_fd_ov">
+
+
+                    {{!-- <div class="ct_all_bill_dt">
+                        <div class="ct_field_evt_setup">
+                            <h3 class="same_h31">Event Registration</h3>
+                            <div class="ct_bx_all_flds">
+                                <div class="ct_evt_itm_regis">
+                                    <div class="ct_dt_itm_regis">
+
+                                        <p>Venue:</p>
+                                        <span>Home</span>
+                                    </div>
+
+                                </div>
+                                <div class="ct_evt_itm_regis">
+                                    <div class="ct_dt_itm_regis">
+                                        <p>Event:</p>
+                                        <span>Birthday party </span>
+                                        <div class="ct_drop_icon_regis for1_evt_fld">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+
+                                    </div>
+                                    <div class="for_evt_regis">
+                                        <input type="text" class="for_evt_regis">
+                                    </div>
+                                    <div class="ct_drop_down_evt big_one_regis">
+                                        <ul>
+                                            <li>
+                                                <span>Christmass party </span>
+
+                                            </li>
+                                            <li>
+                                                <span>Tea party </span>
+
+                                            </li>
+                                            <li>
+                                                <ion-icon name="create-outline"></ion-icon> <span>Add</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="ct_evt_itm_regis">
+                                    <div class="ct_dt_itm_regis">
+
+                                        <p>Members:</p>
+                                        <span>12</span>
+                                        <div class="ct_drop_icon_regis for_evt_fld">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                    </div>
+
+                                    <div class="ct_drop_down_evt small_one_regis">
+                                        <ul>
+                                            <li>
+                                                <span>1</span>
+
+                                            </li>
+                                            <li>
+                                                <span>2</span>
+
+                                            </li>
+                                            <li>
+                                                <span>3</span>
+
+                                            </li>
+                                            <li>
+                                                <span>4</span>
+
+                                            </li>
+                                            <li>
+                                                <span>5</span>
+
+                                            </li>
+                                            <li>
+                                                <span>6</span>
+
+                                            </li>
+                                            <li>
+                                                <span>7</span>
+
+                                            </li>
+                                            <li>
+                                                <span>8</span>
+
+                                            </li>
+                                            <li>
+                                                <span>9</span>
+
+                                            </li>
+                                            <li>
+                                                <span>10</span>
+
+                                            </li>
+                                            <li>
+                                                <span>10+</span>
+
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="ct_evt_itm_regis">
+                                    <div class="ct_dt_itm_regis">
+
+                                        <p>Date of event:</p>
+                                        <pr>Please select here the date of event,2 day before .</pr>
+                                        <input class="for_dt_regis" type="date">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        {{!-- <div class="ct_plans same_h3">
+                            <h3>Select any plan.</h3>
+                            <div class="ct_bx_all_flds">
+
+                                <div class="ct_plan_item">
+                                    <input type="checkbox" checked>
+                                    <p>Basic</p>
+                                    <span>₹ 4,300</span>
+                                </div>
+                                <div class="ct_plan_item">
+                                    <p>Standard</p>
+                                    <div class="ct_bx_comm_soon">
+                                        <span>₹ 8,300</span>
+
+                                    </div>
+                                    <pr class="comming_soon_txt">comming soon</pr>
+
+                                </div>
+                                <div class="ct_plan_item">
+                                    <p>Premium</p>
+                                    <div class="ct_bx_comm_soon">
+                                        <span>₹ 28,300</span>
+
+                                    </div>
+                                    <pr class="comming_soon_txt">comming soon</pr>
+                                </div>
+                            </div>
+                        </div> --}}
+
+                        <div class="carterr ">
+                            <ion-icon name="warning-sharp"></ion-icon>
+                            <p>We donot have more than 50 items left in our stock, please try again later.</p>
+                        </div>
+                        <div class="list_food_cart">
+
+
+                            <div class="sub_tital_order_cart">
+                                <div class="ct_other_nav_cart">
+                                    <div class="cart_itm_ov">
+                                        <h2>My Orders</h2>
+                                        {{!-- <span class="number_items_cart"> 24 items</span> --}}
+                                    </div>
+
+
+                                    <div class="ct_bx_diff_group">
+                                        <ul>
+                                            <li class="active_gp_bx for_ekfd_btn">
+                                                <p>Erak's food</p>
+                                            </li>
+                                            <li class="unactive_gp_bx for_req_groc_btn">
+                                                <p>Required grocery</p>
+                                            </li>
+                                        </ul>
+                                        <div title="Remove all" class='ct_bin_ts_nav_ck itm_cart_nav'>
+                                            <ion-icon class="trash_all" name="trash-outline"></ion-icon>
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                </div>
+
+                                <ul class="only_for_grocery_item">
+                                    {{!--for_non_com_groc_cart --}}
+                                    <div class="loader_cart for_groc_cart_load loading_spinner_login2">
+
+                                    </div>
+                                    <li class="main_li_cart_fd_lis groc_bx">
+
+                                        <div class="ct_itm_food_cart">
+
+                                            <div class="ct_type_fd_cart_itm"> <img
+                                                    src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png">
+                                            </div>
+                                            <img class="main_cart_img2" src="http://localhost:3000/img/ghee.jpg">
+                                            <div class="ct_bx_quant_itm_cart">
+
+                                                <div class="for_cart_qt">
+
+                                                    <div class="bx_rem_field_qt_num bx_op">
+
+                                                        <ion-icon class="remove_field_num md hydrated" name="remove"
+                                                            role="img" aria-label="remove"></ion-icon>
+                                                    </div>
+                                                    <input readonly="" type="text" value="7">
+                                                    <div class="bx_ad_field_qt_num bx_op">
+                                                        <ion-icon class="add_field_num md hydrated" name="add"
+                                                            role="img" aria-label="add"></ion-icon>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="ct_bx_food_groc_casrt">
+                                                <span class="com_name"></span>
+                                                <h4>ghee</h4>
+                                                <span class="unit">500g</span>
+
+                                                <p class="price_am_cart_fd2"><del>₹1,015</del> <span>₹1,155</span> </p>
+                                                <span class="saved_am">you saved ₹ 140 </span>
+                                                <span
+                                                    class="id_groc">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwiZmRJbnNpZGUiOlsibWFyaW5hdGVkIGNoaWtlbiIsImdyYXZ5IiwidXNlciBtYW51YWwiXSwiaW1nIjoiLi4vaW1nL2JpcnlhbmlfaW1nLnBuZyIsIm5hbWUiOiJBbG9vIFBhcmF0aGEiLCJvZmZlciI6IjE0IiwicHJpY2UiOiI3OSIsInJhdGluZ3MiOlt7InJhdGluZ3MiOjE5LCJzdGFyIjo1fSx7InJhdGluZ3MiOjE3LCJzdGFyIjo0fSx7InJhdGluZ3MiOjgsInN0YXIiOjN9LHsicmF0aW5ncyI6NSwic3RhciI6Mn0seyJyYXRpbmdzIjozLCJzdGFyIjo0fV0sInJlcXVpcmVkR3JvYyI6W3siY2FsbE5hbWUiOiJtYWRodXJzdWdhciIsImNvbSI6Ik1hZGh1ciIsImltZyI6Ii4uL2ltZy9TdWdhci5qcGciLCJuYW1lIjoiU3VnYXIiLCJvZmZlciI6IjEwIiwicHJpY2UiOiI4NiIsInN0b2NrIjoiOSIsInR5cGUiOiJ2ZWciLCJ1bnRJbnNpZGUiOlt7InVuaXQiOiIxa2ciLCJjb3N0IjoiNTAifSx7InVuaXQiOiIya2ciLCJjb3N0IjoiMTAwIn1dfV0sInJldmlldyI6W10sInR5cGUiOiJ2ZWcifSwiaWF0IjoxNjIwODk4ODcwfQ.N0zWCAI3Vl0N4d2f_MTVRt7eKeVhHOzxD5uPmcRncu0
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpdGVtIjp7ImNvb2siOiIuLi9pbWcvYnV0dGVyQ2hpY2tlbi5qcGciLCJ0eXBlIjoibm9uLXZlZyIsInRpbWUiOiI0NSBtaW4iLCJpbWciOiIuLi9pbWcvbXV0dGVyUGFubmVyLmpwZyIsIm5hbWUiOiJNdXR0ZXIgUGFubmVyIiwib2ZmZXIiOjEyLCJpZCI6ImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUprWVhSaElqcDdJbWx0WnlJNklpNHVMMmx0Wnk5aWFYSjVZVzVwWDJsdFp5NXdibWNpTENKdVlXMWxJam9pUVd4dmJ5QlFZWEpoZEdoaE1pSXNJbkpoZEdVaU9qUXVOQ3dpY0hKcFkyVWlPaUkzT1NJc0ltTnZiMnNpT2lJdUxpOXBiV2N2WW1seWVXRnVhVjlwYldjdWNHNW5JaXdpZEhsd1pTSTZJblpsWnlJc0ltOW1abVZ5SWpvaU1UUWlMQ0ptWkVsdWMybGtaU0k2V3lKdFlYSnBibUYwWldRZ1kyaHBhMlZ1SWl3aVozSmhkbmtpTENKMWMyVnlJRzFoYm5WaGJDSmRMQ0p5WlhacFpYY2lPbHRkTENKeVlYUnBibWR6SWpwYmV5SnpkR0Z5SWpvMUxDSnlZWFJwYm1keklqb3hPWDBzZXlKemRHRnlJam8wTENKeVlYUnBibWR6SWpveE4zMHNleUp6ZEdGeUlqb3pMQ0p5WVhScGJtZHpJam80ZlN4N0luTjBZWElpT2pJc0luSmhkR2x1WjNNaU9qVjlMSHNpYzNSaGNpSTZOQ3dpY21GMGFXNW5jeUk2TTMxZGZTd2lhV0YwSWpveE5qRTNOekk0TWpFemZRLnZCb2YzdkpIblktYTlLaUQ3Sng1aUF5dTFxR0xPTDlkWVFCYUFZQmxHQ28iLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxMH0seyJzdGFyIjo0LCJyYXRpbmdzIjo1fSx7InN0YXIiOjMsInJhdGluZ3MiOjJ9LHsic3RhciI6MiwicmF0aW5ncyI6MX0seyJzdGFyIjoxLCJyYXRpbmdzIjowfV0sInJldmlldyI6W10sInByaWNlIjoiMTY1Iiwic3RvY2siOiI4IiwiZmRJbnNpZGUiOm51bGwsInVuaXQiOm51bGx9LCJpYXQiOjE2MjA4OTg4NzF9.JSaUkKmlsQKJvd0U6wIl0S1449Az1xtvQqtfPzMEyzI</span>
+
+
+                                                <div class="ct_bx_related_itm_dt_cart2">
+
+
+
+
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <p class="stk_groc_cart">8</p>
+
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline" role="img" class="md hydrated"
+                                                    aria-label="trash outline"></ion-icon>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    <li class="main_li_cart_fd_lis groc_bx">
+
+                                        <div class="ct_itm_food_cart">
+
+                                            <div class="ct_type_fd_cart_itm"> <svg xmlns="http://www.w3.org/2000/svg"
+                                                    x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+                                                    style=" fill:#000000;">
+                                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                        stroke-linecap="butt" stroke-linejoin="miter"
+                                                        stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                                        font-family="none" font-weight="none" font-size="none"
+                                                        text-anchor="none" style="mix-blend-mode: normal">
+                                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                        <g fill="#099f49">
+                                                            <path
+                                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                                            </path>
+                                                            <path
+                                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                                            </path>
+                                                        </g>
+                                                    </g>
+                                                </svg></div>
+                                            <img class="main_cart_img2" src="http://localhost:3000/img/methiEv.jpg">
+                                            <div class="ct_bx_quant_itm_cart">
+
+                                                <div class="for_cart_qt">
+                                                    <div class="bx_rem_field_qt_num bx_op">
+
+                                                        <ion-icon class="remove_field_num md hydrated" name="remove"
+                                                            role="img" aria-label="remove"></ion-icon>
+                                                    </div>
+                                                    <input readonly="" type="text" value="1">
+                                                    <div class="bx_ad_field_qt_num bx_op">
+                                                        <ion-icon class="add_field_num md hydrated" name="add"
+                                                            role="img" aria-label="add"></ion-icon>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="ct_bx_food_groc_casrt">
+                                                <span class="com_name">EVEREST</span>
+                                                <h4>Everest kasuri Methi 25g</h4>
+                                                <div class="ct_bx_related_itm_dt_cart2">
+                                                    <span class="unit"></span>
+
+
+
+
+                                                    <div class="ct_filed_selct_qt_un">
+                                                        <div class="ct_set_qt_for_groc">
+                                                            <div class="field_bx_qt">
+                                                                <p>89</p>
+                                                                <span>undefined</span>
+
+                                                            </div>
+                                                            <ul class="not_tog_dpd">
+                                                                <li>
+                                                                    <p>89</p>
+                                                                    <span>₹ undefined</span>
+                                                                </li>
+                                                                <li>
+                                                                    <p>50</p>
+                                                                    <span>₹ 168</span>
+                                                                </li>
+                                                            </ul>
+
+                                                        </div>
+                                                        <div class="ct_bx_drop">
+                                                            <ion-icon name="chevron-down-outline" role="img"
+                                                                class="md hydrated" aria-label="chevron down outline">
+                                                            </ion-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="price_am_cart_fd2"><del>₹78</del> <span>₹89</span> </p>
+                                                <span class="saved_am">you saved ₹ 140 </span>
+
+                                                <span class="id_groc">undefined</span>
+
+
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <p class="stk_groc_cart">8</p>
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline" role="img" class="md hydrated"
+                                                    aria-label="trash outline"></ion-icon>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                    {{!-- <li class="main_li_cart_fd_lis groc_bx">
+
+                                        <div class="ct_itm_food_cart">
+
+                                            <div class="ct_type_fd_cart_itm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18"
+                                                    height="18" viewBox="0 0 172 172" style=" fill:#000000;">
+                                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                        stroke-linecap="butt" stroke-linejoin="miter"
+                                                        stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                                        font-family="none" font-weight="none" font-size="none"
+                                                        text-anchor="none" style="mix-blend-mode: normal">
+                                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                        <g fill="#099f49">
+                                                            <path
+                                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                                            </path>
+                                                            <path
+                                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                                            </path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+
+                                            </div>
+                                            <img class="main_cart_img2" src='../img/img_oil.jpg'>
+                                            <div class="ct_bx_quant_itm_cart">
+
+                                                <div class="for_cart_qt">
+                                                    <div class="bx_rem_field_qt_num bx_op">
+
+                                                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                                                    </div>
+                                                    <input readonly type="text" value="1">
+                                                    <div class="bx_ad_field_qt_num bx_op">
+                                                        <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="ct_bx_food_groc_casrt">
+                                                <span class="com_name">Fortune</span>
+                                                <h4>Soya been low fat oil </h4>
+                                                <p class="price_am_cart_fd2"><del>₹ 237</del> <span>₹ 204</span> </p>
+                                                <span class='id_groc'>1</span>
+
+                                                <div class="ct_bx_related_itm_dt_cart2">
+                                                    <span class="unit">1k</span>
+                                                    <div class="ct_filed_selct_qt_un">
+                                                        <div class="ct_set_qt_for_groc">
+                                                            <div class="field_bx_qt">
+                                                                <p>1</p>
+                                                                <span> 11</span>
+
+                                                            </div>
+                                                            <ul class='not_tog_dpd'>
+                                                                <li>
+                                                                    <p>1kg</p>
+                                                                    <span>22</span>
+                                                                </li>
+                                                                <li>
+                                                                    <p>1</p>
+                                                                    <span>22</span>
+                                                                </li>
+                                                            </ul>
+
+                                                        </div>
+                                                        <div class="ct_bx_drop">
+                                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ct_oferr">
+                                                        <span class="material-icons-outlined">
+                                                            local_offer
+                                                        </span>
+                                                        <p>9% off</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <p class="stk_groc_cart">${stockGroc}</p>
+
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline" role="img" class="md hydrated"
+                                                    aria-label="trash outline"></ion-icon>
+                                            </div>
+                                        </div>
+
+                                    </li> --}}
+                                    <div class="empty_cart for_ek_groc_cart">
+                                        <div class="ct_bx_inner_icon_cart">
+
+                                            <div class="ct_bx1_emp">
+                                                <ion-icon name="alert-outline"></ion-icon>
+                                            </div>
+                                            <div class="ct_bx2_emp">
+                                                <ion-icon name="basket-outline"></ion-icon>
+                                            </div>
+                                        </div>
+
+                                        <div class="ct_bx_flex_msg_cart">
+                                            <h3>Your ERAK basket is empty</h3>
+                                        </div>
+                                        <p>fill up now with
+                                        </p>
+                                        <a href="/essentials" class="fd_btn_order"><span>essentials</span></a>
+                                    </div>
+
+                                </ul>
+                                <ul class="bx_evt_cart_item">
+                                    <div class="loader_cart for_ek_fd_cart_load loading_spinner_login2">
+
+                                    </div>
+                                    <li class="main_li_cart_fd_lis">
+
+                                        <div class="ct_itm_food_cart">
+                                            <div class="ct_type_fd_cart_itm"> <img
+                                                    src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png">
+                                            </div>
+                                            <a class="img_a_cart"
+                                                href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpdGVtIjp7ImNvb2siOiIuLi9pbWcvYnV0dGVyQ2hpY2tlbi5qcGciLCJ0eXBlIjoibm9uLXZlZyIsInRpbWUiOiI0NSBtaW4iLCJpbWciOiIuLi9pbWcvbXV0dGVyUGFubmVyLmpwZyIsIm5hbWUiOiJNdXR0ZXIgUGFubmVyIiwib2ZmZXIiOjEyLCJpZCI6ImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUprWVhSaElqcDdJbWx0WnlJNklpNHVMMmx0Wnk5aWFYSjVZVzVwWDJsdFp5NXdibWNpTENKdVlXMWxJam9pUVd4dmJ5QlFZWEpoZEdoaE1pSXNJbkpoZEdVaU9qUXVOQ3dpY0hKcFkyVWlPaUkzT1NJc0ltTnZiMnNpT2lJdUxpOXBiV2N2WW1seWVXRnVhVjlwYldjdWNHNW5JaXdpZEhsd1pTSTZJblpsWnlJc0ltOW1abVZ5SWpvaU1UUWlMQ0ptWkVsdWMybGtaU0k2V3lKdFlYSnBibUYwWldRZ1kyaHBhMlZ1SWl3aVozSmhkbmtpTENKMWMyVnlJRzFoYm5WaGJDSmRMQ0p5WlhacFpYY2lPbHRkTENKeVlYUnBibWR6SWpwYmV5SnpkR0Z5SWpvMUxDSnlZWFJwYm1keklqb3hPWDBzZXlKemRHRnlJam8wTENKeVlYUnBibWR6SWpveE4zMHNleUp6ZEdGeUlqb3pMQ0p5WVhScGJtZHpJam80ZlN4N0luTjBZWElpT2pJc0luSmhkR2x1WjNNaU9qVjlMSHNpYzNSaGNpSTZOQ3dpY21GMGFXNW5jeUk2TTMxZGZTd2lhV0YwSWpveE5qRTNOekk0TWpFemZRLnZCb2YzdkpIblktYTlLaUQ3Sng1aUF5dTFxR0xPTDlkWVFCYUFZQmxHQ28iLCJyYXRpbmdzIjpbeyJzdGFyIjo1LCJyYXRpbmdzIjoxMH0seyJzdGFyIjo0LCJyYXRpbmdzIjo1fSx7InN0YXIiOjMsInJhdGluZ3MiOjJ9LHsic3RhciI6MiwicmF0aW5ncyI6MX0seyJzdGFyIjoxLCJyYXRpbmdzIjowfV0sInJldmlldyI6W10sInByaWNlIjoiMTY1Iiwic3RvY2siOiI4IiwiZmRJbnNpZGUiOm51bGwsInVuaXQiOm51bGx9LCJpYXQiOjE2MjAzOTYyOTV9.gubycjVXd-VUS_dx2qDEerOyro8scABFBYqNp62zEvY&amp;qt=1&amp;sk=4&amp;cid=1">
+
+                                                <img class="main_cart_img" src="../img/chicken_curry.jpg">
+                                            </a>
+                                            <div class="ct_bx_quant_itm_cart">
+
+                                                <div class="for_cart_qt">
+                                                    <div class="bx_rem_field_qt_num bx_op">
+
+                                                        <ion-icon class="remove_field_num md hydrated" name="remove"
+                                                            role="img" aria-label="remove"></ion-icon>
+                                                    </div>
+                                                    <input readonly="" type="text" value="4">
+                                                    <div class="bx_ad_field_qt_num bx_op">
+                                                        <ion-icon class="add_field_num md hydrated" name="add"
+                                                            role="img" aria-label="add"></ion-icon>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <span class="stk_cart">4</span>
+
+                                            <div class="flex_bx_cart_itm">
+                                                <h4>Tajdare Hyderabadi Dum Biryani</h4>
+                                                <div class="ct_bx_ratings">
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star-half"
+                                                            role="img" aria-label="star half"></ion-icon>
+                                                    </span>
+                                                </div>
+                                                <div class="ct_bx_hw_cook">
+                                                    <a href="../img/chilliChick.jpg">How to cook?</a>
+                                                </div>
+
+                                                <p class="price_am_cart_fd2"><del>₹ 660</del> <span>₹ 581</span> </p>
+                                                <span class="saved_am">you saved ₹ 140 </span>
+
+                                                <div class="ct_bx_related_itm_dt_cart">
+
+                                                    <div class="ct_time_takes">
+                                                        <ion-icon name="alarm-outline" role="img" class="md hydrated"
+                                                            aria-label="alarm outline"></ion-icon>
+
+                                                        <p>Cook Just in <strong>45 min</strong></p>
+                                                    </div>
+                                                    {{!-- <div class="ct_oferr">
+                                                        <span class="material-icons-outlined">
+                                                            local_offer
+                                                        </span>
+                                                        <p>12% off</p>
+                                                    </div>
+                                                </div> --}}
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline" role="img" class="md hydrated"
+                                                    aria-label="trash outline"></ion-icon>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </li>
+                                    {{!-- <li class="main_li_cart_fd_lis">
+
+                                        <div class="ct_itm_food_cart">
+                                            <div class="ct_type_fd_cart_itm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18"
+                                                    height="18" viewBox="0 0 172 172" style=" fill:#000000;">
+                                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                        stroke-linecap="butt" stroke-linejoin="miter"
+                                                        stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                                        font-family="none" font-weight="none" font-size="none"
+                                                        text-anchor="none" style="mix-blend-mode: normal">
+                                                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                        <g fill="#099f49">
+                                                            <path
+                                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                                            </path>
+                                                            <path
+                                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                                            </path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+
+                                            </div>
+                                            <a class="img_a_cart"
+                                                href="/product?item=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImNvb2siOiIuLi9pbWcvYmlyeWFuaV9pbWcucG5nIiwiZmRJbnNpZGUiOlsibWFyaW5hdGVkIGNoaWtlbiIsImdyYXZ5IiwidXNlciBtYW51YWwiXSwiaW1nIjoiLi4vaW1nL2JpcnlhbmlfaW1nLnBuZyIsIm5hbWUiOiJBbG9vIFBhcmF0aGEiLCJvZmZlciI6IjE0IiwicHJpY2UiOiI3OSIsInJhdGluZ3MiOlt7InJhdGluZ3MiOjE5LCJzdGFyIjo1fSx7InJhdGluZ3MiOjE3LCJzdGFyIjo0fSx7InJhdGluZ3MiOjgsInN0YXIiOjN9LHsicmF0aW5ncyI6NSwic3RhciI6Mn0seyJyYXRpbmdzIjozLCJzdGFyIjo0fV0sInJlcXVpcmVkR3JvYyI6W3siY2FsbE5hbWUiOiJtYWRodXJzdWdhciIsImNvbSI6Ik1hZGh1ciIsImltZyI6Ii4uL2ltZy9TdWdhci5qcGciLCJuYW1lIjoiU3VnYXIiLCJvZmZlciI6IjEwIiwicHJpY2UiOiI4NiIsInN0b2NrIjoiOSIsInR5cGUiOiJ2ZWciLCJ1bnRJbnNpZGUiOlt7InVuaXQiOiIxa2ciLCJjb3N0IjoiNTAifSx7InVuaXQiOiIya2ciLCJjb3N0IjoiMTAwIn1dfV0sInJldmlldyI6W10sInR5cGUiOiJ2ZWcifSwiaWF0IjoxNjE3OTE0MzI2fQ.XUI8PeWLlo23VS9KSvEYzOlnISc6dPKz0sh_iC2s7bI&amp;qt=1&amp;sk=3&amp;cid=1">
+
+                                                <img class="main_cart_img" src="../img/butterChicken.jpg">
+                                            </a>
+                                            <div class="ct_bx_quant_itm_cart">
+
+                                                <div class="for_cart_qt">
+                                                    <div class="bx_rem_field_qt_num bx_op">
+
+                                                        <ion-icon class="remove_field_num md hydrated" name="remove"
+                                                            role="img" aria-label="remove"></ion-icon>
+                                                    </div>
+                                                    <input readonly="" type="text" value="3">
+                                                    <div class="bx_ad_field_qt_num bx_op">
+                                                        <ion-icon class="add_field_num md hydrated" name="add"
+                                                            role="img" aria-label="add"></ion-icon>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <span class="stk_cart">10</span>
+
+                                            <div class="flex_bx_cart_itm">
+                                                <h4>Hydraadi Dum biryani</h4>
+                                                <div class="ct_bx_ratings">
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+
+                                                    <span>
+                                                        <ion-icon class="filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+
+                                                    <span>
+                                                        <ion-icon class="not_filed_rating_itm md hydrated" name="star"
+                                                            role="img" aria-label="star"></ion-icon>
+                                                    </span>
+                                                </div>
+                                                <div class="ct_bx_hw_cook">
+                                                    <a href="../img/butterChicken.jpg">How to cook?</a>
+                                                </div>
+
+                                                <p class="price_am_cart_fd2"><del>₹ 237</del> <span>₹ 204</span> </p>
+
+                                                <div class="ct_bx_related_itm_dt_cart">
+
+                                                    <div class="ct_time_takes">
+                                                        <ion-icon name="alarm-outline" role="img" class="md hydrated"
+                                                            aria-label="alarm outline"></ion-icon>
+
+                                                        <p>10 min</p>
+                                                    </div>
+                                                    <div class="ct_oferr">
+                                                        <span class="material-icons-outlined">
+                                                            local_offer
+                                                        </span>
+                                                        <p>14% off</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline" role="img" class="md hydrated"
+                                                    aria-label="trash outline"></ion-icon>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </li> --}}
+                                    {{!-- <li class="main_li_cart_fd_lis">
+
+                                        <div class="ct_itm_food_cart">
+                                            <div class="ct_type_fd_cart_itm">
+                                                <img
+                                                    src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
+
+                                            </div>
+                                            <a class="img_a_cart" href="#">
+
+                                                <img class="main_cart_img" src='../img/biryani_img.png'>
+                                            </a>
+                                            <h4>Hydrabadi Dum Biryani</h4>
+                                            <div class="ct_bx_ratings">
+                                                <span>
+                                                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                                                </span>
+
+                                                <span>
+                                                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                                                </span>
+
+                                                <span>
+                                                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                                                </span>
+
+
+                                                <span>
+                                                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                                                </span>
+
+                                                <span>
+                                                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                                                </span>
+                                            </div>
+                                            <div class="ct_bx_hw_cook">
+                                                <a href="#">How to cook?</a>
+                                            </div>
+
+                                            <p class="price_am_cart_fd"><del>₹ 230</del> <span>₹ 200</span> </p>
+
+
+
+
+
+
+                                        </div>
+                                        <span class='stk_cart'>10</span>
+                                        <div class="ct_bx_quant_itm_cart">
+
+                                            <div class="for_cart_qt">
+                                                <div class="bx_rem_field_qt_num bx_op">
+
+                                                    <ion-icon class="remove_field_num" name="remove"></ion-icon>
+                                                </div>
+                                                <input readonly type="text" value="1">
+                                                <div class="bx_ad_field_qt_num bx_op">
+                                                    <ion-icon class="add_field_num" name="add"></ion-icon>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_related_itm_dt_cart">
+
+                                            <div class="ct_time_takes">
+                                                <ion-icon name="alarm-outline"></ion-icon>
+
+                                                <p>10 min</p>
+                                            </div>
+                                            <div class="ct_oferr">
+                                                <img src="../img/offer.png" alt="">
+                                                <p>13% off</p>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="ct_bx_act_cart_itm">
+
+
+                                            <div class="remove_fd_itm_ct">
+                                                <ion-icon name="trash-outline"></ion-icon>
+
+                                            </div>
+
+                                        </div>
+
+                                        background-image: linear-gradient(to right,rgb(0, 255, 200),rgb(51, 251, 224));
+
+                                    </li> --}}
+                                    <div class="empty_cart for_ek_food_cart">
+                                        <div class="ct_bx_inner_icon_cart">
+                                            <div class="ct_bx1_emp">
+                                                <ion-icon name="alert-outline"></ion-icon>
+                                            </div>
+                                            <div class="ct_bx2_emp">
+                                                <ion-icon name="basket-outline"></ion-icon>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="ct_bx_flex_msg_cart">
+                                            <h3>Your ERAK basket is empty</h3>
+                                        </div>
+                                        <p>fill up now with
+                                        </p>
+                                        <a href="/essentials" class="fd_btn_order">
+                                            <sp>Super</sp><span>grocery</span>
+                                        </a>
+                                    </div>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="ct_bx_grocery_required">
+                            {{!-- <div class="ct_bx_view_all_food2">
+                                <ion-icon name="arrow-back-outline"></ion-icon>
+                                <a class="view_all_pack_recom" href="/foods">View all</a>
+
+                            </div> --}}
+                            <h3>You may also need </h3>
+                            <div class="ct_bx_all_groc_required">
+                                <div class="loader_cart for_grocery loading_spinner_login2">
+
+                                </div>
+                                <div class="ct_bx_foods_req">
+                                    <div class="itm_food_list_ek added_itm_ek_fd for_groc_itm itm_not_selected"
+                                        id="itm_food_list_ek">
+                                        <div class="ct_offer_box_cook2">
+                                            <span>20%</span>
+                                            <p> off</p>
+                                        </div>
+                                        <div class="ct_img_res_main">
+                                            <img class="main_img_groc_itm" src="../img/img_oil.jpg">
+
+                                        </div>
+                                        <span
+                                            class="id_groc">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImNvbSI6IkZPUlRVTkUiLCJncm91cCI6InZlZyIsImltZyI6Ii4uL2ltZy9vbmlvbi5qcGciLCJuYW1lIjoic295YSBiZWVuIG9pbCBsb3cgZmF0ICIsIm9mZmVyIjpudWxsLCJwcmljZSI6IjE1NSIsInVuaXRJbnNpZGUiOlt7InByaWNlIjoiMTU1IiwidW5pdCI6IjFMIn0seyJwcmljZSI6IjMxMCIsInVuaXQiOiIyTCJ9XX0sImlhdCI6MTYxNzk5MjY3NH0.TueZbOAPC4MHXilKURSfQez7u3rMFOCAvqENoniJkfM</span>
+
+                                        <div class="ct_type_fd_cart_itm2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18"
+                                                height="18" viewBox="0 0 172 172" style=" fill:#000000;">
+                                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none"
+                                                    font-weight="none" font-size="none" text-anchor="none"
+                                                    style="mix-blend-mode: normal">
+                                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                                    <g fill="#099f49">
+                                                        <path
+                                                            d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+                                                        </path>
+                                                        <path
+                                                            d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="ct_dt_tm_food_res">
+                                            <span>FORTUNE</span>
+                                            <h4>soya been oil low fat </h4>
+
+
+                                        </div>
+
+                                        <div class="ct_set_qt_for_groc">
+                                            <div class="field_bx_qt">
+                                                <p>1kg</p>
+                                                <span>₹ undefined</span>
+
+                                            </div>
+                                            <div class="ct_bx_drop">
+                                                <ion-icon name="chevron-down-outline" role="img" class="md hydrated"
+                                                    aria-label="chevron down outline"></ion-icon>
+                                            </div>
+                                            <ul class="not_tog_dpd">
+                                                <li>
+                                                    <p>1kg</p>
+                                                    <span>₹ undefined</span>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                        <p class="price_food"><del>₹ 155</del><span>₹ 124</span></p>
+
+                                        <span class="catId_groc">1</span>
+                                        <span class="stk_groc">1</span>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="check_bx_if_view">
+                            <input id="viewd_groc" type="checkbox">
+                            <label for="viewd_groc">Please click to confirm.</label>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+                <div class="ct_subotatal">
+
+                    <div class="ct_remove_bill_pop_up">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </div>
+
+                    <h3>Orders bill</h3>
+
+                    <div class="ct_order_confirm">
+                        <div class="list_itm_sub_cart block_1_charge">
+                            <p>Total Amount:</p>
+                            <span>&mdash;</span>
+
+                        </div>
+                        {{!-- <div class="list_itm_sub_cart block_1_charge">
+                            <p>Include Of Offer:</p>
+                            <span><del>₹ 1,034</del>₹ 834</span>
+
+                        </div> --}}
+
+                        <div class="list_itm_sub_cart block_2_charge">
+                            <p>Delivery Charge:</p>
+                            <span>&mdash;</span>
+
+                        </div>
+                        <div class="list_itm_sub_cart to_pay_cahge to_pay_cahge1">
+                            <p>Amount To Pay:</p>
+                            <span> <b>₹</b>
+                                <c>&mdash;</c>
+                            </span>
+
+                        </div>
+
+                    </div>
+                    <div class="ct_suggested_bx">
+                        <h4>Any Suggestion?</h4>
+                        <textarea name="suggested_msg" cols="42" placeholder="We will pass it on with this order"
+                            rows="1"></textarea>
+                    </div>
+                    {{!-- <div class="ct_other_verif_orders">
+                        <div class="ct_verif_bx">
+                            <input id="check_deliv" type="checkbox">
+                            <label for="check_deliv" class="cash_on_deliv">Only cash on delivery </label>
+                        </div>
+
+
+
+                    </div> --}}
+                    <div class="ct_bx_info_confirm">
+                        <ion-icon name="alert-outline"></ion-icon>
+                        <p>Once clicked for new order cannot be canceled, this delivery.</p>
+
+                    </div>
+                    <div class="ct_bxc_hide_checkout">
+
+                    </div>
+                    <div class="ct_btns_group_check_ek">
+
+                        <a href='#' class="for_checkout_order check_out_btn_order for_cart_checkout 
+                        ">
+                            <p>Order Now <ion-icon name="arrow-forward-outline"></ion-icon>
+                            </p>
+                        </a>
+                        <a class="check_out_btn_order for_cart_checkout for_conf_order">
+                            <p>New Order
+                            </p>
+                        </a>
+                        <button class="check_out_btn_order for_cart_cancel">
+                            <p>Cancel order
+                            </p>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+    </section>
+    {{!-- <div class="ct_bx_test_crousel">
+        <div class="ct_bx_inn">
+            <div>1</div>
+            <div>1</div>
+
+            <div>1</div>
+
+            <div>1</div>
+
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+
+        </div>
+    </div> --}}
+
+    <section class="recomended_cart for_items_recm">
+        <div class="ct_bx_view_all_food">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            <a class="view_all_pack_recom" href="/foods">View all</a>
+
+        </div>
+
+        <h2>recommended</h2>
+        <div class="ct_ek_fod_cart_recom">
+            <div class="ct_remcombx_pf_ct">
+                <div class="ct_bx_recc_cart_load_full">
+                    <div class="loader_cart for_ek_fd_cart_load_rec_load loading_spinner_login2">
+
+                    </div>
+                </div>
+                <div class="crousel">
+                    <div class="inner_slide">
+
+                    </div>
+
+                </div>
+                <div class="ct_bx_buttons_actions">
+                    <button id="prev_crousel" class="back_acc">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </button>
+                    <button id="forw" class="forward_acc">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+    <div class="ct_bx_messgae for_cancelation">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="rgb(0, 132, 255)" stroke-width="6" stroke-miterlimit="10"
+                cx="65.1" cy="65.1" r="62.1" />
+            <polyline class="path check" fill="none" stroke="rgb(0, 132, 255)" stroke-width="6" stroke-linecap="round"
+                stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+        </svg>
+        <p class="success">Your order has been successfully canceled.Order back soon
+        <p>
+
+    </div>
+    <div class="ct_bx_messgae for_success_order">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="rgb(0, 132, 255)" stroke-width="6" stroke-miterlimit="10"
+                cx="65.1" cy="65.1" r="62.1" />
+            <polyline class="path check" fill="none" stroke="rgb(0, 132, 255)" stroke-width="6" stroke-linecap="round"
+                stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+        </svg>
+        <p class="success">Your order has been successfully placed
+        <p>
+
+    </div>
+    <div class="ct_bx_overlay_cart for_messg_ov">
+
+        <div class="ct_bx_message_for_confim_cancel">
+            <div class="ct_flex_sg">
+                <ion-icon class="al_mcc" name="alert-circle-outline"></ion-icon>
+                <h3>Are you sure to cancel this order ?</h3>
+            </div>
+            <div class="ct_btns">
+                <button class="cancel_order_btn_no">Yes.</button>
+                <button class="cancel_order_btn_yes">No.</button>
+            </div>
+            <div class="remove_msg_conf_cancel">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+
+        </div>
+    </div>
+   
+    <div class="ct_bx_overlay_cart for_acc_ov">
+        <div class="loader_cart for_cart_load_full loading_spinner_login2">
+
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+            authDomain: "test-2ecee.firebaseapp.com",
+            projectId: "test-2ecee",
+            storageBucket: "test-2ecee.appspot.com",
+            messagingSenderId: "390719540957",
+            appId: "1:390719540957:web:04e268380d6e77c4241534",
+            measurementId: "G-8Z1P10SQ9T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../others/js/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="../js/jQery.js"></script>
+
+    <script src='/socket.io/socket.io.js'></script>
+    <script src="../js/msg.js"></script>
+
+</body>
+
+</html>
