@@ -230,10 +230,12 @@ app.get('/foods', (req, res) => {
     
   let obj=  {cook:"../img/biryani_img.png",
 fdInside:["marinated chiken","gravy","user manual"],
-img:"../img/biryani_img.png",
-name:"Aloo Paratha",
+img:"../img/mCur.jpg",
+name:"Tajdare Royal Mutton Curry",
 offer:"14",
-price:"79",
+Iup:'140',
+unitInit:[{unit:'1kg',price:140},{unit:'2kg',price:269},{unit:'no chiken curry',price:null}],
+price:"₹ 449",
 ratings:[{ratings:19,star:5},{ratings:17,star:4},{ratings:8,star:3},{ratings:5,star:2},
 {ratings:3,star:4}],
 requiredGroc:[{
@@ -251,7 +253,7 @@ untInside:[{unit:'1kg',cost:"50"},{unit:'2kg',cost:'100'}],
 review:[],
 type:'veg'}
 
-var token = jwt.sign({ data:obj}, 'item');
+var token = jwt.sign({ item:obj}, 'item');
 console.log(token)
 
  
@@ -324,7 +326,14 @@ app.get('/account', (req, res) => {
 
     }
 })
-
+app.get('/account/editAccount', (req, res) => {
+    
+    res.render('myaccount')
+})
+app.get('/delivery', (req, res) => {
+    
+    res.render('deliv')
+})
 app.get('/account/editAccount', (req, res) => {
     
         res.render('myaccount')

@@ -23,31 +23,300 @@ let allFd3 = 0
 let addedRecItm = []
 let onGolen = 1
 let a2 = 0
+let remM = document.querySelector('.ct_bx_remove_stk_msg')
+if (remM !== null) {
+    remM.addEventListener('click', () => {
+
+        document.querySelector('.ct_error_stock.for_ek_fd').style.display = 'none'
+    })
+}
+let qtsuper = document.querySelector('.ct_bx_qty_inner')
+if (qtsuper !== null) {
+    document.querySelector('html').addEventListener('click', (e) => {
+        let bx = e.target.closest('.ct_bx_qty_inner')
+        let bxA = e.target.closest('.ct_bx_units_item li')
+
+        if (bxA !== null) {
+            let unit = bxA.childNodes[1]
+            document.querySelectorAll('.ct_bx_weight_qt span')[1].innerText = unit.innerText
+            let token11 = window.location.search.split('?')[1].split('=')[1].split('&')[0]
+
+            let jwt11 = parseJwt(token11)
+            let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
+
+            if (!bxA.classList.value.split(' ').includes('othUn')) {
+                let curP = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText
+
+
+
+                let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                qt = parseFloat(qt)
+                curP = parseFloat(curP.split('₹')[1].split(',').join(''))
+                let selP = document.querySelector('.seleted_unit_price').innerText
+                console.log(curP, selP)
+                selP = parseFloat(selP)
+                let fnP = (curP / qt) - selP
+                let fdP = parseFloat(bxA.childNodes[3].innerText.split('₹')[1])
+                console.log(fnP)
+
+                let fnPr = fnP + fdP
+                console.log(fnPr)
+
+                if (qt !== 1) {
+                    fnPr = qt * (fnPr)
+                }
+                console.log(fnPr)
+
+                fnPr = fnPr.toLocaleString()
+                console.log(document.querySelector('.ct_bx_total_ammount span'))
+                document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = '₹  ' + (fnPr)
+
+
+                if (allItm !== null) {
+                    if (allItm.length !== 0) {
+                        allItm.forEach((cur, i) => {
+                            let nameF = cur.data.item.name.split(' ').join('').toLowerCase().trim()
+
+                            if (nameF === jwt11.item.name.split(' ').join('').toLowerCase().trim()) {
+                                cur.selP = bxA.childNodes[3].innerText.split('₹')[1]
+                                cur.itemUnit = unit.innerText
+                                localStorage.setItem('foodsAdded', JSON.stringify(allItm))
+                            }
+                        })
+                    }
+                    document.querySelector('.seleted_unit_price').innerText = bxA.childNodes[3].innerText.split('₹')[1]
+
+                }
+
+            } else {
+                let token11 = window.location.search.split('?')[1].split('=')[1].split('&')[0]
+
+                let jwt11 = parseJwt(token11)
+                let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
+                if (allItm !== null) {
+                    if (allItm.length !== 0) {
+                        allItm.forEach((cur, i) => {
+                            let nameF = cur.data.item.name.split(' ').join('').toLowerCase().trim()
+
+                            if (nameF === jwt11.item.name.split(' ').join('').toLowerCase().trim()) {
+                                cur.selP = 0
+                                cur.itemUnit = unit.innerText
+                                localStorage.setItem('foodsAdded', JSON.stringify(allItm))
+                            }
+                        })
+                    }
+                }
+                let curP = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText
+
+                let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                qt = parseFloat(qt)
+                console.log(curP)
+                curP = parseFloat(curP.split('₹')[1].split(',').join(''))
+                let selP = document.querySelector('.seleted_unit_price').innerText
+                selP = parseFloat(selP)
+                console.log(selP, curP)
+                let fnP = (curP / qt) - selP
+                if (qt !== 1) {
+                    fnP = qt * (fnP)
+                }
+                fnP = fnP.toLocaleString()
+                document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = '₹  ' + (fnP)
+
+                document.querySelector('.seleted_unit_price').innerText = 0
+            }
+
+        }
+        if (bx !== null) {
+
+            if (bx.classList.value.split(' ').includes('nottog')) {
+                bx.classList.add('tog')
+                bx.classList.remove('nottog')
+                document.querySelectorAll('.ct_bx_units_item ul').forEach(cur => {
+                    cur.style.display = 'block'
+                })
+                document.querySelector('.ct_bx_dwn').style.display = 'none'
+
+                document.querySelector('.ct_bx_up').style.display = 'block'
+            } else {
+                bx.classList.remove('tog')
+                document.querySelector('.ct_bx_dwn').style.display = 'block'
+
+                document.querySelector('.ct_bx_up').style.display = 'none'
+                bx.classList.add('nottog')
+                document.querySelectorAll('.ct_bx_units_item ul').forEach(cur => {
+                    cur.style.display = 'none'
+                })
+            }
+        } else {
+            qtsuper.classList.remove('tog')
+            document.querySelector('.ct_bx_dwn').style.display = 'block'
+
+            document.querySelector('.ct_bx_up').style.display = 'none'
+            qtsuper.classList.add('nottog')
+            document.querySelectorAll('.ct_bx_units_item ul').forEach(cur => {
+                cur.style.display = 'none'
+            })
+        }
+    })
+}
+function is_touch_enabled() {
+    return ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
+}
+
+if (is_touch_enabled()) {
+    document.querySelector('.ct_bx_buttons_actions').style.display = 'none'
+    document.querySelector('.crousel').style.marginLeft = '0%'
+    document.querySelector('.crousel').style.width = '100%'
+    document.querySelector('.inner_slide').style.marginLeft = '30px'
+
+    document.querySelector('.inner_slide').style.width = '100%'
+
+}
+document.querySelector('html').addEventListener('click', (e) => {
+    let bxOrder = e.target.closest('.main_li_itm_order')
+    let order = e.target.closest('.ct_all_delivery_status .main_ul_orders .orders')
+    if (order !== null) {
+        let inner = order.childNodes[1].childNodes[3]
+        //   order.classList.add('tog')
+        inner.style.display = 'block'
+        console.log(order.childNodes[1].childNodes[1].childNodes[1])
+    }
+    if (bxOrder) {
+        console.log(bxOrder.childNodes[1].childNodes)
+        if (bxOrder.classList.value.split(' ').includes('notselected_order_itm')) {
+            if (!e.target.closest('.ct_select_dat')) {
+                if (document.querySelector('.selected_order_itm') !== null) {
+                    document.querySelector('.selected_order_itm').classList.add('notselected_order_itm')
+                    document.querySelector('.selected_order_itm').classList.remove('selected_order_itm')
+
+                }
+                if (bxOrder.childNodes[1].childNodes[1].classList.value.includes('ct_bx_if_new')) {
+                    bxOrder.childNodes[1].childNodes[1].style.display = 'none'
+
+                }
+
+                bxOrder.classList.remove('notselected_order_itm')
+                bxOrder.classList.add('selected_order_itm')
+            }
+        } else {
+            if (!e.target.closest('.ct_select_dat')) {
+                if (document.querySelector('.selected_order_itm') !== null) {
+                    document.querySelector('.selected_order_itm').classList.add('selected_order_itm')
+                    document.querySelector('.selected_order_itm').classList.remove('notselected_order_itm')
+
+                }
+
+                bxOrder.classList.remove('selected_order_itm')
+                bxOrder.classList.add('notselected_order_itm')
+            }
+        }
+        //  bxOrder.childNodes[3].style.display='block'
+    }
+    if (e.target.closest('.ct_bx_dt_sle_date') !== null) {
+        if (!e.target.closest('.ct_select_dat')) {
+
+            let selectedBx = document.querySelector('.ct_bx_dt_sle_date').classList
+
+            if (selectedBx.value.split(' ').includes('tog_date_select')) {
+                let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
+        `
+                document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
+
+                document.querySelector('.ct_sld_icon_order').innerHTML = icon
+                document.querySelector('.ct_select_dat').style.display = 'none'
+
+                selectedBx.remove('tog_date_select')
+                selectedBx.add('nottog_date_select')
+            } else {
+                let icon = `                    <ion-icon name="chevron-up-outline"></ion-icon>
+        `
+                document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
+
+                document.querySelector('.ct_sld_icon_order').innerHTML = icon
+                document.querySelector('.ct_select_dat').style.display = 'block'
+
+                selectedBx.add('tog_date_select')
+                selectedBx.remove('nottog_date_select')
+            }
+        }
+
+    } else {
+        if (e.target.closest('.ct_select_dat') !== null) {
+
+            let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
+    `
+            document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
+
+            document.querySelector('.ct_sld_icon_order').innerHTML = icon
+            document.querySelector('.ct_select_dat').style.display = 'none'
+            document.querySelector('.ct_select_dat').style.display = 'none'
+
+            document.querySelector('.ct_bx_dt_sle_date').classList.remove('tog_date_select')
+            document.querySelector('.ct_bx_dt_sle_date').classList.add('nottog_date_select')
+        }
+    }
+
+})
 if (document.querySelector('.authInp') !== null) {
     let user = getCookie('user')
     user = JSON.parse(user)
     console.log(user)
     document.querySelector('.authInp').value = user.authUser
 }
-if(document.querySelector('.ct_bx_locate_bill')!==null){
-    document.querySelector('.ct_bx_locate_bill').addEventListener('click',()=>{
-   let y4= document.querySelector('.list_food_cart').getBoundingClientRect().height
+if (document.querySelector('.ct_bx_locate_bill') !== null) {
+    let fd = JSON.parse(localStorage.getItem('foodsAdded'))
+    let groc = JSON.parse(localStorage.getItem('grocFoodListCart'))
+    if (fd.length === 0) {
+        document.querySelector('.ct_bx_locate_bill').addEventListener('click', () => {
+            let y4 = document.querySelector('.for_ek_food_cart').getBoundingClientRect().height
 
- scrollTo(0,(y4+200))
- document.querySelector('.ct_bx_locate_bill').style.position='relative'
-    })
+            scrollTo(0, (y4 + 330))
+            document.querySelector('.ct_bx_locate_bill').style.position = 'relative'
+        })
+    }
+    if (groc.length === 0) {
+        document.querySelector('.ct_bx_locate_bill').addEventListener('click', () => {
+            let y4 = document.querySelector('.for_ek_groc_cart').getBoundingClientRect().height
+
+            scrollTo(0, (y4 + 330))
+            document.querySelector('.ct_bx_locate_bill').style.position = 'relative'
+        })
+    }
+    if (fd.length > 0) {
+        document.querySelector('.ct_bx_locate_bill').addEventListener('click', () => {
+            let y4 = document.querySelector('.list_food_cart').getBoundingClientRect().height
+            let y3 = document.querySelector('.ct_bx_all_groc_required').getBoundingClientRect().height
+
+            scrollTo(0, (y4 + y3 + 330))
+            document.querySelector('.ct_bx_locate_bill').style.position = 'relative'
+        })
+
+    }
+    if (fd.length === 0 && groc.length > 0) {
+        document.querySelector('.ct_bx_locate_bill').addEventListener('click', () => {
+            let y4 = document.querySelector('.list_food_cart').getBoundingClientRect().height
+
+            scrollTo(0, (y4 + 330))
+
+            document.querySelector('.ct_bx_locate_bill').style.position = 'relative'
+        })
+    }
 }
-if(document.querySelector('.body_cart')!==null){
-    if(window.innerWidth<400){
-        document.querySelector('.to_pay_cahge span c').style.fontSize='16px'
-        
-        document.querySelector('.ct_suggested_bx h4, .block_2_charge, .block_1_charge span').style.fontSize='12px'
-       
-        document.querySelector('.list_itm_sub_cart span').style.fontSize='12px'
+
+
+if (document.querySelector('.body_cart') !== null) {
+    if (window.innerWidth < 400) {
+        document.querySelector('.to_pay_cahge span c').style.fontSize = '16px'
+
+        document.querySelector('.ct_suggested_bx h4, .block_2_charge, .block_1_charge span').style.fontSize = '12px'
+
+        document.querySelector('.list_itm_sub_cart span').style.fontSize = '12px'
         document.querySelectorAll('.ct_bx_all_groc_required .main_img_groc_itm').forEach(cur => {
-            cur.style.minHeight='120px'
-            cur.style.width='120px'
-    
+            cur.style.minHeight = '120px'
+            cur.style.width = '120px'
+
         })
     }
 }
@@ -320,240 +589,99 @@ const addReccom = async (locItm1, bx, typeRecom, cId) => {
                         </span>`
                     }
                     if (itmDb.offer !== null) {
+                        html = `
+<div class="ct_col">
+<div class="carousel-cell fd_ek_cell_car_recom">
+<div class="itm_food_list_ek added_itm_ek_fd">
+<a
+<a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
+<div class="ct_offer_box_cook2">
+<span>${itmDb.offer}%</span>
+<p> off</p>
+    </div>
+    <div class="ct_inner_fd_dt_grid">
+
+    <div class="ct_img_res_main">
+    <img src='${itmDb.img}'>
+
+    </div>
+    <div class="ct_inner_fd1_dt_grid">
+
+    <div class="ct_dt_tm_food_res">
+    <h4>${itmDb.name}</h4>
 
 
-                        if (itmDb.group === 'veg') {
-                            html = `  <div class="ct_col">
-                                <div class="carousel-cell fd_ek_cell_car_recom">
-            
-                                <div class="itm_food_list_ek added_itm_ek_fd">
-                                <a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
-                                <div class="ct_offer_box_cook2">
-                               <span>${itmDb.offer}%</span>
-                               <p> off</p>
-                           </div>
-                                    <div class="ct_img_res_main">
-                                        <img src='${itmDb.img}'>
-
-                                    </div>
-
-                                    <div class="ct_dt_tm_food_res">
-                                        <h4>${itmDb.name}</h4>
+    </div>
+    <div class="ct_bx_ratings">
+     ${html1}
+    </div>
+   
+    <p class="price_food for_oly_ekfd_price"><span>₹ ${itmDb.price} </span> <iu>(${itmDb.iunit})</iu></p>
+  
+    <div class="bx_flex_time_type">
 
 
-                                    </div>
-                                    <div class="ct_bx_ratings">
-                                    ${html1}
-                                    </div>
-                                    <div class="ct_bx_hw_cook">
-                                        <a href="#">How to cook?</a>
-                                    </div>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 99</span></p>
-<div class='bx_flex_time_type'>
-                                    <div class="ct_type_bx_item_food">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15"
-                                    viewBox="0 0 172 172" style=" fill:#000000;">
-                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                        font-weight="none" font-size="none" text-anchor="none"
-                                        style="mix-blend-mode: normal">
-                                        <path d="M0,172v-172h172v172z" fill="none"></path>
-                                        <g fill="#099f49">
-                                            <path
-                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                                            </path>
-                                            <path
-                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </svg>
-
-                                        <p>veg</p>
-
-                                    </div>
-                                    <p class="sk_itm">10</p>
-                                    <p class="bx_cat_item">1</p>
-                                    <div class="ct_time_it_takes">
-                                        <ion-icon name="alarm-outline"></ion-icon>
-                                        <p>${itmDb.time}                                                </p>
-                                    </div>
-                                    </div>
-                                </a>
-
-
-
+    <p class="bx_cat_item">1</p>
+    <div class="ct_time_it_takes">
+        <ion-icon name="alarm-outline"></ion-icon>
+        <p>${itmDb.time}</p>
+        </div>
+    </div>
+    </div>
                             </div>
-                                </div>
-                            </div>`
+</a>
 
-                        } else {
-                            html = `  <div class="ct_col">
-                                <div class="carousel-cell fd_ek_cell_car_recom">
-            
-                                <div class="itm_food_list_ek added_itm_ek_fd">
-                                <a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
-                                <div class="ct_offer_box_cook2">
-                               <span>${itmDb.offer}%</span>
-                               <p> off</p>
-                           </div>
-                                    <div class="ct_img_res_main">
-                                        <img src='${itmDb.img}'>
-
-                                    </div>
-
-                                    <div class="ct_dt_tm_food_res">
-                                        <h4>${itmDb.name}</h4>
-
-
-                                    </div>
-                                    <div class="ct_bx_ratings">
-                                    ${html1}
-                                    </div>
-                                    <div class="ct_bx_hw_cook">
-                                        <a href="#">How to cook?</a>
-                                    </div>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 99</span></p>
-                                    <div class='bx_flex_time_type'>
-
-                                    <div class="ct_type_bx_item_food">
-                                    <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-
-
-                                        <p>non-veg</p>
-
-                                    </div>
-                                    <p class="sk_itm">10</p>
-                                    <p class="bx_cat_item">1</p>
-                                    <div class="ct_time_it_takes">
-                                        <ion-icon name="alarm-outline"></ion-icon>
-                                        <p>${itmDb.time}                                                </p>
-                                    </div>
 </div>
-                                </a>
+</div>
+</div>`
 
 
 
-                            </div>
-                                </div>
-                            </div>`
-
-                        }
                     } else {
-                        if (itmDb.group === 'veg') {
 
-                            html = `  <div class="ct_col">
+                        html = `
+                        <div class="ct_col">
                                 <div class="carousel-cell fd_ek_cell_car_recom">
-            
-                                <div class="itm_food_list_ek added_itm_ek_fd">
-                                <a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
-                               
-                                    <div class="ct_img_res_main">
-                                        <img src='${itmDb.img}'>
-
-                                    </div>
-
-                                    <div class="ct_dt_tm_food_res">
-                                        <h4>${itmDb.name}</h4>
-
-
-                                    </div>
-                                    <div class="ct_bx_ratings">
-                                    ${html1}
-                                    </div>
-                                    <div class="ct_bx_hw_cook">
-                                        <a href="#">How to cook?</a>
-                                    </div>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 99</span></p>
-                                    <div class='bx_flex_time_type'>
-
-                                    <div class="ct_type_bx_item_food">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15"
-                                    viewBox="0 0 172 172" style=" fill:#000000;">
-                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                        stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                        stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                        font-weight="none" font-size="none" text-anchor="none"
-                                        style="mix-blend-mode: normal">
-                                        <path d="M0,172v-172h172v172z" fill="none"></path>
-                                        <g fill="#099f49">
-                                            <path
-                                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                                            </path>
-                                            <path
-                                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                                            </path>
-                                        </g>
-                                    </g>
-                                </svg>
-
-                                        <p>veg</p>
-
-                                    </div>
-                                    <p class="sk_itm">10</p>
-                                    <p class="bx_cat_item">1</p>
-                                    <div class="ct_time_it_takes">
-                                        <ion-icon name="alarm-outline"></ion-icon>
-                                        <p>${itmDb.time}                                                </p>
-                                    </div>
-                                    </div>
-
-                                </a>
-
-
-
+                        <div class="itm_food_list_ek added_itm_ek_fd">
+                        <a
+                        <a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
+                   
+                            <div class="ct_inner_fd_dt_grid">
+                        
+                            <div class="ct_img_res_main">
+                            <img src='${itmDb.img}'>
+                        
                             </div>
-                                </div>
-                            </div>`
-                        } else {
-                            html = `  <div class="ct_col">
-                                <div class="carousel-cell fd_ek_cell_car_recom">
-            
-                                <div class="itm_food_list_ek added_itm_ek_fd">
-                                <a href="/product?item=${itmDb.id}&qt=1&sk=${itmDb.stock}&cid=${group}">
-                               
-                                    <div class="ct_img_res_main">
-                                        <img src='${itmDb.img}'>
-
-                                    </div>
-
-                                    <div class="ct_dt_tm_food_res">
-                                        <h4>${itmDb.name}</h4>
-
-
-                                    </div>
-                                    <div class="ct_bx_ratings">
-                                    ${html1}
-                                    </div>
-                                    <div class="ct_bx_hw_cook">
-                                        <a href="#">How to cook?</a>
-                                    </div>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 99</span></p>
-                                    <div class='bx_flex_time_type'>
-
-                                    <div class="ct_type_bx_item_food">
-                                    <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-
-
-                                        <p>non-veg</p>
-
-                                    </div>
-                                    <p class="sk_itm">10</p>
-                                    <p class="bx_cat_item">1</p>
-                                    <div class="ct_time_it_takes">
-                                        <ion-icon name="alarm-outline"></ion-icon>
-                                        <p>${itmDb.time}                                                </p>
-                                    </div>
-</div>
-                                </a>
-
-
-
+                            <div class="ct_inner_fd1_dt_grid">
+                        
+                            <div class="ct_dt_tm_food_res">
+                            <h4>${itmDb.name}</h4>
+                        
+                        
                             </div>
+                            <div class="ct_bx_ratings">
+                             ${html1}
+                            </div>
+                           
+                            <p class="price_food for_oly_ekfd_price"><span>₹ ${itmDb.price} </span> <iu>(${itmDb.iunit})</iu></p>
+                          
+                            <div class="bx_flex_time_type">
+                        
+                        
+                            <p class="bx_cat_item">1</p>
+                            <div class="ct_time_it_takes">
+                                <ion-icon name="alarm-outline"></ion-icon>
+                                <p>${itmDb.time}</p>
                                 </div>
-                            </div>`
-                        }
+                            </div>
+                            </div>
+                                                    </div>
+                        </a>
+                        
+                        </div>
+                        </div>
+                        </div>`
+
                     }
                     allFd3++
                     let row = document.querySelector(bx)
@@ -569,8 +697,8 @@ const addReccom = async (locItm1, bx, typeRecom, cId) => {
                             a1++
                             a2++
                             row.insertAdjacentHTML('beforeend', html)
-                         
-                            
+
+
                             console.log(onGolen, (a2), 'jki')
 
                             if (onGolen === (a2)) {
@@ -682,13 +810,10 @@ if (document.querySelector('.erak_fd_body')) {
                 if (jwt.user !== undefined) {
                     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
                         window.location.replace('/foods')
-
+                        document.querySelector('.ct_error_stock ion-icon').style.color = 'rgb(112, 241, 26)'
+                        document.querySelector('.ct_error_stock').style.display = 'flex'
                     }
-                    document.querySelector('.ct_bx_messgae').style.display = 'block'
-                    setTimeout(() => {
-                        document.querySelector('.ct_bx_messgae').style.display = 'none'
 
-                    }, 5000);
                 }
             }
         }
@@ -722,9 +847,7 @@ if (window.innerWidth <= 600 && window.innerWidth > 500) {
             cur.style.fontSize = '17px'
         })
     }
-    document.querySelectorAll('.flex_bx_cart_itm ').forEach(cur => {
-        cur.style.marginLeft = '60px'
-    })
+
     document.querySelectorAll('.ct_bx_ratings_info a span .filed_rating_itm, .ct_bx_ratings span .filed_rating_itm').forEach(cur => { cur.style.fontSize = '17px' })
     //gr
 
@@ -775,10 +898,7 @@ if (elemPop !== null) {
     })
 }
 if (window.innerWidth < 470) {
-    if (document.querySelector('.hiden_update2') !== null) {
-        document.querySelector('.hiden_update2').style.paddingLeft = '10vw'
 
-    }
     if (document.querySelector('.ct_recipe_download') !== null) {
         document.querySelector('.ct_recipe_download').style.margin = '30px 0 0 -310px'
 
@@ -807,22 +927,13 @@ if (window.innerWidth < 470) {
 
 
 
-    if (document.querySelector('.for_acc_dt') !== null) {
 
-        document.querySelector('.groc_btn_order').style.width = '160px'
-
-        document.querySelector('.groc_btn_order').style.transform = 'translate(174px,30px)'
-
-        document.querySelector('.ct_bx_no_order_yet').style.transform = 'translate(-10px)'
-
-        document.querySelector('.fd_btn_order').style.width = '140px'
-    }
 
 }
 
 if (window.innerWidth < 500) {
 
-  
+
     if (document.querySelector('.body_cart') !== null) {
 
 
@@ -859,6 +970,7 @@ if (window.innerWidth < 500) {
 
 
 }
+
 if (window.innerWidth < 450) {
 
 
@@ -866,9 +978,6 @@ if (window.innerWidth < 450) {
         cur.style.width = '240%'
     })
 
-    document.querySelectorAll('.itm_food_list_ek .ct_img_res_main .main_img_groc_itm').forEach(cur => {
-        cur.style.width = '50%'
-    })
 
     document.querySelectorAll('.for_groc_itm .relative_width1').forEach(cur => {
         cur.style.width = '33%'
@@ -881,17 +990,12 @@ if (window.innerWidth <= 360) {
         cur.style.width = '70px'
     })
 
-    document.querySelectorAll('.ct_loading_bx2').forEach(cur => {
-        cur.style.width = '80%'
-        cur.style.height = '161px'
 
-    })
+
     document.querySelectorAll('.cart_nav p').forEach(cur => {
         cur.style.display = 'none'
     })
-    document.querySelectorAll('.for_nav_main ul .nav_main_ek_li').forEach(cur => {
-        cur.style.right = '-40px'
-    })
+
     document.querySelectorAll('.ct_for_time_load').forEach(cur => {
         cur.style.width = '100px'
         cur.style.height = '19px'
@@ -921,7 +1025,7 @@ if (window.innerWidth <= 450) {
         document.querySelector('.ct_bx_select_qt_final .relative_width1').style.width = '24%'
 
 
-  
+
 
         document.querySelector('.forward_acc').style.width = 'translate(250px,-80px)'
 
@@ -929,14 +1033,12 @@ if (window.innerWidth <= 450) {
 
         document.querySelector('.ct_bx_serached_itm').style.width = '90%'
         document.querySelector('.ct_bx_serached_itm').style.transform = 'translate(20px,-17px)'
-    
+
         document.querySelector('.for_nav_main .acc_set_main_nav').style.transform = 'translate(-60px,0px)'
 
     }
     if (document.querySelector('.for_login_only_cart') !== null) {
-        document.querySelector('.for_login_only_cart').style.width = '36%'
 
-        document.querySelector('.btn_sign_up_cart').style.width = '36%'
         document.querySelector('.for_login_only_cart').style.padding = '5px 6px 5px 23px'
 
         document.querySelector('.to_pay_cahge1').classList.add('to_pay_cahge2')
@@ -949,7 +1051,7 @@ if (window.innerWidth <= 450) {
     }
 
 }
-if (window.innerWidth < 400&&window.innerWidth>360) {
+if (window.innerWidth < 400 && window.innerWidth > 360) {
     document.querySelectorAll('.for_load_bx_grid_inner').forEach(cur => {
         cur.style.margin = '-20px 0 0 56px'
 
@@ -984,22 +1086,22 @@ if (window.innerWidth < 360) {
 
 
 
-  
-        if(document.querySelector('.ct_bx_side_rt_revies')!==null){
-        document.querySelector('.ct_bx_side_rt_revies').style.transform = 'translate(-20px,0px)'
+
+        if (document.querySelector('.ct_bx_side_rt_revies') !== null) {
+            document.querySelector('.ct_bx_side_rt_revies').style.transform = 'translate(-20px,0px)'
 
 
-        document.querySelector('.back_acc').style.transform = 'translate(10px,-105px)'
+            document.querySelector('.back_acc').style.transform = 'translate(10px,-105px)'
 
-        document.querySelector('.inner_slide').style.transform = 'translate(-10px,80px)'
+            document.querySelector('.inner_slide').style.transform = 'translate(-10px,80px)'
 
-        document.querySelector('.forward_acc').style.transform = 'translate(250px,-0px)'
+            document.querySelector('.forward_acc').style.transform = 'translate(250px,-0px)'
 
 
-        document.querySelectorAll('.ct_for_img_load').forEach(cur => {
-            cur.style.marginLeft = '10px'
-        })
-    }
+            document.querySelectorAll('.ct_for_img_load').forEach(cur => {
+                cur.style.marginLeft = '10px'
+            })
+        }
     }
 }
 $(document).ready(() => {
@@ -1011,11 +1113,11 @@ $(document).ready(() => {
         })
     }
     if (document.querySelector('.ct_reome_pop_up') !== null) {
-        document.querySelectorAll('.ct_reome_pop_up').forEach(cur=>{
-cur.addEventListener('click', () => {
+        document.querySelectorAll('.ct_reome_pop_up').forEach(cur => {
+            cur.addEventListener('click', () => {
 
-    $('.ct_bx_show_out_of_stk.for_stock_err').animate({ right: '-530px' })
-})
+                $('ct_error_stock.for_ek_fd').fadeOut()
+            })
         })
     }
     $(".check-icon").hide();
@@ -1330,29 +1432,29 @@ cur.addEventListener('click', () => {
     $('.ek_cart').waypoint(function (direction) {
 
         if (direction === 'down') {
-            if (window.innerWidth <= 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'fixed')
             }
         } else if (direction === 'up') {
-            if (window.innerWidth <= 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'relative')
 
             }
         }
     }, {
-        offset: '20%'
+        offset: '0%'
     })
     $('.ct_subotatal').waypoint(function (direction) {
 
         if (direction === 'down') {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'relative')
             }
         } else if (direction === 'up') {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'fixed')
 
@@ -1361,61 +1463,44 @@ cur.addEventListener('click', () => {
     }, {
         offset: '80%'
     })
-    $('.recomended_cart').waypoint(function (direction) {
+
+
+    $('#ek_res_ev').waypoint(function (direction) {
 
         if (direction === 'down') {
-            if (window.innerWidth > 1000 && window.innerWidth !== 1000) {
+            $('.ct_ct_cate_lis_ev').css('position', 'fixed')
+            $('.ct_ct_cate_lis_ev').css('top', '86px')
 
-                $('.ct_bx_img_itm').css('position', 'absolute')
-            }
+            $('.for_nav_main').css('position', 'fixed')
+            $('.for_nav_main').css('top', '0')
+            $('.for_mobile_search').css('position', 'fixed')
+
         } else if (direction === 'up') {
-            if (window.innerWidth > 1000 && window.innerWidth !== 1000) {
+            $('.ct_ct_cate_lis_ev').css('position', 'absolute')
+            function myFunction(x) {
+                if (x.matches) {
+                    $('.ct_ct_cate_lis_ev').css('top', '346px')
 
-                $('.ct_bx_img_itm').css('position', 'fixed')
 
+
+                } else {
+                    $('.ct_ct_cate_lis_ev').css('top', ' 439px')
+
+                }
             }
+
+            var x = window.matchMedia("(max-width: 768px)")
+            myFunction(x)
+            x.addEventListener('change', myFunction)
+            $('.for_nav_main').css('position', 'absolute')
+            $('.for_nav_main').css('top', '0')
+            $('.for_mobile_search').css('position', 'absolute')
+
         }
     }, {
-        offset: '80%'
+        offset: '20%'
     })
 
-    if (window.innerWidth > 800) {
-        $('#ek_res_ev').waypoint(function (direction) {
-
-            if (direction === 'down') {
-                $('.ct_ct_cate_lis_ev').css('position', 'fixed')
-                $('.ct_ct_cate_lis_ev').css('top', '86px')
-
-                $('.ct_nav_erak  .mai_ul').css('position', 'fixed')
-                $('.ct_nav_erak  .mai_ul').css('top', '0')
-                $('.for_mobile_search').css('position', 'fixed')
-
-            } else if (direction === 'up') {
-                $('.ct_ct_cate_lis_ev').css('position', 'absolute')
-                function myFunction(x) {
-                    if (x.matches) {
-                        $('.ct_ct_cate_lis_ev').css('top', '346px')
-
-
-
-                    } else {
-                        $('.ct_ct_cate_lis_ev').css('top', ' 439px')
-
-                    }
-                }
-
-                var x = window.matchMedia("(max-width: 768px)")
-                myFunction(x)
-                x.addEventListener('change', myFunction)
-                $('.ct_nav_erak  .mai_ul').css('position', 'absolute')
-                $('.ct_nav_erak  .mai_ul').css('top', '0')
-                $('.for_mobile_search').css('position', 'absolute')
-
-            }
-        }, {
-            offset: '20%'
-        })
-    }
 
 
 
@@ -1664,7 +1749,7 @@ cur.addEventListener('click', () => {
                         document.querySelector('.for_req_groc_btn').classList.add('active_gp_bx')
                         document.querySelector('.only_for_grocery_item').style.display = 'block'
                         document.querySelector('.bx_evt_cart_item').style.display = 'none'
-                        document.querySelector('.for_groc_cart_load').style.display = 'block'
+                        document.querySelector('.for_groc_cart_load').style.display = 'flex'
                         console.log(elem.childNodes)
                         if (elem.childNodes[1].classList.value.split(' ').includes('ct_offer_box_cook2')) {
                             let off = elem.childNodes[1].innerText
@@ -2582,7 +2667,7 @@ cur.addEventListener('click', () => {
                                 })
 
                             }
-                            if (window.innerWidth < 400&&window.innerWidth>360) {
+                            if (window.innerWidth < 400 && window.innerWidth > 360) {
                                 document.querySelectorAll('.only_for_grocery_item li .ct_bx_quant_itm_cart').forEach(cur => {
                                     cur.style.width = '24%'
                                 })
@@ -3496,7 +3581,7 @@ cur.addEventListener('click', () => {
                                     cur.style.width = '20%'
                                 })
                             }
-                            if (window.innerWidth < 400&&window.innerWidth>360) {
+                            if (window.innerWidth < 400 && window.innerWidth > 360) {
                                 document.querySelectorAll('.only_for_grocery_item li .ct_bx_quant_itm_cart').forEach(cur => {
                                     cur.style.width = '24%'
                                 })
@@ -4002,7 +4087,6 @@ cur.addEventListener('click', () => {
                     document.querySelector('.for_messg_ov').style.display = 'block'
 
                     document.querySelector('.ct_bx_message_for_confim_cancel').style.display = 'block'
-                    document.querySelector('.ct_subotatal').style.pointerEvents = 'none'
 
                     document.querySelector('.ct_list_food').style.pointerEvents = 'none'
 
@@ -4156,32 +4240,22 @@ cur.addEventListener('click', () => {
                     cancelOrderFinal()
                 }
                 if (e.target.closest('.cancel_order_btn_yes') !== null || e.target.closest('.remove_msg_conf_cancel') !== null) {
+
                     document.querySelector('.for_cart_load_full').style.display = 'none'
 
                     document.querySelector('.for_acc_ov').style.display = 'none'
 
                     document.querySelector('.for_messg_ov').style.display = 'none'
-                    document.querySelector('.recomended_cart').style.pointerEvents = 'auto'
 
                     document.querySelector('.for_messg_ov').style.display = 'none'
-                    document.querySelector('.ct_subotatal').style.pointerEvents = 'auto'
 
-                    document.querySelector('.ct_list_food').style.pointerEvents = 'auto'
 
 
 
 
                     document.querySelector('.ct_bin_ts_nav_ck').style.display = 'block'
-                    document.querySelectorAll('.for_cart_qt div').forEach(cur => {
-                        cur.style.background = ' white'
-                        cur.style.color = 'black'
-                    })
-                    document.querySelectorAll('.ct_bx_act_cart_itm').forEach(cur => {
-                        cur.style.display = 'flex'
-                    })
-                    document.querySelectorAll('.field_bx_qt').forEach(cur => {
-                        cur.style.pointerEvents = 'auto'
-                    })
+
+
 
                 }
             })
@@ -4762,16 +4836,15 @@ cur.addEventListener('click', () => {
                 console.log(parser)
 
                 let codeId = parseFloat(parser.id)
-
                 document.querySelector('.name_of_user').value = parser.user.name_user
                 document.querySelector('.last_of_user').value = parser.user.lastname
-
-
-                let phN1 = parser.user.phonenum_user_acc[1][1]
-                let phN2 = parser.user.phonenum_user_acc[1][2]
-                let phN3 = parser.user.phonenum_user_acc[1][3]
-                let phN4 = parser.user.phonenum_user_acc[1][9]
-                let phN5 = parser.user.phonenum_user_acc[1][10]
+                console.log(parser.user.phonenum_user_acc)
+                let phN1 = parser.user.phonenum_user_acc[1]
+                // let phN1 = parser.user.phonenum_user_acc[1][0]
+                // let phN2 = parser.user.phonenum_user_acc[1][1]
+                // let phN3 = parser.user.phonenum_user_acc[1][2]
+                // let phN4 = parser.user.phonenum_user_acc[1][8]
+                // let phN5 = parser.user.phonenum_user_acc[1][9]
 
                 document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
 
@@ -4946,7 +5019,7 @@ cur.addEventListener('click', () => {
                                                 </div>
                                 
                                                 <h4>We sent you a OTP.</h4>
-                                                <p>Enter it below to verify   this number <strong>${phN1}${phN2}${phN3}zxzyx${phN4}${phN5}</strong>
+                                                <p>Enter it below to verify   this number <strong>${phN1}</strong>
                                                 </p>
                                                 <div class="ct_bx_verif2">
                                                     <form action="/signup" method="GET">
@@ -4959,6 +5032,10 @@ cur.addEventListener('click', () => {
                                 
                                 
                                                         </div>
+                                                        <div class="ct_error_other_signup pin_error2">
+                                                        <ion-icon name="warning-sharp"></ion-icon>
+                                                        <p>Your provided OTP does not match.</p>
+                                                    </div>
                                                         <button class="cont_btn_acc  account_cont1" name='continue_verify' type="button"><span>
                                                                 <ion-icon name="person-add-sharp"></ion-icon> Create account
                                                             </span></button>
@@ -4986,8 +5063,7 @@ cur.addEventListener('click', () => {
                                         setUser()
 
                                     } else {
-                                        document.querySelector('.pin_error').style.display = 'flex'
-                                        document.querySelector('.pin_error p').innerText = 'Your provided OTP does not match'
+                                        document.querySelector('.pin_error2').style.display = 'flex'
 
                                     }
                                 })
@@ -5286,80 +5362,124 @@ cur.addEventListener('click', () => {
                     document.querySelectorAll('.display_on_no_acc').forEach(cur => {
                         cur.style.display = 'none'
                     })
+                    let lastErr = false
+                    let nickerr = false
 
-                    let foundName = false
+
                     const login = async () => {
                         document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'block'
+                        let checkPassA = false
+                        let foundName = false
 
+                        let cAll = false
                         let cur = await dbCollection.get()
 
+                        let item
                         for (let i = 0; i < cur.docs.length; i++) {
                             let curs = cur.docs
+
                             if (curs[i].data().data !== undefined) {
                                 let hash = curs[i].data().data[3]
                                 let checkPass = bcrypt.compareSync(password, hash);
                                 if (n.split(' ').join('').toLowerCase().trim() === curs[i].data().data[0].split(' ').join('').toLowerCase().trim()) {
                                     foundName = true
-                                    if (checkPass) {
 
-                                        if (curs[i].data().data[0].split(' ').join('') === firstname && curs[i].data().data[1].split(' ').join('') === lastname && checkPass) {
-                                            $('.password_err').css('display', 'none')
-
-                                            $('.name_err').css('display', 'none')
-                                            $('.lstname_err').css('display', 'none')
-                                            $('.lstname_err3').css('display', 'none')
-                                            console.log(curs[i].data().rootAutyh)
-                                            let dtus = JSON.stringify({ rootAutyh: curs[i].data().rootAutyh, authUser: curs[i].data().authUser, n: curs[i].data().data[0], ln: curs[i].data().data[1], ad: curs[i].data().data[2], ct: curs[i].data().data[4], pass: curs[i].data().data[3], service: curs[i].data().data[5], pin: curs[i].data().data[6] })
-                                            console.log(dtus)
-                                            document.cookie = "user" + "=" + dtus + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-                                            if (curs[i].data().cartItem !== undefined) {
-                                                localStorage.setItem('foodsAdded', JSON.stringify(curs[i].data().cartItem))
-                                            }
-
-                                            if (curs[i].data().myratings !== undefined) {
-                                                localStorage.setItem('myRatings', JSON.stringify(curs[i].data().myratings))
-                                            }
-                                            if (curs[i].data().cartGroc !== undefined) {
-                                                localStorage.setItem('grocFoodListCart', JSON.stringify(curs[i].data().cartGroc))
-                                            }
-                                            window.location.replace('/')
-                                            break
-
-
-
-                                        } else if (curs[i].data().data[1].split(' ').join('') !== lastname) {
-
-                                            $('.password_err').css('display', 'none')
-                                            $('.lstname_err3').css('display', 'none')
-
-                                            $('.name_err').css('display', 'none')
-                                            $('.lstname_err').css('display', 'block')
-                                        }
-                                    } else {
-                                        $('.password_err').css('display', 'block')
-
-                                        $('.name_err').css('display', 'none')
-                                        $('.lstname_err3').css('display', 'none')
-
-                                        $('.lstname_err').css('display', 'none')
-                                    }
                                 }
 
+                                if (checkPass) {
+                                    checkPassA = true
+                                }
+                                console.log(curs[i].data().data[0].split(' ').join(''), firstname, curs[i].data().data[1].split(' ').join(''), lastname, checkPass)
+                                if (curs[i].data().data[0].split(' ').join('') === firstname && curs[i].data().data[1].split(' ').join('') === lastname && checkPass) {
+                                    cAll = true
+
+                                    item = curs[i]
+                                    break
+                                }
+
+
+                                if (curs[i].data().data[1].split(' ').join('') !== lastname) {
+                                    lastErr = true
+                                }
 
 
                             }
 
                         }
-                        if (!foundName) {
+                        if (!cAll) {
+
+                            nickerr = true
+                        }
+                        console.log(nickerr)
+                        if (nickerr) {
                             $('.password_err').css('display', 'none')
                             $('.lstname_err3').css('display', 'none')
 
                             $('.name_err').css('display', 'block')
                             $('.lstname_err').css('display', 'none')
+                            document.querySelector('.name_err').innerText = 'Nick name or last name does not match.'
+                            document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
+                            return
+                        }
+                        if (!foundName) {
+                            document.querySelector('.name_err').innerText = 'Nick name or password does not match.'
+
+                            $('.password_err').css('display', 'none')
+                            $('.lstname_err3').css('display', 'none')
+
+                            $('.name_err').css('display', 'block')
+                            $('.lstname_err').css('display', 'none')
+                            document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
+
+                            return
+                        }
+                        if (checkPassA) {
+                            if (cAll) {
+                                $('.password_err').css('display', 'none')
+
+                                $('.name_err').css('display', 'none')
+                                $('.lstname_err').css('display', 'none')
+                                $('.lstname_err3').css('display', 'none')
+                                let dtus = JSON.stringify({ rootAutyh: item.data().rootAutyh, authUser: item.data().authUser, n: item.data().data[0], ln: item.data().data[1], ad: item.data().data[2], ct: item.data().data[4], pass: item.data().data[3], service: item.data().data[5], pin: item.data().data[6] })
+                                console.log(dtus)
+                                document.cookie = "user" + "=" + dtus + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+                                if (item.data().cartItem !== undefined) {
+                                    localStorage.setItem('foodsAdded', JSON.stringify(item.data().cartItem))
+                                }
+
+                                if (item.data().myratings !== undefined) {
+                                    localStorage.setItem('myRatings', JSON.stringify(item.data().myratings))
+                                }
+                                if (item.data().cartGroc !== undefined) {
+                                    localStorage.setItem('grocFoodListCart', JSON.stringify(item.data().cartGroc))
+                                }
+                                window.location.replace('/')
+
+
+
+
+                            } else if (lastErr) {
+                                alert('haia')
+                                $('.password_err').css('display', 'none')
+                                $('.lstname_err3').css('display', 'none')
+
+                                $('.name_err').css('display', 'none')
+                                $('.lstname_err').css('display', 'block')
+                                document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
+
+                            }
+                        } else {
+                            $('.password_err').css('display', 'block')
+
+                            $('.name_err').css('display', 'none')
+                            $('.lstname_err3').css('display', 'none')
+
+                            $('.lstname_err').css('display', 'none')
+
+                            document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
+
 
                         }
-
-                        document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
 
 
                     }
@@ -5368,6 +5488,8 @@ cur.addEventListener('click', () => {
 
                 } else {
                     document.querySelector('.lstname_err3').style.display = 'block'
+                    document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'none'
+
                 }
             }
         })
@@ -5376,6 +5498,9 @@ cur.addEventListener('click', () => {
 
     if (document.querySelector('.goback') !== null) {
         document.querySelector('.goback').addEventListener('click', e => {
+            document.querySelectorAll('.error_login').forEach(cur => {
+                cur.style.display = 'none'
+            })
             window.history.back()
             document.querySelector('.phone_number_login_forg').style.display = 'none'
 
@@ -5390,14 +5515,14 @@ cur.addEventListener('click', () => {
 
             document.querySelector('.goback').style.display = 'none'
 
-
-            document.querySelector('.ct_create_acc h3 t').innerText = 'Login To ERAK '
             document.querySelector('.pass_bx_field').style.display = 'block'
             document.querySelector('.new_pass_bx').style.display = 'none'
             document.querySelector('.password_err').style.display = 'none'
 
             document.querySelector('.name_err').style.display = 'none'
             document.querySelector('.lstname_err').style.display = 'none'
+            document.querySelector('.ct_create_acc h3 t').innerText = 'Login To ERAK '
+
 
 
 
@@ -5466,6 +5591,9 @@ cur.addEventListener('click', () => {
             let mathchedlst = false
             let checkPass2 = false
             let chpn = false
+            if (pn === '' || firstname === '' || lastname == '' || confInp === '') {
+                return
+            }
             document.querySelector('.ct_bx_overlay_cart_signup').style.display = 'block'
 
             const forgotpass = async () => {
@@ -5484,7 +5612,7 @@ cur.addEventListener('click', () => {
                         if (checkPas) {
                             checkPass2 = true
                         }
-                        if (pn.trim() === curs[i1].data().data[5].trim()) {
+                        if (pn.trim() === curs[i1].data().data[5].trim() && curs[i1].data().data[0].split(' ').join('') === firstname) {
                             chpn = true
                             i = i1
                             console.log(curs[i1].data().data[5].trim())
@@ -5504,6 +5632,9 @@ cur.addEventListener('click', () => {
                         $('.password_err').css('display', 'none')
                         $('.phonenum').css('display', 'none')
 
+                        $('.password_err_exsist').css('display', 'none')
+                        $('.lstname_err2').css('display', 'none')
+
                         $('.name_err').css('display', 'block')
                         $('.lstname_err').css('display', 'none')
                         return
@@ -5512,6 +5643,8 @@ cur.addEventListener('click', () => {
                     if (!mathchedlst) {
                         $('.password_err').css('display', 'none')
                         $('.phonenum').css('display', 'none')
+                        $('.password_err_exsist').css('display', 'none')
+                        $('.lstname_err2').css('display', 'none')
 
                         $('.name_err').css('display', 'none')
                         $('.lstname_err').css('display', 'block')
@@ -5552,9 +5685,9 @@ cur.addEventListener('click', () => {
                                 $('.lstname_err2').css('display', 'none')
 
 
-                                $('.password_err_exsist').css('display', 'block')
+                                $('.password_err_exsist').css('display', 'none')
                                 document.querySelector('.lstname_err3').style.display = 'block'
-
+                                return
                             }
 
 
@@ -5606,8 +5739,8 @@ cur.addEventListener('click', () => {
         let qtgroc = e1.target.closest('.for_groc_itm .for_ek_pk_fd .bx_ad_field_qt_num')
         let qtgroc2 = e1.target.closest('.for_groc_itm .for_ek_pk_fd .bx_rem_field_qt_num')
         let rmItm = e1.target.closest('.remove_fd_itm_ct')
-        let qtekfd = e1.target.closest('.for_ek_qt .bx_ad_field_qt_num')
-        let qtekfd2 = e1.target.closest('.for_ek_qt .bx_rem_field_qt_num')
+        let qtekfd = e1.target.closest('.ct_bx_qty .ct_bx_item_add')
+        let qtekfd2 = e1.target.closest('.ct_bx_qty .ct_bx_item_rem')
         let unitgroc = e1.target.closest('.ct_set_qt_for_groc .field_bx_qt')
         let qtcart = e1.target.closest('.ct_bx_quant_itm_cart .bx_ad_field_qt_num')
         let qtcart2 = e1.target.closest('.ct_bx_quant_itm_cart .bx_rem_field_qt_num')
@@ -7194,7 +7327,14 @@ cur.addEventListener('click', () => {
             i = parseFloat(qtekfd2.parentElement.childNodes[3].value)
             i--
 
+            let p = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText.split('₹')[1].split(',').join('')
+            p = parseFloat(p)
+            console.log(p)
+            let tot = (p / (i + 1)) * i
 
+            tot = Math.round(tot)
+            tot = tot.toLocaleString()
+            document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = "₹ " + tot
 
             if (i !== 0) {
                 qtekfd2.parentElement.childNodes[3].value = i
@@ -7212,6 +7352,10 @@ cur.addEventListener('click', () => {
                     }
                 }
             } else {
+
+
+                document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = "₹ " + document.querySelector('.ct_bx_price span').innerText.split(' ')[0]
+
                 document.querySelectorAll('.select').forEach(cur => {
                     cur.style.opacity = 1
                     cur.style['pointer-events'] = 'auto'
@@ -7234,13 +7378,10 @@ cur.addEventListener('click', () => {
                     let token = window.location.search.split('?')[1].split('=')[1].split('&')[0]
                     let jwt = parseJwt(token)
                     document.querySelector('.ct_bx_acct_cart').insertAdjacentHTML('beforeend', hm)
-                    document.querySelector('.ct_bx_messgae').style.display = 'block'
+                    document.querySelector('.ct_error_stock').style.display = 'inline-flex'
 
-                    document.querySelector('.ct_bx_messgae p').innerText = `${jwt.item.name} successfully removed from the Cart`
-                    setTimeout(() => {
-                        $('.ct_bx_messgae').fadeOut()
-
-                    }, 2000)
+                    document.querySelector('.ct_error_stock  p').innerText = `${jwt.item.name} successfully removed from the Cart`
+                    scrollTo(0, 280)
                 }
                 console.log(allfd)
 
@@ -7256,20 +7397,7 @@ cur.addEventListener('click', () => {
                         }
                         localStorage.setItem('foodsAdded', JSON.stringify(allfd))
                         let jwt = parseJwt(token)
-                        if (window.innerWidth < 1200) {
-                            $('.ct_error_stock.for_items').css('display', 'block')
-                            $('.ct_error_stock.for_items ion-icon').css('color', 'rgb(82, 235, 77)')
 
-                            $('.ct_error_stock.for_items').animate({ left: '20px' })
-                            document.querySelector('.ct_error_stock.for_items p').innerText = `${jwt.item.name} successfully removed from the  Cart`
-                        } else {
-                            $('.ct_error_stock.for_items').css('display', 'block')
-
-                            $('.ct_error_stock.for_items ion-icon').css('color', 'rgb(82, 235, 77)')
-                            document.querySelector('.ct_error_stock.for_items p').innerText = `${jwt.item.name} successfully  removed from the  Cart`
-
-                        }
-                        window.scrollTo(0, 250)
 
                         document.querySelector('.bx_add_t_cart_btn_itm_dt p').style.display = 'none'
                         document.querySelector('.bx_add_t_cart_btn_itm_dt span').style.display = 'block'
@@ -7309,6 +7437,15 @@ cur.addEventListener('click', () => {
             i++
             if (i <= stock) {
                 qtekfd.parentElement.childNodes[3].value = i
+
+
+                let p = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText.split('₹')[1].split(',').join('')
+                p = parseFloat(p)
+                console.log(p)
+                let tot = (p / (i - 1)) * i
+                tot = Math.round(tot)
+                tot = tot.toLocaleString()
+                document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = "₹ " + tot
                 if (allfd !== null) {
                     for (let i1 = 0; i1 < allfd.length; i1++) {
                         let cur = allfd[i1]
@@ -7325,20 +7462,10 @@ cur.addEventListener('click', () => {
                     }
                 }
             } else {
-                document.querySelector('.ct_bx_show_out_of_stk.for_stock_err h3').innerText = `We donot have more than ${stock} items left on our stock, please try again later`
-
-                if (window.innerWidth < 1200) {
-                    let floatX = -(window.innerWidth + 100)
-
-                    $('.ct_error_stock.for_items').animate({ left: floatX })
-                } else {
-                    $('.ct_error_stock.for_items').css('display', 'none')
+                document.querySelector('.ct_error_stock.for_ek_fd p').innerText = `Opps! We donot have more than ${stock} items left on our stock, please try again later`
+                scrollTo(0, 280)
 
 
-                }
-                document.querySelector('.ct_bx_show_out_of_stk.for_stock_err').style.display = 'block'
-
-                $('.ct_bx_show_out_of_stk.for_stock_err').animate({ right: '10px' })
 
 
             }
@@ -7352,28 +7479,45 @@ cur.addEventListener('click', () => {
 
         if (qtgroc !== null) {
             let existOrder = JSON.parse(localStorage.getItem('orders'))
+            let floatX = -(window.innerWidth + 100)
 
             if (existOrder !== null) {
-                $('.ct_error_stock').css('display', 'block')
-                $('.ct_error_stock').animate({ left: '20px' })
+
+                if (window.innerWidth <= 1200) {
+                    $('.ct_error_stock.for_grocery_err').animate({ left: '20px' })
+
+                } else {
+                    $('.ct_error_stock').animate({ right: '310px' })
+
+                    $('.ct_error_stock').css('display', 'block')
+
+                }
+
                 document.querySelector('.ct_error_stock p').innerText = 'We found an active order on your account ,please click the new order or cancel button of cart to manage quantity of  this item. '
                 setTimeout(() => {
-                    let floatX = -(window.innerWidth + 100)
 
-                    $('.ct_error_stock').animate({ left: floatX })
-                }, 5000)
+                    if (window.innerWidth <= 1200) {
+                        $('.ct_error_stock.for_grocery_err').animate({ left: floatX })
 
+                    } else {
+                        $('.ct_error_stock').animate({ right: '-610px' })
+
+                        $('.ct_error_stock').css('display', 'block')
+
+                    }
+                    qtgroc.style['pointer-events'] = 'auto'
+
+                }, 4000)
                 return
             }
             if (qtgroc.parentElement.parentElement.parentElement.childNodes[3] !== undefined && qtgroc.parentElement.parentElement.parentElement.classList.value.split(' ').includes('itm_food_list_ek')) {
-                let floatX = -(window.innerWidth + 100)
-console.log(qtgroc.parentElement.parentElement.childNodes)
+                console.log(qtgroc.parentElement.parentElement.childNodes)
                 let allfd = JSON.parse(localStorage.getItem('grocFoodListCart'))
                 let le = qtgroc.parentElement.parentElement.childNodes[7]
                 let stock = parseFloat(le.childNodes[9].innerText)
                 let namefd
                 let com
-                console.log(le.childNodes[1].childNodes,'elon')
+                console.log(le.childNodes[1].childNodes, 'elon')
 
                 if (le.childNodes[1].childNodes[3] !== undefined) {
                     namefd = le.childNodes[1].childNodes[3].innerText
@@ -7413,7 +7557,7 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
                 }
                 else {
-                    
+
                     qtgroc.style['pointer-events'] = 'none'
                     document.querySelector('.ct_error_stock.for_grocery_err').style.display = 'block'
 
@@ -7447,7 +7591,7 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
             else {
                 let le = qtgroc.parentElement.childNodes[1].childNodes[7]
-                console.log(le.childNodes[1].childNodes,'elon')
+                console.log(le.childNodes[1].childNodes, 'elon')
 
                 document.querySelector('.ct_error_stock.for_grocery_err ').style.display = 'none'
                 let stock = parseFloat(le.childNodes[9].innerText)
@@ -7620,6 +7764,8 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
                         const stock = item.stock
                         const ratingsFd = item.ratings
                         if (itm.id === token) {
+                            console.log(item, window.location.search.split('?')[1].split('=')[4])
+
                             let ratings = ratingsFd
                             let datRev = {
                                 userId: user.authUser,
@@ -7641,9 +7787,9 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
                             for (let i = 0; i < ratings.length; i++) {
                                 let st = ratings[i]
-                                console.log(ratNum, st.star)
                                 if (st.star === ratNum) {
-                                    console.log(st.ratings)
+
+                                    console.log(item)
                                     let r = st.ratings
                                     r = parseFloat(r)
                                     r++
@@ -7651,6 +7797,8 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
                                     let obj1 = {
                                         name: name,
                                         base: base,
+                                        unitInit: item.unitInit,
+                                        Iup: item.Iup,
                                         type: group,
                                         cook: cook,
                                         time: time,
@@ -7674,12 +7822,9 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
                                         .then(res => {
                                             let checkStar = () => {
 
-                                                document.querySelector('.ct_bx_messgae').style.display = 'block'
-                                                document.querySelector('.ct_bx_messgae p').innerText = 'Thank you for rating us.Your ratings is registered.'
-                                                setTimeout(() => {
-                                                    document.querySelector('.ct_bx_messgae').style.display = 'none'
+                                                document.querySelector('.ct_error_stock.for_ek_fd').style.display = 'inline-flex'
+                                                document.querySelector('.ct_error_stock.for_ek_fd p').innerText = 'Thank you for rating us.Your ratings is registered.'
 
-                                                }, 2000)
                                                 let html
                                                 if (ratNum === 5) {
                                                     html = ` <div class="ct_rate_bx_rev">
@@ -7738,8 +7883,8 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
                                             let stars = checkStar()
                                             let html = `       <div class="ct_bx_revies">
                                            <div class="ct_person_dt">
-                                               <ion-icon name="person-circle"></ion-icon>
-                                               <h4>${user.n} ${user.ln}</h4>
+                                           <img src="../img/acc.png" alt="">
+                                           <h4>${user.n} ${user.ln}</h4>
                            
                                            </div>
                                            ${stars}
@@ -7855,111 +8000,110 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
 
         document.querySelector('html').addEventListener('click', (e) => {
-            // console.log(e.target.closest('.ct_about_itm_fld').childNodes[5].classList.value.s)
-            if (e.target.closest('.ct_about_itm_fld .select') !== null) {
+            // if (e.target.closest('.ct_about_itm_fld .select') !== null) {
 
-                e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes.forEach(cur => {
-                    if (cur.tagName !== undefined) {
-                        if (cur.tagName.toLowerCase() === 'ion-icon') {
-                            cur.remove()
-                        }
-                    }
-                })
+            //     e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes.forEach(cur => {
+            //         if (cur.tagName !== undefined) {
+            //             if (cur.tagName.toLowerCase() === 'ion-icon') {
+            //                 cur.remove()
+            //             }
+            //         }
+            //     })
 
-                e.target.closest('.ct_about_itm_fld .select').innerText = 'select'
-                e.target.closest('.ct_about_itm_fld .select').parentElement.insertAdjacentHTML('afterbegin', '<ion-icon name="close-outline"></ion-icon>')
-                let fd = e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes[3].innerText.split(' ').join('').toLowerCase()
+            //     e.target.closest('.ct_about_itm_fld .select').innerText = 'select'
+            //     e.target.closest('.ct_about_itm_fld .select').parentElement.insertAdjacentHTML('afterbegin', '<ion-icon name="close-outline"></ion-icon>')
+            //     let fd = e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes[3].innerText.split(' ').join('').toLowerCase()
 
-                let p = e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes[7].innerText
-                e.target.closest('.ct_about_itm_fld .select').classList.add('unselect')
+            //     let p = e.target.closest('.ct_about_itm_fld .select').parentElement.childNodes[7].innerText
+            //     e.target.closest('.ct_about_itm_fld .select').classList.add('unselect')
 
-                e.target.closest('.ct_about_itm_fld .select').classList.remove('select')
-                let domP = document.querySelector('.mrp_ammount del').innerText.split('₹')[1]
-                console.log(p, domP)
-                domP = parseFloat(domP)
-                p = parseFloat(p)
-                let fP = domP - p
-
-
-                let off = parseFloat(document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0])
-                document.querySelector('.mrp_ammount del').innerText = "₹ " + fP
-                let offerP = fP - ((off / 100) * fP)
-                offerP = Math.round(offerP)
-
-                document.querySelector('.ct_saved_am p').innerText = "You saves " + "₹ " + (fP - offerP)
-
-                document.querySelector('.ct_bx_price span').innerText = offerP
-                let arrFd = jwt.item.fdInside
-                jwt.item.price = `₹ ${fP}`
-
-                arrFd.forEach((cur, ind) => {
-                    let fdI = cur.split(' ').join('').toLowerCase()
-                    if (fdI === fd) {
-                        arrFd.splice(ind, 1)
-                        parsedData = arrFd
-                        console.log(jwt.item)
-                    }
-                })
+            //     e.target.closest('.ct_about_itm_fld .select').classList.remove('select')
+            //     let domP = document.querySelector('.mrp_ammount del').innerText.split('₹')[1]
+            //     console.log(p, domP)
+            //     domP = parseFloat(domP)
+            //     p = parseFloat(p)
+            //     let fP = domP - p
 
 
+            //     let off = parseFloat(document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0])
+            //     document.querySelector('.mrp_ammount del').innerText = "₹ " + fP
+            //     let offerP = fP - ((off / 100) * fP)
+            //     offerP = Math.round(offerP)
 
-            } else if (e.target.closest('.ct_about_itm_fld .unselect') !== null) {
-                console.log(e.target.closest('.ct_about_itm_fld .unselect'))
-                e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes.forEach(cur => {
-                    if (cur.tagName !== undefined) {
-                        if (cur.tagName.toLowerCase() === 'ion-icon') {
-                            cur.remove()
-                        }
-                    }
-                })
+            //     document.querySelector('.ct_saved_am p').innerText = "You saves " + "₹ " + (fP - offerP)
 
-                e.target.closest('.ct_about_itm_fld .unselect').innerText = 'unselect'
-                e.target.closest('.ct_about_itm_fld .unselect').parentElement.insertAdjacentHTML('afterbegin', '<ion-icon name="checkbox-outline" role="img" class="md hydrated" aria-label="checkbox outline"></ion-icon>')
-                let fd = e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes[3].innerText.split(' ').join('').toLowerCase()
+            //     document.querySelector('.ct_bx_price span').innerText = offerP
+            //     let arrFd = jwt.item.fdInside
+            //     jwt.item.price = `₹ ${fP}`
 
-                let p = e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes[7].innerText
-                e.target.closest('.ct_about_itm_fld .unselect').classList.add('select')
-
-                e.target.closest('.ct_about_itm_fld .unselect').classList.remove('unselect')
-
-                let domP = document.querySelector('.mrp_ammount del').innerText.split('₹')[1]
-                console.log(p, domP)
-                domP = parseFloat(domP)
-                p = parseFloat(p)
-                let fP = domP + p
+            //     arrFd.forEach((cur, ind) => {
+            //         let fdI = cur.split(' ').join('').toLowerCase()
+            //         if (fdI === fd) {
+            //             arrFd.splice(ind, 1)
+            //             parsedData = arrFd
+            //             console.log(jwt.item)
+            //         }
+            //     })
 
 
-                let off = parseFloat(document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0])
-                document.querySelector('.mrp_ammount del').innerText = "₹ " + fP
-                let offerP = fP - ((off / 100) * fP)
-                offerP = Math.round(offerP)
-                document.querySelector('.ct_saved_am p').innerText = "You saves " + "₹ " + (fP - offerP)
 
-                document.querySelector('.ct_bx_price span').innerText = offerP
-                let arrFd = jwt.item.fdInside
-                jwt.item.price = `₹ ${fP}`
-                arrFd.forEach((cur, ind) => {
-                    let fdI = cur.split(' ').join('').toLowerCase()
-                    if (fdI === fd) {
-                        arrFd.splice(ind, 1)
-                        parsedData = arrFd
-                        console.log(jwt.item)
-                    }
-                })
+            // } else if (e.target.closest('.ct_about_itm_fld .unselect') !== null) {
+            //     console.log(e.target.closest('.ct_about_itm_fld .unselect'))
+            //     e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes.forEach(cur => {
+            //         if (cur.tagName !== undefined) {
+            //             if (cur.tagName.toLowerCase() === 'ion-icon') {
+            //                 cur.remove()
+            //             }
+            //         }
+            //     })
 
+            //     e.target.closest('.ct_about_itm_fld .unselect').innerText = 'unselect'
+            //     e.target.closest('.ct_about_itm_fld .unselect').parentElement.insertAdjacentHTML('afterbegin', '<ion-icon name="checkbox-outline" role="img" class="md hydrated" aria-label="checkbox outline"></ion-icon>')
+            //     let fd = e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes[3].innerText.split(' ').join('').toLowerCase()
+
+            //     let p = e.target.closest('.ct_about_itm_fld .unselect').parentElement.childNodes[7].innerText
+            //     e.target.closest('.ct_about_itm_fld .unselect').classList.add('select')
+
+            //     e.target.closest('.ct_about_itm_fld .unselect').classList.remove('unselect')
+
+            //     let domP = document.querySelector('.mrp_ammount del').innerText.split('₹')[1]
+            //     console.log(p, domP)
+            //     domP = parseFloat(domP)
+            //     p = parseFloat(p)
+            //     let fP = domP + p
+
+
+            //     let off = parseFloat(document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0])
+            //     document.querySelector('.mrp_ammount del').innerText = "₹ " + fP
+            //     let offerP = fP - ((off / 100) * fP)
+            //     offerP = Math.round(offerP)
+            //     document.querySelector('.ct_saved_am p').innerText = "You saves " + "₹ " + (fP - offerP)
+
+            //     document.querySelector('.ct_bx_price span').innerText = offerP
+            //     let arrFd = jwt.item.fdInside
+            //     jwt.item.price = `₹ ${fP}`
+            //     arrFd.forEach((cur, ind) => {
+            //         let fdI = cur.split(' ').join('').toLowerCase()
+            //         if (fdI === fd) {
+            //             arrFd.splice(ind, 1)
+            //             parsedData = arrFd
+            //             console.log(jwt.item)
+            //         }
+            //     })
 
 
 
 
 
-            }
+
+            // }
 
         })
 
         document.querySelector('html').addEventListener('click', (e) => {
             let cBtn = e.target.closest('.bx_add_t_cart_btn_itm_dt')
             let buyBtn = e.target.closest('.bx_buy_now')
-            let qt1 = document.querySelector('.ct_bx_qtfood input').value
+            let qt1 = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
             if (cBtn !== null || buyBtn !== null) {
                 let userLoc = getCookie('user')
                 if (userLoc !== '') {
@@ -7975,19 +8119,23 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
                     cur.style.opacity = .5
                     cur.style['pointer-events'] = 'none'
                 })
+                let itemUnit = document.querySelectorAll('.ct_bx_weight_qt span')[1].innerText
 
+
+
+                let selP = document.querySelector('.seleted_unit_price').innerText
                 if (localStorage.length !== 0) {
 
                     if (addedItems !== null) {
                         if (parsedData) {
-                            arrFd.push({ href: href, id: token, data: parsedData, qt: qt1, stock: stock, catId: catId })
+                            arrFd.push({ href: href, selP: selP, itemUnit: itemUnit, id: token, data: parsedData, qt: qt1, stock: stock, catId: catId })
                             addedItems.forEach(c => {
                                 arrFd.push(c)
                             })
                             localStorage.setItem('foodsAdded', JSON.stringify(arrFd))
 
                         } else {
-                            arrFd.push({ href: href, id: token, data: jwt, qt: qt1, stock: stock, catId: catId })
+                            arrFd.push({ href: href, selP: selP, itemUnit: itemUnit, id: token, data: jwt, qt: qt1, stock: stock, catId: catId })
                             addedItems.forEach(c => {
                                 arrFd.push(c)
                             })
@@ -7995,39 +8143,41 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
                         }
 
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt p').style.display = 'block'
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt span').style.display = 'none'
 
-                        document.querySelector('.bx_buy_now p').style.display = 'block'
 
-                        document.querySelector('.bx_buy_now span').style.display = 'none'
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt').classList.add('added_to_cart')
-                        document.querySelector('.bx_buy_now').style.paddingLeft = '18px'
 
-                        document.querySelector('.bx_buy_now').classList.add('added_to_cart')
 
                     } else {
-                        localStorage.setItem('foodsAdded', JSON.stringify([{ href: href, id: token, data: jwt, qt: qt1, stock: stock, catId: catId }]))
 
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt p').style.display = 'block'
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt span').style.display = 'none'
+                        localStorage.setItem('foodsAdded', JSON.stringify([{ href: href, selP: selP, itemUnit: itemUnit, id: token, data: jwt, qt: qt1, stock: stock, catId: catId }]))
 
-                        document.querySelector('.bx_buy_now p').style.display = 'block'
 
-                        document.querySelector('.bx_buy_now span').style.display = 'none'
-                        document.querySelector('.bx_add_t_cart_btn_itm_dt').classList.add('added_to_cart')
-                        document.querySelector('.bx_buy_now').style.paddingLeft = '18px'
-
-                        document.querySelector('.bx_buy_now').classList.add('added_to_cart')
                     }
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt p').forEach(cur => {
+                        cur.style.display = 'block'
+                    })
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt span').forEach(cur => {
+                        cur.style.display = 'none'
+                    })
 
-                    document.querySelector('.ct_bx_messgae').style.display = 'block'
+                    document.querySelectorAll('.bx_buy_now p').forEach(cur => {
+                        cur.style.display = 'block'
+                    })
+                    document.querySelectorAll('.bx_buy_now').forEach(cur => {
+                        cur.classList.add('added_to_cart')
+                    })
 
-                    document.querySelector('.ct_bx_messgae p').innerText = `${jwt.item.name} successfully added to Cart`
-                    setTimeout(() => {
-                        $('.ct_bx_messgae').fadeOut()
+                    document.querySelectorAll('.bx_buy_now span').forEach(cur => {
+                        cur.style.display = 'none'
+                    })
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt').forEach(cur => {
+                        cur.classList.add('added_to_cart')
+                    })
+                    document.querySelector('.ct_icon_added_warn').style.display = 'none'
+                    scrollTo(0, 280)
+                    document.querySelector('.ct_icon_added_succ').style.display = 'block'
+                    document.querySelector('.ct_error_stock  p').innerText = `${jwt.item.name} successfully added to Cart`
 
-                    }, 2000)
 
                 } else {
                     document.querySelector('.ct_msg_send_itm_dt2').style.display = 'flex'
@@ -8042,27 +8192,40 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
             addedItems.forEach(cur => {
                 if (cur.id === token) {
                     addedQt = true
-                    document.querySelector('.ct_bx_qtfood input').value = cur.qt
+                    //cng1
+                    // document.querySelector('.ct_bx_qt_foods input').value = cur.qt
 
-                    document.querySelector('.bx_add_t_cart_btn_itm_dt p').style.display = 'block'
-                    document.querySelector('.bx_add_t_cart_btn_itm_dt span').style.display = 'none'
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt p').forEach(cur => {
+                        cur.style.display = 'block'
+                    })
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt span').forEach(cur => {
+                        cur.style.display = 'none'
+                    })
+                    document.querySelectorAll('.bx_add_t_cart_btn_itm_dt').forEach(cur => {
+                        cur.classList.add('added_to_cart')
+                    })
+                    document.querySelectorAll('.bx_buy_now p').forEach(cur => {
+                        cur.style.display = 'block'
+                    })
+                    document.querySelectorAll('.bx_buy_now p').forEach(cur => {
+                        cur.style.display = 'block'
+                    })
 
-                    document.querySelector('.bx_buy_now p').style.display = 'block'
+                    document.querySelectorAll('.bx_buy_now span').forEach(cur => {
+                        cur.style.display = 'none'
+                    })
 
-                    document.querySelector('.bx_buy_now span').style.display = 'none'
-                    document.querySelector('.bx_add_t_cart_btn_itm_dt').classList.add('added_to_cart')
-                    document.querySelector('.bx_buy_now').style.paddingLeft = '18px'
-
-                    document.querySelector('.bx_buy_now').classList.add('added_to_cart')
-
+                    document.querySelectorAll('.bx_buy_now').forEach(cur => {
+                        cur.classList.add('added_to_cart')
+                    })
                 }
             })
             if (addedQt === null) {
-                document.querySelector('.ct_bx_qtfood input').value = 1
+                document.querySelector('.ct_bx_qt_foods input').value = 1
 
             }
         } else {
-            document.querySelector('.ct_bx_qtfood input').value = qtfd
+            document.querySelector('.ct_bx_qt_foods input').value = qtfd
 
         }
 
@@ -8081,40 +8244,40 @@ console.log(qtgroc.parentElement.parentElement.childNodes)
 
         let type2 = jwt.item.type
         let h
-        if (type2 === 'veg') {
-            h = `        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
-style=" fill:#000000;">
-<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-    font-family="none" font-weight="none" font-size="none" text-anchor="none"
-    style="mix-blend-mode: normal">
-    <path d="M0,172v-172h172v172z" fill="none"></path>
-    <g fill="#099f49">
-        <path
-            d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-        </path>
-        <path
-            d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-        </path>
-    </g>
-</g>
-</svg>
-<p>${type2}</p>`
-        } else {
-            h = `              <img src="https://img.icons8.com/color/15/000000/non-vegetarian-food-symbol.png" />
+        //         if (type2 === 'veg') {
+        //             h = `        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 172 172"
+        // style=" fill:#000000;">
+        // <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+        //     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+        //     font-family="none" font-weight="none" font-size="none" text-anchor="none"
+        //     style="mix-blend-mode: normal">
+        //     <path d="M0,172v-172h172v172z" fill="none"></path>
+        //     <g fill="#099f49">
+        //         <path
+        //             d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
+        //         </path>
+        //         <path
+        //             d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
+        //         </path>
+        //     </g>
+        // </g>
+        // </svg>
+        // <p>${type2}</p>`
+        //         } else {
+        //             h = `              <img src="https://img.icons8.com/color/15/000000/non-vegetarian-food-symbol.png" />
 
-    <p>${type2}</p>`
-        }
+        //     <p>${type2}</p>`
+        //         }
 
-        // hid
-        document.querySelector('.ct_bx_type_fd').innerHTML = h
+        //         // hid
+        //         document.querySelector('.ct_bx_type_fd').innerHTML = h
 
         let myRating = JSON.parse(localStorage.getItem('myRatings'))
-        document.querySelector('.loading_rate_bx_for_reviews_msg').style.display = 'block'
+        document.querySelector('.loading_rate_bx_for_reviews_msg').style.display = 'flex'
 
         if (myRating !== null) {
             document.querySelector('.ct_bx_form_rating').style.opacity = .5
-            document.querySelector('.loading_rate_bx').style.display = 'block'
+            document.querySelector('.loading_rate_bx').style.display = 'flex'
             document.querySelector('.ct_bx_form_rating').style['pointer-events'] = 'none';
 
 
@@ -8226,14 +8389,14 @@ style=" fill:#000000;">
 
                     let fdInside = jwt.item.fdInside
                     let price2 = parseFloat(item.price)
+                    document.querySelector('.ct_bx_acct_cart').style.display = 'block'
 
                     document.querySelector('.ct_bx_acct_cart').style.visibility = 'visible'
                     document.querySelector('.ct_x_fd_dt_itm').style.visibility = 'visible'
-
+                    document.querySelector('.ct_x_fd_dt_itm').style.display = 'block'
                     document.querySelector('.ct_offer_box_cook2 span').innerText = item.offer + "%"
 
-                    document.querySelectorAll('.ct_download_cooking a')[0].src = item.cook
-                    document.querySelectorAll('.ct_download_cooking a')[1].src = item.cook
+                    document.querySelector('.ct_bx_download_btn a').src = item.cook
                     document.querySelector('.fd_name_dt_itm').innerText = item.name
                     document.querySelector('.ct_bx_mrp del').innerText = '₹' + price2
                     let offer2 = parseFloat(item.offer)
@@ -8242,17 +8405,41 @@ style=" fill:#000000;">
                     let sAm = price2 - offp
                     document.querySelector('.mrp_ammount del').innerText = `₹ ${price2}`
 
-                    document.querySelector('.ct_saved_am p').innerText = `You saves ₹ ${sAm}`
-                    document.querySelector('.ct_bx_price span').innerText = `${offp}`
+                    document.querySelector('.ct_bx_price span').innerHTML = `${offp} <iu>(${item.initUnit})</iu>`
+                    document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText = `₹ ${offp}`
+
                     document.querySelector('.ct_bx_fex_fd_dt_ov').style.height = 'auto'
 
                     document.querySelector('.for_items_loadsss').style.display = 'none'
                     document.querySelector('.ct_bx_img_itm img').src = item.img
                     document.querySelector('.ct_bx_img_itm').style.visibility = 'visible'
+                    document.querySelector('.seleted_unit_price').innerText = item.Iup
+                    console.log(item)
+                    let unitsIn = item.unitInit.map((cur) => {
+                        let html
+                        if (cur.price !== null) {
+                            html = `<li>
+        <span>${cur.unit}</span>
+        <am>₹ ${cur.price}</am>
+    </li>`
+                        } else {
+                            html = `<li class='othUn'>
+    <span>${cur.unit}</span>
+    <am></am>
+</li>`
+                        }
+                        return html
+                    })
+                    document.querySelectorAll('.ct_bx_units_item ul')[1].innerHTML = unitsIn.join('')
+
+                    document.querySelector('.recomended_cart').style.marginTop = '20px'
 
                     document.querySelector('.ct_bx_acct_cart').style.visibility = 'visible'
+                    document.querySelector('.ct_x_fd_dt_itm').style.display = 'block'
+
                     document.querySelector('.ct_x_fd_dt_itm').style.visibility = 'visible'
-                    document.querySelector('.ct_time_takes_itm p').innerHTML = `<p>Cook just in <strong>${item.time}</strong> </p>`
+                    document.querySelector('.ct_time_takes_itm p').innerHTML = `<p>${item.time}</p>`
+
                     time = item.time
                     if (item.fdInside !== null) {
                         document.querySelector('.ct_sbout_this_itm').style.display = 'block'
@@ -8263,14 +8450,13 @@ style=" fill:#000000;">
                                 console.log(cur12.name, dt)
                                 if (cur12.name.split(' ').join('').toLowerCase() === dt.split(' ').join('').toLowerCase()) {
                                     ht = `  <div class="ct_about_itm_fld">
-                                <ion-icon name="checkbox-outline"></ion-icon>                   
+                                <ion-icon name="checkbox"></ion-icon>                   
                                                         <p>${dt}</p>
-                                                        <button class="select">unselect</button>               
                                                         <span>${cur12.price}</span>
                                                     </div>`
                                 } else {
                                     ht = `  <div class="ct_about_itm_fld">
-                                <ion-icon name="checkbox-outline"></ion-icon>                   
+                                <ion-icon name="checkbox"></ion-icon>                   
                                 <p>${dt}</p>
                                 </div>`
                                 }
@@ -8291,10 +8477,22 @@ style=" fill:#000000;">
                                     let nameF = cur.data.item.name.split(' ').join('').toLowerCase().trim()
                                     console.log(nameF, jwt11.item.name.split(' ').join('').toLowerCase().trim(), 'ama')
                                     if (nameF === jwt11.item.name.split(' ').join('').toLowerCase().trim()) {
-                                        console.log(document.querySelectorAll('.select'), 'lioa')
-                                        document.querySelectorAll('.select').forEach(cur1 => {
-                                            cur1.style.opacity = .4
-                                            cur1.style['pointer-events'] = 'none'
+
+                                        let selp = cur.selP
+                                        selp = parseFloat(document.querySelector('.seleted_unit_price').innerText)
+                                        let totAm
+                                        document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur1 => {
+                                            let pr = parseFloat(cur1.innerText.split('₹')[1])
+                                            totAm = pr - selp
+                                        })
+                                        console.log(totAm)
+                                        document.querySelector('.seleted_unit_price').innerText = cur.selP
+                                        totAm = totAm + parseFloat(cur.selP)
+                                        document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur1 => {
+                                            cur1.innerText = '₹ ' + totAm
+                                        })
+                                        document.querySelectorAll('.ct_bx_weight_qt span').forEach(cur1 => {
+                                            cur1.innerText = cur.itemUnit
                                         })
                                     }
                                 })
@@ -8391,8 +8589,7 @@ style=" fill:#000000;">
                                     if (dislikes === 0 && likes !== 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8423,8 +8620,7 @@ style=" fill:#000000;">
                                     } else if (dislikes === 0 && likes === 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8454,8 +8650,7 @@ style=" fill:#000000;">
                                     } else if (dislikes !== 0 && likes !== 0) {
                                         html = `       <div class="ct_bx_revies">
                            <div class="ct_person_dt">
-                               <ion-icon name="person-circle"></ion-icon>
-                               <h4>${userN}</h4>
+                           <img src="../img/acc.png">                               <h4>${userN}</h4>
             
                            </div>
                            ${stars}
@@ -8518,8 +8713,7 @@ style=" fill:#000000;">
                                     else if (likes !== 0 && dislikes === 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8564,8 +8758,7 @@ style=" fill:#000000;">
                                     if (dislikes === 0 && likes !== 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8595,8 +8788,7 @@ style=" fill:#000000;">
                                     } else if (likes === 0 && dislikes !== 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8626,8 +8818,7 @@ style=" fill:#000000;">
                                     } else if (dislikes === 0 && likes === 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8657,8 +8848,7 @@ style=" fill:#000000;">
                                     } else if (dislikes !== 0 && likes !== 0) {
                                         html = `       <div class="ct_bx_revies">
                            <div class="ct_person_dt">
-                               <ion-icon name="person-circle"></ion-icon>
-                               <h4>${userN}</h4>
+                           <img src="../img/acc.png">                               <h4>${userN}</h4>
             
                            </div>
                            ${stars}
@@ -8690,8 +8880,7 @@ style=" fill:#000000;">
                                     else if (likes !== 0 && dislikes === 0) {
                                         html = `       <div class="ct_bx_revies">
                             <div class="ct_person_dt">
-                                <ion-icon name="person-circle"></ion-icon>
-                                <h4>${userN}</h4>
+                            <img src="../img/acc.png">                                <h4>${userN}</h4>
              
                             </div>
                             ${stars}
@@ -8730,8 +8919,7 @@ style=" fill:#000000;">
                                     && likes !== 0) {
                                     html = `       <div class="ct_bx_revies">
                     <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>${userN}</h4>
+                    <img src="../img/acc.png">                        <h4>${userN}</h4>
      
                     </div>
                     ${stars}
@@ -8761,8 +8949,7 @@ style=" fill:#000000;">
                                 } else if (likes === 0 && dislikes !== 0) {
                                     html = `       <div class="ct_bx_revies">
                     <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>${userN}</h4>
+                    <img src="../img/acc.png">                        <h4>${userN}</h4>
      
                     </div>
                     ${stars}
@@ -8792,8 +8979,7 @@ style=" fill:#000000;">
                                 } else if (dislikes === 0 && likes === 0) {
                                     html = `       <div class="ct_bx_revies">
                     <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>${userN}</h4>
+                    <img src="../img/acc.png">                        <h4>${userN}</h4>
      
                     </div>
                     ${stars}
@@ -8823,8 +9009,7 @@ style=" fill:#000000;">
                                 } else if (dislikes !== 0 && likes !== 0) {
                                     html = `       <div class="ct_bx_revies">
                    <div class="ct_person_dt">
-                       <ion-icon name="person-circle"></ion-icon>
-                       <h4>${userN}</h4>
+                   <img src="../img/acc.png">                       <h4>${userN}</h4>
     
                    </div>
                    ${stars}
@@ -8854,8 +9039,7 @@ style=" fill:#000000;">
                                 } else if (dislikes !== 0 && likes === 0) {
                                     html = `       <div class="ct_bx_revies">
                     <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>${userN}</h4>
+                    <img src="../img/acc.png">                        <h4>${userN}</h4>
      
                     </div>
                     ${stars}
@@ -8886,8 +9070,7 @@ style=" fill:#000000;">
                                 else if (likes !== 0 && dislikes === 0) {
                                     html = `       <div class="ct_bx_revies">
                     <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>${userN}</h4>
+                    <img src="../img/acc.png">                        <h4>${userN}</h4>
      
                     </div>
                     ${stars}
@@ -8923,8 +9106,8 @@ style=" fill:#000000;">
                                 && likes !== 0) {
                                 html = `       <div class="ct_bx_revies">
                 <div class="ct_person_dt">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <h4>${userN}</h4>
+                <img src="../img/acc.png">
+                <h4>${userN}</h4>
  
                 </div>
                 ${stars}
@@ -8954,8 +9137,8 @@ style=" fill:#000000;">
                             } else if (likes === 0 && dislikes !== 0) {
                                 html = `       <div class="ct_bx_revies">
                 <div class="ct_person_dt">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <h4>${userN}</h4>
+                <img src="../img/acc.png" alt="">
+                <h4>${userN}</h4>
  
                 </div>
                 ${stars}
@@ -8985,8 +9168,8 @@ style=" fill:#000000;">
                             } else if (dislikes === 0 && likes === 0) {
                                 html = `       <div class="ct_bx_revies">
                 <div class="ct_person_dt">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <h4>${userN}</h4>
+                <img src="../img/acc.png" alt="">
+                <h4>${userN}</h4>
  
                 </div>
                 ${stars}
@@ -9016,8 +9199,8 @@ style=" fill:#000000;">
                             } else if (dislikes !== 0 && likes !== 0) {
                                 html = `       <div class="ct_bx_revies">
                <div class="ct_person_dt">
-                   <ion-icon name="person-circle"></ion-icon>
-                   <h4>${userN}</h4>
+               <img src="../img/acc.png" alt="">
+               <h4>${userN}</h4>
 
                </div>
                ${stars}
@@ -9047,8 +9230,8 @@ style=" fill:#000000;">
                             } else if (dislikes !== 0 && likes === 0) {
                                 html = `       <div class="ct_bx_revies">
                 <div class="ct_person_dt">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <h4>${userN}</h4>
+                <img src="../img/acc.png" alt="">
+                <h4>${userN}</h4>
  
                 </div>
                 ${stars}
@@ -9079,8 +9262,8 @@ style=" fill:#000000;">
                             else if (likes !== 0 && dislikes === 0) {
                                 html = `       <div class="ct_bx_revies">
                 <div class="ct_person_dt">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <h4>${userN}</h4>
+                <img src="../img/acc.png" alt="">
+                <h4>${userN}</h4>
  
                 </div>
                 ${stars}
@@ -9527,7 +9710,7 @@ style=" fill:#000000;">
 
                     document.querySelector('.rate_prod_h4').innerText = 'Rate this product'
                     document.querySelector('.ct_bx_form_rating').style.opacity = .5
-                    document.querySelector('.loading_rate_bx').style.display = 'block'
+                    document.querySelector('.loading_rate_bx').style.display = 'flex'
                     document.querySelector('.ct_bx_form_rating').style['pointer-events'] = 'none';
 
 
@@ -9536,7 +9719,9 @@ style=" fill:#000000;">
                         cur.style['pointer-events'] = 'none';
 
                     })
-                    let catid = document.querySelector('.catId_fd').innerText
+                    let catid = window.location.search.split('?')[1].split('&')[3].split('=')[1]
+
+
 
                     document.querySelector('.ct_rate_star_wrapper').classList.add('not_rated')
                     document.querySelector('.ct_rate_star_wrapper').classList.remove('rated_success')
@@ -9548,6 +9733,7 @@ style=" fill:#000000;">
                             let el1 = res.docs[i1]
                             let itm = el1.data().item
                             let cqa = el1.data().cqa
+                            console.log(itm.id === token)
                             if (itm.id !== undefined) {
                                 if (itm.id === token) {
                                     let ratings = itm.ratings
@@ -9614,6 +9800,9 @@ style=" fill:#000000;">
                                                                 cqa: cqa,
                                                                 item: {
                                                                     name: name,
+                                                                    Iup: itm.Iup,
+
+                                                                    unitInit: itm.unitInit,
                                                                     base: base,
                                                                     type: group,
                                                                     cook: cook,
@@ -9675,10 +9864,14 @@ style=" fill:#000000;">
                     console.log
                     cur.remove()
                 })
-                let q = e.target.closest('.ct_bx_serached_itm ul li').innerText.split(' ').join('').trim()
+
+                document.querySelector('.Search_bar_qa').value = e.target.closest('.ct_bx_serached_itm ul li p').innerText
+                document.querySelector('.for_ek_fd_cart_load_rec_load2').style.display = 'flex'
+                let q = e.target.closest('.ct_bx_serached_itm ul li p').innerText.split(' ').join('').trim()
                 let id = window.location.search.split('?')[1].split('=')[4]
                 let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${id}`)
                 let res = await dbCollection.get()
+                document.querySelector('.for_ek_fd_cart_load_rec_load2').style.display = 'none'
 
                 res.docs.forEach(cur => {
                     let itm = cur.data().item
@@ -9686,7 +9879,7 @@ style=" fill:#000000;">
                     let token = window.location.search.split('?')[1].split('=')[1]
                     let jwt1 = parseJwt(token)
                     let nameJ = jwt1.item.name
-                    if (itm.name === nameJ) {
+                    if (itm.name.toLowerCase() === nameJ.toLowerCase()) {
                         qa.forEach(itmQ => {
                             if (itmQ.question.split(' ').join('').trim() === q) {
                                 document.querySelectorAll('.ct_bx_qa').forEach(el => {
@@ -9727,7 +9920,9 @@ style=" fill:#000000;">
     let outPutSearch = async (text) => {
         if (text.length > 0) {
             console.log(text)
+            text = text.toLowerCase()
             let id = window.location.search.split('?')[1].split('=')[4]
+            console.log(id)
             let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${id}`)
             let res = await dbCollection.get()
             res.docs.forEach(cur => {
@@ -9736,7 +9931,8 @@ style=" fill:#000000;">
                 let token = window.location.search.split('?')[1].split('=')[1]
                 let jwt1 = parseJwt(token)
                 let nameJ = jwt1.item.name
-                if (itm.name === nameJ) {
+                console.log(itm.name, nameJ)
+                if (itm.name.toLowerCase() === nameJ.toLowerCase()) {
                     document.querySelector('.ct_no_res_search_qa').style.display = 'none'
                     let matches = qa.filter(st => {
                         console.log(st)
@@ -9774,8 +9970,8 @@ style=" fill:#000000;">
                             cur.remove()
                         })
                         notFound = true
-                        
-                        document.querySelector('.ct_bx_serached_itm').style.display='none'
+
+                        document.querySelector('.ct_bx_serached_itm').style.display = 'none'
                         document.querySelector('.ct_no_res_search_qa').style.display = 'block'
                     }
                 }
@@ -9876,7 +10072,7 @@ let addedOrder = 0
 const addCqa = async () => {
     let token = window.location.search.split('?')[1].split('=')[1].split('&')[0]
     let jwt1 = parseJwt(token)
-    document.querySelector('.for_ek_fd_cart_load_rec_load2').style.display = 'block'
+    document.querySelector('.for_ek_fd_cart_load_rec_load2').style.display = 'flex'
 
     let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${window.location.search.split('?')[1].split('=')[4]}`)
     let res = await dbCollection.get()
@@ -9891,6 +10087,7 @@ const addCqa = async () => {
         if (name2 === name) {
             document.querySelector('.ct_bx_img_itm').style.visibility = 'visible'
             document.querySelector('.ct_bx_img_itm img').src = item.img
+
 
             document.querySelector('.ct_bx_fex_fd_dt_ov .ct_full_loading_box').style.display = 'none'
             let qa = cur.data().cqa
@@ -10632,10 +10829,19 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                                     }
                                 }
 
-
-
+                                if (price.split('₹')[1] !== undefined) {
+                                    price = price.split('₹')[1].split(',').join('')
+                                } else {
+                                    price = price.split(',').join('')
+                                }
+                                price = parseFloat(price)
                                 let type = item.type
                                 if (offer !== null && offer !== undefined) {
+                                    offer = offer.split('%')[1]
+                                    offer = parseFloat(offer)
+                                    let priceP = price - (price * (offer / 100))
+                                    priceP = Math.round(priceP)
+                                    priceP = priceP.toLocaleString()
                                     if (type === 'non-veg') {
                                         htmlFd = `               <li>
 <div class="ct_all_over_fd_dt">
@@ -10656,16 +10862,7 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
             </div>
             <a href="${cook}">How to cook ?</a>
             <p class="price_fd">₹ ${price}</p>
-            <div class="ct_bx_btm_bar_order">
-                <div class="ct_bx_of">
-                    <p>${offer}% off</p>
-                </div>
-                <div class="ct_time">
-                    <ion-icon name="alarm-outline"></ion-icon>
-
-                    <p>${time} Min</p>
-                </div>
-            </div>
+            <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
 
         </div>
 
@@ -10703,17 +10900,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                     </div>
                     <a href="${cook}">How to cook ?</a>
                     <p class="price_fd">₹ ${price}</p>
-                    <div class="ct_bx_btm_bar_order">
-                        <div class="ct_bx_of">
-                            <p>${offer}% off</p>
-                        </div>
-                        <div class="ct_time">
-                            <ion-icon name="alarm-outline"></ion-icon>
-        
-                            <p>${time} Min</p>
-                        </div>
-                    </div>
-        
+                    <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
+
                 </div>
         
                 <span class="qt_order_itm">Quantity: ${qt}</span>
@@ -10745,14 +10933,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
             </div>
             <a href="${cook}">How to cook ?</a>
             <p class="price_fd">₹ ${price}</p>
-            <div class="ct_bx_btm_bar_order">
-              
-                <div class="ct_time">
-                    <ion-icon name="alarm-outline"></ion-icon>
+            <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
 
-                    <p>${time} Min</p>
-                </div>
-            </div>
 
         </div>
 
@@ -11265,11 +11447,11 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                             document.querySelectorAll('.ct_time p, .ct_unit p, .ct_bx_of p').forEach(cur => {
                                 cur.style.fontSize = '10px'
                             })
-                         
+
                             document.querySelectorAll('.date_time_order').forEach(cur => {
                                 cur.style.fontSize = '10px'
                             })
-                          
+
                         }
 
                         if (window.innerWidth < 470) {
@@ -11279,9 +11461,9 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                             })
 
 
-                      
+
                             document.querySelector('.ct_inner_dt_order_none h3').style.fontSize = '14px'
-                   
+
                             document.querySelectorAll('.ct_fd_dt_full .qt_order_itm').forEach(cur => {
                                 cur.style.top = '15px'
                                 cur.style.marginLeft = '120px'
@@ -11295,8 +11477,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                             document.querySelectorAll('.ct_bx_food_dt_acc h4').forEach(cur => {
                                 cur.style.width = '100%'
                             })
-                           
-                        
+
+
                         }
                     } else {
 
@@ -11542,8 +11724,24 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
 
 
 
+
+                                if (price.split('₹')[1] !== undefined) {
+                                    price = price.split('₹')[1].split(',').join('')
+                                } else {
+                                    price = price.split(',').join('')
+                                }
+                                price = parseFloat(price)
                                 let type = item.type
                                 if (offer !== null && offer !== undefined) {
+                                    console.log(typeof offer)
+                                    if (typeof offer !== 'number') {
+                                        offer = offer.split('%')[1]
+                                    } else { offer = offer }
+                                    offer = parseFloat(offer)
+                                    let priceP = price - (price * (offer / 100))
+                                    priceP = Math.round(priceP)
+                                    console.log(priceP)
+                                    priceP = priceP.toLocaleString()
                                     if (type === 'non-veg') {
                                         htmlFd = `               <li>
                                         <span class="qt_order_itm">Quantity: ${qt}</span>
@@ -11566,16 +11764,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
             </div>
             <a href="${cook}">How to cook ?</a>
             <p class="price_fd">₹ ${price}</p>
-            <div class="ct_bx_btm_bar_order">
-                <div class="ct_bx_of">
-                    <p>${offer}% off</p>
-                </div>
-                <div class="ct_time">
-                    <ion-icon name="alarm-outline"></ion-icon>
+            <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
 
-                    <p>${time} Min</p>
-                </div>
-            </div>
 
         </div>
 
@@ -11614,16 +11804,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                     </div>
                     <a href="${cook}">How to cook ?</a>
                     <p class="price_fd">₹ ${price}</p>
-                    <div class="ct_bx_btm_bar_order">
-                        <div class="ct_bx_of">
-                            <p>${offer}% off</p>
-                        </div>
-                        <div class="ct_time">
-                            <ion-icon name="alarm-outline"></ion-icon>
-        
-                            <p>${time} Min</p>
-                        </div>
-                    </div>
+                    <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
+
         
                 </div>
         
@@ -11657,14 +11839,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
             </div>
             <a href="${cook}">How to cook ?</a>
             <p class="price_fd">₹ ${price}</p>
-            <div class="ct_bx_btm_bar_order">
-              
-                <div class="ct_time">
-                    <ion-icon name="alarm-outline"></ion-icon>
+            <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
 
-                    <p>${time} Min</p>
-                </div>
-            </div>
 
         </div>
 
@@ -11703,14 +11879,8 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                     </div>
                     <a href="${cook}">How to cook ?</a>
                     <p class="price_fd">₹ ${price}</p>
-                    <div class="ct_bx_btm_bar_order">
-                       
-                        <div class="ct_time">
-                            <ion-icon name="alarm-outline"></ion-icon>
-        
-                            <p>${time} Min</p>
-                        </div>
-                    </div>
+                    <p class="saved_am">You saved ₹ ${priceP} (${offer}%)</p>
+
         
                 </div>
         
@@ -12170,27 +12340,27 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                             document.querySelectorAll('.ct_time p, .ct_unit p, .ct_bx_of p').forEach(cur => {
                                 cur.style.fontSize = '10px'
                             })
-                          
+
                             document.querySelectorAll('.date_time_order').forEach(cur => {
                                 cur.style.fontSize = '10px'
                             })
-                           
+
                         }
                         if (window.innerWidth < 470) {
-                         
+
                             document.querySelectorAll('.date_time_order').forEach(cur => {
                                 cur.style.fontSize = '11px'
                             })
 
 
-                         
+
                             document.querySelector('.ct_inner_dt_order_none h3').style.fontSize = '14px'
-                          
+
                             document.querySelectorAll('.ct_fd_dt_full .qt_order_itm').forEach(cur => {
                                 cur.style.top = '15px'
                                 cur.style.marginLeft = '120px'
                             })
-                           
+
                             document.querySelectorAll('.ct_box_half_order .main_img').forEach(cur => {
                                 cur.style.width = '100%'
                             })
@@ -12243,6 +12413,7 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
 
 
     document.querySelector('.ct_bx_edit_acc').addEventListener('click', () => {
+        if (window.location.pathname.split('/').includes('editAccount')) { return }
         document.querySelector('.ct_edit_cc #nick_name_inp_dt').value = user.n
         document.querySelector('.ct_edit_cc #lst_name_inp').value = user.ln
         document.querySelector('.ct_edit_cc #address_inp').value = user.ad
@@ -12252,7 +12423,7 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
         document.querySelector('.ct_edit_cc #pin').value = user.pin
 
         document.querySelector('.ct_edit_cc').style.display = 'block'
-    
+
         document.querySelector('.ct_show_acc_dt').style.display = 'block'
 
         document.querySelector('.ct_bx_peoples_details').style.display = 'none'
@@ -12283,7 +12454,7 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
                 }
             }
         }
-       
+
         if (window.location.search.split('?')[1].split('=')[0] === 'updated' && window.location.pathname === '/account') {
             if (window.location.search.split('?')[1].split('=')[0] === 'true') {
                 document.querySelector('.on_edit_profile_acc .ct_bx_message_succesfully_ordered.succ_otp').style.display = 'inline-block'
@@ -12428,7 +12599,7 @@ if (document.querySelector('.ct_bx_side_adm_user ') !== null) {
 
     // document.querySelectorAll('.ct_bx_side_adm_user 
 
-   // document.querySelectorAll('.ct_bx_for_orders').forEach(cur => {
+    // document.querySelectorAll('.ct_bx_for_orders').forEach(cur => {
 
     //     cur.addEventListener('click', () => {
     //         console.log(cur.childNodes)
@@ -13300,85 +13471,7 @@ if (document.querySelector('.bx_show_stock_cat') !== null) {
 
     }
 
-    document.querySelector('html').addEventListener('click', (e) => {
-        let bxOrder = e.target.closest('.main_li_itm_order')
 
-        if (bxOrder) {
-            console.log(bxOrder.childNodes[1].childNodes)
-            if (bxOrder.classList.value.split(' ').includes('notselected_order_itm')) {
-                if (!e.target.closest('.ct_select_dat')) {
-                    if (document.querySelector('.selected_order_itm') !== null) {
-                        document.querySelector('.selected_order_itm').classList.add('notselected_order_itm')
-                        document.querySelector('.selected_order_itm').classList.remove('selected_order_itm')
-
-                    }
-                    if (bxOrder.childNodes[1].childNodes[1].classList.value.includes('ct_bx_if_new')) {
-                        bxOrder.childNodes[1].childNodes[1].style.display = 'none'
-
-                    }
-
-                    bxOrder.classList.remove('notselected_order_itm')
-                    bxOrder.classList.add('selected_order_itm')
-                }
-            } else {
-                if (!e.target.closest('.ct_select_dat')) {
-                    if (document.querySelector('.selected_order_itm') !== null) {
-                        document.querySelector('.selected_order_itm').classList.add('selected_order_itm')
-                        document.querySelector('.selected_order_itm').classList.remove('notselected_order_itm')
-
-                    }
-
-                    bxOrder.classList.remove('selected_order_itm')
-                    bxOrder.classList.add('notselected_order_itm')
-                }
-            }
-            //  bxOrder.childNodes[3].style.display='block'
-        }
-        if (e.target.closest('.ct_bx_dt_sle_date')) {
-            if (!e.target.closest('.ct_select_dat')) {
-
-                let selectedBx = document.querySelector('.ct_bx_dt_sle_date').classList
-
-                if (selectedBx.value.split(' ').includes('tog_date_select')) {
-                    let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
-            `
-                    document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
-
-                    document.querySelector('.ct_sld_icon_order').innerHTML = icon
-                    document.querySelector('.ct_select_dat').style.display = 'none'
-
-                    selectedBx.remove('tog_date_select')
-                    selectedBx.add('nottog_date_select')
-                } else {
-                    let icon = `                    <ion-icon name="chevron-up-outline"></ion-icon>
-            `
-                    document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
-
-                    document.querySelector('.ct_sld_icon_order').innerHTML = icon
-                    document.querySelector('.ct_select_dat').style.display = 'block'
-
-                    selectedBx.add('tog_date_select')
-                    selectedBx.remove('nottog_date_select')
-                }
-            }
-
-        } else {
-            if (!e.target.closest('.ct_select_dat')) {
-
-                let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
-        `
-                document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
-
-                document.querySelector('.ct_sld_icon_order').innerHTML = icon
-                document.querySelector('.ct_select_dat').style.display = 'none'
-                document.querySelector('.ct_select_dat').style.display = 'none'
-
-                document.querySelector('.ct_bx_dt_sle_date').classList.remove('tog_date_select')
-                document.querySelector('.ct_bx_dt_sle_date').classList.add('nottog_date_select')
-            }
-        }
-
-    })
     let td = 0
     let ttd = 0
     let t7d = 0
@@ -14269,9 +14362,9 @@ const addBill = () => {
         am += cur
     })
     if (am !== 0) {
-        if(window.innerWidth<=500){
-        document.querySelector('.ct_bx_locate_bill').style.display='flex'
-        document.querySelector('.ct_bx_locate_bill p').innerText = '₹' + ' ' + am.toLocaleString()
+        if (window.innerWidth <= 1000) {
+            document.querySelector('.ct_bx_locate_bill').style.display = 'flex'
+            document.querySelector('.ct_bx_locate_bill p').innerText = '₹' + ' ' + am.toLocaleString()
 
         }
         document.querySelector('.block_1_charge span').innerText = '₹' + ' ' + am.toLocaleString()
@@ -14280,10 +14373,10 @@ const addBill = () => {
 
         document.querySelector('.to_pay_cahge c').innerText = (am + 150).toLocaleString()
     } else {
-        if(window.innerWidth<=500){
-            document.querySelector('.ct_bx_locate_bill').style.display='none'
-    
-            }
+        if (window.innerWidth <= 1000) {
+            document.querySelector('.ct_bx_locate_bill').style.display = 'none'
+
+        }
         document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
         document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
         document.querySelector('.to_pay_cahge b').remove()
@@ -14292,10 +14385,11 @@ const addBill = () => {
 
 }
 const addToCart = async (elem, bx, price) => {
+    // return
     let html2
     let html
     added = 0
-    document.querySelector('.loader_cart').style.display = 'block'
+    document.querySelector('.loader_cart').style.display = 'flex'
     let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${elem.catId}`)
     dbCollection.get().then(res => {
         res.docs.forEach(cur => {
@@ -14887,40 +14981,41 @@ const addToCart = async (elem, bx, price) => {
 
 
                                 if (window.innerWidth < 360) {
-                                    
-                              
+
+
                                     document.querySelectorAll('.main_li_cart_fd_lis').forEach(cur => {
                                         cur.style.marginLeft = '2px'
                                     })
                                 }
-     
-                               
-                                if(window.innerWidth<=400){
+
+
+                                if (window.innerWidth <= 400) {
 
                                     document.querySelectorAll('.ct_bx_grocery_required .itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
                                         cur.style.fontSize = '15px'
                                     })
                                     document.querySelectorAll('.ct_bx_grocery_required .itm_food_list_ek').forEach(cur => {
                                         cur.style.width = '30%'
-                                
+
                                     })
-                                  
+
                                     document.querySelectorAll('.ct_bx_all_groc_required .itm_food_list_ek').forEach(cur => {
-                                        cur.style.overflow='visible'
-                                
+                                        cur.style.overflow = 'visible'
+
                                     })
                                     document.querySelectorAll('.ct_bx_all_groc_required .main_img_groc_itm').forEach(cur => {
-                                        cur.style.minHeight='120px'
-                                        cur.style.width='120px'
-                                
+                                        cur.style.minHeight = '120px'
+                                        cur.style.width = '120px'
+
                                     })
                                 }
-                                if(window.innerWidth<360){  
+                                if (window.innerWidth < 360) {
                                     document.querySelectorAll('.ct_bx_all_groc_required').forEach(cur => {
-                                        cur.style.transform='translate(-52px,60px)'
-                                        cur.style.width='114%'
+                                        cur.style.transform = 'translate(-52px,60px)'
+                                        cur.style.width = '114%'
 
-                                    })}
+                                    })
+                                }
                             }
 
 
@@ -15165,68 +15260,139 @@ const addToCart = async (elem, bx, price) => {
                     price = qtFood * price
                     price = price.toLocaleString()
                     let d = elem.data.item
-                    if (d.offer !== null) {
+                    //uniqu
+                    let dataLoc=JSON.parse(localStorage.getItem('foodsAdded'))
+                    dataLoc.forEach(cur=>{
+let iitm=cur.data.item
+iitm.offer=itm.offer
+iitm.unitInit=itm.unitInit
+
+localStorage.setItem('foodsAdded',JSON.stringify(dataLoc))
+                    })
+                    let allReadyAddedC=[]
+                    let a=[]
+                    let arrL=[]
+                    dataLoc.forEach(elem => {
+                        if (allReadyAddedC.length !== 0) {
+                            a.push({ l: elem.id, qt: elem.qt,unit:elem.itemUnit })
+                            a.forEach((cur, i) => {
+                                if (!allReadyAddedC.includes(cur.l)) {
+        
+                                    let v = cur.l + '+' + cur.qt+'+'+cur.unit
+                                    arrL.push(v)
+                                    allReadyAddedC.push(cur.l)
+        
+                                }
+        
+                            })
+                            allReadyAddedC.push(elem.id)
+        
+                            document.querySelector(".check_out_btn_order").setAttribute("href", `?item=${JSON.stringify(arrL)}`);
+        
+        
+        
+                        } else {
+        
+                            a.push({ l: elem.id, qt: elem.qt,unit:elem.itemUnit })
+                            console.log(a)
+        
+                            a.forEach((cur, i) => {
+                                if (!allReadyAddedC.includes(cur.l)) {
+        
+                                    let v = cur.l + '+' + cur.qt+'+'+cur.unit
+                                    arrL.push(v)
+                                    allReadyAddedC.push(cur.l)
+        
+                                }
+        
+                            })
+                            document.querySelector(".check_out_btn_order").setAttribute("href", `?item=${JSON.stringify(arrL)}`);
+                        }
+                       
+                    })
+                    if (itm.offer !== null) {
                         let totprice = price.split(',').join('')
                         totprice = parseFloat(totprice)
+                        let offer = parseFloat(itm.offer)
+                        console.log(totprice, Math.round(totprice * (offer / 100)), 'koi')
 
-                        let offer = parseFloat(d.offer)
                         let offerPrice = (totprice - Math.round(totprice * (offer / 100)))
-                        let saves = totprice - offerPrice
+                        console.log(offerPrice)
+
                         offerPrice = offerPrice.toLocaleString()
                         // return 
-                        if (d.type === 'non-veg') {
+                        if (itm.unitInit !== null) {
+                            let unFd = itm.unitInit.map((el => {
+                                let ht = ` <li>
+                             <span>${el.unit}</span>
+                             <am>₹ ${el.price}</am>
+                         </li>`
+                                return ht
+                            }))
                             html2 = `<li class="main_li_cart_fd_lis">
 
                             <div class="ct_itm_food_cart">
-                            <div class="ct_type_fd_cart_itm">
-                            <img
-                            src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-                            </div>
+                     
                             <a class="img_a_cart" href="/product?${elem.href}">
 
-                            <img class="main_cart_img" src='${d.img}'>
-                            </a>
-                            <div class="ct_bx_quant_itm_cart">
+                            <img class="main_cart_img" src='${itm.img}'>
+                                </a>
 
-                                <div class="for_cart_qt">
-                                    <div class="bx_rem_field_qt_num bx_op">
+                                <span class="stk_cart">${itm.stock}</span>
 
-                                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                                            role="img" aria-label="remove"></ion-icon>
-                                    </div>
-                                    <input ''="" type="text" value="${elem.qt}">
-                                    <div class="bx_ad_field_qt_num bx_op">
-                                        <ion-icon class="add_field_num md hydrated" name="add" role="img"
-                                            aria-label="add"></ion-icon>
+                                <div class="flex_bx_cart_itm">
+
+                                    <h4>${itm.name}</h4>
+                                    <div class="ct_bx_ratings">
+                                    ${html1}
 
                                     </div>
 
-                                </div>
-                            </div>
-                            <span class="stk_cart">${itm.stock}</span>
+                                    <div class="ct_bx_qty">
 
-                            <div class="flex_bx_cart_itm">
-                            <h4>${d.name}</h4>
-                            <div class="ct_bx_ratings">
-                            ${html1}
-                                </div>
-                                <div class="ct_bx_hw_cook">
-                                <a href="${d.cook}">How to cook?</a>
-                                </div>
+                                        <div class="ct_bx_qty_inner nottog">
+                                            <div class="ct_bx_weight_qt">
+                                                <span>${elem.itemUnit}</span>
+                                                <div class="ct_bx_up">
+                                                <ion-icon name="chevron-up-outline" role="img" class="md hydrated" aria-label="chevron up outline"></ion-icon>
 
-                                <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> </p>
+        </div>
+           <div class="ct_bx_dwn">
+                                                <ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon>
 
-                                    
-                                    <span class="saved_am">you saved ₹ ${saves} </span>
+        </div>
 
-                                    <div class="ct_bx_related_itm_dt_cart">
+                                            </div>
+                                            <div class="ct_bx_units_item">
+                                                <ul>
+                                               ${unFd}
 
-                                        <div class="ct_time_takes">
-                                            <ion-icon name="alarm-outline" role="img" class="md hydrated" aria-label="alarm outline"></ion-icon>
-
-                                            <p>Cook Just in <strong>  <p>${d.time}</p>
-                                            </strong></p>
+                                                </ul>
+                                            </div>
                                         </div>
+                                        <div class="ct_bx_qt_foods">
+                                            <div class="ct_bx_item_rem">
+                                                <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                            </div>
+                                            <input type="text" value="${elem.qt}">
+                                            <div class="ct_bx_item_add">
+                                                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> <of>( ${itm.offer} % off)</of> </p>
+
+
+
+
+
+                                    <div class="remove_fd_itm_ct">
+                                        <p>Delete</p>
+                                    </div>
+
+
+
 
                                 </div>
 
@@ -15234,97 +15400,60 @@ const addToCart = async (elem, bx, price) => {
 
 
 
-                            </div>
 
 
 
 
 
-
-                            <div class="ct_bx_act_cart_itm">
-
-
-                                <div class="remove_fd_itm_ct">
-                                    <ion-icon name="trash-outline" role="img" class="md hydrated" aria-label="trash outline"></ion-icon>
-
-                                </div>
 
                             </div>
-
-
-                        </div></li>`
-
-
-
-
-                        } else if (d.type === 'veg') {
-                            html2 = `<li class="main_li_cart_fd_lis">
+                        </li>`
+                        } else {
+                            html2 = `<li class="main_li_cart_fd_lis has_not_ubnit_itm">
 
                             <div class="ct_itm_food_cart">
-                            <div class="ct_type_fd_cart_itm">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18"
-                            height="18" viewBox="0 0 172 172" style=" fill:#000000;">
-                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                font-weight="none" font-size="none" text-anchor="none"
-                                style="mix-blend-mode: normal">
-                                <path d="M0,172v-172h172v172z" fill="none"></path>
-                                <g fill="#099f49">
-                                    <path
-                                        d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                                    </path>
-                                    <path
-                                        d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
+                     
                             <a class="img_a_cart" href="/product?${elem.href}">
 
-                            <img class="main_cart_img" src='${d.img}'>
-                            </a>
-                            <div class="ct_bx_quant_itm_cart">
+                            <img class="main_cart_img" src='${itm.img}'>
+                                </a>
 
-                                <div class="for_cart_qt">
-                                    <div class="bx_rem_field_qt_num bx_op">
+                                <span class="stk_cart">${itm.stock}</span>
 
-                                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                                            role="img" aria-label="remove"></ion-icon>
-                                    </div>
-                                    <input ''="" type="text" value="${elem.qt}">
-                                    <div class="bx_ad_field_qt_num bx_op">
-                                        <ion-icon class="add_field_num md hydrated" name="add" role="img"
-                                            aria-label="add"></ion-icon>
+                                <div class="flex_bx_cart_itm">
+
+                                    <h4>${itm.name}</h4>
+                                    <div class="ct_bx_ratings">
+                                    ${html1}
 
                                     </div>
 
-                                </div>
-                            </div>
-                            <span class="stk_cart">${itm.stock}</span>
+                                    <div class="ct_bx_qty">
 
-                            <div class="flex_bx_cart_itm">
-                            <h4>${d.name}</h4>
-                            <div class="ct_bx_ratings">
-                            ${html1}
-                                </div>
-                                <div class="ct_bx_hw_cook">
-                                <a href="${d.cook}">How to cook?</a>
-                                </div>
+                                     
+                                        <div class="ct_bx_qt_foods">
+                                            <div class="ct_bx_item_rem">
+                                                <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                            </div>
+                                            <input type="text" value="${elem.qt}">
+                                            <div class="ct_bx_item_add">
+                                                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                            </div>
 
-                                <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> </p>
-
-                                    
-                                    <span class="saved_am">you saved ₹ ${saves} </span>
-
-                                    <div class="ct_bx_related_itm_dt_cart">
-
-                                        <div class="ct_time_takes">
-                                            <ion-icon name="alarm-outline" role="img" class="md hydrated" aria-label="alarm outline"></ion-icon>
-
-                                            <p>Cook Just in <strong>  <p>${d.time}</p>
-                                            </strong></p>
                                         </div>
+                                    </div>
+                                    <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> <of>( ${itm.offer} % off)</of> </p>
+
+
+
+
+
+                                    <div class="remove_fd_itm_ct">
+                                        <p>Delete</p>
+                                    </div>
+
+
+
 
                                 </div>
 
@@ -15332,81 +15461,92 @@ const addToCart = async (elem, bx, price) => {
 
 
 
-                            </div>
 
 
 
 
 
-
-                            <div class="ct_bx_act_cart_itm">
-
-
-                                <div class="remove_fd_itm_ct">
-                                    <ion-icon name="trash-outline" role="img" class="md hydrated" aria-label="trash outline"></ion-icon>
-
-                                </div>
 
                             </div>
-
-
-                        </div></li>`
-
-
+                        </li>`
                         }
+
+
+
                     } else {
-                        if (d.type === 'non-veg') {
+                        
+                        if (itm.unitInit !== null) {
+                            let unFd = itm.unitInit.map((el => {
+                                let ht = ` <li>
+                             <span>${el.unit}</span>
+                             <am>₹ ${el.price}</am>
+                         </li>`
+                                return ht
+                            }))
                             html2 = `<li class="main_li_cart_fd_lis">
 
                             <div class="ct_itm_food_cart">
-                            <div class="ct_type_fd_cart_itm">
-                            <img
-                            src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-                            </div>
+                     
                             <a class="img_a_cart" href="/product?${elem.href}">
 
-                            <img class="main_cart_img" src='${d.img}'>
-                            </a>
-                            <div class="ct_bx_quant_itm_cart">
+                            <img class="main_cart_img" src='${itm.img}'>
+                                </a>
 
-                                <div class="for_cart_qt">
-                                    <div class="bx_rem_field_qt_num bx_op">
+                                <span class="stk_cart">${itm.stock}</span>
 
-                                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                                            role="img" aria-label="remove"></ion-icon>
-                                    </div>
-                                    <input ''="" type="text" value="${elem.qt}">
-                                    <div class="bx_ad_field_qt_num bx_op">
-                                        <ion-icon class="add_field_num md hydrated" name="add" role="img"
-                                            aria-label="add"></ion-icon>
+                                <div class="flex_bx_cart_itm">
+
+                                    <h4>${itm.name}</h4>
+                                    <div class="ct_bx_ratings">
+                                    ${html1}
 
                                     </div>
 
-                                </div>
-                            </div>
-                            <span class="stk_cart">${itm.stock}</span>
+                                    <div class="ct_bx_qty">
 
-                            <div class="flex_bx_cart_itm">
-                            <h4>${d.name}</h4>
-                            <div class="ct_bx_ratings">
-                            ${html1}
-                                </div>
-                                <div class="ct_bx_hw_cook">
-                                <a href="${d.cook}">How to cook?</a>
-                                </div>
+                                        <div class="ct_bx_qty_inner nottog">
+                                            <div class="ct_bx_weight_qt">
+                                                <span>${elem.itemUnit}</span>
+                                                <div class="ct_bx_up">
+                                                <ion-icon name="chevron-up-outline" role="img" class="md hydrated" aria-label="chevron up outline"></ion-icon>
 
-                                <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> </p>
+        </div>
+           <div class="ct_bx_dwn">
+                                                <ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon>
 
-                                    
+        </div>
 
-                                    <div class="ct_bx_related_itm_dt_cart">
+                                            </div>
+                                            <div class="ct_bx_units_item">
+                                                <ul>
+                                               ${unFd}
 
-                                        <div class="ct_time_takes">
-                                            <ion-icon name="alarm-outline" role="img" class="md hydrated" aria-label="alarm outline"></ion-icon>
-
-                                            <p>Cook Just in <strong>  <p>${d.time}</p>
-                                            </strong></p>
+                                                </ul>
+                                            </div>
                                         </div>
+                                        <div class="ct_bx_qt_foods">
+                                            <div class="ct_bx_item_rem">
+                                                <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                            </div>
+                                            <input type="text" value="${elem.qt}">
+                                            <div class="ct_bx_item_add">
+                                                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <p class="price_am_cart_fd2"><span>₹ ${price}</span>  </p>
+
+
+
+
+
+                                    <div class="remove_fd_itm_ct">
+                                        <p>Delete</p>
+                                    </div>
+
+
+
 
                                 </div>
 
@@ -15414,96 +15554,60 @@ const addToCart = async (elem, bx, price) => {
 
 
 
-                            </div>
 
 
 
 
 
-
-                            <div class="ct_bx_act_cart_itm">
-
-
-                                <div class="remove_fd_itm_ct">
-                                    <ion-icon name="trash-outline" role="img" class="md hydrated" aria-label="trash outline"></ion-icon>
-
-                                </div>
 
                             </div>
-
-
-                        </div></li>`
-
-
-
-
-                        } else if (d.type === 'veg') {
-                            html2 = `<li class="main_li_cart_fd_lis">
+                        </li>`
+                        } else {
+                            html2 = `<li class="main_li_cart_fd_lis has_not_ubnit_itm">
 
                             <div class="ct_itm_food_cart">
-                            <div class="ct_type_fd_cart_itm">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18"
-                            height="18" viewBox="0 0 172 172" style=" fill:#000000;">
-                            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                stroke-dasharray="" stroke-dashoffset="0" font-family="none"
-                                font-weight="none" font-size="none" text-anchor="none"
-                                style="mix-blend-mode: normal">
-                                <path d="M0,172v-172h172v172z" fill="none"></path>
-                                <g fill="#099f49">
-                                    <path
-                                        d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                                    </path>
-                                    <path
-                                        d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
+                     
                             <a class="img_a_cart" href="/product?${elem.href}">
 
-                            <img class="main_cart_img" src='${d.img}'>
-                            </a>
-                            <div class="ct_bx_quant_itm_cart">
+                            <img class="main_cart_img" src='${itm.img}'>
+                                </a>
 
-                                <div class="for_cart_qt">
-                                    <div class="bx_rem_field_qt_num bx_op">
+                                <span class="stk_cart">${itm.stock}</span>
 
-                                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                                            role="img" aria-label="remove"></ion-icon>
-                                    </div>
-                                    <input ''="" type="text" value="${elem.qt}">
-                                    <div class="bx_ad_field_qt_num bx_op">
-                                        <ion-icon class="add_field_num md hydrated" name="add" role="img"
-                                            aria-label="add"></ion-icon>
+                                <div class="flex_bx_cart_itm">
+
+                                    <h4>${itm.name}</h4>
+                                    <div class="ct_bx_ratings">
+                                    ${html1}
 
                                     </div>
 
-                                </div>
-                            </div>
-                            <span class="stk_cart">${itm.stock}</span>
+                                    <div class="ct_bx_qty">
 
-                            <div class="flex_bx_cart_itm">
-                            <h4>${d.name}</h4>
-                            <div class="ct_bx_ratings">
-                            ${html1}
-                                </div>
-                                <div class="ct_bx_hw_cook">
-                                <a href="${d.cook}">How to cook?</a>
-                                </div>
+                                     
+                                        <div class="ct_bx_qt_foods">
+                                            <div class="ct_bx_item_rem">
+                                                <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                            </div>
+                                            <input type="text" value="${elem.qt}">
+                                            <div class="ct_bx_item_add">
+                                                <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                            </div>
 
-                                <p class="price_am_cart_fd2"><del>₹ ${price}</del> <span>₹ ${offerPrice}</span> </p>
-
-                                    
-
-                                    <div class="ct_bx_related_itm_dt_cart">
-
-                                        <div class="ct_time_takes">
-                                            <ion-icon name="alarm-outline" role="img" class="md hydrated" aria-label="alarm outline"></ion-icon>
-
-                                            <p>Cook Just in <strong>  <p>${d.time}</p>
-                                            </strong></p>
                                         </div>
+                                    </div>
+                                    <p class="price_am_cart_fd2"><span>₹ ${price}</span>  </p>
+
+
+
+
+
+                                    <div class="remove_fd_itm_ct">
+                                        <p>Delete</p>
+                                    </div>
+
+
+
 
                                 </div>
 
@@ -15511,28 +15615,17 @@ const addToCart = async (elem, bx, price) => {
 
 
 
-                            </div>
 
 
 
 
 
-
-                            <div class="ct_bx_act_cart_itm">
-
-
-                                <div class="remove_fd_itm_ct">
-                                    <ion-icon name="trash-outline" role="img" class="md hydrated" aria-label="trash outline"></ion-icon>
-
-                                </div>
 
                             </div>
-
-
-                        </div></li>`
-
-
+                        </li>`
                         }
+
+
                     }
 
                 } else { html2 = null }
@@ -15542,15 +15635,15 @@ const addToCart = async (elem, bx, price) => {
                     $('.ct_subotatal').waypoint(function (direction) {
 
                         if (direction === 'down') {
-                            if (window.innerWidth < 500) {
-                
+                            if (window.innerWidth <= 1000) {
+
                                 $('.ct_bx_locate_bill').css('position', 'relative')
                             }
                         } else if (direction === 'up') {
-                            if (window.innerWidth < 500) {
-                
+                            if (window.innerWidth <= 1000) {
+
                                 $('.ct_bx_locate_bill').css('position', 'fixed')
-                
+
                             }
                         }
                     }, {
@@ -15559,17 +15652,17 @@ const addToCart = async (elem, bx, price) => {
                     $('.ct_bx_quant_itm_cart input').keypress(function (e) {
                         var a = [];
                         var k = e.which;
-                    
+
                         for (i = 999; i < 9999; i++)
                             a.push(i);
-                    
+
                         if (!(a.indexOf(k) >= 0))
                             e.preventDefault();
-                    
+
                     });
                     if (window.innerWidth < 500) {
                         let lenFd = document.querySelectorAll('.bx_evt_cart_item .main_li_cart_fd_lis').length
-                        document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[11].remove()
+                        document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[9].remove()
                         //    document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[9].remove()
                         document.querySelectorAll('.bx_evt_cart_item .ct_time_takes').forEach(cur => {
                             cur.style.display = 'none'
@@ -15578,9 +15671,9 @@ const addToCart = async (elem, bx, price) => {
                         document.querySelectorAll('.bx_evt_cart_item .ct_bx_related_itm_dt_cart').forEach(cur => {
                             cur.style.transform = 'translate(-90px, -13px)'
                         })
-                        document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[11].remove()
+                        document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[9].remove()
 
-                        Array.from(document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[9].childNodes).forEach(cur => {
+                        Array.from(document.querySelector(`.bx_evt_cart_item .main_li_cart_fd_lis:nth-of-type(${lenFd})`).childNodes[1].childNodes[7].childNodes).forEach(cur => {
                             if (cur.classList !== undefined) {
                                 if (cur.classList.value.split(' ').includes('ct_bx_related_itm_dt_cart')) {
                                     cur.insertAdjacentHTML('afterbegin', `<div class="remove_fd_itm_ct11">
@@ -15592,20 +15685,18 @@ const addToCart = async (elem, bx, price) => {
                         })
 
                     }
-if(window.innerWidth<=360){
-     
-    document.querySelectorAll('.main_cart_img').forEach(cur => {
-        cur.style.height= '96px'
-    })
-    
-    document.querySelectorAll('.bx_evt_cart_item .ct_bx_quant_itm_cart').forEach(cur => {
-        cur.style.marginTop='116px'
-    })
-    document.querySelectorAll('.main_cart_img').forEach(cur => {
-        cur.style.height= '96px'
-    })
-  
-}
+                    if (window.innerWidth <= 360) {
+
+                        document.querySelectorAll('.img_a_cart').forEach(cur => {
+                            cur.style.height = '96px'
+                        })
+
+
+                        document.querySelectorAll('.img_a_cart').forEach(cur => {
+                            cur.style.height = '96px'
+                        })
+
+                    }
                     let search = window.location.search
                     let order = JSON.parse(localStorage.getItem('orders'))
                     if (search.split('=')[0].split('?')[1] === 'item' || order !== null) {
@@ -15647,6 +15738,7 @@ if(window.innerWidth<=360){
 
 let stockGroc
 const addGrocCart = async (elem, bx, reqGroc = false) => {
+    return
     if (elem.priceDel !== undefined && elem.priceDel !== null) {
         if (Number.isInteger(elem.priceDel)) {
             elem.priceDel = elem.priceDel
@@ -15698,25 +15790,26 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
             <div class="ct_type_fd_cart_itm"> 
             </div>
             <img class="main_cart_img2" src=${elem.img}>
+        
+            <div class="ct_bx_food_groc_casrt">
             <div class="ct_bx_quant_itm_cart">
         
-                <div class="for_cart_qt">
-        
-                    <div class="bx_rem_field_qt_num bx_op">
-        
-                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                            role="img" aria-label="remove"></ion-icon>
-                    </div>
-                    <input '' type="text" value=${elem.qt}>
-                    <div class="bx_ad_field_qt_num bx_op">
-                        <ion-icon class="add_field_num md hydrated" name="add"
-                            role="img" aria-label="add"></ion-icon>
-        
-                    </div>
-        
+            <div class="for_cart_qt">
+    
+                <div class="bx_rem_field_qt_num bx_op">
+    
+                    <ion-icon class="remove_field_num md hydrated" name="remove"
+                        role="img" aria-label="remove"></ion-icon>
                 </div>
+                <input '' type="text" value=${elem.qt}>
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num md hydrated" name="add"
+                        role="img" aria-label="add"></ion-icon>
+    
+                </div>
+    
             </div>
-            <div class="ct_bx_food_groc_casrt">
+        </div>
                 <span class="com_name"></span>
                    <h4>${elem.name}</h4>
              
@@ -15764,25 +15857,26 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
             <div class="ct_type_fd_cart_itm"> 
             </div>
             <img class="main_cart_img2" src=${elem.img}>
+        
+            <div class="ct_bx_food_groc_casrt">
             <div class="ct_bx_quant_itm_cart">
         
-                <div class="for_cart_qt">
-        
-                    <div class="bx_rem_field_qt_num bx_op">
-        
-                        <ion-icon class="remove_field_num md hydrated" name="remove"
-                            role="img" aria-label="remove"></ion-icon>
-                    </div>
-                    <input '' type="text" value=${elem.qt}>
-                    <div class="bx_ad_field_qt_num bx_op">
-                        <ion-icon class="add_field_num md hydrated" name="add"
-                            role="img" aria-label="add"></ion-icon>
-        
-                    </div>
-        
+            <div class="for_cart_qt">
+    
+                <div class="bx_rem_field_qt_num bx_op">
+    
+                    <ion-icon class="remove_field_num md hydrated" name="remove"
+                        role="img" aria-label="remove"></ion-icon>
                 </div>
+                <input '' type="text" value=${elem.qt}>
+                <div class="bx_ad_field_qt_num bx_op">
+                    <ion-icon class="add_field_num md hydrated" name="add"
+                        role="img" aria-label="add"></ion-icon>
+    
+                </div>
+    
             </div>
-            <div class="ct_bx_food_groc_casrt">
+        </div>
                 <span class="com_name"></span>
                    <h4>${elem.name}</h4>
              
@@ -15827,16 +15921,16 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
         </li>`
     }
     document.querySelector('.only_for_grocery_item').insertAdjacentHTML('beforeend', html1)
-    
+
     $('.ct_subotatal').waypoint(function (direction) {
 
         if (direction === 'down') {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'relative')
             }
         } else if (direction === 'up') {
-            if (window.innerWidth < 500) {
+            if (window.innerWidth <= 1000) {
 
                 $('.ct_bx_locate_bill').css('position', 'fixed')
 
@@ -15848,13 +15942,13 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
     $('.ct_bx_quant_itm_cart input').keypress(function (e) {
         var a = [];
         var k = e.which;
-    
+
         for (i = 999; i < 9999; i++)
             a.push(i);
-    
+
         if (!(a.indexOf(k) >= 0))
             e.preventDefault();
-    
+
     });
     if (elem.unit !== null && elem.unit !== 'null') {
         Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[7].childNodes).forEach(cur => {
@@ -16214,7 +16308,7 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
                     </div>`
                 }
 
-                Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[7].childNodes).forEach(cur => {
+                Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[5].childNodes).forEach(cur => {
                     if (cur.classList !== undefined) {
 
                         if (cur.classList.value.split(' ').includes('ct_bx_related_itm_dt_cart2')) {
@@ -16235,7 +16329,7 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
             }
             if (elem.com !== null) {
 
-                Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[7].childNodes).forEach(cur => {
+                Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[5].childNodes).forEach(cur => {
                     if (cur.classList !== undefined) {
                         if (cur.classList.value.split(' ').includes('com_name')) {
 
@@ -16245,7 +16339,7 @@ const addGrocCart = async (elem, bx, reqGroc = false) => {
                     }
                 })
             }
-            Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[7].childNodes).forEach(cur => {
+            Array.from(document.querySelector('.only_for_grocery_item').lastChild.childNodes[1].childNodes[5].childNodes).forEach(cur => {
                 if (cur.classList !== undefined) {
 
                     if (cur.classList.value.split(' ').includes('price_am_cart_fd2')) {
@@ -16447,16 +16541,20 @@ let indexCur = 0
 
 // }
 
-
 let iG = 0
+
 let btns = document.querySelectorAll('.ct_bx_buttons_actions button')
-if (window.innerWidth < 540 && window.innerWidth > 500) {
+if (window.innerWidth <= 1300 && window.innerWidth > 1160) {
+
     btns.forEach(cur => {
         cur.addEventListener('click', (e) => {
             if (e.target.id === 'prev_crousel') {
                 iG--
+                document.querySelector('#forw').style['pointer-events'] = 'auto'
+                document.querySelector('#forw').style.opacity = '1'
+
                 if (iG !== 0) {
-                    let calcT = iG * 62.5
+                    let calcT = iG * 84
 
                     document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
                         row1.style.left = `-${calcT}vw`
@@ -16469,38 +16567,59 @@ if (window.innerWidth < 540 && window.innerWidth > 500) {
 
                         row1.style.left = `-0vw`
                     })
+                    document.querySelector('#prev_crousel').style['pointer-events'] = 'none'
+                    document.querySelector('#prev_crousel').style.opacity = '.5'
+                    document.querySelector('#forw').style['pointer-events'] = 'auto'
+                    document.querySelector('#forw').style.opacity = '1'
                 }
             } else {
+                document.querySelector('#prev_crousel').style['pointer-events'] = 'auto'
+                document.querySelector('#prev_crousel').style.opacity = '1'
+                if (iG === 1) {
+                    document.querySelector('#forw').style['pointer-events'] = 'none'
+                    document.querySelector('#forw').style.opacity = '.5'
+
+                }
 
                 if (iG <= 11) {
                     iG++
-                    let calcT = iG * 62.5
 
-                    document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
-                        if (iG === 0) {
-                            row1.style.left = `-0vw`
-                            return
+                    if (iG < 3) {
+                        if (iG < 2) {
+                            iG = 1
                         }
-                        row1.style.left = `-${calcT}vw`
+                        let calcT = iG * 84
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            if (iG === 0) {
+                                row1.style.left = `-0vw`
+                                return
+                            }
+                            row1.style.left = `-${calcT}vw`
 
 
 
 
-                    })
+                        })
+                    }
                 }
             }
-            console.log(iG)
 
         })
     })
 }
-if (window.innerWidth < 400) {
+if (window.innerWidth <= 900) {
+
+
     btns.forEach(cur => {
         cur.addEventListener('click', (e) => {
             if (e.target.id === 'prev_crousel') {
                 iG--
+                document.querySelector('#forw').style['pointer-events'] = 'auto'
+                document.querySelector('#forw').style.opacity = '1'
+
                 if (iG !== 0) {
-                    let calcT = iG * 63
+                    let calcT = iG * 83
 
                     document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
                         row1.style.left = `-${calcT}vw`
@@ -16513,39 +16632,56 @@ if (window.innerWidth < 400) {
 
                         row1.style.left = `-0vw`
                     })
+                    document.querySelector('#prev_crousel').style['pointer-events'] = 'none'
+                    document.querySelector('#prev_crousel').style.opacity = '.5'
+                    document.querySelector('#forw').style['pointer-events'] = 'auto'
+                    document.querySelector('#forw').style.opacity = '1'
                 }
             } else {
-                console.log(iG)
+                document.querySelector('#prev_crousel').style['pointer-events'] = 'auto'
+                document.querySelector('#prev_crousel').style.opacity = '1'
+
 
                 if (iG <= 11) {
                     iG++
-                    let calcT = iG * 63
 
-                    document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
-                        if (iG === 0) {
-                            row1.style.left = `-0vw`
-                            return
+                    console.log(iG)
+                    if (iG < 5) {
+                        if (iG === 3) {
+
+                            document.querySelector('#forw').style['pointer-events'] = 'none'
+                            document.querySelector('#forw').style.opacity = '.5'
                         }
-                        row1.style.left = `-${calcT}vw`
+                        let calcT = iG * 83
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            if (iG === 0) {
+                                row1.style.left = `-0vw`
+                                return
+                            }
+                            row1.style.left = `-${calcT}vw`
 
 
 
 
-                    })
+                        })
+                    }
                 }
             }
-            console.log(iG)
 
         })
     })
 }
-if (window.innerWidth <= 450 && window.innerWidth > 400) {
+if (window.innerWidth <= 1160 && window.innerWidth > 900) {
     btns.forEach(cur => {
         cur.addEventListener('click', (e) => {
             if (e.target.id === 'prev_crousel') {
                 iG--
+                document.querySelector('#forw').style['pointer-events'] = 'auto'
+                document.querySelector('#forw').style.opacity = '1'
+
                 if (iG !== 0) {
-                    let calcT = iG * 60.5
+                    let calcT = iG * 85
 
                     document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
                         row1.style.left = `-${calcT}vw`
@@ -16558,42 +16694,61 @@ if (window.innerWidth <= 450 && window.innerWidth > 400) {
 
                         row1.style.left = `-0vw`
                     })
+                    document.querySelector('#prev_crousel').style['pointer-events'] = 'none'
+                    document.querySelector('#prev_crousel').style.opacity = '.5'
+                    document.querySelector('#forw').style['pointer-events'] = 'auto'
+                    document.querySelector('#forw').style.opacity = '1'
                 }
             } else {
-                console.log(iG)
+                document.querySelector('#prev_crousel').style['pointer-events'] = 'auto'
+                document.querySelector('#prev_crousel').style.opacity = '1'
+                if (iG === 1) {
+                    document.querySelector('#forw').style['pointer-events'] = 'none'
+                    document.querySelector('#forw').style.opacity = '.5'
+
+                }
 
                 if (iG <= 11) {
                     iG++
-                    let calcT = iG * 60.5
 
-                    document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
-                        if (iG === 0) {
-                            row1.style.left = `-0vw`
-                            return
+                    if (iG < 3) {
+                        if (iG < 2) {
+                            iG = 1
                         }
-                        row1.style.left = `-${calcT}vw`
+                        let calcT = iG * 85
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            if (iG === 0) {
+                                row1.style.left = `-0vw`
+                                return
+                            }
+                            row1.style.left = `-${calcT}vw`
 
 
 
 
-                    })
+                        })
+                    }
                 }
             }
-            console.log(iG)
 
         })
     })
 }
-if (window.innerWidth < 500 && window.innerWidth > 450) {
+if (window.innerWidth >= 1360) {
+
     btns.forEach(cur => {
         cur.addEventListener('click', (e) => {
             if (e.target.id === 'prev_crousel') {
                 iG--
+                document.querySelector('#forw').style['pointer-events'] = 'auto'
+                document.querySelector('#forw').style.opacity = '1'
+
                 if (iG !== 0) {
-                    let calcT = iG * 58.5
+                    let calcT = iG * 963
 
                     document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
-                        row1.style.left = `-${calcT}vw`
+                        row1.style.left = `-${calcT}px`
                         if (iG < 0) { iG = 0 }
 
 
@@ -16603,33 +16758,48 @@ if (window.innerWidth < 500 && window.innerWidth > 450) {
 
                         row1.style.left = `-0vw`
                     })
+                    document.querySelector('#prev_crousel').style['pointer-events'] = 'none'
+                    document.querySelector('#prev_crousel').style.opacity = '.5'
+                    document.querySelector('#forw').style['pointer-events'] = 'auto'
+                    document.querySelector('#forw').style.opacity = '1'
                 }
             } else {
-                console.log(iG)
+                document.querySelector('#prev_crousel').style['pointer-events'] = 'auto'
+                document.querySelector('#prev_crousel').style.opacity = '1'
+                if (iG === 1) {
+                    document.querySelector('#forw').style['pointer-events'] = 'none'
+                    document.querySelector('#forw').style.opacity = '.5'
+
+                }
 
                 if (iG <= 11) {
                     iG++
-                    let calcT = iG * 58.5
 
-                    document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
-                        if (iG === 0) {
-                            row1.style.left = `-0vw`
-                            return
+                    if (iG < 3) {
+                        if (iG < 2) {
+                            iG = 1
                         }
-                        row1.style.left = `-${calcT}vw`
+                        let calcT = iG * 966
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            if (iG === 0) {
+                                row1.style.left = `-0vw`
+                                return
+                            }
+                            row1.style.left = `-${calcT}px`
 
 
 
 
-                    })
+                        })
+                    }
                 }
             }
-            console.log(iG)
 
         })
     })
 }
-if (window.innerWidth > 800) {
+if (window.innerWidth > 1300 && window.innerWidth < 1360) {
     btns.forEach(cur => {
         cur.addEventListener('click', (e) => {
             if (e.target.id === 'prev_crousel') {
@@ -16687,12 +16857,15 @@ let numenator1 = 0
 let denomenator1 = 0
 if (window.location.pathname === '/product') {
     let locOr = localStorage.getItem('orders')
-    if (locOr !== null) {
-        document.querySelector('.relative_width1').style['pointer-events'] = 'none'
-    } else {
-        document.querySelector('.relative_width1').style['pointer-events'] = 'auto '
+    //cng1
 
-    }
+
+    // if (locOr !== null) {
+    //     document.querySelector('.relative_width1').style['pointer-events'] = 'none'
+    // } else {
+    //     document.querySelector('.relative_width1').style['pointer-events'] = 'auto '
+
+    // }
 
     addCqa()
 
@@ -16766,7 +16939,7 @@ if (window.location.pathname === '/product') {
         let token = window.location.search.split('?')[1].split('=')[1].split('&')[0]
 
         let jwt = parseJwt(token)
-        document.querySelector('.loading_rate_bx').style.display = 'block'
+        document.querySelector('.loading_rate_bx').style.display = 'flex'
 
         let name = jwt.item.name.split(' ').join('').toLowerCase().trim()
         console.log(name)
@@ -17140,6 +17313,9 @@ if (document.querySelector('.body_cart') !== null) {
 
     })
     document.querySelector('.for_conf_order').addEventListener('click', () => {
+
+        document.querySelector('.ct_bx_locate_bill').style.display = 'none'
+
         const confOrderFinal = async () => {
             let dbCollection = db.collection("users")
             let res = await dbCollection.get()
@@ -17273,41 +17449,7 @@ if (document.querySelector('.body_cart') !== null) {
 
 
             allfd.forEach(elem => {
-                if (allReadyAddedC.length !== 0) {
-                    a.push({ l: elem.id, qt: elem.qt })
-                    a.forEach((cur, i) => {
-                        if (!allReadyAddedC.includes(cur.l)) {
-
-                            let v = cur.l + '+' + cur.qt
-                            arrL.push(v)
-                            allReadyAddedC.push(cur.l)
-
-                        }
-
-                    })
-                    allReadyAddedC.push(elem.id)
-
-                    document.querySelector(".check_out_btn_order").setAttribute("href", `?item=${JSON.stringify(arrL)}`);
-
-
-
-                } else {
-
-                    a.push({ l: elem.id, qt: elem.qt })
-                    console.log(a)
-
-                    a.forEach((cur, i) => {
-                        if (!allReadyAddedC.includes(cur.l)) {
-
-                            let v = cur.l + '+' + cur.qt
-                            arrL.push(v)
-                            allReadyAddedC.push(cur.l)
-
-                        }
-
-                    })
-                    document.querySelector(".check_out_btn_order").setAttribute("href", `?item=${JSON.stringify(arrL)}`);
-                }
+             
                 if (allfd.length !== 0) {
                     price = parseFloat(elem.data.item.price.split('₹')[1].split(' ').join(''))
 
@@ -17327,6 +17469,7 @@ if (document.querySelector('.body_cart') !== null) {
 
 
         }
+
         if (allfd.length === 0) {
             if (allgroc.length !== 0) {
                 if (allgroc === null) {
@@ -17349,7 +17492,7 @@ if (document.querySelector('.body_cart') !== null) {
                     document.querySelector('.bx_evt_cart_item').style.display = 'none'
                     document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
                 } else {
-                    document.querySelector('.for_groc_cart_load').style.display = 'block'
+                    document.querySelector('.for_groc_cart_load').style.display = 'flex'
 
                     if (document.querySelectorAll('.only_for_grocery_item li').length === 0) {
 
@@ -17369,11 +17512,11 @@ if (document.querySelector('.body_cart') !== null) {
 
 
             } else {
-                document.querySelector('.for_groc_cart_load').style.display = 'block'
+                document.querySelector('.for_groc_cart_load').style.display = 'flex'
 
                 if (document.querySelectorAll('.only_for_grocery_item li').length === 0) {
 
-                    document.querySelector('.for_ek_food_cart').style.display = 'block'
+                    document.querySelector('.for_ek_food_cart').style.display = 'flex'
                 }
                 document.querySelector('.for_ekfd_btn').classList.remove('active_gp_bx')
 
@@ -17395,7 +17538,7 @@ if (document.querySelector('.body_cart') !== null) {
             if (allgroc.length === 0) {
                 document.querySelector('.for_groc_cart_load').style.display = 'none'
 
-                document.querySelector('.bx_evt_cart_item .loader_cart').style.display = 'block'
+                document.querySelector('.bx_evt_cart_item .loader_cart').style.display = 'flex'
 
                 if (document.querySelectorAll('.bx_evt_cart_item li').length === 0) {
 
@@ -17416,8 +17559,8 @@ if (document.querySelector('.body_cart') !== null) {
             if (allgroc.length !== 0 && allfd.length !== 0) {
                 document.querySelector('.for_ek_groc_cart').style.display = 'none'
                 document.querySelector('.for_ek_food_cart').style.display = 'none'
-                document.querySelector('.for_groc_cart_load').style.display = 'block'
-                document.querySelector('.for_ek_fd_cart_load').style.display = 'block'
+                document.querySelector('.for_groc_cart_load').style.display = 'flex'
+                document.querySelector('.for_ek_fd_cart_load').style.display = 'flex'
                 document.querySelector('.ct_bx_grocery_required').style.display = 'block'
 
             } else {
@@ -17536,11 +17679,11 @@ if (user !== '') {
                 }
             }
         }
-        if (window.innerWidth < 800) {
+        if (window.innerWidth < 1000) {
             document.querySelector('.ct_acc_dt_ov p').innerText = parsedData.n.split(' ').join('')
 
         }
-        if (window.innerWidth <= 500) {
+        if (window.innerWidth <= 1000) {
             document.querySelector('.acc_set_main_nav').style.display = 'none'
 
         }
@@ -17562,15 +17705,10 @@ if (user !== '') {
 
 
 } else {
-    document.querySelectorAll('.log_in_btn_pk ').forEach(cur => {
-        cur.style.margin = '20px 1px 0 10px'
-    })
+
     document.querySelector('.for_nonfix_search .search-icon').style.fontSize = '26px'
     document.querySelector('.for_nonfix_search .search-icon').style.marginTop = '7px'
-    document.querySelector('.for_nonfix_search, .for_fixed_search').style.width = '140%'
-    document.querySelectorAll('.super_groc  ').forEach(cur => {
-        cur.style.margin = '10px 1px 0 10px'
-    })
+
     if (window.innerWidth <= 1000) {
         document.querySelectorAll('.log_in_btn_pk ').forEach(cur => {
             cur.style.margin = '10px 20px 0 10px'
@@ -17594,28 +17732,7 @@ if (user !== '') {
     if (document.querySelector('.for_nonfix_search input, .for_fixed_search input') !== null) {
         document.querySelector('.for_nonfix_search input, .for_fixed_search input').style.width = '123%'
     }
-    function myFunction2(x) {
-        if (x.matches) {
-            if (document.querySelector('.ct_bx_search input') !== null) {
-                document.querySelector('.ct_bx_search input').style.width = '130%'
 
-            }
-            if (document.querySelector('.ct_bx_matched_itm') !== null) {
-                document.querySelector('.ct_bx_matched_itm').style.width = '213%'
-            }
-
-        }
-    }
-    var xa = window.matchMedia("(max-width: 768px)")
-    myFunction2(xa)
-    xa.addEventListener('change', myFunction2)
-    if (document.querySelector('.ct_acount_details_cart') !== null) {
-
-
-
-
-
-    }
 }
 
 function parseJwt(token) {

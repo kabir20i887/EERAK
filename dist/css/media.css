@@ -1,61 +1,557 @@
+@media only screen and (min-width:1360px){
+    .fd_ek_cell_car_recom {
+        min-width: 230px;
+        margin: 10px 6px;
+    }
+    .ct_bx_buttons_actions {
+        position: absolute;
+        width: 1357px;}
+    .crousel {
+        margin-left: 78px;}
+    .inner_slide {
+        width: 1250px;
+    }   
+    .crousel {
+        margin-left: 60px;
+        width: 1209px;}    
+    .forward_acc {
+        right: 7px;}
+        .back_acc {
+            transform: translate(-7px,-40px);
+        }
+}
+@media only screen and (min-width:1550px){
+    .ct_bx_footer {
+     
+        position: absolute;
+               bottom: 0;
+    }
+    .ct_bx_recc_cart_load_full {
+        width: 79vw;height: 500px;}
+    .loader_cart {
+        width: 1500px;
+    }
+    .crousel {
+        margin-left: 133px;}
+    .loading_rate_bx_for_reviews_msg {
+        width: 1050px;
+    }
+    .ct_bx_buttons_actions {
+        position: absolute;
+        width: 1500px;}
+        .inner_slide {
+            width: auto;}
 
 
-@media only screen and (max-width:1200px){
-    .nav_main_ek ul{
-    transform: translate(-200px);
+    .ct_sep_bx{height: auto;display: flex;justify-content: center;background-color: rgb(252, 253, 254);}
+
+    .inner_seperation{height: auto;width: 1500px;background-color: white;border: 1px solid rgb(238, 235, 235);}
+
+}
+
+
+@media only screen and (max-width:1300px){
+    .recomended_cart {
+        padding-bottom: 40px;
+    }
+    .inner_slide .itm_food_list_ek {
+        margin: 50px 60px 0 20px;
+    }
+    .ct_time_takes_itm p, .ct_bx_type_fd p {
+    
+        color: rgb(126, 123, 123);
+        transform: translate(2px,2px);
+    }
+    .ct_bx_what_erak_foods span {
+        font-size: 11px;}
+    .ct_bx_what_erak_foods span a {
+        font-size: 12px;}
+    .ct_x_fd_dt_itm h4 {
+        font-size: 15px;}
+    .ct_bx_what_erak_foods p, .ct_sbout_this_itm p {font-size: 12px;}
+    .for_groc_full_load, .for_ek_fd_full_load{margin-top: 0px;}
+
+    .lstname_err3 {
+        transform: translate(70px,0px);
+    }
+    
+    .for_login_only_cart,
+    .for_signup_only_cart{width: 30%;}
+    .only_for_specific_bx {
+        width: 20.5%;
+    }
+        /* foodItm1 */
+        .ct_error_stock {
+         
+            width: 70vw;}
+       .erak_fd_body .ct_error_stock{width: 50vw;}
+        .ct_loading_bx_all {
+            margin: 142px 0 20px 40px;
+        }
+      
+        .ct_time_it_takes p {
+            font-size: 12px;}
+        .ct_type_bx_item_food p {
+            font-size: 13px;}   
+        .ct_bx_dt_rv{width: 60%;}
+            .ct_bx_qa {
+                margin-left: -32px;
+            }
+.list_food_at_ov h3{
+       
+    margin-left:26px;}
+    .groc_list .ct_cat_by_list{margin-left: 3%;}
+.itm_food_list_ek {
+            width: 22%;
+        }
+        .bodyessestials .itm_food_list_ek {
+            width: 22%;
+        }
+        /*-------------------------------  */
+
+                /* items */
+                .ct_questions_answer h3, .ct_bx_reiws_peoples h3, .ct_bx_side_rt_revies h3 {
+                    font-size: 20px;}
+                .ct_bx_queston_bx span, .ct_bx_a_q_bx span {
+                    font-size: 13px;
+                    margin-top: 2px;}
+                .ct_bx_queston_bx p, .ct_bx_a_q_bx p {
+                    font-size: 15px;}
+                .Search_bar_qa {
+                    width: 74%;}
+        .ct_bx_rt_rv_bx {
+width: 100vw;     margin: 20px 0 40px 0px;       }
+.ct_bx_reiws_peoples {
+    padding: 10px 20px 50px 40px;
+    position: static;
+    transform: translate(0px,0px);
+    width: 100%;
+}
+        .ct_foods_dt_load {
+            margin: 54px 0 0 -150px;
+        }
+        
+        .ct_bx_allOther_load_itm {
+            width: 45vw;}
+
+        .ct_bx_fex_fd_dt_ov .ct_full_loading_box {
+            width: 100%;
+        }
+        .ct_bx_tag_load_itm {
+            width: 67%;}
+            .ct_bx_price_load_itm {
+                width: 20%;}
+        .ct_bx_stars_load_itm {
+            width: 20%;}
+            .sign_UP_btn {
+                width: 300px;}
+            .super_groc p, .super_groc span {
+                letter-spacing: 1px;}
+                .ct_loading_bx2 {
+                    width: 12%;}
+                .ct_loading_bx2:nth-of-type(5){display: none;}
+      
+            .ct_img_res_main img {
+                height: 176px;
+            }
+            .recomended_cart .ct_img_res_main img {
+                height: 158px;
+            }
+            .crousel {
+                margin-left: 77px;
+                width: 85%;
+            }  
+        .ct_bx_show_out_of_stk .ct_reome_pop_up {
+            right: 6px;
+        }
+        .fd_ek_cell_car_recom {
+            overflow: hidden;
+            min-width: 20.5vw;margin: 10px 3px;}
+        .back_acc {
+            transform: translate(0px,-35px);
+        }
+        .ct_rate_bx {
+            width: 450px;
+            height: 90px;
+        }
+        .ct_rate_bx label:after,
+        .ct_rate_bx label:before {
+            font-size: 74px;}
+        
+            
+        .ct_bx_graph_lev {
+            margin: -1px 0 0 10px;
+            padding: 8px}
+        .ct_bx_img_itm img {
+            width: 40vw;
+            height: auto;
+        }
+     
+        .loading_rate_bx_for_reviews_msg {
+            margin: 40px 0 180px 0px;}
+            
+        .loading_rate_bx {width: 521px;}
+      
+        
+        .ct_bx_hw_cook a {
+            cursor: pointer;
+            font-size: 15px}
+        .bx_buy_now {
+            margin: 10px 0 0 5px;
+            width: 94%;
+        }
+        .inner_slide {
+            width: auto;}
+        .ct_bx_reiws_peoples h3 {
+            margin: 10px 0 20px 0px;
+        }
+        .ct_bx_qty p {
+            font-size: 11px;}
+        .ct_bx_qt_foods {
+            width: 80px;
+        }
+        .ct_bx_items_qt_actions {
+            width: 230px;}
+        .ct_bx_download_btn a {
+         
+            right: 93px}
+            .bx_buy_now p{font-size: 12px;}
+            .bx_add_t_cart_btn_itm_dt {
+                margin: 2px 0 0 5px;
+                font-size: 12px;
+            }
+        .ct_bx_download_btn a {
+         
+            right: 110px;}
+        .ct_x_fd_dt_itm {
+            width: 27%;}
+        .ct_bx_acct_cart {
+            padding-bottom: 20px;transform: translate(20px);}
+        .bx_add_t_cart_btn_itm_dt {
+            width: 94%;margin: 0px 0 0 5px;
+        }
+        
+        .ct_bx_rew_2 input{width: 80%;}
+        .ct_about_itm_fld button{width: 27%;}
+     
+     
+        .ct_bx_side_rt_revies {
+            margin-left: 20px;
+        }
+        .ct_bx_rew_2 input {
+            height: 65px;}
+        .ct_bx_rew_2 textarea {
+            width: 80%;}
+        .ct_rate_star_wrapper {
+            display: flex;
+            transform: translate(-170px,-20px);
+        }
+      
+     
+     
+        .ct_bx_img_load_itm {
+            width: 48%;
+            margin-bottom: 0;
+            margin-top: 23px;
+        }
+  /* -------------------------------------------- */
+
+
+  /* cart1 */
+ 
+.ct_bx_grocery_required .ct_offer_box_cook2 {
+    width: 56px;
+    height: 57px;
+}
+  .for_cart_cancel p {
+    font-size: 15px;
+    transform: translate(0px,8px);
+}
+  .ct_dt_tm_food_res h4 {
+    display: block;width: 83%;
+    font-size: 17px;}
+  .ct_bx_message_canceled_ordered h2, .for_erak_cart h2 {
+    font-size: 22px;
+}
+  .ct_bx_message_canceled_ordered p, .ct_bx_message_succesfully_ordered.for_erak_cart p {
+    font-size: 13px;
+    margin: 3px 0 0 62px;
+}
+
+.ct_bx_messgae .error, .success {
+    margin: 10px 0 0 30px;}
+  .body_cart .ct_bx_message_canceled_ordered, .body_cart .ct_bx_message_succesfully_ordered {
+    width: 70%;
+}
+  .ct_set_qt_for_groc ul li span,
+  .ct_set_qt_for_groc ul li p {
+      font-size: 10px;
+  }
+  .ct_suggested_bx textarea{width: 88%;}
+  .ct_subotatal {
+    transform: translate(3%,41px);
+    position: absolute;
+    right: 32px;}
+    .ct_bx_inner_icon_cart {
+        margin-left: 100px;
+    }
+    .empty_cart {
+        margin: 40px 0 40px 155px;
+        right: 0px;
+    }
+    
+    
+    .main_cart_img2 {
+        width: 23%;
+        height: 27%;}
+    .ct_bin_ts_nav_ck {
+        width: 46px;}
+  .ct_list_food {
+      width: 63%;
+    margin: 40px 0 40px}
+  /* ---------------------- */
+
+
+  /* account1 */
+ 
+
+.ct_box_half_order .for_img_order_user2 .main_img {
+    width: 12vw;
+ 
+}
+.for_grocery_order, .ct_fd_dt_full {
+    margin-left: 24px;
+}
+.ct_bx_orders {
+    width: 89%;
+
+}
+  /* ------------------- */
+  .for_seravh_in_nav {width: 73%;}
+  .mai_ul{width: 62vw;}
+  .about_us {
+    transform: translate(0px, -10px);
+}
     }
    
-    .itm_food_list_ek{width: 26%;}
-    .ct_ct_cate_lis_ev{
-        width: 50vh;
-        transform: translate(20px);
+@media only screen and (max-width:1200px){
+    .main_cart_img {
+        max-width: 22vw;
+        min-height: 152px;
     }
-    .ct_suggested_bx textarea{
-        margin-left: 10px;
-    }
-    .ct_bx_grocery_required .field_bx_qt{
-        width: 70%;
-
-    }
-    .ct_bx_all_groc_required .ct_bx_drop{padding: 2px 4px 4px 4px;transform: translate(0px);
-        height: 2.9vh;
     
-    
+    .ct_bx_all_groc_required .itm_food_list_ek {
+        width: 23%;
     }
-    .groc_bx .ct_bx_related_itm_dt_cart{
-        transform: translate(150px,-100px);
+    .ct_error_stock.for_ek_fd,
+    .ct_error_stock.for_items{margin-bottom: 50px;width: 60w;}
+    .ct_bx_flex_sub_list{margin-bottom: 0;}
+    .ct_bx_foods_req {
+        width: 100%;
+        transform: translate(0px);}
+    .ct_list_food{width: 60%;}
+    .ct_subotatal{width: 37%;}
+}
+@media only screen and (max-width:1050px){
+    .recomended_cart h2 {
+        font-size: 17px;
+     
+        margin: 15px 0 0px 70px;
     }
-    .groc_bx .ct_oferr{
-        transform: translate(90px,-5px);
-        font-size: 15px;
-        width: 150%;
+    .ct_bx_qty p {
+        font-size: 13px;
+        font-family: 'Open Sans';
+        color: black;
+        margin: 10px 4px 0 4px;
+    }
+    .ct_bx_acct_cart{width: 220px;}
+    .crousel {
+        margin-left: 60px;}
+    .loading_rate_bx{
+        width: 100vw;
+    }
+    .ct_bx_rt_rv_bx{display: block;}
+  
+    .ct_bx_fex_fd_dt_ov{display: flex;;}
+    .ct_set_account_details_cart {
+        padding: 0px;
+    }
+    .ct_x_fd_dt_itm {
+        width: 24%;}
 
-    }
-    .ct_bx_grocery_required .ct_offer_box_cook2{width: 10%;}
-    .ct_st_check_out_food_ek{
-        margin-left: -125px;
-        width: 53.7%;
-    }
-    .ct_field_set_plans{
-        width: 36%;
-    }
-    .ct_field_set_plans ul li span{
-       font-size: 13px;
-       width: 100%;
-       margin-top: 13px;
-       /* position: absolute; */
-    }
-    .ct_field_set_plans ul li p{
+.ct_bx_img_itm{margin-left: 10px;}
+    .ct_bx_img_itm img {
+        width:41vw;}
+    .ct_error_stock.for_ek_fd,
+    .ct_error_stock.for_items{transform: translate(10%,50px);    width: 60vw;margin-bottom: 50px;}
+    #ek_res_ev .ct_error_stock {
         margin-top: 12px;
-
+    }.ct_bx_total_ammount h4 {
+        color: rgb(32, 31, 31);
+        font-size: 11px;}
+    .erak_fd_body  .ct_error_stock.for_items{margin-bottom: 13px;}
+    .ct_bx_acct_cart {
+        width: 220px;
+        height: auto;
     }
-    .ext_txt{
-        font-size: 11px;
+    .ct_bx_total_ammount {
+        background-color: rgb(255, 255, 255);
+        margin: 0px;}
+    .ct_bx_qt_foods div {
+        margin-top: 2px;}
+    .ct_bx_qt_foods input {
+        padding-left: 0px;}
+    .ct_bx_qt_foods {
+      
+        width: 39%;}
+    .ct_bx_qt_foods div ion-icon,
+    .ct_bx_qty_inner ion-icon {
+        font-size: 17px;}
+    .ct_bx_qty_inner {
+ 
+        height: 35px;}
+    .ct_bx_weight_qt span {
+        font-size: 11px;}
+    .ct_bx_qty p {
+        font-size: 11px;}
+    .bx_buy_now p{font-size: 12px;}
+    .bx_add_t_cart_btn_itm_dt {
+        margin: 2px 0 0 5px;
+        font-size: 12px;
+    }
+    .ct_bx_orders {
         width: 100%;
     }
+    .ct_box_half_order .for_img_order_user2 .main_img {
+        width: 200px;
+    }
+    .for_grocery_order .main_img{height: auto;}
+    .ct_bx_edit_acc {
+        width: 290px;}
+        .ct_bx_button_account {
+          
+            width: 32%;}
+
+            .ct_set_account_details_cart {
+                margin: -60px 0 40px 0px;
+            }
+
+            .for_img_order_user {
+                width: 43vw;}
+            .ct_bx_account_exist {
+            
+                width: 200px;}
+            .ct_bx_logout_btn button {
+             
+                width: 160px;}
+    /* .ct_bx_buttons_actions{display: none;} */
+    .bodyessestials .itm_food_list_ek{width: 21%;}
+    .erak_fd_body .ct_error_stock {
+        width: 71vw;
+        transform: translate(20%,50px);
+    }
+   
+    .ct_dt_tm_food_res h4{
+        font-size: 16px;
+
+    }
+    .itm_food_list_ek {
+        width: 21%;
+    }
+    .ct_img_res_main img {
+        height: 153px;
+    }
+    .only_for_specific_bx {
+        width: 18%;
+    }
+    .ct_loading_bx_all {margin-left: 25px;}
+    /* .only_for_specific_bx:nth-of-type(4){margin-top: 150px;} */
+    .for_ek_foods_load {
+        width: 110%;
+        flex-flow: row wrap;
+    }
 }
-@media only screen and (max-width:1000px){
-    .only_big_screen{display: none;}
+
+@media only screen and (max-width:850px){
+    .ct_bx_what_erak_foods {
+        width: 40%;}
+        .ct_bx_qt_foods {
+            width: 80px;
+            transform: translate(20px);
+        }
+        .ct_bx_weight_qt span {
+            font-size: 13px;
+        }
+        .ct_bx_total_ammount h4 {
+            font-size: 12px;
+        }
+        .ct_bx_total_ammount span {
+            font-size: 19px;margin-top: 5px;}
+        .ct_bx_qty p {
+            font-size: 13px;
+        }
+        .ct_bx_qty{justify-content: initial;}
+    .ct_offer_box_cook2 {
+        width: 59px;}
+    .ct_bx_quant_itm_cart  {
+
+        margin: 8px 0 0 -5vw;
+    }
+    
+    .list_itm_sub_cart span {
+        margin-left: 0px;
+        position: absolute;
+        right: 130px;
+    } 
+    .ct_error_stock.for_grocery_err{width: 90vw;}
+
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img {
+        height: 196px;
+        width: 37vw;
+    }
+}
+@media only screen and (max-width:730px){
+    .body_login .ct_signup {
+        width: 100%;
+    }    
+}
+@media all and (max-width: 690px) {
+    .ct_box_half_order .for_img_order_user2 .main_img {
+        width: 150px;
+    }
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img {
+        height: 173px;
+    }
+    .bodyessestials .ct_for_time_load {
+        width: 40vw;
+
+        height: 27px;
+    }
+    .ct_for_type_load {
+        width: 20vw;
+        height: 20px;
+    }
+    .ct_error_stock.for_ek_fd,
+    .ct_error_stock.for_items{width: 90vw;}
+}
+@media only screen and (max-width:900px){
+    .ct_bx_acct_cart {
+        width: 200px;}
+    .fd_ek_cell_car_recom{width: 26.9vw;}
+}
+@media only screen and (max-width:850px){
+    .ct_error_stock.for_ek_fd, .ct_error_stock.for_items {
+        transform: translate(4%,50px);
+        width: 90vw;
+        margin: 15px 0 19px -30px;    }
+    .btn_save_and_edit,
+    .btn_cancel {
+       
+        width: 200px;}
+    .ct_bx_cannot_login_signuop_acc,
+    .for_acc_dt .ct_bx_message_succesfully_ordered {
+        width: 40%;}
+        .only_big_screen{display: none;}
     .cart_nav p{color: black;}
     .ct_field_small_size{display: block;position: absolute;left: 0;transform: translate(5px,-20px);}
     .err_otp .ct_remove_bill_pop_up_update_acc,
@@ -101,11 +597,7 @@
        
         left: 180px;
     }
-    .ct_bx_cannot_login_signuop_acc .ct_bx_remove_bx_msg_acc {
-      
-        position: absolute;
-        right: 190px;
-        }
+
     .ct_bx_cannot_login_signuop_acc {
         width: 88vw;
         margin: 120px 0 -100px 20px;display: flex;}
@@ -148,48 +640,60 @@
         margin: -60px 0 0 -60px;}
     .bx_tot_ammount_order span{width: 230px;}
     .ct_bx_search{width: 100%;margin-left: -20px;}
-    .for_mobile_search{display: flex;width: 100vw;    background-color: #abe9cd;
-        background-image: linear-gradient(205deg, #abe9cd 50%, #73d8f7);
-    margin: 0px  0 0 50px;
-    position: fixed;
-    top: 80px;
-    height: 70px;
-
-    }
+    
     
 
 .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
-    transform: translate(30px,100px);
+    transform: translate(60px,55px);
     
 }
 .ct_bx_buttons_actions{display: none;}
 .fd_ek_cell_car_recom{min-width: none;width: 271px;}
 
 .bx_buy_now,
-.bx_add_t_cart_btn_itm_dt {width: 90%;font-size: 18px;}
+.bx_add_t_cart_btn_itm_dt {width: 90%;font-size: 15px;}
 .ct_bx_acct_cart {
-    width: 100vw;
-    height: 150px;
+    width: 100%;
+    height: auto;
     border: none;
-    margin: 70px 0 0 0px;
+    margin: 0px;
     transform: translate(0px);
 }
-.ct_bx_select_qt_final .relative_width1 div{width: 27px;}
+.ct_bx_items_qt_actions {width: 100vw;margin: 30px 0 0 -10px;
+}
+.ct_remcombx_pf_ct .bx_flex_time_type {
+    margin-top: -4px;
+}
+.price_food span {
+    font-size: 16px;
+}
+.ct_dt_tm_food_res h4 {
+    font-size: 17px;}
+.inner_slide .bx_buy_now p{font-size: 15px;}
+.ct_bx_download_btn a{margin-left: 0;}
 .sub_btn_rev, .bx_buy_now{text-align: center;padding-left: 0;}
-.ct_offer_box_cook2 p{font-size: 14px;}
+.ct_offer_box_cook2 p{font-size: 13px;}
 .to_pay_cahge span c{font-size: 33px;}
-.ct_offer_box_cook2 span{font-size:22px;}
+.ct_offer_box_cook2 span{font-size:18px;}
 .block_2_charge, .block_1_charge span {
     font-size: 19px;
 }
 .ct_offer_box_cook2 {
     padding: 18px 20px 17px 20px;
 }
+.price_food iu {
+    font-size: 11px;}
+.crousel .ct_inner_fd1_dt_grid {margin-left: 0;}
+.crousel .ct_offer_box_cook2 span{font-size:16px;}
+.crousel .ct_offer_box_cook2 p{font-size: 11px;}
+.crousel .ct_offer_box_cook2 {
+    padding: 10px 14px 10px 15px;
+}
     .ct_x_fd_dt_itm {
         display: inline-block;
-        margin: 20px 0 0 20px;
+        margin: 0px 0 0 20px;
     }
-    .ct_bx_img_itm img{width: 100%;}
+    .ct_bx_img_itm img{width: 80%;}
     .ct_bx_img_itm{position: static;width: 100vw;}
     .ct_bx_fex_fd_dt_ov{display: block;}
     .for_nav_main .mai_ul .super_groc{width: 11vw;}
@@ -197,7 +701,7 @@
     .ct_nav_erak ul .nav_main_ek_li{width: 8vw;font-size: 12px;   transform: translate(-30px,0px);}
      .for_ain_home_logo{
          position: absolute;
-         left: 0;
+         left: 5%;
      }
      .only_for_specific_bx{width: 100%;}
      .groc_list h3 {
@@ -208,19 +712,23 @@
     .ct_loading_bx_all{width: 100%;display: block;    margin: -60px 0 20px 20px;}
     .for_load_bx_grid{display: flex;width: 100%;}
     .for_load_bx_grid_inner{width: 100%;}
-     .ct_dt_tm_food_res h4{width:80%;margin-left: 10px;}
-     .ct_img_res_main{width: 30vw;}
+     .ct_dt_tm_food_res h4{width:80%;}
+     .erak_fd_body .ct_dt_tm_food_res h4{margin-left: 10px;}
+     .ct_img_res_main{width: 70%;}
+     .inner_slide .ct_img_res_main{width: 100%;}
      .ct_inner_fd1_dt_grid{width: 100%;margin: 0px 0 0 30px;}
      .itm_food_list_ek .ct_img_res_main img{width: 110%;height: 210px;}
      .crousel .itm_food_list_ek .ct_img_res_main img {
         width: 101%;
         height: 210px;
     }
+    .itemacc_1{display: none;}
+
+    .itemacc_2{display: block;}
     .ct_rate_bx label:after,
     .ct_rate_bx label:before{font-size: 70px;}
-    .ct_rate_bx {width: 48%;}
+    .ct_rate_bx {width:350px;}
     .bx_star_dis span{    transform: translate(10px,8px);}
-    .ct_bx_stars_rated {margin-top: 7px;}
     .ct_bx_graph_lev{width: 80%;padding-left: 9px;}
     .ct_bx_rt_rv_bx{display: block;}
     .inner_slide{width: 100vw;}
@@ -229,13 +737,13 @@
      .groc_list{width: 100%;}
      .ct_rate_star_wrapper {
         display: flex;
-        transform: translate(-160px,-10px);
+        transform: translate(-100px,-10px);
     }
     .bx_tot_ammount_order span{font-size: 12px;}
     .ct_box_half_order .main_img {
         width: 100%;
-        max-width: 27vw;
-        height: 190px;
+        max-width: unset;
+        height: auto;
     }
     .ct_set_account_details_cart{padding: 0px 0 0 50px;margin-top: -90px;}
     .ct_bx_side_adm_user{display: none;}
@@ -249,24 +757,19 @@
     transform: translate(100px);
     }
 
-    .bx_evt_cart_item .ct_bx_act_cart_itm {
-        transform: translate(0%,159px);
-    }
+ 
     .ct_bx_show_out_of_stk h4{margin-left: 30px;}
 
     .ct_bx_flex{margin-left: 30px;}
     .ct_bx_show_out_of_stk a:nth-of-type(1){font-size: 20px;}
     .ct_bx_show_out_of_stk button, .ct_bx_show_out_of_stk a{width: 80%;padding: 13px;}
     .ct_bx_show_out_of_stk{width:80%;margin-left: 30px;}
-    .ct_bx_img_itm{margin-bottom: -150px;}
 
     .ct_bx_fex_fd_dt_ov .ct_full_loading_box{position: static;}
     .ct_bx_img_load_itm {width:100vw;margin-top: -120px;}
     .ct_shopping_cart h1{margin-left: -8px;}
     .list_food_cart {margin-top: 20px;}
-    .groc_bx .remove_fd_itm_ct {
-        margin-top: -90px;
-    }
+   
     .for_cart_cancel p, .for_cart_checkout p {
         font-size: 19px;
     }
@@ -278,16 +781,14 @@
     }
     .ct_bx_message_canceled_ordered ion-icon, .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon{font-size: 60px;}
 
-    .ct_type_fd_cart_itm2 {
-        transform: translate(-279px,66px)
-    }
+  
     .inner_load_bx{width:100%}
     .ct_loading_bx2 {
         width: 100%;
         height: 200px;display: flex;
         margin-right: 40px;
     }
-    .ct_error_stock.for_grocery_err{position: fixed;bottom: 80px;left: 30px;z-index: 9999999;width: 90vw;}
+    .ct_error_stock.for_grocery_err{position: fixed;bottom: 80px;left: 30px;z-index: 9999999;width: 96vw;}
     .ct_error_stock{height: auto;    width: 80vw;transform: translate(20px,60px);}
     .inner_load_bx div{margin-top: 15px;}
     .ct_for_unit_load {
@@ -295,8 +796,8 @@
         margin: 10px 0 0 10px;
         height: 30px;
     }
-    .ct_error_stock .ct_inner_msg ion-icon{font-size: 35px;}
-    .ct_error_stock p{font-size: 17px;}
+    .ct_error_stock .ct_inner_msg ion-icon{font-size: 30px;}
+    .ct_error_stock p{font-size: 15px;}
     .bodyessestials .ct_loading_bx_all {margin-left: -7px;}
     .for_ek_pk_fd ion-icon{font-size: 25px;position: absolute;margin-left: 5px;}
     .relative_width1 input{width: 50px;padding-left: 3px;font-size: 21px;margin-left: 45px;}
@@ -312,6 +813,8 @@
     .ct_set_qt_for_groc{height: 42px;}
     .ct_bx_drop{height: auto;}
     .price_food span{font-size: 20px;}
+    .inner_slide .price_food span{margin-left: 0;    font-size: 16px}
+
     .for_groc_itm  .ct_dt_tm_food_res h4{font-size: 17px;margin-left: 0;}
     .ct_bx_inner1_groc_itm{width: 100%;position: absolute;margin: 50px 0 0 270px;}
     .ct_cat_by_list .itm_food_list_ek{width: 100%;}
@@ -323,15 +826,14 @@
     }
     .groc_bx .ct_bx_drop{height: 30px;}
     .ct_bx_message_canceled_ordered p, .ct_bx_message_succesfully_ordered.for_erak_cart p {
-        font-size: 17px;
+        font-size: 13px;
         margin: 5px 0 0 50px;
     }
     .check_out_btn_order{height: 44px;}
-    .crousel .itm_food_list_ek .ct_img_res_main img{width: 300px;}
+    .crousel .itm_food_list_ek .ct_img_res_main img{width: 100%;}
     .remove_fd_itm_ct {
         font-size: 22px;}
     .only_for_grocery_item li .ct_bx_quant_itm_cart {
-        margin: 142px 0 0 30px;
         width: 122px;
     }
     .ct_acc_dt_ov p{color: rgb(29, 27, 27);margin: -30px 0 0 40px;font-size: 16px;}
@@ -372,9 +874,8 @@
     .empty_cart p{font-size: 17px;}
     .empty_cart h3{font-size: 26px;}
     .empty_cart a{width: 80%;margin: 20px 0 0 -40px}
-    .main_cart_img {
-        width: 25%;
-        position: absolute;
+    .img_a_cart {
+        width: 55%;
         height: 180px;
     }
     .flex_bx_cart_itm {
@@ -402,11 +903,7 @@
     .for_cart_checkout {width: 50%;}
     .ct_suggested_bx{margin-left: 10px;}
     .ct_suggested_bx textarea{width: 50%;height:60px;font-size: 16px;padding-top: 16px;}
-    .list_itm_sub_cart span {
-        margin-left: 0px;
-        position: absolute;
-        right: 130px;
-    }    .ct_ct_text_about_acc h3{font-size: 27px;}
+    .ct_ct_text_about_acc h3{font-size: 27px;}
     .btn_sign_up_cart span2{font-size: 15px;}
     .btn_sign_up_cart span{font-size: 18px;}
     .ct_subotatal {
@@ -427,10 +924,8 @@
     .gt_first_nam_second_name:nth-of-type(1)  .nick_name:nth-of-type(1){width:35.5%}
     .for_login2 .gt_first_nam_second_name:nth-of-type(1)  .nick_name:nth-of-type(1){width:99.5%}
 
-    .body_login .ct_signup{width: 60%;}
+    .body_login .ct_signup{width: 46%;}
     .pincode label{width: 40%;}
-    .ct_phone_input_field label,
-    .gmail_acc label{margin-left: 10px;}
     .gmail_acc{margin-left: 14px;}
     .pincode{margin-left: 100px;width: 27.5%;}
 .pincode label{width: 150px;}
@@ -445,10 +940,9 @@
         width: 61%;
     }
     .phone_number_inp{margin-left: 40px;}
-    .bx2_gmail:nth-of-type(2) .gmail_acc .nick_name input{width:56vw}
+    .bx2_gmail:nth-of-type(2) .gmail_acc .nick_name input{width:118%}
     .ct_acc {width: 100%;    right: 40px;}
-    .loading_rate_bx_for_reviews_msg, .loading_rate_bx, .login_now, .loader_cart, .cont_btn_acc{text-align: center;
-        padding-left: 0;width: 58%;height:43px;}
+
     .nick_name {
         width: 32%;
     }
@@ -461,10 +955,10 @@
         margin: 15px 0 0 -12px;
     }
     
-    .last_name  label{width: 150px;}
     .ct_acount_details_cart h2{
         font-size: 70px;
     }
+   
     .ct_ct_text_about_acc p{font-size: 16px;}
     .ek_cart{background-color: white;}
     .ct_bx_flex_sub_list {display: block;margin-bottom: -20px;}
@@ -472,10 +966,15 @@
         transform: translate(-20px,30px);
         width: 93%;
     }
-    .ct_rate_bx {height: 120px;}
      .ct_inner_fd_dt_grid{display: flex;}
-    .ct_nav_erak .mai_ul{  background-color: #abe9cd;
-        background-image: linear-gradient(205deg, #abe9cd 50%, #73d8f7);height: 80px;}
+     .recomended_cart .ct_inner_fd_dt_grid{display: block;}
+
+.for_mobile_search{   padding:0px 10px;  background-color: rgb(245, 245, 245);
+}
+.for_mobile_search .ct_bx_search {
+    width: 94%;
+    margin-left: 30px;
+}
     .for_mobile_search input{height: 50px;transform: translate(0,10px);}
     .for_nav_main  .for_seravh_in_nav {display: none;}
     .ct_bx_search_icon {
@@ -487,1115 +986,67 @@
   
 
 }
-@media only screen and (max-width:768px){
-    .ct_bx_orders {width: 100vw;}
-    .ct_bx_nav_account {
-        width: 100%;
-        margin-left: 0px;
-    }
-    .ct_bx_nav_account ul li {
-        width: 53px;
-        margin-right: 38px;
-    }
-    .list_itm_sub_cart span {
-        margin-left:0px;
-        position: absolute;
-        right: 130px;
-    }
-    .for_nonfix_search input, .for_fixed_search input {
-      
-        margin: -10px 0 0 30px;
-    }
-     .phone_number_inp{margin-left: 40px;}
-    .bx2_gmail:nth-of-type(2) .gmail_acc{width:56vw}
-    .bx2_gmail:nth-of-type(2) .gmail_acc .nick_name input{width:auto}
+/* 1000px2 */
 
-    .name_err {
-        transform: translate(40px,-5px);
+@media all and (max-width: 690px) {
+    .for_groc_itm .ct_set_qt_for_groc{width: 49%;}
+    .erak_fd_body .ct_error_stock {
+        width: 88vw;
+        transform: translate(40px,50px);
     }
-    .password_err_exsist {
-        transform: translate(40px,0px);
-    }
-    .goback {
-        display: flex;
-        justify-content: flex-end;
-        display: none;
-        position: static;
-        margin: -73px 0 67px 70%}
-    .last_name label{margin-left: 10px;}
-    .error_login.lstname_err3{transform: translate(40px,5px);}  
-.lstname_err3{transform: translate(180px,200px);}
-.lstname_err2,
-.lstname_err3,
-.password_err{  transform: translate(40px,10px);}
-.error_login.lstname_err2{  transform: translate(40px,10px);}
-.error_login.lstname_err {
-    transform: translate(40px,-5px);
 }
-    .ek_cart{background-color: #ffffff;padding: 10px}
-    .acc_icon_main_nav{color: white;}
-    .for_mobile_search{display: flex;width: 106vw;    background-color: #abe9cd;
-        background-image: linear-gradient(205deg, #abe9cd 50%, #73d8f7);
-    margin: 0px  0 0 0px;
-    position: fixed;
-    top: 97px;
-    height: 60px;
-    }
-    .ct_bx_show_out_of_stk{display: none;width: 80vw;margin-left: 50px;}
-    .ct_offer_box_cook2 span{font-size: 16px;}
-    .ct_col .ct_img_res_main img{height: 184px;}
-    .ct_time_takes_itm ion-icon {
-        font-size: 33px;
-        margin-top: -6px;
-    }
-    .ct_bx_show_out_of_stk {margin-bottom: 70px;}
-    .Search_bar_qa {width: 80vw;height: 40px;}
-    .ct_bx_show_out_of_stk button,
-.ct_bx_show_out_of_stk a{width: 100%;}
-    /* .fd_ek_cell_car_recom{} */
-    .ct_bx_erak_logo{
-        margin-top: -25px;
-        padding: 20px;
-        height: 80px;
-
-    }
-    .ct_bx_erak_logo .for_ain_home_logo{
-        width: 8%;
-    }
-    
-    .ct_bx_erak_logo .tag_line_brand{
-        font-size:8px;
-        width: 100px;
-        position: absolute;
-        margin: -3px 0 0 3px;
-    }
-    .itm_food_list_ek .ct_img_res_main img {
-        height: 134px;
-        width: 150px;
-    }
-    .erak_fd_body .itm_food_list_ek .ct_img_res_main img {
-        height: 196px;
-        width: 37vw;
-    }
-    .ct_bx_foods_req {width: 100%;transform: translate(0);}
-    .ct_remcombx_pf_ct .ct_time_it_takes ion-icon {
-        font-size: 23px;
-        margin-top: -4px;
-    }
-    .ct_bx_all_groc_required .ct_dt_tm_food_res span {
-        margin: -10px 0 0 2px;
-    }
-    .ct_type_fd_cart_itm2 {
-        transform: translate(-240px,40px);
-    }
-    .ct_time_it_takes p{font-size: 11px;}
-    .ct_inner_fd_dt_grid{display: flex;}
-    .ct_img_res_main{width: 38vw;}
-    .ct_inner_fd_dt_grid a:nth-child(1){width: 40vw;}
-    .groc_list .ct_cat_by_list{display: block;}
-    .ct_error_stock {
-        width:93vw;
-        height: auto;
-        padding: 4px 22px 18px 12px;
-        position: relative;
-        left: 20px;
-        transform: translate(0px,50px);
-    }
-    .unit {
-        margin: 15px 30px 10px 12px;
-    }
-    .ct_error_stock p {
-        font-size: 15px;
-    }
-    .bodyessestials .ct_error_stock{position:fixed;top: auto;bottom: 80px;z-index: 99999;left: -868px;max-height:120px}
-    .ct_bx_welcome_back h3{margin-left: 0;}
-    .ct_nx_actions_account {
-        margin: 80px 0 0 40px;
-    }
-    .ct_bx_welcome_back ion-icon {
-        font-size: 40px;
-        transform: translate(-3px,90px);
-    }
-    .ct_nx_actions_account .ct_bx_for_orders {
-        width: 40%;
-        height: 80px;
-        padding: 19px;
-    }
-    .com_itm_ord{font-size: 12px;}
-    .ct_bx_food_dt_acc h4{
-        font-size: 16px;
-        width: 60vw;
-        }
-        .ct_bx_edit_acc {width:11vw;right: 30px;}
-        /* .ct_bx_edit_acc ion-icon{font-size: 30px;} */
-        .ct_bx_matched_itm{width:inherit;}
-        .ct_bx_outer_layer_acc {
-            position: relative;
-            right: 10px;
-            display: block;
-            width: 98vw;
-            margin: -20px 0 0 38px;        }      
-              .ct_bx_peoples_details {transform: translate(10px,0px);}
-        .ct_order_coll_acc_us h1 {
-            font-size: 17px;
-            transform: translate(48px,-11px);
-        }    .ct_set_account_details_cart{    margin: 50px 0 40px 0px;}
-    .ct_order_coll_acc_us h2{font-size: 22px;    transform: translate(-30px,-32px);}
-    .amount_tot_acc{margin-left: 10px;}
-    .bx_tot_ammount_order span{font-size: 12px;}
-    .date_time_order{font-size: 14px;}
-    
-    .ct_bx_botm_div{    margin: -17px 0 20px 320px;}
-    .ct_bx_food_dt_acc .price_fd {
-        margin: 0px 0 0 20px;
-                font-size: 19px;
-        position: static;
-        right: -80px;
-        
-        width: 10vw;
-    }
-    .for_grocery_order .price_fd {
-        margin-top: 30px;
-    }
-    .ct_inner_dt_order_none span {
-        font-size: 70px;
-        margin-top: 60px;
-    }
-    .ct_flex_bx_1_acc .pass2 {
-        transform: translate(-180px);
-    }
-    .btn_cancel{
-        margin: -34px 0 0 120px;
-    }
-    .ct_bx_of {
-        margin: 2px 20px 0;
-    }
-    .ct_bx_food_dt_acc {margin-top: 21px;}
-.ct_bx_cannot_login_signuop_acc .ct_bx_remove_bx_msg_acc {
-    position: absolute;
-    right: 190px;
-    margin-top: -8px;
-}
-.mrp_ammount{display: flex;}
-    .ct_bx_cannot_login_signuop_acc{width: 55%;   margin: 175px 0 -100px 230px;}
-    .ct_bx_cannot_login_signuop_acc h4{
-        font-size: 19px;
-        width: 60vw;
-    }
-    .ct_bx_cannot_login_signuop_acc {
-        width: 80vw;
-        margin: 25px 0 -0px 20px;
-    }
-    .gt_first_nam_second_name {
-        width: 100%;
-    }
-    .ct_bx_slide_bx{display: block;left: -300px;width:240px;}
-    .nick_name {
-        width: 99%;
-    }
-    .ct_bx_remove_slide_bx {
-    float: right;
-    transform: translate(30px,10px);
-        color: white;
-    }    .ct_bx_slide_bx .for_ain_home_logo{transform: translate(-160px);}
-    .login_now{height:7vh;font-size: 14px;}
-    .body_login .ct_bx_overlay_cart_signup {
-        height: 800px;
-        top: 30%;
-        justify-content: center;
-    }
-    .ct_bx_verify p strong {
-        transform: translate(0px,0px);
-    }
-    .ct_bx_verify h4 {
-        font-size: 18px;
-     
-        margin-left: 30px;
-    }
-    .only_for_sig .ct_bx_verify h4{        margin-left: 13px;
-    }
-    .ct_bx_verify p {
-        display: block;
-        margin-left: 23px;
-    }
-    .body_login .go_back {
-        right: 33px;
-    }
-    .ct_bx_icons_verif {
-        margin: 20px 0 20px -130px;
-    }
-    .ct_error_other_signup {
-        margin: 8px 0 0 21px;
-    }
-    .only_for_sig .ct_bx_verify {
-        margin-left: -0px;
-    }
-    .ct_bx_verify {
-        margin-top: 70px;
+@media all and (max-width: 850px) {
+    .price_food iu {
+        font-size: 11px;
+ 
     }
   
-    .only_for_sig .go_back {
-        position: static;
-        /* right: 220px; */
-        cursor: pointer;
-        margin: -40px 0 58px 70%;
-        display: block;
-        font-size: 14px;
-        font-family: 'Open Sans';
-    }
-    .only_for_sig .ct_acc p {
-        width: 87%;
-        margin-left: 12px;
-    }
-    .ct_bx_verif2 .nick_name {
-        width: 84%;
-    }
-    .ct_bx_verify .gmail_inp_fl {
-        margin-left: 14px;
-    }
-    .ct_bx_verif2 .cont_btn_acc {
-        font-size: 14px;
-        margin-left: -70px;
-    }
-     .ct_bx_overlay_cart_signup{height: 900px;}
-    .only_for_sig .ct_bx_verify .cont_btn_acc {
-        font-size: 14px;
-        margin-left: 10px;
-    }
-    .ct_bx_verify strong {
-        color: black;
-        display: inline-block;
-        font-size: 14px;
-        /* width: 20%; */
-    }
-
-
-.err_otp .ct_remove_bill_pop_up_update_acc, .succ_otp .ct_remove_bill_pop_up_update_acc {
-    right: 50px;
-}
-
-        .ct_bx_side_ov_login{    transform: translate(240px);}
-    .for_groc_full_load, .for_ek_fd_full_load{margin-top: 90px;}
-    .ct_bx_not_available{width: 25%;}
-    .for_adm_user_cart_load{    margin: 90px 0 130px 50px;}
-    .ct_bx_cannot_login_signuop_acc p{font-size: 13px;margin-top:5px;}
-    .ct_remove_bill_pop_up_update_acc {font-size: 20px;}
-    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered h2{font-size: 13px;    width: 40vw;}
-    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered {
-        transform: translate(-31px,0px);
-        margin-bottom: 28px;
-    }
-    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered p{width: 70%;}
-    .btn_cancel,
-    .btn_save_and_edit {
-        width: 32vw;
+    .ct_bx_queston_bx span, .ct_bx_a_q_bx span {
         font-size: 13px;
-        transform: translate(-25px);
-    }    .edit_acc,
-    .ct_show_acc_dt{transform: translate(-0px);}
-    .ct_flex_bx_1_acc{width: 100vw;}
-    .dt_itm_set_account_details_cart label{font-size: 14px;    transform: translate(0px,0px);
-    }
-    .ct_edit_cc .ct_acc p {
-    width: 100%;
-}
-    .dt_itm_set_account_details_cart{overflow: hidden;}
-    .dt_itm_set_account_details_cart input {
-        width: 87%;
-    }
-    .dt_itm_set_account_details_cart {
-        margin-right: 0px}
-    .dt_itm_set_account_details_cart input{margin-left: 54px;}
-    .dt_itm_set_account_details_cart,    
-    .dt_itm_set_account_details_cart:last-child {
-        width: 41%;
-    }
-    .groc_btn_order{width: 22vw;font-size: 10px;}
-    .fd_btn_order{width: 20vw;font-size: 10px;}
-    .ct_bx_no_order_yet h3 {
-        font-size: 17px;
-        transform: translate(-20px);
-    }   .ct_fd_dt_full .qt_order_itm {
-        position: absolute;
-        font-size: 12px;
-        transform: translate(0px,-150px);
-        right: 50px;
-    }
-    .for_adm_user_cart_load {left: 13%;}
-    .go_back {right: 20px;}
-    .on_edit_profile_acc .account_cont11 {margin-left: 60px;width: 74%;}
-    .ct_bx_side_adm_user{width:200px;top: 150px;display: none;}
-    .ct_bx_side_adm_user li{width: 116%;}
-    .date_time_order{font-size: 14px;}
-    .ct_unit p, .ct_bx_of p,
-    .ct_bx_food_dt_acc a{font-size: 12px;}
-    .ct_fd_dt_full {
-        transform: translate(4px);
-        margin-top: -29px;
-    }  
-    .ct_bx_follow_ek {
-        transform: translate(40px,0px);
-        position: absolute;
-        top: 230px;
-    }
-    .ct_acc p{width: 80%;}
-    .ct_create_acc {    transform: translate(10px);}
-    .ct_acc_ov_inner {
-        transform: translate(0px,80px);
-        position: relative;
-        right: -180px;
-    }
-    .ct_bx_orders {
-        margin: 130px 0 0 -49px;
-    }
-    .ct_set_account_details_cart {
-        padding: 0px 0 0 50px;
-    }
-    .ct_box_ov{margin: 0;width:inherit;height: 300px;}  
-    .ct_time p{font-size: 12px;margin-top: 3px;}
-    .ct_box_half_order .main_img {
-        width: auto;
-        max-width: 230px;
-        height: 148px;
-    }
-    .for_grocery_order .ct_fd_dt_full {
-        transform: translate(4px);
         margin-top: 0px;
     }
-    .ct_order_coll_acc_us{width: 100vw;transform: translate(0px);}
-    .ct_bx_btm_bar_order{margin: 6px 0 0 5px;}
-    .ct_box_half_order .ct_time ion-icon{font-size: 18px;}
-    .ct_nav_erak ul .nav_main_ek_li{
-        width: 120px;
-        margin-right:10px;
-        transform: translate(30px,-6px);
+    .ct_error_stock.for_ek_fd, .ct_error_stock.for_items {
+        transform: translate(40px,50px);
+        width: 90vw;
+        margin: 15px 0 19px -30px;
     }
-    .ct_nav_erak .mai_ul{
-        width: 100vw;
-        height: 90px;
-    }
-    .for_load_bx_grid_inner{width: 100vw;}
-    .ct_loading_bx2 .ct_for_img_load , .ct_loading_bx .ct_for_img_load 
-{width:58%;height:180px}
-.inner_load_bx{width: 100vw;}
-    .special_bx_load{display: block;}
-.ct_loading_bx_all{flex-flow: row wrap;display: block;
-}
-.ct_for_price_load2, .ct_for_price_load {
-    width: 28%;
-    margin: 15px 0 0 10px;
-    height: 20px;
-}
-    .cart_nav ion-icon{
-        font-size: 36px;
-    }
-    .ct_bx_search_icon {
-        position: absolute;
-        transform: translate(0px,0px);
-    }
-    .cart_nav p{
-        color: black;
-    margin: -27px 0 0 44px;
-            font-size: 14px;
-    }
-    .log_in_btn_pk1{
-        font-size: 12px;
-margin-right: 10px;
-    }
-    .crousel .itm_food_list_ek .ct_img_res_main img {
-        height: 167px;
-
-       }
-       .ct_questions_answer {
-        transform: translate(-20px, 10px);
-    }
-    .ct_bx_reiws_peoples h3 {
-        margin: 9px 0 20px 30px;
-    }
-       .ct_bx_qa {
-        margin: 0 0 40px -40px;
-    }
-          .bx_buy_now ,
-    .bx_add_t_cart_btn_itm_dt{width: 92%;text-align: center;}
-    .ct_bx_review{margin-left: -20px;}
-    .ct_bx_acct_cart {
-        width: 100%;
-        border: none;
-        margin-top: 90px;
-        transform: translate(-22px);
-        display: block;
-    }
-    .ct_nav_erak ul .nav_main_ek_li:not(:last-child){display: none;}
-    .ct_download_cooking p{width: 80%;}
-    .ct_sbout_this_itm p{font-size: 16px;}
-    .ct_sbout_this_itm h4{font-size: 19px;}
-    .ct_recipe_download{margin-left: 14px;}
-    .ct_recipe_download p{font-size: 12px;}
-    .offer_bx_itm span{font-size: 18px;margin-left: -4px;}
-    .ct_time_takes_itm p, .ct_bx_type_fd p{font-size: 12px;}
-    .ct_flex_bx_1_itm svg{    transform: translate(-14px,3px);width: 3%;height: 3vh;}
-    .fd_name_dt_itm{font-size: 22px;}
-    .ct_x_fd_dt_itm {
-        transform: translate(0px,40px);
-        margin-top: 30px;
-        padding-left: 0px;
-        width: 100%;
-        margin: 160px 0 0 20px;
-    }
-    .for_ek_pk_fd ion-icon {
-        font-size: 21px;
-        margin: 1px 0 0 2px;
-    }
-    .ct_bx_buttons_actions{transform: translate(0,-90px);display: none;}
-    .fd_ek_cell_car_recom .itm_food_list_ek .ct_img_res_main img{width: 210px;}
-    .fd_ek_cell_car_recom{width: 180px;min-width: 0;}
-    .ct_bx_rt_rv_bx {width: 100%;display: block;}
-    .bx_flex_time_type {
-        display: flex;
-        margin: -8px 0 0 -10px;
-    }
-        .ct_flex_bx_1_itm div{margin-right: 20px;}
-    .ct_flex_bx_1_itm img{height: 17px;width: 30px;}
-    .ct_bx_img_itm{position: static;margin-top:120px;}
-    .ct_bx_img_itm img {
-        width: 100vw;
-        height: 350px;
-        min-height: 0px;
-    }
-    .logo p{
-        font-size: 8px;
-    }
-    
-    .ct_bx_fex_fd_dt_ov .ct_full_loading_box{position: static;z-index: inherit;z-index: 9999999999;top: -170px;}
-    .recomended_cart{padding-bottom: 20px;overflow: hidden;    margin-top: -20px;}
-    .inner_slide{  transform: translate(0px,-20px);}
-    .back_acc {
-        transform: translate(4px,-205px);
-    }
-    .for_ek_fd_cart_load_rec_load {
-        margin: 90px 0 90px 15vw;
-    }
-    .inner_slide{width: 100vw;}
-    .forward_acc {
-        transform: translate(0px,-85px);right: 30px;    }
-    .fd_name_dt_itm{width: 80%;}
-    .ct_offer_box_cook2 span{margin-left: 2px;}
-    .ct_bx_buttons_actions button ion-icon{font-size: 30px;    padding: 12px 0 13px 0px;}
-    .ct_bx_buttons_actions button{width: 3%;}
-    .ct_bx_recc_cart_load_full{height: 500px;overflow: hidden;}
-    .ct_col .ct_bx_hw_cook a{font-size: 12px;}
-    .ct_col .ct_dt_tm_food_res h4{font-size: 15px;margin-left: 3px;width: 100%;}
-    .ct_bx_flex ion-icon {
-        font-size: 43px;
-        transform: translate(-20px);
-    }
-    .ct_acc_dt_ov p{color: rgb(63, 59, 59);}
-    .ct_bx_show_out_of_stk h4 {
-        margin-left: 82px;
-    }
-    .ct_col .ct_bx_ratings_info a span .not_filed_rating_itm, .ct_col .ct_bx_ratings span .not_filed_rating_itm{font-size: 15px;}
-    .crousel {
-        height: 450px;
-        width: 100vw;
-        margin-left: 4px;
-        transform: translate(-7px);
-    }
-        .ct_col{margin-right: 0px;}
-    .ct_bx_select_qt_final {
-        margin: 20px 0 20px 140px;
-    }
-    .ct_bx_acct_cart{height: auto;}
-    .ct_bx_select_qt_final .relative_width1 div{width: 30px;height: 28px;}
-    .ct_bx_select_qt_final .relative_width1 {
-        width: 25%;}
-    .for_ain_home_logo{
-        position: absolute;
-        left: 0;    }
-    .for_main_nav_login1{
-        font-size: 10px;
-    }
-    .logo h4 span{
-        font-size:27px
-    }
-    .logo h4 p{
-        font-size:27px
-    }
-    .itm_food_list_ek{
-        width:100vw;
-        margin-top: -10px;
-    }
-    .bodyessestials .itm_food_list_ek{margin-top: 25px;}
-    .ct_ct_cate_lis_ev{
-        width: 40%;
-        transform: translate(50px);
-    }
-    .active_a_cat_ck_fd{
-        font-size: 13px;
-    }
-    .ct_field_small_size {
-        display: block;
-        font-size: 22px;
-        position: absolute;
-        left: 0;
-        transform: translate(10px,-19px);
-    }
-    .groc_list .ct_cat_by_list{margin-left: 3%;width: 100vw;}
-    .not_active_a_cat{
-        font-size: 12px;
-    }
-    .evt_list_food_cat{
-        width: 90%;
-        margin-left: 40px;
-    }
-    .ct_bx_reiws_peoples{    transform: translate(-40px,30px);width: 100%
-        ;
-    }
-    .bx_star_dis span {
-        float: right;
-        position: static;
-        top: unset;
-        right: 0px;
-        font-size: 14px;
-        color: rgb(136, 125, 125);
-        transform: translate(10px,5px);
-    }
-    .ct_ct_text_about_acc h3 {
-        font-size: 24px;
-    
-    
-    }
-    .btn_sign_up_cart span2 {
-        font-size: 14px;
-        display: block;
-    }
-    .loading_rate_bx_for_reviews_msg {margin-left: 10%;}
-    .ct_bx_serached_itm {width:80%}
-    .check_out_btn_order{margin-left: 32px;}
-    .ct_acount_details_cart h2 {
-  
-        font-size: 64px;
-        position: absolute;
-        left: 40%;
-        transform: translate(0px,-80px);
-    }
-    .for_login_only_cart,
-    .for_signup_only_cart {    width: 170px;}
-    .ct_ct_text_about_acc p{font-size: 16px;}
-    .not_rated label{width: 13%;}
-        .ct_bx_graph_lev {width: 57%;position: static;}
-    .ct_bx_reiws_peoples h2{width: 80%;font-size: 18px;}
-    .recomended_cart h2,
-    .ct_bx_queston_bx p, .ct_bx_a_q_bx p{font-size: 18px;}
-    .ct_questions_answer h3,
-    .ct_bx_side_rt_revies h3{font-size: 19px;width: 80%;}
-    .ct_rate_bx h4, .ct_bx_rew_2 h4{margin-top: 40px;}
-    .ct_rate_star_wrapper {    transform: translate(-110px,-20px);}
-    .ct_bx_reiws_peoples h2 {
-        
-        transform: translate(50px,51px);
-    }
-    .ct_bx_first_icon{height: 62px;}
-    .ct_rate_bx{width: 400px;}
-    .ct_bx_rew_2 input{width: 90%;}
-    .ct_inner_fd1_dt_grid {
-        width: 100%;
-        transform: translate(3px,0px);
-        margin-left: 0;
-    }
-       .ct_dt_tm_food_res h4{
-        font-size: 17px;
-        width: 50vw;
-        margin-left: 10px;
-    }
-    .inner_slide .ct_bx_hw_cook {
-        transform: translate(8px,-9px);
-    }
-    .ct_bx_show_out_of_stk .ct_bx_btns{transform: translate(0);}
-    .ct_col .ct_bx_ratings {
-        margin-left: 4px;
-    }
-
-    .inner_slide .ct_type_bx_item_food {
-        width: 100%;
-        transform: translate(0,-10px);
-    }
-    .inner_slide .ct_time_it_takes {
-        width: 100%;
-        transform: translate(0px,0px);
-    }
-    .ct_bx_orders .ct_bx_ratings_info a span .filed_rating_itm, .ct_bx_orders .ct_bx_ratings span .filed_rating_itm{font-size: 18px;}
-    .for_groc_itm  .ct_dt_tm_food_res h4{margin-left: 0;}
-    .ct_bx_ratings_info a span .filed_rating_itm, .ct_bx_ratings span .filed_rating_itm{font-size: 20px;}
-    .ct_bx_hw_cook a{font-size: 13px;}
-    .price_am_cart_fd2 {
-        margin: -0px 0 10px -25px;
-    }
-    .price_am_cart_fd2 del{font-size: 15px;}
-    .price_am_cart_fd2 span{font-size: 21px;}
-    .ct_col .ct_bx_ratings_info a span .filed_rating_itm,.ct_col .ct_bx_ratings span .filed_rating_itm{font-size: 15px;}
-
+    .ct_bx_what_erak_foods{width: 80%;}
+    .ct_bx_fex_fd_dt_ov .ct_full_loading_box{margin-top: 130px;}
    
-    .groc_list {
-        transform: translate(-10px,40px);
-    }
-    .price_food del {
-        font-size: 12px;
-        
-    }
-    .price_food span{font-size: 16px;}
-    .for_ek_foods_load {
-        width: 100vw;
-        margin-left: 10px;
-        transform: translate(0px,40px);
-    }  
-    .only_for_specific_bx {
-        width: 30vw;
-        height: 130px;
-        margin: 0 20px 60px 0;
-    }
-    .ct_type_bx_item_food p{font-size: 13px;}
-    .ct_ct_cate_lis_ev{    top: 346px;}
-    .list_food_at_ov h3{margin-left: 0;margin-bottom: 20px;}
-    .for_load_bx_grid{display: flex;width: 100vw;}
-    .groc_list h3{transform: translate(5%);}
-  
-    .acc_set_main_nav{
-transform: translate(-20px,-10px);    
-    }
-    .ct_bx_a_q_bx, .ct_bx_queston_bx{width: 80%;}
-    .food_link_mob{display: block;width:120px;}
-.cart_nav{
-    transform: translate(0px,6px);
-}
-.bx_tot_ammount_order {
-    width: 220px;
-}
-.ct_box_half_order ul {
-    margin-top: 60px;
-}
-.big_ione_na_a{width: 100%;}
-.ct_set_qt_for_groc {
-    height: 39px;
-}
-.for_groc_itm .ct_set_qt_for_groc {
-    width: 97%;
-}
-.food_link_mob{margin-left: 10px;transform: translate(51px,0px);}
-.food_link_mob a{font-size: 14px;color: rgb(34, 34, 34);font-family: 'Open Sans';}
-    .for_seravh_in_nav{transform: translate(-20px,-12px);}
-    .ct_bx_search input{font-size: 15px;
-    border-radius: 4px;
-    width: 89%;
-    height: 50px;
-    
-    }
-    
-    .xclose_icon ion-icon{font-size:31px}
-    .for_seravh_in_nav .xclose_icon{    transform: translate(0px,-5px);}
-    .ct_remove_edt_popup {right: 20px;transform: translate(0px,-50px);;}
-    .ct_edit_cc {
-        width: 100vw;
-        right: -7vw;
-        height: 600px;
-    }  
-    .ct_bx_search {
-        width: 98vw;
-        transform: translate(46px, -25px);
-    }
-    .mai_ul .for_seravh_in_nav {display: none;}
-    .ct_nav_erak .mai_ul{background-image: linear-gradient(
-        325deg
-        , #abe9cd 50%, #5acaec);
-        
-        
-        }
-    .ct_bx_by_whom p{width:80%}
-    .only_big_screen2{display: none;}
-    .sign_UP_btn{
-        margin:  -5px 20px 0 40px
-    }
-    .sign_UP_btn a{
-font-size: 12px;
-padding-left: 22px;
-        width: 150%;
-    }
-    .ct_msg_send_itm_dt2 .alert_icon ion-icon,
-    .ct_msg_finished_stock .alert_icon ion-icon{
-        font-size: 24px;
-    }
-    .ct_remove_err2,
-    .ct_remove_err ion-icon{font-size: 18px;}
-    .ct_remove_err2{
-        display: inline-block;color: black;transform:translate(30px,5px)
-    }
-    .ct_list_food{
-        margin-left: -10px;
-        width: 100vw;
-        box-shadow: none;
-    }
-    
-    .only_for_grocery_item li .ct_bx_quant_itm_cart {
-        margin: 150px 0 0 5px;
-    }
-        .ct_bx_quant_itm_cart {
-        width: 170px;
-        height: 40px;
-        margin: 168px 0 0 -9px;
-    }
-    .for_cart_qt ion-icon {
-    
-        margin-left:0px;
-    }
-    
-.for_cart_qt .bx_ad_field_qt_num {
-    transform: translate(2px,5px);    padding: 5px;
-}
-.for_cart_qt .bx_rem_field_qt_num {
-    transform: translate(3px,5px);
-    padding: 4px;
-}
-.empty_cart{margin-left:24vw;position: relative;width: 400px;}
-    .empty_cart a{font-size: 13px;width:400px;border-radius: 5px;margin: 20px 0 0 -60px;box-shadow:  0 1px 4px rgba(8, 8, 8, 0.096);}
-    .empty_cart h3{font-size: 20px;}
-    .ct_type_fd_cart_itm{
-        transform: translate(-49px,85px);}
-    .ct_itm_food_cart h4{margin-left: -30px;margin-top: 30px;}
-    .main_cart_img{width: 28%;margin-left: -48px;min-width: 180px;height: 160px;}
-    
-    .ct_itm_food_cart{margin-left: 40px;padding-bottom: 80px;}
-    .groc_bx .ct_oferr {
-        transform: translate(10px,10px);
-        font-size: 15px;
-    }
-    .field_bx_qt span,
-    .field_bx_qt p{font-size: 10px;}
-    .groc_bx .ct_bx_drop{padding-left: 0;}
-    .list_food_cart .ct_bx_drop{width: 30px;    height: 25px;    padding-top: 3px;}
-    .ct_bx_drop{height: 28px;}
-    .ct_bx_food_groc_casrt .com_name{
-        font-size: 11px;
-    }
-    .carterr {
-        margin: 0px 0 0px 20px;
-        transform: translate(0px, -20px);
-        display: flex;
-    }
-    .groc_bx .ct_bx_related_itm_dt_cart2 {
-        margin: -8px 0 0px -20px;
-        width: 60%;
-    }
-    .main_li_cart_fd_lis .ct_bx_hw_cook {
-        transform: translate(-23px,-5px);
-    }
-    .ct_bx_acc_user_dt .ct_flex_bx_1_acc .gt_first_nam_second_name input {
-        width: 90%;
-    }
-    .ct_bx_food_groc_casrt {
-        margin: 0px 0 0 9px;
-    }
-    .only_for_grocery_item .saved_am{
-        
-        margin:15px 0 0 10px;
-    }
-    .bx_evt_cart_item .saved_am{         margin: -4px 0 0 -20px;
-    }
-    .only_for_grocery_item .ct_bx_quant_itm_cart {width:164px;}
-    .only_for_grocery_item .for_cart_qt ion-icon {
-        margin: 0px 0 0 1px;
-    }
-    .only_for_grocery_item .for_cart_qt .bx_ad_field_qt_num {
-        transform: translate(-1px,5px);
-        padding: 5px;
-    }
-    .main_cart_img2 {height: 140px;}
-    .ct_oferr span{font-size: 19px;}
-    .ct_suggested_bx textarea{margin-left: 20px;width: 80vw;font-size: 14px;}
-    .ct_time_takes{width: 33%;}
-    .ct_bx_related_itm_dt_cart {
-        width: 72%;
-        transform: translate(-190px,0px);position: absolute;
-    }    .ct_bx_img_load_itm{width: 100%;height: 400px;transform: translate(0,100px);margin-bottom: 0px;}
-    .main_li_cart_fd_lis .ct_bx_ratings {
-        margin: 4px 0 0 -30px;
-    }
-    .flex_bx_cart_itm {
-        margin: -10px 0 0 110px;
-        overflow: hidden;
-        padding-left: 40px;
-        width: 156%;
-    }
-    .ct_filed_selct_qt_un{margin-top: 0;}
-    /* .recomended_cart{display: none;} */
-        .main_li_cart_fd_lis .ct_set_qt_for_groc{width: 100%;}
-    .ct_itm_food_cart h4{font-size: 17px;width: 80%;}
-    .list_food_cart{margin-top: -30px;}
-    .sub_tital_order_cart h2,
-    .ct_shopping_cart h1{font-size: 18px;}
-    .ct_subotatal{box-shadow: none;transform:none;margin: 20px 0 0 20px;width:100vw;position: static;}
-    .ct_remove_err{display: inline-block;color: black;transform:translate(0px)}
+    .for_acc_dt .ct_bx_message_succesfully_ordered{width: 94%;}
+    .ct_bx_button_account{flex-flow: row wrap;}
 
-.for_cart_checkout {
-    width: 80vw;
-}
-.btn_sign_up_cart{margin-left: 0;}
-.ct_ct_text_about_acc a {
-  
-    margin-right: 20px;
-}
-.ct_bx_message_canceled_ordered p{
-    font-size: 15px;
-    margin: 10px 0 0 40px;
-}
-.ct_bx_message_succesfully_ordered.for_erak_cart p {margin: 0;}
-.ct_bx_message_canceled_ordered ion-icon, .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon {
-
-    font-size: 50px;
-    margin: 20px 10px 0 0px;
-}
-.ct_bx_inner1_groc_itm {
-    width: 100vw;
-    position: absolute;
-    margin: 40px 0 0 230px;
-}
-.ct_bx_show_out_of_stk h4{font-size: 14px;}
-.ct_bx_show_out_of_stk  .ct_bx_flex h3{font-size: 18px;}
-.ct_bx_inner_groc_itm{display: flex}
-.ct_offer_box_cook2{    padding: 10px 14px 10px 15px }
-.ct_offer_box_cook2 p{font-size: 11px;}
-.ct_bx_grocery_required .ct_offer_box_cook2 p{font-size: 12px;}
-.ct_bx_all_groc_required{width: 100%;}
-.ct_bx_grocery_required .ct_offer_box_cook2 p{margin-left: 14px;}
-.ct_bx_grocery_required .ct_offer_box_cook2 span{margin-left: 10px;}
-.ct_bx_grocery_required .ct_offer_box_cook2{height: 11vh;padding: 5px 8px 4px 5px;width:auto;transform: translate(-0px,-6px);}
-.ct_bx_all_groc_required .ct_bx_drop {
-    padding: 0;
-    width: 19%;
-    transform: translate(-4px,0px);
-    height: 25px;
-}
-.ct_bx_grocery_required .ct_set_qt_for_groc ion-icon {
-    transform: translate(2px,3px);
-}
-
-.for_cart_cancel p {
-    font-size: 14px;
-    transform: translate(0px);
-}
-.ct_bx_message_for_confim_cancel {
-    width: 80vw;
-    right: 100px;
-}
-.for_acc_load_full, .for_cart_load_full{position: static;transform:translate(-50px,390%);}
-.ct_bx_overlay_cart{justify-content: center;}
-.for_cart_cancel{width:70%}
-.for_need_help{transform: translate(18px,-18px);}
-.ct_bx_help{width: 28%;}
-.ct_bx_message_canceled_ordered, .ct_bx_message_succesfully_ordered {
-    margin: 20px 0 0px 30px;
-}
-.ct_bx_message_canceled_ordered, .ct_bx_message_succesfully_ordered{width: 99%;   }
-.ct_bx_message_canceled_ordered h2, .ct_bx_message_succesfully_ordered h2{font-size: 20px;}
-.ct_bx_all_groc_required {
-    transform: translate(10px,50px);
-}.ct_bx_all_groc_required .main_img_groc_itm {
-    height: auto;
-    width: 20vw;
-    min-height: 140px;
-}
-.ct_bx_act_cart_itm {
-    transform: translate(0%,159px);
-}
-.only_for_grocery_item .ct_bx_act_cart_itm{    transform: translate(0%,-139px);
-}
-.ct_bx_act_cart_itm2 ion-icon, .ct_bx_act_cart_itm ion-icon{font-size: 22px;}
-.ct_bx_all_groc_required .itm_food_list_ek{width: 190px;}
-.ct_bx_grocery_required .field_bx_qt{width: 100%;}
-.ct_bxc_hide_checkout{margin-top: 35px;width: 90vw;}
-.ct_shopping_cart h1{margin-left: -18px;}
-.for_cart_cancel p, .for_cart_checkout p {
-    font-weight: 600;
-    font-size: 15px;
-    text-transform: uppercase;
-}
-.ct_bx_signup_box_overall {
-    width: 95%;
-    margin-left: 14%;
-}
-.for_login2 .ct_bx_side_ov_login {
-    padding: 20px 0 0 0px;
-}
-.gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-of-type(1){width: 100%;}
-.bx2_gmail .gmail_acc {
-    margin-left: 14px;
-}
-.cont_btn_acc {
-    width: 301px;
-}
-.ct_bx_bottom_account {
-    width: 73%;
+    .ct_bx_welcome_back img{margin-top: 0;}
+    .ct_bx_food_dt_acc {
+        margin-top: 38px;
+    }    
+    .ct_type_bx_item_food {
+        width: 29%;
     }
-.phone_num {
-
-    transform: translate(10px,0px);
-}
-.ct_field_first_acc  .phone_number_login_forg label {
-    width: 150px;
-}
-.body_login .ct_signup {
-    width: 100%;
-}
-.body_login .gt_first_nam_second_name.pass_bx_field {
-    margin-left: 20px;
-    width: 88%;
-}
-.login_now {
-    margin: 3px 0 0 34px;
-}
-.phone_number_login_forg input{width: 47vw;}
-.bx_text_sign_up_login h3:before{font-size: 40px;}
-.bx_text_sign_up_login h2:after{font-size: 20px;}
-.ct_bx_side_ov_login{padding-left: 40px;    transform: translate(20%);}
-.ct_acc{right: 70px;width: 70%;overflow: hidden;}
-.ct_phone_input_field{margin-left: 20px;width: 72%;}
-.ct_phone_input_field .nick_name{width: 100%;}
-.g2{margin-left: -20px;}
-.ct_btn_acc {
-
-    margin-left: 90px;
-}
-.phonenum {
-    transform: translate(25px,-10px);
-}
-.ct_phone_input_field .nick_name input{width: 100%;}
-.ct_field_first_acc.new_pass_bx label{width: 120px;}
-.gt_first_nam_second_name:nth-child(1) label:nth-child(2){width: 90px;}
-.body_login .gt_first_nam_second_name:nth-child(1) label:nth-child(2) {
-    width: 143px;
-}
-.last_name label{margin-left: 10px;}
-.ct_field_first_acc .gmail_acc label{width: 60px;margin-left: 16px;}
-.phone_number_inp input{width: 81%;}
-.pincode .nick_name input {width: 78%;}
-.ct_field_first_acc  .g2 label,
-.ct_field_first_acc  .pincode label{width: 142px;margin-left: 10px;}
-.last_name {margin-left: 30px;}
-.pincode:nth-of-type(2) {
- margin-left: -5px;
-    width: 116.5%;
-}
-.gt_first_nam_second_name.pass_bx_field {margin-left: 20px;width: 106%;}
-.login_now{width: 190px;height: 34px;}
-.gt_first_nam_second_name:nth-of-type(2) .nick_name:nth-of-type(1) {
-    width: 99.5%;
-}
-.gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name input {
-    width:98%;
-    margin-left: -9px;
-}
-.gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name  {
-    width:56vw;
-}
-.bx2_gmail:nth-of-type(2) .gmail_acc {
-    transform: translate(0px);
-    width: 66vw;
-}
-.gt_first_nam_second_name{width:100%;margin-left: 10px;;display: block;}
-.ct_field_first_acc label{width: 100px;}
-.to_pay_cahge2:after{width: 75%;}
-.ct_acount_details_cart {margin-bottom: 10px;}
-.to_pay_cahge1:after{width: 80vw;}
-.ct_order_confirm{width: 100%;}
-    .ct_msg_send_itm_dt2 h4, .ct_msg_finished_stock h4{font-size: 13px;}
-    .ct_msg_finished_stock{display: none;top: 130px;position: fixed;width: 43%;;margin:0px 0 0 410px;z-index: 99999999;}
-
-    .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc ul{
-        width: inherit
+    .bx_flex_time_type {
+        width: 100vw;}  
+        .ct_time_it_takes {
+            width: 100%;}  
+    .bx2_gmail:nth-of-type(2) .gmail_acc {
+        margin: -20px 0 40px 35px;
     }
-    .ct_subotatal {height: 440px;}
-    .only_for_grocery_item .field_bx_qt{width: 100%;}
-    .list_food_cart .ct_bx_drop{
-        transform: translate(-4px,0px);
-    }
-    .ct_filed_selct_qt_un {
-        width: 200px;
-        transform: translate(-27px);
-    }
-/* --------------------- */
-/*essentails*/
-/* --------------- */
-.ct_loading_bx2 {
-    width: 100%;
-    height: 190px;
-    display: flex;
-}
-.ct_for_time_load{width: 48%; margin:15px  0 0 10px;    height: 20px;
-}
-.ct_for_unit_load {
-    width: 38%;
-    margin: 10px 0 0 10px;
-    height: 20px;
-}
-.bodyessestials .ct_for_time_load{height: 30px;}
-.for_grocery_load {
-    width: 100%;
-    flex-flow: row wrap;
-    transform: translate(-40px,60px);
-}
-.ct_set_qt_for_groc ul{width: 33.5%;}
-.for_groc_itm .for_ek_pk_fd {
-    width: 106px;
-    height: 40px;
-}.bx_ad_field_qt_num,
-.bx_ad_field_qt_num, .bx_rem_field_qt_num {
-    height: 30px;
-    width: 30px;
-    padding: 2.4px;
-}
-.for_groc_itm .for_ek_pk_fd {
-    margin: 158px 0 0 30px;
-}
-.for_ek_pk_fd input{margin-left: 39px;}
-.bodyessestials .ct_set_qt_for_groc ul li span, .field_bx_qt span{
-    margin-left: 8px;
-    width: 100%;
-}
-.ct_set_qt_for_groc ul li span{font-size: 10px;}
-.bodyessestials .ct_loading_bx_all {
-    margin-left: 68px;
-}
-.for_cart_cancel p, .for_cart_checkout p {
-    
-    margin-top: 5px;
-}
-.bodyessestials .ct_bx_drop{
-    width: 34px;
-    height: 28px;
-    transform: translate(0px,2px);}
-    .bodyessestials .field_bx_qt{width: 30%;}
-.field_bx_qt{width: 80%;}
-.list_food_at_ov .for_groc_itm .main_img_groc_itm {
-    width: auto;
-    max-width: 40vw;
-    height: 144px;
-}
-.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
-    transform: translate(0px,50px);
-    position: absolute;
-    left: 30px;
-}
-.ct_bx_fex_fd_dt_ov{display: block;}
-.ct_bx_img_itm {
-    width: 100vw;
-    margin-top: 140px;
-}
-.ct_nx_actions_account{display: block;}
-
-.ct_dt_tm_food_res h4{margin-left:10px}
+    .bx2_gmail:nth-of-type(2) .gmail_acc label{
+transform: translate(10px,10px);    
 
 }
-
-@media only screen and (max-width:500px){
+    .ct_bx_locate_bill {
+        top: 65px;
+    }
+    .ct_bx_message_for_confim_cancel .al_mcc {
+        font-size: 32px;
+    }
+    .ct_bx_message_for_confim_cancel h3 {
+        font-size: 14px;
+    }
     /* acc7 */
+    .ct_bx_message_canceled_ordered p, .ct_bx_message_succesfully_ordered.for_erak_cart p {
+        margin: 5px 0 0 0px;
+    }
     .ct_bx_acc_user_dt {
         padding-bottom: 40px;
     }
@@ -1609,22 +1060,35 @@ padding-left: 22px;
     }
     .ct_bx_account_exist {
     
-        margin: 2px 0 0 0px;
+        padding-bottom: 0px;
+
+        margin: 2px 0 0 30px;
     }
     .ct_bx_logout_btn ion-icon {
         color: rgb(0, 140, 255);
         font-size: 42px;}
-.ct_bx_logout_btn button{width: 50vw;}
-    .ct_bx_verif2 .nick_name {
+        .ct_bx_logout_btn button {
+            width: 75vw;
+        }    .ct_bx_verif2 .nick_name {
         width: 100%;
     }
     .on_edit_profile_acc .account_cont11 {
         width: 100%;
     }
+    .for_acc_dt .ct_bx_verify {
+        width: 101%;
+        padding-left: 50px;
+    
+        }
+       
+    .for_acc_dt  .ct_bx_verif2 .cont_btn_acc {
+        margin-left: 28px;
+    }
     .ct_create_acc {
         transform: translate(-3%);
         width: 80vw;
     }
+    .for_acc_dt .ct_create_acc{width: 100vw;}
         .date_time_order span{
         font-size: 12px;
     }
@@ -1632,9 +1096,7 @@ padding-left: 22px;
         font-size: 11px;
         width: 100%;
     } 
-    .date_time_order{
-        transform: translate(60px);
-    }
+   
     .date_time_order p{font-size:11px}
     .ct_bx_food_dt_acc .price_fd{
         font-size: 16px;
@@ -1651,22 +1113,25 @@ padding-left: 22px;
     .ct_bx_orders{margin: 0;}
     .ct_bx_no_order_yet{display: none;width: 80vw;}
 .ct_bx_food_dt_acc {margin-left: 0;}
-.for_img_order_user2{width: auto;max-width: 160px;}
+.for_img_order_user2{width: auto;max-width: 160px;        display: block;
+}
 .for_grocery_order, .ct_fd_dt_full {
-    margin-left: -20px;
+    margin-left: 0px;
 }
-.ct_bx_food_dt_acc h4 {
-    width: 49vw;
+
+.for_img_order_user {
+    margin-left: -13px;
+    width: 300px;
+    display: block;
 }
-.for_img_order_user {margin-left: -13px;width: 100%;}
 .ct_box_half_order .main_img {
     width: 100%;
-    max-width: 35vw;
+    max-width: unset;
     height: auto;
-        max-height: 160px;
+        max-height: unset;
 }
 .ct_fd_dt_full {
-    transform: translate(-30px,-14px);
+    transform: translate(0px,-14px);
 }
 
 .ct_all_over_fd_dt .ct_type_bx {
@@ -1675,49 +1140,80 @@ padding-left: 22px;
 .for_grocery_order .ct_type_bx {
     transform: translate(4px,67px);
 }
-.ct_bx_no_order_yet{right: 0;left: 23%;margin-top: -40px;}
-.fd_btn_order {
+.ct_bx_no_order_yet {
+    right: 0;
+    left: 3%;
+    margin-top: 0px;
+}.fd_btn_order {
     font-size: 11px;
-    transform: translate(20px,20px);
-    width: 40vw;
+    transform: translate(0px,20px);
+    width: 77vw;
 }
+.ct_edit_cc{padding-top: 20px;padding-left: 0;}
 .ct_order_coll_acc_us h2{
     font-size: 20px;
 }
-
+.ct_box_half_order .for_img_order_user2 .main_img {
+    width: 100%;
+}
+.for_img_order_user2 {
+    width: auto;
+   max-width: 137px;
+    display: block;
+}
 .groc_btn_order {
-    width: 36vw;
-    font-size: 11px;
-    transform: translate(24px,2px);
+    width: 77vw;
+    font-size: 14px;
+    transform: translate(3px,0px);
+    margin: 40px 0 0 20px;
 }
 .ct_bx_no_order_yet h3 {
     color: black;
     transform: translate(14px,10px);
 }
 .unit {
-    margin: 15px 30px 10px -42px;
+    margin: 7px 30px 10px -42px;
 }
 .ct_acc_dt_ov p{color: rgb(29, 27, 27);margin: -32px 0 0 46px;font-size: 17px;}
 
 /* ---------------------- */
+
+.loading_rate_bx {
+
+    margin: 0px 0 180px 0px;
+    width: 100%;
+    height: 900px;
+}
     /* cart7 */
-    .empty_cart .ct_bx_inner_icon_cart .ct_bx1_emp ion-icon {
+    .for_cart_cancel p {
+        font-size: 14px;
+        transform: translate(0px,10px);
+    }
+    .ct_bx_all_groc_required .ct_set_qt_for_groc ul li p, .field_bx_qt p {
+     
+        color: rgb(129, 124, 124);}  
+        .ct_list_food  .ct_set_qt_for_groc ul li p, .field_bx_qt p {
+     
+            color: rgb(20, 20, 20);}  
+        
+        .ct_bx_all_groc_required .unit {
+            margin: -8px 60px 7px 6px;    }
+        .empty_cart .ct_bx_inner_icon_cart .ct_bx1_emp ion-icon {
         transform: translate(-20px);
     }
     .ct_bx_inner_icon_cart .ct_bx1_emp {
         width: 2%;
         height: 40px;
-        transform: translate(70px,-0px);
+        transform: translate(65px,-0px);
     }
-    .ct_bx_acct_cart{margin-top: 20px;}
-    .loading_spinner_login2::after{left: 70%;}
+    .loading_spinner_login2::after{left: auto;}
     .btn_sign_up_cart{
         padding:5px 6px 5px 13px;
-        margin-left: 10px;
+        margin-left: 6px;
 
         }
         .btn_sign_up_cart{
-            width:40%;
+            width:180px;
         }
         .btn_sign_up_cart span{
             font-size: 15px;
@@ -1729,7 +1225,7 @@ padding-left: 22px;
             width: 150%;
             /* margin-left: -9px; */
         }
-        .for_login_only_cart{width:40%;
+        .for_login_only_cart{width:180px;
             margin: 3px 0 0 5px;
             border: 1px solid rgb(0, 140, 255);
         }
@@ -1744,11 +1240,11 @@ padding-left: 22px;
     }
     
     .ct_bx_cannot_login_signuop_acc h4{
-        font-size: 15px;
+        font-size: 15px;width: 90%;
         color: rgb(37, 35, 35);
         font-family: 'Open Sans';
     }
-    .ct_bx_cannot_login_signuop_acc{margin-top: 90px;width: 90vw;}
+    .ct_bx_cannot_login_signuop_acc{margin-top: 90px;width: 82vw;}
     .ct_bx_welcome_back h3{margin-top: 0px}
     .ct_bx_cannot_login_signuop_acc p{
         font-size: 14px;
@@ -1782,7 +1278,7 @@ transform: translate(60px,8px);
 
 }
     .empty_cart {
-        margin: 0 0 150px 17%;
+        margin: 0 0 50px 17%;
     }
     .empty_cart a{
         width: 80%;
@@ -1795,7 +1291,7 @@ transform: translate(60px,8px);
         width: 30px;
         position: absolute;
         height: 30px;
-        right: -31px;
+        right: 15px;
         border-radius: 40px;
         margin-top: 30px;
         padding: 5px 3px 0px 5px;
@@ -1804,7 +1300,7 @@ transform: translate(60px,8px);
         margin: 10px 0 10px -10px;
     }
     .body_cart  .inner_slide .price_food{
-        margin: 16px 0 10px 0px;
+        margin: 16px 0 10px 8px;
     
     }
     .ct_bx_message_canceled_ordered h2, .for_erak_cart h2 {
@@ -1828,11 +1324,11 @@ transform: translate(60px,8px);
     .ct_bx_message_succesfully_ordered h2{
         width: 80%;
     }
-    .groc_bx .price_am_cart_fd2{margin-top: 10px;}
+    .groc_bx .price_am_cart_fd2{margin-bottom: 10px;}
     .ct_bx_all_groc_required{width: 100%;
         transform: translate(-30px,60px);
         }
-    .ct_bx_all_groc_required .itm_food_list_ek{width: 38%;overflow: hidden;}
+    .ct_bx_all_groc_required .itm_food_list_ek{width: 36%;overflow: hidden;}
     
     .ct_bx_grocery_required .ct_offer_box_cook2 p{font-size: 10px;}
     .ct_bx_grocery_required .ct_offer_box_cook2 span{margin-left: 10px;font-size: 14px;}
@@ -1849,24 +1345,55 @@ transform: translate(60px,8px);
     .bx_evt_cart_item .for_cart_qt .bx_ad_field_qt_num {
         transform: translate(-2px,8px);
     }
-        .bx_evt_cart_item .ct_bx_quant_itm_cart{
-        margin: 130px 0 0 -30px;width: 120px;}
+    .bx_evt_cart_item .ct_bx_quant_itm_cart {
+        margin: 8px 0 20px 54px;
+        width: 120px;
+    }
+    
         .ct_bx_quant_itm_cart{
-            margin: 130px 0 0 -10px;width: 23%;}
+width: 23%;}
     .flex_bx_cart_itm {
-        width: 70vw;
+        width: 78vw;
         margin: 6px 0 0 -92px;
     }
     .only_for_grocery_item .ct_itm_food_cart{margin-left: 70px;}
     .ct_itm_food_cart{margin-left: 50px;}
 
-    .main_cart_img{     min-width: 0;
+    .img_a_cart{     min-width: 0;
         width: 43vw;        position: static;
-                    height:117px;
                     z-index: 0;
-                    margin: 5px  0 0 -40px;
+                    margin: 5px  0 0 -26px;
                     }
-    .img_a_cart {width: auto;}
+                    .main_cart_img {
+                        width: 100%;
+                        min-height: initial;
+
+                        max-width: initial;
+                        height:auto;
+                    }
+                    .bx_evt_cart_item .ct_bx_qt_foods {
+                        width: 30%;
+                        margin-left: -17px;
+                    }
+                    .bx_evt_cart_item .ct_bx_qty {
+                        width: 100%;
+                        margin-left: 54px;
+                    }
+                    .ct_itm_food_cart h4{
+                        font-family: 'Nanum Gothic';
+                    }
+                    .ct_bx_qty {
+                  
+                        padding: 7px;
+                    }
+                    .groc_bx .ct_bx_qt_foods {
+                        width: 30%;
+                    }
+                    .groc_bx .ct_bx_qty {
+                        padding: 2px;
+                        margin: 5px 0 0 -24px;
+                    }
+    .img_a_cart {width:150px;}
     .ct_time_takes p strong{font-size:12px}
     .bx_evt_cart_item .saved_am {
         margin: -4px 0 10px 70px;
@@ -1875,7 +1402,7 @@ transform: translate(60px,8px);
 
     .only_for_grocery_item .saved_am{margin-top: 5px;}
     .inner_slide .ct_time_it_takes {
-        transform: translate(17px,-2px);
+        transform: translate(0px,0px);
     }
     .inner_slide .ct_type_bx_item_food {
         transform: translate(0px);
@@ -1921,9 +1448,7 @@ transform: translate(60px,8px);
     .groc_bx .ct_bx_related_itm_dt_cart2 {
         width: 60%;
     }
-    .only_for_grocery_item li .ct_bx_quant_itm_cart {
-        margin: 135px 0 0 24px;
-    }
+
     .for_cart_qt .bx_rem_field_qt_num{    transform: translate(8px,8px);
     }
     .for_cart_qt .bx_ad_field_qt_num, .for_cart_qt .bx_rem_field_qt_num {
@@ -1965,7 +1490,7 @@ transform: translate(60px,8px);
 
 
 
-    .bodyessestials .field_bx_qt{width: 70%;}
+    .bodyessestials .field_bx_qt{width: 100%;}
 
     .bodyessestials .ct_error_stock{top: auto;max-height: 120px;}
     .xclose_icon ion-icon{font-size:31px}
@@ -1989,8 +1514,9 @@ transform: translate(60px,8px);
     }
     .ct_bx_welcome_back h3{margin-left: 0;}
     .ct_nx_actions_account {
-        margin: 190px 0 0 10px;
+        margin: 90px 0 0 10px;
     }
+    .ct_x_welcome_inner{margin-top: 16px;}
     .ct_bx_welcome_back ion-icon{font-size: 40px;transform: translate(-3px);}
     .ct_nx_actions_account .ct_bx_for_orders {
         width: 45%;height: 70px;padding: 15px ;}
@@ -1998,7 +1524,17 @@ transform: translate(60px,8px);
      
        
             .gmail_acc  .nick_name input:focus ~label,
-.gmail_acc .nick_name input:valid ~label,
+.gmail_acc .nick_name input:valid ~label{
+    color: rgb(12, 172, 247);
+    margin: -65px  0 0 47px;
+    font-size: 12px;
+    
+
+}
+.ct_phone_input_field .nick_name input:focus ~label,
+.ct_phone_input_field .nick_name input:valid ~label{  color: rgb(12, 172, 247);
+    margin: -55px  0 0 10px;
+    font-size: 12px;}
 .pincode .nick_name input:focus ~label,
 .pincode .nick_name input:valid ~label{
     color: rgb(12, 172, 247);
@@ -2015,7 +1551,7 @@ transform: translate(60px,8px);
 .gt_first_nam_second_name:nth-of-type(1) .last_name label {margin-left: 10px;}
 .ct_phone_input_field label{margin-left: 10px;   }
     .error_login.lstname_err3{transform: translate(40px,10px);font-size: 3.1vw;width: 180%;}
-.error_login.lstname_err2{transform: translate(180px,10px);font-size: 3.1vw;width: 180%}
+.error_login.lstname_err2{transform: translate(180px,0px);font-size: 3.1vw;width: 180%}
 .error_login.phonenum{
     transform: translate(40px,10px);
     font-size: 3.1vw;width: 180%
@@ -2031,11 +1567,6 @@ transform: translate(60px,8px);
         margin: 40px 0 30px 10px;
     } 
    
-    .ct_bx_select_qt_final .relative_width1 div {
-        width: 27px;
-        height: 28px;
-        padding: 2px;
-    }
     #ek_res_ev{overflow: hidden;}
     .ct_list_food_res_ek {
         overflow: hidden;
@@ -2080,7 +1611,7 @@ transform: translate(60px,8px);
             transform: translate(0,-50px);
         }
        
-        .groc_list{width: 70%;transform: translate(0,20px);}
+        .groc_list{width: 100%;transform: translate(0,20px);}
 
         .groc_list{margin-top: 0px;}
         .nav_list_event ul li{
@@ -2177,12 +1708,12 @@ transform: translate(60px,8px);
       .bx_rem_field_qt_num{width: 100%;position: absolute;}
     .itm_food_list_ek .ct_img_res_main  .main_img_groc_itm{
         width:auto;
-        max-width: 77%;
+        max-width:140px;
     margin-left: 29px;
-    height: 131px;
+    height: auto;
     }
     .bodyessestials .ct_bx_drop {
-        width: 17%;
+        width: 33px;
         height: 28px;
         transform: translate(0px,-6px);
     }
@@ -2193,7 +1724,7 @@ transform: translate(60px,8px);
     .ct_bx_all_groc_required .ct_dt_tm_food_res{margin-top: 120px;}
     .ct_bx_all_groc_required   .itm_food_list_ek .ct_img_res_main  .main_img_groc_itm{
        position: absolute;
-        height: 130px;
+        height: auto;
         width: 140px;
     margin-left: 10px;
     }
@@ -2217,7 +1748,7 @@ width: 90px;
     }
     .for_groc_itm .ct_set_qt_for_groc {
         display: flex;
-        width: 43vw;
+        width: 54%;
         margin: 20px 0 5px -50px;
     }
 
@@ -2308,8 +1839,9 @@ margin-left: 35px;
     }
     .erak_fd_body .itm_food_list_ek .price_food{display: block;
         font-size: 16px;
-        margin: 20px 0 0 5px;
+        margin: 0px 0 0 5px;
     }
+    .ct_time_it_takes{margin-top: 0;}
     .itm_food_list_ek .btn_details_packed_food{
 right:10px;
     }
@@ -2332,23 +1864,26 @@ right:10px;
         width:206px;
         border-radius: 0;
         height: 170px;
-    transform: translate(30px,-20px);
+    transform: translate(30px,0px);
     }
     .for_groc_itm   .ct_img_res_main img{
         width: 110%;
         height: 33vh;
     transform: translate(0,-20px);
     }
-    .ct_sbout_this_itm p{max-width: 70%;font-size: 14px;margin-top: -6px;}
+    .ct_sbout_this_itm p{max-width: 70%;font-size: 14px;}
     .ct_about_itm_fld button {
      
         margin: -7px 0 0 10px;
       
     }
-    
+    .ct_x_fd_dt_itm h4 {
+        font-size: 17px;
+    }
+    .ct_x_fd_dt_itm .ct_bx_total_ammount h4{font-size: 13px;padding-bottom: 4px;}
     .bx_buy_now ,
     .bx_add_t_cart_btn_itm_dt{margin-left: 10px;}
-    .ct_bx_acct_cart {margin-bottom: 50px;overflow: hidden;transform: translate(0);}
+    .ct_bx_acct_cart {overflow: hidden;transform: translate(0px);}
     .forward_acc{
         transform: translate(20px,-10px);
         position: absolute;
@@ -2396,7 +1931,7 @@ height: 300px;     }
             font-size: 11px;
         }
         .ct_set_qt_for_groc ul {
-            width: 38vw;
+            width: inherit;
             margin: -20px 0 0 5px;
         }
         .ct_set_qt_for_groc ul li{
@@ -2411,7 +1946,6 @@ height: 300px;     }
     }
     .for_oly_ekfd_price{
         font-size: 15px;
-        transform: translate(0,-21px);
 
     }
   
@@ -2520,12 +2054,17 @@ border-radius: 8px  8px 0;
     width: 80%;
 
 }
+.ct_error_stock{padding-bottom: 16px;}
+
+.erak_fd_body .ct_error_stock p{    width: 100%;    font-size: 13px;
+
+}
 .ct_inner_msg {
     display: flex;
     margin: 20px 0 0 30px;
 }
 .ct_bx_remove_stk_msg{
-    transform: translate(20px,-14px);
+    transform: translate(0px,-14px);
 }
 .for_groc_itm  .ct_dt_tm_food_res h4{
 transform: translate(-85px);
@@ -2539,7 +2078,18 @@ transform: translate(-85px);
     padding-bottom: 10px;
     height: auto;
 }
-   .cart_nav span{
+.itm_dt_body .ct_error_stock {
+    padding: 4px 22px 14px 12px;
+}
+
+.ct_error_stock.for_ek_fd, .ct_error_stock.for_items{    left: unset;
+}
+.erak_fd_body .ct_error_stock{
+    left: auto;
+z-index: 0;padding-bottom: 19px;    transform: translate(50px,50px);
+}   
+
+.cart_nav span{
     display: inline-block;
     font-weight: 400;
     
@@ -2586,9 +2136,14 @@ transform: translate(-85px);
     display: block;
     box-shadow: none;
 }
-.price_am_cart_fd2 {
-    margin: -10px 0 10px 65px;
-}
+.remove_fd_itm_ct {
+    margin: 8px 0 10px 72px;
+    text-align: center;
+    width: 53%;}
+    .only_for_grocery_item .remove_fd_itm_ct {
+        margin: 8px 0 0 -2px;
+      
+    }
   .ct_order_confirm{margin-top: 8px;}
 
 .ct_bx_info_confirm ion-icon{
@@ -2604,7 +2159,7 @@ transform: translate(-85px);
 .remove_msg_conf_cancel {
     position: absolute;
     right: 10px;
-    transform: translate(0px,-150px);
+    transform: translate(0px);
 }
 .ct_bx_message_for_confim_cancel {
     width: 80%;
@@ -2643,7 +2198,7 @@ transform: translate(-85px);
   }
   .main_li_cart_fd_lis{
     width:90%;
-margin: 20px 0 10px 10px;
+margin: 20px 0 10px 0px;
 }
 .for_cart_qt ion-icon{
 
@@ -2671,10 +2226,9 @@ width: 44vw;
     font-size: 15px;
 }
 .main_li_cart_fd_lis .ct_bx_ratings{
-    margin: -5px 0 0 67px;
+    margin: 0px 0 0 67px;
     width: 100%;
-    /* position: static; */
-    /* display: block; */
+
 }
 .ct_bx_grocery_required .field_bx_qt{
     width: 82%;
@@ -2683,8 +2237,8 @@ width: 44vw;
     width: 30%;
     margin-left: 3px;
 }
-.ct_bx_grocery_required .itm_food_list_ek{
-    margin-bottom: 90px;
+.ct_bx_grocery_required .itm_food_list_ek:not(:last-child){
+    margin-bottom: 50px;
 }
 .ct_bx_grocery_required .ct_bx_drop {
     width: 53px;
@@ -2692,23 +2246,30 @@ width: 44vw;
     height: 30px;
     margin: -8px 0 0 -4px;
 }
+.ct_bx_diff_group {
+    width: 87%;
+    display: flex;
+    margin: -13px 0 12px 55px;
+    border-bottom: 1px solid rgb(241, 234, 234);
+}
 .ct_bx_grocery_required{padding-bottom: 80px;}
 .ct_bx_grocery_required .for_grocery_qt{width: 6%;}
 .ct_bx_grocery_required .field_bx_qt span{
     margin:5px 0 0 10px;
 }
 
-
- .groc_bx .ct_bx_quant_itm_cart{
-    transform: translate(-70px);
-}
 .price_am_cart_fd2 {
-    margin: -10px 0 10px 65px;
+    margin:0px 0 10px 75px;
+}
+.ct_bx_quant_itm_cart {
+    margin: 8px 0 18px 0vw;
+}
+.main_cart_img2 {
+    margin-left: -52px;
+    width: 150px;
+    height: 150px;
 }
 
-.bx_evt_cart_item .ct_bx_act_cart_itm {
-    transform: translate(-4px,-6px);
-}
 .ct_bx_message_canceled_ordered ion-icon, .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon{
     font-size: 40px;
     margin: 20px 0 0 31px;
@@ -2747,13 +2308,16 @@ position: static;
     height: 52px;
     overflow-y: scroll;
 }
+.body_cart .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc ul {
+    width: 168px;
+  
+}
 .groc_bx .ct_itm_food_cart h4{
     margin: 0px;
     width: 50vw;
 
 }
 .ct_bx_view_all_food{transform: translate(20px,0px);}
-.ct_bx_act_cart_itm2{transform: translate(82%,-90px);}
 .groc_bx .ct_oferr{width: 160%;}
 .ct_bx_related_itm_dt_cart2 .ct_bx_drop{transform: translate(6px,-5px);width: 30px;height:28px;}
 .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc{width: 130px;}
@@ -2798,21 +2362,25 @@ margin-top:-20px
 
 .for_main_nav_login1 a{
     border: none;width: 130%;margin: -5px  0 0 20px;}
-.for_mobile_search{display: flex;width: 106vw;    background-color: #abe9cd;
-    background-image: linear-gradient(205deg, #abe9cd 50%, #73d8f7);
-margin: 0px  0 0 -90px;
-position: fixed;
+.for_mobile_search{display: flex;width: 100%;    
+margin: 0px  0 0 -70px;
+position: absolute;
 top: 1px;
 height: 60px;
 }
 .ct_bx_message_succesfully_ordered{margin-bottom: 220px;margin-top: -40px;position: relative;left: 7%;}
 .for_groc_cart_load{margin:90px 0 130px 0px; }
 
-
-.ct_other_nav_cart{
-    transform: translate(40px,-35px);
-    }
-
+.only_for_grocery_item, .bx_evt_cart_item {
+    margin: -50px 0 60px 0px;
+}
+.ct_other_nav_cart {
+    z-index: 999999;
+    margin: -30px 0 90px -50px;
+}
+.sub_tital_order_cart h2, .ct_shopping_cart h1 {
+    font-size: 15px;
+}
 .bx_rem_field_qt_num{
  height: 26px;width:95%;
  transform: translate(4px,3px);
@@ -2825,9 +2393,9 @@ height: 60px;
 
 .for_cart_qt input {
     width: auto;    max-width: 29.5px;
-    padding: 10px 4px 3px 1vw;
+    padding: 10px 4px 3px 0vw;
     outline: none;
-    margin: 2px 0 0 44px;
+    margin: 2px 0 0 39px;
     /* border: none; */
 }
 
@@ -2835,19 +2403,14 @@ height: 60px;
 
 .ct_oferr p{font-size: 11px;margin-top: 5px;}
 .ct_oferr{margin-left: 9px;}
-.ct_bx_help{
-    z-index: 9999999999;
-    width: 50%;
-    top: 82px;
 
-}
 .groc_bx .ct_type_fd_cart_itm {
     transform: translate(-85px,85px);
 }
 .ct_bx_food_groc_casrt{
     margin-left: 4px;
 }
-    .main_cart_img2{
+    .img_a_cart2{
         width:auto;
     height: 120px;
     margin: 15px  0 0 -48px;
@@ -2876,12 +2439,7 @@ height: 60px;
 
 
 }
-.remove_fd_itm_ct{
-    left: 84%;
-    font-size:14px;
 
-    margin:0;
-}
 .whats_inc_items{margin: 30px 0 0 20px;}
 
 .bx_dot{background-color: rgb(32, 31, 31);border-radius: 50%;width: 2%;height: 1.3vh;}
@@ -3030,20 +2588,18 @@ transform: translate(0px);
 
     margin: 0px 0 0px -40px;
 }
-.ct_bx_side_ov_login{transform: translate(20px,10px);}
+.ct_bx_side_ov_login{transform: translate(0px,10px);}
 
 
- .gmail_acc label{margin: -50px 0 0 15px;}
+ .gmail_acc label{margin: -50px 0 0 46px;}
 .logo {
     z-index: 9999999999;
 }
 .pincode label{width: 54%;}
 .for_ain_home_logo{left: 3%;    position: absolute;}
-.for_ain_home_logo2 {position: absolute;top:-15px;left: 4%;}
-.for_login2 .for_ain_home_logo2{
-    position: absolute;
-    top: -12px;
-
+.for_login2 .ct_bx_side_ov_login {
+    width: 100%;
+    padding: 20px 0 20px 20%;
 }
  .pincode{transform: translate(10px);}
 .phone_num ion-icon{
@@ -3062,9 +2618,7 @@ z-index: 99999;
 }
 
 .logo .tag_line_brand{transform: translate(0px,-1px);font-size: 7.5px;}
-.big_ione_na_a{
-    /* background-color: white */
-background-color: white;}
+
 .ct_bx_img_load_itm{
     width: 100%;
     height:330px;
@@ -3073,29 +2627,23 @@ background-color: white;}
 }
 .for_items_recm{margin-top: 60px;}
 
-.bx_flex_time_type{display: flex;margin-top: -20px;}
-.for_login2 .ct_bx_side_ov_login {
-    padding: 56px 0 0 50px;
-}
-.ct_bx_select_qt_final .bx_ad_field_qt_num {
-    transform: translate(68px,3px);
-}
+
+.ct_bx_acct_cart{margin-left: 0;}
 .gt_first_nam_second_name{display: block;}
 .nick_name{width: 100%;}
 .nick_name input{position: relative;
 }
 .bx2_gmail:nth-of-type(2) .gmail_acc {
-    width: 100%;
-}
+    width: 93vw;}
 .gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name input {
-    width: 92%;
+    width:84%;
     margin-left: -5px;
 }
 .gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name {
     width: 100%;
 }
 .ct_phone_input_field .nick_name {
-    width: 79%;
+    width: 97vw;
 }
 .ct_field_first_acc .g2 label{    margin-left: -6px;
 }
@@ -3107,10 +2655,10 @@ background-color: white;}
     width: 99%;
 }
 .only_for_sig .gt_first_nam_second_name.pass_bx_field {
-    width: 119%;
+    width: 88vw;
 }
 .pincode:nth-of-type(2) {
-    width: 112.5%;
+    width: 98vw;
 }
 .ct_phone_input_field {
     width: 100%;
@@ -3123,7 +2671,7 @@ background-color: white;}
     width: 100px;
 }
 .gt_first_nam_second_name {
-    width: 97vw;
+    width: 91vw;
 }
 .gt_first_nam_second_name span{display: none;}
 .ct_phone_input_field{margin-left: 0;}
@@ -3141,19 +2689,17 @@ background-color: white;}
     margin-left: -77px;
 }
 .only_for_sig .ct_btn_acc {
-    margin-left: 7px;
+    margin-left: -7px;
     width: 100%;
 }
-.for_acc_load_full, .for_cart_load_full {
-    transform: translate(0px,140px);
-}
+
 .body_login .ct_bx_overlay_cart_signup {
-    top: 30%;
+    top: 10%;
     justify-content: center;
 }
 .body_login  .ct_btn_acc{margin-left:0px ;}
 .pincode .nick_name input {
-    width: 78%;
+    width: 72vw;
 }
 .ct_phone_input_field .nick_name input {
     margin-left: -10px;
@@ -3164,7 +2710,7 @@ background-color: white;}
 .bx2_gmail .gmail_acc {
     margin-left: -2px;
 }
-.ct_bx_search{width: 96vw;}
+.for_mobile_search  .ct_bx_search{width: 96vw;margin-left: 0}
 .for_ek_cartNav .ct_bx_search  .search-icon{
     margin-left: 140px;
     position: absolute;
@@ -3199,7 +2745,6 @@ width: 50%;
     .bx_text_sign_up_login h2:after {
         font-size: 4.9vw;
     }
-    .bx_text_sign_up_login{padding-bottom: 40px;margin: 70px 0 0 -120px;}
     .account_cont{        margin-left: 10px;
     }
     .logo h4 p{font-size: 26px;}
@@ -3271,13 +2816,17 @@ transform: translate(180px,30px);
         
     }
     .ct_bx_subinner_acc {
-        margin-left: 40px;
+        margin:90px 0 0  40px;
     }
     .ct_bx_messgae .success {
 
-        font-size: 3.4vw;        width: 100%;
+        font-size: 2.8vw;        width: 100%;
     }
-    .ct_bx_messgae svg{width:30%;height: auto;transform: translate(94%);}
+    .ct_bx_messgae svg {
+        width: 23%;
+        height: auto;
+        transform: translate(134%);
+    }
     .ct_bx_messgae .error, .success {
         margin: 0px 0 0px -5%;
     }
@@ -3299,11 +2848,11 @@ transform: translate(180px,30px);
     
         }
         
-        .for_ek_fd_cart_load_rec_load{margin:50px 0 150px 50px; }
+        .for_ek_fd_cart_load_rec_load{margin:50px 0 150px 0px; display: flex;}
 .body_cart .for_ek_fd_cart_load_rec_load{margin:50px 0 150px 10px; }
 
         .ct_bx_reiws_peoples{
-            transform: translate(-20px,60px);
+            transform: translate(-20px,0px);
             width: 100vw;
             
             }
@@ -3319,9 +2868,7 @@ transform: translate(180px,30px);
     .ct_bx_rew_2 input{
         width: 90%;
     }
-    .ct_bx_review {
-        margin-left: 10px;
-    }
+ 
     .ct_bx_rew_2 textarea, .ct_bx_rew_2 input{font-size: 13px;}
     .ct_bx_rt_rv_bx{border-top: 2px solid rgb(243, 237, 237);
         width: 100%;display: block;overflow: hidden;margin-left: 10px;}
@@ -3346,12 +2893,12 @@ padding: 11px  0 0 10px;
 .ct_field_ov_flow{
     transform: translate(0,50px);
 }
-
+.ct_subotatal{height: auto;}
 .recomended_cart h2{
     font-size: 17px;
     color: rgb(49, 47, 47);
 margin: 20px 0 30px 37px;}
-.ek_cart{background-color: #ffffff;padding: 10px;margin-top: 140px;}
+.ek_cart{background-color: #ffffff;padding: 10px;margin-top: 70px;}
 .recomended_cart{padding-bottom:50px;margin-top:0px;}
 
     .check_bx_if_view label{
@@ -3533,7 +3080,7 @@ margin:-90px 0 40px  30px;
 .erak_fd_body .ct_offer_box_cook2 {
     padding: 8px 13px 8px 12px;
     z-index: 999999;
-    transform: translate(36px,-4px);
+    transform: translate(36px,10px);
     width: auto;
     height: auto;
 }
@@ -3550,7 +3097,6 @@ margin:-90px 0 40px  30px;
 .ct_offer_box_cook2 p {
     font-size: 10px;
 }
-.itm_food_list_ek{padding-bottom: 6px;}
 .ct_for_img_load{
     width:10%;    height: 20.4vh;
     margin-left: 54px;
@@ -3569,7 +3115,6 @@ margin:-90px 0 40px  30px;
 .for_load_bx_grid_inner{margin:-20px 0 0  66px;}
 .for_ek_foods_load{margin: -80px 0  20px -90px;}
 .ct_loading_bx .ct_for_p_load {
-    width: 150px;
     height: 24px;
     margin-bottom: 5px;
     transform: translate(-60px,20px);
@@ -3587,15 +3132,14 @@ margin:-90px 0 40px  30px;
     padding-bottom: 120px;
     margin: -100px 0 60px 75px;
     width: 130%;
-} .main_img_groc_itm{height: 22vh;width: 66%;}
+} .main_img_groc_itm{height: auto;width: 66%;}
  
  .ct_for_time_load {
-    width: 160px;
     margin: 11px 0 0 -50px;
     height: 18px;
 
  }
- .for_grocery_load .ct_for_time_load{width:200px}
+ .for_grocery_load .ct_for_time_load{width:40vw}
  .ct_for_unit_load {
     width: 20%;
     display: none;
@@ -3634,6 +3178,9 @@ margin: 5px 0  0 -50px;
     height: 20px;
     margin: 10px 0 0 -50px;
 }
+.body_cart .ct_type_fd_cart_itm2 {
+    transform: translate(0px,80px);
+}
 .ct_type_fd_cart_itm2 {
     transform: translate(-238px,62px);
     position: absolute;
@@ -3662,10 +3209,8 @@ margin: 5px 0  0 -50px;
     width: 100vw;
     margin: 30px 0 0 -170px;
 }
-
-.for_acc_dt .acc_erak_mobile{margin-top: 20px;}
 .acc_erak_mobile {
-    margin: 6px 0 0 -20px;
+    margin: 0px;
 }.acc_erak_mobile .ct_acc_dt_ov h3{margin-top: 18px;font-size: 14px;color: rgb(255, 255, 255);font-family: Arial,sans-serif}
 .acc_erak_mobile ion-icon{font-size: 40px;color: rgb(255, 255, 255);      transform: translate(-12px,-15px);;
 }
@@ -3677,14 +3222,17 @@ margin: 5px 0  0 -50px;
     font-size: 16px;
     transform: translate(2%,0px);
     margin: 0;
+    margin-top: 30px;
+    margin-bottom: -14px;
 }
 
 .ct_msg_send_itm_dt2{
     width: 70%;
     transform: translate(0,690px);
 }
-
-.ct_remcombx_pf_ct{width: 80%;}
+.crousel .itm_food_list_ek .ct_img_res_main img {
+    height: 174px;
+}
 
 .ct_bx_all_qa{margin-left: 0px;}
 .ct_msg_finished_stock{   color: red;
@@ -3731,7 +3279,6 @@ padding-bottom: 60px;
 .ct_calicon ion-icon{font-size:7vw}
 .ct_bx_dt_sle_date p{font-size: 3.4vw;}
 .ct_bx_dt_sle_date span{font-size: 2.5vw;margin-top: 0;}
-.ct_nav_erak .nav_main_ek_li ion-icon{color: #000000;} 
 .ct_as_per_date_order .ct_bx_outer_order_itm .ctdt_order_ext p{ display:block;
     font-family: 'Open Sans';
     color: #353333;
@@ -3870,7 +3417,14 @@ pv{
 .for_nav_main .logo{
     margin:0 ;
 position: absolute;
-left: -1%;
+left: 14%;
+}
+.ct_field_small_size ion-icon {
+    font-size: 25px;    margin-top: -5px;
+}
+.cart_nav p {
+    
+    margin: 17px 4px;
 }
 #search h3{font-size:14px;margin-top: 10px;margin-left: 0px;    width: 140%;}
 .for_ek_cartNav .for_main_nav_login{
@@ -3897,7 +3451,7 @@ left: -1%;
     position: absolute;
     right: -20px;
     margin: 2px 0 0 4px;
-    transform: translate(-30px,0px);
+    transform: translate(-30px,-24px);
 }
 
 .for_ek_cartNav .logo{
@@ -4005,7 +3559,7 @@ transform: translate(0px);
                                 width: 50%;
                             }
                             .ct_acount_details_cart {
-                                margin: -40px 0 180px -10px;
+                                margin: -10px 0 180px -10px;
                                 display: block;
                             }
                             .ct_acount_details_cart h2{
@@ -4016,8 +3570,11 @@ transform: translate(0px);
                             } 
                             .ct_acount_details_cart h2 ion-icon{font-size: 39px;transform: translate(-6px,-12px);}
                             .ct_set_account_details_cart {
-                            margin: 50px  0 40px -120px;
+                            margin: 50px  0 40px 0px;
                             width: 150%;
+                            }
+                            .ct_set_account_details_cart {
+                                padding: 0px 0 0 0px;
                             }
                             .ct_btns_acc{
                                 transform: translate(70px,70px);
@@ -4043,13 +3600,13 @@ transform: translate(0px);
 .ct_col{margin-right: 0;}
 .inner_slide .itm_food_list_ek{width: 100%;margin: auto;}
 .crousel {
-    height: 320px;
+    height: 315px;
     position: relative;
     left: 24px;
     transform: translate(0px, 10px);
 }
 .for_ek_fd_cart_load_rec_load2{
-    margin-left: 50px;
+    margin-left: 0px;
 } 
 .for_ek_fd_cart_load {
     margin: -100px 0 180px 0px;
@@ -4058,10 +3615,20 @@ transform: translate(0px);
 .loading_spinner_login2::after{ content: '';
     height: 36px;
     width: 36px;
-}       
+}    
+.recomended_cart  .itm_food_list_ek .ct_dt_tm_food_res h4 {
+
+    margin-left: 94px;
+}   
 .ct_bx_fex_fd_dt_ov{display: block;}
-.ct_bx_img_itm{width: 130%;margin-top: 126px;}
-.ct_x_fd_dt_itm{transform: none;    margin: 160px 0 0 20px;}
+.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+    transform: translate(30px,25px);
+    padding: 6px 17px 10px 12px;
+    width: 58px;
+
+
+
+}.ct_x_fd_dt_itm{transform: none;    margin: 20px 0 0 20px;}
 
 .ct_bx_buttons_actions button {
     width: 12%;
@@ -4069,9 +3636,13 @@ transform: translate(0px);
 .ct_bx_revies {
     margin-left: 20px;
 }
+.ct_questions_answer h3, .ct_bx_reiws_peoples h3, .ct_bx_side_rt_revies h3 {
+    font-size: 15px;
+}
+.ct_bx_reiws_peoples{padding-left: 24px;}
 .ct_bx_revies p{font-size: 14px;}
 .ct_bx_type_fd p{margin-left: -5px;}
-.ct_time_takes_itm ion-icon{margin-top: 0;}
+.ct_time_takes_itm ion-icon{margin-top: -12px;}
 .ct_dt_tm_food_res{margin-top: 0px;}
 .inner_slide .ct_img_res_main img{transform: none;}
 .inner_slide .ct_img_res_main{position: static;}
@@ -4081,22 +3652,12 @@ transform: translate(0px);
     width: 34%;
     height: 17px;
     transform: translate(0,2px);
-}.ct_bx_select_qt_final p{
-    font-size: 16px;
-    font-family: 'Open Sans';
-    margin-left:  -80px;
 }
 .ct_bx_qtfood{margin: -30px 0 0 -40px;}
-.ct_bx_select_qt_final{
-    margin: 20px 0 10px 120px;
-}.ct_bx_select_qt_final input{width: 100%;}
+
 .ct_slider_inner{width: 200%;}
-.ct_bx_select_qt_final .relative_width1 input{padding-left: .6vw;}
-    .ct_bx_select_qt_final .relative_width1{
-        width: 22%;
-    }
+
     .bx_ad_field_qt_num{margin-left: 10px;}
-    .fd_ek_cell_car_recom .price_food{transform: translate(0,-18px);margin-bottom: 10px;}
     .ct_slider_cart{width: 100%;}
 .ct_slider_inner{
     width: 250%;
@@ -4111,17 +3672,16 @@ transform: translate(0px);
     width: 96vw;
     margin: -10px 0 20px 30px;
 }
-.ct_bx_graph_lev {padding: 6px;}
 .ct_bx_serached_itm{width: 96%;    transform: translate(30px,-17px);}
-.ct_type_bx_item_food p{font-size: 13px;transform: translate(25px);}
+.ct_type_bx_item_food p{font-size: 13px;transform: translate(25px,2px);}
 .ct_type_bx_item_food img{
     width:18px;
-    height:16px;
+    height:18px;
     margin-left:5px;
 }
 .recomended_cart .ct_type_bx_item_food img{
-    width:16px;
-    height:17px;
+    width:18px;
+    height:18px;
     margin-left:5px;
 }
 .ct_no_res_search_qa{margin: 0px 0 0 30px;}
@@ -4166,7 +3726,7 @@ transform: translate(0px);
 .for_load_bx_grid,
 .ct_inner_fd_dt_grid{display: flex;}
 .ct_inner_fd1_dt_grid{
- margin-left: 57px;
+ margin-left: 35px;
  width: 39vw;
 }
 
@@ -4181,30 +3741,26 @@ transform: translate(0px);
 .ct_type_bx_item_food svg,
 .ct_type_bx_item_food img{position: absolute;}
 .itm_food_list_ek .ct_dt_tm_food_res h4{
-    width: 43vw;
-    font-size: 15px;
+    width: 80%;
+    font-size: 17px;
   display: inline-block;
-  margin-left: 94px;
+  margin-left: 101px;
 }
 .cart_nav{display: inline-block;margin-top: 13px;}
 .cart_nav p{
     font-size: 16px;
     color: rgb(19, 18, 18);
     font-weight: 600;
-    margin: -24px 0 0 28px;
 }
 .cart_nav ion-icon{
     font-size: 32px;
 margin: 9px 0 0 -4px;
 }
-.ct_time_it_takes {
-    transform: translate(92px,-19px);
-}.ct_type_bx_item_food{margin:-2px 0 0  5px;
-} 
+
+
 .ct_bx_hw_cook{
     transform: translate(9px,-9px);
 } 
-.ct_type_bx_item_food{margin-left: 0px;}
 .itm_food_list_ek .price_food{margin-left: 10px;}
 .main_li_cart_fd_lis .ct_bx_hw_cook a{
     display: block;
@@ -4309,8 +3865,6 @@ width: 30%;
 .ct_bx_fex_fd_dt_ov .ct_full_loading_box{position: static;display: block;}
 .ct_bx_slide_bx{width:240px;}
 
-.ct_bx_act_cart_itm {
-    transform: translate(-10px,109px);}
 
 .for_need_help{width: 24%;margin: 30px -13px 0 5px;    transform: translate(20px,-20px);}
 
@@ -4331,10 +3885,6 @@ margin: 65px 0  0 0px;
 .ct_bx_message_canceled_ordered h2, .ct_bx_message_succesfully_ordered h2 {
     font-size: 17px;
 }
-.ct_bx_no_order_yet{
-    transform: translate(0px);
-}
-
 
 .ct_inner_dt_order_none span{
     font-size: 60px;
@@ -4391,8 +3941,14 @@ margin: 65px 0  0 0px;
 .edit_acc, .ct_show_acc_dt {
     transform: translate(62px);
 }
-.ct_bx_edit_acc{width: 35%;position: static;margin-left: 40px;
-    right: 20px;}
+
+    .ct_bx_edit_acc {
+        width: 77%;
+    }
+    .ct_bx_edit_acc {
+        margin-left: 30px;
+        height: 50px;
+        padding-top: 14px;}
 .ct_bx_acc_user_dt .pass2 p{transform: translate(190px);}
 .gmail_inp_fl2{transform: translate(220px);}
 .ct_box_ov {width: 100%;margin:0px;height: 300px;}
@@ -4437,7 +3993,7 @@ margin: 65px 0  0 0px;
     margin: 17px 20px 0 0px;
 }
 .go_back {
-    right: 0px;
+    right: 60px;
 }
 .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered {
     margin: 18px 0 10px -50px;
@@ -4462,11 +4018,13 @@ margin: 65px 0  0 0px;
 }
 .bx_tot_ammount_order span{margin-left: 19px;}
 .for_grocery_order .ct_fd_dt_full {
-    transform: translate(10px,-15px);}
+    transform: translate(0px,-15px);}
 .ct_bx_button_account {
     position: static;
     width: 100%;
-    height: 80px;
+    height: auto;
+    padding-left: 0px;
+
 }
 .ct_bx_cannot_login_signuop_acc {
     margin: 2px 0 9px 20px;
@@ -4488,7 +4046,6 @@ margin: 65px 0  0 0px;
     transform: translate(20px,70px);
 }
 
-.ct_bx_side_ov_login{width:100%;padding-left: 50vw;}
 
 .name_err{
     transform: translate(40px,5px);
@@ -4561,7 +4118,6 @@ margin: 65px 0  0 0px;
 }
 .gmail_acc ion-icon {
     transform: translate(0,20px);
-    font-size: 28px;
 }
 .g2{margin-top: -40px;}
 .gmail_acc input{
@@ -4580,8 +4136,8 @@ width: 80%;
 .lstname_err3{transform: translate(180px,200px);}
 .lstname_err2,
 .lstname_err3,
-.password_err{  transform: translate(10px,5px);}
-.error_login.lstname_err2{  transform: translate(40px,10px);}
+.password_err{  transform: translate(10px,5px);width: 80%;}
+.error_login.lstname_err2{  transform: translate(40px,0px);}
 .error_login.lstname_err{    transform: translate(40px,5px);
 }
 .for_signup_ov{
@@ -4597,7 +4153,7 @@ width: 80%;
 
 left: 0px; 
 }
-.for_adm_user_cart_load{margin:50px 0 130px 0px; left: 7%;}
+.for_adm_user_cart_load{margin:50px 0 130px 0px; left: auto;}
 
 .new_pass_ek_user{
   transform: translate(-50px,20px);
@@ -4607,10 +4163,12 @@ left: 0px;
 }
 
 .for_myacc_nav .ct_bx_search{transform: translate(-405px,-58px);}
-.ct_box_half_order ul{transform: translate(80px);width: 80%;margin-top: -10px;}
+.ct_box_half_order ul{transform: translate(10px);width: 80%;margin-top: -10px;}
 .ct_bx_side_adm_user.main{display: none;}
  .ct_bx_side_adm_user{display: block;}
-
+ .ct_bx_nav_order_itm {
+    width: 83%;
+}
 
 .ct_bx_food_dt_acc h4{
     font-size: 15px;
@@ -4714,8 +4272,7 @@ width: 30%;
 margin-top: 20px;
 width: 50vw;
 }
-.ct_bx_food_dt_acc{width: 50vw;
-}
+
 .ct_selected_date_order h4{
     font-size: 4vw;    margin: 20px 0 50px 10px;
     transform: translate(0px,30px);
@@ -4813,12 +4370,7 @@ width: 50vw;
 }
 
 .ct_full_cart_fd_ov{margin-bottom:90px;}
-.ct_nav_erak .mai_ul{height: auto;display: flex;width: 100%;
-    background-color: #abe9cd;
-    height: 80px;
-    background-image: linear-gradient(325deg, #abe9cd 50%, #5acaec);
-    }
-    .for_acc_dt .ct_nav_erak .mai_ul{position: fixed;top:0}
+
     .for_acc_dt .for_mobile_search{position: fixed;top:0}
 .ct_time p,
 .ct_unit p, .ct_bx_of p {
@@ -4848,6 +4400,10 @@ margin-top: 0;
 
 .bx2_gmail label{width:90px
 }
+.ct_field_first_acc .phone_number_login_forg label {
+    width: 120px;
+}
+
 .goback {
  
     margin: -55px 0 53px 70%;
@@ -4858,16 +4414,1498 @@ margin-top: 0;
 .for_login_signup {
     margin: 20px 0 0 5%;
 }
+.ct_loading_bx2{width:80%;height: 137px;}
+    .inner_load_bx{transform: translate(60px,-1px);}
 .phone_number_login_forg input{width: 74%;}
+
+}
+@media only screen and (max-width:850px){
+    .bx_evt_cart_item .ct_bx_qty {
+        width: 100%;
+        margin-left:-40px;
+    }
+    .remove_fd_itm_ct {
+        margin: 8px 0 10px -22px;
+        text-align: center;
+        width: 32%;
+    }
+    .ct_bx_dt_rv {
+        width: 90%;
+    }
+    .ct_bx_remove_stk_msg {
+        transform: translate(0px,-14px);
+    }
+    .ct_dt_tm_food_res h4{
+        font-size: 17px;
+        font-family: 'Lato';
+        font-weight: 500;
+    }
+    .erak_fd_body .ct_error_stock {
+        width: 71vw;padding-bottom: 7px;
+        transform: translate(20%,50px);
+    }
+    .ct_error_stock p {
+        font-size: 13px;
+    }
+    .ct_bx_account_exist {
+    
+        padding-bottom: 0px;
+
+    }
+   
+    .ct_bx_overlay_cart_signup .for_cart_load_full{
+     display: flex;
+     justify-content: center;
+    }
+    .ct_bx_matched_itm{transform: translate(0px,51px);}
+    .ct_time_takes_itm  p {
+        width: 120%;
+        font-family: 'Open Sans';
+        font-size: 14px;
+        color: rgb(126, 123, 123);
+        transform: translate(3px,5px);
+    }
+    .ek_cart {
+      
+        margin-top: 7px;
+    }
+    .ct_bx_locate_bill{top: 152px;}
+    .loading_spinner_login2::after{ 
+    
+        left: auto;}
+    .ct_bx_orders {width: 100vw;}
+    .ct_bx_nav_account {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .ct_bx_nav_account ul li {
+        width: 53px;
+        margin-right: 38px;
+    }
+    .list_itm_sub_cart span {
+        margin-left:0px;
+        position: absolute;
+        right: 188px;
+    }
+    .for_nonfix_search input, .for_fixed_search input {
+      
+        margin: -10px 0 0 30px;
+    }
+     .phone_number_inp{margin-left: 40px;}
+    .bx2_gmail:nth-of-type(2) .gmail_acc{width:56vw}
+    .bx2_gmail:nth-of-type(2) .gmail_acc .nick_name input{width:auto}
+
+    .name_err {
+        transform: translate(40px,-5px);
+    }
+    .password_err_exsist {
+        transform: translate(40px,0px);
+    }
+    .goback {
+        display: flex;
+        justify-content: flex-end;
+        display: none;
+        position: static;
+        margin: -73px 0 67px 70%}
+    .last_name label{margin-left: 10px;}
+    .error_login.lstname_err3{transform: translate(40px,5px);}  
+.lstname_err3{transform: translate(180px,200px);}
+.lstname_err2,
+.lstname_err3,
+.password_err{  transform: translate(40px,0px);}
+.error_login.lstname_err2{  transform: translate(40px,10px);}
+.error_login.lstname_err {
+    transform: translate(40px,-5px);
+}
+    .ek_cart{background-color: #ffffff;padding: 10px}
+    .acc_icon_main_nav{color: white;}
+    .for_mobile_search{display: flex;width:100%;  
+    margin: 0px  0 0 0px;
+    position: absolute;
+    top: 89px;    height: 60px;
+    }
+    .ct_bx_show_out_of_stk{display: none;width: 80vw;margin-left: 50px;}
+    .ct_offer_box_cook2 span{font-size: 16px;}
+    .ct_col .ct_img_res_main img{height: 184px;}
+  
+   
+    .ct_bx_show_out_of_stk {margin-bottom: 70px;}
+    .Search_bar_qa {width: 80vw;height: 40px;}
+    .ct_bx_show_out_of_stk button,
+.ct_bx_show_out_of_stk a{width: 100%;}
+    /* .fd_ek_cell_car_recom{} */
+    .ct_bx_erak_logo{
+        margin-top: -25px;
+        padding: 20px;
+        height: 80px;
+
+    }
+    .ct_bx_erak_logo .for_ain_home_logo{
+        width: 8%;
+    }
+    
+    .ct_bx_erak_logo .tag_line_brand{
+        font-size:8px;
+        width: 100px;
+        position: absolute;
+        margin: -3px 0 0 3px;
+    }
+    .itm_food_list_ek .ct_img_res_main img {
+        height: 134px;
+        width: 150px;
+    }
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img {
+        height: 188px;
+        width: 34vw;
+    }
+    .ct_type_bx_item_food {
+        display: flex;
+    }
+    .ct_bx_foods_req {width: 100%;transform: translate(0);}
+    .ct_remcombx_pf_ct .ct_time_it_takes ion-icon {
+        font-size: 23px;
+        margin-top: -4px;
+    }
+    .ct_bx_all_groc_required .ct_dt_tm_food_res span {
+        margin: -10px 0 0 2px;
+    }
+    .to_pay_cahge p {
+        font-size: 18px;
+        padding-top: 10px;}
+     .body_cart .ct_type_fd_cart_itm2 {
+        transform: translate(0px,-40px);
+    }
+    .ct_type_fd_cart_itm2 {
+        transform: translate(-238px,62px);
+        position: absolute;
+    }
+    .ct_time_it_takes p{font-size: 11px;}
+    .ct_inner_fd_dt_grid{display: flex;}
+    .ct_img_res_main{width: auto;}
+    .ct_inner_fd_dt_grid a:nth-child(1){width: 40vw;}
+    .groc_list .ct_cat_by_list{display: block;}
+    .ct_error_stock {
+        width:93vw;
+        height: auto;
+        padding: 4px 22px 18px 12px;
+        position: relative;
+        left: 20px;
+        transform: translate(0px,50px);
+    }
+    .itm_dt_body .ct_error_stock {padding: 4px 22px 5px 12px;}
+    .unit {
+        margin: 15px 30px 10px 12px;
+    }
+    .ct_error_stock p {
+        font-size: 15px;
+    }
+    .bodyessestials .ct_error_stock{position:fixed;top: auto;bottom: 80px;z-index: 99999;left: -968px;max-height:120px}
+    .ct_bx_welcome_back h3{margin-left: 0;}
+    .ct_nx_actions_account {
+        margin: 20px 0 0 40px;
+    }
+    .ct_bx_welcome_back ion-icon {
+        font-size: 40px;
+        transform: translate(-3px,90px);
+    }
+    .ct_nx_actions_account .ct_bx_for_orders {
+        width: 40%;
+        height: 80px;
+        padding: 19px;
+    }
+    .com_itm_ord{font-size: 12px;}
+    .ct_bx_food_dt_acc h4{
+        font-size: 16px;
+        }
+        .ct_bx_edit_acc {width:162px;right: 30px;}
+        .ct_bx_matched_itm{width:inherit;}
+        .ct_bx_button_account {
+            height: auto;
+            position: static;
+            width: 100%;
+            padding-left: 70px;
+        }    
+              .ct_bx_peoples_details {transform: translate(10px,0px);}
+        .ct_order_coll_acc_us h1 {
+            font-size: 17px;
+            transform: translate(48px,-11px);
+        }    .ct_set_account_details_cart{    margin: 0px 0 40px 0px;}
+    .ct_order_coll_acc_us h2{font-size: 22px;    transform: translate(-30px,-32px);}
+    .amount_tot_acc{margin-left: 10px;}
+    .bx_tot_ammount_order span{font-size: 12px;}
+    .date_time_order{font-size: 14px;}
+    
+    .ct_bx_botm_div{    margin: -17px 0 20px 320px;}
+    .ct_bx_food_dt_acc .price_fd {
+        margin: 0px 0 0 20px;
+                font-size: 19px;
+        position: static;
+        right: -80px;
+        
+        width: 10vw;
+    }
+    .for_grocery_order .price_fd {
+        margin-top: 30px;
+    }
+    .ct_inner_dt_order_none span {
+        font-size: 70px;
+        margin-top: 60px;
+    }
+    .ct_flex_bx_1_acc .pass2 {
+        transform: translate(-180px);
+    }
+    .btn_cancel{
+        margin: -34px 0 0 20px;
+    }
+    .ct_bx_of {
+        margin: 2px 20px 0;
+    }
+    .ct_bx_food_dt_acc {margin-top: 21px;}
+.ct_bx_cannot_login_signuop_acc .ct_bx_remove_bx_msg_acc {
+ transform: translate(0);
+    margin-top: -8px;
+}
+.mrp_ammount{display: flex;}
+    .ct_bx_cannot_login_signuop_acc{width: 55%;   margin: 175px 0 -100px 230px;}
+    .ct_bx_cannot_login_signuop_acc h4{
+        font-size: 19px;
+        width: 60vw;
+    }
+    .ct_bx_cannot_login_signuop_acc {
+        width: 80vw;
+        margin: 25px 0 -0px 20px;
+    }
+    .gt_first_nam_second_name {
+        width: 100%;
+    }
+    .ct_bx_slide_bx{display: block;left: -300px;width:240px;}
+    .nick_name {
+        width: 99%;
+    }
+    .ct_bx_remove_slide_bx {
+    float: right;
+    transform: translate(30px,10px);
+        color: white;
+    }    .ct_bx_slide_bx .for_ain_home_logo{transform: translate(-160px);}
+    .login_now{height:40px;font-size: 14px;}
+    .body_login .ct_bx_overlay_cart_signup {
+        height: 800px;
+        top: 26%;
+        justify-content: center;
+    }
+    .ct_bx_verify p strong {
+        transform: translate(0px,0px);
+    }
+    .ct_bx_verify h4 {
+        font-size: 18px;
+     
+        margin-left: 30px;
+    }
+    .only_for_sig .ct_bx_verify h4{        margin-left: 13px;
+    }
+    .ct_bx_verify p {
+        display: block;
+        margin-left: 23px;
+    }
+    .body_login .go_back {
+        right: 33px;
+    }
+    .ct_bx_icons_verif {
+        margin: 20px 0 20px -130px;
+    }
+    .ct_error_other_signup {
+        margin: 8px 0 0 21px;
+    }
+    .only_for_sig .ct_bx_verify {
+        margin-left: -0px;
+    }
+    .ct_bx_verify {
+        margin-top: 70px;
+    }
+  
+    .only_for_sig .go_back {
+        position: static;
+        /* right: 220px; */
+        cursor: pointer;
+        margin: -40px 0 58px 70%;
+        display: block;
+        font-size: 14px;
+        font-family: 'Open Sans';
+    }
+    .only_for_sig .ct_acc p {
+        width: 87%;
+        margin-left: 12px;
+    }
+    .ct_bx_verif2 .nick_name {
+        width: 84%;
+    }
+    .ct_bx_verify .gmail_inp_fl {
+        margin-left: 14px;
+    }
+ .cont_btn_acc {
+        width: 50vw;
+    }
+    /* for orders page */
+    .ct_bx_verif2 .cont_btn_acc {
+        font-size: 14px;
+    }
+     .ct_bx_overlay_cart_signup{height: 900px;}
+    .only_for_sig .ct_bx_verify .cont_btn_acc {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .ct_bx_verify strong {
+        color: black;
+        display: inline-block;
+        font-size: 14px;
+        /* width: 20%; */
+    }
+
+
+.err_otp .ct_remove_bill_pop_up_update_acc, .succ_otp .ct_remove_bill_pop_up_update_acc {
+    right: 50px;
+}
+
+    .for_groc_full_load, .for_ek_fd_full_load{margin-top: 90px;}
+    .ct_bx_not_available{width: 25%;}
+    .for_adm_user_cart_load{    margin: 0px 0 130px 0px;}
+    .ct_bx_cannot_login_signuop_acc p{font-size: 13px;margin-top:5px;}
+    .ct_remove_bill_pop_up_update_acc {font-size: 20px;}
+    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered h2{font-size: 13px;    width: 40vw;}
+    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered {
+        transform: translate(-61px,0px);
+        margin-bottom: 28px;
+    }
+    .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered p{width: 65vw;}
+    .btn_cancel,
+    .btn_save_and_edit {
+        width: 32vw;
+        font-size: 13px;
+        transform: translate(25px);
+    }    .edit_acc,
+    .ct_show_acc_dt{transform: translate(-0px);}
+    .ct_flex_bx_1_acc{width: 100vw;}
+    .dt_itm_set_account_details_cart label{font-size: 14px;    transform: translate(0px,0px);
+    }
+    .ct_edit_cc .ct_acc p {
+    width: 100%;
+}
+    .dt_itm_set_account_details_cart{overflow: hidden;}
+    .dt_itm_set_account_details_cart input {
+        width: 87%;
+    }
+    .dt_itm_set_account_details_cart {
+        margin-right: 0px}
+    .dt_itm_set_account_details_cart input{margin-left: 54px;}
+    .dt_itm_set_account_details_cart,    
+    .dt_itm_set_account_details_cart:last-child {
+        width: 41%;
+    }
+    .for_img_order_user {
+        width: 500px;       display: block;
+    }
+    .ct_bx_food_dt_acc {
+        margin-left: 0px;
+    }
+    .ct_edit_cc .ct_acc .ct_bx_verify p{width: 80%;}
+    .ct_bx_no_order_yet {
+        margin-top: 9px}
+    .amount_tot_acc{margin-top: 0;}
+    .qt_order_itm{transform: translate(-20px);}
+    .ct_bx_no_order_yet{right: -10%;}
+    .groc_btn_order{width: 22vw;font-size: 12px;}
+    .fd_btn_order{width: 20vw;font-size: 10px;}
+    .ct_bx_no_order_yet h3 {
+        font-size: 17px;
+        margin-left: 10px;
+    }   .ct_fd_dt_full .qt_order_itm {
+        position: absolute;
+        font-size: 12px;
+        transform: translate(0px,-150px);
+        right: 50px;
+    }
+    .for_acc_dt .ct_bx_icons_verif {
+        margin-left: -180px;
+    }
+    .for_acc_dt .cont_btn_acc {      margin: 10px 0 0px 34px;width: 56vw;
+    }
+    .ct_bx_verify .nick_name input {
+        height: 50px;
+        width: 56vw;}
+    .for_adm_user_cart_load {left: auto;}
+    .go_back {right: 230px;}
+    .on_edit_profile_acc .account_cont11 {margin-left: 60px;width: 74%;}
+    .ct_bx_side_adm_user{width:200px;top: 150px;display: none;}
+    .ct_bx_side_adm_user li{width: 116%;}
+    .date_time_order{font-size: 14px;}
+    .ct_unit p, .ct_bx_of p,
+    .ct_bx_food_dt_acc a{font-size: 12px;}
+    .ct_fd_dt_full {
+        transform: translate(4px);
+        margin-top: -29px;
+    }  
+    .ct_bx_follow_ek {
+        transform: translate(40px,0px);
+        position: absolute;
+        top: 230px;
+    }
+    .ct_acc p{width: 80%;}
+    .ct_create_acc {    transform: translate(10px);}
+    .ct_acc_ov_inner {
+        transform: translate(0px,80px);
+        position: relative;
+        right: -180px;
+    }
+    .ct_bx_orders {
+        margin: 0px 0 0 -49px;
+    }
+    .ct_set_account_details_cart {
+        padding: 0px 0 0 50px;
+    }
+    .ct_box_ov{margin: 0;width:inherit;height: 300px;}  
+    .ct_time p{font-size: 12px;margin-top: 3px;}
+    .ct_box_half_order .main_img {
+        width: 100%;
+        max-width: unset;
+        height: auto;
+    }
+    .for_img_order_user2 {
+        width: 26%;
+    }
+    .for_grocery_order, .ct_fd_dt_full {
+      margin-left: 0px;}
+    .for_grocery_order .ct_fd_dt_full {
+        transform: translate(4px);
+        margin-top: 0px;
+    }
+    .ct_nav_erak .mai_ul {
+        width: 48vw;}
+    .ct_order_coll_acc_us{width: 100vw;transform: translate(0px);}
+    .ct_bx_btm_bar_order{margin: 6px 0 0 5px;}
+    .ct_box_half_order .ct_time ion-icon{font-size: 18px;}
+    .ct_nav_erak ul .nav_main_ek_li{
+           margin-right: 10px;
+    width: 12%;
+    transform: translate(30px, -17px);
+    }
+    .ct_nav_erak .mai_ul{
+        width: 100vw;
+        height: 90px;
+    }
+    .for_load_bx_grid_inner{width: 100vw;}
+    .ct_loading_bx2 .ct_for_img_load , .ct_loading_bx .ct_for_img_load 
+{width:58%;height:180px}
+.inner_load_bx{width: 100vw;}
+    .special_bx_load{display: block;}
+.ct_loading_bx_all{flex-flow: row wrap;display: block;
+}
+.ct_for_price_load2, .ct_for_price_load {
+    width: 28%;
+    margin: 15px 0 0 10px;
+    height: 20px;
+}
+    .cart_nav ion-icon{
+        font-size: 36px;
+    }
+    .ct_bx_search_icon {
+        position: absolute;
+        transform: translate(0px,0px);
+    }
+    .cart_nav p{
+        color: black;
+            font-size: 14px;
+    }
+    .log_in_btn_pk1{
+        font-size: 12px;
+margin-right: 10px;
+    }
+    .crousel .itm_food_list_ek .ct_img_res_main img {
+        height: 167px;
+
+       }
+       .ct_questions_answer {
+        transform: translate(-20px, 10px);
+    }
+    .ct_bx_reiws_peoples h3 {
+        margin: 9px 0 20px 30px;
+    }
+       .ct_bx_qa {
+        margin: 0 0 40px -40px;
+    }
+          .bx_buy_now ,
+    .bx_add_t_cart_btn_itm_dt{width: 92%;text-align: center;}
+    .ct_bx_acct_cart {
+        width: 100%;
+        border: none;
+        margin-top: 90px;
+        display: block;margin-left: 20px;
+    }
+    .ct_nav_erak ul .nav_main_ek_li:not(:last-child){display: none;}
+    .ct_sbout_this_itm p{font-size: 16px;}
+    .ct_sbout_this_itm h4{font-size: 19px;}
+    .ct_recipe_download{margin-left: 14px;}
+    .ct_recipe_download p{font-size: 12px;}
+    .offer_bx_itm span{font-size: 18px;margin-left: -4px;}
+    .ct_time_takes_itm p, .ct_bx_type_fd p{font-size: 12px;}
+    .ct_flex_bx_1_itm svg{    transform: translate(-14px,3px);width: 3%;height: 3vh;}
+    .fd_name_dt_itm{font-size: 22px;}
+    .ct_x_fd_dt_itm {
+        transform: translate(0px,40px);
+        margin-top: 30px;
+        padding-left: 0px;
+        width: 100%;
+        margin: 120px 0 0 20px;
+    }
+    .for_ek_pk_fd ion-icon {
+        font-size: 21px;
+        margin: 1px 0 0 2px;
+    }
+    .ct_bx_buttons_actions{transform: translate(0,-90px);display: none;}
+    .fd_ek_cell_car_recom .itm_food_list_ek .ct_img_res_main img{width: 210px;}
+    .fd_ek_cell_car_recom{width: 180px;min-width: 0;}
+    .ct_bx_rt_rv_bx {width: 100%;display: block;}
+   
+        .ct_flex_bx_1_itm div{margin-right: 20px;}
+    .ct_flex_bx_1_itm img{height: 17px;width: 30px;}
+    .ct_bx_img_itm{position: static;margin-top:120px;}
+    .ct_bx_img_itm img {
+        width: 50vw;
+        min-height: 0px;
+    }
+    .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+        width:70px;padding: 10px 20px 13px 18px;}
+    .logo p{
+        font-size: 8px;
+    }
+    .loading_rate_bx {
+        width: 100%;
+        margin: 0px 0 180px -50px;
+    }
+    
+    .ct_bx_fex_fd_dt_ov .ct_full_loading_box{position: static;z-index: inherit;z-index: 9999999999;top: -170px;}
+    .recomended_cart{padding-bottom: 20px;overflow: hidden;    margin-top: -20px;}
+    .inner_slide{  transform: translate(0px,-20px);}
+    .back_acc {
+        transform: translate(0px,-205px);
+    }
+    .for_ek_fd_cart_load_rec_load {
+        margin: 90px 0 90px 0vw;
+    }
+    .inner_slide{width: 100vw;}
+    .forward_acc {
+        transform: translate(0px,-85px);right: 30px;    }
+    .fd_name_dt_itm{width: 80%;}
+    .ct_offer_box_cook2 span{margin-left: 2px;}
+    .ct_bx_buttons_actions button ion-icon{font-size: 30px;    padding: 12px 0 13px 0px;}
+    .ct_bx_buttons_actions button{width: 3%;}
+    .ct_bx_recc_cart_load_full{height: 300px;overflow: hidden;}
+    .ct_col .ct_bx_hw_cook a{font-size: 12px;}
+    .ct_col .ct_dt_tm_food_res h4{margin-left: 3px;width: 100%;}
+    .ct_bx_flex ion-icon {
+        font-size: 43px;
+        transform: translate(-20px);
+    }
+    .ct_acc_dt_ov p{color: rgb(63, 59, 59);}
+    .ct_bx_show_out_of_stk h4 {
+        margin-left: 82px;
+    }
+    .ct_col .ct_bx_ratings_info a span .not_filed_rating_itm, .ct_col .ct_bx_ratings span .not_filed_rating_itm{font-size: 15px;}
+    .crousel {
+        height: 400px;
+        width: 100vw;
+        margin-left: 4px;
+        transform: translate(-7px);
+    }
+        .ct_col{margin-right: 0px;}
+   
+    .ct_bx_acct_cart{height: auto;}
+
+    .for_ain_home_logo{
+        position: absolute;
+        left: 5%;    }
+    .for_main_nav_login1{
+        font-size: 10px;
+    }
+    .logo h4 span{
+        font-size:27px
+    }
+    .logo h4 p{
+        font-size:27px
+    }
+    .itm_food_list_ek{
+        width:100vw;
+        margin-top: -10px;
+    }
+    .bodyessestials .itm_food_list_ek{margin-top: 25px;}
+    .ct_ct_cate_lis_ev{
+        width: 40%;
+        transform: translate(50px);
+    }
+    .active_a_cat_ck_fd{
+        font-size: 13px;
+    }
+    .ct_field_small_size {
+        display: block;
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+        transform: translate(10px,-18px);
+    }
+    .groc_list .ct_cat_by_list{margin-left: 3%;width: 100vw;}
+    .not_active_a_cat{
+        font-size: 12px;
+    }
+    .evt_list_food_cat{
+        width: 90%;
+        margin-left: 40px;
+    }
+    .ct_bx_reiws_peoples{    transform: translate(0px,0px);width: 100%
+        ;
+    }
+    .bx_star_dis span {
+        float: right;
+        position: static;
+        top: unset;
+        right: 0px;
+        font-size: 14px;
+        color: rgb(136, 125, 125);
+        transform: translate(10px,5px);
+    }
+    .ct_ct_text_about_acc h3 {
+        font-size: 24px;
+    
+    
+    }
+    .btn_sign_up_cart span2 {
+        font-size: 14px;
+        display: block;
+    }
+    .ct_bx_serached_itm {width:80%}
+    .check_out_btn_order{margin-left: 32px;}
+    .ct_acount_details_cart h2 {
+  
+        font-size: 64px;
+        position: absolute;
+        left: 40%;
+        transform: translate(0px,-80px);
+    }
+    .for_login_only_cart,
+    .for_signup_only_cart {    width: 170px;}
+    .ct_ct_text_about_acc p{font-size: 16px;}
+    .not_rated label{width: 13%;}
+        .ct_bx_graph_lev {width: 81%;position: static;}
+    .ct_bx_reiws_peoples h2{width: 80%;font-size: 18px;}
+    .recomended_cart h2 {
+ 
+    margin: 10px 0 30px 32px;
+}
+    .recomended_cart h2,
+    .ct_bx_queston_bx p, .ct_bx_a_q_bx p{font-size: 18px;}
+    .ct_questions_answer h3,
+    .ct_bx_side_rt_revies h3{font-size: 19px;width: 80%;}
+    .ct_rate_bx h4, .ct_bx_rew_2 h4{margin-top: 40px;}
+    .ct_rate_star_wrapper {    transform: translate(-110px,-20px);}
+    .ct_bx_reiws_peoples h2 {
+        
+        transform: translate(50px,51px);
+    }
+    .ct_bx_first_icon{height: 62px;}
+    .ct_rate_bx{width: 400px;height: 80px;
+    }
+    .ct_bx_revies p {
+        font-size: 15px;}
+    .ct_bx_rew_2 input{width: 90%;}
+    .ct_inner_fd1_dt_grid {
+        width: 47vw;
+        transform: translate(3px,0px);
+        margin-left: 5px;
+    }
+       .ct_dt_tm_food_res h4{
+        font-size: 20px;
+        width: 100%;
+        font-family: 'Lato';
+        font-weight: 500;
+        margin-left: 10px;
+    }
+    .inner_slide .ct_bx_hw_cook {
+        transform: translate(8px,-9px);
+    }
+    .ct_bx_show_out_of_stk .ct_bx_btns{transform: translate(0);}
+    .ct_col .ct_bx_ratings {
+        margin-left: 4px;
+    }
+
+    .inner_slide .ct_type_bx_item_food {
+        width: 100%;
+        transform: translate(0,-10px);
+    }
+   
+    .inner_slide .ct_time_it_takes {
+        width: 100%;
+        transform: translate(0px,0px);
+    }
+    
+    .ct_bx_orders .ct_bx_ratings_info a span .filed_rating_itm, .ct_bx_orders .ct_bx_ratings span .filed_rating_itm{font-size: 18px;}
+    .for_groc_itm  .ct_dt_tm_food_res h4{margin-left: 0;}
+    .ct_bx_ratings_info a span .filed_rating_itm, .ct_bx_ratings span .filed_rating_itm{font-size: 16px;}
+    .ct_bx_hw_cook a{font-size: 13px;}
+    .price_am_cart_fd2 {
+        margin: -0px 0 10px -25px;
+    }
+    .price_am_cart_fd2 del{font-size: 15px;}
+    .price_am_cart_fd2 span{font-size: 21px;}
+    .ct_col .ct_bx_ratings_info a span .filed_rating_itm,.ct_col .ct_bx_ratings span .filed_rating_itm{font-size: 15px;}
+
+   
+    .groc_list {
+        transform: translate(-10px,40px);
+    }
+    .price_food del {
+        font-size: 12px;
+        
+    }
+    .price_food span{font-size: 16px;}
+    .for_ek_foods_load {
+        width: 100vw;
+        margin-left: 10px;
+        transform: translate(0px,40px);
+    }  
+    .only_for_specific_bx {
+        width: 30vw;
+        height: 130px;
+        margin: 0 20px 60px 0;
+    }
+    .ct_type_bx_item_food p{font-size: 13px;}
+    .ct_ct_cate_lis_ev{    top: 346px;}
+    .list_food_at_ov h3{margin-left: 0;margin-bottom: 20px;}
+    .for_load_bx_grid{display: flex;width: 100vw;}
+    .groc_list h3{transform: translate(5%);}
+  
+    .acc_set_main_nav{
+transform: translate(-20px,-10px);    
+    }
+    .ct_bx_a_q_bx, .ct_bx_queston_bx{width: 80%;}
+    .food_link_mob{display: block;width:120px;}
+.cart_nav{
+    transform: translate(0px,6px);
+}
+.bx_tot_ammount_order {
+    width: 220px;
+}
+.ct_box_half_order ul {
+    margin-top: 60px;
+}
+.ct_set_qt_for_groc {
+    height: 39px;
+}
+.for_groc_itm .ct_set_qt_for_groc {
+    width: 37%;
+}
+.cart_nav a {
+
+    margin-top: 2px;
+}
+.food_link_mob span {
+    display: inline-block;
+    font-size: 12px;
+    color: black;
+    text-transform: capitalize;
+    transform: translate(0,-6px);
+}
+.food_link_mob {
+    margin-left: 10px;
+    transform: translate(61px,-6px);
+
+}.food_link_mob a{font-size: 14px;color: rgb(34, 34, 34);font-family: 'Open Sans';}
+    .for_seravh_in_nav{transform: translate(-20px,-12px);}
+    .ct_bx_search input{font-size: 15px;
+    border-radius: 4px;
+    width: 89%;
+    height: auto;
+    
+    }
+    
+    .xclose_icon ion-icon{font-size:31px}
+    .for_seravh_in_nav .xclose_icon{    transform: translate(0px,-5px);}
+    .ct_remove_edt_popup {right: 20px;transform: translate(0px,-50px);;}
+    .ct_edit_cc {
+        width: 100vw;
+        right: -7vw;
+        height: 600px;
+    }  
+    .ct_nav_erak  .ct_bx_search {
+        width: 98vw;
+        margin-left: 30px;
+        transform: translate(0px, -25px);
+    }
+    .mai_ul .for_seravh_in_nav {display: none;}
+   
+    .ct_bx_by_whom p{width:80%}
+    .only_big_screen2{display: none;}
+    .sign_UP_btn{
+        margin:  -5px 20px 0 40px
+    }
+    .sign_UP_btn a{
+font-size: 12px;
+padding-left: 22px;
+        width: 150%;
+    }
+    .ct_msg_send_itm_dt2 .alert_icon ion-icon,
+    .ct_msg_finished_stock .alert_icon ion-icon{
+        font-size: 24px;
+    }
+    .ct_remove_err2,
+    .ct_remove_err ion-icon{font-size: 18px;}
+    .ct_remove_err2{
+        display: inline-block;color: black;transform:translate(30px,5px)
+    }
+    .ct_list_food{
+        margin-left: -10px;
+        width: 100vw;
+        box-shadow: none;
+    }
+    
+   
+    .ct_bx_quant_itm_cart {
+        width: 170px;
+        height: 17px;
+        margin: 8px 0 0 -4vw;
+    }
+    .for_cart_qt ion-icon {
+    
+        margin-left:0px;
+    }
+    
+.for_cart_qt .bx_ad_field_qt_num {
+    transform: translate(2px,5px);    padding: 5px;
+}
+.for_cart_qt .bx_rem_field_qt_num {
+    transform: translate(3px,5px);
+    padding: 4px;
+}
+.empty_cart{margin-left:24vw;position: relative;width: 400px;}
+    .empty_cart a{font-size: 13px;width:400px;border-radius: 5px;margin: 20px 0 0 -60px;box-shadow:  0 1px 4px rgba(8, 8, 8, 0.096);}
+    .empty_cart h3{font-size: 20px;}
+    .ct_type_fd_cart_itm{
+        transform: translate(-49px,85px);}
+    .ct_itm_food_cart h4{margin-left: -30px;margin-top: 30px;}
+    .img_a_cart{width: 53vw;margin-left: -22px;min-width: 180px;height: 160px;}
+    
+    .ct_itm_food_cart{margin-left: 40px;padding-bottom: 80px;}
+    .groc_bx .ct_itm_food_cart{margin-left: 0;}
+    .main_cart_img2 {
+        width: 23%;    height: 80%;}
+    .groc_bx .ct_oferr {
+        transform: translate(10px,10px);
+        font-size: 15px;
+    }
+    .field_bx_qt span,
+    .field_bx_qt p{font-size: 10px;}
+    .groc_bx .ct_bx_drop{padding-left: 0;}
+    .list_food_cart .ct_bx_drop{width: 30px;    height: 25px;    padding-top: 3px;}
+    .ct_bx_drop{height: 28px;}
+    .ct_bx_food_groc_casrt .com_name{
+        font-size: 11px;
+    }
+    .acc_erak_mobile {
+        padding: 14px 0 0 0px;
+    }
+    .carterr {
+        margin: 10px 0 0px 20px;
+        transform: translate(0px, -20px);
+        display: flex;
+    }
+    .groc_bx .ct_bx_related_itm_dt_cart2 {
+        margin: 20px 0 0px -20px;
+        width: 60%;
+    }
+    .groc_bx .ct_bx_qt_foods {
+        width: 40%;
+    }
+    .main_li_cart_fd_lis .ct_bx_hw_cook {
+        transform: translate(-23px,-5px);
+    }
+    .ct_bx_acc_user_dt .ct_flex_bx_1_acc .gt_first_nam_second_name input {
+        width: 90%;
+    }
+    .ct_bx_food_groc_casrt {
+        margin: 0px 0 0 9px;
+    }
+    .only_for_grocery_item .saved_am{
+        
+        margin:15px 0 0 10px;
+    }
+    .bx_evt_cart_item .saved_am{         margin: -4px 0 0 -20px;
+    }
+    .only_for_grocery_item .ct_bx_quant_itm_cart {width:164px;}
+    .only_for_grocery_item .for_cart_qt ion-icon {
+        margin: 0px 0 0 1px;
+    }
+    .only_for_grocery_item .for_cart_qt .bx_ad_field_qt_num {
+        transform: translate(-1px,5px);
+        padding: 5px;
+    }
+  
+    .img_a_cart2 {height: 140px;}
+    .ct_oferr span{font-size: 19px;}
+    .ct_suggested_bx textarea{margin-left: 20px;width: 80vw;font-size: 14px;}
+    .ct_time_takes{width: 80%;}
+    .ct_bx_related_itm_dt_cart {
+        width: 62%;
+        transform: translate(-190px,0px);position: absolute;
+    }    .ct_bx_img_load_itm{width: 100%;height: 350px;transform: translate(0,100px);margin-bottom: 0px;}
+    .main_li_cart_fd_lis .ct_bx_ratings {
+        margin: 4px 0 0 -30px;
+    }
+    .flex_bx_cart_itm {
+        margin: -10px 0 0 8px;
+        overflow: hidden;
+        padding-left: 40px;
+        width: 100vw;
+    }
+    .ct_filed_selct_qt_un{margin-top: 0;}
+    /* .recomended_cart{display: none;} */
+        .main_li_cart_fd_lis .ct_set_qt_for_groc{width: 100%;}
+    .ct_itm_food_cart h4{font-size: 17px;width: 100%;}
+    .list_food_cart{margin-top: -30px;}
+    .sub_tital_order_cart h2,
+    .ct_shopping_cart h1{font-size: 18px;}
+    .ct_subotatal{box-shadow: none;transform:none;margin: 20px 0 0 20px;width:100vw;position: static;}
+    .ct_remove_err{display: inline-block;color: black;transform:translate(0px)}
+    .check_bx_if_view {
+        margin: 70px 0 0px 40px;
+    }
+  
+.for_cart_checkout {
+    width: 80vw;
+}
+.btn_sign_up_cart{margin-left: 0;}
+.ct_ct_text_about_acc a {
+  
+    margin-right: 20px;
+}
+.ct_bx_message_canceled_ordered p{
+    font-size: 15px;
+}
+.ct_bx_message_canceled_ordered ion-icon, .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon {
+
+    font-size: 50px;
+}
+.ct_bx_inner1_groc_itm {
+    width: 60vw;
+    position: absolute;
+    margin: 40px 0 0 230px;
+}
+.ct_bx_show_out_of_stk h4{font-size: 14px;}
+.ct_bx_show_out_of_stk  .ct_bx_flex h3{font-size: 18px;}
+.ct_bx_inner_groc_itm{display: flex}
+.ct_offer_box_cook2{    padding: 10px 14px 10px 15px }
+.ct_offer_box_cook2 p{font-size: 11px;}
+.ct_bx_grocery_required .ct_offer_box_cook2 p{font-size: 12px;}
+.ct_bx_all_groc_required{width: 100%;}
+.ct_bx_grocery_required .ct_offer_box_cook2 p{margin-left: 14px;}
+.ct_bx_grocery_required .ct_offer_box_cook2 span{margin-left: 10px;}
+.ct_bx_grocery_required .ct_offer_box_cook2 {
+    height: 60px;
+    padding: 9px 8px 4px 5px;
+    width: auto;
+    transform: translate(-0px,-6px);
+}
+.ct_bx_all_groc_required .ct_bx_drop {
+    padding: 0;
+    width: 19%;
+    transform: translate(-4px,0px);
+    height: 25px;
+}
+.ct_bx_grocery_required .ct_set_qt_for_groc ion-icon {
+    transform: translate(2px,3px);
+}
+.ct_bx_messgae .error, .success {
+    margin: 10px 0 0 0px;}
+
+
+
+.ct_foods_dt_load {
+    margin: 30px 0 0 -170px;
+}
+.ct_bx_tag_load_itm {
+    width: 50%;
+    margin-top: 0px;
+    height: 41px;}
+.ct_bx_price_load_itm {
+    width: 30%;}
+.ct_bx_allOther_load_itm {
+    width: 78%;
+    height: 300px;}
+.ct_bx_fex_fd_dt_ov .ct_full_loading_box{display: block;width:100%;margin-top: 40px;}
+
+.ct_bx_stars_load_itm {
+    border-radius: 40px;
+    width: 30%;
+    height: 50px;
+    margin-top: 120px;
+}
+
+
+
+.ct_bx_messgae svg {
+    width: 17%;
+    height: auto;
+    transform: translate(40vw);}
+.ct_bx_messgae .success {
+    font-size: 16px;}
+.for_cart_cancel p {
+    font-size: 14px;
+    transform: translate(0px,10px);
+}
+.ct_bx_message_for_confim_cancel {
+    width: 92vw;
+    right: 30px;
+}
+.for_acc_load_full, .for_cart_load_full{position: static;transform:translate(0px,50vh);}
+.ct_bx_overlay_cart{justify-content: center;}
+.for_cart_cancel{width:80%}
+.for_need_help{transform: translate(18px,-18px);}
+.ct_bx_message_canceled_ordered, .ct_bx_message_succesfully_ordered {
+    margin: 20px 0 0px 30px;
+}
+.ct_bx_message_canceled_ordered, .ct_bx_message_succesfully_ordered{width: 99%;   }
+.ct_bx_message_canceled_ordered h2, .ct_bx_message_succesfully_ordered h2{font-size: 20px;}
+.ct_bx_all_groc_required {
+    transform: translate(10px,50px);
+}.ct_bx_all_groc_required .main_img_groc_itm {
+    height: auto;
+    width: 20vw;
+    min-height: 140px;
+}
+
+
+.ct_bx_all_groc_required .itm_food_list_ek{width: 190px;}
+.ct_bx_grocery_required .field_bx_qt{width: 100%;}
+.ct_bxc_hide_checkout{margin-top: 35px;width: 90vw;}
+.ct_shopping_cart h1{margin-left: -18px;}
+.for_cart_cancel p, .for_cart_checkout p {
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.ct_bx_signup_box_overall {
+    width: 95%;
+    margin-left: 14%;
+}
+
+.gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-of-type(1){width: 100%;}
+.bx2_gmail .gmail_acc {
+    margin-left: 14px;
+}
+
+.ct_bx_bottom_account {
+    width: 73%;
+    }
+.phone_num {
+
+    transform: translate(10px,0px);
+}
+.ct_field_first_acc  .phone_number_login_forg label {
+    width: 150px;
+}
+.body_login .ct_signup {
+    width: 650px;
+}
+.body_login .gt_first_nam_second_name.pass_bx_field {
+    margin-left: 20px;
+    width: 88%;
+}
+.login_now {
+    margin: 3px 0 0 34px;
+}
+.bx_text_sign_up_login h3:before{font-size: 40px;}
+.bx_text_sign_up_login h2:after{font-size: 20px;}
+.ct_bx_side_ov_login {
+    display: flex;
+    padding-left: 0px;
+    justify-content: center;
+    transform: translate(-20%);
+}
+.ct_acc{right: 70px;width: 70%;overflow: hidden;}
+.for_acc_dt .ct_bx_verify {
+    width: 80%;
+}
+.for_acc_dt .cont_btn_acc {
+    margin: 10px 0 0px 64px;}
+.for_acc_dt .ct_acc{width: 100%;}
+.ct_phone_input_field{margin-left: 20px;width: 48vw;}
+.ct_phone_input_field .nick_name{width: 57vw;}
+.g2{margin-left: -20px;}
+.ct_btn_acc {
+
+    margin-left: 90px;
+}
+.phonenum {
+    transform: translate(25px,-10px);
+}
+.ct_phone_input_field .nick_name input{width: 73%;}
+.ct_field_first_acc.new_pass_bx label{width: 120px;}
+.gt_first_nam_second_name:nth-child(1) label:nth-child(2){width: 90px;}
+.body_login .gt_first_nam_second_name:nth-child(1) label:nth-child(2) {
+    width: 143px;
+}
+.last_name label{margin-left: 10px;}
+.ct_field_first_acc .gmail_acc label{width: 60px;margin-left: 46px;}
+.phone_number_inp input{width: 81%;}
+.pincode .nick_name input {
+    width: 77%;
+    margin-left: -10px;
+}.ct_field_first_acc  .g2 label{width: 116px;}
+.ct_field_first_acc  .pincode label{width: 142px;}
+.last_name {margin-left: 30px;}
+.pincode:nth-of-type(2) {
+ margin-left: -5px;
+    width: 116.5%;
+}
+.gt_first_nam_second_name.pass_bx_field {margin-left: 20px;}
+.gt_first_nam_second_name:nth-of-type(2) .nick_name:nth-of-type(1) {
+    width: 99.5%;
+}
+.gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name input {
+    width: 87%;
+    margin-left: -9px;
+}
+.gt_first_nam_second_name:nth-of-type(2) .gmail_acc .nick_name  {
+    width:54vw;
+}
+.bx2_gmail:nth-of-type(2) .gmail_acc {
+    width: 66vw;
+    margin: 0px 0 0 35px;
+}
+.bx2_gmail:nth-of-type(2) .gmail_acc ion-icon {
+    transform: translate(8px,0px);
+}
+
+.gmail_acc  .nick_name input:focus ~label,
+.gmail_acc .nick_name input:valid ~label{
+    margin: -55px  0 0 47px;
+    
+
+}
+.gt_first_nam_second_name{width:59vw;margin-left: 10px;;display: block;}
+.ct_field_first_acc label{width: 92px;}
+.to_pay_cahge2:after{width: 75%;}
+.ct_acount_details_cart {margin-bottom: 10px;}
+.to_pay_cahge1:after{width: 80vw;}
+.ct_order_confirm{width: 100%;}
+    .ct_msg_send_itm_dt2 h4, .ct_msg_finished_stock h4{font-size: 13px;}
+    .ct_msg_finished_stock{display: none;top: 130px;position: fixed;width: 43%;;margin:0px 0 0 410px;z-index: 99999999;}
+
+    .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc ul{
+        width: inherit
+    }
+    .only_for_grocery_item .field_bx_qt{width: 100%;}
+    .list_food_cart .ct_bx_drop{
+        transform: translate(-4px,0px);
+    }
+    .ct_filed_selct_qt_un {
+        width: 200px;
+        transform: translate(-27px);
+    }
+/* --------------------- */
+/*essentails*/
+/* --------------- */
+.ct_loading_bx2 {
+    width: 100%;
+    height: 190px;
+    display: flex;
+}
+.ct_for_time_load{width: 48%; margin:15px  0 0 10px;    height: 20px;
+}
+.ct_for_unit_load {
+    width: 38%;
+    margin: 10px 0 0 10px;
+    height: 20px;
+}
+.bodyessestials .ct_for_unit_load {
+    width: 45%;}
+.bodyessestials .ct_for_time_load{height: 30px;    width: 63%;}
+.for_grocery_load {
+    width: 100%;
+    flex-flow: row wrap;
+    transform: translate(-40px,60px);
+}
+.field_bx_qt span {
+    margin: 4px 0 0 12px;}
+.ct_set_qt_for_groc ul{width:inherit;}
+.for_groc_itm .for_ek_pk_fd {
+    width: 106px;
+    height: 40px;
+}.bx_ad_field_qt_num,
+.bx_ad_field_qt_num, .bx_rem_field_qt_num {
+    height: 30px;
+    width: 30px;
+    padding: 2.4px;
+}
+.for_groc_itm .for_ek_pk_fd {
+    margin: 158px 0 0 30px;
+}
+.for_ek_pk_fd input{margin-left: 39px;}
+.bodyessestials .ct_set_qt_for_groc ul li span, .field_bx_qt span{
+    margin-left: 8px;
+    width: 100%;
+}
+.ct_set_qt_for_groc ul li span{font-size: 10px;}
+.bodyessestials .ct_loading_bx_all {
+    margin-left: 68px;
+}
+.for_cart_cancel p, .for_cart_checkout p {
+    
+    margin-top: 5px;
+}
+.bodyessestials .ct_bx_drop{
+    width: 34px;
+    height: 28px;
+    transform: translate(0px,2px);}
+    .bodyessestials .field_bx_qt{width: 100%;}
+.field_bx_qt{width: 80%;}
+.list_food_at_ov .for_groc_itm .main_img_groc_itm {
+    width: auto;
+    max-width: 40vw;
+    height: 144px;
+}
+.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+    transform: translate(0px,50px);
+    position: absolute;
+    left: 30px;
+}
+.ct_bx_fex_fd_dt_ov{display: block;height: 760px;}
+.ct_bx_img_itm {
+    width: 100vw;
+    margin: 100px 0 0 10%;
+
+}
+.ct_nx_actions_account{display: block;}
+
+.ct_dt_tm_food_res h4{margin-left:10px}
+
+}
+@media only screen and (max-width:470px){
+    .for_groc_itm .for_ek_pk_fd {
+        margin: 18px 0 0 107px;
+    }
+    .itm_food_list_ek .ct_img_res_main .main_img_groc_itm {
+        max-width: 140px;}
+    .bodyessestials .itm_food_list_ek .ct_dt_tm_food_res h4 {
+        width: 65%;
+    }
+    .ct_type_fd_cart_itm2 {
+        transform: translate(-235px,62px);
+    }
+    .for_groc_itm .ct_set_qt_for_groc {
+        width: 66%;}
+    .ct_bx_inner1_groc_itm {
+        margin: 0px 0 0 248px;
+    }
+}
+@media only screen and (max-width:400px){
+    .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+        transform: translate(-17px,15px);        padding: 6px 17px 10px 12px;
+        width: 53px;
+    }
+    .ct_bx_side_rt_revies {
+        margin-left: 0px;
+    }
+    .ct_bx_reiws_peoples {
+        padding-left: 4px;
+        
+    }
+    .ct_bx_img_itm img {
+        width: 100%;
+    }
+    .ct_bx_img_itm {
+        width: 100vw;
+        margin: 60px 0 0 0%;
+    }
+    .ct_offer_box_cook2 p {
+        font-size: 9px;
+    }
+    .ct_offer_box_cook2 {
+        padding: 6px 10px 7px 9px;}
+    .ct_offer_box_cook2 span {
+        font-size: 13px;
+    }
+    .itm_food_list_ek .ct_img_res_main .main_img_groc_itm {
+        max-width: 116px;
+    }
+    .ct_offer_box_cook2 {
+        padding: 5px 10px 7px 10px;}
+    .for_groc_itm .for_ek_pk_fd {
+        margin: -6px 0 0 93px;
+    }
+    .ct_time_takes_itm{width: 100%;}
+    .unit {
+        font-size: 11px;}
+    .itm_food_list_ek .ct_dt_tm_food_res h4{font-size: 17px;width: 80%;}
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img{height: 155px;width: 50vw;}
+    .ct_type_bx_item_food p ,.ct_time_it_takes p{font-size: 11px;}
+    .bx_evt_cart_item .ct_bx_quant_itm_cart {
+        margin: 0px 0 20px 54px;
+    }
+    .ct_flex_sg {
+        display: flex;
+        margin: 60px 0 0 18px;
+    }
+    .ct_bx_message_for_confim_cancel {
+        width: 90%;
+        right: 18px;
+    }
+    .cancel_order_btn_yes {
+        width: 28%;
+    }
+    .ct_btns {
+        margin: 30px 0 0 50px;
+    }
+    .cancel_order_btn_no {
+        width: 28%;
+    }
+.ct_bx_message_for_confim_cancel .al_mcc {
+    font-size: 26px;
+}
+.ct_bx_message_for_confim_cancel h3 {
+    font-size: 12px;
+}
+    .error_login.lstname_err2 {
+        transform: translate(20px,-10px);
+    }
+    .error_login {font-size: 11px;}
+    .name_err {
+        
+        transform: translate(10px,4px);
+    }
+   
+    .error_login.lstname_err {
+        font-size: 11px;
+        transform: translate(10px,-10px);
+    }
+    .password_err_exsist {
+        font-size: 11px;
+        transform: translate(10px,-10px);
+    }
+    .error_login.phonenum {
+        font-size: 11px;
+        transform: translate(10px,-10px);
+    }
+.bx_tot_ammount_order span {
+    font-size: 11px;
+    margin-left: 23px;
+
+}
+.bx_tot_ammount_order {
+    width: 120px;
+}
+.main_cart_img2 {
+    height: 150px;}
+.amount_tot_acc {
+    font-size: 13px;
+}
+.ct_create_acc h3{font-size: 16px;margin: 50px 0 20px 20px;}
+
+.goback {
+    margin: -75px 0 53px 70%;
+}
 }
 @media only screen and (max-width:360px){
+    .img_a_cart {
+        width: 121px;
+    }
+    .bx_evt_cart_item .ct_bx_qt_foods {
+        width: 30%;
+    }
+    .flex_bx_cart_itm {
+        width: 80vw;
+        margin: 6px 0 0 -92px;
+        padding-bottom: 8x;
+    }
+    
+    .price_food iu {
+        font-size: 9px;
+        font-family: 'Open Sans';
+    }
+    .for_acc_dt .ct_bx_verify {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .ct_bx_verify .nick_name input {
+        height: 50px;
+        width: 88vw;
+    }
+    .for_acc_dt .ct_bx_verif2 .cont_btn_acc {
+        margin-left: 24px;
+    }
+    .for_grocery_order .ct_bx_food_dt_acc {
+        margin-top: 20px;
+        width: 36vw;
+    }
+    
+    .for_img_order_user2 {
+        width: auto;
+       max-width: 137px;
+        display: block;
+    }
+ 
+    .ct_ct_text_about_acc h3 {
+        font-size: 16px;}
+            .ct_type_fd_cart_itm2 {
+        transform: translate(-195px,62px);
+    }
+    .ct_bx_inner1_groc_itm {
+        margin: 0px 0px 0px 203px;    }
+    .itm_food_list_ek .ct_img_res_main .main_img_groc_itm {
+        max-width: 116px;
+    }
+    .for_groc_itm .for_ek_pk_fd {
+        margin: -6px 0 0 93px;
+    }
+    .ct_offer_box_cook2 {
+        padding: 5px 11px 7px 9px;}
+    .field_bx_qt p,
+    .field_bx_qt span {
+        font-size: 9px;
+    }
+    .field_bx_qt {
+        height: 26px;}
+    .bodyessestials .ct_bx_drop {
+        width: 33px;
+        height: 24px;}
+    .ct_field_small_size ion-icon {
+        font-size: 25px;}
+    .ct_inner_fd1_dt_grid{transform: translate(-0px,0px);}
+    .error_login {width: 80%;}
+
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img{
+        height: 127px;
+        width: 45vw;
+    }
+    .price_food span{font-size: 13px;}
+    .ct_type_bx_item_food{margin-left: 2px;}
+    .ct_time_it_takes p, .ct_type_bx_item_food p{font-size: 10px;}
+    .ct_fd_dt_full {
+        transform: translate(0px,-14px);
+    }
+  
     .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc {
         width: 36vw;
     }
     .ct_bx_related_itm_dt_cart2 .ct_bx_drop {
-        transform: translate(-1px,-5px);
-        width: 30px;
-        height: 28px;
+        transform: translate(-1px,-6px);
+        height: 26px;
+        padding-left: 3px;
+    }
+    .remove_fd_itm_ct p {
+        font-size: 12px;}
+    .remove_fd_itm_ct {
+  
+        width: 26%;
+    }
+    .main_cart_img2 {
+        height: 115px;
     }
     .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc ul{width:inherit}
     .only_for_grocery_item .field_bx_qt{width: 100%;}
@@ -4902,7 +5940,6 @@ margin-top: 0;
     font-weight: 600;
 }
 .groc_bx .ct_bx_related_itm_dt_cart2 {
-    margin: -12px 0 7px -20px;
     width: 60%;
 }
 .ct_itm_food_cart h4 {
@@ -4915,12 +5952,12 @@ margin-top: 0;
 .ct_bx_message_canceled_ordered h2, .ct_bx_message_succesfully_ordered h2 {
     font-size: 16px;
 }
-    .gmail_acc ion-icon {font-size: 24px}
     .ct_bx_account {margin-left: -10px;}
     .ct_phone_input_field {margin-left: -2px;}
-    .bx2_gmail:nth-of-type(2) .gmail_acc {width: 104%}
-    .bx2_gmail:nth-of-type(2) .gmail_acc {transform: translate(4px);}
     .account_cont {margin-left: 21px}
+    .only_for_sig .gt_first_nam_second_name.pass_bx_field {
+        width: 99vw;
+    }
     .ct_acc .ct_bx_verify  button {width: 87%;}
     .pass_bx_field input{width: 74%;}
     .gmail_inp_fl {margin-left: -11px;}
@@ -4933,10 +5970,7 @@ margin-top: 0;
         margin-left: 60px;
         width: 74%;
     }
-    .only_for_sig .gt_first_nam_second_name.pass_bx_field {
-        width: 129%;
-    }
-    .for_login2 .ct_bx_side_ov_login {padding: 56px 0 0 0px;}
+ 
     .for_ain_home_logo2 {
         left: 26%;
     }
@@ -4987,12 +6021,8 @@ margin-top: 0;
         font-size: 17px;
         width: 80%;
     }
-    .ct_bx_no_order_yet {
-        right: 0;
-        left: 28%;
-        margin-top: -40px;
-    }
-    .groc_btn_order{height: 58px;    padding: 22px 14px 8px 0;    transform: translate(24px,7px);
+
+    .groc_btn_order{height: 58px; font-size: 12px;   padding: 22px 14px 8px 0;    transform: translate(0px,7px);
     }
     .ct_bx_food_dt_acc h4 {
         font-size: 13px;
@@ -5013,13 +6043,11 @@ margin-top: 0;
     }
     .qt_order_itm {
         font-size: 10px;
-
-        margin: -0px 0 10px 0;
-       transform: translate(-5px);
     }
     .for_img_order_user {
         margin-left: -15px;
         width: 100%;
+        display: block;
     }
     .ct_time p, .ct_unit p, .ct_bx_of p {
         font-size: 11px;
@@ -5045,12 +6073,17 @@ margin-top: 0;
        
         font-size: 12px;
     }
+    .for_nav_main .logo{
+        margin:0 ;
+    position: absolute;
+    left: 14%;
+    }
     .for_acc_dt .ct_acc p {
        
         font-size: 11px;}
     .ct_bx_acc_user_dt .ct_bx_message_succesfully_ordered p {
   
-        width: 76vw;        font-size: 13px;
+        width: 60vw;        font-size: 13px;
         margin: 11px 0 10px -76px;
     }
     .on_edit_profile_acc h1 {
@@ -5078,10 +6111,14 @@ margin-top: 0;
     }
     .for_mobile_search {
         display: flex;
-        width: 110vw;}
+        width: 100%;}
     .ct_bx_search {
         width: 96vw;
-    }    
+    }  
+    .ct_set_qt_for_groc ul li span,
+    .ct_set_qt_for_groc ul li p {
+        font-size: 9px;
+    }  
     .ct_bx_graph_lev {
         width: 61vw;
     }
@@ -5113,9 +6150,12 @@ margin-top: 0;
                 font-size: 43px;
                 transform: translate(-43px);
             }
+            .ct_bx_hw_cook a {
+                font-size: 12px;
+            }
             .itm_food_list_ek .ct_dt_tm_food_res h4 {
-                font-size: 14px;
-                width: 47vw;
+                font-size: 16px;
+                width: 80%;
             }
         
             .ct_bx_flex h3 {
@@ -5131,49 +6171,75 @@ margin-top: 0;
                 width: 128%;
             }
             .pincode:nth-of-type(2) {
-                width: 116.5%;
+                width:98vw;
             }
-    .fd_btn_order {height: 58px;    padding: 12px 4px 8px 0;}
+            .body_cart .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc ul {
+                width: 45vw;
+            }
+            .check_bx_if_view {
+                margin: 40px 0 40px 20px;
+            }
+            
+            .list_itm_sub_cart span {
+                right: 47px;}
+            .ct_subotatal {
+                margin: -150px 10px 0 -20px;}
+                .fd_btn_order {height: 58px;    padding: 12px 4px 8px 0;}
     .only_for_grocery_item li .ct_bx_quant_itm_cart{width:31%}
 }
-@media only screen and (max-width:400px){
-    .name_err {
-        font-size: 11px;
-        transform: translate(10px,-8px);
-    }
-   
-    .error_login.lstname_err {
-        font-size: 11px;
-        transform: translate(10px,-10px);
-    }
-    .password_err_exsist {
-        font-size: 11px;
-        transform: translate(10px,-10px);
-    }
-    .error_login.phonenum {
-        font-size: 11px;
-        transform: translate(10px,-10px);
-    }
-.bx_tot_ammount_order span {
-    font-size: 11px;
-    margin-left: 23px;
-
-}
-.bx_tot_ammount_order {
-    width: 120px;
-}
-.amount_tot_acc {
-    font-size: 13px;
-}
-.ct_create_acc h3{font-size: 16px;margin: 50px 0 20px 20px;}
-
-.goback {
-    margin: -75px 0 53px 70%;
-}
-}
 @media only screen and (max-width:330px){
+    .itm_food_list_ek .ct_img_res_main .main_img_groc_itm {
+        max-width: 99px;
+    }
+    .ct_bx_inner1_groc_itm {
+        margin: 0px 0px 0px 188px;
+    }
+    .ct_type_fd_cart_itm2 {
+        transform: translate(-181px,40px);
+    }
+    .ct_cat_by_list .itm_food_list_ek {
+        margin: 10px 0 0 -17px;
+    }
+    .ct_time_it_takes ion-icon {
+        pointer-events: none;
+        font-size: 18px;
+    }
+    .ct_type_bx_item_food img {
+        width: 15px;
+        height: 15px;
+    }
+    .ct_type_bx_item_food svg{width: 15px;
+        height: 15px;transform: translate(7px,0px);}
+    .itm_food_list_ek .ct_dt_tm_food_res h4 {
+        font-size: 15px;
+        width: 74%;
+    }
+    .ct_time_it_takes p, .ct_type_bx_item_food p {
+        font-size: 9px;
+    }
+    .erak_fd_body .itm_food_list_ek .ct_img_res_main img {
+        height: 127px;
+        width: 48vw;}
+    .body_login .go_back {
+        right: 3px;
+    }
+    .ct_bx_messgae svg {
+        width: 33%;
+        height: auto;
+        transform: translate(84%);
+    }
+    .bx_evt_cart_item .ct_bx_quant_itm_cart {
+width: 100px;    }
+.price_am_cart_fd2 span {
+    font-size: 14px;
+}
+    .for_cart_qt input {
+        width: 40px;
+        padding: 10px 4px 3px 0vw;
+        margin: 2px 0 0 35px;
+    }
     .ct_create_acc h3{font-size: 16px;margin: 50px 0 20px 20px;}
-    .main_cart_img2 {
+    .img_a_cart2 {
         height: 97px;
         margin: 15px 0 0 -48px;
     }
@@ -5188,7 +6254,6 @@ margin-top: 0;
         margin-left: -20px;
     }
     .only_for_grocery_item li .ct_bx_quant_itm_cart {
-        margin: 115px 0 0 24px;
         width:97px
     }
     .ct_bx_related_itm_dt_cart2 .ct_set_qt_for_groc {

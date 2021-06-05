@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super grocery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Raleway&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../css/design.css">
     <link rel="stylesheet" href="../css/media.css">
@@ -26,583 +28,746 @@
 
 </head>
 
-<body>
+<body class="itm_dt_body">
     {{>nav}}
-    {{!-- <div class="ct_msg_finished_stock">
-        <ion-icon class="alert_icon" name="alert-outline"></ion-icon>
-        <h4>
-            Our Stock of " Aloo parathas " has been finished,please try again later. </h4>
-        <div class="ct_remove_err">
-            <ion-icon name="close-outline"></ion-icon>
-
-        </div>
-    </div> --}}
-    <div class="ct_bx_added_to_cart_succ">
-        <ion-icon class="icon_check alert_icon" name="checkmark-circle"></ion-icon>
-
-        <h3>Aloo Paratha successfully added to Cart</h3>
-        <div class="ct_remove_err2">
-            <ion-icon name="close-outline"></ion-icon>
-
-        </div>
-    </div>
-    <div class="ct_msg_send_itm_dt2">
-        <ion-icon name="alert-outline"></ion-icon>
-        <h4>
-            <h4> You donot have any account. </h4>
 
 
-    </div>
-
-    <div class="ct_msg_send_itm_dt">
-        <ion-icon class="main_i" name="checkmark-circle"></ion-icon>
-        {{!-- <ion-icon class="main_i" name="alert-circle-outline"></ion-icon> --}}
-        <h3> Thank you, Kabir for rating us.Your rating is registered. </h3>
-
-        <div class="remove_succ_add">
-            <ion-icon name="close-outline"></ion-icon>
-
-        </div>
-    </div>
+    <div class="ct_sep_bx">
+        <div class="inner_seperation">
 
 
 
+            <div class="ct_msg_send_itm_dt">
+                <ion-icon class="main_i" name="checkmark-circle"></ion-icon>
+                <h3> Thank you, Kabir for rating us.Your rating is registered. </h3>
 
-    <div class="msg_saved_question">
-        <div class="ct_flex_msg_q_msg">
-
-            <ion-icon name="checkmark-circle"></ion-icon>
-            <h4>Your question have been successfully recived.</h4>
-        </div>
-
-        <p>We will send you the answer in your whatsapp:- <strong>7005328132</strong></p>
-    </div>
-    <div class="ct_bx_fex_fd_dt_ov">
-        <div class="ct_bx_img_itm">
-            <div class="ct_offer_box_cook2">
-                <span>14%</span>
-                <p> off</p>
-            </div>
-            <img alt='img'>
-        </div>
-
-
-        <div class="ct_full_loading_box for_items_loadsss for_ek_fd_full_load">
-            <div class="ct_bx_img_load_itm">
-
-            </div>
-            <div class="ct_foods_dt_load">
-                <div class="ct_bx_stars_load_itm">
-
-                </div>
-                <div class="ct_bx_tag_load_itm">
-
-                </div>
-                <div class="ct_bx_price_load_itm">
-
-                </div>
-                <div class="ct_bx_allOther_load_itm">
+                <div class="remove_succ_add">
+                    <ion-icon name="close-outline"></ion-icon>
 
                 </div>
             </div>
 
-        </div>
 
-        <div class="ct_x_fd_dt_itm">
-            <div class="ct_bx_ratings_info">
-                <a href="#reviews">
 
-                </a>
-            </div>
-            <h3 class="fd_name_dt_itm">Hydrabadi dum biryani </h3>
 
-            <div class="ct_flex_bx_fd_dt">
+            <div class="msg_saved_question">
+                <div class="ct_flex_msg_q_msg">
 
-                <div class="ct_bx_price">
-                    <p>₹</p>
-                    <span> 230</span>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <h4>Your question have been successfully recived.</h4>
                 </div>
 
+                <p>We will send you the answer in your whatsapp:- <strong>7005328132</strong></p>
+            </div>
+            <div class="ct_bx_fex_fd_dt_ov" style="height: auto;">
 
 
-                <span class="catId_fd">1</span>
-                <div class="ct_pricing_dis">
-                    <div class="ct_bx_total_amm">
-                        <div class="ct_bx_mrp">
-                            <div class="mrp_ammount">
-                                <p>M.R.P :</p>
-                                <del>₹ 230</del>
-                            </div>
+
+                <div class="ct_full_loading_box for_items_loadsss for_ek_fd_full_load" style="display: none;">
+                    <div class="ct_bx_img_load_itm">
+
+                    </div>
+                    <div class="ct_foods_dt_load">
+                        <div class="ct_bx_stars_load_itm">
+
+                        </div>
+                        <div class="ct_bx_tag_load_itm">
+
+                        </div>
+                        <div class="ct_bx_price_load_itm">
+
+                        </div>
+                        <div class="ct_bx_allOther_load_itm">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ct_bx_img_itm" style="visibility: visible;">
+                    <div class="ct_offer_box_cook2">
+                        <span>50%</span>
+                        <p>off</p>
+                    </div>
+                    <img src="../img/mCur.jpg">
+                </div>
+                <div class="ct_x_fd_dt_itm" style="visibility: visible; display: block;">
+
+                    <h3 class="fd_name_dt_itm">Tajdare specal mutton korma</h3>
+                    <div class="ct_bx_ratings_info">
+                        <a href="#reviews"> <span>
+                                <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star">
+                                </ion-icon>
+                            </span>
+
+                            <span>
+                                <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star">
+                                </ion-icon>
+                            </span>
+
+                            <span>
+                                <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star">
+                                </ion-icon>
+                            </span>
 
 
-                            <div class="ct_saved_am">
-                                <p>You Saves ₹ 30 </p>
-                            </div>
+                            <span>
+                                <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star">
+                                </ion-icon>
+                            </span>
+
+                            <span>
+                                <ion-icon class="filed_rating_itm md hydrated" name="star-half" role="img"
+                                    aria-label="star half"></ion-icon>
+                            </span></a>
+                    </div>
+                    <div class="ct_flex_bx_fd_dt">
+
+                        <div class="ct_bx_price">
+                            <p>₹</p>
+                            <span>209 <iu>(500g)</iu></span>
                         </div>
 
 
+
+                        <span class="catId_fd"></span>
+                        <div class="ct_pricing_dis">
+                            <div class="ct_bx_total_amm">
+                                <div class="ct_bx_mrp">
+                                    <div class="mrp_ammount">
+                                        <p> M.R.P</p>
+                                        <del>₹ 249</del>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
                     </div>
 
+                    <div class="ct_time_takes_itm">
+                        <ion-icon name="alarm-outline" role="img" class="md hydrated" aria-label="alarm outline">
+                        </ion-icon>
+                        <p>1hr 45 min</strong> </p>
+                        </p>
+                    </div>
 
+                    <div class="ct_bx_what_erak_foods">
+                        <h4>What is Super Grocery ?</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipis</p>
+                        <span><a href="#">Click here </a>to explore.</span> </a>
+                    </div>
+                       <div class="ct_bx_items_qt_actions itemacc_2">
+                    <div class="ct_bx_download_btn">
+                        <a href="../img/butterChicken.jpg" download="">
+
+                            <ion-icon name="download-outline" role="img" class="md hydrated"
+                                aria-label="download outline"></ion-icon>
+
+                            <p>How to cook ?</p>
+                        </a>
+                    </div>
+                    <div class="ct_bx_acct_cart" style="display: block; visibility: visible;">
+                        <div class="ct_bx_qty">
+                            <p>Quantity</p>
+
+                            <div class="ct_bx_qty_inner">
+                                <div class="ct_bx_weight_qt">
+                                    <span>1kg</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+
+                                </div>
+                                <div class="ct_bx_units_item">
+                                    <ul>
+                                        <li>
+                                            <span>2kg</span>
+                                            <am>₹ 220</am>
+                                        </li>
+                                        <li>
+                                            <span>3kg</span>
+                                            <am>₹ 220</am>
+                                        </li>
+                                        <li>
+                                            <span>5kg</span>
+                                            <am>₹ 220</am>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ct_bx_qt_foods">
+                                <div class="ct_bx_item_rem">
+                                    <ion-icon name="remove-outline"></ion-icon>
+                                </div>
+                                <input type="text" value="1">
+                                <div class="ct_bx_item_add">
+                                    <ion-icon name="add-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="ct_bx_total_ammount">
+                            <h4>Total Amount</h4>
+                            <span>₹ 500</span>
+                        </div>
+                        <button class="bx_add_t_cart_btn_itm_dt added_to_cart">
+                            <span style="display: none;">
+                                <ion-icon name="cart" role="img" class="md hydrated" aria-label="cart"></ion-icon>
+                                &thinsp;
+                                Add to Cart
+                            </span>
+                            <p style="display: block;">Added to Cart</p>
+                        </button>
+                        <a class="bx_buy_now added_to_cart" href="/mycart" style="padding-left: 18px;"> <span
+                                style="display: none;">Buy now</span>
+                            <p style="display: block;">Added to Cart</p>
+                        </a>
+                    </div>
+                </div>
+                    <div class="ct_bx_item_stock">
+                        <h3 class="outStk">out of Stock</h3>
+
+                        <h3 class="inStk">In Stock</h3>
+                    </div>
+                    <div class="ct_sbout_this_itm" style="display: block;">
+                        <h4>About this item</h4>
+                        <div class="ct_bx_all_inside_pack_itm">
+                            <div class="ct_about_itm_fld">
+                                <ion-icon name="checkbox" role="img" class="md hydrated" aria-label="checkbox outline">
+                                </ion-icon>
+                                <p>spices </p>
+                            </div>
+                            <div class="ct_about_itm_fld">
+                                <ion-icon name="checkbox" role="img" class="md hydrated" aria-label="checkbox outline">
+                                </ion-icon>
+                                <p>ginger and garlic paste</p>
+                            </div>
+                            <div class="ct_about_itm_fld">
+                                <ion-icon name="checkbox" role="img" class="md hydrated" aria-label="checkbox outline">
+                                </ion-icon>
+                                <p>marinated chicken</p>
+                                {{!-- <button class="select"
+                                    style="opacity: 0.4; pointer-events: none;">unselect</button> --}}
+                                {{!-- <span>220</span> --}}
+                            </div>
+                            <div class="ct_about_itm_fld">
+                                <ion-icon name="checkbox" role="img" class="md hydrated" aria-label="checkbox outline">
+                                </ion-icon>
+                                <p>1 user manual</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+                <div class="ct_bx_items_qt_actions itemacc_1">
+                    <div class="ct_bx_download_btn">
+                        <a href="../img/butterChicken.jpg" download="">
+
+                            <ion-icon name="download-outline" role="img" class="md hydrated"
+                                aria-label="download outline"></ion-icon>
+
+                            <p>How to cook ?</p>
+                        </a>
+                    </div>
+                    <div class="ct_bx_acct_cart" style="display: block; visibility: visible;">
+                        <div class="ct_bx_qty">
+                            <p>Quantity</p>
+<span class="seleted_unit_price">220 </span>
+                            <div class="ct_bx_qty_inner nottog">
+                                <div class="ct_bx_weight_qt">
+                                    <span>No chicken</span>
+                                    <div class="ct_bx_up">
+                                                                            <ion-icon name="chevron-up-outline"></ion-icon>
+
+                                    </div>
+                                       <div class="ct_bx_dwn">
+                                                                            <ion-icon name="chevron-down-outline"></ion-icon>
+
+                                    </div>
+
+                                </div>
+                                <div class="ct_bx_units_item">
+                                    <ul>
+                                        <li>
+                                            <span>1kg</span>
+                                            <am>₹ 189</am>
+                                        </li>
+                                        <li>
+                                            <span>3kg</span>
+                                            <am>₹ 319</am>
+                                        </li>
+                                        <li>
+                                            <span>5kg</span>
+                                            <am>₹ 829</am>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ct_bx_qt_foods">
+                                <div class="ct_bx_item_rem">
+                                    <ion-icon name="remove-outline"></ion-icon>
+                                </div>
+                                <input type="text" value="1">
+                                <div class="ct_bx_item_add">
+                                    <ion-icon name="add-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="ct_bx_total_ammount">
+                            <h4>Total Amount</h4>
+                            <span>₹ 500</span>
+                        </div>
+                        <button class="bx_add_t_cart_btn_itm_dt">
+                            <span>
+                                <ion-icon name="cart" role="img" class="md hydrated" aria-label="cart"></ion-icon>
+                                &thinsp;
+                                Add to Cart
+                            </span>
+                            <p>Added to Cart</p>
+                        </button>
+                        <a class="bx_buy_now" href="/mycart"> <span
+                                >Buy now</span>
+                            <p>Added to Cart</p>
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <div class="ct_bx_type_fd">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172"
-                    style=" fill:#000000;">
-                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
-                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
-                        style="mix-blend-mode: normal">
-                        <path d="M0,172v-172h172v172z" fill="none"></path>
-                        <g fill="#099f49">
-                            <path d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                            </path>
-                            <path
-                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                            </path>
-                        </g>
-                    </g>
+
+            <div class="ct_bx_messgae">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                    <circle class="path circle" fill="none" stroke="#3ba81f" stroke-width="6" stroke-miterlimit="10"
+                        cx="65.1" cy="65.1" r="62.1" />
+                    <polyline class="path check" fill="none" stroke="#3ba81f" stroke-width="6" stroke-linecap="round"
+                        stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
                 </svg>
-                <p>veg</p>
-            </div>
-            <div class="ct_time_takes_itm">
-                <ion-icon name="alarm-outline"></ion-icon>
-                <p>Cook just in <strong>10 min</strong> </p>
-            </div>
-
-            <div class="ct_download_cooking">
-                <h3>Download cooking steps </h3>
-                <p>Cook your favourite super grocery just by following the given cooking steps.</p>
-                <span>Download now </span>
-                <a href="../img/butterChicken.jpg" download>
-                    <ion-icon name="download-outline"></ion-icon> Download.
-                </a>
-                <span>Or </span>
-                <a href="../img/butterChicken.jpg">Show Me</a>
-
+                <p class="success">Successfully Added to the cart</p>
 
             </div>
-            <div class="ct_sbout_this_itm">
-                <h4>About this item</h4>
-                <div class="ct_bx_all_inside_pack_itm">
 
 
-                    <div class="ct_about_itm_fld">
 
-                        <ion-icon name="checkbox-outline"></ion-icon>
-
-                        <p>Mixed Spices</p>
-
-                    </div>
-
-                    <div class="ct_about_itm_fld">
-
-                        <ion-icon name="close-outline"></ion-icon>
-
-                        <p>One user manual.</p>
-                    </div>
+            <div class="ct_bx_show_out_of_stk for_active_order">
+                <div class="ct_reome_pop_up">
+                    <ion-icon name="close-outline"></ion-icon>
                 </div>
-            </div>
-
-        </div>
-        <div class="ct_bx_acct_cart">
-            <div class="ct_bx_select_qt_final">
-
-                <p>Quantity</p>
-                <div class="ct_bx_qtfood relative_width1  tog_for_ek_pk_fd for_ek_pk_fd for_mob_ver_qt for_ek_qt">
-                    <div class="bx_rem_field_qt_num bx_op">
-
-                        <ion-icon class="remove_field_num" name="remove"></ion-icon>
-                    </div>
-
-                    <input readonly class="str_to_num for_grocery_qt_inp" type="text" value="">
-                    <div class="bx_ad_field_qt_num bx_op">
-                        <ion-icon class="add_field_num" name="add"></ion-icon>
-
-                    </div>
-
+                <div class="ct_bx_flex">
+                    <ion-icon name="warning-outline"></ion-icon>
+                    <h3>We found an active order from your account.</h3>
                 </div>
+                <h4>Click new order button on cart then add this item.</h4>
+
+
+
             </div>
-            <button class="bx_add_t_cart_btn_itm_dt">
-                <span>
-                    <ion-icon name="cart"></ion-icon> &ThinSpace; Add to Cart
-                </span>
-                <p>Added to Cart</p>
-            </button>
-            <a class="bx_buy_now" href="/mycart"> <span>Buy now</span>
-                <p>Added to Cart</p>
-            </a>
-        </div>
-    </div>
-
-    <div class="ct_bx_messgae">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <circle class="path circle" fill="none" stroke="#3ba81f" stroke-width="6" stroke-miterlimit="10" cx="65.1"
-                cy="65.1" r="62.1" />
-            <polyline class="path check" fill="none" stroke="#3ba81f" stroke-width="6" stroke-linecap="round"
-                stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
-        </svg>
-        <p class="success">Successfully Added to the cart</p>
-
-    </div>
-
-
-    <div class="ct_error_stock for_items">
-        <div class="ct_inner_msg">
-
-            <ion-icon class="icon_check alert_icon md hydrated" name="checkmark-circle" role="img"
-                aria-label="checkmark circle"></ion-icon>
-            <p>Mutter panner added to cart</p>
-        </div>
-
-    </div>
-     <div class="ct_bx_show_out_of_stk for_active_order">
-        <div class="ct_reome_pop_up">
-            <ion-icon name="close-outline"></ion-icon>
-        </div>
-        <div class="ct_bx_flex">
-            <ion-icon name="warning-outline"></ion-icon>
-            <h3>We found an active order from your  account.</h3>
-        </div>
-        <h4>Click new order button on cart then add this item.</h4>
-        
-
-
-    </div>
-    <div class="ct_bx_show_out_of_stk for_stock_err">
-        <div class="ct_reome_pop_up">
-            <ion-icon name="close-outline"></ion-icon>
-        </div>
-        <div class="ct_bx_flex">
-            <ion-icon name="warning-outline"></ion-icon>
-            <h3>Opps!Aloo paratha is out of stock</h3>
-        </div>
-        <h4>Please try again later.</h4>
-        <div class="ct_bx_btns">
-            <span>Try another </span>
-
-            <a href="/supergrocery">Super grocery</a>
-
-        </div>
-
-
-    </div>
-    <div class="ct_error_stock for_ek_fd">
-        <div class="ct_inner_msg">
-
-            <ion-icon name="warning"></ion-icon>
-            <p>Opps! we donot have more than 10 items in our stock of "Aloo Paratha".</p>
-        </div>
-        <div class="ct_bx_remove_stk_msg">
-            <ion-icon name="close-outline"></ion-icon>
-
-        </div>
-    </div>
-
-
-    <section class="recomended_cart for_items_recm">
-        <div class="ct_bx_view_all_food">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-            <a class="view_all_pack_recom" href="/foods">View all</a>
-
-        </div>
-
-        <h2>recommended</h2>
-        <div class="ct_ek_fod_cart_recom">
-            <div class="ct_remcombx_pf_ct">
-                <div class="ct_bx_recc_cart_load_full">
-                    <div class="loader_cart for_ek_fd_cart_load_rec_load loading_spinner_login2">
-
-                    </div>
+            <div class="ct_bx_show_out_of_stk for_stock_err">
+                <div class="ct_reome_pop_up">
+                    <ion-icon name="close-outline"></ion-icon>
                 </div>
-                <div class="crousel">
-                    <div class="inner_slide">
-
-                    </div>
-
+                <div class="ct_bx_flex">
+                    <ion-icon name="warning-outline"></ion-icon>
+                    <h3>Opps!Aloo paratha is out of stock</h3>
                 </div>
-                <div class="ct_bx_buttons_actions">
-                    <button id="prev_crousel" class="back_acc">
-                        <ion-icon name="chevron-back-outline"></ion-icon>
-                    </button>
-                    <button id="forw" class="forward_acc">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </button>
-                </div>
+                <h4>Please try again later.</h4>
+                <div class="ct_bx_btns">
+                    <span>Try another </span>
 
-            </div>
-        </div>
-
-        </div>
-
-    </section>
-    <div class="ct_questions_answer">
-        <h3>Customers Q & A</h3>
-
-        <ion-icon class="search_qa_icon" name="search"></ion-icon>
-        <div class="ct_serach_qa_itm_dt">
-            <input class="Search_bar_qa" type="text" placeholder="Search questions">
-            <div class="ct_bx_serached_itm">
-                <ul>
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="ct_bx_all_qa">
-            <div class="loader_cart for_ek_fd_cart_load_rec_load2 loading_spinner_login2">
-
-            </div>
-            <div class="ct_no_res_search_qa">
-                <div class="ct_no_result_qa">
-                    <h4> (o^^)o
-                    </h4>
-                    <p>We donnot find the question you are looking for ?</p>
-                </div>
-                {{!-- <div class="ct_reply_bx">
-                    <div class="ct_dt_person_replies">
-                        <ion-icon name="person-circle-outline"></ion-icon>
-                        <p>Kabir</p>
-                    </div>
-                    <input type="text" placeholder="add a question about this product.">
-                    <span>Your question will be answered by ERAK'S food seller.</span>
-                    <div class="ct_bx_reply_act_btn">
-                        <button class="cancel_reply_btn_final  btn_cancel_qa">cancel</button>
-                        <button class="reply_btn_final btn_post_qa">POST</button>
-                    </div>
-                </div> --}}
-                {{!-- <div class="ct_post_own">
-                    <h4>Post your question</h4>
-                    <textarea name="" id="" cols="40" rows="4"></textarea>
-                    <button class="sub_btn_rev">Submit</button>
-
-                </div> --}}
-            </div>
-
-        </div>
-
-    </div>
-    <div class="ct_bx_rt_rv_bx" id='reviews'>
-        <div class="ct_bx_side_rt_revies">
-            <h3>Our customers reviews</h3>
-            <div class="loading_rate_bx loading_spinner_login2">
-
-            </div>
-            <div class="ct_bx_graph star5th">
-                <div class="bx_star_dis">
-                    <div class="ct_bx_stars_rated ">
-                        <p>5</p>
-
-                        <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
-
-                    </div>
-                    <div class="ct_bx_graph_lev">
-                        <div class="ct_level" style="width: 0%;">
-
-                        </div>
-                    </div>
-                    <span>&mdash;</span>
+                    <a href="/supergrocery">Super grocery</a>
 
                 </div>
 
-                <div class="bx_star_dis star4th">
-                    <div class="ct_bx_stars_rated ">
-                        <p>4</p>
 
-                        <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
+            </div>
+            <div class="ct_error_stock for_ek_fd">
+                <div class="ct_inner_msg">
+                    <div class="ct_icon_added_succ">
+                                            <ion-icon name="checkmark-circle"></ion-icon>
+
 
                     </div>
-                    <div class="ct_bx_graph_lev">
-                        <div class="ct_level" style="width: 0%;">
+<div class="ct_icon_added_warn">
+                    <ion-icon name="warning"></ion-icon>
 
-                        </div>
                     </div>
-                    <span>&mdash;</span>
-
+                    <p>Opps! we donot have more than 10 items in our stock of "Aloo Paratha".</p>
                 </div>
-                <div class="bx_star_dis star3th">
-                    <div class="ct_bx_stars_rated">
-                        <p>3</p>
-
-                        <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
-
-                    </div>
-                    <div class="ct_bx_graph_lev">
-                        <div class="ct_level" style="width: 0%;">
-
-                        </div>
-                    </div>
-                    <span>&mdash;</span>
-
-                </div>
-                <div class="bx_star_dis star2th">
-                    <div class="ct_bx_stars_rated">
-                        <p>2</p>
-
-                        <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
-
-                    </div>
-                    <div class="ct_bx_graph_lev">
-                        <div class="ct_level" style="width: 0%;">
-
-                        </div>
-                    </div>
-                    <span>&mdash;</span>
-
-                </div>
-                <div class="bx_star_dis star1th">
-                    <div class="ct_bx_stars_rated">
-                        <p>1</p>
-
-                        <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
-
-                    </div>
-                    <div class="ct_bx_graph_lev">
-                        <div class="ct_level" style="width: 0%;">
-
-                        </div>
-                    </div>
-                    <span>&mdash;</span>
+                <div class="ct_bx_remove_stk_msg">
+                    <ion-icon name="close-outline"></ion-icon>
 
                 </div>
             </div>
-            <div class="ct_bx_review">
 
-                <h2>Review this product.</h2>
-                <p>Share your feeling about this product.</p>
 
-                <div class="ct_bx_form_rating">
-                    <div class="ct_rate_bx">
+            <section class="recomended_cart for_items_recm">
+                <div class="ct_bx_view_all_food">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                    <a class="view_all_pack_recom" href="/foods">View all</a>
 
-                        <h4 class="rate_prod_h4">Rate this product</h4>
-                        {{!-- rated_success --}}
-                        <div class="ct_rate_star_wrapper not_rated">
-
-                            <input name='rat_star' type="radio" id="st5"><label for="st5"></label>
-                            <input name='rat_star' type="radio" id="st4"><label for="st4"></label>
-                            <input name='rat_star' type="radio" id="st3"><label for="st3"></label>
-                            <input name='rat_star' type="radio" id="st2"><label for="st2"></label>
-                            <input name='rat_star' type="radio" id="st1"><label for="st1"></label>
-
-                        </div>
-
-                    </div>
-                    <div class="ct_bx_rew_2 headLine_form">
-                        <h4>Add a Headline</h4>
-                        <input type="text" placeholder="What most important to know ?">
-                    </div>
-                    <div class="ct_bx_rew_2 subheadLine_form">
-                        <h4>Add a Written Text</h4>
-                        <textarea cols="38" rows="7"
-                            placeholder="What did you like or dislike this product ?"></textarea>
-                    </div>
                 </div>
-            </div>
-            <div class="ct_Remove_edit_bx">
 
-                <button class='remove_btn_sub_form loading_bx_btn_rev'> Remove</button>
+                <h2>recommended</h2>
+                <div class="ct_ek_fod_cart_recom">
+                    <div class="ct_remcombx_pf_ct">
+                        <div class="ct_bx_recc_cart_load_full">
+                            <div class="loader_cart for_ek_fd_cart_load_rec_load loading_spinner_login2">
 
-            </div>
-
-            <button class="sub_btn_rev  for_submit_form_rev  ">Submit</button>
-
-            <span class="err_form_sub"></span>
-
-        </div>
-        <div class="ct_bx_reiws_peoples">
-            <h3>Top Reviews</h3>
-            <div class="loading_rate_bx_for_reviews_msg loading_spinner_login2">
-
-            </div>
-            <div class="ct_bx_first_icon">
-                <h2>We donot have any reviews on this item yet.Be the first to share your thought about this item.</h2>
-
-            </div>
-            <div class="ct_bx_revies_all">
-                {{!--
-                <div class="ct_bx_revies">
-                    <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>Pritam Bhattacharya</h4>
-
-                    </div>
-                    <div class="ct_rate_bx_rev">
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="notrat" name="star"></ion-icon>
-                        <ion-icon class="notrat" name="star">
-
-                        </ion-icon>
-                    </div>
-                    <div class="ct_bx_dt_rv">
-
-                        <h5>Good</h5>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere recusandae dolorum quisquam
-                            doloremque ut consequuntur, ad eum officia. Quo nulla nesciunt aliquid totam dolorem alias
-                            assumenda
-                            veritatis, placeat magni? Neque.</p>
-                        <div class="ct_bx_likes_dilik">
-                            <div class="ct_lik_btn">
-                                <ion-icon name="thumbs-up-outline"></ion-icon>
-                                <span>4</span>
-                            </div>
-                            <div class="ct_lik_btn2">
-                                <ion-icon name="thumbs-down-outline"></ion-icon>
-                                <span>2</span>
                             </div>
                         </div>
-                        <span class="date_rev">3rd April</span>
+                        <div class="crousel">
+                            <div class="inner_slide">
+
+                            </div>
+
+                        </div>
+                        <div class="ct_bx_buttons_actions">
+                            <button id="prev_crousel" class="back_acc">
+                                <ion-icon name="chevron-back-outline"></ion-icon>
+                            </button>
+                            <button id="forw" class="forward_acc">
+                                <ion-icon name="chevron-forward-outline"></ion-icon>
+                            </button>
+                        </div>
 
                     </div>
+                </div>
 
 
+            </section>
+            <div class="ct_questions_answer">
+                <h3>Customers Q & A</h3>
+
+                <ion-icon class="search_qa_icon" name="search"></ion-icon>
+                <div class="ct_serach_qa_itm_dt">
+                    <input class="Search_bar_qa" type="text" placeholder="Search questions">
+                    <div class="ct_bx_serached_itm">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ct_bx_all_qa">
+                    <div class="loader_cart for_ek_fd_cart_load_rec_load2 loading_spinner_login2">
+
+                    </div>
+                    <div class="ct_no_res_search_qa">
+                        <div class="ct_no_result_qa">
+                            <h4> (o^^)o
+                            </h4>
+                            <p>We donnot find the question you are looking for ?</p>
+                        </div>
+                        {{!-- <div class="ct_reply_bx">
+                            <div class="ct_dt_person_replies">
+                                <ion-icon name="person-circle-outline"></ion-icon>
+                                <p>Kabir</p>
+                            </div>
+                            <input type="text" placeholder="add a question about this product.">
+                            <span>Your question will be answered by ERAK'S food seller.</span>
+                            <div class="ct_bx_reply_act_btn">
+                                <button class="cancel_reply_btn_final  btn_cancel_qa">cancel</button>
+                                <button class="reply_btn_final btn_post_qa">POST</button>
+                            </div>
+                        </div> --}}
+                        {{!-- <div class="ct_post_own">
+                            <h4>Post your question</h4>
+                            <textarea name="" id="" cols="40" rows="4"></textarea>
+                            <button class="sub_btn_rev">Submit</button>
+
+                        </div> --}}
+                    </div>
 
                 </div>
-                <div class="ct_bx_revies">
-                    <div class="ct_person_dt">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <h4>Berry Allen</h4>
+
+            </div>
+            <div class="ct_bx_rt_rv_bx" id='reviews'>
+                <div class="ct_bx_side_rt_revies">
+                    <h3>Our customers reviews</h3>
+                    <div class="loading_rate_bx loading_spinner_login2">
 
                     </div>
-                    <div class="ct_rate_bx_rev">
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star"></ion-icon>
-                        <ion-icon class="fillrat" name="star-half">
+                    <div class="ct_bx_graph star5th">
+                        <div class="bx_star_dis">
+                            <div class="ct_bx_stars_rated ">
+                                <p>5</p>
 
-                        </ion-icon>
-                    </div>
-                    <div class="ct_bx_dt_rv">
+                                <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
 
-                        <h5>Good</h5>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere recusandae dolorum quisquam
-                            doloremque ut consequuntur, ad eum officia. Quo nulla nesciunt aliquid totam dolorem alias
-                            assumenda
-                            veritatis, placeat magni? Neque.</p>
-                        <div class="ct_bx_likes_dilik">
-                            <div class="ct_lik_btn">
-                                <ion-icon name="thumbs-up-outline"></ion-icon>
-                                <span>4</span>
                             </div>
-                            <div class="ct_lik_btn2">
-                                <ion-icon name="thumbs-down-outline"></ion-icon>
-                                <span>2</span>
+                            <div class="ct_bx_graph_lev">
+                                <div class="ct_level" style="width: 0%;">
+
+                                </div>
+                            </div>
+                            <span>&mdash;</span>
+
+                        </div>
+
+                        <div class="bx_star_dis star4th">
+                            <div class="ct_bx_stars_rated ">
+                                <p>4</p>
+
+                                <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
+
+                            </div>
+                            <div class="ct_bx_graph_lev">
+                                <div class="ct_level" style="width: 0%;">
+
+                                </div>
+                            </div>
+                            <span>&mdash;</span>
+
+                        </div>
+                        <div class="bx_star_dis star3th">
+                            <div class="ct_bx_stars_rated">
+                                <p>3</p>
+
+                                <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
+
+                            </div>
+                            <div class="ct_bx_graph_lev">
+                                <div class="ct_level" style="width: 0%;">
+
+                                </div>
+                            </div>
+                            <span>&mdash;</span>
+
+                        </div>
+                        <div class="bx_star_dis star2th">
+                            <div class="ct_bx_stars_rated">
+                                <p>2</p>
+
+                                <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
+
+                            </div>
+                            <div class="ct_bx_graph_lev">
+                                <div class="ct_level" style="width: 0%;">
+
+                                </div>
+                            </div>
+                            <span>&mdash;</span>
+
+                        </div>
+                        <div class="bx_star_dis star1th">
+                            <div class="ct_bx_stars_rated">
+                                <p>1</p>
+
+                                <ion-icon class="fillrat_rew_main" name="star"></ion-icon>
+
+                            </div>
+                            <div class="ct_bx_graph_lev">
+                                <div class="ct_level" style="width: 0%;">
+
+                                </div>
+                            </div>
+                            <span>&mdash;</span>
+
+                        </div>
+                    </div>
+                    <div class="ct_bx_review">
+
+                        <h2>Review this product.</h2>
+                        <p>Share your feeling about this product.</p>
+
+                        <div class="ct_bx_form_rating">
+                            <div class="ct_rate_bx">
+
+                                <h4 class="rate_prod_h4">Rate this product</h4>
+                                {{!-- rated_success --}}
+                                <div class="ct_rate_star_wrapper not_rated">
+
+                                    <input name='rat_star' type="radio" id="st5"><label for="st5"></label>
+                                    <input name='rat_star' type="radio" id="st4"><label for="st4"></label>
+                                    <input name='rat_star' type="radio" id="st3"><label for="st3"></label>
+                                    <input name='rat_star' type="radio" id="st2"><label for="st2"></label>
+                                    <input name='rat_star' type="radio" id="st1"><label for="st1"></label>
+
+                                </div>
+
+                            </div>
+                            <div class="ct_bx_rew_2 headLine_form">
+                                <h4>Add a Headline</h4>
+                                <input type="text" placeholder="What most important to know ?">
+                            </div>
+                            <div class="ct_bx_rew_2 subheadLine_form">
+                                <h4>Add a Written Text</h4>
+                                <textarea cols="38" rows="7"
+                                    placeholder="What did you like or dislike this product ?"></textarea>
                             </div>
                         </div>
-                        <span class="date_rev">3rd April</span>
+                    </div>
+                    <div class="ct_Remove_edit_bx">
+
+                        <button class='remove_btn_sub_form loading_bx_btn_rev'> Remove</button>
 
                     </div>
 
+                    <button class="sub_btn_rev  for_submit_form_rev  ">Submit</button>
 
-                </div> --}}
+                    <span class="err_form_sub"></span>
 
+                </div>
+                <div class="ct_bx_reiws_peoples">
+                    <h3>Top Reviews</h3>
+                    <div class="loading_rate_bx_for_reviews_msg loading_spinner_login2">
+
+                    </div>
+                    <div class="ct_bx_first_icon">
+                        <h2>We donot have any reviews on this item yet.Be the first to share your thought about this
+                            item.
+                        </h2>
+
+                    </div>
+                    <div class="ct_bx_revies_all">
+                        <div class="ct_bx_revies">
+                            <div class="ct_person_dt">
+                                <img src="../img/acc.png" alt="">
+                                <h4>kabir bhattacharjee</h4>
+
+                            </div>
+                            <div class="ct_bx_ratings_plus_heading">
+                                <div class="ct_rate_bx_rev">
+                                    <ion-icon class="fillrat md hydrated" name="star" role="img" aria-label="star">
+                                    </ion-icon>
+                                    <ion-icon class="fillrat md hydrated" name="star" role="img" aria-label="star">
+                                    </ion-icon>
+                                    <ion-icon class="fillrat md hydrated" name="star" role="img" aria-label="star">
+                                    </ion-icon>
+                                    <ion-icon class="fillrat md hydrated" name="star" role="img" aria-label="star">
+                                    </ion-icon>
+                                    <ion-icon class="fillrat md hydrated" name="star" role="img" aria-label="star">
+                                    </ion-icon>
+
+
+                                </div>
+                                <h5>good food</h5>
+
+                            </div>
+
+                            <div class="ct_bx_dt_rv">
+
+                                <p>easy to cook,good quality and good taste
+                                    <!--</p-->
+                                </p>
+                                <div class="ct_bx_likes_dilik">
+                                    <div class="ct_lik_btn added_like">
+                                        <ion-icon name="thumbs-up-outline" role="img" class="md hydrated"
+                                            aria-label="thumbs up outline"></ion-icon>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="ct_lik_btn2">
+                                        <ion-icon name="thumbs-down-outline" role="img" class="md hydrated"
+                                            aria-label="thumbs down outline"></ion-icon>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <span
+                                    class="idUser">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImFkZHJlc3NfdXNlciI6Im1hZGh5YWJhZGhhcmdoYXQsbWFkaHlhYWdhcnRhbGEiLCJjb250aW51ZV92ZXJpZnkiOiIiLCJsYXN0X3VzZXIiOiIiLCJsYXN0bmFtZSI6ImJoYXR0YWNoYXJqZWUiLCJuYW1lX3VzZXIiOiJrYWJpciIsInBhc3N3b3JkX2xvZ2luIjoibXNkaG9vbmk3OCIsInBpbiI6Ijc5OTAwMyJ9LCJ1cGRhdGVkIjp7Im4iOiJrYWJpciIsImxuIjoiYmhhdHRhY2hhcmplZSIsInBoIjoiNzcyNjgyMzk0OCIsIm1haWwiOiJrYWJpckBnbWFpbC5jb20iLCJ1c2VyIjoiZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5SWpwN0ltRmtaSEpsYzNOZmRYTmxjaUk2SW0xaFpHaDVZV0poWkdoaGNtZG9ZWFFzYldGa2FIbGhZV2RoY25SaGJHRWlMQ0pqYjI1MGFXNTFaVjkyWlhKcFpua2lPaUlpTENKc1lYTjBYM1Z6WlhJaU9pSWlMQ0pzWVhOMGJtRnRaU0k2SW1Kb1lYUjBZV05vWVhKcVpXVWlMQ0p1WVcxbFgzVnpaWElpT2lKd2N5SXNJbkJoYzNOM2IzSmtYMnh2WjJsdUlqb2liWE5rYUc5dmJtazNJaXdpY0dsdUlqb2lOems1TURBekluMHNJblZ3WkdGMFpXUWlPbnNpYmlJNkluQnpJaXdpYkc0aU9pSmlhR0YwZEdGamFHRnlhbVZsSWl3aWNHZ2lPaUkzTnpJMk9ESXpPVFE0SWl3aWJXRnBiQ0k2SW10aFltbHlRR2R0WVdsc0xtTnZiU0lzSW5WelpYSWlPaUpsZVVwb1lrZGphVTlwU2tsVmVra3hUbWxKYzBsdVVqVmpRMGsyU1d0d1dGWkRTamt1WlhsS01XTXlWbmxKYW5BM1NXMDFhR0pYVm1aa1dFNXNZMmxKTmtsdVFubGhXRkpvWWxOSmMwbHRlR2hqTTFKMVdWY3hiRWxxYjJsWmJXaG9aRWhTYUZreWFHaGpiWEJzV2xOSmMwbHRlR2hqTTFKbVpGaE9iR05wU1RaSmFVbHpTVzFHYTFwSVNteGpNMDVtWkZoT2JHTnBTVFpKYlRGb1drZG9OVmxUUW1sWlYxSnZXVmhLYm1GSFJqQk1RMEowV1ZkU2IyVlhSV2RaVjJSb1kyNVNhR0pIUldsTVEwcDNZVWM1ZFZwWE5URmlWamt4WXpKV2VWZ3lSbXBaZVVrMlYzbEtjbGxYU25CamEwSnVZbGRHY0dKRE5XcGlNakJwVEVOSk0wNTZTVEpQUkVsNlQxUlJORWxzTUhOSmJrSndZbWxKTmtscVl6VlBWRUYzVFhsSmMwbHVRbWhqTTA0ellqTkthMWd5ZUhaYU1teDFTV3B2YVdKWVRtdGhSemwyWW0xck0wbHBkMmxaTWpsMVpFZHNkV1JYVm1aa2JWWjVZVmRhTlVscWIybEpiakJ6U1cxc2EwbHFiMmxOUkdjMVRXcEJla2xwZDJsaFYwWXdTV3B2ZUU1cVNYaE9ha0V5VGxScmVHWlJMbEJFTUdOR1Uyc3pSVFpIVVdsMVpVaEhjRVZTZGtoYVlrTmxNM0pUY0dWeE4wNVlNemwxUmpadlZqZ2lMQ0poWkdSeVpYTnpJam9pYldGa2FIbGhZbUZrYUdGeVoyaGhkQ3h0WVdSb2VXRmhaMkZ5ZEdGc1lTSXNJbkJwYmlJNklqYzVPVEF3TXlJc0luQmhjM01pT2lKdGMyUm9iMjl1YVRjaWZTd2lhV1FpT2lJM01qVXpOellpTENKcFlYUWlPakUyTWpFMk1EWTNOamw5LjVvQ1NRdF9iWjFyenhVQzQ0Z3AweVNlRUQ1LWJnMmlRR1hlQl9vaUstUjQiLCJhZGRyZXNzIjoibWFkaHlhYmFkaGFyZ2hhdCxtYWRoeWFhZ2FydGFsYSIsInBpbiI6Ijc5OTAwMyIsInBhc3MiOiJtc2Rob29uaTc4In0sImlkIjoiMjc5MTE1IiwiaWF0IjoxNjIxNjA2OTgwfQ.wOr5CLBQSiWvOEOLwf7rYrgShWBAbMRkJolxzLP0gps</span>
+
+                                <span class="date_rev">23 May 2021</span>
+
+                            </div>
+
+
+
+                        </div>
+                        {{!--
+                        <div class="ct_bx_revies">
+                            <div class="ct_person_dt">
+                                <ion-icon name="person-circle"></ion-icon>
+                                <h4>Pritam Bhattacharya</h4>
+
+                            </div>
+                            <div class="ct_rate_bx_rev">
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="notrat" name="star"></ion-icon>
+                                <ion-icon class="notrat" name="star">
+
+                                </ion-icon>
+                            </div>
+                            <div class="ct_bx_dt_rv">
+
+                                <h5>Good</h5>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere recusandae dolorum
+                                    quisquam
+                                    doloremque ut consequuntur, ad eum officia. Quo nulla nesciunt aliquid totam dolorem
+                                    alias
+                                    assumenda
+                                    veritatis, placeat magni? Neque.</p>
+                                <div class="ct_bx_likes_dilik">
+                                    <div class="ct_lik_btn">
+                                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                                        <span>4</span>
+                                    </div>
+                                    <div class="ct_lik_btn2">
+                                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                                        <span>2</span>
+                                    </div>
+                                </div>
+                                <span class="date_rev">3rd April</span>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="ct_bx_revies">
+                            <div class="ct_person_dt">
+                                <ion-icon name="person-circle"></ion-icon>
+                                <h4>Berry Allen</h4>
+
+                            </div>
+                            <div class="ct_rate_bx_rev">
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star"></ion-icon>
+                                <ion-icon class="fillrat" name="star-half">
+
+                                </ion-icon>
+                            </div>
+                            <div class="ct_bx_dt_rv">
+
+                                <h5>Good</h5>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere recusandae dolorum
+                                    quisquam
+                                    doloremque ut consequuntur, ad eum officia. Quo nulla nesciunt aliquid totam dolorem
+                                    alias
+                                    assumenda
+                                    veritatis, placeat magni? Neque.</p>
+                                <div class="ct_bx_likes_dilik">
+                                    <div class="ct_lik_btn">
+                                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                                        <span>4</span>
+                                    </div>
+                                    <div class="ct_lik_btn2">
+                                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                                        <span>2</span>
+                                    </div>
+                                </div>
+                                <span class="date_rev">3rd April</span>
+
+                            </div>
+
+
+                        </div> --}}
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 
 
 

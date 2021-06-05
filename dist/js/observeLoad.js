@@ -33,8 +33,9 @@
 //     unitInside: null,
 // }]
 
+
 // let bx = [
-  
+
 //     {
 //         cook: '../img/butterChicken.jpg',
 //         type: "non-veg",
@@ -63,7 +64,6 @@
 //         console.error("Error adding document: ", error);
 //     });
 // })
-
 
 
 let notS = null
@@ -1479,7 +1479,7 @@ const giveHtmlGroc = (added, name, group, price, qt, priceMain, unitIn, unit, co
         document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
         document.querySelector('.for_groc_full_load').style.display = 'none'
         let ltEl = document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).lastChild
-        console.log(ltEl.childNodes,'hai2')
+        console.log(ltEl.childNodes, 'hai2')
         if (ltEl.childNodes[3] !== undefined) {
             Array.from(ltEl.childNodes[3].childNodes).forEach(cur1 => {
                 if (cur1.classList !== undefined) {
@@ -1506,7 +1506,7 @@ const giveHtmlGroc = (added, name, group, price, qt, priceMain, unitIn, unit, co
                     }
                 }
             })
-        }else{
+        } else {
             Array.from(ltEl.childNodes[1].childNodes).forEach(cur1 => {
                 if (cur1.classList !== undefined) {
                     if (cur1.classList.value.split(' ').includes('ct_bx_inner1_groc_itm')) {
@@ -1531,7 +1531,7 @@ const giveHtmlGroc = (added, name, group, price, qt, priceMain, unitIn, unit, co
                         })
                     }
                 }
-            })  
+            })
         }
         if (stock === 0) {
             let curEl = document.querySelectorAll(`#${fdGroup.split(' ').join('')} .ct_cat_by_list .itm_food_list_ek `)[addedGroc2]
@@ -2773,11 +2773,11 @@ const giveHtmlGroc = (added, name, group, price, qt, priceMain, unitIn, unit, co
         console.log(fdGroup, html)
 
         document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
-if(document.querySelector('.for_groc_full_load')!==null){
-        document.querySelector('.for_groc_full_load').style.display = 'none'
-}
+        if (document.querySelector('.for_groc_full_load') !== null) {
+            document.querySelector('.for_groc_full_load').style.display = 'none'
+        }
         let ltEl = document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).lastChild
-        console.log('hai2',ltEl.childNodes)
+        console.log('hai2', ltEl.childNodes)
 
         if (ltEl.childNodes[3] !== undefined) {
             Array.from(ltEl.childNodes[3].childNodes).forEach(cur1 => {
@@ -2805,7 +2805,7 @@ if(document.querySelector('.for_groc_full_load')!==null){
                     }
                 }
             })
-        }else{
+        } else {
             Array.from(ltEl.childNodes[1].childNodes).forEach(cur1 => {
                 console.log(cur1)
                 if (cur1.classList !== undefined) {
@@ -2872,79 +2872,47 @@ if(document.querySelector('.for_groc_full_load')!==null){
             }
         }
     }
+
     if (window.innerWidth < 400) {
 
         document.querySelectorAll('.ct_bx_not_available p').forEach(cur => {
             cur.style.fontSize = '11px'
 
         })
-        document.querySelectorAll('.for_groc_itm .relative_width1').forEach(cur => {
-            cur.style.transform = 'translate(-59px,80px)'
+        if (window.innerWidth > 360) {
 
-        })
-        document.querySelectorAll('.ct_bx_inner1_groc_itm').forEach(cur => {
-            cur.style.margin = '0px 0 0 228px'
+            document.querySelectorAll('.for_groc_itm .relative_width1').forEach(cur => {
+                cur.style.transform = 'translate(-68px, 71px);'
 
-        })
+            })
 
-        document.querySelectorAll('.itm_food_list_ek .ct_img_res_main .main_img_groc_itm').forEach(cur => {
-            cur.style.height = '120px'
-            cur.style.marginLeft = '25px'
+            document.querySelectorAll('.ct_bx_inner1_groc_itm').forEach(cur => {
+                cur.style.margin = '0px 0 0 218px'
 
-        })
+            })
+            document.querySelectorAll('.bodyessestials .ct_type_fd_cart_itm2').forEach(cur => {
+                cur.style.transform = 'translate(-211px,62px)'
+            })
+            document.querySelectorAll('.itm_food_list_ek .ct_img_res_main .main_img_groc_itm').forEach(cur => {
+                cur.style.marginLeft = '25px'
+                cur.style.maxWidth = '115px'
+
+            })
+        }
         document.querySelectorAll('.ct_dt_tm_food_res span').forEach(cur => {
             cur.style.fontSize = '9px'
 
         })
 
-    
 
-      
+
+
         document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
             cur.style.fontSize = '14px'
             cur.style.width = '47vw'
 
         })
-    
-    }
-    if (window.innerWidth < 400) {
 
-        document.querySelectorAll('.ct_bx_not_available p').forEach(cur => {
-            cur.style.fontSize = '11px'
-
-        })
-        document.querySelectorAll('.for_groc_itm .relative_width1').forEach(cur => {
-            cur.style.transform = 'translate(-59px,80px)'
-
-        })
-        document.querySelectorAll('.ct_bx_inner1_groc_itm').forEach(cur => {
-            cur.style.margin = '0px 0 0 198px'
-
-        })
-        document.querySelectorAll('.bodyessestials .ct_type_fd_cart_itm2').forEach(cur => {
-            cur.style.transform = 'translate(-180px,62px)'
-        })
-     
-        document.querySelectorAll('.itm_food_list_ek .ct_img_res_main .main_img_groc_itm').forEach(cur => {
-            cur.style.height = '127px'
-            cur.style.marginLeft = '25px'
-            cur.style.maxWidth = '100%'
-
-        })
-        document.querySelectorAll('.ct_dt_tm_food_res span').forEach(cur => {
-            cur.style.fontSize = '9px'
-
-        })
-
-    
-
-      
-        document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
-            cur.style.fontSize = '14px'
-            cur.style.width = '47vw'
-
-        })
-     
     }
 
 
@@ -2952,7 +2920,7 @@ if(document.querySelector('.for_groc_full_load')!==null){
 
 }
 
-const giveChtml = async (added, name, group, price, qt, includes, img, offer, stock, cook, ratings, time, id, forS = false, g = false, fDg = 0) => {
+const giveChtml = async (added, name, group, price, qt, includes, img, offer, stock, cook, ratings, time, id,iunit, forS = false, g = false, fDg = 0) => {
 
     if (forS) {
         allReady = 0
@@ -3251,8 +3219,7 @@ const giveChtml = async (added, name, group, price, qt, includes, img, offer, st
     allReady += 1
     if (offer !== null) {
 
-        if (group === 'veg') {
-            html = `      
+        html = `      
                 <div class="itm_food_list_ek added_itm_ek_fd">
                     <a
                         href="/product?item=${id}&qt=1&sk=${stock}&cid=${groping}">
@@ -3276,98 +3243,29 @@ const giveChtml = async (added, name, group, price, qt, includes, img, offer, st
                         <div class="ct_bx_ratings">
                          ${html1}
                         </div>
-                        <div class="ct_bx_hw_cook">
-                            <a href="${cook}">How to cook?</a>
-                        </div>
-                        <p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+                       
+                        <p class="price_food for_oly_ekfd_price"><span>₹ ${price} </span> <iu>(${iunit})</iu></p>
+                      
+                        <div class="bx_flex_time_type">
 
-                        <div class="ct_type_bx_item_food">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
-                                viewBox="0 0 172 172" style=" fill:#000000;">
-                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
-                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
-                                    text-anchor="none" style="mix-blend-mode: normal">
-                                    <path d="M0,172v-172h172v172z" fill="none"></path>
-                                    <g fill="#099f49">
-                                        <path
-                                            d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                                        </path>
-                                        <path
-                                            d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
-                            <p>veg</p>
-
-                        </div>
+                
                         <p class="bx_cat_item">1</p>
                         <div class="ct_time_it_takes">
                             <ion-icon name="alarm-outline"></ion-icon>
                             <p>${time}</p>
+                            </div>
                         </div>
                         </div>
-                        </div>
+                                                </div>
                     </a>
 
 
 
                 </div>`
-        } else {
-            html = `      
-            <div class="itm_food_list_ek added_itm_ek_fd">
-                <a
-                    href="/product?item=${id}&qt=1&sk=${stock}&cid=${groping}">
-                    <div class="ct_offer_box_cook2">
-                        <span>${offer}%</span>
-                        <p> off</p>
-                    </div>
-                    <div class="ct_inner_fd_dt_grid">
 
-                    <div class="ct_img_res_main">
-                        <img src=${img}>
-
-                    </div>
-                    <div class="ct_inner_fd1_dt_grid">
-
-                    <div class="ct_dt_tm_food_res">
-                        <h4>${name}</h4>
-
-
-                    </div>
-                    <div class="ct_bx_ratings">
-                     ${html1}
-                    </div>
-                    <div class="ct_bx_hw_cook">
-                        <a href="${cook}">How to cook?</a>
-                    </div>
-                    <p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
-
-                    <div class="ct_type_bx_item_food">
-                    <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-
-                    <p>non-veg</p>
-
-                    </div>
-                    <p class="bx_cat_item">1</p>
-                    <div class="ct_time_it_takes">
-                        <ion-icon name="alarm-outline"></ion-icon>
-                        <p>${time}</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-
-
-
-            </div>`
-
-        }
 
     } else {
-        if (group === 'veg') {
-            html = `      
+        html = `      
             <div class="itm_food_list_ek added_itm_ek_fd">
                 <a
                     href="/product?item=${id}&qt=1&sk=${stock}&cid=${groping}">
@@ -3388,37 +3286,17 @@ const giveChtml = async (added, name, group, price, qt, includes, img, offer, st
                     <div class="ct_bx_ratings">
                      ${html1}
                     </div>
-                    <div class="ct_bx_hw_cook">
-                        <a href="${cook}">How to cook?</a>
-                    </div>
-                    <p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
+                 
+                    <p class="price_food for_oly_ekfd_price"><span>₹ ${price} </span> <iu>(${iunit})</iu></p>
+                    <div class="bx_flex_time_type">
 
-                    <div class="ct_type_bx_item_food">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
-                    viewBox="0 0 172 172" style=" fill:#000000;">
-                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
-                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
-                        stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
-                        text-anchor="none" style="mix-blend-mode: normal">
-                        <path d="M0,172v-172h172v172z" fill="none"></path>
-                        <g fill="#099f49">
-                            <path
-                                d="M150.5,150.5h-129v-129h129zM28.66667,143.33333h114.66667v-114.66667h-114.66667z">
-                            </path>
-                            <path
-                                d="M86,46.58333c-21.76922,0 -39.41667,17.64744 -39.41667,39.41667c0,21.76922 17.64744,39.41667 39.41667,39.41667c21.76922,0 39.41667,-17.64744 39.41667,-39.41667c0,-21.76922 -17.64744,-39.41667 -39.41667,-39.41667z">
-                            </path>
-                        </g>
-                    </g>
-                </svg>
-                <p>veg</p>
-
-                    </div>
+                
                     <p class="bx_cat_item">1</p>
                     <div class="ct_time_it_takes">
                         <ion-icon name="alarm-outline"></ion-icon>
                         <p>${time}</p>
                         </div>
+                    </div>
                     </div>
                     </div>
                 </a>
@@ -3427,102 +3305,57 @@ const giveChtml = async (added, name, group, price, qt, includes, img, offer, st
 
             </div>`
 
-        } else {
-            html = `      
-            <div class="itm_food_list_ek added_itm_ek_fd">
-                <a
-                    href="/product?item=${id}&qt=1&sk=${stock}&cid=${groping}">
-                  
-                    <div class="ct_inner_fd_dt_grid">
-
-                    <div class="ct_img_res_main">
-                        <img src=${img}>
-
-                    </div>
-                    <div class="ct_inner_fd1_dt_grid">
-
-                    <div class="ct_dt_tm_food_res">
-                        <h4>${name}</h4>
 
 
-                    </div>
-                    <div class="ct_bx_ratings">
-                     ${html1}
-                    </div>
-                    <div class="ct_bx_hw_cook">
-                        <a href="${cook}">How to cook?</a>
-                    </div>
-                    <p class="price_food for_oly_ekfd_price"><span>₹ ${price}</span></p>
-
-                    <div class="ct_type_bx_item_food">
-                    <img src="https://img.icons8.com/color/18/000000/non-vegetarian-food-symbol.png" />
-
-                    <p>non-veg</p>
-
-                    </div>
-                    <p class="bx_cat_item">1</p>
-                    <div class="ct_time_it_takes">
-                        <ion-icon name="alarm-outline"></ion-icon>
-                        <p>${time}</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-
-
-
-            </div>`
-        }
     }
 
 
     document.querySelector(`#${fdGroup.split(' ').join('')} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
     document.querySelector('.for_ek_fd_full_load').style.display = 'none'
-    if(window.innerWidth>500){
-    if(window.innerWidth<=650){
-        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur=>{
-            cur.style.height='193px'
-            cur.style.width='41vw'
+    if (window.innerWidth > 550) {
+        if (window.innerWidth <= 650) {
 
-                      })
-          
-                   
-                      document.querySelectorAll('.ct_inner_fd1_dt_grid ').forEach(cur=>{
-                        cur.style.transform='translate(20px,10px)'
-                                  })
-                      
-    }
-    if(window.innerWidth<=600){
-        
-        
-        document.querySelectorAll('.ct_img_res_main img').forEach(cur=>{
-            cur.style.height='193px'
-                      })
-        document.querySelectorAll('.ct_img_res_main img').forEach(cur=>{
-            cur.style.width='45vw'
-                      })
-                      document.querySelectorAll('.ct_inner_fd1_dt_grid ').forEach(cur=>{
-                        cur.style.transform='translate(44px,10px)'
-                                  })
-                      
-    }
-//     transform: translate(0px,-20px);
-// }
-    if(window.innerWidth<=530){
-        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur=>{
-            cur.style.height='193px'
-            cur.style.width='45vw'
+            document.querySelectorAll('.ct_inner_fd1_dt_grid ').forEach(cur => {
+                cur.style.transform = 'translate(54px,0px)'
 
-                      })
-          
-                   
-                      document.querySelectorAll('.ct_inner_fd1_dt_grid ').forEach(cur=>{
-                        cur.style.transform='translate(34px,10px)'
-                                  })
-                      
+            })
+            document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur => {
+                cur.style.height = '193px'
+                cur.style.width = '41vw'
+
+            })
+
+
+
+
+        }
+        if (window.innerWidth <= 600) {
+
+
+            document.querySelectorAll('.ct_img_res_main img').forEach(cur => {
+                cur.style.height = '193px'
+            })
+            document.querySelectorAll('.ct_img_res_main img').forEach(cur => {
+                cur.style.width = '45vw'
+
+            })
+
+
+        }
+        //     transform: translate(0px,-20px);
+        // }
+        if (window.innerWidth <= 550) {
+            document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur => {
+                cur.style.width = '49vw'
+                cur.style.height = '179px'
+
+            })
+
+
+
+        }
     }
-}
-    
+
 
     let fdG = fdGroup.split(' ').join('')
     $(`#${fdGroup.split(' ').join('')}`).waypoint(function (direction) {
@@ -3556,90 +3389,33 @@ const giveChtml = async (added, name, group, price, qt, includes, img, offer, st
         offset: '20%'
     })
 
- 
-    if (window.innerWidth < 470) {
 
-       
+    if (window.innerWidth < 470 && window.innerWidth > 400) {
+
+
 
         document.querySelectorAll('.ct_offer_box_cook2').forEach(cur => {
-            cur.style.transform = 'translate(20px,-10px)'
-        })
-        document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
-            // cur.style.width='120%'
-            cur.style.fontSize = '17px'
+            cur.style.transform = 'translate(20px,10px)'
         })
 
-        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur=>{
-            cur.style.height='166px'
-            cur.style.width='48vw'
-                        cur.style.marginLeft='-21px'
-
-                      })
-                      document.querySelectorAll('.ct_cat_by_list .itm_food_list_ek ').forEach(cur=>{
-                        cur.style.marginLeft='10px'
-                                  })
-                                  
-                                  document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4 ').forEach(cur=>{
-                                    cur.style.width='70%'
-                                              })
-                      document.querySelectorAll('.ct_inner_fd1_dt_grid ').forEach(cur=>{
-                        cur.style.transform='translate(0px,-16px)'
-                                  })
-                      
-    }
-    if (window.innerWidth <= 400) {
-    
-        document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
-            cur.style.width = '80%'
-            cur.style.fontSize = '15px'
-        })
-        document.querySelectorAll('.ct_type_bx_item_food').forEach(cur => {
-            cur.style.marginLeft = '5px'
-        })
-         
-        document.querySelectorAll('.ct_inner_fd1_dt_grid').forEach(cur => {
-            cur.style.transform = 'translate(-10px,-17px)'
-        })
-        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img').forEach(cur => {
-            cur.style.height='160px'
-            cur.style.width='48vw'        })
-      
-        document.querySelectorAll('.ct_time_it_takes').forEach(cur => {
-            cur.style.transform = 'translate(80px,-16px)'
-        })
-        document.querySelectorAll('.ct_type_bx_item_food p ,.ct_time_it_takes p').forEach(cur => {
-            cur.style.fontSize = '11px'
-        })
-     
-    }
-    if (window.innerWidth < 360) {
-     
-                document.querySelectorAll('.ct_inner_fd1_dt_grid').forEach(cur => {
-            cur.style.transform = 'translate(-20px,-17px)'
-        })
-        document.querySelectorAll('.ct_time_it_takes p, .ct_type_bx_item_food p').forEach(cur => {
-            cur.style.fontSize = '10px'
-            cur.style.marginTop = '2px'
+        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img ').forEach(cur => {
+            cur.style.height = '156px'
+            cur.style.width = '50vw'
+            cur.style.marginLeft = '-21px'
 
         })
-        document.querySelectorAll('.ct_time_it_takes').forEach(cur => {
-            cur.style.transform="translate(71px, -16px)"
-        })
-         document.querySelectorAll('.ct_type_bx_item_food').forEach(cur => {
-            cur.style.marginLeft = '2px'
-        })
-        document.querySelectorAll('.price_food span').forEach(cur => {
-            cur.style.fontSize = '13px'
-        })
-        document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4').forEach(cur => {
-            cur.style.fontSize = '15px'
+        document.querySelectorAll('.ct_cat_by_list .itm_food_list_ek ').forEach(cur => {
+            cur.style.marginLeft = '10px'
         })
 
-        document.querySelectorAll('.erak_fd_body .itm_food_list_ek .ct_img_res_main img').forEach(cur => {
-            cur.style.height='140px'
-            cur.style.width='47vw'        })
+        document.querySelectorAll('.itm_food_list_ek .ct_dt_tm_food_res h4 ').forEach(cur => {
+            cur.style.width = '70%'
+        })
+
 
     }
+
+
 
 
 }
@@ -3717,12 +3493,22 @@ const functionAddItm2 = () => {
 
                         }
                         console.log(lastVisible, 'vis')
+                        let lim = 5
+                        function myFunction2(x) {
+                            if (x.matches) {
+                                lim = 4
+                            }
+                        }
+                        var x = window.matchMedia("(max-width: 1300px)")
+                        myFunction2(x)
+                        x.addEventListener('change', myFunction2)
+
 
                         dbCollection
                             .orderBy('item')
                             .startAfter(lastVisible)
 
-                            .limit(5)
+                            .limit(lim)
                             .get()
                             .then(el => {
                                 if (el.docs.length === 0) {
@@ -3864,10 +3650,19 @@ const functionAddItm2 = () => {
 
 
                     } else {
+                        let lim = 5
+                        function myFunction2(x) {
+                            if (x.matches) {
+                                lim = 4
+                            }
+                        }
+                        var x = window.matchMedia("(max-width: 1300px)")
+                        myFunction2(x)
+                        x.addEventListener('change', myFunction2)
                         dbCollection
                             .orderBy('item')
 
-                            .limit(5)
+                            .limit(lim)
                             .get()
                             .then(res => {
                                 res.docs.forEach(cur => {
@@ -3988,6 +3783,7 @@ const functionAddItm2 = () => {
     }
 }
 const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
+
     let locFd = JSON.parse(localStorage.getItem('foodListCart'))
     if (addGroup !== 0) {
         groping = addGroup + 1
@@ -4010,6 +3806,10 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
         numberItmMust += num
 
     })
+    if (document.querySelector('.ct_sep_bx').getBoundingClientRect().height < window.innerHeight) {
+        document.querySelector('.for_ek_fd_full_load').style.displa = 'block'
+
+    }
     let allFd = document.querySelectorAll(`#${fdGroup.split(' ').join('')} .itm_food_list_ek`).length
     if (document.querySelector('.for_ek_fd_full_load').style.display === 'none' || document.querySelector('.for_ek_fd_full_load').style.display === '') {
         let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${groping}`)
@@ -4024,9 +3824,8 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                 .get()
                 .then(res => {
                     let lastVisible
-
                     if (addedItm > 0) {
-                        if ((addedItm) !== 0 && (addedItm + 1) !== numItm - addedSelected) {
+                        if ((addedItm + 1) !== numItm - addedSelected) {
 
                             lastVisible = res.docs[allFd - 1].data().item
 
@@ -4046,7 +3845,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                 lim = 4
                             }
                         }
-                        var x = window.matchMedia("(max-width: 768px)")
+                        var x = window.matchMedia("(max-width: 1050px)")
                         myFunction2(x)
                         x.addEventListener('change', myFunction2)
 
@@ -4082,7 +3881,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                         const group = item.type
                                         const cook = item.cook
                                         const time = item.time
-
+const iU=item.iunit
                                         const price = item.price
                                         const includes = item.fdInside
                                         const img = item.img
@@ -4104,7 +3903,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
 
                                                             if (curItm.fdName === name) {
                                                                 if (!addedNames.includes(name)) {
-                                                                    giveChtml(true, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                                    giveChtml(true, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
                                                                     addedSelected++
                                                                     addedNames.push(curItm.fdName)
                                                                     break
@@ -4122,7 +3921,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                     if (!addedNames.includes(name)) {
                                                         addedItm++
 
-                                                        giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                        giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                                     }
 
@@ -4132,7 +3931,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                     if (!addedNames.includes(name)) {
                                                         addedItm++
 
-                                                        giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                        giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                                     }
 
@@ -4143,7 +3942,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                 if (!addedNames.includes(name)) {
                                                     addedItm++
 
-                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                                 }
                                             }
@@ -4159,7 +3958,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                 }
                                                 allReady = 0
 
-                                        document.querySelector('.ct_bx_search').style.display = 'flex'
+                                                document.querySelector('.ct_bx_search').style.display = 'flex'
                                                 document.querySelector('.for_ek_fd_full_load').style.display = 'none'
 
                                             }
@@ -4184,7 +3983,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                 lim = 4
                             }
                         }
-                        var x = window.matchMedia("(max-width: 768px)")
+                        var x = window.matchMedia("(max-width: 1050px)")
                         myFunction2(x)
                         x.addEventListener('change', myFunction2)
                         dbCollection
@@ -4200,6 +3999,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                     const group = item.type
                                     const cook = item.cook
                                     const time = item.time
+                                    const iU=item.iunit
 
                                     const price = item.price
                                     const includes = item.fdInside
@@ -4225,7 +4025,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                         if (curItm.fdName.split(' ').join('') === name.split(' ').join('')) {
 
                                                             if (!addedNames.includes(name)) {
-                                                                giveChtml(true, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                                giveChtml(true, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
                                                                 addedSelected++
                                                                 addedNames.push(curItm.fdName)
                                                                 break
@@ -4242,7 +4042,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                 if (!addedNames.includes(name)) {
                                                     addedItm++
 
-                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                                 }
 
@@ -4250,7 +4050,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                                 if (!addedNames.includes(name)) {
                                                     addedItm++
 
-                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                    giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                                 }
                                             }
@@ -4258,7 +4058,7 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
                                             if (!addedNames.includes(name)) {
                                                 addedItm++
 
-                                                giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id)
+                                                giveChtml(false, name, group, price, 1, includes, img, offer, stock, cook, ratings, time, id,iU)
 
                                             }
                                         }
@@ -4307,28 +4107,80 @@ const functionAddItm = async (cat = false, id1 = 1, grp = 0) => {
 //         $(document.body).on('touchmove', touch); // for mobile
 
 //     })
-
-document.addEventListener('scroll', function (e) {
-
-    if ((window.innerHeight + window.scrollY) === document.documentElement.scrollHeight) {
-        if (document.querySelector('.bodyessestials') !== null) {
-
-            if (notS === null) {
-                functionAddItm2()
-
-            }
+function onScroll(touch = false, y = 0) {
+    console.log(touch)
+    if (touch) {
+        console.log(y, window.scrollY)
+        console.log(window.innerHeight + y, document.documentElement.scrollHeight)
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
         }
-        if (document.querySelector('.erak_fd_body') !== null) {
-            if (notS === null) {
-                functionAddItm()
+        let isin = isInViewport(document.querySelector('.ct_bx_footer'))
+        console.log(isin)
+        if (isin) {
+            if (document.querySelector('.bodyessestials') !== null) {
 
+                if (notS === null) {
+                    functionAddItm2()
+
+                }
             }
+            if (document.querySelector('.erak_fd_body') !== null) {
+                if (notS === null) {
+                    functionAddItm()
+
+                }
+            }
+
+
         }
+    } else {
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        let isin = isInViewport(document.querySelector('.ct_bx_footer'))
+        console.log(isin)
+        if (isin) {
+            if (document.querySelector('.bodyessestials') !== null) {
+
+                if (notS === null) {
+                    functionAddItm2()
+
+                }
+            }
+            if (document.querySelector('.erak_fd_body') !== null) {
+                if (notS === null) {
+                    functionAddItm()
+
+                }
+            }
 
 
+        }
     }
 
+}
 
+document.querySelector('html').addEventListener('touchmove', (e) => {
+    console.log(e)
+    let y = Math.round(e.touches[0].screenY)
+    onScroll(true, y)
+}, false); // for mobile
 
+// callback
 
+window.addEventListener('scroll', () => {
+    onScroll()
 })
