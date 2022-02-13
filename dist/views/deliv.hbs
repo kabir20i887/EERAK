@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
+    <title>Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Raleway&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/media.css">
+    <link rel="stylesheet" href="../css/design.css">
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="adm_page deliv delivery_body">
+    {{>nav}}
+    <div class="ct_bx_sep_deliv">
+        <div class="ct_bx_inner_deliv">
+
+
+            <audio class="audio_wh">
+                <source src="../img//whatsapp.mp3" type="audio/mp3">
+            </audio>
+            <div class="ct_error_stock order nOrder">
+                <div class="ct_inner_msg">
+
+
+                    <ion-icon name="alert" role="img" class="md hydrated" aria-label="warning"></ion-icon>
+
+                    <p>1 New Order is found</p>
+                    <span>Please load the page to view.</span>
+                </div>
+
+            </div>
+            <div class="ct_error_stock order cOrder">
+                <div class="ct_inner_msg">
+
+
+                    <ion-icon name="alert" role="img" class="md hydrated" aria-label="warning"></ion-icon>
+
+                    <p>1 Order is canceled.</p>
+                    <span>Please load the page to view.</span>
+                </div>
+
+            </div>
+            <div class="ct_error_stock for_adm succ">
+                <div class="ct_inner_msg">
+
+                    <div class="ct_icon_warning">
+
+                        <ion-icon name="warning" role="img" class="md hydrated" aria-label="warning"></ion-icon>
+                    </div>
+                    <div class="ct_icon_succ">
+                        <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="warning">
+                        </ion-icon>
+
+                    </div>
+                    <p>1 order is accepted</p>
+                    <span>Loading the page..</span>
+                </div>
+
+            </div>
+
+            <div class="ct_error_stock for_adm for_err_otp">
+                <div class="ct_inner_msg">
+
+                    <div class="ct_icon_warning">
+
+                        <ion-icon name="warning" role="img" class="md hydrated" aria-label="warning"></ion-icon>
+                    </div>
+                    <p></p>
+                    <span>Please try again</span>
+                </div>
+
+            </div>
+
+            <div class="ct_bx_panel_main">
+
+                <h2>Orders</h2>
+
+                <div class="ct_bx_for_orders_page">
+
+
+                    <div class="ct_inner_part_adm">
+
+
+
+                        <div class="ct_view_order">
+
+
+                            <div class="ct_as_per_date_order">
+                                <div class="ct_bx_nav_order_main">
+                                    <ul>
+                                        <li>
+                                            <p>customer</p>
+                                        </li>
+                                        <li>
+                                            <p>Total Items</p>
+                                        </li>
+                                        <li>
+                                            <p>Total Amount</p>
+                                        </li>
+                                        <li>
+                                            <p>Time</p>
+                                        </li>
+                                        <li>
+                                            <p>Status</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="main_ul_orders">
+                                    <li class="orders">
+                                        <div class="ct_bx_item_foods">
+                                            <div class="ct_outer_layer">
+                                                <div class="ct_bx_if_new">
+
+                                                </div>
+                                                <div class="ct_bx_person_info">
+                                                    <ion-icon name="person-outline" role="img" class="md hydrated"
+                                                        aria-label="person">
+                                                    </ion-icon>
+                                                    <p>pritam bhattacharjee</p>
+                                                </div>
+                                                <div class="ct_bx_food_dt_short">
+                                                    <p>3</p>
+                                                </div>
+                                                <div class="ct_bx_address">
+                                                    <p>₹ 8,987</p>
+                                                </div>
+                                                <span class="time_ordered">23 july 2021 ,12:4 pm</span>
+                                                <span class="pending">pending</span>
+                                                <div class="ct_bx_slide_down">
+                                                    <ion-icon name="chevron-down-outline" role="img" class="md hydrated"
+                                                        aria-label="chevron down outline"></ion-icon>
+                                                </div>
+                                            </div>
+                                            <div class="ct_inner_item_dt_order">
+
+
+                                                <div class="ct_bx_verifcation_order">
+                                                    <h4>2-Factor Order Verfication</h4>
+
+                                                    <p class="hidden">
+                                                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvdHAiOiIyMTg0NjgiLCJpYXQiOjE2MjQwNDI3NjN9._rx5nSQ28TPlo--X9mks6efjRWtbWgql8qMpyOTNERM
+                                                    </p>
+                                                    <p class="hidden">
+                                                        $2a$04$kzoZnZaFF/fu9PuhNtdufOIp.Fkn/dzwqjmIUCfdLOeCR2NP1vtNa</p>
+                                                    <p class="hidden">
+                                                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWVfdXNlciI6InByaXRhbSIsImxhc3RuYW1lIjoiYmhhdHRhY2hhcmplZSIsImxhc3RfdXNlciI6IiIsImFkZHJlc3NfdXNlciI6Im1hZGh5YSBiYWRoYXJnaGF0LCBtYWRoeWEgYWdhcnRhbGEiLCJwaG9uZW51bV91c2VyX2FjYyI6WyJiaGF0dHRhY2hhcnlhcHJpdGFtQGdtYWlsLmNvbSIsIjcwMDUzMjgxMzEiXSwicGluIjoiNzk5MDAzIiwicGFzc3dvcmRfbG9naW4iOiJtc2Rob29uaTciLCJjb250aW51ZV92ZXJpZnkiOiIifSwiaWQiOiIxMjQwMTciLCJpYXQiOjE2MjMwOTQwNzN9.fkL0Vx9P1p2yHQU8OI0fFoz6_vYDGzJ2sM3mbZgTT4M
+                                                    </p>
+
+
+                                                    <p>We have sent an OTP to pritam bhattacharjee for this order.please
+                                                        type the
+                                                        otp here,to successfully verify this delivery.
+                                                    </p>
+                                                    <input type="text">
+                                                    <div class="ct_bx_btns_order_adm">
+                                                        <button>Verify</button>
+                                                        <button>cancel</button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="ct_bx_person_info_dt">
+                                                    <ion-icon name="person-outline" role="img" class="md hydrated"
+                                                        aria-label="person">
+                                                    </ion-icon>
+                                                    <p>pritam bhattacharjee</p>
+
+
+                                                </div>
+                                                <div class="ct_bx_other_orders_dt">
+                                                    <div class="bx_inner">
+                                                        <span>Address :-</span>
+
+                                                        <p>madhyabadharghat,madhyaagartala</p>
+                                                    </div>
+                                                    <div class="bx_inner">
+                                                        <span>Total number of items :-</span>
+                                                        <p>3</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ct_bx_contact_customer">
+                                                    <ion-icon name="call-outline" role="img" class="md hydrated"
+                                                        aria-label="call outline"></ion-icon>
+                                                    <p>7005328131</p>
+                                                </div>
+                                                <div class="bx_amaount_orders">
+                                                    <span>Total</span>
+                                                    <pr>₹ 8,987</pr>
+
+                                                </div>
+                                                <div class="ct_bx_foods_list">
+                                                    <h4>Food ordered.</h4>
+
+                                                    <div class="ct_bx_inner_foods">
+                                                        <div class="main_nav_dash">
+                                                            <ul>
+                                                                <li>
+                                                                    <p>Company</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Name</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Base</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Base unit</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Curry Sauce</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Total amount</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p>Qty</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="ct_bx_data_order_mobile">
+                                                            <ul>
+
+                                                                <li>
+                                                                    <div class="ct_bx_itm_food">
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>—</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>Tajdare Royal Mutton Curry</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>no chicken </span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>₹ 8748</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>15</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ct_bx_itm_food">
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>CATCH</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>Catch Jeera Powder</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>1kg </span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>₹ 94</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>1</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="ct_bx_itm_food">
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>—</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>Ghee</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>500g </span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>₹ 145</span>
+                                                                        </div>
+                                                                        <div class="ct_bx_nner_fd">
+                                                                            <span>1</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+
+
+
+                                                            </ul>
+                                                        </div>
+                                                        <ul class="foods_list_ul">
+                                                            <li>
+                                                                <div class="ct_bx_itm_food">
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>—</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>Tajdare Royal Mutton Curry</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>no chicken </span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>₹ 8748</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>15</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="ct_bx_itm_food">
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>CATCH</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>Catch Jeera Powder</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>1kg </span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>₹ 94</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="ct_bx_itm_food">
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>—</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>Ghee</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>500g </span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>₹ 145</span>
+                                                                    </div>
+                                                                    <div class="ct_bx_nner_fd">
+                                                                        <span>1</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ct_bx_btns_order">
+                                                    <button class="accept_order">Accept</button>
+
+                                                    <button class="cancel_order">Cancel</button>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <h1 style="display: none;"></h1>
+                                    <div class="loader_cart for_orders loading_spinner_login2" style="display: none;">
+
+                                    </div>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+{{>footer}}
+
+        </div>
+    </div>
+    <div class="ct_bx_overlay_cart for_acc_ov">
+        <div class="loader_cart for_cart_load_full loader sm_load">
+
+        </div>
+    </div>
+    <div class="ct_bx_overlay_cart for_acc_ov2">
+        <div class="loader_cart for_cart_load_full loader sm_load">
+
+        </div>
+    </div>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+<script>
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAdcxtvh3VL5KOeNBnQxA5BoMLY_KAYJO0",
+        authDomain: "test-2ecee.firebaseapp.com",
+        projectId: "test-2ecee",
+        storageBucket: "test-2ecee.appspot.com",
+        messagingSenderId: "390719540957",
+        appId: "1:390719540957:web:04e268380d6e77c4241534",
+        measurementId: "G-8Z1P10SQ9T"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore()
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+    integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../others/js/jquery.waypoints.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="../js/jQery.js"></script>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src="../js/msg.js"></script>
+<script>
+
+    socket.on('acceptedOrC', () => {
+  if(window.screen.width<=920){
+        $('.ct_error_stock.succ').animate({ right: '327px' })
+
+        }else{
+                    $('.ct_error_stock.succ').animate({ right: '457px' })
+
+        }        setTimeout(() => {
+            $('.ct_error_stock.succ').animate({ right: '-810px' })
+            window.location.reload()
+        }, 8000)
+        document.querySelector('.audio_wh').play()
+        document.querySelector('.ct_error_stock.succ p').innerText = '1 order is unaccepted.'
+    })
+    socket.on('delivered22', () => {
+  if(window.screen.width<=920){
+        $('.ct_error_stock.succ').animate({ right: '327px' })
+
+        }else{
+                    $('.ct_error_stock.succ').animate({ right: '457px' })
+
+        }
+        setTimeout(() => {
+            window.location.reload()
+
+            $('.ct_error_stock.succ').animate({ right: '-810px' })
+        }, 5000)
+        document.querySelector('.audio_wh').play()
+        document.querySelector('.ct_error_stock.succ p').innerText = '1 order is successfully delivered.'
+    })
+    socket.on('acceptedOr2', () => {
+  if(window.screen.width<=920){
+        $('.ct_error_stock.succ').animate({ right: '327px' })
+
+        }else{
+                    $('.ct_error_stock.succ').animate({ right: '457px' })
+
+        }
+                setTimeout(() => {
+            $('.ct_error_stock.succ').animate({ right: '-810px' })
+            window.location.reload()
+        }, 8000)
+        document.querySelector('.audio_wh').play()
+        document.querySelector('.ct_error_stock.succ p').innerText = '1 order is accepted.'
+    })
+</script>
+
+</html>

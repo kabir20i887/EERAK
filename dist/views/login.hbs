@@ -1,0 +1,3146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in | KRICK</title>
+    <meta name="keywords" content="account on krick, my account krick, my orders krick">
+    <meta name="description"
+    content="Login to get started">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    {{>favicon}}
+    <style>
+        /*! CSS Used from: Embedded */
+        ion-icon {
+            visibility: hidden;
+        }
+
+        .hydrated {
+            visibility: inherit;
+        }
+
+        /*! CSS Used from: http://localhost:3000/css/design.css */
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        h3,
+        h4 {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-bottom: auto;
+        }
+
+        html,
+        body {
+            color: #555;
+            font-family: 'Lato', 'Arial', sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        body.body_login {
+            display: block;
+            min-height: auto;
+        }
+
+        .phone_number_login_forg {
+            display: none;
+        }
+
+        .phone_number_login_forg label {
+            transform: translate(0, 60px);
+        }
+
+        .phone_number_login_forg ion-icon {
+            font-size: 20px;
+            position: absolute;
+            margin: 59px 0 0 -8px;
+        }
+
+        .phone_number_login_forg input {
+            width: 71%;
+            margin: 20px 0 0 20px;
+        }
+
+        .bx_acc ion-icon {
+            transform: translate(-20px, 0px);
+            color: rgb(54, 54, 54);
+        }
+
+        .ct_bx_overlay_cart_signup {
+            top: 320px;
+        }
+
+        .ct_create_acc h1 {
+            margin: 20px 0 10px 20px;
+            font-weight: 500;
+            font-size: 32px;
+            color: rgb(56, 54, 54);
+        }
+
+        .norm_login {
+            font-weight: 400;
+            font-size: 21px;
+            color: rgb(73, 73, 73);
+        }
+
+        .ct_acc p {
+            font-weight: 600;
+            color: rgb(117, 113, 113);
+            font-family: 'Open Sans';
+            font-size: 13px;
+            width: 66%;
+            margin-left: 10px;
+        }
+
+        .ct_acc label {
+            display: block;
+            position: absolute;
+            color: rgb(32, 32, 32);
+            position: absolute;
+            margin: -36px 0 0 30px;
+            background-color: white;
+            padding: 0px 10px 0 10px;
+            transition: all .3s ease;
+            font-size: 13px;
+            color: rgb(165, 164, 164);
+            text-transform: capitalize;
+            font-weight: 600;
+            font-family: 'Open Sans';
+        }
+
+        .ct_acc {
+            border: 1px solid rgb(226, 220, 220);
+            width: 100%;
+        }
+
+        .ct_btn_acc {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cont_btn_acc {
+            background: #1f6bde;
+            display: flex;
+            justify-content: center;
+        }
+
+        .login_now {
+            background: #1f6bde;
+            font-family: 'Open Sans';
+        }
+
+        .pass_bx_field {
+            margin: -10px 0 0 10px;
+        }
+
+        .ct_bx_signup_box_overall {
+            display: flex;
+            justify-content: center;
+        }
+
+        .account_cont11 {
+            transform: translate(-40px);
+        }
+
+        .for_login_verif {
+            display: none;
+        }
+
+        .error_login {
+            background: #fff5f5;
+        }
+
+        .login_now,
+        .cont_btn_acc {
+            display: flex;
+            border: 1px solid;
+            position: relative;
+            justify-content: center;
+            border-radius: 4px;
+            width: 77%;
+            padding: 10px 20px 12px 10px;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            outline: none;
+            font-size: 15px;
+            transition: all 1s ease;
+            cursor: pointer;
+        }
+
+        .login_now {
+            width: 72%;
+        }
+
+        .ct_bx_forgot {
+            display: flex;
+        }
+
+        .or {
+            font-size: 12px;
+            color: black;
+            font-weight: 500;
+            transform: translate(20px, 21px);
+        }
+
+        .loader_cart {
+            position: relative;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .for_cart_load_full {
+            position: absolute;
+            z-index: 999999999;
+            top: 43vh;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .ct_bx_overlay_cart_signup .for_cart_load_full {
+            top: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ctbx_account_upadted {
+            display: none;
+            padding: 8px 40px;
+            margin: 30px 0 0 40px;
+            border-radius: 4px;
+            background-color: rgb(248, 248, 248);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.198);
+        }
+
+        .ctbx_account_upadted ion-icon {
+            color: rgb(43, 212, 43);
+            font-size: 23px;
+        }
+
+        .ctbx_account_upadted p {
+            font-size: 18px;
+            font-family: 'Lato';
+        }
+
+        .login_now {
+            height: 38px;
+            cursor: pointer;
+        }
+
+        .bx_acc ion-icon {
+            transform: translate(0px, -5px);
+            color: rgb(54, 54, 54);
+        }
+
+        .body_login .gt_first_nam_second_name {
+            display: block;
+            width: 87%;
+            margin-top: 13px;
+        }
+
+        .gt_first_nam_second_name {
+            display: flex;
+            width: 150%;
+            margin-top: 13px;
+        }
+
+        .body_login .nick_name {
+            width: 100%;
+        }
+
+        .body_login .last_name {
+            margin-left: 23px;
+        }
+
+        .last_name label {
+            margin-left: 10px;
+        }
+
+        .body_login .gmail_inp_fl {
+            margin-left: -8px;
+        }
+
+        .ct_go_back_btn {
+            margin-top: 20px;
+            margin-left: -25px;
+            display: none;
+        }
+
+        .ct_go_back_btn span {
+            font-size: 14px;
+            color: rgb(34, 116, 224);
+            margin-left: 6px;
+            font-family: 'Open Sans';
+        }
+
+        .ct_go_back_btn ion-icon {
+            font-size: 16px;
+            margin-top: 5px;
+            color: rgb(34, 116, 224);
+            margin-top: 1px;
+        }
+
+        .body_login .last_name {
+            margin-left: 26px;
+        }
+
+        .body_login .ct_signup {
+            width: 500px;
+        }
+
+        .last_name {
+            margin: 15px 0 0 -10px;
+        }
+
+        .gmail_inp_fl {
+            margin-left: -13px;
+        }
+
+        .gmail_inp_fl ion-icon {
+            transform: translate(-10px, 0);
+        }
+
+        .ct_field_first_acc .main_icon_acc_log {
+            transform: translate(0px, -6px);
+        }
+
+        .ct_create_acc {
+            transform: translate(50px);
+        }
+
+        .ct_bx_verify .nick_name input {
+            height: 50px;
+            width: 391px;
+            ;
+            font-size: 23px;
+            letter-spacing: 10px;
+        }
+
+        .ct_field_first_acc label {
+            text-align: center;
+        }
+
+        .nick_name input:focus~label,
+        .nick_name input:valid~label {
+            color: rgb(12, 172, 247);
+            margin: -55px 0 0 31px;
+            font-size: 12px;
+        }
+
+        .last_name input:focus~label,
+        .last_name input:valid~label {
+            color: rgb(12, 172, 247);
+            margin: -55px 0 0 11px;
+            font-size: 12px;
+        }
+
+        .nick_name {
+            width: 30%;
+        }
+
+        .nick_name ion-icon {
+            margin-top: 20px;
+        }
+
+        .bx_acc input {
+            width: 80%;
+        }
+
+        .nick_name input {
+            padding: 8px 14px 6px 20px;
+            border: none;
+            font-size: 17px;
+            color: rgb(29, 29, 29);
+            outline: none;
+            border-radius: 4px;
+            border: 1px solid rgb(57 54 54);
+            background-color: rgb(255, 255, 255);
+            transform: translate(0, -10px);
+        }
+
+        .nick_name label {
+            margin-top: -40px;
+            width: max-content;
+        }
+
+        .verfiy_otp_inp_field input {
+            font-weight: 600;
+            font-size: 20px;
+            margin: 30px 0 0 0px;
+            letter-spacing: 6px;
+        }
+
+        .for_login_signup {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: 'Open Sans';
+            color: rgb(85, 83, 83);
+        }
+
+        .for_login_signup {
+            display: inline-block;
+            margin: 0px 0 0 14%;
+        }
+
+        .ct_nhide_pass ion-icon,
+        .ct_bx_show_password ion-icon {
+            pointer-events: none;
+            color: rgb(98, 96, 96);
+        }
+
+        .ct_nhide_pass,
+        .ct_bx_show_password {
+            margin: -60px 0 0 25px;
+            background-color: transparent;
+            position: absolute;
+            width: 4%;
+            padding-left: 20px;
+        }
+
+        .ct_bx_show_password {
+            display: none;
+        }
+
+        .pass_bx_field label {
+            margin-left: 50px;
+        }
+
+        .pass_bx_field input {
+            padding-left: 34px;
+        }
+
+        .for_login_signup a {
+            text-decoration: none;
+            color: rgb(36 122 229);
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .body_login .last_name label {
+            margin-left: 5px;
+        }
+
+        .for_sign_up_log {
+            overflow: hidden;
+            display: inline-block;
+            margin: 30px 0 0 54px;
+        }
+
+        .only_loginload div {
+            margin-top: 120px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .cont_btn_acc {
+            width: 54%;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin: 10px 0 0px -130px;
+        }
+
+        .ct_bx_verif2 .cont_btn_acc {
+            width: 51%;
+        }
+
+        .only_for_forgot_pass,
+        .new_pass_bx {
+            display: none;
+        }
+
+        .nick_name input:focus {
+            border: 2px solid rgb(0, 140, 255);
+        }
+
+        .hiden_update2 {
+            display: none;
+        }
+
+        .login_now {
+            margin: 20px 0 0 20px;
+        }
+
+        .forgot_pass {
+            display: block;
+            color: rgb(19 130 245);
+            font-size: 13px;
+            cursor: pointer;
+            margin: 21px 0 0px 30px;
+            font-weight: 600;
+            font-family: 'Open Sans';
+        }
+
+        .only_for_forgot_pass .error_login {
+            display: none;
+        }
+
+        .error_login {
+            color: red;
+            font-size: 13px;
+            display: flex;
+        }
+
+        .only_for_forgot_pass ion-icon {
+            transform: translate(0, -20px);
+        }
+
+        .error_login er {
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        .otp_err {
+            display: none;
+            padding: 10px;
+        }
+
+        .password_err,
+        .lstname_err,
+        .lstname_err3,
+        .lstname_err2,
+        .phonenum,
+        .password_err_exsist,
+        .name_err {
+            display: none;
+            padding: 10px;
+        }
+
+        .error_login ion-icon {
+            display: block;
+            margin-right: 10px;
+        }
+
+        .verif_fp {
+            display: none;
+            transform: translate(-20px);
+            font-size: 23px;
+            font-family: 'Montserrat';
+        }
+
+        .ct_only_for_forgot_pass p {
+            margin: 6px 0 0 20px;
+        }
+
+        .ct_only_for_forgot_pass {
+            display: none;
+        }
+
+        .ct_only_for_forgot_pass a {
+            color: rgb(0, 195, 255);
+        }
+
+        .only_for_forgot_pass {
+            width: 100%;
+        }
+
+        .hiden_update2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .ct_bx_side_ov_login {
+            width: 100%;
+            padding: 20px 0 0 270px;
+        }
+
+        .for_login2 .ct_bx_side_ov_login {
+            width: 100%;
+            padding: 50px 0 0 21%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .goback ion-icon {
+            transform: translate(-3px, 2px);
+        }
+
+        .goback {
+            display: block;
+            display: none;
+            right: 80px;
+            color: rgb(90, 93, 95);
+            font-size: 14px;
+            font-family: 'Open Sans';
+            border: none;
+            background-color: transparent;
+        }
+
+        .ct_bx_overlay_cart_signup {
+            width: 100%;
+            height: 700px;
+            top: 186px;
+            align-items: center;
+            display: none;
+            position: absolute;
+        }
+
+        .ct_bx_overlay_cart_signup {
+            justify-content: center;
+            align-items: center;
+            background: rgb(255 255 255);
+            z-index: 99999967;
+        }
+
+        ion-icon {
+            pointer-events: none;
+        }
+
+        .ct_bx_verify {
+            margin-top: 90px;
+        }
+
+        .ct_acc {
+            padding-bottom: 30px;
+            margin-top: 20px;
+        }
+
+        .ct_bx_verify .nick_name label {
+            margin-top: -50px;
+        }
+
+        .ct_bx_verify .nick_name input:focus~label,
+        .ct_bx_verify .nick_name input:valid~label {
+            color: rgb(12, 172, 247);
+            margin: -65px 0 0 16px;
+            font-size: 12px;
+        }
+
+        .ct_bx1 {
+            display: block;
+        }
+
+        .ct_bx1 {
+            transform: translate(25px, -10px);
+            position: absolute;
+            display: block;
+            height: 35px;
+            background-color: rgb(255, 255, 255);
+            z-index: 9999999999099999999999;
+        }
+
+        .ct_bx1 ion-icon {
+            font-size: 40px;
+            color: rgb(56, 58, 59);
+        }
+
+        .ct_bx_verify strong {
+            color: black;
+            font-size: 16px;
+        }
+
+        .ct_bx_verify input {
+            margin: 20px 0 0 10px;
+        }
+
+        .ct_bx_verify h4 {
+            font-size: 20px;
+            color: black;
+            font-family: 'Open Sans';
+            margin-bottom: 6px;
+        }
+
+        .ct_bx_verify p {
+            width: 100%;
+            margin: 10px;
+        }
+
+        .ct_bx_verify p strong {
+            transform: translate(9px, -2px);
+        }
+
+        .ct_bx_icons_verif {
+            margin: 20px 0 20px -450px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ct_bx2 ion-icon {
+            font-size: 70px;
+            color: rgb(56, 58, 59);
+        }
+
+        .ct_bx_verify .nick_name label {
+            margin-top: -45px;
+        }
+
+        .send_again a {
+            font-size: 14px;
+            color: rgb(0, 132, 255);
+            margin: -2px 0 0 4px;
+        }
+
+        .send_again {
+            transform: translate(0px, 10px);
+        }
+
+        .body_login .account_cont11 {
+            width: 58%;
+            margin-left: -120px;
+        }
+
+        .body_login .ct_bx_verif2 .account_cont11 {
+            width: 79%;
+            margin-left: -24px;
+        }
+
+        .account_cont11 {
+            width: 55%;
+        }
+
+        .for_login_verif {
+            margin: 0px;
+        }
+
+        .ct_bx_verif2 .nick_name {
+            width: 72%;
+        }
+
+        .loader {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-left: 60px;
+            background-color: #fafafa;
+            transition: all 1s ease-in-out;
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+            -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+            border-radius: 100px;
+            animation: rotate 1s infinite linear;
+        }
+
+        .loader::before {
+            position: absolute;
+            content: '';
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+            left: 6%;
+            top: 1%;
+            background-color: white;
+            display: block;
+        }
+
+        .ct_bx_icons_verif {
+            margin: 50px 0 20px -250px;
+        }
+
+        .ct_bx_verify strong {
+            font-size: 14px;
+        }
+
+        .body_login .ct_bx_verify h4 {
+            font-size: 18px;
+        }
+
+        .animated {
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .yt-loader {
+            display: block;
+            position: absolute;
+            top: 78px;
+            -webkit-animation-name: horizontalProgressBar;
+            animation-name: horizontalProgressBar;
+            -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+            background: #ff8c16;
+            height: 6px;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .yt-loader:after {
+            display: block;
+            position: absolute;
+            content: '';
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: #000000 1px 0 4px 1px;
+            opacity: 0.5;
+        }
+
+        .yt-loader {
+            z-index: 99999999;
+            position: fixed;
+        }
+
+        .body_login .yt-loader {
+            position: relative;
+            top: unset;
+            display: none;
+        }
+
+        .sm_load.loader {
+            width: 54px;
+            height: 54px;
+        }
+
+        .logo img {
+            width: 121px;
+        }
+
+        .body_login .ct_signup {
+            margin-bottom: 40px;
+        }
+
+        .body_login .logo img {
+            width: 140px;
+        }
+
+        .ct_bx_subinner_acc {
+            overflow: hidden;
+        }
+
+        /*! CSS Used from: http://localhost:3000/css/media.css */
+        @media only screen and (max-width:1300px) {
+            .lstname_err3 {
+                transform: translate(70px, 0px);
+            }
+
+            .error_login.lstname_err3 {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        @media only screen and (max-width:1100px) {
+            .bx_acc input {
+                width: 87%;
+            }
+
+            .gt_first_nam_second_name {
+                width: 100%;
+                margin-left: 10px;
+                display: block;
+            }
+
+            .ct_create_acc {
+                transform: translate(0px);
+            }
+
+            .body_login .logo img {
+                width: 125px;
+            }
+
+            .logo img {
+                width: 117px;
+            }
+
+            .ct_bx_verify p strong {
+                transform: translate(2px, -1px);
+            }
+
+            .ct_bx_verify strong {
+                color: black;
+                font-size: 15px;
+            }
+
+            .yt-loader {
+                background: #ffb616;
+                height: 8px;
+            }
+
+            .for_login_signup {
+                margin: 0px 0 0 6%;
+            }
+
+            .ct_bx_overlay_cart_signup {
+                top: 160px;
+            }
+
+            .for_sign_up_log {
+                margin-top: 10px;
+            }
+        }
+
+        @media only screen and (max-width:1100px) {
+            .login_now {
+                width: 67%;
+            }
+
+            .body_login .nick_name {
+                width: 100%;
+            }
+
+            .phone_number_login_forg {
+                margin-left: 20px;
+            }
+
+            .body_login .last_name {
+                width: 66%;
+            }
+
+            .body_login .gt_first_nam_second_name {
+                width: 98%;
+            }
+        }
+
+        @media only screen and (max-width:730px) {
+            .body_login .ct_signup {
+                width: 100%;
+            }
+        }
+
+        @media all and (max-width: 850px) {
+            .ct_bx_overlay_cart_signup {
+                top: 40px;
+            }
+
+            .ct_bx_verif2 .cont_btn_acc {
+                margin-left: -30px;
+            }
+
+            .account_cont11 {
+                transform: none;
+            }
+
+            .ct_bx_verif2 .nick_name {
+                width: 100%;
+            }
+
+            .ct_bx_signup_box_overall {
+                width: 100%;
+                margin-left: 0%;
+            }
+
+            .gt_first_nam_second_name:nth-of-type(1) .last_name label {
+                margin-left: 10px;
+            }
+
+            .error_login.lstname_err3 {
+                transform: translate(0, 0);
+                font-size: 12px;
+                width: 100%;
+            }
+
+            .error_login.lstname_err2 {
+                transform: translate(180px, 0px);
+                font-size: 13px;
+                width: 180%;
+            }
+
+            .error_login.phonenum {
+                transform: translate(0px, 0);
+                font-size: 13px;
+                width: 100%;
+            }
+
+            .phonenum {
+                transform: translate(170px, 6px);
+            }
+
+            .ct_acc {
+                margin-top: 20px;
+                transform: translate(0px);
+                width: 100%;
+                padding-bottom: 40px;
+            }
+
+            .cont_btn_acc {
+                width: 40%;
+            }
+
+            .ct_create_acc h3 {
+                margin: 20px 0 4px 20px;
+            }
+
+            .ct_nhide_pass,
+            .ct_bx_show_password {
+                margin: -60px 0 0 35px;
+            }
+
+            .ct_bx_side_ov_login {
+                transform: translate(0px, 10px);
+            }
+
+            .logo {
+                z-index: 9999999999;
+            }
+
+            .gt_first_nam_second_name {
+                display: block;
+            }
+
+            .nick_name {
+                width: 100%;
+            }
+
+            .nick_name input {
+                position: relative;
+            }
+
+            .gt_first_nam_second_name.pass_bx_field {
+                width: 101%;
+            }
+
+            .body_login .gt_first_nam_second_name.pass_bx_field {
+                width: 98%;
+            }
+
+            .for_ain_home_logo2 {
+                left: 32%;
+            }
+
+            .gt_first_nam_second_name:nth-child(1) label:nth-child(2) {
+                width: auto;
+            }
+
+            .gt_first_nam_second_name {
+                width: 91vw;
+            }
+
+            .ct_btn_acc {
+                margin-left: -77px;
+            }
+
+            .body_login .ct_bx_overlay_cart_signup {
+                top: 0;
+                justify-content: center;
+            }
+
+            .body_login .ct_btn_acc {
+                margin-left: 0px;
+            }
+
+            .ct_acc button {
+                width: 100%;
+            }
+
+            .for_login_signup {
+                width: 60%;
+            }
+
+            .ct_acc .login_now {
+                width: 333px;
+            }
+
+            .body_login .ct_acc .login_now {
+                width: 87%;
+                margin: 3px 0 0 33px;
+            }
+
+            .body_login .ct_acc {
+                transform: translate(0px);
+            }
+
+            .password_err_exsist {
+                font-size: 12px;
+                width: 180%;
+                transform: translate(40px, 8px);
+            }
+
+            .login_now {
+                margin: 0px 0 0 25px;
+            }
+
+            .pass_bx_field {
+                margin: 0;
+            }
+
+            .verfiy_otp_inp_field input {
+                font-weight: 600;
+                font-size: 20px;
+                margin: 50px 0 0 150px;
+            }
+
+            .verfiy_otp_inp_field span {
+                transform: translate(180px, 30px);
+            }
+
+            .last_name {
+                margin: 15px 0 0 25px;
+            }
+
+            .gmail_inp_fl {
+                margin-left: 1px;
+            }
+
+            .gmail_inp_fl ion-icon {
+                transform: translate(-20px, 0);
+            }
+
+            .go_back ion-icon {
+                transform: translate(0, 2px);
+            }
+
+            .ct_bx_subinner_acc {
+                margin: 0;
+            }
+
+            .sm_load.loader {
+                width: 41px;
+                height: 41px;
+            }
+
+            .go_back {
+                right: 60px;
+            }
+
+            .name_err {
+                transform: translate(40px, 5px);
+            }
+
+            .body_login .name_err {
+                transform: translate(0px, 0px);
+            }
+
+            .hiden_update2 {
+                width: 81%;
+                height: 40px;
+                padding-top: 11px;
+                font-size: 14px;
+                margin-top: -20px;
+            }
+
+            .lstname_err {
+                transform: translate(180px, 145px);
+            }
+
+            .error_login.lstname_err3 {
+                transform: translate(0, 0);
+            }
+
+            .lstname_err3 {
+                transform: translate(180px, 200px);
+            }
+
+            .lstname_err2,
+            .lstname_err3,
+            .password_err {
+                transform: translate(10px, 5px);
+                width: 80%;
+            }
+
+            .error_login.lstname_err2 {
+                transform: translate(0px, 0px);
+            }
+
+            .error_login.lstname_err {
+                transform: translate(0px, 0px);
+            }
+
+            .ct_bx_overlay_cart_signup .for_cart_load_full {
+                top: 100px;
+            }
+
+            .gt_first_nam_second_name:nth-child(1) label:nth-child(2) {
+                width: 90px;
+            }
+
+            .ct_field_first_acc .phone_number_login_forg label {
+                width: max-content;
+            }
+
+            .goback {
+                margin: -55px 0 53px 63%;
+            }
+
+            .for_login_signup {
+                margin: 0px 0 0 6%;
+            }
+
+            .phone_number_login_forg input {
+                width: 44vw;
+            }
+        }
+
+        @media only screen and (max-width:1100px) {
+            .ct_bx_verify input {
+                width: 40vw;
+            }
+
+            .for_login2 .ct_bx_side_ov_login {
+                padding: 50px 0 0 36%;
+            }
+
+            .ct_bx_overlay_cart_signup .for_cart_load_full {
+                display: flex;
+                justify-content: center;
+            }
+
+            .name_err {
+                transform: translate(40px, 1px);
+            }
+
+            .body_login .name_err {
+                transform: translate(0px, 0px);
+            }
+
+            .password_err_exsist {
+                transform: translate(40px, 0px);
+            }
+
+            .goback {
+                display: flex;
+                display: none;
+                position: static;
+                margin: 20px 0 0 4%;
+            }
+
+            .last_name label {
+                margin-left: 10px;
+            }
+
+            .error_login.lstname_err3 {
+                transform: translate(0, 0);
+            }
+
+            .lstname_err3 {
+                transform: translate(180px, 200px);
+            }
+
+            .lstname_err2,
+            .lstname_err3,
+            .password_err {
+                transform: translate(40px, 0px);
+            }
+
+            .error_login.lstname_err2 {
+                transform: translate(0px, 0px);
+            }
+
+            .error_login.lstname_err {
+                transform: translate(0px, 0px);
+            }
+
+            .gt_first_nam_second_name {
+                width: 100%;
+            }
+
+            .nick_name.last_name {
+                width: 100%;
+            }
+
+            .gmail_inp_fl {
+                margin-left: 3px;
+            }
+
+            .login_now {
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .body_login .ct_bx_overlay_cart_signup {
+                height: 800px;
+                top: 0;
+                justify-content: center;
+            }
+
+            .ct_bx_verify p strong {
+                transform: translate(0px, 0px);
+            }
+
+            .ct_bx_verify h4 {
+                font-size: 18px;
+                margin-left: 30px;
+            }
+
+            .ct_bx_verify p {
+                display: block;
+                margin-left: 23px;
+            }
+
+            .body_login .go_back {
+                right: 33px;
+            }
+
+            .ct_bx_verify {
+                margin-top: 30px;
+            }
+
+            .ct_bx_verif2 .nick_name {
+                width: 84%;
+            }
+
+            .ct_bx_verify .gmail_inp_fl {
+                margin-left: 14px;
+            }
+
+            .cont_btn_acc {
+                width: 100%;
+                margin: 10px 0 0px -0px;
+            }
+
+            .ct_bx_verif2 .cont_btn_acc {
+                font-size: 14px;
+            }
+
+            .ct_bx_overlay_cart_signup {
+                height: 900px;
+            }
+
+            .ct_bx_verify .cont_btn_acc {
+                width: 40vw;
+            }
+
+            .body_login .ct_bx_verify .cont_btn_acc {
+                width: 100%;
+            }
+
+            .body_login .go_back {
+                right: 183px;
+            }
+
+            .otp_err {
+                margin: 0 0 10px 0;
+            }
+
+            .ct_bx_verify strong {
+                color: black;
+                display: inline-block;
+                font-size: 14px;
+            }
+
+            .body_login .account_cont11 {
+                margin-left: -102px;
+            }
+
+            .body_login .ct_bx_verif2 .account_cont11 {
+                margin-left: 0;
+            }
+.body_login .ct_bx_verify .nick_name input {
+    height: 50px;
+    width: 100%;
+}
+            .go_back {
+                right: 230px;
+            }
+
+            .ct_acc p {
+                width: 80%;
+            }
+
+            .ct_create_acc {
+                padding-left: 6px;
+            }
+
+            .ct_bx_signup_box_overall {
+                width: 95%;
+                margin-left: 8%;
+            }
+
+            .gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-of-type(1) {
+                width: 100%;
+            }
+
+            .ct_field_first_acc .phone_number_login_forg label {
+                width: max-content;
+            }
+
+            .phone_number_login_forg input {
+                width: 63%;
+            }
+
+            .body_login .phone_number_login_forg input {
+                width: 85%;
+            }
+
+            .body_login .ct_signup {
+                width: 650px;
+            }
+
+            .login_now {
+                width: 88%;
+                margin: 3px 0 0 31px;
+            }
+
+            .ct_bx_side_ov_login {
+                display: flex;
+                padding-left: 0px;
+                justify-content: center;
+                transform: translate(-12%);
+            }
+
+            .ct_acc {
+                right: 70px;
+                width: 80%;
+                overflow: hidden;
+            }
+
+            .body_login .ct_acc {
+                right: 70px;
+                width: 68%;
+                margin-left: 6vw;
+            }
+
+            .ct_btn_acc {
+                margin-left: 0;
+                width: 100%;
+                justify-content: initial;
+            }
+
+            .body_login .ct_btn_acc {
+                margin-left: 117px;
+                width: 74%;
+            }
+.body_login .ct_bx_verif2 .ct_btn_acc {
+    width: 85%;
+    margin-left: 65px;
+}
+
+            .phonenum {
+                transform: translate(0);
+            }
+
+            .ct_field_first_acc.new_pass_bx label {
+                width: 120px;
+            }
+
+            .gt_first_nam_second_name:nth-child(1) label:nth-child(2) {
+                width: auto;
+            }
+
+            .last_name label {
+                margin-left: 10px;
+            }
+
+            .last_name {
+                margin-left: 25px;
+            }
+
+            .gt_first_nam_second_name.pass_bx_field {
+                margin-left: 20px;
+            }
+
+            .gt_first_nam_second_name {
+                margin-top: 0;
+            }
+        }
+
+        @media only screen and (max-width:850px) {
+            .ct_create_acc {
+                transform: translate(1%);
+                width: 100%;
+            }
+
+            .ct_acc {
+                margin-left: 2vw;
+            }
+
+            .ct_bx_verify input {
+                width: 55vw;
+            }
+
+
+            .body_login .ct_bx_verif2 .account_cont11 {
+                margin-left: 14px;
+            }
+
+            .ct_bx_verify .gmail_inp_fl {
+                margin-left: 5px;
+            }
+
+            .body_login .ct_bx_verif2 .ct_btn_acc {
+                margin-left: 0px;
+                justify-content: flex-start;
+            }
+
+            .body_login .ct_bx_icons_verif {
+                margin: 20px 0 20px -270px;
+            }
+
+            .body_login .account_cont11 {
+                margin-left: 17px;
+            }
+
+            .body_login .for_login_verif {
+                margin-left: 0px;
+            }
+
+            .ct_acc button {
+                width: 83%;
+                height: 40px;
+                margin-left: 15px;
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (max-width:800px) {
+            .gt_first_nam_second_name {
+                width: 100%;
+            }
+
+            .logo img {
+                width: 127px;
+            }
+
+            .ct_bx_signup_box_overall,
+            .ct_signup {
+                width: 100%;
+            }
+
+            .ct_create_acc h3 {
+                margin: 0px 0 4px 20px;
+            }
+
+            .ct_bx_verify input {
+                width: 56vw;
+            }
+
+            .ct_bx_side_ov_login {
+                padding-bottom: 40px;
+            }
+
+            .body_login .ct_bx_subinner_acc {
+                margin: 0;
+            }
+
+            .body_login .ct_acc .yt-loader {
+                display: none;
+            }
+
+            .body_login .yt-loader {
+                position: fixed;
+                top: 0;
+            }
+
+            .body_login .for_login_verif {
+    padding: 10px;            }
+
+            .body_login .ct_bx_verify .cont_btn_acc {
+                width: 100%;
+            }
+
+            .body_login .ct_bx_icons_verif {
+                margin: 20px 0 20px 80px;
+                width: max-content;
+            }
+
+            .body_login .go_back {
+                right: 113px;
+            }
+
+            .body_login .ct_bx_verify .nick_name input {
+                width: 83%;
+            }
+
+            .ct_bx_overlay_cart_signup {
+                height: 100vh;
+                top: 93px;
+            }
+
+            .ct_acc button {
+                width: 72%;
+            }
+
+            .goback {
+                margin: 21px 0 0 30px;
+            }
+
+            .go_back {
+                right: 140px;
+            }
+
+            .body_login .ct_acc .login_now {
+                width: 85%;
+            }
+
+            .nick_name input:focus~label,
+            .nick_name input:valid~label {
+                color: rgb(12, 172, 247);
+                margin: -59px 0 0 31px;
+                font-size: 12px;
+            }
+
+            .error_login {
+                margin-bottom: 10px;
+            }
+
+            .name_err,
+            .error_login.phonenum {
+                transform: translate(30px, 0px);
+            }
+
+            .body_login .name_err {
+                position: static;
+                transform: translate(0px, 0px);
+            }
+
+            .ct_bx_subinner_acc {
+                margin-top: 50px;
+            }
+
+            .phone_number_login_forg {
+                margin-left: 16px;
+            }
+
+            .ct_signup {
+                margin-top: 0px;
+            }
+
+            .for_login2 .ct_bx_side_ov_login {
+                padding: 20px 0 0 32%;
+            }
+
+            .for_login_signup {
+                width: 80%;
+                margin: 0px 0 10px 5%;
+            }
+
+            .body_login .for_login_signup {
+                margin: 0px 0 0 32px;
+            }
+
+            .gmail_inp_fl {
+                margin-left: 2px;
+            }
+
+            .body_login .nick_name {
+                width: 98%;
+            }
+
+            .ct_bx_signup_box_overall {
+                margin-left: 0;
+            }
+
+            .body_login .ct_acc {
+                transform: translate(0px);
+                margin: 60px 0 0 12vw;
+            }
+
+            .phone_number_login_forg input {
+                width: 66%;
+            }
+
+            .for_login2 .gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-of-type(1) {
+                width: 104.5%;
+            }
+
+            .ct_acc {
+                width: 100%;
+            }
+
+            .body_login .gt_first_nam_second_name {
+                width: 93%;
+            }
+
+            .body_login .last_name {
+                width: 104%;
+            }
+
+            .gt_first_nam_second_name.pass_bx_field {
+                width: 86%;
+            }
+
+            .ct_bx_side_ov_login {
+                transform: translate(0%, 40px);
+            }
+
+            .gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-child(1) {
+                width: 100%;
+            }
+
+            .ct_acc .login_now {
+                width: 81%;
+            }
+
+            .ct_create_acc {
+                width: 100%;
+                transform: translate(1%);
+                margin-top: 19px;
+            }
+
+            .norm_login {
+                font-size: 17px;
+            }
+        }
+
+        @media only screen and (max-width:740px) {
+            .body_login .ct_acc {
+                margin: 60px 0 0 17vw;
+            }
+
+            .ct_signup {
+                margin-top: 0px;
+            }
+        }
+
+        @media only screen and (max-width:550px) {
+            .ct_create_acc {
+                transform: translate(-1px);
+            }
+
+            .gt_first_nam_second_name {
+                width: 96%;
+            }
+
+            .body_login .for_login_signup {
+                margin: 0px 0 0 28px;
+            }
+
+            .body_login .logo img {
+                width: 130px;
+            }
+
+            .ct_create_acc h3 {
+                margin: 0px 0 4px 20px;
+            }
+
+            .ct_bx_verif2 .nick_name input {
+                font-size: 31px;
+            }
+
+            .for_login_signup {
+                margin: 0px 0 10px 2%;
+            }
+        }
+
+        @media only screen and (max-width:470px) {
+            .body_login .ct_acc {
+                margin: 60px 0 0 3vw;
+                width: 95%;
+            }
+
+            .ct_bx_side_ov_login {
+                transform: translate(0%, 40px);
+            }
+
+            .for_login2 .ct_bx_side_ov_login {
+                padding: 20px 0 0 20%;
+            }
+
+            .yt-loader {
+                background: #ffb616;
+                height: 6px;
+            }
+
+            .for_login_signup {
+                margin: 0px 0 10px 6%;
+            }
+
+            .body_login .for_login_signup {
+                margin: 0px 0 0 32px;
+            }
+
+            .ct_create_acc {
+                transform: translate(0);
+            }
+
+            .body_login .ct_bx_verify .nick_name input {
+                width: 80vw;
+            }
+
+            .body_login .ct_bx_verify .ct_btn_acc {
+                width: 100%;
+            }
+
+            .body_login .ct_bx_verify .cont_btn_acc {
+                width: 82vw;
+            }
+
+            .ct_acc button {
+                width: 79%;
+            }
+
+            .ct_bx_verify .nick_name input {
+                width: 68vw;
+            }
+
+            .body_login .go_back {
+                right: 53px;
+            }
+
+            .ct_acc .ct_bx_verify p {
+                width: 90%;
+            }
+
+            .body_login .for_login_verif {
+                margin-left: -10px;padding: 0;
+            }
+        }
+
+        @media only screen and (max-width:400px) {
+            .ct_acc button {
+                width: 75%;
+            }
+
+            .body_login .ct_bx_verify h4 {
+                font-size: 15px;
+            }
+
+            .ct_bx_icons_verif {
+                margin-left: 106px;
+            }
+
+            .ct_acc .ct_bx_verify p {
+                font-size: 12px;
+            }
+
+            .ct_bx_verify h4 {
+                font-size: 15px;
+            }
+
+            .ct_acc button {
+                font-size: 13px;
+            }
+
+            .goback {
+                font-size: 12px;
+            }
+
+            .error_login.lstname_err2 {
+                transform: translate(0px, 0px);
+            }
+
+            .error_login {
+                font-size: 11px;
+            }
+
+            .name_err {
+                transform: translate(0px, 4px);
+            }
+
+            .error_login.lstname_err {
+                font-size: 11px;
+                transform: translate(0px, 0px);
+            }
+
+            .password_err_exsist {
+                font-size: 12px;
+                transform: translate(0px, 0);
+            }
+
+            .error_login.phonenum {
+                font-size: 11px;
+                transform: translate(0px, 0);
+            }
+
+            .body_login .error_login.phonenum {
+                transform: translate(0px, 0px);
+            }
+
+            .goback {
+                position: absolute;
+                width: max-content;
+                right: 0px;
+            }
+
+            .body_login .goback {
+                position: static;
+            }
+        }
+
+        @media only screen and (max-width:360px) {
+            .ct_bx_side_ov_login {
+                padding-bottom: 40px;
+            }
+
+            .body_login .ct_acc .login_now {
+                width: 82%;
+            }
+
+            .ct_bx_verify .nick_name input:focus~label,
+            .ct_bx_verify .nick_name input:valid~label {
+                color: rgb(12, 172, 247);
+                margin: -72px 0 0 21px;
+                font-size: 12px;
+            }
+
+            .password_err_exsist {
+                font-size: 11px;
+                transform: translate(30px, 11px);
+            }
+
+            .ct_acc button {
+                width: 90%;
+            }
+
+            .body_login .error_login.lstname_err3 {
+                font-size: 12px;
+            }
+
+            .body_login .goback {
+                right: 0px;
+            }
+
+            .error_login.lstname_err3 {
+                width: 100%;
+                transform: translate(0px, 0);
+            }
+
+            .body_login .for_sign_up_log {
+                margin-left: 20px;
+            }
+
+            .gt_first_nam_second_name {
+                width: 93%;
+            }
+
+            .phone_number_login_forg input {
+                width: 71%;
+            }
+
+            .body_login .gt_first_nam_second_name {
+                width: 100%;
+            }
+
+            .body_login .nick_name {
+                width: 93%;
+            }
+
+            .ct_acc {
+                width: 100%;
+            }
+
+            .for_login2 .gt_first_nam_second_name:nth-of-type(1) .nick_name:nth-of-type(1) {
+                width: 91.5%;
+            }
+
+            .body_login .last_name {
+                width: 91%;
+            }
+
+            .gt_first_nam_second_name.pass_bx_field {
+                width: 84%;
+            }
+
+            .body_login .ct_acc {
+                margin-top: 8px;
+            }
+
+            .ct_acc .login_now {
+                width: 82%;
+                margin: 3px 0 0 34px;
+            }
+
+            .ct_create_acc {
+                transform: translate(3px);
+            }
+
+            .ct_bx_signup_box_overall {
+                width: 100%;
+                margin-left: 0%;
+            }
+
+            .body_login .ct_acc {
+                transform: translate(0);
+            }
+
+            .ct_bx_subinner_acc {
+                margin: 0px;
+            }
+
+            .for_login_signup {
+                width: 81%;
+            }
+
+            .ct_bx_verify .nick_name input {
+                height: 50px;
+                width: 68vw;
+            }
+
+            .ct_acc button {
+                width: 77%;
+            }
+
+            .error_login {
+                width: 100%;
+            }
+
+            .ct_acc .ct_bx_verify button {
+                width: 87%;
+            }
+
+            .pass_bx_field input {
+                width: 64%;
+            }
+
+            .gmail_inp_fl {
+                margin-left: 0;
+            }
+
+            .body_login .pass_bx_field input {
+                width: 87%;
+            }
+
+            .ct_bx_verify .gmail_inp_fl {
+                margin-left: 5px;
+            }
+
+            .for_ain_home_logo2 {
+                left: 26%;
+            }
+
+            .ct_bx_verif2 .nick_name {
+                width: 103%;
+            }
+
+            .ct_bx_verify input {
+                margin: 28px 0 0 16px;
+            }
+
+            .ct_bx_verif2 .cont_btn_acc {
+                font-size: 13px;
+            }
+
+            .ct_create_acc h3 {
+                margin: 0px 0 10px 20px;
+            }
+
+            .ct_create_acc p {
+                width: 93%;
+                font-size: 12px;
+                transform: translate(3px, 8px);
+            }
+
+            .ct_create_acc {
+                width: 100%;
+            }
+
+            .for_login2 .ct_bx_side_ov_login {
+                padding: 20px 0 60px 21%;
+            }
+
+            .go_back {
+                font-size: 12px;
+            }
+
+            .ct_bx_verif2 .cont_btn_acc {
+                margin-left: -0px;
+            }
+
+            .body_login .ct_bx_verif2 .cont_btn_acc {
+                margin-left: 20px;
+            }
+
+            .gt_first_nam_second_name.pass_bx_field {
+                width: 128%;
+            }
+        }
+
+        @media only screen and (max-width:330px) {
+            .body_login .go_back {
+                right: 3px;
+            }
+
+            .ct_create_acc h3 {
+                margin: 0px 0 10px 20px;
+            }
+        }
+
+        /*! CSS Used keyframes */
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+                background: rgb(179, 179, 179);
+            }
+
+            50% {
+                background: rgb(165, 166, 167);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+                background: rgb(143, 144, 146);
+            }
+        }
+
+        @keyframes horizontalProgressBar {
+            0% {
+                width: 0%;
+            }
+
+            20% {
+                width: 10%;
+            }
+
+            30% {
+                width: 15%;
+            }
+
+            40% {
+                width: 18%;
+            }
+
+            50% {
+                width: 20%;
+            }
+
+            60% {
+                width: 22%;
+            }
+
+            100% {
+                width: 85%;
+            }
+        }
+
+        /*! CSS Used fontfaces */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4taVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4kaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4saVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4jaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4iaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4vaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVIUx6EQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gTD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3g3D_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gbD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gfD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gnD_vx3rCs.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gTD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3g3D_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gbD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gfD_vx3rCubqg.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gnD_vx3rCs.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+    </style>
+</head>
+
+
+
+<body class="body_login">
+    <div class="ct_bx_signup_box_overall">
+
+        <div class="ct_signup for_login2">
+            <div class="ct_bx_side_ov_login">
+                <div class="ct_inner_bx_top">
+                    <a href="/" class="logo for_sign_up_log for_ain_home_logo2">
+                        <img src="../img/kricklogo.jpg" alt="">
+                    </a>
+
+                </div>
+            </div>
+            <div class="ctbx_account_upadted">
+                <ion-icon name="checkmark-circle"></ion-icon>
+                <p>Account succesfully upadted.</p>
+            </div>
+            <div class="ct_acc">
+
+
+                <div class="ct_bx_subinner_acc">
+                    <div class="animated yt-loader "></div>
+
+                    <span class="error_login otp_err1  otp_err">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        OTP does not matched
+                    </span>
+
+                    <span class="error_login otp_err2 otp_err">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        This field is required
+                    </span>
+                    <span class="error_login  password_err">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        Password or First name does not match.
+                    </span>
+                    <span class="error_login  password_err_exsist">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        Password already exist.Please try again.
+                    </span>
+                    <span class="error_login name_err">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        <pr>
+                            First name or password does not match.
+                        </pr>
+                    </span>
+                    <span class="error_login lstname_err">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        Last Name does not match.
+                    </span>
+
+                    <span class="error_login phonenum">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        Phone Number or First name does not match.
+                    </span>
+                    <span class="error_login lstname_err2">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        password does not match.
+                    </span>
+
+                    <span class="error_login lstname_err3">
+                        <ion-icon name="warning-sharp"></ion-icon>
+                        Password length have to be equal or more than 9
+                    </span>
+
+
+
+                    <div class="ct_create_acc ov_welcome_acxc">
+
+
+                        <h3 class="verif_fp">
+                            Enter the verification code
+                        </h3>
+
+                        <h1 class="norm_login">
+                            Login to krick
+                        </h1>
+                    </div>
+
+                    <form action="#">
+
+                        <span class=" for_login_signup">Donot have any account ?<a href="/signup"> create
+                                one.</a></span>
+                        <div class="ct_create_acc ">
+
+                            <div class="ct_field_first_acc">
+                                {{!-- <a class="goback">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>Go Back
+                                </a> --}}
+                                <div class="gt_first_nam_second_name">
+                                    <div class="nick_name bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
+
+                                        <input name="usfstnm" class="name_of_user" id="name_inp_main" maxlength="9"
+                                            spellcheck="false" type="text" required>
+                                        <label for="name_inp_main"> First name</label>
+
+
+                                    </div>
+                                    <div class="nick_name last_name bx_acc">
+                                        <input name="uslstnm" class="last_of_user" id="last_nam_inp" spellcheck="false"
+                                            type="text" required>
+                                        <label for="last_nam_inp"> last name</label>
+
+                                    </div>
+                                </div>
+
+                                <div class="ct_field_first_acc new_pass_bx">
+
+                                    <div class="gt_first_nam_second_name">
+                                        <div class="nick_name bx_acc">
+                                            <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
+
+                                            <input name="usfstnm1" class="name_of_user new_pass_bx1" id="name_inp2"
+                                                spellcheck="false" type="password" required>
+                                            <label for="name_inp2">new Password</label>
+
+
+                                        </div>
+                                        <div class="nick_name last_name bx_acc">
+                                            <input name="uslstnm" class="last_of_user new_pass_bx2" id="last_nam_inp2"
+                                                spellcheck="false" type="password" required>
+                                            <label for="last_nam_inp2">confirm password</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nick_name phone_number_login_forg">
+                                    <ion-icon class="main_icon_acc_log" name="call-outline"></ion-icon>
+
+                                    <input class="phone_numforg str_to_num" id="phone_num_forg" spellcheck="false"
+                                        type="text" required>
+                                    <label for="phone_num_forg">Phone Number</label>
+
+
+                                </div>
+                                <div class="pass_bx_field gt_first_nam_second_name">
+
+                                    <div class="nick_name gmail_inp_fl  bx_acc">
+                                        <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
+                                        <input name="password_login" class="email_of_user" id="gmail" type="password"
+                                            required>
+                                        <label class="email_of_user" for="gmail"> password</label>
+                                        <div class="ct_bx_show_password">
+                                            <ion-icon class="not_hide" name="eye-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_nhide_pass">
+                                            <ion-icon class="hide-sharp" name="eye-off-outline"></ion-icon>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class=" nick_name verfiy_otp_inp_field only_for_forgot_pass">
+
+                                    <input name='providedOTP' class="str_to_num" id="last_nam_inp_verif"
+                                        spellcheck="false" type="text" required>
+                                    <span class="error_login">
+                                        <ion-icon name="alert-outline"></ion-icon>
+                                        <er> Provided OTP</er> does not match.
+                                    </span>
+                                </div>
+                                {{!-- loading_spinner_login --}}
+                                <button type="button" class="login_now for_login ">Log In
+                                </button>
+                                <div class="ct_only_for_forgot_pass">
+                                    <button type="button" class="login_now hiden_update ">Update Now
+                                    </button>
+                                    <p>Do not recived any OTP? <a href="#">Resend</a></p>
+                                </div>
+
+
+                                <a class="login_now hiden_update2 ">Continue
+                                </a>
+
+                                <div class="ct_bx_forgot">
+                                    <span class="or">Or </span>
+                                    <a href="#forgot" class="forgot_pass">Forgot Password ?</a>
+
+                                </div>
+                                <div class="ct_go_back_btn goback">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>
+                                    <span>Go Back</span>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="ct_bx_verify for_login_verif">
+
+
+                                <div class="ct_bx_icons_verif">
+                                    <div class="ct_bx1">
+                                        <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+
+                                    </div>
+                                    <div class="ct_bx2">
+                                        <ion-icon name="phone-portrait-outline"></ion-icon>
+
+                                    </div>
+                                </div>
+
+                                <h4>We have successfully sent you an OTP number.</h4>
+                                <p>Enter it below to verify this number <strong></strong>
+                                </p>
+                                <div class="ct_bx_verif2">
+                                    <form action="/login" method="GET">
+
+                                        <div class="nick_name gmail_inp_fl  bx_acc">
+                                            <input name="number_verif" class="str_to_num email_of_user" id="verify"
+                                                type="text" required>
+                                            <label class="email_of_user" for="verify">Please type here</label>
+
+
+
+
+                                        </div>
+
+                                        <div class="ct_btn_acc">
+
+
+                                            <button class="cont_btn_acc  account_cont11" name='continue_verify'
+                                                type="button"><span>
+                                                    Update account
+                                                </span></button>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <p class='send_again'>Do not recived any OTP? <a href="">Resend</a>
+                                </p>
+                                <div class="ct_go_back_btn goback go_back" style="display: flex;">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>
+                                    <span>Go Back</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+    <div class="ct_bx_overlay_cart_signup only_loginload for_login_ov">
+        <div class="loader_cart for_cart_load_full loader sm_load">
+
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyDZm_3Q1hGYk9JOHZrU0uHDYRbD58-FsRo",
+            authDomain: "krick-5050e.firebaseapp.com",
+            projectId: "krick-5050e",
+            storageBucket: "krick-5050e.appspot.com",
+            messagingSenderId: "737110334266",
+            appId: "1:737110334266:web:2fd97c14a592f622a20e03",
+            measurementId: "G-ZJGL359TRX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+    {{!-- <script src="../js/jQery.js"></script> --}}
+
+    <script>
+         if (document.querySelector('.go_back') !== null) {
+            document.querySelector('.go_back').addEventListener('click', () => {
+
+                window.location.replace('/login?#forgot')
+            })
+        }
+      
+        function checkChar(letter, limit = 10) {
+            if (letter.length <= limit) {
+                return letter
+            } else if (letter.length > limit) {
+                letter = letter.split('').slice(0, limit).join('')
+                letter = `${letter}..`
+                return letter
+            }
+        }
+        function secret(token) {
+            var base64Url = token.split('.')[1];
+            if (base64Url !== undefined) {
+                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+
+            } else {
+                return null
+            }
+        }
+        if (document.querySelector('#phone_num_inp') !== null) {
+    document.querySelector('#phone_num_inp').addEventListener("keydown", function(e) {
+        var a = e.which;
+        var k = isFinite(e.key);
+        if (!k && a !== 8)
+            e.preventDefault();
+    });
+
+}
+            if (document.querySelector('.body_login') !== null) {
+
+
+                if (window.location.search !== '') {
+                    if (window.location.search.split('?')[1].split('=')[0] === 'forgotpass') {
+                        let hrefStr = `/login${window.location.search.split('&')[0]}&rd=true`
+                        document.querySelector('.send_again a').setAttribute('href', hrefStr)
+                        let query = decodeURIComponent(window.location.search).split('?')[1].split('&')
+
+                        document.querySelector('.ct_field_first_acc').style.display = 'none'
+
+                        document.querySelector('.ov_welcome_acxc').style.display = 'none'
+
+                        document.querySelector('.for_login_signup').style.display = 'none'
+
+                        document.querySelector('.for_login_verif').style.display = 'block'
+
+                        let dbCollection = db.collection("users")
+                        let parser = secret(query[0].split('=')[1])
+                        console.log(parser)
+                        let code = parseFloat(parser.n)
+                        if (decodeURIComponent(window.location.search).split('?')[1].split('&')[1] != undefined) {
+                            let parser2 = secret(decodeURIComponent(window.location.search).split('?')[1].split('&')[1].split('=')[1])
+                            code = parseFloat(parser2.n)
+
+                        }
+                        const updateUser = async () => {
+                            let resp = await dbCollection.get()
+                            for (let i = 0; i < resp.docs.length; i++) {
+                                let cur = resp.docs[i]
+                                let cartGroc = cur.data().cartGroc
+                                let cartItem = cur.data().cartItem
+                                let order = cur.data().myOrders
+                                let itm = cur.data()
+                                let likes = cur.data().likes
+                                let authUser = cur.data().authUser
+                                let rootAutyh = cur.data().rootAutyh
+                                let dislikes = cur.data().dislikes
+                                let rtr = cur.data().myratings
+
+                                let user = parser.user
+                                if (cur.data().data[5] === user.sv && cur.data().data[0].trim() === user.n.trim()) {
+                                    let fstPurchase = cur.data().fstPurchase
+                                    console.log(fstPurchase, '12344a')
+
+                                    var bcrypt = dcodeIO.bcrypt;
+                                    console.log(user.pass)
+                                    var hash = bcrypt.hashSync(user.pass, 4);
+                                    console.log(user.n, user.ln, user.ad, hash, user.pn, user.sv, cur.data().data, 'hus')
+                                    dbCollection.doc(resp.docs[i].id).set({
+                                        data: [user.n, user.ln, user.ad, hash, user.pn,cur.data().data[5]],
+                                        cartGroc: cartGroc,
+                                        authUser: authUser,
+                                        rootAutyh: rootAutyh,
+                                        deliv: itm.deliv,
+                                        admin: itm.admin,
+                                        cartItem: cartItem,
+                                        likes: likes,
+                                        dislikes: dislikes,
+                                        myOrders: order,
+                                        myratings: rtr,
+                                        fstPurchase: fstPurchase,
+
+                                    })
+                                        .then(res => {
+
+                                            if (window.screen.width <= 650) {
+
+                                                document.querySelector('.yt-loader').style.display = 'none'
+
+                                            } else {
+                                                document.querySelector('.ct_acc .yt-loader').style.display = 'none'
+
+                                            }
+                                            document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'auto'
+
+                                            document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = 1
+                                            window.location.replace('/login?updated=true')
+                                        })
+
+                                    break
+                                }
+                            }
+
+
+                        }
+                        document.querySelector('.account_cont11').addEventListener('click', () => {
+                            let inp = document.querySelector('.ct_bx_verif2 input').value
+                            if (inp !== '') {
+
+                                inp = parseFloat(inp)
+                                if (code === inp) {
+                                    document.querySelectorAll('.error_login').forEach(cur => {
+                                        cur.style.display = 'none'
+                                    })
+                                    if (window.screen.width <= 650) {
+
+                                        document.querySelector('.yt-loader').style.display = 'block'
+
+                                    } else {
+                                        document.querySelector('.ct_acc .yt-loader').style.display = 'block'
+
+                                    }
+                                    document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'none'
+
+                                    document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = .4
+                                    updateUser()
+                                } else {
+                                    document.querySelector('.otp_err2').style.display = 'none'
+
+                                    document.querySelector('.otp_err1').style.display = 'flex'
+                                }
+                            } else {
+                                document.querySelector('.otp_err2').style.display = 'flex'
+
+                                document.querySelector('.otp_err1').style.display = 'none'
+
+                            }
+                        })
+
+                    }
+                }
+
+
+
+            }
+          document.querySelector('.for_login').addEventListener('click', () => {
+            let n = document.getElementsByName('usfstnm')[0].value
+            let ln = document.querySelector('.last_of_user').value
+
+            let p = document.querySelector('.email_of_user').value
+            let firstname = document.getElementsByName('usfstnm')[0].value.split(' ').join('')
+            let lastname = document.querySelector('.last_of_user').value.split(' ').join('')
+            let password = document.getElementsByName('password_login')[0].value.split(' ').join('')
+            if (n !== '' && ln !== '' && p !== '') {
+                if (document.getElementsByName('password_login')[0].value.trim().length >= 9) {
+                    document.querySelector('.lstname_err3').style.display = 'none'
+                    let dbCollection = db.collection("users")
+
+                    var bcrypt = dcodeIO.bcrypt;
+                    document.querySelectorAll('.display_on_no_acc').forEach(cur => {
+                        cur.style.display = 'none'
+                    })
+                    let lastErr = false
+                    let nickerr = false
+
+
+                    const login = async () => {
+
+                        document.querySelector('.ct_acc .yt-loader').style.display = 'block'
+
+
+                        document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'none'
+
+                        document.querySelector('.body_login .ct_acc .login_now').style.opacity = .4
+
+                        let checkPassA = false
+                        let foundName = false
+
+                        let cAll = false
+                        let cur = await dbCollection.get()
+
+                        let item
+                        for (let i = 0; i < cur.docs.length; i++) {
+                            let curs = cur.docs
+
+                            if (curs[i].data().data !== undefined) {
+                                let hash = curs[i].data().data[3]
+                                let checkPass = bcrypt.compareSync(password, hash);
+                                if (n.split(' ').join('').toLowerCase().trim() === curs[i].data().data[0].split(' ').join('').toLowerCase().trim()) {
+                                    foundName = true
+                                }
+                                if (checkPass) {
+                                    checkPassA = true
+                                }
+                                console.log(curs[i].data().data[0].split(' ').join(''), firstname, curs[i].data().data[1].split(' ').join(''), lastname, checkPass)
+                                if (curs[i].data().data[0].split(' ').join('') === firstname && curs[i].data().data[1].split(' ').join('') === lastname && checkPass) {
+                                    cAll = true
+
+                                    item = curs[i]
+                                    break
+                                }
+
+
+                                if (curs[i].data().data[1].split(' ').join('') !== lastname) {
+                                    lastErr = true
+                                }
+
+
+                            }
+
+                        }
+                        if (!cAll) {
+
+                            nickerr = true
+                        }
+                        console.log(nickerr)
+                        if (nickerr) {
+                            document.querySelector('.lstname_err').style.display = 'none'
+                            document.querySelector('.name_err').style.display = 'flex'
+                            document.querySelector('.password_err').style.display = 'none'
+                            document.querySelector('.lstname_err3').style.display = 'none'
+                            document.querySelector('.name_err pr').innerText = 'First name or last name does not match.'
+                            document.querySelectorAll('.yt-loader').forEach(cu => {
+                                cu.style.display = 'none'
+                            })
+                            document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'auto'
+
+                            document.querySelector('.body_login .ct_acc .login_now').style.opacity = 1
+                            return
+                        }
+                        if (!foundName) {
+                            document.querySelector('.name_err pr').innerText = 'First name or password does not match.'
+                            document.querySelector('.lstname_err').style.display = 'none'
+                            document.querySelector('.name_err').style.display = 'flex'
+                            document.querySelector('.password_err').style.display = 'none'
+                            document.querySelector('.lstname_err3').style.display = 'none'
+
+                            document.querySelectorAll('.yt-loader').forEach(cu => {
+                                cu.style.display = 'none'
+                            })
+                            document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'auto'
+
+                            document.querySelector('.body_login .ct_acc .login_now').style.opacity = 1
+                            return
+                        }
+                        if (checkPassA) {
+                            if (cAll) {
+                                document.querySelector('.lstname_err').style.display = 'none'
+                                document.querySelector('.name_err').style.display = 'none'
+                                document.querySelector('.password_err').style.display = 'none'
+                                document.querySelector('.lstname_err3').style.display = 'none'
+
+                                let admin
+                                let deliv
+                                if (item.data().deliv === true) {
+                                    admin = false
+                                    deliv = true
+                                } else if (item.data().admin === true) {
+                                    admin = true
+                                    deliv = false
+                                } else {
+                                    admin = false
+                                    deliv = false
+                                }
+
+                                let dtus = JSON.stringify({ rootAutyh: item.data().rootAutyh, fstPurchase: item.data().fstPurchase, n: item.data().data[0], ln: item.data().data[1], ad: item.data().data[2], ct: item.data().data[4], pass: item.data().data[3], service: item.data().data[4], deliv: deliv, admin: admin,city:item.data().data[5] })
+                                document.cookie = "user" + "=" + dtus + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
+                                if (item.data().cartItem !== undefined) {
+                                    localStorage.setItem('foodsAdded', JSON.stringify(item.data().cartItem))
+                                }
+
+                                if (item.data().myratings !== undefined) {
+                                    document.cookie = "myRatings" + "=" + JSON.stringify(item.data().myratings) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
+
+                                }
+                                if (item.data().cartGroc !== undefined) {
+                                    localStorage.setItem('grocFoodListCart', JSON.stringify(item.data().cartGroc))
+                                }
+                                window.location.replace('/')
+                            } else if (lastErr) {
+                                document.querySelector('.lstname_err3').style.display = 'none'
+                                document.querySelector('.password_err').style.display = 'none'
+                                document.querySelector('.name_err').style.display = 'none'
+                                document.querySelector('.lstname_err').style.display = 'flex'
+
+                                document.querySelectorAll('.yt-loader').forEach(cu => {
+                                    cu.style.display = 'none'
+                                })
+                                document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'auto'
+
+                                document.querySelector('.body_login .ct_acc .login_now').style.opacity = 1
+                            }
+                        } else {
+                            document.querySelector('.password_err').style.display = 'flex'
+                            document.querySelector('.name_err').style.display = 'none'
+                            document.querySelector('.lstname_err3').style.display = 'none'
+                            document.querySelector('.lstname_err').style.display = 'none'
+
+                            document.querySelectorAll('.yt-loader').forEach(cu => {
+                                cu.style.display = 'none'
+                            })
+                            document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'auto'
+                            document.querySelector('.body_login .ct_acc .login_now').style.opacity = 1
+
+                        }
+
+
+                    }
+                    login()
+
+
+                } else {
+                    document.querySelector('.name_err').style.display = 'none'
+                    document.querySelector('.password_err').style.display = 'none'
+                    document.querySelector('.lstname_err').style.display = 'none'
+                    document.querySelector('.lstname_err3').style.display = 'flex'
+                    document.querySelectorAll('.yt-loader').forEach(cu => {
+                        cu.style.display = 'none'
+                    })
+                    document.querySelector('.body_login .ct_acc .login_now').style['pointer-events'] = 'auto'
+                    document.querySelector('.body_login .ct_acc .login_now').style.opacity = 1
+                }
+            }
+        })
+
+         if (document.querySelector('.goback') !== null) {
+        document.querySelector('.goback').addEventListener('click', e => {
+            if (document.querySelector('.body_login') !== null) {
+                if (window.screen.width <= 360) {
+                    document.querySelector('.body_login .name_err').style.transform = 'translate(30px,0px)'
+                }
+            }
+            document.querySelectorAll('.error_login').forEach(cur => {
+                cur.style.display = 'none'
+            })
+            window.history.back()
+            document.querySelector('.phone_number_login_forg').style.display = 'none'
+
+            document.querySelector('.password_err_exsist').style.display = 'none'
+
+            document.querySelector('.for_login_signup').style.display = 'block'
+
+            document.querySelector('.lstname_err3').style.display = 'none'
+
+            document.querySelector('.or').style.display = 'block'
+
+            document.querySelector('.goback').style.display = 'none'
+
+            document.querySelector('.pass_bx_field').style.display = 'block'
+            document.querySelector('.new_pass_bx').style.display = 'none'
+            document.querySelector('.password_err').style.display = 'none'
+
+            document.querySelector('.name_err').style.display = 'none'
+            document.querySelector('.lstname_err').style.display = 'none'
+
+
+            document.querySelector('.hiden_update2').style.display = 'none'
+            document.querySelector('.for_login').style.display = 'block'
+            document.querySelector('.forgot_pass').style.display = 'block'
+
+        })
+    }
+    function sameCode() {
+        document.querySelector('.phone_number_login_forg').style.display = 'flex'
+
+        document.querySelector('.for_login_signup').style.display = 'none'
+
+        document.querySelector('.lstname_err3').style.display = 'none'
+
+        document.querySelector('.or').style.display = 'none'
+
+        document.querySelector('.goback').style.display = 'block'
+        document.querySelector('.pass_bx_field').style.display = 'none'
+        document.querySelector('.new_pass_bx').style.display = 'block'
+        document.querySelector('.password_err').style.display = 'none'
+
+        document.querySelector('.name_err').style.display = 'none'
+        document.querySelector('.lstname_err').style.display = 'none'
+
+        document.querySelector('.password_err_exsist').style.transform = 'translate(180px,210px);'
+
+
+        document.querySelector('.hiden_update2').style.display = 'block'
+        document.querySelector('.for_login').style.display = 'none'
+        document.querySelector('.forgot_pass').style.display = 'none'
+    }
+    if (document.querySelector('.forgot_pass') !== null) {
+        document.querySelector('.forgot_pass').addEventListener('click', e => {
+
+            sameCode()
+        })
+    }
+
+    if (window.location.href.split('#')[1] === 'forgot' && window.location.pathname === '/login') {
+        document.querySelector('.body_login').classList.add('login_forgot')
+        sameCode()
+
+
+    }
+        document.querySelector('.hiden_update2').addEventListener('click', () => {
+            let dbCollection = db.collection("users")
+            let pn = document.querySelector('.phone_numforg').value
+            let confInp = document.querySelector('.new_pass_bx2').value.trim()
+            var bcrypt = dcodeIO.bcrypt;
+            let firstname = document.getElementsByName('usfstnm')[0].value.split(' ').join('')
+            let lastname = document.getElementsByName('uslstnm')[0].value.split(' ').join('')
+            let matchedName = false
+            let mathchedlst = false
+            let checkPass2 = false
+            let chpn = false
+            if (pn === '' || firstname === '' || lastname == '' || confInp === '') {
+                return
+            }
+            if (window.screen.width <= 800) {
+
+                document.querySelector('.yt-loader').style.display = 'block'
+
+            } else {
+                document.querySelector('.ct_acc .yt-loader').style.display = 'block'
+
+            }
+            document.querySelectorAll('.login_now').forEach(cu => {
+                cu.style['pointer-events'] = 'none'
+                cu.style.opacity = .4
+            })
+
+            const forgotpass = async () => {
+                document.querySelectorAll('.error_login').forEach(cur => {
+                    cur.style.display = 'none'
+                })
+
+                let cur = await dbCollection.get()
+                document.querySelectorAll('.yt-loader').forEach(cu => {
+                    cu.style.display = 'none'
+                })
+                document.querySelectorAll('.login_now').forEach(cu => {
+                    cu.style['pointer-events'] = 'auto'
+                    cu.style.opacity = 1
+                })
+                let curs
+                let checkPas
+                let i
+                if (cur.docs.length !== 0) {
+                    for (let i1 = 0; i1 < cur.docs.length; i1++) {
+                        curs = cur.docs
+                        console.log(curs[i1].data().data)
+                        console.log(curs[i1].data().data[0].split(' ').join(''), firstname, pn.trim(), curs[i1].data().data[4].trim(), pn.trim() === curs[i1].data().data[4].trim(), curs[i1].data().data[0].split(' ').join('') === firstname, '100927jhsjjs')
+
+                        checkPas = bcrypt.compareSync(confInp.trim(), curs[i1].data().data[3]);
+                        if (checkPas) {
+                            checkPass2 = true
+                        }
+                        if (pn.trim() === curs[i1].data().data[4].trim() && curs[i1].data().data[0].split(' ').join('') === firstname) {
+                            chpn = true
+                            i = i1
+                            console.log(curs[i1].data().data[5].trim())
+
+                        }
+                        if (curs[i1].data().data[0].split(' ').join('') === firstname) {
+                            matchedName = true
+
+                        }
+                        if (curs[i1].data().data[1].split(' ').join('') === lastname) {
+                            mathchedlst = true
+                        }
+
+                    }
+
+                    if (!matchedName) {
+                        document.querySelector('.name_err').style.display = 'flex'
+                        return
+
+                    }
+                    if (!mathchedlst) {
+                        document.querySelector('.lstname_err').style.display = 'flex'
+                        return
+                    }
+                    console.log(chpn, checkPass2)
+                    if (chpn) {
+
+
+                        if (!checkPass2) {
+                            document.querySelector('.lstname_err').style.display = 'none'
+                            let inp = document.querySelector('.new_pass_bx1').value.trim()
+                            console.log(inp.length > 9)
+                            if (inp.length >= 9) {
+                                if (inp === confInp) {
+                                    document.querySelector('.lstname_err2').style.display = 'none'
+                                    let decode_phone_num = decodeURIComponent(curs[i].data().data[4])
+                                    let decode_name = decodeURIComponent(curs[i].data().data[0])
+                                    window.location.replace(`/login?pn=${decode_phone_num}&n=${decode_name}&ln=${curs[i].data().data[1]}&ad=${curs[i].data().data[2]}&pass=${inp}&sv=${curs[i].data().data[5]}`)
+
+                                    document.querySelector('.lstname_err3').style.display = 'none'
+                                } else {
+                                    document.querySelector('.lstname_err2').style.display = 'flex'
+
+                                }
+                            } else {
+                                document.querySelector('.lstname_err3').style.display = 'flex'
+                                return
+                            }
+
+
+                        } else {
+                            document.querySelector('.password_err_exsist').style.display = 'flex'
+                            return
+                        }
+
+                    }
+                    else {
+                        matchedName = true
+                        mathchedlst = true
+                        document.querySelector('.phonenum').style.display = 'flex'
+
+
+                        return
+                    }
+
+                }
+
+
+
+            }
+            forgotpass()
+
+        })
+    
+    document.querySelector('html').addEventListener("keydown", function (e) {
+        if(e.target.id===`phone_num_forg`){
+ var a = e.which;
+        var k = isFinite(e.key);
+        if (!k && a !== 8)
+            e.preventDefault();
+        }
+       
+    });
+    if (document.querySelector('.ct_bx_show_password') !== null) {
+        document.querySelector('.ct_bx_show_password').addEventListener('click', (e) => {
+            document.querySelector('.ct_bx_show_password').style.display = 'none'
+            document.querySelector('.ct_nhide_pass').style.display = 'block'
+
+            console.log(e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].tagName)
+            if (e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].tagName === 'INPUT') {
+                e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].type = 'password'
+
+            } else {
+                e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].type = 'password'
+
+            }
+        })
+    }
+    if (document.querySelector('.ct_nhide_pass') !== null) {
+        document.querySelector('.ct_nhide_pass').addEventListener('click', (e) => {
+            document.querySelector('.ct_bx_show_password').style.display = 'block'
+            document.querySelector('.ct_nhide_pass').style.display = 'none'
+            if (e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].tagName === 'INPUT') {
+                e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].type = 'text'
+
+            } else {
+                e.target.closest('.ct_nhide_pass').parentElement.childNodes[3].type = 'text'
+
+            }
+        })
+    }
+
+
+    </script>
+</body>
+
+</html>
