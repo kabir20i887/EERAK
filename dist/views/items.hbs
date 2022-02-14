@@ -14,6 +14,51 @@
             margin: -2px 0 0 0px;
         }
 
+        .ct_sbout_this_itm .heading_p,
+        .ct_sbout_this_Required_itm_info p {
+            font-size: 17px;
+            color: #373737;
+            /* font-weight: 500; */
+            width: 90%;
+            line-height: 23px;
+            margin-top: 9px;
+            font-family: 'Roboto';
+        }
+
+        .cart_nav span {
+            width: 37px;
+            padding: 7px 7px 22px 7px;
+            display: none;
+            justify-content: center;
+            /* padding-top: 4px; */
+            font-size: 13px;
+            height: 25px;
+            background-color: #0044ff;
+            color: white;
+            margin-left: -16px;
+            z-index: 999;
+            border-radius: 50%;
+        }
+
+        .cart_nav {
+            display: flex;
+        }
+
+        .ct_x_fd_dt_itm .ct_sbout_this_Required_itm_info h4 {
+            font-size: 18px;
+            margin-bottom: 0;
+            color: rgb(36, 34, 34);
+            font-family: 'Open sans';
+        }
+
+        .req_infomobile {
+            display: none;
+        }
+
+        .ct_sbout_this_Required_itm_info {
+            margin-top: 20px;
+        }
+
         /*! CSS Used from: Embedded */
         .ct_bx_offer_box_items {
             background-color: #ffe7ea;
@@ -86,7 +131,7 @@
 
         .ct_bx_Time p strong {
             color: black;
-            margin-left: 9px;
+            margin-left: 4px;
             font-size: 14px;
             font-family: 'Montserrat';
         }
@@ -1570,12 +1615,12 @@
 
         .ct_bx_item_stock .outStk,
         .ct_bx_item_stock .inStk {
-            font-size: 19px;
+            font-size: 23px;
             font-family: 'Nanum Gothic';
         }
 
         .ct_bx_item_stock .inStk {
-            color: green;
+            color: #0c550c;
         }
 
         .ct_bx_item_stock .outStk {
@@ -2660,7 +2705,7 @@
 
         .ct_bx_ins_items .inner p {
             font-size: 20px;
-            width: 100%;
+            width: 70%;
             font-weight: 500;
             /* background: #fafafa; */
             padding: auto;
@@ -2671,6 +2716,7 @@
 
         .inner_ov_box {
             padding: 0;
+            width: 87%;
             padding-top: 13px;
             display: flex;
         }
@@ -3064,7 +3110,7 @@
 
         .ct_x_fd_dt_itm .ct_sbout_this_itm h4 {
             font-size: 20px;
-            color: rgb(50 48 48);
+            color: rgb(0, 0, 0);
         }
 
         .crousel .ct_offer_box {
@@ -4940,7 +4986,6 @@
             }
 
             .cart_nav {
-                display: inline-block;
                 margin-top: 13px;
             }
 
@@ -5238,9 +5283,6 @@
                 margin: 9px 0 20px 9px;
             }
 
-            .ct_bx_ins_items.perm {
-                padding: 0;
-            }
 
             .ct_bx_qty_inner::after,
             .ct_bx_qty_inner::before {
@@ -5304,12 +5346,6 @@
 
             .inner span {
                 padding: 5px 0 12px 10px;
-            }
-
-            .ct_x_fd_dt_itm .ct_sbout_this_itm .heading {
-                font-size: 18px;
-                margin-top: 22px;
-                color: rgb(160 13 13);
             }
 
             .ct_sbout_this_itm p {
@@ -5728,10 +5764,7 @@
         }
 
         @media all and (max-width: 1000px) {
-            .contianer_items_inside {
-                margin-top: 0;
-            }
-
+    .ct_sbout_this_itm .heading_p{margin-left:11px;}
             .ct_sbout_this_itm {
                 padding: 0;
             }
@@ -5742,7 +5775,7 @@
             }
 
             .ct_bx_ins_items .inner p {
-                font-size: 17px;
+                font-size:21px;
             }
 
             .ct_inner_inside_item::-webkit-scrollbar {
@@ -5798,11 +5831,7 @@
                 margin: 10px 0 0 20px;
             }
 
-            .contianer_items_inside {
-                flex-flow: row;
-                width: 1000px;
-                padding-right: 40px;
-            }
+
 
             .ct_bx_img_itm {
                 margin: 23px 0 0 0;
@@ -5816,9 +5845,12 @@
                 width: 100%;
                 border-top: none;
                 border-bottom: 5px solid #ebebeb;
-                padding: 0px;
-            }
-
+                padding: 13px 10px 23px 11px;
+}
+.ct_bx_ins_items {
+    width: auto;
+    min-width: 266px;
+}
             .ct_x_fd_dt_itm {
                 width: 100%;
                 margin: 0 0 12px 14px;
@@ -6381,7 +6413,11 @@
             .itm_dt_body .ct_field_small_size_bx {
                 margin-left: 0px;
             }
-
+.cart_nav span {
+    width: 32px;
+    padding: 7px 7px 22px 7px;
+    margin-left: -27px;
+}
             .ct_inner_nav {
                 padding: 24px 20px 10px 20px;
             }
@@ -6468,8 +6504,10 @@
             }
 
             .ct_nav_erak .mai_ul {
-                width: auto
+                width: 63%
             }
+.itm_dt_body .for_nav_main .for_seravh_in_nav{display: none;}
+.itm_dt_body .for_nav_main .for_mobile_search{display: block;}
 
             .for_nav_main .logo {
                 margin-left: 0px;
@@ -6489,7 +6527,7 @@
 
             .ct_nav_erak .mai_ul {
                 padding-left: 14px;
-                transform: translate(24px, 0);
+                transform: translate(0, 0);
             }
 
             .for_mobile_search .ct_bx_search input {
@@ -7017,9 +7055,9 @@
                 margin-left: 0;
             }
 
-            .ct_nav_erak .mai_ul {
-                width: 71px;
-            }
+           .ct_nav_erak .mai_ul {
+    width: 42%;
+}
 
             .ct_bx_search .search-icon {
                 padding: 14px 8px 10px 5px;
@@ -7316,10 +7354,6 @@
                 transform: translate(20px, 0px);
             }
 
-            .ct_inner_nav {
-                justify-content: space-around;
-            }
-
             .for_nav_main .logo {
                 margin: 4px 0;
             }
@@ -7349,14 +7383,9 @@
             .cart_nav a {
                 margin-top: 7px;
             }
-
-            .ct_nav_erak .mai_ul {
-                width: 63px;
-            }
-
-            .mai_ul {
-                display: block;
-            }
+.ct_nav_erak .mai_ul {
+    width: 36%;
+}
 
             .ct_inner_nav .ct_bx_search {
                 height: 90%;
@@ -7567,14 +7596,12 @@
         }
 
         @media only screen and (max-width:360px) {
-            .ct_inner_nav .mai_ul {
-                width: 50px;
-            }
-
             .cart_nav a {
                 margin-top: 0;
             }
-
+.ct_nav_erak .mai_ul {
+    width: 26%;
+}
             .ct_acc_dt_ov p {
                 font-size: 20px;
             }
@@ -7611,7 +7638,7 @@
             }
 
             .itm_dt_body .ct_nav_erak ul .nav_main_ek_li {
-                padding: 11px 10px;
+                padding: 0 10px;
             }
 
             .ct_bx_search .search-icon {
@@ -7681,10 +7708,7 @@
                 z-index: 0;
             }
 
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0;
-            }
+       
 
             .ct_field_small_size {
                 transform: translate(0px, -1px);
@@ -7781,9 +7805,6 @@
                 transform: translate(0, 0);
             }
 
-            .cart_nav ion-icon {
-                margin: 0;
-            }
 
             .ct_nav_erak .mai_ul {
                 transform: translate(0, 2px);
@@ -9545,9 +9566,15 @@
                         <p></p>
 
                     </div>
+                    <div class="ct_sbout_this_Required_itm_info">
+                        <h4>Required items needed to cook this recipe</h4>
+                        <p></p>
+                    </div>
 
                     <div class="ct_sbout_this_itm">
-                        <h4 class="heading">Inside this pack.</h4>
+                        <h4 class="heading">Required items</h4>
+                        <p class="heading_p"></p>
+
                         <div class="contianer_items_inside cont1_itemskr">
 
                         </div>
@@ -9624,17 +9651,18 @@
 
                         </div>
                     </div>
+                    <div class="ct_sbout_this_Required_itm_info req_infomobile">
+                        <h4>Required items needed to cook this recipe</h4>
+                        <p></p>
+                    </div>
 
                     <div class="ct_sbout_this_itm">
-                        <h4 class="heading">Inside this pack.</h4>
-                        <div class="ct_inner_inside_item">
-                            <div class="contianer_items_inside cont2_itemskr">
+                        <h4 class="heading">Required items</h4>
+                        <p class="heading_p"></p>
 
-                            </div>
+                        <div class="contianer_items_inside cont1_itemskr">
+
                         </div>
-
-
-
                     </div>
 
                     <div class="ct_bx_item_stock">
@@ -10065,27 +10093,16 @@
                 let qt = document.querySelector('.ct_bx_qt_foods input').value
                 qt = parseFloat(qt)
                 let off = document.querySelector('.ct_offer_box_cook2 span')
-                if (off.innerText !== '') {
 
-                    if (document.querySelector('.mrp_ammount del').innerText !== '') { price = document.querySelector('.mrp_ammount del').innerText.split('₹')[1].split(',').join('') }
-                }
                 price = parseFloat(price)
                 let mPrice = removeBsitm.parentElement.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                 mPrice = parseFloat(mPrice)
                 let tPr = price - mPrice
                 let basePrice = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
                 basePrice = parseFloat(basePrice)
-                if (off.innerText !== '') {
-                    off = off.innerText.split('%')[0]
-                    document.querySelector('.mrp_ammount del').innerText = '₹' + tPr.toLocaleString()
-                    off = parseFloat(off)
-                    tPr = tPr - (tPr * (off / 100))
-                    tPr = Math.round(tPr)
-                    tPr = tPr.toLocaleString()
-                    document.querySelector('.ct_bx_price span').innerText = tPr
-                } else {
-                    document.querySelector('.ct_bx_price span').innerText = tPr
-                }
+
+                document.querySelector('.ct_bx_price span').innerText = tPr
+
                 removeBsitm.parentElement.classList.remove('alreadyselected')
                 removeBsitm.parentElement.childNodes[3].style.display = 'block'
                 removeBsitm.parentElement.childNodes[5].style.display = 'none'
@@ -10093,9 +10110,7 @@
                 if (bsPr <= 0) {
                     bsPr = 0
                     document.querySelectorAll('.unit_fds').forEach(cu => {
-                        cu.style.fontFamily = 'Open Sans'
-                        cu.style.color = 'rgb(74 71 71)'
-                        cu.innerText = 'See available options.'
+                        cu.innerText = 'View items.'
                     })
 
                 } else {
@@ -10131,34 +10146,20 @@
                     cu.style.color = 'rgb(152 16 16)'
                 })
                 let off = document.querySelector('.ct_offer_box_cook2 span')
-                if (off.innerText !== '') {
+                //price = document.querySelector('.ct_bx_total_ammount').innerText.split('₹')[1].split(',').join('') 
 
-                    if (document.querySelector('.mrp_ammount del').innerText !== '') { price = document.querySelector('.mrp_ammount del').innerText.split('₹')[1].split(',').join('') }
-                }
                 price = parseFloat(price)
                 let mPrice = addBsitm.parentElement.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                 mPrice = parseFloat(mPrice)
                 let tPr = price + mPrice
-                console.log(price, mPrice, tPr)
-
                 let basePrice = 0
-                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'seeavailableoptions.') {
+                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
                     basePrice = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
                 }
                 basePrice = parseFloat(basePrice)
-                if (off.innerText !== '') {
-                    document.querySelector('.mrp_ammount del').innerText = '₹' + tPr.toLocaleString()
-                    off = off.innerText.split('%')[0]
-                    off = parseFloat(off)
-                    tPr = tPr - (tPr * (off / 100))
-                    tPr = Math.round(tPr)
-                    tPr = tPr.toLocaleString()
-                    console.log(tPr)
 
-                    document.querySelector('.ct_bx_price span').innerText = tPr
-                } else {
-                    document.querySelector('.ct_bx_price span').innerText = tPr
-                }
+                document.querySelector('.ct_bx_price span').innerText = tPr
+
 
                 addBsitm.parentElement.classList.add('alreadyselected')
                 addBsitm.parentElement.childNodes[3].style.display = 'none'
@@ -11255,6 +11256,12 @@
                 let maxqt = el.data().maxqt
                 console.log(item.id, token)
                 if (item.id === token) {
+                    document.querySelectorAll('.ct_sbout_this_itm .heading_p').forEach(cu=>{
+cu.innerText = item.about[1]
+                    })
+                    document.querySelectorAll('.ct_sbout_this_Required_itm_info p').forEach(cu=>{
+cu.innerText = item.about[0]
+                    })
                     document.querySelectorAll('.ct_bx_img_itm img').forEach(cur => {
                         cur.src = item.img
                     })
@@ -11478,9 +11485,9 @@
     </li>`
                                 }
                             } else {
-                                let removedClass = `class="alreadyselected"`
+                                let removedClass = ``
                                 let htmBtns = `<button class="add_base_itm">Add</button>
-                                <button class="remove_base_itm">Remove</button>`
+                                <button class="remove_base_itm" style='none'>Remove</button>`
                                 let priceM = cur1.price
 
                                 if (cur1.price !== null) {
@@ -11489,10 +11496,10 @@
                                             cu.unitInit.forEach(cuItm => {
                                                 priceM = parseFloat(cur1.price) * parseFloat(cu.qt)
                                                 if (cuItm.name === cur1.name) {
-                                                    if (!cuItm.added) {
-                                                        removedClass = ``
-                                                        htmBtns = `<button class="add_base_itm">Add</button>
-                                                        <button class="remove_base_itm" style='none'>Remove</button>`
+                                                    if (cuItm.added) {
+                                                        removedClass = `class="alreadyselected`
+                                                        htmBtns = `<button  style='none' class="add_base_itm">Add</button>
+                                                        <button class="remove_base_itm" style='block'>Remove</button>`
                                                     }
                                                 }
                                             })
@@ -12345,9 +12352,12 @@ ${otherItems.join('')}
                                 if (item.unitInit !== null) {
 
                                     if (item.unitInit[0].name !== undefined) {
+                                        if (priceUnit === 'Not selected') {
+                                            priceUnit = 'view items.'
+                                        }
                                         innerY = `   <div class='inner'>
                                 <p>${dt.name}</p>
-                                <span class='unit_fds'>₹ ${priceUnit}</span>
+                                <span class='unit_fds'>${priceUnit}</span>
 <span class='hidden stk_itm'>${totUStk}</span>
 <span class='hidden tm'>${dt.tm}</span>
 
@@ -12653,13 +12663,25 @@ ${hmOTH}
                         let fstPur = false
                         let totPermP = 0
                         if (getCookie('user') !== '') {
-                            fstPur = JSON.parse(getCookie('user')).fstPurchase
+                            if (getCookie('firstpurchase') !== '') {
+                                if (JSON.parse(getCookie('firstpurchase')) === item.id) {
+                                    if (JSON.parse(getCookie('user')).fstPurchase !== undefined) {
+                                        fstPur = JSON.parse(getCookie('user')).fstPurchase
+
+                                    }
+
+                                }
+                            } else {
+                                fstPur = JSON.parse(getCookie('user')).fstPurchase
+                            }
+
+
                         }
                         console.log(item.fdInside, '9999999999999999999999999ssidgfdfffffffffffffff')
 
                         item.fdInside.forEach(cm => {
                             if (fstPur) {
-                                if (cm.id !== 'spices' && cm.price !== undefined && cm.price !== 'NaN') {
+                                if (cm.id !== 'spices' && cm.price !== null && cm.price !== 'NaN') {
                                     let pr1 = parseFloat(cm.price)
                                     if (item.offer !== null && cm.id !== 'spices') {
                                         let off = parseFloat(item.offer.sauce)
@@ -12712,21 +12734,42 @@ ${hmOTH}
 
                                             }
                                         }
-                                    }
-                                    item.fdInside.forEach(cm => {
-                                        if (!fstPurN2) {
+                                        let countNum = 1
+                                        let baseSelected = cur.baseU.split(' ').join('')
+                                        item.unitInit.forEach(cu => {
+                                            if (cu.name === undefined) {
+                                                if (cu.price !== null) {
+                                                    let fUnn = cu.unitNum + cu.unitU
+                                                    fUnn = fUnn.split(' ').join('')
+                                                    if (fUnn === baseSelected) {
+                                                        countNum = parseFloat(cu.count)
+                                                    }
+                                                }
+                                            }
+                                        })
+                                        item.fdInside.forEach(cm => {
                                             cur.permGroup.forEach(cm2 => {
-                                                if (cm2.name === cm.name) {
+                                                if (cm2.name.toLowerCase() === cm.name.toLowerCase()) {
                                                     cm2.price = '₹' + cm.price
+
+                                                    if (item.offer !== null) {
+                                                        if (item.offer.sauce !== null && cm.id !== 'spices') {
+                                                            let offX = parseFloat(item.offer.sauce)
+                                                            let priceX = parseFloat(cm.price)
+                                                            priceX = priceX - (priceX * (offX / 100))
+                                                            cm2.price = '₹' + priceX
+                                                        }
+                                                    }
                                                     cm2.eprice = false
 
                                                 }
                                             })
                                             let pr = parseFloat(cm.price.split('₹')[1])
                                             totPermP += pr
-                                        }
 
-                                    })
+
+                                        })
+                                    }
                                 }
                             })
                             localStorage.setItem('foodsAdded', JSON.stringify(allItm))
@@ -12812,20 +12855,20 @@ ${hmOTH}
                                                     if (cu.id === 'spices') {
                                                         let pr = parseFloat(cu.price) * parseFloat(cur.qt)
                                                         pr = parseFloat(cu.price) * countNum
-                                                        if(document.querySelector('.spices .inner span del')!==null){
-                                                               document.querySelectorAll('.spices .inner span del').forEach(cuItm => {
-                                                            cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                        })
-                                                        }else{
-                                                             document.querySelectorAll('.spices .inner span').forEach(cuItm => {
-                                                            cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                        })
+                                                        if (document.querySelector('.spices .inner span del') !== null) {
+                                                            document.querySelectorAll('.spices .inner span del').forEach(cuItm => {
+                                                                cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                            })
+                                                        } else {
+                                                            document.querySelectorAll('.spices .inner span').forEach(cuItm => {
+                                                                cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                            })
                                                         }
-                                                       
+
                                                     }
                                                 })
                                             }
-                                              if (document.querySelector('.curry_sauce') !== null) {
+                                            if (document.querySelector('.curry_sauce') !== null) {
                                                 item.fdInside.forEach(cu => {
                                                     if (cu.id !== undefined) {
                                                         if (cu.id.split(' ').join('').toLowerCase() === 'currysauce') {
@@ -12834,21 +12877,21 @@ ${hmOTH}
                                                             pr = parseFloat(cu.price) * countNum
 
                                                             if (item.offer !== null) {
-                                                                if(item.offer.sauce!==null){
-                                                                document.querySelectorAll('.curry_sauce .inner span del').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
-                                                                let offX = parseFloat(item.offer.sauce)
-                                                                pr = pr - (pr * (offX / 100))
-                                                                pr = Math.round(pr)
-                                                                document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
-                                                                
-                                                                }else{
+                                                                if (item.offer.sauce !== null) {
+                                                                    document.querySelectorAll('.curry_sauce .inner span del').forEach(cuItm => {
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
+                                                                    let offX = parseFloat(item.offer.sauce)
+                                                                    pr = pr - (pr * (offX / 100))
+                                                                    pr = Math.round(pr)
+                                                                    document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
+
+                                                                } else {
                                                                     document.querySelectorAll('.curry_sauce .inner span').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
                                                                 }
                                                             } else {
                                                                 document.querySelectorAll('.curry_sauce .inner span').forEach(cuItm => {
@@ -12865,8 +12908,12 @@ ${hmOTH}
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[3].innerText = '₹ ' + finalSelu.toLocaleString()
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText = '₹ ' + finalSelu.toLocaleString()
                                                 if (cur.unitInit[0].name === undefined) {
-                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[1].innerText = cur.baseMain + '—' + cur.baseU
-                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseMain + '—' + cur.baseU
+                                                    let baseUx = cur.baseU
+                                                    if (cur.unitInit[0].unitNum === null) {
+                                                        baseUx = cur.baseU.split(' ')[0]
+                                                    }
+                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[1].innerText = cur.baseMain + '—' + baseUx
+                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseMain + '—' + baseUx
                                                     if (cur.unitInit[0].nameX !== undefined) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseU
 
@@ -12874,9 +12921,7 @@ ${hmOTH}
                                                 } else {
                                                     if (finalSelu === 0) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .unit_fds').forEach(cur => {
-                                                            cur.innerText = 'See available options.';
-                                                            cur.style.color = 'black';
-                                                            cur.style.fontFamily = 'Open Sans';
+                                                            cur.innerText = 'View items.';
 
                                                         })
                                                     }
@@ -12904,22 +12949,22 @@ ${hmOTH}
 
                                                 }
                                             }
-                                           if (document.querySelector('.spices') !== null) {
+                                            if (document.querySelector('.spices') !== null) {
                                                 item.fdInside.forEach(cu => {
 
                                                     if (cu.id === 'spices') {
                                                         let pr = parseFloat(cu.price) * parseFloat(cur.qt)
                                                         pr = parseFloat(cu.price) * countNum
-                                                        if(document.querySelector('.spices .inner span del')!==null){
-                                                               document.querySelectorAll('.spices .inner span del').forEach(cuItm => {
-                                                            cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                        })
-                                                        }else{
-                                                             document.querySelectorAll('.spices .inner span').forEach(cuItm => {
-                                                            cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                        })
+                                                        if (document.querySelector('.spices .inner span del') !== null) {
+                                                            document.querySelectorAll('.spices .inner span del').forEach(cuItm => {
+                                                                cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                            })
+                                                        } else {
+                                                            document.querySelectorAll('.spices .inner span').forEach(cuItm => {
+                                                                cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                            })
                                                         }
-                                                       
+
                                                     }
                                                 })
                                             }
@@ -12933,21 +12978,21 @@ ${hmOTH}
                                                             pr = parseFloat(cu.price) * countNum
 
                                                             if (item.offer !== null) {
-                                                                if(item.offer.sauce!==null){
-                                                                document.querySelectorAll('.curry_sauce .inner span del').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
-                                                                let offX = parseFloat(item.offer.sauce)
-                                                                pr = pr - (pr * (offX / 100))
-                                                                pr = Math.round(pr)
-                                                                document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
-                                                                
-                                                                }else{
+                                                                if (item.offer.sauce !== null) {
+                                                                    document.querySelectorAll('.curry_sauce .inner span del').forEach(cuItm => {
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
+                                                                    let offX = parseFloat(item.offer.sauce)
+                                                                    pr = pr - (pr * (offX / 100))
+                                                                    pr = Math.round(pr)
+                                                                    document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
+
+                                                                } else {
                                                                     document.querySelectorAll('.curry_sauce .inner span').forEach(cuItm => {
-                                                                    cuItm.innerText = '₹ ' + pr.toLocaleString()
-                                                                })
+                                                                        cuItm.innerText = '₹ ' + pr.toLocaleString()
+                                                                    })
                                                                 }
                                                             } else {
                                                                 document.querySelectorAll('.curry_sauce .inner span').forEach(cuItm => {
@@ -12964,8 +13009,12 @@ ${hmOTH}
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[3].innerText = '₹ ' + finalSelu.toLocaleString()
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText = '₹ ' + finalSelu.toLocaleString()
                                                 if (cur.unitInit[0].name === undefined) {
-                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[1].innerText = cur.baseMain + '—' + cur.baseU
-                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseMain + '—' + cur.baseU
+                                                    let baseUx = cur.baseU
+                                                    if (cur.unitInit[0].unitNum === null) {
+                                                        baseUx = cur.baseU.split(' ')[0]
+                                                    }
+                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[1].innerText = cur.baseMain + '—' + baseUx
+                                                    document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseMain + '—' + baseUx
                                                     if (cur.unitInit[0].nameX !== undefined) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .selc .inner p')[0].innerText = cur.baseU
 
@@ -12973,9 +13022,7 @@ ${hmOTH}
                                                 } else {
                                                     if (finalSelu === 0) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .unit_fds').forEach(cur => {
-                                                            cur.innerText = 'See available options.';
-                                                            cur.style.color = 'black';
-                                                            cur.style.fontFamily = 'Open Sans';
+                                                            cur.innerText = 'view items.';
 
                                                         })
                                                     }
@@ -13030,12 +13077,22 @@ ${hmOTH}
                                         }
                                         let totPermP = 0
                                         //calculating the price of curry sauce and tastemaker 
+                                        // if (cm.id !== undefined) {
+                                        //  if (item.offer !== null) {
+                                        //    if (cm.id !== 'spices' && item.offer.sauce !== null) {
+                                        //       let offX = parseFloat(item.offer.sauce)
+                                        //       pr = pr - (pr * (offX / 100))
+                                        //       pr = Math.round(pr)
+                                        //    }
+                                        // }
+                                        //}
                                         if (cur.permGroup !== undefined) {
                                             cur.permGroup.forEach(cm => {
                                                 ///fstPurN for first purchase discount -> bolean
                                                 if (fstPurN) {
                                                     if (!cm.eprice) {
                                                         let pr = parseFloat(cm.price.split('₹')[1])
+
                                                         totPermP += pr
 
                                                     }
@@ -13043,6 +13100,7 @@ ${hmOTH}
                                                 } else {
                                                     if (!cm.eprice) {
                                                         let pr = parseFloat(cm.price.split('₹')[1])
+
                                                         totPermP += pr
                                                     }
                                                 }
@@ -13270,6 +13328,25 @@ ${hmOTH}
         }
         document.querySelector('html').style.overflowY = 'hidden'
         addLoadedItm()
+
+
+        if (getCookie('user') !== '') {
+            let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+            let lengthX = allfds.length
+
+
+            if (lengthX > 0&&getCookie('notclickedtocart')!=='') {
+                if (lengthX > 9) {
+                    lengthX = '9+'
+                }
+                document.querySelector('.cart_nav span').style.display = 'flex'
+                document.querySelector('.cart_nav span').innerText = lengthX
+            }
+
+        }
+
+
+
         if (window.location.pathname.split('/')[2] !== undefined) {
             let token = window.location.pathname.split('/')[2]
             let addedItems = JSON.parse(localStorage.getItem('foodsAdded'))
@@ -13278,6 +13355,17 @@ ${hmOTH}
                 let qt1 = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                 if (cBtn !== null) {
                     let arrFd = []
+                    if (getCookie('user') !== '') {
+                        let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+                        let lengthX = allfds.length + 1
+                        if (lengthX > 9) {
+                            lengthX = '9+'
+                        }
+                        document.querySelector('.cart_nav span').innerText = lengthX
+                        document.querySelector('.cart_nav span').style.display = 'flex'
+document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                    }
+
                     if (JSON.parse(localStorage.getItem("foodsAdded")) !== null) {
                         arrFd = JSON.parse(localStorage.getItem("foodsAdded"))
                     }
@@ -13447,7 +13535,10 @@ ${hmOTH}
                             if (globalNamex) {
                                 baseU = document.querySelector('.ct_bx_qty_inner p').innerText
                             }
-
+                            if (document.querySelector('.hidden.option') !== null) {
+                                baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+                                baseU = baseU.split(' ').join('')
+                            }
                         }
                     } else {
                         baseMain = document.querySelector('.ct_bx_qty_inner p').innerText
@@ -13455,6 +13546,7 @@ ${hmOTH}
                             baseU = document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText
                         }
                     }
+
 
 
                     let name = document.querySelector('.fd_name_dt_itm').innerText
@@ -13476,7 +13568,7 @@ ${hmOTH}
                         let dateFull = moment().format('LL')
                         if (unitInit.length !== 0) {
                             if (unitInit[0].name !== undefined) {
-                                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'seeavailableoptions.') {
+                                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
                                     selU2 = parseFloat(document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join(''))
 
                                 }
@@ -13866,7 +13958,7 @@ ${hmOTH}
 
                     qtekfd2.parentElement.childNodes[3].value = i
                     if (document.querySelector('.ct_bx_inside_base') !== null) {
-                        if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'seeavailableoptions.') {
+                        if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
 
                             let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1]
                             bsPr = parseFloat(bsPr)
@@ -13991,17 +14083,17 @@ ${hmOTH}
                 }
                 //Maxqt
                 if (i > 4) {
-                    document.querySelectorAll('.ct_err_max_stock').forEach((cur) => {
-                        cur.style.display = 'flex'
-                    })
-                    document.querySelectorAll('.ct_err_max_stock p').forEach((cur) => {
-                        cur.innerText = `You have reached max order quantity to order more, please contact us.`
-                    })
+                    // document.querySelectorAll('.ct_err_max_stock').forEach((cur) => {
+                    //     cur.style.display = 'flex'
+                    // })
+                    // document.querySelectorAll('.ct_err_max_stock p').forEach((cur) => {
+                    //     cur.innerText = `You have reached max order quantity to order more, please contact us.`
+                    // })
                     return
                 }
                 qtekfd.parentElement.childNodes[3].value = i
                 if (document.querySelector('.ct_bx_inside_base') !== null) {
-                    if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'seeavailableoptions.') {
+                    if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
                         let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1]
                         bsPr = parseFloat(bsPr)
                         bsPr = bsPr * i
@@ -14060,22 +14152,10 @@ ${hmOTH}
                         }
                     })
                 }
-                let p2 = document.querySelector('.mrp_ammount del').innerText.split('₹')[1].split(',').join('')
-                p2 = parseFloat(p2)
-                let tot2 = (p2 / (i - 1)) * i
-                tot2 = Math.round(tot2)
                 let p = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText.split('₹')[1].split(',').join('')
                 p = parseFloat(p)
                 console.log(p)
-                let tot = tot2
-                if (document.querySelector('.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 span').innerText !== '') {
-                    let off = document.querySelector('.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 span').innerText.split('%')[0]
-                    off = parseFloat(off)
-
-                    console.log(tot2, '------------------------------------kaiiiiiiiiiii----------------------------------------------')
-                    tot = tot2 - (tot2 * (off / 100))
-
-                }
+                let tot = (p / (i - 1)) * i
 
                 tot = Math.round(tot)
 
