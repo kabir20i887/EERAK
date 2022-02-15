@@ -7,9 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your account | KRICK</title>
- <meta name="keywords" content="my account krick, account krick,account krickgrocery,krickgrocery,krick">
-    <meta name="description"
-        content="Get details about your order, edit your account, logout from your account.">
+    <meta name="keywords" content="my account krick, account krick,account krickgrocery,krickgrocery,krick">
+    <meta name="description" content="Get details about your order, edit your account, logout from your account.">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
     {{>favicon}}
@@ -21,6 +20,25 @@
 
         ion-icon {
             visibility: hidden;
+        }
+
+        .mai_ul .cart_nav {
+            display: flex;
+        }
+
+        .cart_nav span {
+            width: 37px;
+            padding: 7px 7px 22px 7px;
+            display: none;
+            justify-content: center;
+            /* padding-top: 4px; */
+            font-size: 13px;
+            height: 25px;
+            background-color: #0044ff;
+            color: white;
+            margin-left: -16px;
+            z-index: 999;
+            border-radius: 50%;
         }
 
         .ct_bx_remove_custom {
@@ -213,6 +231,8 @@
                 color: rgb(0, 0, 0);
                 margin: 22px 0 0 12px;
                 font-size: 24px;
+                font-weight: 500;
+
                 font-family: 'Roboto';
             }
 
@@ -594,10 +614,13 @@
             .ct_nx_actions_account {
                 display: block;
             }
-.ct_box_half_order ul li:not(:last-child){
-    border-bottom: 1px solid #c4c4c4;
-}
+
+            .ct_box_half_order ul li:not(:last-child) {
+                border-bottom: 1px solid #c4c4c4;
+            }
+
             .ct_box_half_order ul li {
+                overflow: hidden;
                 padding: 19px 0 0 10px;
             }
 
@@ -1994,7 +2017,11 @@
             .bx_inner {
                 margin: 10px;
             }
-.ct_box_half_order ul{margin:10px}
+
+            .ct_box_half_order ul {
+                margin: 0
+            }
+
             .ct_box_half_order {
                 padding: 0;
                 box-shadow: none;
@@ -2052,9 +2079,24 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
-   .ct_inner_nav {
-    padding: 16px 20px 10px 20px;
-}
+
+            .ct_inner_nav {
+                padding: 16px 20px 10px 20px;
+            }
+
+            .cart_nav span {
+                width: 32px;
+                padding: 7px 7px 22px 7px;
+                margin-left: -27px;
+            }
+
+            .for_nav_main .for_seravh_in_nav {
+                display: none;
+            }
+
+            .for_nav_main .for_mobile_search {
+                display: block;
+            }
 
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
@@ -2211,9 +2253,10 @@
                 background-color: white;
             }
 
-                       .for_nav_main {
+            .for_nav_main {
                 height: 93px;
             }
+
             .for_mobile_search {
                 top: 68px;
             }
@@ -2366,6 +2409,10 @@
                 padding: 0;
             }
 
+            .ct_nav_erak .mai_ul {
+                width: 42%;
+            }
+
             .ct_inner_nav .ct_bx_search {
                 height: 93%;
             }
@@ -2394,10 +2441,6 @@
 
             .ct_bx_outer_layer_acc {
                 padding: 10px 10px 0 0px;
-            }
-
-            .ct_box_half_order ul li {
-                padding: 0px 0 0 0;
             }
 
             .ct_bx_orders {
@@ -2672,7 +2715,7 @@
 
         @media only screen and (max-width:400px) {
             .ct_inner_nav {
-                justify-content: space-around;
+                justify-content: initial
             }
 
             .for_nav_main .logo {
@@ -3019,10 +3062,6 @@
                 z-index: 0;
             }
 
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0;
-            }
 
             .ct_field_small_size {
                 transform: translate(0px, -1px);
@@ -3214,10 +3253,6 @@
 
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0);
-            }
-
-            .cart_nav ion-icon {
-                margin: 0;
             }
 
             .ct_nav_erak .mai_ul {
@@ -3733,6 +3768,7 @@
             color: rgb(0, 0, 0);
             font-family: 'Noto Sans';
             font-size: 14px;
+            filter: blur(5px);
             word-break: break-word;
         }
 
@@ -5692,7 +5728,7 @@
             }
 
             .for_img_order_user {
-                margin-left:0;
+                margin-left: 0;
                 width: 300px;
                 display: block;
             }
@@ -5705,7 +5741,7 @@
             }
 
             .ct_fd_dt_full {
-                transform: translate(0px, -14px);
+                transform: translate(0px, 0);
             }
 
             .ct_bx_no_order_yet {
@@ -7169,7 +7205,7 @@
             }
 
             .bx_inner {
-                margin: 10px;
+                margin: 0;
             }
 
             .ct_box_half_order {
@@ -7228,6 +7264,10 @@
         @media only screen and (max-width:740px) {
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
+            }
+
+            .ct_nav_erak .mai_ul {
+                width: 60%
             }
 
             .ct_nav_erak .for_seravh_in_nav {
@@ -7573,10 +7613,6 @@
                 padding: 10px 10px 0 0px;
             }
 
-            .ct_box_half_order ul li {
-                padding: 0px 0 0 0;
-            }
-
             .ct_bx_orders {
                 margin: 0px 0 0 0;
             }
@@ -7850,6 +7886,10 @@
         @media only screen and (max-width:400px) {
             .ct_inner_nav {
                 justify-content: space-around;
+            }
+
+            .ct_nav_erak .mai_ul {
+                width: 36%
             }
 
             .for_nav_main .logo {
@@ -8196,11 +8236,6 @@
                 z-index: 0;
             }
 
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0;
-            }
-
             .ct_field_small_size {
                 transform: translate(0px, -1px);
             }
@@ -8289,7 +8324,7 @@
             }
 
             .for_img_order_user {
-                margin-left:0;
+                margin-left: 0;
                 width: 54%;
                 display: block;
             }
@@ -8391,10 +8426,6 @@
 
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0);
-            }
-
-            .cart_nav ion-icon {
-                margin: 0;
             }
 
             .ct_nav_erak .mai_ul {
@@ -11139,7 +11170,6 @@
 
             .cart_nav ion-icon {
                 font-size: 32px;
-                margin: 0;
             }
 
             .ct_field_small_size {
@@ -11310,10 +11340,6 @@
 
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0);
-            }
-
-            .cart_nav ion-icon {
-                margin: 0;
             }
 
             .ct_nav_erak .mai_ul {
@@ -14053,11 +14079,6 @@
                 z-index: 0;
             }
 
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0;
-            }
-
             .ct_field_small_size {
                 transform: translate(0px, -1px);
             }
@@ -14226,10 +14247,6 @@
 
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0);
-            }
-
-            .cart_nav ion-icon {
-                margin: 0;
             }
 
             .ct_nav_erak .mai_ul {
@@ -15103,7 +15120,7 @@
         .nav_main_ek_li_big ion-icon {
             display: block;
             margin-top: 2px;
-            background: #254cb9;
+            background: #0043ff;
             color: rgb(255 255 255);
             height: 22px;
             width: 23px;
@@ -15558,7 +15575,7 @@
         }
 
         .ct_bx_follow_social_icon {
-            margin:14px 0 0 23px;
+            margin: 14px 0 0 23px;
         }
 
         .ct_icons_logs {
@@ -15945,10 +15962,7 @@
             color: #0089ff;
         }
 
-        .fadein {
-            opacity: 0;
-            transition: opacity 1s ease-in;
-        }
+
 
         .ct_bx_go_back_nav {
             display: none;
@@ -16036,9 +16050,11 @@
             .mai_ul .cart_nav {
                 padding: -0;
             }
-.logo img {
-    margin-top: -7px;
-}
+
+            .logo img {
+                margin-top: -7px;
+            }
+
             .mai_ul li.acc_set_main_nav {
                 padding: 8px 0px 0 12px;
             }
@@ -17723,40 +17739,60 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
-.logo img {
-    margin-top: -16px;
-}
-          .ct_nx_actions_account {
+
+            .logo img {
+                margin-top: -16px;
+            }
+
+            .ct_nav_erak .mai_ul {
+                width: 63%;
+            }
+
+            .ct_nx_actions_account {
                 margin: 190px 0 0 10px;
             }
-          /* FOOTER 740 */
-            .ct_bx_footer{display: block;}
+
+            /* FOOTER 740 */
+            .ct_bx_footer {
+                display: block;
+            }
+
             .ct_bx_copy_right {
                 display: block;
                 padding: 10px 0 10px;
                 margin: 10px 0 0;
             }
-             .ct_bx_footer {
-    padding-left: 33vw;
-}
+
+            .ct_bx_footer {
+                padding-left: 33vw;
+            }
+
             .logo img {
-    width: auto;}
+                width: auto;
+            }
+
             .ct_icons_logs {
-    margin-left: 32px;
-    margin-bottom: 40px;
-}
+                margin-left: 32px;
+                margin-bottom: 40px;
+            }
+
             footer .logo img {
-    width: 140px;
-}
+                width: 140px;
+            }
+
             .ct_bx_foot_inner .for_ain_home_logo {
-    margin: 52px 0 0 30px;
-}
+                margin: 52px 0 0 30px;
+            }
+
             .ct_bx_copy_right p {
-    margin-left: 23px;
-}
+                margin-left: 23px;
+            }
+
             .ct_bx_copy_right a {
-            margin-top: 10px;
-            margin-left:53px;}
+                margin-top: 10px;
+                margin-left: 53px;
+            }
+
             /**/
 
             .ct_nav_erak .for_seravh_in_nav {
@@ -17768,14 +17804,16 @@
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
                 margin-top: 18px;
             }
-.for_nav_main {
-    height: 90px;
-}
+
+            .for_nav_main {
+                height: 90px;
+            }
+
             .for_mobile_search.for_seravh_in_nav {
-    margin-left: 0;
-    height: auto;
-    padding-bottom: 26px;
-}
+                margin-left: 0;
+                height: auto;
+                padding-bottom: 26px;
+            }
 
 
             .ct_bx_search_icon {
@@ -17790,9 +17828,6 @@
                 top: 128px;
             }
 
-            .ct_nav_erak .mai_ul {
-                width:auto
-            }
 
             .for_nav_main .logo {
                 margin-left: 0px;
@@ -17816,7 +17851,7 @@
 
             .ct_nav_erak .mai_ul {
                 padding-left: 14px;
-                transform: translate(24px, 0);
+                transform: translate(0, 0);
             }
 
             .for_mobile_search .ct_bx_search input {
@@ -18052,6 +18087,7 @@
         @media only screen and (max-width:470px) {
             .ct_nav_erak .mai_ul {
                 padding: 0;
+                width: 37%;
             }
 
             .ct_inner_nav .ct_bx_search {
@@ -18068,7 +18104,7 @@
                 transform: translate(0px, 0);
             }
 
-  
+
 
             .for_nav_main .for_mobile_search .ct_bx_search {
                 margin-top: 4px;
@@ -18110,9 +18146,7 @@
                 margin-left: 5px;
             }
 
-            .ct_nav_erak .mai_ul {
-                width: 71px;
-            }
+
 
             .ct_bx_search .search-icon {
                 padding: 14px 8px 10px 5px;
@@ -18148,9 +18182,10 @@
                 padding: 0;
             }
 
-.ct_inner_nav {
-    padding: 16px 0px 10px 9px;
-}
+            .ct_inner_nav {
+                padding: 16px 0px 10px 9px;
+            }
+
             .ct_nav_erak .ct_bx_search {
                 width: 90%;
             }
@@ -18174,7 +18209,7 @@
             }
 
             .for_nav_main {
-                height:94px;
+                height: 94px;
             }
 
             .ct_acc_dt_ov p,
@@ -18349,11 +18384,19 @@
 
         @media only screen and (max-width:400px) {
             .ct_inner_nav {
-                justify-content: space-around;
+                justify-content: initial;
             }
-.ct_bx_items_order_details ul{width: 80%;}
+
+            .ct_bx_items_order_details ul {
+                width: 80%;
+            }
+
             .for_nav_main .logo {
                 margin: 4px 0;
+            }
+
+            .ct_nav_erak .mai_ul {
+                width: 36%;
             }
 
             .ct_nav_erak .ct_bx_search {
@@ -18375,14 +18418,6 @@
 
             .cart_nav a {
                 margin-top: 7px;
-            }
-
-            .ct_nav_erak .mai_ul {
-                width: 63px;
-            }
-
-            .mai_ul {
-                display: block;
             }
 
             .ct_inner_nav .ct_bx_search {
@@ -18537,12 +18572,12 @@
         }
 
         @media only screen and (max-width:360px) {
-            .ct_inner_nav .mai_ul {
-                width: 50px;
-            }
-
             .cart_nav a {
                 margin-top: 0;
+            }
+
+            .ct_nav_erak .mai_ul {
+                width: 28%;
             }
 
             .ct_acc_dt_ov p {
@@ -18568,7 +18603,7 @@
             }
 
             .ct_nav_erak ul .nav_main_ek_li {
-                padding: 16px 10px;
+                padding: 12px 10px;
             }
 
             .ct_bx_search .search-icon {
@@ -18644,11 +18679,6 @@
             .for_nav_main .for_mobile_search .ct_bx_search {
                 margin-top: 6px;
                 z-index: 0;
-            }
-
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0;
             }
 
             .ct_bx_outer_layer_acc {
@@ -18808,10 +18838,12 @@
             .cart_nav a {
                 margin-top: 5px;
             }
-.ct_bx_footer {
-    display: block;
-    padding: 38px 0 0 22vw;
-}
+
+            .ct_bx_footer {
+                display: block;
+                padding: 38px 0 0 22vw;
+            }
+
             .ct_nav_erak ul .nav_main_ek_li {
                 margin-right: 0;
             }
@@ -18820,13 +18852,13 @@
                 transform: translate(0, 0);
             }
 
-            .cart_nav ion-icon {
-                margin: 0;
-            }
-
             .ct_nav_erak .mai_ul {
                 transform: translate(0, 2px);
-                padding-top: 14px;
+                padding-top: 5px;
+            }
+
+            .logo img {
+                width: 162px;
             }
 
             .ct_nav_erak ul .nav_main_ek_li {
@@ -20282,7 +20314,7 @@
                                     <p>Location</p>
                                     <span></span>
                                 </div>
-                                   <div class="ct_dtinner">
+                                <div class="ct_dtinner">
                                     <p>Password</p>
                                     <span>***********</span>
                                 </div>
@@ -20361,7 +20393,7 @@
                                     <div class="ct_flex_bx_1_acc for_acc_user_dt">
 
 
-                                   
+
                                         <div class="dt_itm_set_account_details_cart remove_red_t">
                                             <label for="city">Location</label>
 
@@ -20592,17 +20624,33 @@
     <script>let socket = io()
     </script>
     <script>
-
-         var waypoint = new Waypoint({
+        var waypoint = new Waypoint({
             element: document.querySelector('.ct_bx_orders'),
             handler: function (direction) {
                 let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
                 if (direction === 'down') {
+                    if (window.screen.width <= 740) {
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-5px'
+                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
+                            cur1.style.padding = '13px 20px 10px 10px'
+
+                        })
+                        document.querySelector('.for_seravh_in_nav.for_nav_search').style.display = 'block'
+                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '130px'
+                        document.querySelector('.ct_inner_nav').style.justifyContent = 'space-around'
+                        if (window.screen.width <= 470) {
+
+                            document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
+                        }
+                    }
                     if (window.screen.width <= 400) {
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
                             cur1.style.padding = '13px 0px 10px 0px'
 
                         })
+
+                        document.querySelector('.ct_inner_nav').style.overflow = 'visible'
+
                     } else if (window.screen.width <= 550) {
 
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
@@ -20610,18 +20658,11 @@
 
                         })
                     }
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-7px'
 
-                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
-                            cur1.style.padding = '13px 10px 10px 10px'
-
-                        })
-                                            document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
+                    document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
                         cur1.style.margin = '0 0px 0 3px'
 
                     })
-                    }
 
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 740) {
@@ -20652,7 +20693,7 @@
                             document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
 
                             if (window.screen.width <= 400) {
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '12px'
+                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
                             }
                             let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
@@ -20677,31 +20718,32 @@
                 } else if (direction === 'up') {
                     if (window.screen.width <= 740) {
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-12px'
-                    document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                        cur1.style.margin = '-7px 0px 0 3px'
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
+                        document.querySelector('.for_seravh_in_nav.for_nav_search').style.display = 'none'
+                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '63%'
 
-                    })
+                        document.querySelector('.ct_inner_nav').style.justifyContent = 'initial'
                     }
-                 
                     if (window.screen.width <= 550) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-12px'
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
+
+                    }
+                    document.querySelector('.ct_nav_erak .mai_ul').style.display = 'flex'
+
+                    if (window.screen.width <= 470) {
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
+                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '42%'
 
                     }
                     if (window.screen.width <= 400) {
-                        document.querySelector('.mai_ul').style.display = 'block'
+                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '36%'
+
+                        document.querySelector('.ct_inner_nav').style.overflow = 'hidden'
                         document.querySelector('.ct_field_small_size_bx').style.display = 'block'
 
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
                     }
-                       if (window.screen.width <= 470) {
-     document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                        cur1.style.margin = '-4px 0px 0 3px'
 
-                    })
-                        document.querySelector('.ct_inner_nav').style.padding = '16px 10px 10px 10px'
-
-                    }
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 1100) {
 
@@ -20712,10 +20754,7 @@
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
                         }
-                        if (window.screen.width <= 470 && window.screen.width > 400) {
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
 
-                        }
                         if (window.screen.width <= 470 && window.screen.width > 400) {
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
@@ -20744,7 +20783,7 @@
 
                             document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'none'
 
-                            let xW = document.querySelector('.for_mobile_search .ct_bx_search input').getBoundingClientRect().width
+                            let xW = document.querySelector('.for_mobile_search .ct_bx_search').getBoundingClientRect().width
                             document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.width = `${xW}px`
                         }
                     }
@@ -20764,7 +20803,8 @@
 
             }
         })
-              let directionSv = new google.maps.DirectionsService()
+
+        let directionSv = new google.maps.DirectionsService()
 
         const center = { lat: 23.798500, lng: 91.263560 };
         // Create a bounding box with sides ~10km away from the center point
@@ -20775,7 +20815,7 @@
             west: center.lng - 1,
         };
 
-        const inputX =document.getElementsByName('city')[0]
+        const inputX = document.getElementsByName('city')[0]
         const options = {
             bounds: defaultBounds,
             componentRestrictions: { country: "In" },
@@ -20793,8 +20833,8 @@
                 return letter
             }
         }
-        if(getCookie('user')===''){
-        window.location.replace('/')
+        if (getCookie('user') === '') {
+            window.location.replace('/')
 
         }
         function getCookie(cname) {
@@ -20825,6 +20865,22 @@
                 return null
             }
         };
+
+        if (getCookie('user') !== '') {
+            let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+            let lengthX = allfds.length
+
+
+            if (lengthX > 0 && getCookie('notclickedtocart') !== '') {
+                if (lengthX > 9) {
+                    lengthX = '9+'
+                }
+                document.querySelector('.cart_nav span').style.display = 'flex'
+                document.querySelector('.cart_nav span').innerText = lengthX
+            }
+
+        }
+
         const logout = async () => {
             let allgroc = JSON.parse(localStorage.getItem('grocFoodListCart'))
             let mH1 = document.querySelector('.for_nav_main').getBoundingClientRect().height
@@ -20945,15 +21001,15 @@
                 }
 
             }
-                if (window.location.search !== '') {
+            if (window.location.search !== '') {
 
-            if (window.location.search.split('?')[1].split('=')[0] === 'updated' && window.location.pathname === '/your-account') {
-                if (window.location.search.split('?')[1].split('=')[0] === 'true') {
-                    document.querySelector('.on_edit_profile_acc .ct_bx_message_succesfully_ordered.succ_otp').style.display = 'inline-block'
+                if (window.location.search.split('?')[1].split('=')[0] === 'updated' && window.location.pathname === '/your-account') {
+                    if (window.location.search.split('?')[1].split('=')[0] === 'true') {
+                        document.querySelector('.on_edit_profile_acc .ct_bx_message_succesfully_ordered.succ_otp').style.display = 'inline-block'
 
+                    }
                 }
             }
-                }
             if (window.location.pathname.split('/')[2] !== undefined && window.location.search !== '') {
                 document.querySelector('.yt-loader').style.display = 'block'
                 document.querySelector('.ct_overfow_for_load').style.display = 'block'
@@ -20974,33 +21030,33 @@
                 const updateAcc = async () => {
                     let dbCollection = db.collection(`users`)
 
-let city=document.getElementsByName('city')[0].value
+                    let city = document.getElementsByName('city')[0].value
                     let dbCollection2 = db.collection(`locations`)
                     if (!city.toLowerCase().split(' ').includes('agartala')) {
-                    city = city + ' ' + 'agartala'
-                    document.getElementsByName('city')[0].value = city
-                }
-                let request = {
-                    origin: 'Badharghar, Agartala,Tripura',
-                    destination: city,
-                    travelMode: google.maps.TravelMode.DRIVING,
-                    unitSystem: google.maps.UnitSystem.IMPERIAL,
-                }
-                directionSv.route(request, (res, stat) => {
-                    if (stat === res.status) {
-                        let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
-                        let unitKM = unitMiles * 1.60934
-                        if (unitKM > 10) {
-                                     document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
-                            cur.style.display = 'none'
-                        })
-                        document.querySelector('.err_deliv').style.display = 'block'
-                        document.querySelector('.yt-loader').style.display = 'none'
-                        document.querySelector('.ct_overfow_for_load').style.display = 'none'
-                            
-                        }
+                        city = city + ' ' + 'agartala'
+                        document.getElementsByName('city')[0].value = city
                     }
-                })
+                    let request = {
+                        origin: 'Badharghar, Agartala,Tripura',
+                        destination: city,
+                        travelMode: google.maps.TravelMode.DRIVING,
+                        unitSystem: google.maps.UnitSystem.IMPERIAL,
+                    }
+                    directionSv.route(request, (res, stat) => {
+                        if (stat === res.status) {
+                            let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
+                            let unitKM = unitMiles * 1.60934
+                            if (unitKM > 10) {
+                                document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
+                                    cur.style.display = 'none'
+                                })
+                                document.querySelector('.err_deliv').style.display = 'block'
+                                document.querySelector('.yt-loader').style.display = 'none'
+                                document.querySelector('.ct_overfow_for_load').style.display = 'none'
+
+                            }
+                        }
+                    })
                     var bcrypt = dcodeIO.bcrypt;
                     let hash = bcrypt.hashSync(jwt.a.pass, 4);
                     let res = await dbCollection.get()
@@ -21110,7 +21166,7 @@ let city=document.getElementsByName('city')[0].value
                                     user1.ad = jwt.a.address,
                                     user1.pass = hash,
                                     user1.ct = jwt.a.ph[0]
-                                    user1.service = jwt.a.ph[0]
+                                user1.service = jwt.a.ph[0]
 
                                 user1.admin = cur.data().admin
                                 user1.deliv = cur.data().deliv
@@ -21119,8 +21175,8 @@ let city=document.getElementsByName('city')[0].value
                                 document.querySelector('.yt-loader').style.display = 'none'
                                 document.querySelector('.ct_overfow_for_load').style.display = 'none'
                                 user1.rootAutyh = rootAutyh
-                                document.querySelector('.account_cont11').style.opacity='.5'
-                                document.querySelector('.account_cont11').style['pointer-events']='none'
+                                document.querySelector('.account_cont11').style.opacity = '.5'
+                                document.querySelector('.account_cont11').style['pointer-events'] = 'none'
 
                                 document.querySelector('.ct_bx_message_succesfully_ordered.succ_otp').style.display = 'block'
 
@@ -21230,14 +21286,14 @@ let city=document.getElementsByName('city')[0].value
                 let userE = el.user
                 if (el.idM === Uid) {
                     order.forEach(async elm => {
-                    let orderItmqt=elm.qt
+                        let orderItmqt = elm.qt
                         if (elm.typ === 'fd') {
                             let dbCollectionM = db.collection(`items`)
 
                             let resFd = await dbCollectionM.get()
                             resFd.docs.forEach(async elem1 => {
                                 let item = elem1.data().item
-                let maxqt = elem1.data().maxqt
+                                let maxqt = elem1.data().maxqt
 
                                 let name = item.name
                                 let imgBanner = item.imgBanner
@@ -21292,11 +21348,38 @@ let city=document.getElementsByName('city')[0].value
 
                                     let userId = JSON.parse(getCookie('user')).rootAutyh
 
-                                    resp2.forEach((m,indx) => {
+                                    resp2.forEach((m, indx) => {
                                         let idMain = m.id
                                         console.log(idMain, userId, 'oopsfgvdf')
-                                        if (idMain === userId&&elm.qt===m.qt) {
-                                            maxqt.splice(indx,1)
+                                        if (idMain === userId && elm.qt === m.qt) {
+                                            if (elm.free !== undefined) {
+                                                async function dataUsers() {
+                                                    let dbCollection2 = db.collection("users")
+                                                    let resUser = await dbCollection2.get()
+                                                    resUser.docs.forEach(cu => {
+                                                        let item = cu.data()
+                                                        if (item.rootAutyh === idMain) {
+                                                            dbCollection.doc(cu.id).set({
+                                                                data: item.data,
+                                                                cartGroc: item.cartGroc,
+                                                                authUser: item.authUser,
+                                                                rootAutyh: item.rootAutyh,
+                                                                deliv: item.deliv,
+                                                                admin: item.admin,
+                                                                cartItem: item.cartItem,
+                                                                likes: item.likes,
+                                                                fstPurchase: true,
+                                                                dislikes: item.dislikes,
+                                                                myOrders: item.myOrders,
+                                                                myratings: item.myratings
+                                                            })
+                                                        }
+                                                    })
+                                                }
+
+                                            }
+                                            maxqt.splice(indx, 1)
+
                                         }
                                     })
 
@@ -21307,28 +21390,28 @@ let city=document.getElementsByName('city')[0].value
                                         unitUni: unitUni,
                                         imgBanner: imgBanner,
                                         cook: cook,
-                                        g:item.g,
+                                        g: item.g,
                                         about: about,
                                         restPrice: restPrice,
                                         itemsOthers: itemsOthers,
                                         fdInside: fdInside,
                                         img: img,
-                                        cookingTime:item.cookingTime,
-                                        deliveryTime:item.deliveryTime,
+                                        cookingTime: item.cookingTime,
+                                        deliveryTime: item.deliveryTime,
                                         unitInit: item.unitInit,
                                         initUnit: initUnit,
                                         netweight: nStk,
-                                        profit:item.profit,
+                                        profit: item.profit,
                                         offer: offer,
                                         ratings: ratings,
                                         review: review,
-                                        video:item.video,
+                                        video: item.video,
                                     }
                                     console.log(obj, dbCollectionM.doc(elem1.id), 'kii')
                                     dbCollectionM.doc(elem1.id).set({
                                         group: elem1.data().group,
                                         item: obj,
-                                        maxqt:maxqt
+                                        maxqt: maxqt
                                     }).then((msg) => console.log('added new'))
                                     return
                                 }
@@ -21775,7 +21858,7 @@ let city=document.getElementsByName('city')[0].value
                         let htmlP = ``
                         let htmlT2 = ``
                         // cur1.isTom
-// XXX -> ${mainPriceFdT.toLocaleString()}
+                        // XXX -> ${mainPriceFdT.toLocaleString()}
                         if (cur1.isDelivered) {
                             let obj = cur1.isDelivered
                             htmlD = `<div class="date_time_order delivery_stat">
@@ -21853,7 +21936,7 @@ ${htmlD2}
                ${htmlT2}
                 <div class="ct_bxamount">
                     <span>Total amount</span>
-                    <p>₹ XXX</p>
+                    <p>₹ ${mainPriceFdT.toLocaleString()}</p>
                 </div>
                 <ul>
                     <span>Delivery Address</span>
@@ -21884,7 +21967,7 @@ ${htmlD2}
                                             </div>
                                             <div class="date_time_order bx_tot_ammount_order">
                                                 <p>TOTAL</p>
-                                                <span>₹ XXX</span>
+                                                <span>₹ ${mainPriceFdT.toLocaleString()}</span>
 
 
                                             </div>
@@ -21969,13 +22052,13 @@ ${htmlD2}
             let btnRemoveMsg = e.target.closest('.ct_remove_bill_pop_up_update_acc')
             let showInfo = e.target.closest('.date_time_order pre')
             let slide = e.target.closest('.ct_field_small_size')
-            let goBack=e.target.closest('.go_back')
-            let ovRemove=e.target.closest('.ct_overflow_customize')
-            if (ovRemove !== null||e.target.closest('.close_order_dt') !== null) {
-                    document.querySelector('.ct_overflow_customize').style.display = 'none'
-                    document.querySelector('.ct_bx_show_mobile_order_dt .ct_bx_items_order_details').style.display = 'none'
-                    document.querySelector('.ct_bx_items_order_details').classList.add('nottog22')
-                    document.querySelector('.ct_bx_items_order_details').classList.remove('tog22')
+            let goBack = e.target.closest('.go_back')
+            let ovRemove = e.target.closest('.ct_overflow_customize')
+            if (ovRemove !== null || e.target.closest('.close_order_dt') !== null) {
+                document.querySelector('.ct_overflow_customize').style.display = 'none'
+                document.querySelector('.ct_bx_show_mobile_order_dt .ct_bx_items_order_details').style.display = 'none'
+                document.querySelector('.ct_bx_items_order_details').classList.add('nottog22')
+                document.querySelector('.ct_bx_items_order_details').classList.remove('tog22')
 
             }
             if (goBack !== null) {
@@ -21985,7 +22068,7 @@ ${htmlD2}
                 if (window.screen.width <= 400) {
                     document.querySelector('.ct_bx_show_mobile_order_dt .ct_bx_items_order_details').style.display = 'block'
                     document.querySelector('.ct_overflow_customize').style.display = 'block'
-                    
+
                     document.querySelector('.ct_bx_show_mobile_order_dt .ct_bx_items_order_details').innerHTML = info.parentElement.parentElement.childNodes[1].innerHTML + `<div class="ct_bx_remove_custom close_order_dt">
             <ion-icon name="close-outline"></ion-icon>
         </div>`
@@ -22061,7 +22144,6 @@ ${htmlD2}
 
             }
             if (canBtnO !== null) {
-
                 let idM = canBtnO.parentElement.childNodes[5].innerText.trim()
                 canBtnO.parentElement.childNodes[3].childNodes[9].style.display = 'none'
                 canBtnO.parentElement.childNodes[3].childNodes[7].innerText = 'You canceled this order'
@@ -22173,7 +22255,7 @@ ${htmlD2}
 
 
         }
-       document.querySelectorAll('.ct_bx_search input').forEach(cur => {
+        document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
                 let txt = cur.value.toLowerCase()
@@ -22183,7 +22265,7 @@ ${htmlD2}
                         let dbCollection = db.collection(`searchFd`)
                         let res = await dbCollection.get()
                         let matched = res.docs.filter(cur => {
-                                            console.log(cur.data().name.toLowerCase().startsWith(txt))
+                            console.log(cur.data().name.toLowerCase().startsWith(txt))
 
                             return cur.data().name.toLowerCase().startsWith(txt)
                         })
@@ -22380,7 +22462,7 @@ ${htmlD2}
                     document.querySelector('.ct_field_small_size_bx').style.display = 'block'
                     document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '5px 0 0 0'
 
-                    document.querySelector('.mai_ul').style.display = 'block'
+                    document.querySelector('.mai_ul').style.display = 'flex'
                     if (window.screen.width <= 360) {
                         document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '5px 0 0 0'
 
@@ -22394,7 +22476,7 @@ ${htmlD2}
                     document.querySelector('.xclose_icon').style.display = 'none'
                     document.querySelector('.for_big_scr_only input').value = ''
                     document.querySelector('.ct_bx_matched_itm').style.transform = 'translate(0,6px)'
-                    document.querySelector('.ct_inner_nav').style.padding = '6px 9px'
+                    document.querySelector('.ct_inner_nav').style.padding = '11px 9px'
                     document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = '0 1px 6px rgb(0 0 0 / 42%)'
                     document.querySelector('.for_big_scr_only').classList.remove('active')
                     document.querySelector('.for_big_scr_only ').classList.add('active2')

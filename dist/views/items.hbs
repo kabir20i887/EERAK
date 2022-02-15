@@ -39,6 +39,7 @@
             z-index: 999;
             border-radius: 50%;
         }
+.itm_dt_body  .ct_bx_qty.ct_bx_qt_foods2{display: none;}
 
         .cart_nav {
             display: flex;
@@ -47,7 +48,7 @@
         .ct_x_fd_dt_itm .ct_sbout_this_Required_itm_info h4 {
             font-size: 18px;
             margin-bottom: 0;
-            color: rgb(36, 34, 34);
+            color: rgb(0, 0, 0);
             font-family: 'Open sans';
         }
 
@@ -203,20 +204,19 @@
             position: relative;
         }
 
-        .ct_bx_play {
-            display: none;
-            color: white;
-            position: absolute;
-            left: 270px;
-            z-index: 9999;
-            top: 35%;
-            padding: 10px 25px 0 25px;
-            background: #ff2b2b;
-            border-radius: 42px;
-            box-shadow: 0 0 5px #00000052;
-            font-size: 37px;
-        }
-
+      .ct_bx_play {
+    display: none;
+    color: white;
+    position: absolute;
+    left: 270px;
+    z-index: 9999;
+    top: 35%;
+    padding: 22px 25px 12px 25px;
+    background: #1f1f1fc9;
+    border-radius: 50%;
+    /* box-shadow: 0 0 5px #00000052; */
+    font-size: 45px;
+}
         video {
             width: inherit;
             height: inherit;
@@ -1355,7 +1355,7 @@
         .nav_main_ek_li_big ion-icon {
             display: block;
             margin-top: 2px;
-            background: #254cb9;
+            background: #0043ff;
             color: rgb(255 255 255);
             height: 22px;
             width: 23px;
@@ -3867,6 +3867,7 @@
                 color: rgb(0, 0, 0);
                 margin: 22px 0 0 12px;
                 font-size: 24px;
+                font-weight: 500;
                 font-family: 'Roboto';
             }
 
@@ -4167,11 +4168,6 @@
             .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
                 width: 61px;
             }
-
-            .ct_offer_box_cook2 span {
-                font-size: 16px;
-            }
-
             .ct_bx_price span {
                 margin-top: 6px;
                 font-size: 29px;
@@ -4223,10 +4219,6 @@
                 padding-bottom: 0px;
                 margin-bottom: 30px;
                 border-top: 4px solid #e2dfdf;
-            }
-
-            span.unit_fds {
-                margin-left: 0;
             }
 
             .ct_bx_rt_rv_bx {
@@ -5764,7 +5756,7 @@
         }
 
         @media all and (max-width: 1000px) {
-    .ct_sbout_this_itm .heading_p{margin-left:11px;}
+    .ct_sbout_this_itm .heading_p{margin-left:1px;}
             .ct_sbout_this_itm {
                 padding: 0;
             }
@@ -5802,7 +5794,13 @@
             .ct_err_max_stock {
                 margin: 0 0 10px 0;
             }
-
+.ct_sbout_this_itm .heading_p {
+    margin-left: 11px;
+}
+.ct_bx_play {
+    padding: 25px 25px 6px 25px;
+    font-size: 69px;
+}
             .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
                 width: 98px;
                 height: 97px;
@@ -5984,6 +5982,9 @@
                 margin-left: 5px;
                 margin-top: 24px;
             }
+            .ct_x_fd_dt_itm .ct_bx_download_btn {
+    margin-top: 12px;
+}
 
             footer .logo img {
                 width: 137px;
@@ -6048,15 +6049,12 @@
                 font-size: 15px;
                 margin: 3px 0 10px 23px;
             }
-
-            .ct_bx_price span {
-                margin-top: 33px;
-            }
-
-            .ct_bx_price span {
-                font-size: 17px;
-            }
-
+.ct_bx_price span {
+    font-size: 37px;    margin-top: 3px;
+}
+.ct_bx_price {
+    margin-top: 6px;
+}
             .ct_bx_ins_items .inner p {
                 font-size: 19px;
             }
@@ -6085,13 +6083,10 @@
                 margin-top: 0px;
             }
 
-            .inner span {
-                font-size: 13px;
-            }
-
+ 
             .ct_bx_total_ammount span {
                 font-weight: 500;
-                font-size: 19px;
+                font-size: 27px;
             }
 
             .ct_bx_price p {
@@ -6140,11 +6135,7 @@
                 visibility: hidden;
             }
 
-            .ct_bx_ins_items {
-                padding: 0;
-                height: auto;
-            }
-
+    
             .contianer_items_inside {
                 width: 100%;
                 margin-top: 7px;
@@ -6190,9 +6181,8 @@
             }
 
             .contianer_items_inside {
-                flex-flow: row;
-                width: 940px;
-                padding-right: 40px;
+                padding-right: 0;
+    margin-left: 7px;
             }
 
             .ct_inner_inside_item {
@@ -6262,9 +6252,11 @@
                 transform: translate(0px, 0);
             }
 
-            .ct_sbout_this_itm {
-                margin-left: 20px;
-            }
+          .ct_sbout_this_itm {
+    margin-left: 20px;
+    padding-left: 1px;
+    padding-top: 12px;
+}
 
             .itm_dt_body .ct_bx_qt_foods {
                 width: 140px;
@@ -6417,6 +6409,24 @@
     width: 32px;
     padding: 7px 7px 22px 7px;
     margin-left: -27px;
+}
+.ct_bx_play {
+    padding: 22px 25px 12px 25px;
+    font-size: 42px;
+}
+.inner_ov_box {
+    width: 78%;}
+.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+    width: 79px;
+    height: 77px;
+    margin: 16px 10px 0 2px;
+    padding: 17px 13px;
+}
+.ct_offer_box_cook2 span {
+    font-size: 19px;
+}
+.ct_offer_box_cook2 p {
+    font-size: 14px;
 }
             .ct_inner_nav {
                 padding: 24px 20px 10px 20px;
@@ -6678,11 +6688,6 @@
                 margin: 0;
                 box-shadow: none;
             }
-
-            .contianer_items_inside {
-                margin-bottom: 0;
-            }
-
             .ct_bx_fex_fd_dt_ov {
                 padding: 0 0px;
             }
@@ -6712,7 +6717,14 @@
             .ct_list_other_item ul li {
                 padding: 20px 10px;
             }
-
+.ct_bx_ins_items {
+    width: auto;
+    min-width: 45vw;
+}
+.ct_sbout_this_itm {
+    padding-left: 2px;
+    padding-top: 15px;
+}
             .ct_bx_fex_fd_dt_ov {
                 margin-top: 54px;
             }
@@ -6755,7 +6767,7 @@
             }
 
             .inner span {
-                font-size: 17px;
+                font-size: 15px;
             }
 
             .for_otherItems .ct__inner_inner span {
@@ -6771,7 +6783,7 @@
             }
 
             .for_otherItems .inner span {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .ct_err_max_stock2 p,
@@ -6860,19 +6872,9 @@
 
             .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
                 margin-top: -16px;
-                width: 84px;
-                height: 85px;
-                padding: 18px 12px;
                 margin-left: -9px;
             }
 
-            .ct_offer_box_cook2 span {
-                font-size: 23px;
-            }
-
-            .ct_offer_box_cook2 p {
-                font-size: 15px;
-            }
 
             .carousel-control-next,
             .carousel-control-prev {
@@ -6913,7 +6915,20 @@
             .ct_bx_play {
                 font-size: 36px;
             }
+.ct_bx_qt_foods input {
+    font-size: 18px;    width: 100%;
+}
+.itm_dt_body .ct_bx_qt_foods {
+    width: 91%;
+    display: flex;
+        margin: -10px 0 10px 22px;
 
+    justify-content: center;
+}
+
+.itm_dt_body .ct_bx_qty{display: none;}
+.itm_dt_body .ct_bx_qty.ct_bx_qt_foods2{display: flex;}
+.itm_dt_body .ct_bx_qty p{display: none;}
             .for_ain_home_logo img {
                 margin-top: -15px;
             }
@@ -7030,7 +7045,7 @@
             }
 
             .ct_sbout_this_itm .heading {
-                margin: 14px 0 0 7px;
+                margin:0
             }
 
             .ct_sbout_this_itm p {
@@ -7136,14 +7151,12 @@
             .for_mobile_search {
                 top: 74px;
             }
-
-            .ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
-                margin: -16px 10px 0 -19px;
-                width: 79px;
-                height: 76px;
-                padding: 15px 9px;
-            }
-
+.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 {
+    margin: -26px 10px 0 -9px;
+    width: 73px;
+    height: 71px;
+    padding: 15px 9px;
+}
             .carousel-control-next,
             .carousel-control-prev {
                 margin-top: 0;
@@ -7315,20 +7328,21 @@
                 margin-top: 3px;
             }
 
-            .ct_offer_box_cook2 p {
-                font-size: 15px;
-            }
-
-            .ct_offer_box_cook2 span {
-                font-size: 21px;
-            }
+    .ct_offer_box_cook2 span {
+    font-size: 17px;
+}
+         
         }
 
         @media only screen and (max-width:400px) {
             .ct_bx_img_itm {
                 margin-top: 108px;
             }
-
+.ct_inner_nav {
+    overflow: hidden;
+}
+.inner_ov_box {
+    width: 78%;}
             .ct_bx_matched_itm p {
                 font-size: 14px;
             }
@@ -7602,6 +7616,18 @@
 .ct_nav_erak .mai_ul {
     width: 26%;
 }
+.ct_bx_ins_items {
+    min-width: 86vw;
+}
+.ct_bx_ins_items .inner p {
+    font-size: 21px;
+}
+.inner span {
+    font-size: 18px;
+}
+.for_otherItems .inner span {
+    font-size: 16px;
+}
             .ct_acc_dt_ov p {
                 font-size: 20px;
             }
@@ -7787,11 +7813,14 @@
             .cart_nav a {
                 margin-top: 5px;
             }
-
+.for_ain_home_logo img {
+    width: 157px;}
             .ct_bx_play {
                 font-size: 30px;
             }
-
+.ct_nav_erak .mai_ul {
+    width: 33%;
+}
             .ct_err_max_stock2,
             .ct_err_max_stock {
                 margin: 0;
@@ -9712,7 +9741,20 @@
                             <h4>Total:</h4>
                             <span></span>
                         </div>
+<div class="ct_bx_qty ct_bx_qt_foods2">
+                            <p>Quantity</p>
 
+                            <div class="ct_bx_qt_foods">
+                                <div class="ct_bx_item_rem">
+                                    <ion-icon name="remove-outline"></ion-icon>
+                                </div>
+                                <input type="text" value="1">
+                                <div class="ct_bx_item_add">
+                                    <ion-icon name="add-outline"></ion-icon>
+                                </div>
+
+                            </div>
+                        </div>
                         <div class="ct_bx_for_added_itm">
                             <div class="ct_x_added_Itm_date">
                                 <ion-icon name="checkmark-circle"></ion-icon>
@@ -12563,10 +12605,14 @@ ${hmOTH}
                                             let priceXoff = parseFloat(dt.price)
                                             priceXoff = priceXoff - (priceXoff * (offX / 100))
                                             priceXoff = priceXoff.toLocaleString()
+                                            let styleX=`style='font-size: 11px;margin: 2px 9px;'`
+                                            if(window.screen.width<=360){
+                                                styleX=`style='font-size: 13px;margin: 3px 9px;'`
+                                            }
                                             offBox = `             <div class="ct_bx_offer_box_items">
     <p>${item.offer.sauce}% off</p>
 </div>`
-                                            priceBox = ` <span > <pr>₹ ${priceXoff}</pr> <del style='font-size: 11px;margin: 2px 9px;'>₹ ${dt.price.toLocaleString()}</del> </span>
+                                            priceBox = ` <span > <pr>₹ ${priceXoff}</pr> <del ${styleX}>₹ ${dt.price.toLocaleString()}</del> </span>
                                                     `
                                         }
                                     }
@@ -12618,7 +12664,7 @@ ${hmOTH}
                             cur.innerHTML = insideFd.join('')
                             if (window.screen.width <= 800) {
                                 let length = document.querySelectorAll('.itemacc_1 .ct_bx_ins_items').length
-                                cur.style.width = (220 * length + 60) + 'px'
+                             //  cur.style.width = (220 * length + 60) + 'px'
                             }
                         })
                         if (item.unitInit !== null) {
@@ -15145,8 +15191,9 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                 document.querySelector('.ct_bx_go_back_nav').addEventListener('click', (e) => {
                     document.querySelector('.ct_field_small_size_bx').style.display = 'block'
                     document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '4px 0 0 0'
+                    document.querySelector('.ct_bx_matched_itm').style.display = 'none'
 
-                    document.querySelector('.mai_ul').style.display = 'block'
+                    document.querySelector('.mai_ul').style.display = 'flex'
                     if (window.screen.width <= 360) {
                         document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '4px 0 0 0'
 
@@ -15160,7 +15207,10 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                     document.querySelector('.xclose_icon').style.display = 'none'
                     document.querySelector('.for_big_scr_only input').value = ''
                     document.querySelector('.ct_bx_matched_itm').style.transform = 'translate(0,6px)'
-                    document.querySelector('.ct_inner_nav').style.padding = '4px 9px'
+                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
+                            cur1.style.padding = '13px 0px 10px 0px'
+
+                        })
                     document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = '0 1px 6px rgb(0 0 0 / 42%)'
                     document.querySelector('.for_big_scr_only').classList.remove('active')
                     document.querySelector('.for_big_scr_only ').classList.add('active2')
@@ -15170,7 +15220,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
 
         }
 
-
+        let mai_ul=0
 
         var waypoint = new Waypoint({
             element: document.querySelector('.ct_remcombx_pf_ct'),
@@ -15183,12 +15233,22 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                             cur1.style.padding = '13px 20px 10px 10px'
 
                         })
+                                            document.querySelector('.for_seravh_in_nav.for_nav_search').style.display='block'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='130px'
+                    document.querySelector('.ct_inner_nav').style.justifyContent='space-around'
+                    if (window.screen.width <= 470) {
+
+                                        document.querySelector('.ct_nav_erak .mai_ul').style.width='auto'
+                    }
                     }
                     if (window.screen.width <= 400) {
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
                             cur1.style.padding = '13px 0px 10px 0px'
 
                         })
+                
+                    document.querySelector('.ct_inner_nav').style.overflow='visible'
+
                     } else if (window.screen.width <= 550) {
 
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
@@ -15201,6 +15261,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                         cur1.style.margin = '0 0px 0 3px'
 
                     })
+
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 740) {
                         document.querySelector('.for_nav_main').style.height = '75px'
@@ -15230,7 +15291,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                             document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
 
                             if (window.screen.width <= 400) {
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '12px'
+                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
                             }
                             let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
@@ -15253,10 +15314,15 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                         document.querySelector('.ct_inner_nav').style.padding = '13px 0px 10px 0px'
                     }
                 } else if (direction === 'up') {
+                    document.querySelector('.ct_nav_erak .mai_ul').style.display='flex'
+
                     if (window.screen.width <= 740) {
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
                         document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
+                    document.querySelector('.for_seravh_in_nav.for_nav_search').style.display='none'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='63%'
 
+                    document.querySelector('.ct_inner_nav').style.justifyContent='initial'
                     }
                     if (window.screen.width <= 550) {
                         document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
@@ -15264,14 +15330,18 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                     }
                     if (window.screen.width <= 470) {
                         document.querySelector('.ct_field_small_size_bx').style.marginTop = '-7px'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='42%'
 
                     }
                     if (window.screen.width <= 400) {
-                        document.querySelector('.mai_ul').style.display = 'block'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='36%'
+
+                        document.querySelector('.ct_inner_nav').style.overflow='hidden'
                         document.querySelector('.ct_field_small_size_bx').style.display = 'block'
 
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
                     }
+              
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 1100) {
 
@@ -15282,10 +15352,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
                         }
-                        if (window.screen.width <= 470 && window.screen.width > 400) {
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
 
-                        }
                         if (window.screen.width <= 470 && window.screen.width > 400) {
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
@@ -15314,7 +15381,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
 
                             document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'none'
 
-                            let xW = document.querySelector('.for_mobile_search .ct_bx_search input').getBoundingClientRect().width
+                            let xW = document.querySelector('.for_mobile_search .ct_bx_search').getBoundingClientRect().width
                             document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.width = `${xW}px`
                         }
                     }
@@ -15399,7 +15466,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
             h = h / 2
             let wi = document.querySelector('.for_banner').getBoundingClientRect().width
             wi = (wi / 2) - 50
-            document.querySelector('.ct_bx_play').style.top = h + 'px'
+            document.querySelector('.ct_bx_play').style.top =(h-30) + 'px'
             document.querySelector('.ct_bx_play').style.left = wi + 'px'
 
             if (window.screen.width <= 400) {

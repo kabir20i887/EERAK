@@ -15,7 +15,20 @@
         .ct_bx_slide_bx.active {
             right: 0;
         }
-
+.cart_nav span {
+    width: 37px;
+    padding: 7px 7px 22px 7px;
+    display: none;
+    justify-content: center;
+    /* padding-top: 4px; */
+    font-size: 13px;
+    height: 25px;
+    background-color: #0044ff;
+    color: white;
+    margin-left: -16px;
+    z-index: 999;
+    border-radius: 50%;
+}
         .ct_x_flex_btns {
             display: flex;
             position: absolute;
@@ -842,6 +855,7 @@
 
         .mai_ul .cart_nav {
             cursor: pointer;
+            display: flex;
             padding: 1px 0
         }
 
@@ -1299,7 +1313,7 @@
         .nav_main_ek_li_big ion-icon {
             display: block;
             margin-top: 2px;
-            background: #254cb9;
+            background: #0043ff;
             color: rgb(255, 255, 255);
             height: 22px;
             width: 23px;
@@ -2120,7 +2134,6 @@
             }
 
             .cart_nav {
-                display: inline-block;
                 margin-top: 13px
             }
 
@@ -2818,7 +2831,16 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
-
+.cart_nav span {
+    width: 32px;
+    padding: 7px 7px 22px 7px;
+    margin-left: -27px;
+}
+ .ct_nav_erak .mai_ul {
+                width: 60%
+            }
+.for_nav_main .for_seravh_in_nav{display: none;}
+ .for_nav_main .for_mobile_search{display: block;}
             /* FOOTER 740 */
             .ct_bx_footer {
                 display: block;
@@ -3245,6 +3267,9 @@
                 margin-top: 170px;
             }
 
+           .ct_nav_erak .mai_ul {
+    width: 42%;
+}
             .ct_nav_erak .mai_ul {
                 padding: 0
             }
@@ -3304,10 +3329,6 @@
 
             .for_nav_main .logo {
                 margin-left: 5px
-            }
-
-            .ct_nav_erak .mai_ul {
-                width: 71px
             }
 
             .ct_bx_search .search-icon {
@@ -3546,9 +3567,11 @@
 
         @media only screen and (max-width:400px) {
             .ct_inner_nav {
-                justify-content: space-around
+                justify-content:initial
             }
-
+.ct_nav_erak .mai_ul {
+    width: 36%;
+}
             .for_nav_main .logo {
                 margin: 4px 0
             }
@@ -3572,14 +3595,6 @@
 
             .cart_nav a {
                 margin-top: 7px
-            }
-
-            .ct_nav_erak .mai_ul {
-                width: 63px
-            }
-
-            .mai_ul {
-                display: block
             }
 
             .ct_bx_crousel {
@@ -3788,9 +3803,7 @@
         }
 
         @media only screen and (max-width:360px) {
-            .ct_inner_nav .mai_ul {
-                width: 50px
-            }
+
 
             .ct_bx_price_fd.hasoffPrice {
                 margin-top: 8px;
@@ -3913,10 +3926,6 @@
                 z-index: 0
             }
 
-            .cart_nav ion-icon {
-                font-size: 32px;
-                margin: 0
-            }
 
             .ct_field_small_size {
                 transform: translate(0px, -1px)
@@ -4013,7 +4022,9 @@
             .cart_nav a {
                 margin-top: 5px
             }
-
+.logo img {
+    width: 165px;
+}
             .ct_bx_fooditm .main_im {
                 height: 85px;
             }
@@ -4042,14 +4053,9 @@
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0)
             }
-
-            .cart_nav ion-icon {
-                margin: 0
-            }
-
             .ct_nav_erak .mai_ul {
                 transform: translate(0, 2px);
-                padding-top: 14px
+                padding-top:5px
             }
 
             .ct_nav_erak ul .nav_main_ek_li {
@@ -4988,6 +4994,20 @@
                 if(localStorage.getItem('foodsAdded')===null){
             localStorage.setItem('foodsAdded','[]')
         }
+           if (getCookie('user') !== '') {
+            let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+            let lengthX = allfds.length
+
+
+            if (lengthX > 0&&getCookie('notclickedtocart')!=='') {
+                if (lengthX > 9) {
+                    lengthX = '9+'
+                }
+                document.querySelector('.cart_nav span').style.display = 'flex'
+                document.querySelector('.cart_nav span').innerText = lengthX
+            }
+
+        }
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
@@ -5174,7 +5194,7 @@
                 })
             })
         }
-        if (window.screen.width <= 400) {
+       if (window.screen.width <= 400) {
             if (document.querySelector('.for_nav_search') !== null) {
                 document.querySelector('.for_nav_search input').addEventListener('click', (e) => {
                     document.querySelector('.ct_field_small_size_bx').style.display = 'none'
@@ -5192,10 +5212,11 @@
                     document.querySelector('.for_big_scr_only ').classList.add('active')
                 })
                 document.querySelector('.ct_bx_go_back_nav').addEventListener('click', (e) => {
+                    document.querySelector('.ct_bx_matched_itm').style.display = 'none'
                     document.querySelector('.ct_field_small_size_bx').style.display = 'block'
                     document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '4px 0 0 0'
 
-                    document.querySelector('.mai_ul').style.display = 'block'
+                    document.querySelector('.mai_ul').style.display = 'flex'
                     if (window.screen.width <= 360) {
                         document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '4px 0 0 0'
 
@@ -5209,7 +5230,10 @@
                     document.querySelector('.xclose_icon').style.display = 'none'
                     document.querySelector('.for_big_scr_only input').value = ''
                     document.querySelector('.ct_bx_matched_itm').style.transform = 'translate(0,6px)'
-                    document.querySelector('.ct_inner_nav').style.padding = '13px 0px 10px 0px'
+                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
+                            cur1.style.padding = '13px 0px 10px 0px'
+
+                        })
                     document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = '0 1px 6px rgb(0 0 0 / 42%)'
                     document.querySelector('.for_big_scr_only').classList.remove('active')
                     document.querySelector('.for_big_scr_only ').classList.add('active2')
@@ -5220,16 +5244,46 @@
         }
 
 
-        var waypoint = new Waypoint({
+   
+
+        function getCookie(e) {
+            for (var n = e + "=", t = decodeURIComponent(document.cookie)
+                .split(";"), o = 0; o < t.length; o++) {
+                for (var c = t[o];
+                    " " == c.charAt(0);) c = c.substring(1);
+                if (0 == c.indexOf(n)) return c.substring(n.length, c.length);
+            }
+            return "";
+        }
+
+
+           var waypoint = new Waypoint({
             element: document.querySelector('#ek_res_ev'),
             handler: function (direction) {
                 let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
                 if (direction === 'down') {
+                    if (window.screen.width <= 740) {
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '0'
+                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
+                            cur1.style.padding = '13px 20px 10px 10px'
+
+                        })
+                                            document.querySelector('.for_seravh_in_nav.for_nav_search').style.display='block'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='130px'
+                    document.querySelector('.ct_inner_nav').style.justifyContent='space-around'
+                    if (window.screen.width <= 470) {
+
+                                        document.querySelector('.ct_nav_erak .mai_ul').style.width='auto'
+                    }
+                    }
                     if (window.screen.width <= 400) {
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
                             cur1.style.padding = '13px 0px 10px 0px'
 
                         })
+                
+                    document.querySelector('.ct_inner_nav').style.overflow='visible'
+
                     } else if (window.screen.width <= 550) {
 
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
@@ -5237,14 +5291,12 @@
 
                         })
                     }
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '0'
-   
-                    }
+
                     document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
                         cur1.style.margin = '0 0px 0 3px'
 
                     })
+
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 740) {
                         document.querySelector('.for_nav_main').style.height = '75px'
@@ -5274,7 +5326,7 @@
                             document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
 
                             if (window.screen.width <= 400) {
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '12px'
+                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
                             }
                             let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
@@ -5299,19 +5351,32 @@
                 } else if (direction === 'up') {
                     if (window.screen.width <= 740) {
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-7px'
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
+                    document.querySelector('.for_seravh_in_nav.for_nav_search').style.display='none'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='63%'
+
+                    document.querySelector('.ct_inner_nav').style.justifyContent='initial'
+                    }
+                    document.querySelector('.ct_nav_erak .mai_ul').style.display='flex'
+
+                    if (window.screen.width <= 550) {
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
 
                     }
-                    if (window.screen.width <= 550) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-12px'
+                    if (window.screen.width <= 470) {
+                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-7px'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='42%'
 
                     }
                     if (window.screen.width <= 400) {
-                        document.querySelector('.mai_ul').style.display = 'block'
+                    document.querySelector('.ct_nav_erak .mai_ul').style.width='36%'
+
+                        document.querySelector('.ct_inner_nav').style.overflow='hidden'
                         document.querySelector('.ct_field_small_size_bx').style.display = 'block'
 
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
                     }
+              
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 1100) {
 
@@ -5322,10 +5387,7 @@
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
                         }
-                        if (window.screen.width <= 470 && window.screen.width > 400) {
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
 
-                        }
                         if (window.screen.width <= 470 && window.screen.width > 400) {
                             if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
 
@@ -5354,7 +5416,7 @@
 
                             document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'none'
 
-                            let xW = document.querySelector('.for_mobile_search .ct_bx_search input').getBoundingClientRect().width
+                            let xW = document.querySelector('.for_mobile_search .ct_bx_search').getBoundingClientRect().width
                             document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.width = `${xW}px`
                         }
                     }
@@ -5375,15 +5437,6 @@
             }
         })
 
-        function getCookie(e) {
-            for (var n = e + "=", t = decodeURIComponent(document.cookie)
-                .split(";"), o = 0; o < t.length; o++) {
-                for (var c = t[o];
-                    " " == c.charAt(0);) c = c.substring(1);
-                if (0 == c.indexOf(n)) return c.substring(n.length, c.length);
-            }
-            return "";
-        }
         let user = getCookie('user')
         if (user !== '') {
             let parsedData = JSON.parse(user)
