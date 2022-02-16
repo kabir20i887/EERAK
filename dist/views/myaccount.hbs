@@ -20360,7 +20360,7 @@
                                             <label for="lst_name_inp">Your last name</label>
 
                                             <input type="text" id="lst_name_inp" name="ln" spellcheck="false"
-                                                value="bhattacharya" required>
+                                                value="bhattacharya">
                                         </div>
                                     </div>
 
@@ -21080,6 +21080,7 @@
                     document.querySelector('.ct_bx_verify p').innerText = `Enter the OTP (one-time-password) which is sent to this number ${jwt.a.ph[0]}`
                     res.docs.forEach(cur => {
                         let dt = cur.data().data
+                        if(jwt.a.ph[0].split(' ').join('').trim()!==user.ct.split(' ').join('').trim()){
                         if (jwt.a.ph[0].split(' ').join('').trim() === dt[5].split(' ').join('').trim()) {
                             document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
                                 cur.style.display = 'none'
@@ -21087,6 +21088,8 @@
                             phValid = true
                             document.querySelector('.phone_err').style.display = 'block'
                         }
+                        }
+
                         if (!checkPas) {
                             checkPas = bcrypt.compareSync(jwt.a.pass, dt[3]);
 

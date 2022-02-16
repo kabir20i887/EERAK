@@ -2547,18 +2547,25 @@
             transform: translate(0, 8px);
         }
 
-        .t_bx_about_ins span {
-            font-size: 18px;
-            line-height: 26px;
-            font-family: 'Roboto';
-            margin-top: 0;
-            word-break: break-word;
-            line-height: 26px;
-            color: rgb(0 0 0);
-            padding: 10px;
-            display: block;
-        }
-
+    .t_bx_about_ins span {
+    font-size: 17px;
+    line-height: 26px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    margin-top: 0;
+    word-break: break-word;
+    line-height: 22px;
+    color: rgb(38 38 38);
+    padding: 10px;
+    /* font-family: 'Nanum Gothic'; */
+    display: block;
+}
+.t_bx_about_ins span.textMain{
+        font-family: 'Nanum Gothic';
+    font-size: 23px;
+    color: black;
+    line-height: 28px;
+}
         .t_bx_about_ins ul span {
             padding: 0px;
         }
@@ -2573,13 +2580,13 @@
             padding: 10px;
         }
 
-        .t_bx_about_ins_inside h5 {
-            margin-top: -2px;
-            color: black;
-            margin-left: 10px;
-            font-family: 'Montserrat';
-            letter-spacing: .5px;
-        }
+       .t_bx_about_ins_inside h5 {
+    margin-top: 8px;
+    color: black;
+    margin-left: 10px;
+    font-family: 'Montserrat';
+    letter-spacing: .5px;
+}
 
         .ct_sbout_this_itm .t_bx_about_ins h4,
         .ct_x_fd_dt_itm .ct_sbout_this_itm .t_bx_about_ins h4 {
@@ -3446,6 +3453,9 @@
                 margin-left: 16px;
                 padding: 0;
             }
+    .ct_bx_img_itm {
+            max-width: 500px;
+        }
 
             .ct_list_other_item ul li p {
                 font-size: 16px;
@@ -10518,9 +10528,7 @@
                     document.querySelectorAll('.ct_bx_total_ammount.totam2').forEach(cur => {
                         cur.style.display = 'block'
                     })
-                    document.querySelectorAll('.ct_bx_qty').forEach(cur => {
-                        cur.style.display = 'flex'
-                    })
+
                     document.querySelector('.ct_bx_no_base_selected').style.display = 'none'
                     document.querySelectorAll('.ct_bx_acct_cart').forEach(cu => {
                         cu.style['pointer-events'] = 'auto'
@@ -11231,7 +11239,11 @@
                     cur.style.width = '550px'
                 })
             }
-
+if (window.screen.width <= 1300) {
+                document.querySelectorAll('.ct_bx_img_itm img').forEach(cur => {
+                    cur.style.width = '500px'
+                })
+            }
             if (window.screen.width <= 1200) {
                 document.querySelectorAll('.ct_bx_img_itm img').forEach(cur => {
                     cur.style.width = '40vw'
@@ -12582,7 +12594,7 @@ ${hmOTH}
                                 <div class="t_bx_about_ins">
                                 <div class="t_bx_about_ins_inside">
                                 <h4>What is ${dt.name} ?</h4>
-                                                                <span>${textAb}</span>
+                                                                <span class='textMain'>${textAb}</span>
                                                             ${listIng}
                                                                 </div>
                                 
@@ -12639,7 +12651,7 @@ ${hmOTH}
                                 <div class="t_bx_about_ins">
                                 <div class="t_bx_about_ins_inside">
                                 <h4>What is ${dt.name} ?</h4>
-                                                                <span>${textAb}</span>
+                                                                <span class='textMain'>${textAb}</span>
                                                             ${listIng}
                                                                 </div>
                                 

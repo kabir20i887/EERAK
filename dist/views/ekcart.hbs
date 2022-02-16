@@ -11188,7 +11188,7 @@
                     <rs class="hidden"></rs>
                     <div class="ct_flex_bx_msg">
                         <ion-icon name="checkmark-circle"></ion-icon>
-                        <h2>Thank You for ordering online from us.</h2>
+                        <h2>Experience Freedom.</h2>
 
                     </div>
                     <p> <span></span></p>
@@ -13565,9 +13565,10 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             user.n = user.n.replace(/\b\w/g, l => l.toUpperCase())
                             user.ln = user.ln.replace(/\b\w/g, l => l.toUpperCase())
                             if (hours >= 21 && timeMin >= 15 || hours <= 9) {
-                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed.Please use the OTP that has been sent to you for verifying this delivery.Our all delivery service
-                                        closes after 9:30 pm,so your order wil be delivered on tommorow,with in 10 am.
-                                      `
+                               // document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed.Please use the OTP that has been sent to you for verifying this delivery.Our all delivery service
+                                   //     closes after 9:30 pm,so your order wil be delivered on tommorow,with in 10 am.
+                                     // `
+                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${dTime} . Please use the OTP that has been sent to you for verifying this delivery.`
 
                                 noLt = false
 
