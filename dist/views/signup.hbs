@@ -895,7 +895,7 @@
         }
 
         .logo img {
-            width: 160px;
+            width: auto;
         }
 
         .nick_name label.passMain {
@@ -2272,14 +2272,14 @@
                                     <div class="nick_name name_un bx_acc">
                                         <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
 
-                                        <input name='name_user' class="name_of_user ac_setup" id="name_inp"
+                                        <input name='name_user' autocomplete="off" class="name_of_user ac_setup" id="name_inp"
                                             maxlength="9" spellcheck="false" type="text" required>
                                         <label for="name_inp"> First name</label>
 
 
                                     </div>
                                     <div class="nick_name last_name lstN bx_acc">
-                                        <input name='lastname' class="last_of_user ac_setup" id="last_nam_inp"
+                                        <input name='lastname' autocomplete="off" class="last_of_user ac_setup" id="last_nam_inp"
                                             spellcheck="false" type="text" required>
 
                                         <label for="last_nam_inp"> last name</label>
@@ -2306,7 +2306,7 @@
                                         <div class="nick_name bx_acc address">
                                             <ion-icon class="main_icon_acc_log" name="location-outline"></ion-icon>
 
-                                            <input name='address' class="name_of_user ac_setup" id="address"
+                                            <input name='address' autocomplete="off" class="name_of_user ac_setup" id="address"
                                                 spellcheck="false" type="text" required>
                                             <label class="labelM" for="address">Flat, House no., Building, Apartment
                                             </label>
@@ -2331,7 +2331,7 @@
                                             <div class="nick_name bx_acc phone_number">
                                                 <ion-icon name="call-outline"></ion-icon>
 
-                                                <input name='phone' class="name_of_user ac_setup" id="phone"
+                                                <input name='phone' autocomplete="off" class="name_of_user ac_setup" id="phone"
                                                     spellcheck="false" type="tel" required>
                                                 <label for="phone">Phone Number</label>
 
@@ -2339,7 +2339,7 @@
                                             </div>
                                             <div class="nick_name gmail_inp_fl  bx_acc">
                                                 <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
-                                                <input name="password_login" minlength="9" class="passMain"
+                                                <input name="password_login" spellcheck="false" autocomplete="off" minlength="9" class="passMain"
                                                     id="passMain" type="password" required>
                                                 <label class="passMain" for="passMain">Password</label>
                                                 <div class="ct_bx_show_password">
@@ -2458,6 +2458,20 @@
                 let w = document.querySelector('.nick_name.area input').getBoundingClientRect().width
                 document.querySelector('.ct_results').style.width = w + 'px'
                 document.querySelector('.ct_results').style.position = 'absolute'
+            }
+        })
+        document.querySelector('html').addEventListener('keyup', (e) => {
+            let inpux=e.target.closest('.nick_name.area input')
+            let inpux2=e.target.closest('.nick_name.address input')
+            let inpux3=e.target.closest('.nick_name.phone_number input')
+            if(inpux!==null){
+                inpux.style.filter='blur(4px)'
+            }
+  if(inpux2!==null){
+                inpux2.style.filter='blur(4px)'
+            }
+            if(inpux3!==null){
+                inpux3.style.filter='blur(4px)'
             }
         })
         document.querySelector('html').addEventListener('click', (e) => {
