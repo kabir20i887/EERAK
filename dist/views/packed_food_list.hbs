@@ -29,6 +29,54 @@
     z-index: 999;
     border-radius: 50%;
 }
+.ct_close_video{
+    color: white;
+    position: absolute;
+    right: 0%;
+    margin-top: -40px;
+    font-size: 40px;
+}
+.ct_video_over {
+    width: 100%;
+    z-index: 99999999999;
+    position: fixed;
+    height: 100%;
+    display: none;
+    background-color: rgb(0 0 0 / 39%);
+}
+
+.ct_video_box iframe{
+    width: 100%;
+}
+.ct_video_box{width: 100%;display: none;justify-content: center;}
+.ct_inner_video {
+    position: fixed;
+    height:auto;
+    z-index: 9999999999999;
+    top: 12%;
+    background: white;
+    box-shadow: 0 0 4px black;
+}
+.ct_bx_btn_play {
+    background-color: #ff0000d1;
+    border-radius: 50%;
+    position: absolute;
+    padding: 19px 20px 19px 23px;
+    display: flex;
+    margin-top: 13%;
+    cursor: pointer;
+    left: 43%;
+    justify-content: center;
+}
+.ct_bx_btn_play ion-icon {
+    color: white;
+    font-size: 98px;
+}
+.ct_bx_btn_play:active{
+        background-color: #ff0000;
+
+}
+.ct_inner_xslide{display: flex;justify-content: center;width: 100%;}
 .ct_offer_box span {
     font-size: 15px;
     color: #fff;
@@ -2183,7 +2231,9 @@
             .cart_nav ion-icon {
                 font-size: 36px
             }
-
+.ct_bx_btn_play ion-icon {
+    font-size: 72px;
+}
             .mai_ul li.acc_set_main_nav {
                 padding: 16px 0 0 25px
             }
@@ -2538,7 +2588,9 @@
             .for_seravh_in_nav .xclose_icon {
                 margin: 14px 14px 0 0
             }
-
+.ct_bx_btn_play ion-icon {
+    font-size: 61px;
+}
             .ct_list_food_res_ek h1 {
                 margin-left: 14px;
                 font-size: 24px;
@@ -2619,6 +2671,13 @@
                 width: 80%;
                 margin-left: 2px
             }
+.ct_bx_btn_play {
+    margin-top: 29%;
+    left: 36%;
+}
+.ct_bx_btn_play ion-icon {
+    font-size: 112px;
+}
 
             .ct_slide_bx_crousel .bannerX {
                 display: none;
@@ -3098,7 +3157,9 @@
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
-
+.ct_bx_btn_play ion-icon {
+    font-size: 77px;
+}
             .ct_inner_nav {
                 padding: 20px 10px 10px 10px;
             }
@@ -3274,7 +3335,9 @@
             .ct_bx_crousel {
                 margin-top: 170px;
             }
-
+.ct_bx_btn_play ion-icon {
+    font-size: 56px;
+}
            .ct_nav_erak .mai_ul {
     width: 42%;
 }
@@ -3296,7 +3359,7 @@
             }
 
             .groc_list.for_erak_list {
-                margin-top: 25px;
+                margin-top: 10px;
             }
 
             .ct_field_small_size {
@@ -3812,7 +3875,10 @@
 
         @media only screen and (max-width:360px) {
 
-
+.ct_bx_btn_play {
+    margin-top: 23%;
+    left: 33%;
+}
             .ct_bx_price_fd.hasoffPrice {
                 margin-top: 8px;
             }
@@ -3905,7 +3971,7 @@
             }
 
             .ct_list_food_res_ek h1 {
-                font-size: 16px;
+                font-size:24px;
                 width: 90%;
             }
 
@@ -4404,19 +4470,36 @@
 
 <body class="erak_fd_body">
     {{>nav}}
+                <div class="ct_video_over">
+
+            </div>
     <div class="ct_sep_bx">
         <div class="inner_seperation">
 
+   <div class="ct_video_box">
+                <div class="ct_inner_video">
+                    <div class="ct_close_video">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </div>
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/6iNcRe_pta0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
+                </div>
+            </div>
             <div class="ct_bx_crousel">
 
 
                 <div class="ct_slide_bx_crousel">
+                        <div class="ct_bx_btn_play">
+                            <ion-icon name="play"></ion-icon>
+                        </div>
 
-                    <img class="bannerX" src="../img/imgBanner.webp" alt="img">
-                    <img class="banner2X" src="../img/imgBanner2.webp" alt="img">
-                    <img class="banner3X" src="../img/bannerVideo1.PNG" alt="img">
-                    <img class="banner4X" src="../img/bannerVideo2.PNG" alt="img">
-
+                        <img class="banner3X" src="../img/bannerVideo1.PNG" alt="img">
+                        <img class="banner4X" src="../img/bannerVideo2.PNG" alt="img">
+                        <img class="bannerX" src="../img/imgBanner.webp" alt="img">
+                        <img class="banner2X" src="../img/imgBanner2.webp" alt="img">
 
                 </div>
                 <div class="ct_x_flex_btns">
@@ -5016,6 +5099,60 @@
             }
 
         }
+                document.querySelector('html').addEventListener('click',(e)=>{
+                    if(!e.target.closest('.ct_inner_video')&&!e.target.closest('.ct_bx_btn_play')){
+                    document.querySelector('.ct_video_box').style.display='none'
+                    document.querySelector('.ct_video_over').style.display='none'
+                    }
+                    
+                    if(e.target.closest('.ct_close_video')){
+                                 document.querySelector('.ct_video_box').style.display='none'
+                    document.querySelector('.ct_video_over').style.display='none'
+                    }
+
+                })
+
+        document.querySelector('.ct_bx_btn_play').addEventListener('click',(e)=>{
+            let l=window.screen.width
+            let lX
+            if(window.screen.width<=800){
+                lX=10/100*l
+            l=l-lX
+            }else{
+                lX=20/100*l
+            l=l-lX
+            }
+            let height=window.screen.height
+            let heightX
+            let checkSize=(height*2)+200
+            if(window.screen.height<=740&&window.screen.height<window.screen.width){
+                heightX=30/100*height
+            height=height-heightX
+            
+            }
+             if(window.screen.height>=window.screen.width){
+                   heightX=height*1/2
+            height=height-heightX
+            document.querySelector('.ct_inner_video').style.top=28+'%'
+
+            }
+            if(window.screen.height>740&&window.screen.height<window.screen.width){
+                if(window.screen.height>1550){
+                heightX=30/100*height
+
+                }else{
+                heightX=40/100*height
+
+                }
+            height=height-heightX
+            }
+            document.querySelector('.ct_video_over').style.display='block'
+            document.querySelector('.ct_video_box').style.display='flex'
+            document.querySelector('.ct_inner_video').style.height=(height-38)+'px'
+            document.querySelector('.ct_video_box iframe').style.height=height+'px'
+            document.querySelector('.ct_inner_video').style.width=l+'px'
+
+        })
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)

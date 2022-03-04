@@ -12809,12 +12809,12 @@ ${hmOTH}
                                         item.fdInside.forEach(cm => {
                                             cur.permGroup.forEach(cm2 => {
                                                 if (cm2.name.toLowerCase() === cm.name.toLowerCase()) {
-                                                    cm2.price = '₹' + cm.price
+                                                    cm2.price = '₹' + parseFloat(cm.price)*countNum
 
                                                     if (item.offer !== null) {
                                                         if (item.offer.sauce !== null && cm.id !== 'spices') {
                                                             let offX = parseFloat(item.offer.sauce)
-                                                            let priceX = parseFloat(cm.price)
+                                                            let priceX = parseFloat(cm.price)*countNum
                                                             priceX = priceX - (priceX * (offX / 100))
                                                             cm2.price = '₹' + priceX
                                                         }
@@ -14222,9 +14222,7 @@ document.cookie = "notclickedtocart" + "=" + 'true' + ";" + "expires=18 Dec 9999
                 document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                     cur.innerText = '₹  ' + (tot)
                 })
-                document.querySelectorAll('.mrp_ammount del').forEach(cur => {
-                    cur.innerText = '₹  ' + (tot2.toLocaleString())
-                })
+
                 let searchUrl = window.location.pathname.split('/')[2]
 
                 document.querySelectorAll('.ct_bx_price span').forEach(cur => {

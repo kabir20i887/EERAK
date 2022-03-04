@@ -13983,7 +13983,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             if (cur.id === idM) {
 
                                 cur.qt = i
-                                cur.price = del.split(',').join('')
+                                cur.price = p.split(',').join('')
                                 allfd2.splice(i1, 1)
                                 allfd2.push(cur)
                                 localStorage.setItem('krBusiness', JSON.stringify(allfd2))
@@ -14007,7 +14007,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             let pr = del.split(',').join('')
                             pr = parseFloat(pr) * i
                             cur.qt = i
-                            cur.price = '₹ ' + del.split(',').join('')
+                            cur.price = '₹ ' + p.split(',').join('')
                             allfd.splice(i1, 1)
                             allfd.push(cur)
                             localStorage.setItem('foodsAdded', JSON.stringify(allfd))
@@ -14116,7 +14116,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 if (cur.id === idM) {
 
                                     cur.qt = i
-                                    cur.price = del.split(',').join('')
+                                    cur.price = p.split(',').join('')
                                     allfd2.splice(i1, 1)
                                     allfd2.push(cur)
                                     localStorage.setItem('krBusiness', JSON.stringify(allfd2))
@@ -14140,7 +14140,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                             })
                                         }
                                         cur.qt = i
-                                        cur.price = "₹" + del
+                                        cur.price = "₹" + p
                                         allfd.splice(i1, 1)
                                         allfd.push(cur)
 
@@ -14924,6 +14924,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             let pricewithoutOff = parseFloat(elem.selU2) + totInside2
                             price = parseFloat(elem.selU2) + totInside
                             price *= parseFloat(elem.qt)
+                            pricewithoutOff*= parseFloat(elem.qt)
                             price += priceMainOth
                             elem.price = "₹" + (price)
                             elem.img = itm.img
