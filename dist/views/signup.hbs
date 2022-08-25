@@ -2460,20 +2460,7 @@
                 document.querySelector('.ct_results').style.position = 'absolute'
             }
         })
-        document.querySelector('html').addEventListener('keyup', (e) => {
-            let inpux=e.target.closest('.nick_name.area input')
-            let inpux2=e.target.closest('.nick_name.address input')
-            let inpux3=e.target.closest('.nick_name.phone_number input')
-            if(inpux!==null){
-                inpux.style.filter='blur(4px)'
-            }
-  if(inpux2!==null){
-                inpux2.style.filter='blur(4px)'
-            }
-            if(inpux3!==null){
-                inpux3.style.filter='blur(4px)'
-            }
-        })
+
         document.querySelector('html').addEventListener('click', (e) => {
             let itemG = e.target.closest('.pac-item')
             let inpX=e.target.closest('.nick_name.area input')
@@ -2776,11 +2763,11 @@
                             document.querySelector('.ct_acc .yt-loader').style.display = 'block';
 
                 directionSv.route(request, (res, stat) => {
-
                     if (stat === res.status) {
                         let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
                         let unitKM = unitMiles * 1.60934
-                        console.log(city, unitKM)
+                        // EVERY LOCATION IS WORKING FINE
+                        // checking the location by killometer distance from badharghat
                         if (unitKM <= 10) {
  
 

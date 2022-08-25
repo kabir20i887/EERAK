@@ -19,44 +19,70 @@
 
 
     <style>
+        .ct_logo_for_about{
+            position: absolute;
+            left: 43%;
+            top: 5%;
+        }
+        .ct_logo_for_about a{display: block;}
+        .ct_logo_for_about img{
+            width: 11vw;
+        }
         blockquote {
 
             quotes: '\f10d';
             ;
         }
-        .imgXvourVision2{display: none;}
+
+        .imgXvourVision2 {
+            display: none;
+        }
+
         .cart_nav span {
-    width: 37px;
-    padding: 7px 7px 22px 7px;
-    display: none;
-    justify-content: center;
-    /* padding-top: 4px; */
-    font-size: 13px;
-    height: 25px;
-    background-color: #0044ff;
-    color: white;
-    margin-left: -16px;
-    z-index: 999;
-    border-radius: 50%;
-}
-        .ct_bx_about_2{
+            width: 37px;
+            padding: 7px 7px 22px 7px;
+            display: none;
+            justify-content: center;
+            /* padding-top: 4px; */
+            font-size: 13px;
+            height: 25px;
+            background-color: #0044ff;
+            color: white;
+            margin-left: -16px;
+            z-index: 999;
+            border-radius: 50%;
+        }
+
+        .ct_bx_about_2 {
             width: 100vw;
             display: flex;
             justify-content: center;
         }
-        .ct_bx_about_1:not(:first-child){
-        margin-top: -10px;
+
+        .ct_bx_about_1:not(:first-child) {
+            margin-top: -10px;
         }
-         .ct_bx_about_2 .ct_inner_ab img{width: 100%;}
-        .ct_bx_about_2 .ct_inner_ab{
-            width: 70%;
-            margin: 20px;
-            margin-top: 50px;
-            box-shadow:  0 0 10px rgba(0, 0, 0, 0.151);
+
+        .ct_bx_about_2 .ct_inner_ab img {
+            width: 100%;
+        }
+
+        .ct_bx_about_2 .ct_inner_ab {
+            width: 100%;
+            /* margin: 20px; */
+            margin-top: -22px;
+            box-shadow: 0 0 10px rgb(0 0 0 / 15%);
             border-radius: 10px;
         }
-.ct_bx_about_1{width: 100vw;}
-.ct_bx_about_1 img{width: inherit;}
+
+        .ct_bx_about_1 {
+            width: 100vw;
+        }
+
+        .ct_bx_about_1 img {
+            width: inherit;
+        }
+
         blockquote:before {
             color: #ccc;
             font-family: FontAwesome;
@@ -337,8 +363,8 @@
         }
 
         .ct_bx_footer {
-            margin-top: auto;
-            background-color: #232f3e;
+            margin-top: -12px;
+            background-color: #000000;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -611,7 +637,7 @@
 
         .ct_nav_erak .ct_bx_search {
             overflow: hidden;
-            display:none;
+            display: none;
         }
 
         .for_nonfix_search input {
@@ -730,7 +756,7 @@
         }
 
         .mai_ul {
-            display: flex;
+            display: none;
             margin: 10px 0;
             width: max-content;
             justify-content: flex-end;
@@ -748,12 +774,11 @@
             padding: 10px 20px;
             height: 77px;
             justify-content: space-between;
-            position: fixed;
+            position: absolute;
             top: 0;
-            background-color: white;
+            background-color: transparent;
             z-index: 99999999999;
             text-align: center;
-            box-shadow: 0 0px 4px rgba(0, 0, 0, 0.383);
         }
 
         .mai_ul .log_in_btn_pk {
@@ -786,7 +811,7 @@
         }
 
         .mai_ul .super_groc {
-            display: flex;
+            display: none;
             margin-top: 16px;
             width: max-content;
         }
@@ -848,7 +873,7 @@
 
 
         .inner_seperation {
-            width: 1500px;
+            width: 100%;
         }
 
 
@@ -901,7 +926,7 @@
         }
 
         .for_ain_home_logo {
-            margin: 5px 0 0 1px;
+            margin: 35px 0 0 43%;
         }
 
         .shapeQuad3 {
@@ -978,8 +1003,11 @@
             .ct_bx_erak_logo a {
                 padding-bottom: 0;
             }
-.ct_bx_about_2,
-.ct_bx_about_1{width: 100%;}
+
+            .ct_bx_about_2,
+            .ct_bx_about_1 {
+                width: 100%;
+            }
 
             .ct_bx_erak_logo {
                 padding: 20px 10px 22px 10px;
@@ -1000,6 +1028,7 @@
 
             .mai_ul {
                 width: auto;
+                display: none;
             }
 
             .ct_sep_bx {
@@ -1213,7 +1242,8 @@
             .ct_bx_1st_about h1 {
                 font-size: 36PX;
             }
-.ct_bx_about_1{margin-top:72px;}
+
+
             .ct_bx_show_text_whatis {
                 width: 89vw;
             }
@@ -1487,7 +1517,13 @@
             .ct_buttons {
                 margin: -58px 0 0 70px;
             }
-
+.ct_logo_for_about img {
+    width: 13vw;
+}
+.ct_logo_for_about {
+    left: 42%;
+    top: 3%;
+}
             .cart_nav ion-icon {
                 font-size: 36px;
             }
@@ -1895,10 +1931,24 @@
             .ct_bx_1st_about {
                 margin-top: 134px;
             }
-            .imgXvourVision{display: none;}
-.imgXvourVision2{display: block;}
-.ct_bx_about_2 .ct_inner_ab {
-    width: 100%;}
+
+            .imgXvourVision {
+                display: none;
+            }
+.ct_logo_for_about img {
+    width: 21vw;
+}
+.ct_logo_for_about {
+    left: 39%;
+    top: 3%;
+}
+            .imgXvourVision2 {
+                display: block;
+            }
+
+            .ct_bx_about_2 .ct_inner_ab {
+                width: 100%;
+            }
 
 
             .ct_bx_show_text_whatis {
@@ -2302,7 +2352,9 @@
             .ct_bx_1st_about {
                 height: 270px;
             }
-
+.ct_logo_for_about img {
+    width: 26vw;
+}
             .ct_bx_show_text_whatis {
                 margin-top: 44%;
             }
@@ -3309,52 +3361,69 @@
 
 <body class="about_us">
     {{!-- 455aca --}}
-    {{>nav}}
-    <div class="ct_bx_overlay">
-        <div class="ct_bx_show_text_whatis">
-            <div class="ct_remove_overlay">
-                <ion-icon name="close-outline"></ion-icon>
-            </div>
-            <p>It is a mix of roasted vegetables and spices, cooked in pure mustard oil, with no chemicals and
-                preservatives.</p>
-        </div>
-    </div>
+
+<div class="ct_logo_for_about">
+    <a href="/">    <img src="../img/kirkcLogowhite.png">
+</a>
+</div>
 
     <div class="ct_sep_bx">
         <div class="inner_seperation">
             <div class="ct_bx_about_1">
-                <img class="imgXvourVision" src="../img/ourvision.png" alt="our vision">
-                <img class="imgXvourVision2" src="../img/ourvision2.png" alt="our vision">
+                <img class="imgXvourVision" src="../img/our_v_2.JPEG " alt="our vision">
+                <img class="imgXvourVision2" src="../img/our_v_x1.png" alt="our vision">
 
             </div>
+
             <div class="ct_bx_about_2">
                 <div class="ct_inner_ab">
-                    <img src="../img/wekrick.png" alt="we are krick ">
+                                    <img class="imgXvourVision" src="../img/wekrick2.png" alt="sauce">
+                <img class="imgXvourVision2" src="../img/weKrickx2.PNG" alt="sauce">
                 </div>
             </div>
 
- <div class="ct_bx_about_1">
+            <div class="ct_bx_about_1">
                 <img class="imgXvourVision" src="../img/sauceAb.png" alt="sauce">
                 <img class="imgXvourVision2" src="../img/sauceAb2.png" alt="sauce">
 
             </div>
-             <div class="ct_bx_about_1">
-                <img class="imgXvourVision" src="../img/seasoningmixAb.png" alt="seasoning mix">
+            <div class="ct_bx_about_1">
+                <img class="imgXvourVision" src="../img/seasoningmixAb2.png" alt="seasoning mix">
                 <img class="imgXvourVision2" src="../img/seasoningmixAb2.png" alt="seasoning mix">
 
             </div>
-               <div class="ct_bx_about_1">
-                <img src="../img/tstMakerab.png" alt="tastemakers">
+   
+            <div class="ct_bx_about_1">
+                    <img class="imgXvourVision" src="../img/groceryAb.png" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/groceryAb2.png" alt="seasoning mix">
             </div>
-                    <div class="ct_bx_about_1">
-                <img src="../img/groceryAb.png" alt="groceries">
-            </div>
-              <div class="ct_bx_about_2">
+            <div class="ct_bx_about_2">
                 <div class="ct_inner_ab">
-                <img src="../img/cookEffortless.png" alt="cook effortless">
+                                  <img class="imgXvourVision" src="../img/cookEffortless2.png" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/cookEffortlessX2.PNG" alt="seasoning mix">
                 </div>
             </div>
-
+            <div class="ct_bx_about_1">
+                <img class="imgXvourVision" src="../img/part1about3.PNG" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/part1aboutx3.PNG" alt="seasoning mix">
+            </div>
+            <div class="ct_bx_about_1">
+                     <img class="imgXvourVision" src="../img/part2about.PNG" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/part3aboutx2.PNG" alt="seasoning mix">
+            </div>
+            <div class="ct_bx_about_1">
+                  <img class="imgXvourVision" src="../img/part3about.PNG" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/part4aboutx2.PNG" alt="seasoning mix">
+            </div>
+       
+            <div class="ct_bx_about_1">
+                                <img class="imgXvourVision" src="../img/quotesabout1.png" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/quotesaboutX1.PNG" alt="seasoning mix">
+            </div>
+            <div class="ct_bx_about_1">
+                    <img class="imgXvourVision" src="../img/quoteabout2.png" alt="seasoning mix">
+                <img class="imgXvourVision2" src="../img/quoteaboutX2.PNG" alt="seasoning mix">
+            </div>
         </div>
 
     </div>
@@ -3483,180 +3552,9 @@
             }
 
 
-        } else {
-            document.querySelector('.ct_acount_details_cart').style.display = 'block'
-            document.querySelector('.ct_full_cart_fd_ov').style.display = 'none'
-            document.querySelector('.ct_list_food').style.width = '98%'
-            document.querySelector('.ct_bx_information_cart').style.display = 'none'
-            document.querySelector('.ct_subotatal').style.display = 'none'
-            if (document.querySelector('.sign_UP_btn a') !== null) {
-
-                document.querySelector('.sign_UP_btn a').style.display = 'block'
-                document.querySelector('.log_in_btn_pk1').style.display = 'block'
-
-                document.querySelector('.account_nav').style.display = 'none'
-                document.querySelector('.account_nav2').style.display = 'none'
-
-                if (window.screen.width <= 1200) {
-                    document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
-
-                    if (document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov') !== null) {
-                        document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov p').innerText = 'Hello, Sign in'
-                        document.querySelector('.ct_bx_slide_bx  a').setAttribute('href', '/login')
-                    }
-
-
-
-                }
-            }
-
-
+        
 
         }
-        if (window.screen.width <= 400) {
-            if (document.querySelector('.for_nav_search') !== null) {
-                document.querySelector('.for_nav_search input').addEventListener('click', (e) => {
-                    document.querySelector('.ct_field_small_size_bx').style.display = 'none'
-                    document.querySelector('.mai_ul').style.display = 'none'
-                    document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '0'
-                    document.querySelector('.icon_search_bx').style.display = 'none'
-                    document.querySelector('.ct_bx_go_back_nav').classList.add('appear')
-                    document.querySelector('.ct_bx_matched_itm').style.transform = 'translate(0,6px)'
-                    document.querySelector('.ct_inner_nav').style.padding = '10px 0'
-                    setTimeout(() => {
-                        document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = 'none'
-
-                    }, 200);
-                    document.querySelector('.for_big_scr_only').classList.remove('active2')
-                    document.querySelector('.for_big_scr_only ').classList.add('active')
-                })
-                document.querySelector('.ct_bx_go_back_nav').addEventListener('click', (e) => {
-                    document.querySelector('.ct_field_small_size_bx').style.display = 'block'
-                    document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '5px 0 0 0'
-
-                    document.querySelector('.mai_ul').style.display = 'block'
-                    if (window.screen.width <= 360) {
-                        document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '5px 0 0 0'
-
-                    }
-                    if (window.screen.width <= 330) {
-                        document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '5px 0 0 0'
-
-                    }
-                    document.querySelector('.icon_search_bx').style.display = 'block'
-                    document.querySelector('.ct_bx_go_back_nav').classList.remove('appear')
-                    document.querySelector('.xclose_icon').style.display = 'none'
-                    document.querySelector('.for_big_scr_only input').value = ''
-                    document.querySelector('.ct_bx_matched_itm').style.transform = 'translate(0,6px)'
-                    document.querySelector('.ct_inner_nav').style.padding = '4px 9px'
-                    document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = '0 1px 6px rgb(0 0 0 / 42%)'
-                    document.querySelector('.for_big_scr_only').classList.remove('active')
-                    document.querySelector('.for_big_scr_only ').classList.add('active2')
-
-                })
-            }
-
-        }
-        let waElem = document.querySelector('.ek_cart')
-        var waypoint = new Waypoint({
-            element: document.querySelector('.ct_bx_2_about'),
-            handler: function (direction) {
-                let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
-                if (direction === 'down') {
-
-                    let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.for_nav_main').style.height = '63px'
-                        heightNav = 63
-                    }
-                    if (window.screen.width <= 1100) {
-                        document.querySelector('.for_mobile_search').style.display = 'none'
-                        if (window.screen.width <= 740) {
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = '67px'
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = '63px'
-
-                        }
-                        if (window.screen.width <= 740) {
-                            document.querySelector('.ct_nav_erak .ct_bx_search').style.display = 'block'
-                            document.querySelector('.ct_nav_erak .ct_bx_search').style.display = 'flex'
-                            document.querySelector('.for_ain_home_logo').style.display = 'none'
-                            document.querySelector('.ct_bx_matched_itm').style.marginLeft = '0'
-                            document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
-
-                            if (window.screen.width <= 360) {
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-4px'
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
-                            }
-                            let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
-
-                            if (searchLi !== 0) {
-                                let wh = document.querySelector('.ct_nav_erak .ct_bx_search').getBoundingClientRect().width
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.width = wh + 'px'
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'block'
-
-                            }
-                        }
-
-                    }
-                    document.querySelector('.for_nav_main').style.top = '0'
-                    document.querySelector('.for_nav_main').style.position = 'fixed'
-                    document.querySelector('.for_mobile_search').style.position = 'fixed'
-                    if (document.querySelector('.for_seravh_in_nav.active') !== null) {
-                        document.querySelector('.ct_field_small_size_bx').style.display = 'none'
-                        document.querySelector('.mai_ul').style.display = 'none'
-                        document.querySelector('.ct_inner_nav').style.padding = '10px 0'
-                    }
-
-                } else if (direction === 'up') {
-                    document.querySelector('.ct_field_small_size_bx').style.display = 'block'
-                    if (window.screen.width <= 400) {
-                        document.querySelector('.mai_ul').style.display = 'block'
-                        document.querySelector('.ct_inner_nav').style.padding = '4px 9px'
-                    }
-                    // if (window.screen.width >= 1200) {document.querySelector('.ct_bx_categories_essen').style.position='absolute'}
-                    if (window.screen.width <= 1100) {
-                        if (window.screen.width <= 740 && window.screen.width > 470) {
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = '100%'
-
-                        }
-                        if (window.screen.width <= 740) {
-
-                            document.querySelector('.for_mobile_search').style.display = 'block'
-                            document.querySelector('.ct_inner_nav .ct_bx_search').style.display = 'none'
-
-                            document.querySelector('.for_ain_home_logo').style.display = 'block'
-                            if (document.querySelector('.for_nav_main .ct_bx_search input').value !== '') {
-                                if (document.querySelectorAll('.for_mobile_search  .ct_bx_matched_itm li').length > 0) {
-                                    document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.display = 'block'
-
-                                }
-                            }
-
-                            document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'none'
-                            if (window.screen.width <= 360) {
-                                document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.marginTop = '-2px'
-                                document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.marginLeft = '4px'
-                            }
-                            let xW = document.querySelector('.for_mobile_search .ct_bx_search input').getBoundingClientRect().width
-                            document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.width = `${xW}px`
-                        }
-                    }
-                    if (window.screen.width >= 1200) {
-                        // document.querySelector('.ct_bx_categories_essen').style.position= 'absolute'
-
-                    }
-                    if (window.screen.width <= 740) {
-
-                        document.querySelector('.for_nav_main').style.height = '78px'
-                    }
-                    document.querySelector('.for_nav_main').style.position = 'absolute'
-                    document.querySelector('.for_nav_main').style.top = '0'
-                    document.querySelector('.for_mobile_search').style.position = 'absolute'
-
-                }
-
-            }
-        })
 
         document.querySelector('html').addEventListener('click', (e) => {
             let bx2 = e.target.closest('.ct_slide_menu_acc')

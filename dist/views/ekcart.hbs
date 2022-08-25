@@ -4578,7 +4578,7 @@
 
         .ct_bx_footer {
             margin-top: auto;
-            background-color: #232f3e;
+                background-color: #000000;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -11986,51 +11986,11 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             for (let i1 = 0; i1 < allfd.length; i1++) {
                                 let cur = allfd[i1]
                                 rmItm.parentElement.parentElement.parentElement.remove()
-
-                                const removeReq = async () => {
-                                    let dbCollection = db.collection(`foods/sYNT0aiTqEnZ0I7IVmd7/group${cur.catId}`)
-                                    let res = await dbCollection.get()
-                                    res.docs.forEach(cur1 => {
-                                        let item = cur1.data().item
-                                        let nm = item.id.trim()
-                                        let nm1 = cur.id.trim()
-
-                                        if (nm1 === nm) {
-                                            let req = item.requiredGroc
-                                            if (req === null) { return }
-
-                                            req.forEach(cur22 => {
-                                                let nm2 = cur22.name
-                                                document.querySelectorAll('.ct_items_req_groc').forEach(el => {
-                                                    let mainEl
-                                                    el.childNodes.forEach(cu => {
-                                                        if (cu.classList !== undefined) {
-                                                            if (cu.classList.value.split(' ').includes('ct_bx_item_inner_groc')) {
-                                                                mainEl = cu
-                                                            }
-                                                        }
-                                                    })
-
-                                                    let idD = mainEl.childNodes[5].innerText.trim()
-                                                    if (idD === nm2.trim()) {
-                                                        el.remove()
-                                                    }
-
-                                                })
-                                            })
-
-
-                                        }
-                                    })
-
-                                }
-                                // document.querySelector('.ct_btns_group_check_ek').style.opacity = .4
-
-                                // document.querySelector('.ct_btns_group_check_ek').style['pointer-events'] = 'none'
+                                if (cur.id === h4) {
 
                                 allfd.splice(i1, 1)
                                 localStorage.setItem('foodsAdded', JSON.stringify(allfd))
-                                if (allfd.length === 0 && allfd2.length === 0) {
+                                                               if (allfd.length === 0 && allfd2.length === 0) {
                                     document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
                                     document.querySelector('.for_ek_food_cart').style.display = 'flex'
                                     document.querySelector('.ct_subotatal').style.display = 'none'
@@ -12039,18 +11999,13 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                     document.querySelector('.ct_other_nav_cart .ct_bin_ts_nav_ck ').style.display = 'none'
 
                                 }
+                                }
+ 
                                 addBill()
-                                addedGrocFull.forEach(c => {
-                                    if (h4 === c.name.split(' ').join('').toLowerCase()) {
-                                        c.itm.forEach(p => {
-                                            addedGrocCart2.push(p)
-                                        })
-                                    }
-                                })
 
 
 
-                                break
+                                
 
 
 
