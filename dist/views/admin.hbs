@@ -7,420 +7,1705 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
     <title>Admin Panel</title>
 
-    {{!-- <link rel="stylesheet" href="../css/media.css"> --}}
-    {{!-- <link rel="stylesheet" href="../css/design.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="../css/media.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="../css/design.css"> --}}
     <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
     {{>favicon}}
-<style>
-    /*! CSS Used from: Embedded */
-ion-icon{visibility:hidden;}
-.hydrated{visibility:inherit;}
-/*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css */
-*,::after,::before{box-sizing:border-box;}
-body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;}
-h1,h2,h3,h4{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;}
-h1{font-size:calc(1.375rem + 1.5vw);}
-@media (min-width:1200px){
-h1{font-size:2.5rem;}
-}
-h2{font-size:calc(1.325rem + .9vw);}
-@media (min-width:1200px){
-h2{font-size:2rem;}
-}
-h3{font-size:calc(1.3rem + .6vw);}
-@media (min-width:1200px){
-h3{font-size:1.75rem;}
-}
-h4{font-size:calc(1.275rem + .3vw);}
-@media (min-width:1200px){
-h4{font-size:1.5rem;}
-}
-p{margin-top:0;margin-bottom:1rem;}
-ul{padding-left:2rem;}
-ul{margin-top:0;margin-bottom:1rem;}
-ul ul{margin-bottom:0;}
-a{color:#0d6efd;text-decoration:underline;}
-a:hover{color:#0a58ca;}
-label{display:inline-block;}
-button{border-radius:0;}
-button:focus:not(:focus-visible){outline:0;}
-button,input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit;}
-button{text-transform:none;}
-button{-webkit-appearance:button;}
-::-moz-focus-inner{padding:0;border-style:none;}
-.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto;}
-@media (min-width:1200px){
-.container{max-width:100%;
-    padding-left: 47px;
-}
-}
-@media (min-width:1400px){
-.container{max-width:1320px;}
-}
-.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1 * var(--bs-gutter-y));margin-right:calc(-.5 * var(--bs-gutter-x));margin-left:calc(-.5 * var(--bs-gutter-x));}
-.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x) * .5);padding-left:calc(var(--bs-gutter-x) * .5);margin-top:var(--bs-gutter-y);}
-.col{flex:1 0 0%;}
-/*! CSS Used from: http://localhost:3000/css/media.css */
-@media only screen and (min-width:1380px){
-.main_ul_orders{margin:10px 0 0 0px;padding-left:0;width:auto;}
-}
-@media only screen and (min-width:1550px){
-.ct_bx_others_dash p{font-size:18px;}
-}
-@media only screen and (max-width:1300px){
-.ct_bx_panel_main{padding-left:250px;}
-.main_ul_orders{margin:10px 0 0 20px;width:95%;}
-.ct_bx_nner_fd span{font-size:12px;}
-.ct_error_stock{width:70vw;}
-}
-@media only screen and (max-width:1200px){
-.ct_bx_panel_main{padding-left:214px;}
-.main_ul_orders{margin:10px 0 0 20px;width:95%;}
-.logo p{font-size:8px;}
-.logo h4 p{font-size:29px;}
-}
+    <style>
+        /*! CSS Used from: Embedded */
+        ion-icon {
+            visibility: hidden;
+        }
 
-@media only screen and (max-width:470px){
-    .ct_bx_panel_main h3 {
-    margin-top: 0;
-    margin-left: 0;
-}
-.ct_bx_panel_main{background-color: white;}
-.ct_bx_set_delivery_time {
-    margin: 40px 0 0 30px;
-}
-.ct_bx_set_delivery_time {
-    margin: 40px 0 0 20px;
-    width: 87vw;
-}
-.ct_data_inside .ct_bx_flex ion-icon {
-    color: rgb(203 24 24);
-    font-size: 29px;
-}
-.ct_bx_panel_main h2 {
-    font-size: 18px;}
-.ct_bx_set_delivery_time .button {
-    padding: 6px 15px;
-    padding-top: 22px;
-    height: 68px;
-    margin-top: 33px;
-}
-.ct_bx_for_orders_page {
-    width: 1000px;
-}
-.ct_bx_information{margin-top: 15px;}
-.ct_bx_panel_main .ct_inner_data_inside h3 {
-    padding: 30px 0 18px 0px;}
-.ct_data_inside {
-    padding-left: 20px;
-}
-.ct_bx_set_delivery_time .ct_hr_bx input {
-    padding: 18px 20px;
-    margin-top: 8px;
-    width: 100%;}
-.ct_bx_panel_main h2 {
-    font-size: 18px;}
-.ct_nav_mobile_adm .ct_bx_inner{width:46%;}
-}
-@media only screen and (max-width:400px){
-.ct_bx_verifcation_order input{width:38%;}
-.ct_bx_verifcation_order p{width:40%;}
-.container{padding-right:var(--bs-gutter-x,0);}
-.ct_bx_item_foods .col span,.ct_bx_item_foods .col p{font-size:14px;color:black;width:100px;font-family:'Open Sans';}
-.ct_bx_show_nav_adm{display:none;}
-.ct_bx_item_foods .col.pending_order p{color:red;}
-.ct_bx_information .ct_bx_flex p{font-size:16px;margin:3px 0 0 15px;}
-.ct_bx_btns_order{margin:20px;}
-.ct_bx_panel_main h3{margin-top:0;margin-left:7px;}
-.ct_bx_flex ion-icon{font-size:43px;transform:translate(3px);}
-.nav_order_itms p{font-size:15px;}
-.ct_bx_for_orders_page{overflow-x:scroll;}
-.ct_bx_panel_main h3{width:80%;font-size:18px;}
-.main_ul_orders{padding:0 12px;}
-.ct_bx_verifcation_order input{font-size:15px;width:79%;}
-.ct_bx_verifcation_order{margin:20px -4px;}
-.ct_selected_date_order h4{font-size:14px;}
-.ct_selected_date_order h4{margin:20px 0 50px 14px;}
-.ct_slect_date_bx{right:14px;}
-.ct_as_per_date_order h1{transform:translate(50px,90px);font-size:16px;}
-}
-@media only screen and (max-width:360px){
-.ct_bx_flex ion-icon{font-size:43px;}
-}
-/*! CSS Used from: http://localhost:3000/css/design.css */
-*{padding:0;box-sizing:border-box;margin:0;}
-h1,h2,h3,h4{font-weight:600;margin-bottom:0;}
-p{margin-bottom:auto;}
-body{color:#555;font-family:'Lato', 'Arial', sans-serif;font-weight:300;font-size:20px;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;overflow-x:hidden;}
-body{display:flex;flex-direction:column;min-height:100vh;}
-.ct_bx_information .row{padding:12px;border-bottom:1px solid #a8a6a6;}
-.loader_cart{position:relative;width:100%;justify-content:center;}
-.for_acc_ov{display:none;}
-.for_cart_load_full{position:absolute;z-index:999999999;top:43vh;display:flex;justify-content:center;width:100%;}
-.for_users{display:flex;justify-content:center;margin:90px 0 180px 0px;}
-.ct_x_users h1{display:none;font-size:19px;font-family:'Montserrat';transform:translate(230px,90px);color:rgb(200, 195, 195);}
-.ct_bx_stock_message .succ_stk{color:rgb(0, 140, 255);font-size:40px;}
-.ct_bx_remove_msg_stk{position:absolute;top:20px;right:40px;cursor:pointer;}
-.ct_bx_stock_message p{margin:8px 0  0 10px;font-family:'Open Sans';color:black;font-size:18px;}
-.ct_bx_stock_message{display:none;width:40%;height:40px;background-color:white;position:fixed;top:50px;box-shadow:0 0 4px rgba(0, 0, 0, 0.144);right:20px;padding:13px 12px 9px 30px;font-size:23px;z-index:999999999;color:rgb(41, 39, 39);}
-.ct_bx_flex{display:flex;}
-.ct_bx_flex ion-icon{color:rgb(245, 57, 24);font-size:40px;}
-.ct_error_stock ion-icon{pointer-events:none;}
-.ct_error_stock{transition:all .1s ease;background-color:#f1f6f4;box-shadow:0 0px 4px rgb(0 0 0 / 33%);border-radius:6px;display:inline-flex;width:auto;height:auto;width:50vw;padding:4px 62px 8px 12px;transform:translate(00px,50px);}
-.ct_error_stock .ct_inner_msg{margin-left:0px;width:100%;}
-.ct_error_stock .ct_inner_msg ion-icon{color:rgb(193 162 21);position:absolute;margin:-5px 23px 0;font-size:22px;}
-.ct_error_stock p{font-size:12px;margin-left:50px;color:rgb(15, 15, 15);font-family:'Open Sans';}
-.ct_inner_msg{display:flex;margin:22px 0 9px 40px;}
-.hidden{display:none;}
-.nav_order_itms{margin-top:20px;}
-.ct_nav_mobile_adm .ct_bx_inner{display:flex;justify-content:center;transform:translate(-20px);}
-.ct_error_stock.for_adm .ct_icon_succ ion-icon{color:rgb(35, 192, 35);font-size:30px;transform:translate(-26px, 0px);}
-.ct_error_stock.for_adm .ct_icon_warning{display:none;transform:translate(-10px, 0px);}
-.ct_error_stock.for_adm.for_err_otp .ct_icon_warning{display:block;transform:translate(-10px, 0px);}
-.ct_error_stock span{font-size:12px;margin-left:47px;font-family:'Open Sans';color:rgb(68 64 64);}
-.ct_error_stock.for_adm p{font-size:15px;}
-.ct_error_stock.for_adm{height:90px;}
-.ct_error_stock.for_adm .ct_inner_msg{display:block;}
-.ct_bx_message_adm2,.ct_bx_message_adm{background-color:rgb(255, 255, 255);}
-.ct_error_stock.for_adm{right:0;z-index:99999;width:max-content;position:fixed;}
-.ct_bx_message_adm2,.ct_bx_message_adm{height:70px;display:flex;position:fixed;top:5px;right:-410px;box-shadow:0 0 4px rgba(0, 0, 0, 0.226);border-radius:2px;padding:8px 16px 7px 13px;z-index:999999999;}
-.ct_bx_inner_msg{width:100%;}
-.ct_bx_inner_msg p{color:rgb(29, 133, 230);font-size:17px;margin:4px 0  4px 0;font-family:'Open Sans';text-transform:uppercase;}
-.ct_bx_message_adm2 .ct_bx_inner_msg p{color:rgb(30, 131, 246);font-size:14px;margin:4px 0  4px 0;font-family:'Open Sans';text-transform:uppercase;}
-.ct_bx_inner_msg span{display:block;width:100%;font-size:12px;color:rgb(54, 51, 51);font-family:'Open Sans';margin:-4px 0 3px 0px;}
-.material-icons.close_msg_icon{color:rgb(0, 0, 0);transform:translate(0px);font-size:14px;cursor:pointer;}
-.material-icons.info_inon{color:rgb(38, 120, 251);transform:translate(-3px,7px);font-size:24px;}
-button{cursor:pointer;}
-.ct_as_per_date_order h1{font-size:20px;transform:translate(250px,90px);font-family:'Open Sans';display:none;margin-bottom:90px;color:rgb(0, 0, 0);}
-.ct_x_users{width:640px;display:none;margin:30px 0 0 30px;margin-bottom:150px;padding-bottom:120px;padding-top:40px;}
-.nav_user_data .orders_user{margin-right:0px;}
-.nav_user_data .name_user{margin-right:266px;}
-.nav_user_data ul li p{font-size:13px;color:rgb(37 91 185);font-family:'Open Sans';}
-.nav_user_data .phone_num_user{margin-left:46px;}
-.nav_user_data ul{display:flex;margin:0 0 20px 40px;}
-.for_sign_up_log{overflow:hidden;display:inline-block;margin:30px 0 0 54px;}
-.for_sign_up_log h4 p{color:rgb(46, 43, 43);}
-.for_sign_up_log p{color:rgb(46, 43, 43);}
-.logo h4{display:block;width:max-content;}
-a{text-decoration:none;}
-.adm_page .ct_bx_overlay_cart.for_acc_ov2{z-index:99999999999999999;background-color:whitesmoke;display:none;}
-.adm_page .ct_bx_overlay_cart.for_acc_ov2 .loader::before{background-color:whitesmoke;}
-ul{list-style:none;}
-.ct_bx_panel_main{padding-left:0;width:100%;}
-.ct_bx_panel_main h3{font-family:'Open Sans';color:black;padding:30px 0 8px 30px;width:90%;font-size:22px;border-bottom:1px solid rgb(224, 219, 219);}
-.ct_bx_set_delivery_time h2{color:black;font-size:22px;font-family:'Open Sans';}
-.ct_bx_set_delivery_time{margin:40px 0 0 120px;}
-.ct_flex_time_bx{display:flex;}
-.ct_bx_set_delivery_time .ct_hr_bx input{color:black;padding:25px 20px;width:140px;font-size:24px;}
-.ct_bx_set_delivery_time .button {
-    color: black;
-    padding: 10px 15px;
-    text-align: center;
-    padding-top: 30px;
-    height: 83px;
-    margin-top: 23px;
-    background-color: #fd4;
-}
-.ct_bx_set_delivery_time label{display:block;margin-left:10%;}
-.ct_bx_set_delivery_time .ct_hr_bx{margin-right:20px;}
-.ct_bx_set_delivery_time .ct_hr_bx input{background-color:white;border:1px solid black;}
-.adm_page .logo h4 p{color:white;}
-.adm_page .for_sign_up_log p{color:rgb(255 255 255);}
-.ct_nav_mobile_adm{position:fixed;top:0;width:100%;background-color:white;z-index:999999999;}
-.ct_bx_show_nav_adm ion-icon{color:black;font-size:29px;transform:translate(10px,18px);}
-.ct_nav_mobile_adm{display:none;}
-.ct_selected_date_order h4{font-size:27px;font-family:'Open Sans';color:rgb(34, 33, 33);margin:40px 0 20px 30px;}
-.ct_bx_panel_main h2{color:rgb(7, 7, 7);font-family:'Open Sans';font-size:26px;margin-top:40px;;margin-bottom:20px;}
-.ct_bx_panel_main h4{color:rgb(66, 62, 62);font-family:'Open Sans';font-size:17px;;margin-bottom:40px;}
-.ct_bx_panel_main h4{color:black;font-family:'Open Sans';font-size:20px;width:48%;}
-.ct_as_per_date_order{margin-top:-15px;}
-.ct_bx_if_new{background-color:rgb(46 80 246);}
-.ct_bx_overlay_cart{width:100%;height:100vh;top:0;position:fixed;}
-.ct_bx_overlay_cart{justify-content:center;align-items:center;background:rgb(255 255 255);z-index:99999967;}
-.adm_page .ct_bx_overlay_cart{z-index:99967;}
-.ct_bx_if_new{border-radius:50%;width:12px;height:12px;font-size:12px;color:white;position:absolute;transform:translate(-20px,-7px);font-family:'Open Sans';padding:5px 4px 4px 3px;}
-.ct_slect_date_bx{display:none;position:absolute;right:120px;margin-top:-70px;}
-.ct_sld_icon_order{margin:10px 0 0 10px;}
-.ct_calicon ion-icon{transform:translate(-8px,2px);color:rgb(126, 88, 250);font-size:27px;}
-.ct_select_dat ul li{margin-bottom:10px;color:rgb(34, 33, 33);}
-.ct_select_dat ul li span{font-size:12px;font-family:'Open Sans';}
-.ct_select_dat ul li p{font-size:14px;font-family:'Open Sans';}
-.ct_select_dat{width:120%;border-radius:8px;background-color:white;z-index:99999;position:absolute;display:none;padding:10px;margin:38px 0 0 -10px;box-shadow:0 0 5px rgba(0, 0, 0, 0.199);}
-.ct_select_dat ul li:hover{color:rgb(126, 88, 250);}
-ul{padding-left:0;}
-.ct_bx_dt_sle_date span{display:block;font-size:13px;color:rgb(59, 57, 57);font-family:'Open Sans';margin-top:-3px;}
-.ct_bx_dt_sle_date p{font-size:16px;color:rgb(59, 57, 57);font-family:'Open Sans';margin:0;}
-ion-icon{pointer-events:none;}
-.ct_bx_canceled_order_b_cus{margin:20px 0;}
-.ct_bx_canceled_order_b_cus ion-icon{color:rgb(211, 20, 20);transform:translate(0px, 4px);}
-.ct_bx_canceled_order_b_cus dr{font-size:13px;color:rgb(202 7 7);font-family:'Open Sans';}
-.cancel_order,.ct_bx_verifcation_order button,.accept_order{margin:20px 20px 0 0;border-radius:10px;font-size:14px;font-family:'Open Sans';width:15%;padding:8px;color:white;border:none;}
-.ct_error_stock.for_adm{right:40px;}
-.ct_bx_btns_order_adm{display:flex;}
-.ct_bx_verifcation_order button:nth-of-type(2){color:black;margin-right:10px;box-shadow:0 0 4px rgba(0, 0, 0, 0.151);background-image:linear-gradient(to right,rgb(246, 242, 242),rgb(241, 232, 232));}
-.ct_bx_verifcation_order{display:none;}
-.accept_order{background-image:linear-gradient(to right,rgb(0, 153, 255),rgb(23 130 202));}
-.ct_bx_verifcation_order button{background-image:linear-gradient(to right,rgb(0, 153, 255),rgb(0, 153, 255));display:block;}
-.cancel_order{box-shadow:none;color:rgb(0 0 0);}
-.main_ul_orders{margin:10px 0 0 20px;width:auto;}
-.main_ul_orders .orders{background-color:rgb(255, 255, 255);border-radius:4px;}
-.main_ul_orders .orders{padding:18px 18px 8px;margin-top:20px;border-bottom:1px solid rgb(218, 211, 211);transition:all 1s ease;}
-.main_ul_orders .orders:hover{background-color:rgb(248, 246, 246);}
-.ct_bx_verifcation_order input{padding:10px 20px;font-size:19px;letter-spacing:25px;margin-top:20px;border-radius:8px;border:2px solid rgb(181 176 176);}
-.ct_bx_nner_fd:nth-of-type(1) span{font-size:15px;font-family:'Open Sans';}
-.ct_error_stock.order p{font-size:16px;}
-.ct_error_stock.order .ct_inner_msg ion-icon{color:red;}
-.ct_error_stock.order{width:auto;right:-900px;position:fixed;z-index:9999999;}
-.order .ct_inner_msg{display:block;}
-.ct_bx_verifcation_order p{font-size:13px;color:black;margin-top:5px;width:80%;}
-.ct_bx_nner_fd span{font-family:'Open Sans';font-size:13px;color:#dd1919;overflow:hidden;word-break:break-word;text-align:center;}
-.ct_bx_nner_fd li{padding:8px 10px;}
-.ct_bx_others_dash p{font-size:13px;color:black;font-family:'Open Sans';}
-.ct_bx_verifcation_order{margin:0px;right:30%;border-radius:8px;z-index:999999;padding:10px 20px;background-color:white;}
-.ct_bx_verifcation_order h4{font-size:20px;margin-bottom:10px;color:black;font-family:'Open Sans';}
-.ct_bx_others_dash p{margin-bottom:0;}
-.ct_bx_others_dash ul{padding-left:0;}
-.ct_bx_others_dash{display:none;position:absolute;background:white;box-shadow:0 0 4px #00000154;width:202px;margin-left:-57px;}
-.ct_bx_for_others_dash{background:#fd4;font-size:14px;border-radius:20px;padding:9px;text-align:center;color:black;}
-.loader{position:absolute;width:100px;height:100px;margin-left:60px;background-color:#fafafa;transition:all 1s ease-in-out;clip-path:polygon(0 50%,100% 50%,100% 100%,0% 100%);-webkit-clip-path:polygon(0 50%,100% 50%,100% 100%,0% 100%);border-radius:100px;animation:rotate 1s infinite linear;}
-.loader::before{position:absolute;content:'';border-radius:100%;width:100%;height:100%;left:6%;top:1%;background-color:white;display:block;}
-.ct_bx_panel_main h3.order_h3{border-bottom:none;}
-.sm_load.loader{width:54px;height:54px;}
-.ct_data_inside .ct_bx_flex ion-icon{color:rgb(203 24 24);font-size:32px;}
-.ct_bx_information .ct_bx_flex span{color:black;font-size:15px;font-family:'Open Sans';margin-top:7px;}
-.ct_bx_panel_main .ct_bx_information  h4{color:black;margin-bottom:20px;margin-top:23px;}
-.ct_bx_information .ct_bx_flex p{margin:3px 0 0 15px;}
-.food_item_row p{font-size:15px;color:black;font-family:'Open Sans';}
-.pending_order p{color:red;}
-.success_order p{color:rgb(31 154 62);}
-.ct_data_inside{display:none;}
-.delivery_bx .pending_order{color:red;}
-.delivery_bx .success_order{color:rgb(31 154 62);}
-.ct_bx_panel_main  .person_name_bx h4{margin-left:10px;margin-top:7px;margin-bottom:10px;}
-/*! CSS Used from: http://localhost:3000/css/media.css */
-@media only screen and (min-width:1380px){
-.main_ul_orders{margin:10px 0 0 0px;padding-left:0;width:auto;}
-}
-@media only screen and (min-width:1550px){
-.ct_bx_others_dash p{font-size:18px;}
-}
-@media only screen and (max-width:1300px){
-.main_ul_orders{margin:0px;width:100%;}
-.ct_bx_nner_fd span{font-size:12px;}
-.ct_error_stock{width:70vw;}
-}
+        .hydrated {
+            visibility: inherit;
+        }
 
-@media only screen and (max-width:470px){
-.ct_nav_mobile_adm .ct_bx_inner{width:46%;}
-}
-@media only screen and (max-width:400px){
-.ct_bx_set_delivery_time {
-    margin: 40px 0 0 15px;
-}
-.ct_bx_for_orders_page {
-    overflow-x: hidden;
-}
-.ct_bx_information .col {
-    flex: 0;
-}
-.ct_as_per_date_order {
-    margin-top: -15px;
-    margin-bottom: 90px;
-}
-.ct_bx_others_dash {
-    right: 40px;}
-.ct_bx_for_orders_page {
-    width: 1000px;
-}
-.ct_bx_panel_main {
-    overflow: scroll;
-}
-.main_ul_orders .orders{padding:0}
-.ct_selected_date_order h4{font-size:26px;}
+        /*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
 
-.ct_bx_panel_main h2 {
-    font-size: 19px;}
-.ct_bx_set_delivery_time .ct_hr_bx input {
-    padding: 16px 13px;
-    width: 100%;
-    font-size: 24px;
-}
-.ct_bx_item_foods .row{padding:10px 16px}
-.ct_flex_time_bx {
-    display: block;
-}
+        body {
+            margin: 0;
+            font-family: var(--bs-body-font-family);
+            font-size: var(--bs-body-font-size);
+            font-weight: var(--bs-body-font-weight);
+            line-height: var(--bs-body-line-height);
+            color: var(--bs-body-color);
+            text-align: var(--bs-body-text-align);
+            background-color: var(--bs-body-bg);
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-.ct_bx_set_delivery_time label {
-    display: block;
-    margin-left: 10%;
-    margin: 20px 0 0 0;
-}
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
 
-.ct_bx_set_delivery_time .button {
-    color: black;
-    padding: 22px 6px;
-    text-align: center;
-    /* padding-top: 30px; */
-    height: 60px;
-    margin-top: 23px;
-    background-color: #fd4;
-}
+        h1 {
+            font-size: calc(1.375rem + 1.5vw);
+        }
 
-.ct_bx_verifcation_order input{width:38%;}
-.ct_bx_verifcation_order p{width:40%;}
-.container{padding-right:var(--bs-gutter-x,0);}
-.ct_bx_item_foods .col span,.ct_bx_item_foods .col p{font-size:14px;color:black;width:100px;font-family:'Open Sans';}
-.ct_bx_show_nav_adm{display:none;}
-.ct_bx_item_foods .col.pending_order p{color:red;}
-.ct_bx_information .ct_bx_flex p{font-size:16px;margin:3px 0 0 15px;}
-.ct_bx_btns_order{margin:20px;}
-.ct_bx_panel_main h3{margin-top:0;margin-left:7px;}
-.ct_bx_flex ion-icon{font-size:43px;transform:translate(3px);}
-.nav_order_itms p{font-size:15px;}
-.ct_bx_for_orders_page{overflow-x:hidden;}
-.ct_bx_panel_main h3{width:80%;font-size:18px;}
-.main_ul_orders{padding:0 12px;}
-.ct_bx_verifcation_order input{font-size:15px;width:79%;}
-.ct_bx_verifcation_order{margin:20px -4px;}
-.ct_selected_date_order h4{margin:20px 0 50px 14px;}
-.ct_slect_date_bx{right:14px;}
-.ct_as_per_date_order h1{transform:translate(50px,90px);font-size:16px;}
-}
-@media only screen and (max-width:360px){
-.ct_bx_flex ion-icon{font-size:43px;}
-}
-.ct_error_stock.for_adm {
-    display: none;
-    right: 10px;
-}
-/*! CSS Used from: https://fonts.googleapis.com/icon?family=Material+Icons */
-.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
-/*! CSS Used keyframes */
-@keyframes rotate{0%{transform:translate(-50%,-50%) rotate(0deg);background:rgb(179, 179, 179);}50%{background:rgb(165, 166, 167);}100%{transform:translate(-50%,-50%) rotate(360deg);background:rgb(143, 144, 146);}}
-/*! CSS Used fontfaces */
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4taVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4kaVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4saVIUx6EQRjA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4jaVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0370-03FF;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4iaVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4vaVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVIUx6EQRjA.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVIUx6EQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v121/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');}
-</style>
+        @media (min-width:1200px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        h2 {
+            font-size: calc(1.325rem + .9vw);
+        }
+
+        @media (min-width:1200px) {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        h3 {
+            font-size: calc(1.3rem + .6vw);
+        }
+
+        @media (min-width:1200px) {
+            h3 {
+                font-size: 1.75rem;
+            }
+        }
+
+        h4 {
+            font-size: calc(1.275rem + .3vw);
+        }
+
+        @media (min-width:1200px) {
+            h4 {
+                font-size: 1.5rem;
+            }
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ul ul {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #0a58ca;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        button {
+            border-radius: 0;
+        }
+
+        button:focus:not(:focus-visible) {
+            outline: 0;
+        }
+
+        button,
+        input {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        button {
+            text-transform: none;
+        }
+
+        button {
+            -webkit-appearance: button;
+        }
+
+        ::-moz-focus-inner {
+            padding: 0;
+            border-style: none;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: var(--bs-gutter-x, .75rem);
+            padding-left: var(--bs-gutter-x, .75rem);
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width:1200px) {
+            .container {
+                max-width: 100%;
+                padding-left: 47px;
+            }
+        }
+
+        @media (min-width:1400px) {
+            .container {
+                max-width: 1320px;
+            }
+        }
+
+        .row {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-.5 * var(--bs-gutter-x));
+            margin-left: calc(-.5 * var(--bs-gutter-x));
+        }
+
+        .row>* {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 100%;
+            padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5);
+            margin-top: var(--bs-gutter-y);
+        }
+
+        .col {
+            flex: 1 0 0%;
+        }
+
+        /*! CSS Used from: http://localhost:3000/css/media.css */
+        @media only screen and (min-width:1380px) {
+            .main_ul_orders {
+                margin: 10px 0 0 0px;
+                padding-left: 0;
+                width: auto;
+            }
+        }
+
+        @media only screen and (min-width:1550px) {
+            .ct_bx_others_dash p {
+                font-size: 18px;
+            }
+        }
+
+        @media only screen and (max-width:1300px) {
+            .ct_bx_panel_main {
+                padding-left: 250px;
+            }
+
+            .main_ul_orders {
+                margin: 10px 0 0 20px;
+                width: 95%;
+            }
+
+            .ct_bx_nner_fd span {
+                font-size: 12px;
+            }
+
+            .ct_error_stock {
+                width: 70vw;
+            }
+        }
+
+        @media only screen and (max-width:1200px) {
+            .ct_bx_panel_main {
+                padding-left: 214px;
+            }
+
+            .main_ul_orders {
+                margin: 10px 0 0 20px;
+                width: 95%;
+            }
+
+            .logo p {
+                font-size: 8px;
+            }
+
+            .logo h4 p {
+                font-size: 29px;
+            }
+        }
+
+        @media only screen and (max-width:470px) {
+            .ct_bx_panel_main h3 {
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+            .ct_bx_panel_main {
+                background-color: white;
+            }
+
+            .ct_bx_set_delivery_time {
+                margin: 40px 0 0 30px;
+            }
+
+            .ct_bx_set_delivery_time {
+                margin: 40px 0 0 20px;
+                width: 87vw;
+            }
+
+            .ct_data_inside .ct_bx_flex ion-icon {
+                color: rgb(203 24 24);
+                font-size: 29px;
+            }
+
+            .ct_bx_panel_main h2 {
+                font-size: 18px;
+            }
+
+            .ct_bx_set_delivery_time .button {
+                padding: 6px 15px;
+                padding-top: 22px;
+                height: 68px;
+                margin-top: 33px;
+            }
+
+            .ct_bx_for_orders_page {
+                width: 1000px;
+            }
+
+            .ct_bx_information {
+                margin-top: 15px;
+            }
+
+            .ct_bx_panel_main .ct_inner_data_inside h3 {
+                padding: 30px 0 18px 0px;
+            }
+
+            .ct_data_inside {
+                padding-left: 20px;
+            }
+
+            .ct_bx_set_delivery_time .ct_hr_bx input {
+                padding: 18px 20px;
+                margin-top: 8px;
+                width: 100%;
+            }
+
+            .ct_bx_panel_main h2 {
+                font-size: 18px;
+            }
+
+            .ct_nav_mobile_adm .ct_bx_inner {
+                width: 46%;
+            }
+        }
+
+        @media only screen and (max-width:400px) {
+            .ct_bx_verifcation_order input {
+                width: 38%;
+            }
+
+            .ct_bx_verifcation_order p {
+                width: 40%;
+            }
+
+            .container {
+                padding-right: var(--bs-gutter-x, 0);
+            }
+
+            .ct_bx_item_foods .col span,
+            .ct_bx_item_foods .col p {
+                font-size: 14px;
+                color: black;
+                width: 100px;
+                font-family: 'Open Sans';
+            }
+
+            .ct_bx_show_nav_adm {
+                display: none;
+            }
+
+            .ct_bx_item_foods .col.pending_order p {
+                color: red;
+            }
+
+            .ct_bx_information .ct_bx_flex p {
+                font-size: 16px;
+                margin: 3px 0 0 15px;
+            }
+
+            .ct_bx_btns_order {
+                margin: 20px;
+            }
+
+            .ct_bx_panel_main h3 {
+                margin-top: 0;
+                margin-left: 7px;
+            }
+
+            .ct_bx_flex ion-icon {
+                font-size: 43px;
+                transform: translate(3px);
+            }
+
+            .nav_order_itms p {
+                font-size: 15px;
+            }
+
+            .ct_bx_for_orders_page {
+                overflow-x: scroll;
+            }
+
+            .ct_bx_panel_main h3 {
+                width: 80%;
+                font-size: 18px;
+            }
+
+            .main_ul_orders {
+                padding: 0 12px;
+            }
+
+            .ct_bx_verifcation_order input {
+                font-size: 15px;
+                width: 79%;
+            }
+
+            .ct_bx_verifcation_order {
+                margin: 20px -4px;
+            }
+
+            .ct_selected_date_order h4 {
+                font-size: 14px;
+            }
+
+            .ct_selected_date_order h4 {
+                margin: 20px 0 50px 14px;
+            }
+
+            .ct_slect_date_bx {
+                right: 14px;
+            }
+
+            .ct_as_per_date_order h1 {
+                transform: translate(50px, 90px);
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width:360px) {
+            .ct_bx_flex ion-icon {
+                font-size: 43px;
+            }
+        }
+
+        /*! CSS Used from: http://localhost:3000/css/design.css */
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-bottom: auto;
+        }
+
+        body {
+            color: #555;
+            font-family: 'Lato', 'Arial', sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .ct_bx_information .row {
+            padding: 12px;
+            border-bottom: 1px solid #a8a6a6;
+        }
+
+        .loader_cart {
+            position: relative;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .for_acc_ov {
+            display: none;
+        }
+
+        .for_cart_load_full {
+            position: absolute;
+            z-index: 999999999;
+            top: 43vh;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .for_users {
+            display: flex;
+            justify-content: center;
+            margin: 90px 0 180px 0px;
+        }
+
+        .ct_x_users h1 {
+            display: none;
+            font-size: 19px;
+            font-family: 'Montserrat';
+            transform: translate(230px, 90px);
+            color: rgb(200, 195, 195);
+        }
+
+        .ct_bx_stock_message .succ_stk {
+            color: rgb(0, 140, 255);
+            font-size: 40px;
+        }
+
+        .ct_bx_remove_msg_stk {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            cursor: pointer;
+        }
+
+        .ct_bx_stock_message p {
+            margin: 8px 0 0 10px;
+            font-family: 'Open Sans';
+            color: black;
+            font-size: 18px;
+        }
+
+        .ct_bx_stock_message {
+            display: none;
+            width: 40%;
+            height: 40px;
+            background-color: white;
+            position: fixed;
+            top: 50px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.144);
+            right: 20px;
+            padding: 13px 12px 9px 30px;
+            font-size: 23px;
+            z-index: 999999999;
+            color: rgb(41, 39, 39);
+        }
+
+        .ct_bx_flex {
+            display: flex;
+        }
+
+        .ct_bx_flex ion-icon {
+            color: rgb(245, 57, 24);
+            font-size: 40px;
+        }
+
+        .ct_error_stock ion-icon {
+            pointer-events: none;
+        }
+
+        .ct_error_stock {
+            transition: all .1s ease;
+            background-color: #f1f6f4;
+            box-shadow: 0 0px 4px rgb(0 0 0 / 33%);
+            border-radius: 6px;
+            display: inline-flex;
+            width: auto;
+            height: auto;
+            width: 50vw;
+            padding: 4px 62px 8px 12px;
+            transform: translate(00px, 50px);
+        }
+
+        .ct_error_stock .ct_inner_msg {
+            margin-left: 0px;
+            width: 100%;
+        }
+
+        .ct_error_stock .ct_inner_msg ion-icon {
+            color: rgb(193 162 21);
+            position: absolute;
+            margin: -5px 23px 0;
+            font-size: 22px;
+        }
+
+        .ct_error_stock p {
+            font-size: 12px;
+            margin-left: 50px;
+            color: rgb(15, 15, 15);
+            font-family: 'Open Sans';
+        }
+
+        .ct_inner_msg {
+            display: flex;
+            margin: 22px 0 9px 40px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .nav_order_itms {
+            margin-top: 20px;
+        }
+
+        .ct_nav_mobile_adm .ct_bx_inner {
+            display: flex;
+            justify-content: center;
+            transform: translate(-20px);
+        }
+
+        .ct_error_stock.for_adm .ct_icon_succ ion-icon {
+            color: rgb(35, 192, 35);
+            font-size: 30px;
+            transform: translate(-26px, 0px);
+        }
+
+        .ct_error_stock.for_adm .ct_icon_warning {
+            display: none;
+            transform: translate(-10px, 0px);
+        }
+
+        .ct_error_stock.for_adm.for_err_otp .ct_icon_warning {
+            display: block;
+            transform: translate(-10px, 0px);
+        }
+
+        .ct_error_stock span {
+            font-size: 12px;
+            margin-left: 47px;
+            font-family: 'Open Sans';
+            color: rgb(68 64 64);
+        }
+
+        .ct_error_stock.for_adm p {
+            font-size: 15px;
+        }
+
+        .ct_error_stock.for_adm {
+            height: 90px;
+        }
+
+        .ct_error_stock.for_adm .ct_inner_msg {
+            display: block;
+        }
+
+        .ct_bx_message_adm2,
+        .ct_bx_message_adm {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .ct_error_stock.for_adm {
+            right: 0;
+            z-index: 99999;
+            width: max-content;
+            position: fixed;
+        }
+
+        .ct_bx_message_adm2,
+        .ct_bx_message_adm {
+            height: 70px;
+            display: flex;
+            position: fixed;
+            top: 5px;
+            right: -410px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.226);
+            border-radius: 2px;
+            padding: 8px 16px 7px 13px;
+            z-index: 999999999;
+        }
+
+        .ct_bx_inner_msg {
+            width: 100%;
+        }
+
+        .ct_bx_inner_msg p {
+            color: rgb(29, 133, 230);
+            font-size: 17px;
+            margin: 4px 0 4px 0;
+            font-family: 'Open Sans';
+            text-transform: uppercase;
+        }
+
+        .ct_bx_message_adm2 .ct_bx_inner_msg p {
+            color: rgb(30, 131, 246);
+            font-size: 14px;
+            margin: 4px 0 4px 0;
+            font-family: 'Open Sans';
+            text-transform: uppercase;
+        }
+
+        .ct_bx_inner_msg span {
+            display: block;
+            width: 100%;
+            font-size: 12px;
+            color: rgb(54, 51, 51);
+            font-family: 'Open Sans';
+            margin: -4px 0 3px 0px;
+        }
+
+        .material-icons.close_msg_icon {
+            color: rgb(0, 0, 0);
+            transform: translate(0px);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .material-icons.info_inon {
+            color: rgb(38, 120, 251);
+            transform: translate(-3px, 7px);
+            font-size: 24px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .ct_as_per_date_order h1 {
+            font-size: 20px;
+            transform: translate(250px, 90px);
+            font-family: 'Open Sans';
+            display: none;
+            margin-bottom: 90px;
+            color: rgb(0, 0, 0);
+        }
+
+        .ct_x_users {
+            width: 640px;
+            display: none;
+            margin: 30px 0 0 30px;
+            margin-bottom: 150px;
+            padding-bottom: 120px;
+            padding-top: 40px;
+        }
+
+        .nav_user_data .orders_user {
+            margin-right: 0px;
+        }
+
+        .nav_user_data .name_user {
+            margin-right: 266px;
+        }
+
+        .nav_user_data ul li p {
+            font-size: 13px;
+            color: rgb(37 91 185);
+            font-family: 'Open Sans';
+        }
+
+        .nav_user_data .phone_num_user {
+            margin-left: 46px;
+        }
+
+        .nav_user_data ul {
+            display: flex;
+            margin: 0 0 20px 40px;
+        }
+
+        .for_sign_up_log {
+            overflow: hidden;
+            display: inline-block;
+            margin: 30px 0 0 54px;
+        }
+
+        .for_sign_up_log h4 p {
+            color: rgb(46, 43, 43);
+        }
+
+        .for_sign_up_log p {
+            color: rgb(46, 43, 43);
+        }
+
+        .logo h4 {
+            display: block;
+            width: max-content;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .adm_page .ct_bx_overlay_cart.for_acc_ov2 {
+            z-index: 99999999999999999;
+            background-color: whitesmoke;
+            display: none;
+        }
+
+        .adm_page .ct_bx_overlay_cart.for_acc_ov2 .loader::before {
+            background-color: whitesmoke;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .ct_bx_panel_main {
+            padding-left: 0;
+            width: 100%;
+        }
+
+        .ct_bx_panel_main h3 {
+            font-family: 'Open Sans';
+            color: black;
+            padding: 30px 0 8px 30px;
+            width: 90%;
+            font-size: 22px;
+            border-bottom: 1px solid rgb(224, 219, 219);
+        }
+
+        .ct_bx_set_delivery_time h2 {
+            color: black;
+            font-size: 22px;
+            font-family: 'Open Sans';
+        }
+
+        .ct_bx_set_delivery_time {
+            margin: 40px 0 0 120px;
+        }
+
+        .ct_flex_time_bx {
+            display: flex;
+        }
+
+        .ct_bx_set_delivery_time .ct_hr_bx input {
+            color: black;
+            padding: 25px 20px;
+            width: 140px;
+            font-size: 24px;
+        }
+
+        .ct_bx_set_delivery_time .button {
+            color: black;
+            padding: 10px 15px;
+            text-align: center;
+            padding-top: 30px;
+            height: 83px;
+            margin-top: 23px;
+            background-color: #fd4;
+        }
+
+        .ct_bx_set_delivery_time label {
+            display: block;
+            margin-left: 10%;
+        }
+
+        .ct_bx_set_delivery_time .ct_hr_bx {
+            margin-right: 20px;
+        }
+
+        .ct_bx_set_delivery_time .ct_hr_bx input {
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .adm_page .logo h4 p {
+            color: white;
+        }
+
+        .adm_page .for_sign_up_log p {
+            color: rgb(255 255 255);
+        }
+
+        .ct_nav_mobile_adm {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 999999999;
+        }
+
+        .ct_bx_show_nav_adm ion-icon {
+            color: black;
+            font-size: 29px;
+            transform: translate(10px, 18px);
+        }
+
+        .ct_nav_mobile_adm {
+            display: none;
+        }
+
+        .ct_selected_date_order h4 {
+            font-size: 27px;
+            font-family: 'Open Sans';
+            color: rgb(34, 33, 33);
+            margin: 40px 0 20px 30px;
+        }
+
+        .ct_bx_panel_main h2 {
+            color: rgb(7, 7, 7);
+            font-family: 'Open Sans';
+            font-size: 26px;
+            margin-top: 40px;
+            ;
+            margin-bottom: 20px;
+        }
+
+        .ct_bx_panel_main h4 {
+            color: rgb(66, 62, 62);
+            font-family: 'Open Sans';
+            font-size: 17px;
+            ;
+            margin-bottom: 40px;
+        }
+
+        .ct_bx_panel_main h4 {
+            color: black;
+            font-family: 'Open Sans';
+            font-size: 20px;
+            width: 48%;
+        }
+
+        .ct_as_per_date_order {
+            margin-top: -15px;
+        }
+
+        .ct_bx_if_new {
+            background-color: rgb(46 80 246);
+        }
+
+        .ct_bx_overlay_cart {
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            position: fixed;
+        }
+
+        .ct_bx_overlay_cart {
+            justify-content: center;
+            align-items: center;
+            background: rgb(255 255 255);
+            z-index: 99999967;
+        }
+
+        .adm_page .ct_bx_overlay_cart {
+            z-index: 99967;
+        }
+
+        .ct_bx_if_new {
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            transform: translate(-20px, -7px);
+            font-family: 'Open Sans';
+            padding: 5px 4px 4px 3px;
+        }
+
+        .ct_slect_date_bx {
+            display: none;
+            position: absolute;
+            right: 120px;
+            margin-top: -70px;
+        }
+
+        .ct_sld_icon_order {
+            margin: 10px 0 0 10px;
+        }
+
+        .ct_calicon ion-icon {
+            transform: translate(-8px, 2px);
+            color: rgb(126, 88, 250);
+            font-size: 27px;
+        }
+
+        .ct_select_dat ul li {
+            margin-bottom: 10px;
+            color: rgb(34, 33, 33);
+        }
+
+        .ct_select_dat ul li span {
+            font-size: 12px;
+            font-family: 'Open Sans';
+        }
+
+        .ct_select_dat ul li p {
+            font-size: 14px;
+            font-family: 'Open Sans';
+        }
+
+        .ct_select_dat {
+            width: 120%;
+            border-radius: 8px;
+            background-color: white;
+            z-index: 99999;
+            position: absolute;
+            display: none;
+            padding: 10px;
+            margin: 38px 0 0 -10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.199);
+        }
+
+        .ct_select_dat ul li:hover {
+            color: rgb(126, 88, 250);
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        .ct_bx_dt_sle_date span {
+            display: block;
+            font-size: 13px;
+            color: rgb(59, 57, 57);
+            font-family: 'Open Sans';
+            margin-top: -3px;
+        }
+
+        .ct_bx_dt_sle_date p {
+            font-size: 16px;
+            color: rgb(59, 57, 57);
+            font-family: 'Open Sans';
+            margin: 0;
+        }
+
+        ion-icon {
+            pointer-events: none;
+        }
+
+        .ct_bx_canceled_order_b_cus {
+            margin: 20px 0;
+        }
+
+        .ct_bx_canceled_order_b_cus ion-icon {
+            color: rgb(211, 20, 20);
+            transform: translate(0px, 4px);
+        }
+
+        .ct_bx_canceled_order_b_cus dr {
+            font-size: 13px;
+            color: rgb(202 7 7);
+            font-family: 'Open Sans';
+        }
+
+        .cancel_order,
+        .ct_bx_verifcation_order button,
+        .accept_order {
+            margin: 20px 20px 0 0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: 'Open Sans';
+            width: 15%;
+            padding: 8px;
+            color: white;
+            border: none;
+        }
+
+        .ct_error_stock.for_adm {
+            right: 40px;
+        }
+
+        .ct_bx_btns_order_adm {
+            display: flex;
+        }
+
+        .ct_bx_verifcation_order button:nth-of-type(2) {
+            color: black;
+            margin-right: 10px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.151);
+            background-image: linear-gradient(to right, rgb(246, 242, 242), rgb(241, 232, 232));
+        }
+
+        .ct_bx_verifcation_order {
+            display: none;
+        }
+
+        .accept_order {
+            background-image: linear-gradient(to right, rgb(0, 153, 255), rgb(23 130 202));
+        }
+
+        .ct_bx_verifcation_order button {
+            background-image: linear-gradient(to right, rgb(0, 153, 255), rgb(0, 153, 255));
+            display: block;
+        }
+
+        .cancel_order {
+            box-shadow: none;
+            color: rgb(0 0 0);
+        }
+
+        .main_ul_orders {
+            margin: 10px 0 0 20px;
+            width: auto;
+        }
+
+        .main_ul_orders .orders {
+            background-color: rgb(255, 255, 255);
+            border-radius: 4px;
+        }
+
+        .main_ul_orders .orders {
+            padding: 18px 18px 8px;
+            margin-top: 20px;
+            border-bottom: 1px solid rgb(218, 211, 211);
+            transition: all 1s ease;
+        }
+
+        .main_ul_orders .orders:hover {
+            background-color: rgb(248, 246, 246);
+        }
+
+        .ct_bx_verifcation_order input {
+            padding: 10px 20px;
+            font-size: 19px;
+            letter-spacing: 25px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 2px solid rgb(181 176 176);
+        }
+
+        .ct_bx_nner_fd:nth-of-type(1) span {
+            font-size: 15px;
+            font-family: 'Open Sans';
+        }
+
+        .ct_error_stock.order p {
+            font-size: 16px;
+        }
+
+        .ct_error_stock.order .ct_inner_msg ion-icon {
+            color: red;
+        }
+
+        .ct_error_stock.order {
+            width: auto;
+            right: -900px;
+            position: fixed;
+            z-index: 9999999;
+        }
+
+        .order .ct_inner_msg {
+            display: block;
+        }
+
+        .ct_bx_verifcation_order p {
+            font-size: 13px;
+            color: black;
+            margin-top: 5px;
+            width: 80%;
+        }
+
+        .ct_bx_nner_fd span {
+            font-family: 'Open Sans';
+            font-size: 13px;
+            color: #dd1919;
+            overflow: hidden;
+            word-break: break-word;
+            text-align: center;
+        }
+
+        .ct_bx_nner_fd li {
+            padding: 8px 10px;
+        }
+
+        .ct_bx_others_dash p {
+            font-size: 13px;
+            color: black;
+            font-family: 'Open Sans';
+        }
+
+        .ct_bx_verifcation_order {
+            margin: 0px;
+            right: 30%;
+            border-radius: 8px;
+            z-index: 999999;
+            padding: 10px 20px;
+            background-color: white;
+        }
+
+        .ct_bx_verifcation_order h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: black;
+            font-family: 'Open Sans';
+        }
+
+        .ct_bx_others_dash p {
+            margin-bottom: 0;
+        }
+
+        .ct_bx_others_dash ul {
+            padding-left: 0;
+        }
+
+        .ct_bx_others_dash {
+            display: none;
+            position: absolute;
+            background: white;
+            box-shadow: 0 0 4px #00000154;
+            width: 202px;
+            margin-left: -57px;
+        }
+
+        .ct_bx_for_others_dash {
+            background: #fd4;
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 9px;
+            text-align: center;
+            color: black;
+        }
+
+        .loader {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-left: 60px;
+            background-color: #fafafa;
+            transition: all 1s ease-in-out;
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+            -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+            border-radius: 100px;
+            animation: rotate 1s infinite linear;
+        }
+
+        .loader::before {
+            position: absolute;
+            content: '';
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+            left: 6%;
+            top: 1%;
+            background-color: white;
+            display: block;
+        }
+
+        .ct_bx_panel_main h3.order_h3 {
+            border-bottom: none;
+        }
+
+        .sm_load.loader {
+            width: 54px;
+            height: 54px;
+        }
+
+        .ct_data_inside .ct_bx_flex ion-icon {
+            color: rgb(203 24 24);
+            font-size: 32px;
+        }
+
+        .ct_bx_information .ct_bx_flex span {
+            color: black;
+            font-size: 15px;
+            font-family: 'Open Sans';
+            margin-top: 7px;
+        }
+
+        .ct_bx_panel_main .ct_bx_information h4 {
+            color: black;
+            margin-bottom: 20px;
+            margin-top: 23px;
+        }
+
+        .ct_bx_information .ct_bx_flex p {
+            margin: 3px 0 0 15px;
+        }
+
+        .food_item_row p {
+            font-size: 15px;
+            color: black;
+            font-family: 'Open Sans';
+        }
+
+        .pending_order p {
+            color: red;
+        }
+
+        .success_order p {
+            color: rgb(31 154 62);
+        }
+
+        .ct_data_inside {
+            display: none;
+        }
+
+        .delivery_bx .pending_order {
+            color: red;
+        }
+
+        .delivery_bx .success_order {
+            color: rgb(31 154 62);
+        }
+
+        .ct_bx_panel_main .person_name_bx h4 {
+            margin-left: 10px;
+            margin-top: 7px;
+            margin-bottom: 10px;
+        }
+
+        /*! CSS Used from: http://localhost:3000/css/media.css */
+        @media only screen and (min-width:1380px) {
+            .main_ul_orders {
+                margin: 10px 0 0 0px;
+                padding-left: 0;
+                width: auto;
+            }
+        }
+
+        @media only screen and (min-width:1550px) {
+            .ct_bx_others_dash p {
+                font-size: 18px;
+            }
+        }
+
+        @media only screen and (max-width:1300px) {
+            .main_ul_orders {
+                margin: 0px;
+                width: 100%;
+            }
+
+            .ct_bx_nner_fd span {
+                font-size: 12px;
+            }
+
+            .ct_error_stock {
+                width: 70vw;
+            }
+        }
+
+        @media only screen and (max-width:470px) {
+            .ct_nav_mobile_adm .ct_bx_inner {
+                width: 46%;
+            }
+        }
+
+        @media only screen and (max-width:400px) {
+            .ct_bx_set_delivery_time {
+                margin: 40px 0 0 15px;
+            }
+
+            .ct_bx_for_orders_page {
+                overflow-x: hidden;
+            }
+
+            .ct_bx_information .col {
+                flex: 0;
+            }
+
+            .ct_as_per_date_order {
+                margin-top: -15px;
+                margin-bottom: 90px;
+            }
+
+            .ct_bx_others_dash {
+                right: 40px;
+            }
+
+            .ct_bx_for_orders_page {
+                width: 1000px;
+            }
+
+            .ct_bx_panel_main {
+                overflow: scroll;
+            }
+
+            .main_ul_orders .orders {
+                padding: 0
+            }
+
+            .ct_selected_date_order h4 {
+                font-size: 26px;
+            }
+
+            .ct_bx_panel_main h2 {
+                font-size: 19px;
+            }
+
+            .ct_bx_set_delivery_time .ct_hr_bx input {
+                padding: 16px 13px;
+                width: 100%;
+                font-size: 24px;
+            }
+
+            .ct_bx_item_foods .row {
+                padding: 10px 16px
+            }
+
+            .ct_flex_time_bx {
+                display: block;
+            }
+
+            .ct_bx_set_delivery_time label {
+                display: block;
+                margin-left: 10%;
+                margin: 20px 0 0 0;
+            }
+
+            .ct_bx_set_delivery_time .button {
+                color: black;
+                padding: 22px 6px;
+                text-align: center;
+                /* padding-top: 30px; */
+                height: 60px;
+                margin-top: 23px;
+                background-color: #fd4;
+            }
+
+            .ct_bx_verifcation_order input {
+                width: 38%;
+            }
+
+            .ct_bx_verifcation_order p {
+                width: 40%;
+            }
+
+            .container {
+                padding-right: var(--bs-gutter-x, 0);
+            }
+
+            .ct_bx_item_foods .col span,
+            .ct_bx_item_foods .col p {
+                font-size: 14px;
+                color: black;
+                width: 100px;
+                font-family: 'Open Sans';
+            }
+
+            .ct_bx_show_nav_adm {
+                display: none;
+            }
+
+            .ct_bx_item_foods .col.pending_order p {
+                color: red;
+            }
+
+            .ct_bx_information .ct_bx_flex p {
+                font-size: 16px;
+                margin: 3px 0 0 15px;
+            }
+
+            .ct_bx_btns_order {
+                margin: 20px;
+            }
+
+            .ct_bx_panel_main h3 {
+                margin-top: 0;
+                margin-left: 7px;
+            }
+
+            .ct_bx_flex ion-icon {
+                font-size: 43px;
+                transform: translate(3px);
+            }
+
+            .nav_order_itms p {
+                font-size: 15px;
+            }
+
+            .ct_bx_for_orders_page {
+                overflow-x: hidden;
+            }
+
+            .ct_bx_panel_main h3 {
+                width: 80%;
+                font-size: 18px;
+            }
+
+            .main_ul_orders {
+                padding: 0 12px;
+            }
+
+            .ct_bx_verifcation_order input {
+                font-size: 15px;
+                width: 79%;
+            }
+
+            .ct_bx_verifcation_order {
+                margin: 20px -4px;
+            }
+
+            .ct_selected_date_order h4 {
+                margin: 20px 0 50px 14px;
+            }
+
+            .ct_slect_date_bx {
+                right: 14px;
+            }
+
+            .ct_as_per_date_order h1 {
+                transform: translate(50px, 90px);
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width:360px) {
+            .ct_bx_flex ion-icon {
+                font-size: 43px;
+            }
+        }
+
+        .ct_error_stock.for_adm {
+            display: none;
+            right: 10px;
+        }
+
+        /*! CSS Used from: https://fonts.googleapis.com/icon?family=Material+Icons */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /*! CSS Used keyframes */
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+                background: rgb(179, 179, 179);
+            }
+
+            50% {
+                background: rgb(165, 166, 167);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+                background: rgb(143, 144, 146);
+            }
+        }
+
+        /*! CSS Used fontfaces */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4taVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4kaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4saVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4jaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4iaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4vaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVIUx6EQRjA.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-stretch: 100%;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVIUx6EQ.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 800;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v21/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/materialicons/v121/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+    </style>
 </head>
 
 <body class="adm_page admin_page">
@@ -678,15 +1963,15 @@ ion-icon{pointer-events:none;}
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyDZm_3Q1hGYk9JOHZrU0uHDYRbD58-FsRo",
-            authDomain: "krick-5050e.firebaseapp.com",
-            projectId: "krick-5050e",
-            storageBucket: "krick-5050e.appspot.com",
-            messagingSenderId: "737110334266",
-            appId: "1:737110334266:web:2fd97c14a592f622a20e03",
-            measurementId: "G-ZJGL359TRX"
-        };
+    const firebaseConfig = {
+        apiKey: "AIzaSyDZm_3Q1hGYk9JOHZrU0uHDYRbD58-FsRo",
+        authDomain: "krick-5050e.firebaseapp.com",
+        projectId: "krick-5050e",
+        storageBucket: "krick-5050e.appspot.com",
+        messagingSenderId: "737110334266",
+        appId: "1:737110334266:web:2fd97c14a592f622a20e03",
+        measurementId: "G-ZJGL359TRX"
+    };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     var db = firebase.firestore()
@@ -699,23 +1984,23 @@ ion-icon{pointer-events:none;}
 
 <script>
     let socket = io()
-    </script>
+</script>
 <script>
-  function getCookie(cname) {
-            var name = cname + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
             }
-            return "";
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
         }
+        return "";
+    }
     function secret(token) {
         var base64Url = token.split('.')[1];
         if (base64Url !== undefined) {
@@ -729,611 +2014,648 @@ ion-icon{pointer-events:none;}
             return null
         }
     };
-    
+
     document.querySelector('html').addEventListener('click', (e) => {
         let selectUn = e.target.closest('.ct_bx_selected_units_groc')
         let elem2 = e.target.closest('.ct_bx_slide_units li')
-    let canBtnO = e.target.closest('.cancel_order_btn')
+        let canBtnO = e.target.closest('.cancel_order_btn')
         let cancelOrderD = e.target.closest('.cancel_order')
-  let e1 = e.target.closest('.ct_bx_verifcation_order button:nth-of-type(1)')
-    let e12 = e.target.closest('.ct_bx_verifcation_order button:nth-of-type(2)')
+        let e1 = e.target.closest('.ct_bx_verifcation_order button:nth-of-type(1)')
+        let e12 = e.target.closest('.ct_bx_verifcation_order button:nth-of-type(2)')
         if (e12 !== null) {
-        if (document.querySelector('.delivery_body') !== null) {
-            socket.emit('acceptedOrAdm1C')
+            if (document.querySelector('.delivery_body') !== null) {
+                socket.emit('acceptedOrAdm1C')
 
-        } else {
-            socket.emit('acceptedOr4')
+            } else {
+                socket.emit('acceptedOr4')
 
-        }
-        console.log(e12.parentElement.parentElement.parentElement.childNodes)
-        console.log(e.target.parentElement.parentElement.childNodes)
-        let cu
-        e12.parentElement.parentElement.parentElement.childNodes.forEach(cur => {
-            if (cur.classList !== undefined) {
-                if (cur.classList.value === 'ct_bx_verifcation_order') {
-                    cu = cur
-                }
             }
-        })
-        let sec = cu.childNodes[3].innerText
-        let sec2 = cu.childNodes[5].innerText
-        let sec3 = cu.childNodes[7].innerText
-        e12.parentElement.parentElement.parentElement.childNodes[1].style.display = 'none'
-        // e12.parentElement.parentElement.parentElement.childNodes[7].style.display = 'none'
-
-        e12.parentElement.parentElement.parentElement.childNodes[3].style.display = 'block'
-        e12.parentElement.parentElement.parentElement.childNodes[5].childNodes[1].style.display = 'inline-block'
-        document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
-
-        const setDel = async () => {
-            let dbCollection = db.collection(`users`)
-            let res = await dbCollection.get()
-            res.docs.forEach(cur1 => {
-                let objD = cur1.data()
-                if (objD.authUser === sec3) {
-                    objD.myOrders.forEach(cur => {
-                        console.log(cur.id, sec2)
-                        if (cur.id === sec2) {
-                            let n = JSON.parse(getCookie('user'))
-                            let dN = new Date()
-                            let hours = dN.getHours()
-
-                            let typ = hours >= 12 ? 'pm' : "am"
-                            let timeH = parseFloat(dN.toLocaleString().split(',')[1].split(':')[0])
-                            let timeMin = parseFloat(dN.toLocaleString().split(',')[1].split(':')[1])
-                            cur.isDelivered = false
-                            cur.isAccepted = false
-
-                            let authUser = objD.authUser
-                            let cartGroc = objD.cartGroc
-                            let cartItem = objD.cartItem
-                            let data = objD.data
-                            let dislikes = objD.authUser
-                            let rootAutyh = objD.rootAutyh
-                            let myratings = objD.myratings
-                            let likes = objD.likes
-                            let myOrders = objD.myOrders
-                            let fstPurchase = objD.fstPurchase
-
-                            if (objD.admin !== undefined) {
-                                ob = dbCollection.doc(docId).set({
-                                    admin: cur.data().admin,
-                                    deliv: false,
-                                    cartGroc: cartGroc,
-                                    cartItem: cartItem,
-                                    likes: likes,
-                                    myratings: mr,
-                                    dislikes: dislikes,
-                                    myOrders: myOrders,
-                                    data: [
-                                        jwt.a.name,
-                                        jwt.a.lastname,
-                                        jwt.a.address,
-                                        hash,
-                                        jwt.a.password_login,
-
-                                        jwt.a.phonenumber,
-                                        jwt.a.pin,
-
-                                    ],
-                                    fstPurchase: fstPurchase,
-                                    authUser: user.authUser,
-
-                                })
-                            } else if (objD.deliv !== undefined) {
-                                ob = dbCollection.doc(docId).set({
-                                    deliv: cur.data().deliv,
-                                    admin: false,
-                                    cartGroc: cartGroc,
-                                    cartItem: cartItem,
-                                    likes: likes,
-                                    myratings: mr,
-                                    dislikes: dislikes,
-                                    myOrders: myOrders,
-                                    data: [
-                                        jwt.a.name,
-                                        jwt.a.lastname,
-                                        jwt.a.address,
-                                        hash,
-                                        jwt.a.password_login,
-
-                                        jwt.a.phonenumber,
-                                        jwt.a.pin,
-
-                                    ],
-                                    fstPurchase: fstPurchase,
-                                    authUser: user.authUser,
-
-                                })
-                            } else {
-                                ob = dbCollection.doc(docId).set({
-                                    cartGroc: cartGroc,
-                                    cartItem: cartItem,
-                                    likes: likes,
-                                    myratings: mr,
-                                    dislikes: dislikes,
-                                    myOrders: myOrders,
-                                    data: [
-                                        jwt.a.name,
-                                        jwt.a.lastname,
-                                        jwt.a.address,
-                                        hash,
-                                        jwt.a.password_login,
-
-                                        jwt.a.phonenumber,
-                                        jwt.a.pin,
-
-                                    ],
-                                    fstPurchase: fstPurchase,
-                                    authUser: user.authUser,
-
-                                })
-                            }
-
-                        }
-                    })
-                }
-                console.log(objD.authUser)
-            })
-        }
-        setDel()
-        let idOrd = e.target.parentElement.parentElement.childNodes[5].innerText
-
-        const setUser = async () => {
-            let dbCollection = db.collection(`orders`)
-            let res = await dbCollection.get()
-            res.docs.forEach(cur => {
-                let obj1 = cur.data().obj
-                if (obj1.idM === idOrd) {
-                    let uObj = JSON.parse(getCookie('user'))
-                    let fN = uObj.n + ' ' + uObj.ln
-                    let d = new Date()
-                    let typ = d.toLocaleString().split(',')[1].split(' ')[2].toLowerCase()
-                    let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
-                    let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
-                    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                    let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
-                    console.log(date)
-                    let canceled = obj1.canceled
-                    let idM = obj1.idM
-                    let isAccepted = obj1.isAccepted
-                    let isDelivered = obj1.isDelivered
-                    let op = obj1.op
-                    let order = obj1.order
-                    let time = obj1.time
-                    let user = obj1.user
-                    isDelivered = false
-                    isAccepted = false
-
-
-                    let obj = {
-                        canceled: canceled,
-                        idM: idM,
-                        isAccepted: isAccepted,
-                        isDelivered: isDelivered,
-                        op: op,
-                        order: order,
-                        time: time,
-                        user: user,
+            console.log(e12.parentElement.parentElement.parentElement.childNodes)
+            console.log(e.target.parentElement.parentElement.childNodes)
+            let cu
+            e12.parentElement.parentElement.parentElement.childNodes.forEach(cur => {
+                if (cur.classList !== undefined) {
+                    if (cur.classList.value === 'ct_bx_verifcation_order') {
+                        cu = cur
                     }
-                    dbCollection.doc(cur.id).set({
-                        obj,
-                        createdAt: cur.data().createdAt
-
-                    }).then(() => {
-
-                        window.location.reload()
-                    })
-
                 }
             })
-        }
-        setUser()
-    }
-    
-    if (e1 !== null) {
-        //verify order
-        console.log(e.target.parentElement.parentElement.parentElement.childNodes)
-        e.target.parentElement.parentElement.parentElement.childNodes.forEach(cur => {
-            if (cur.classList !== undefined) {
-                if (cur.classList.value === 'ct_bx_verifcation_order') {
-                    let inp
-                    cur.childNodes.forEach(cu => {
-                        if (cu.tagName !== undefined) {
-                            if (cu.tagName === 'INPUT') {
-                                inp = cu.value
+            let sec = cu.childNodes[3].innerText
+            let sec2 = cu.childNodes[5].innerText
+            let sec3 = cu.childNodes[7].innerText
+            e12.parentElement.parentElement.parentElement.childNodes[1].style.display = 'none'
+            // e12.parentElement.parentElement.parentElement.childNodes[7].style.display = 'none'
+
+            e12.parentElement.parentElement.parentElement.childNodes[3].style.display = 'block'
+            e12.parentElement.parentElement.parentElement.childNodes[5].childNodes[1].style.display = 'inline-block'
+            document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
+
+            const setDel = async () => {
+                let dbCollection = db.collection(`users`)
+                let res = await dbCollection.get()
+                res.docs.forEach(cur1 => {
+                    let objD = cur1.data()
+                    if (objD.authUser === sec3) {
+                        objD.myOrders.forEach(cur => {
+                            console.log(cur.id, sec2)
+                            if (cur.id === sec2) {
+                                let n = JSON.parse(getCookie('user'))
+                                let dN = new Date()
+                                let hours = dN.getHours()
+
+                                let typ = hours >= 12 ? 'pm' : "am"
+                                let timeH = parseFloat(dN.toLocaleString().split(',')[1].split(':')[0])
+                                let timeMin = parseFloat(dN.toLocaleString().split(',')[1].split(':')[1])
+                                cur.isDelivered = false
+                                cur.isAccepted = false
+
+                                let authUser = objD.authUser
+                                let cartGroc = objD.cartGroc
+                                let cartItem = objD.cartItem
+                                let data = objD.data
+                                let dislikes = objD.authUser
+                                let rootAutyh = objD.rootAutyh
+                                let myratings = objD.myratings
+                                let likes = objD.likes
+                                let myOrders = objD.myOrders
+                                let fstPurchase = objD.fstPurchase
+
+                                if (objD.admin !== undefined) {
+                                    ob = dbCollection.doc(docId).set({
+                                        admin: cur.data().admin,
+                                        deliv: false,
+                                        cartGroc: cartGroc,
+                                        cartItem: cartItem,
+                                        likes: likes,
+                                        myratings: mr,
+                                        dislikes: dislikes,
+                                        myOrders: myOrders,
+                                        data: [
+                                            jwt.a.name,
+                                            jwt.a.lastname,
+                                            jwt.a.address,
+                                            hash,
+                                            jwt.a.password_login,
+
+                                            jwt.a.phonenumber,
+                                            jwt.a.pin,
+
+                                        ],
+                                        fstPurchase: fstPurchase,
+                                        authUser: user.authUser,
+
+                                    })
+                                } else if (objD.deliv !== undefined) {
+                                    ob = dbCollection.doc(docId).set({
+                                        deliv: cur.data().deliv,
+                                        admin: false,
+                                        cartGroc: cartGroc,
+                                        cartItem: cartItem,
+                                        likes: likes,
+                                        myratings: mr,
+                                        dislikes: dislikes,
+                                        myOrders: myOrders,
+                                        data: [
+                                            jwt.a.name,
+                                            jwt.a.lastname,
+                                            jwt.a.address,
+                                            hash,
+                                            jwt.a.password_login,
+
+                                            jwt.a.phonenumber,
+                                            jwt.a.pin,
+
+                                        ],
+                                        fstPurchase: fstPurchase,
+                                        authUser: user.authUser,
+
+                                    })
+                                } else {
+                                    ob = dbCollection.doc(docId).set({
+                                        cartGroc: cartGroc,
+                                        cartItem: cartItem,
+                                        likes: likes,
+                                        myratings: mr,
+                                        dislikes: dislikes,
+                                        myOrders: myOrders,
+                                        data: [
+                                            jwt.a.name,
+                                            jwt.a.lastname,
+                                            jwt.a.address,
+                                            hash,
+                                            jwt.a.password_login,
+
+                                            jwt.a.phonenumber,
+                                            jwt.a.pin,
+
+                                        ],
+                                        fstPurchase: fstPurchase,
+                                        authUser: user.authUser,
+
+                                    })
+                                }
+
                             }
+                        })
+                    }
+                    console.log(objD.authUser)
+                })
+            }
+            setDel()
+            let idOrd = e.target.parentElement.parentElement.childNodes[5].innerText
+
+            const setUser = async () => {
+                let dbCollection = db.collection(`orders`)
+                let res = await dbCollection.get()
+                res.docs.forEach(cur => {
+                    let obj1 = cur.data().obj
+                    if (obj1.idM === idOrd) {
+                        let uObj = JSON.parse(getCookie('user'))
+                        let fN = uObj.n + ' ' + uObj.ln
+                        let d = new Date()
+                        let typ = d.toLocaleString().split(',')[1].split(' ')[2].toLowerCase()
+                        let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
+                        let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
+                        const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                        let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
+                        console.log(date)
+                        let canceled = obj1.canceled
+                        let idM = obj1.idM
+                        let isAccepted = obj1.isAccepted
+                        let isDelivered = obj1.isDelivered
+                        let op = obj1.op
+                        let order = obj1.order
+                        let time = obj1.time
+                        let user = obj1.user
+                        isDelivered = false
+                        isAccepted = false
+
+
+                        let obj = {
+                            canceled: canceled,
+                            idM: idM,
+                            isAccepted: isAccepted,
+                            isDelivered: isDelivered,
+                            op: op,
+                            order: order,
+                            time: time,
+                            user: user,
                         }
-                    })
-                    console.log(cur.childNodes)
+                        dbCollection.doc(cur.id).set({
+                            obj,
+                            createdAt: cur.data().createdAt
 
-                    if (inp !== '') {
-                        let sec = cur.childNodes[3].innerText
-                        let sec2 = cur.childNodes[5].innerText
-                        let sec3 = cur.childNodes[7].innerText
+                        }).then(() => {
 
+                            window.location.reload()
+                        })
 
+                    }
+                })
+            }
+            setUser()
+        }
 
-                        let o = secret(sec)
-                        let otp = parseFloat(o)
-                        console.log(otp)
-                        inp = parseFloat(inp)
-                        if (otp === inp) {
-                            if (document.querySelector('.delivery_body') !== null) {
-                                socket.emit('delivered1')
-                            } else {
-                                socket.emit('delivered2')
-
-                            }
-                            if (cur.childNodes[9].classList !== undefined) {
-                                if (cur.childNodes[9].classList.value.split(' ').includes('krInside')) {
-                                    if (cur.childNodes[9].childNodes.length > 0) {
-                                        cur.childNodes[9].childNodes.forEach(cu => {
-                                            if (cu.tagName !== undefined) {
-                                                let id = cu.childNodes[1].innerText
-                                                let cId = cu.childNodes[3].innerText
-                                                let dId = cu.childNodes[5].innerText
-
-                                                async function checkFds() {
-                                                    let dbCollection = db.collection(`/foods/sYNT0aiTqEnZ0I7IVmd7/group${cId}`)
-                                                    let res = await dbCollection.get()
-                                                    res.forEach(async doc => {
-                                                        let id1 = doc.data().item.id
-                                                        if (id1 === id) {
-                                                            let resp2 = await doc.ref.collection("maxqt").get()
-                                                            resp2.forEach(c => {
-                                                                let m_id = c.data().id
-                                                                if (m_id === dId) {
-                                                                    db.collection(`${doc.ref.collection("maxqt").path}`).doc(c.id).delete()
-                                                                }
-
-
-
-
-                                                            })
-
-                                                        }
-                                                    })
-
-                                                }
-                                                checkFds()
-                                            }
-                                        })
-                                    }
+        if (e1 !== null) {
+            //verify order
+            console.log(e.target.parentElement.parentElement.parentElement.childNodes)
+            e.target.parentElement.parentElement.parentElement.childNodes.forEach(cur => {
+                if (cur.classList !== undefined) {
+                    if (cur.classList.value === 'ct_bx_verifcation_order') {
+                        let inp
+                        cur.childNodes.forEach(cu => {
+                            if (cu.tagName !== undefined) {
+                                if (cu.tagName === 'INPUT') {
+                                    inp = cu.value
                                 }
                             }
+                        })
+                        console.log(cur.childNodes)
 
-
-                            document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
-                            const setDel = async () => {
-                                let dbCollection = db.collection(`users`)
-                                let res = await dbCollection.get()
-                                res.docs.forEach(cur1 => {
-                                    let objD = cur1.data()
-                                    if (objD.rootAutyh === sec3) {
-                                        objD.myOrders.forEach(cur => {
-                                            console.log(cur.id === sec2)
-                                            if (cur.id.trim() === sec2.trim()) {
-                                                let n = JSON.parse(getCookie('user'))
-                                                let dN = new Date()
-                                                let hours = dN.getHours()
-
-                                                let typ = hours >= 12 ? 'pm' : "am"
-                                                let timeH = parseFloat(dN.toLocaleString().split(',')[1].split(':')[0])
-                                                let timeMin = parseFloat(moment().format("HH:mm").split(':')[1])
-                                                cur.isDelivered = { t: `${timeH}:${timeMin} ${typ}` }
-                                                let authUser = objD.authUser
-                                                let cartGroc = objD.cartGroc
-                                                let cartItem = objD.cartItem
-                                                let data = objD.data
-                                                let dislikes = objD.authUser
-                                                let rootAutyh = objD.rootAutyh
-                                                let myratings = objD.myratings
-                                                let likes = objD.likes
-                                                let myOrders = objD.myOrders
-                                                let fstPurchase = objD.fstPurchase
-                                                dbCollection.doc(cur1.id).set({
-                                                    deliv: objD.deliv,
-                                                    admin: objD.admin,
-                                                    cartGroc: cartGroc,
-                                                    cartItem: cartItem,
-                                                    likes: likes,
-                                                    myratings: myratings,
-                                                    dislikes: dislikes,
-                                                    myOrders: myOrders,
-                                                    data: data,
-                                                    fstPurchase: fstPurchase,
-                                                    authUser: authUser,
-                                                    rootAutyh: rootAutyh,
-                                                })
+                        if (inp !== '') {
+                            let sec = cur.childNodes[3].innerText
+                            let sec2 = cur.childNodes[5].innerText
+                            let sec3 = cur.childNodes[7].innerText
 
 
 
-                                            }
-                                        })
-                                    }
-                                    console.log(objD.authUser)
-                                })
-                            }
-                            setDel()
+                            let o = secret(sec)
+                            let otp = parseFloat(o)
+                            console.log(otp)
+                            inp = parseFloat(inp)
+                            if (otp === inp) {
+                                if (document.querySelector('.delivery_body') !== null) {
+                                    socket.emit('delivered1')
+                                } else {
+                                    socket.emit('delivered2')
 
-                            let idOrd = e.target.parentElement.parentElement.childNodes[5].innerText
+                                }
+                                if (cur.childNodes[9].classList !== undefined) {
+                                    if (cur.childNodes[9].classList.value.split(' ').includes('krInside')) {
+                                        if (cur.childNodes[9].childNodes.length > 0) {
+                                            cur.childNodes[9].childNodes.forEach(cu => {
+                                                if (cu.tagName !== undefined) {
+                                                    let id = cu.childNodes[1].innerText
+                                                    let cId = cu.childNodes[3].innerText
+                                                    let dId = cu.childNodes[5].innerText
 
-                            const setUser = async () => {
-                                let dbCollection = db.collection(`orders`)
-                                let res = await dbCollection.get()
-                                res.docs.forEach(cur => {
-                                    let obj1 = cur.data().obj
-                                    if (obj1.idM === idOrd) {
-                                        let uObj = JSON.parse(getCookie('user'))
-                                        let fN = uObj.n + ' ' + uObj.ln
-                                        let d = new Date()
-                                        let hours = d.getHours()
-
-                                        let typ = hours >= 12 ? 'pm' : "am"
-                                        let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
-                                        let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
-                                        const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                                        let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
-                                        let canceled = obj1.canceled
-                                        let idM = obj1.idM
-                                        let isAccepted = obj1.isAccepted
-                                        let isDelivered = obj1.isDelivered
-                                        let op = obj1.op
-                                        let order = obj1.order
-                                        let time = obj1.time
-                                        let user = obj1.user
-                                        isDelivered = `Delivered by ${user.n} ${user.ln} at ${date}`
+                                                    async function checkFds() {
+                                                        let dbCollection = db.collection(`/foods/sYNT0aiTqEnZ0I7IVmd7/group${cId}`)
+                                                        let res = await dbCollection.get()
+                                                        res.forEach(async doc => {
+                                                            let id1 = doc.data().item.id
+                                                            if (id1 === id) {
+                                                                let resp2 = await doc.ref.collection("maxqt").get()
+                                                                resp2.forEach(c => {
+                                                                    let m_id = c.data().id
+                                                                    if (m_id === dId) {
+                                                                        db.collection(`${doc.ref.collection("maxqt").path}`).doc(c.id).delete()
+                                                                    }
 
 
-                                        let obj = {
-                                            canceled: canceled,
-                                            idM: idM,
-                                            isAccepted: isAccepted,
-                                            isDelivered: isDelivered,
-                                            op: op,
-                                            order: order,
-                                            time: time,
-                                            user: user,
+
+
+                                                                })
+
+                                                            }
+                                                        })
+
+                                                    }
+                                                    checkFds()
+                                                }
+                                            })
                                         }
-                                        dbCollection.doc(cur.id).set({
-                                            obj,
-                                            createdAt: cur.data().createdAt
-
-                                        }).then(() => {
-                                            window.location.reload()
-                                        })
-
                                     }
-                                })
-                            }
-                            setUser()
+                                }
 
-                        } else {
-                            if (document.querySelector('.delivery_body') === null) {
 
-                                document.querySelector('.for_err_otp p').innerText = 'OTP does not match'
-                                                              document.querySelector('.for_err_otp').style.display='flex'
+                                document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
+                                const setDel = async () => {
+                                    let dbCollection = db.collection(`users`)
+                                    let res = await dbCollection.get()
+                                    res.docs.forEach(cur1 => {
+                                        let objD = cur1.data()
+                                        if (objD.rootAutyh === sec3) {
+                                            objD.myOrders.forEach(cur => {
+                                                console.log(cur.id === sec2)
+                                                if (cur.id.trim() === sec2.trim()) {
+                                                    let n = JSON.parse(getCookie('user'))
+                                                    let dN = new Date()
+                                                    let hours = dN.getHours()
+
+                                                    let typ = hours >= 12 ? 'pm' : "am"
+                                                    let timeH = parseFloat(dN.toLocaleString().split(',')[1].split(':')[0])
+                                                    let timeMin = parseFloat(moment().format("HH:mm").split(':')[1])
+                                                    cur.isDelivered = { t: `${timeH}:${timeMin} ${typ}` }
+                                                    let authUser = objD.authUser
+                                                    let cartGroc = objD.cartGroc
+                                                    let cartItem = objD.cartItem
+                                                    let data = objD.data
+                                                    let dislikes = objD.authUser
+                                                    let rootAutyh = objD.rootAutyh
+                                                    let myratings = objD.myratings
+                                                    let likes = objD.likes
+                                                    let myOrders = objD.myOrders
+                                                    let fstPurchase = objD.fstPurchase
+                                                    dbCollection.doc(cur1.id).set({
+                                                        deliv: objD.deliv,
+                                                        admin: objD.admin,
+                                                        cartGroc: cartGroc,
+                                                        cartItem: cartItem,
+                                                        likes: likes,
+                                                        myratings: myratings,
+                                                        dislikes: dislikes,
+                                                        myOrders: myOrders,
+                                                        data: data,
+                                                        fstPurchase: fstPurchase,
+                                                        authUser: authUser,
+                                                        rootAutyh: rootAutyh,
+                                                    })
+
+
+
+                                                }
+                                            })
+                                        }
+                                        console.log(objD.authUser)
+                                    })
+                                }
+                                setDel()
+
+                                let idOrd = e.target.parentElement.parentElement.childNodes[5].innerText
+
+                                const setUser = async () => {
+                                    let dbCollection = db.collection(`orders`)
+                                    let res = await dbCollection.get()
+                                    res.docs.forEach(cur => {
+                                        let obj1 = cur.data().obj
+                                        if (obj1.idM === idOrd) {
+                                            let uObj = JSON.parse(getCookie('user'))
+                                            let fN = uObj.n + ' ' + uObj.ln
+                                            let d = new Date()
+                                            let hours = d.getHours()
+
+                                            let typ = hours >= 12 ? 'pm' : "am"
+                                            let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
+                                            let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
+                                            const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                            let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
+                                            let canceled = obj1.canceled
+                                            let idM = obj1.idM
+                                            let isAccepted = obj1.isAccepted
+                                            let isDelivered = obj1.isDelivered
+                                            let op = obj1.op
+                                            let order = obj1.order
+                                            let time = obj1.time
+                                            let user = obj1.user
+                                            isDelivered = `Delivered by ${user.n} ${user.ln} at ${date}`
+
+
+                                            let obj = {
+                                                canceled: canceled,
+                                                idM: idM,
+                                                isAccepted: isAccepted,
+                                                isDelivered: isDelivered,
+                                                op: op,
+                                                order: order,
+                                                time: time,
+                                                user: user,
+                                            }
+                                            dbCollection.doc(cur.id).set({
+                                                obj,
+                                                createdAt: cur.data().createdAt
+
+                                            }).then(() => {
+                                                window.location.reload()
+                                            })
+
+                                        }
+                                    })
+                                }
+                                setUser()
 
                             } else {
-                                document.querySelector('.for_err_otp').style.display='flex'
-                                document.querySelector('.for_err_otp p').innerText = 'OTP does not match'
+                                if (document.querySelector('.delivery_body') === null) {
+
+                                    document.querySelector('.for_err_otp p').innerText = 'OTP does not match'
+                                    document.querySelector('.for_err_otp').style.display = 'flex'
+
+                                } else {
+                                    document.querySelector('.for_err_otp').style.display = 'flex'
+                                    document.querySelector('.for_err_otp p').innerText = 'OTP does not match'
+                                }
                             }
                         }
+
                     }
-
                 }
-            }
-        })
-    }
- if (canBtnO !== null) {
-        // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].classList.add('pending')
-        // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].classList.remove('sucess')
-        // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].innerText = 'You canceled this order'
-        let idM = canBtnO.parentElement.childNodes[5].innerText.trim()
-        canBtnO.parentElement.childNodes[3].childNodes[9].style.display = 'none'
-        canBtnO.parentElement.childNodes[3].childNodes[7].innerText = 'You canceled this order'
-        if (canBtnO.parentElement.childNodes[3].childNodes[11].classList.value !== 'ct_bx_info_mob_order') {
-            canBtnO.parentElement.childNodes[3].childNodes[11].style.display = 'none'
-
+            })
         }
-        canBtnO.style.display = 'none'
-        document.querySelector('.for_acc_dt .yt-loader').style.display = 'block'
-        document.querySelector('.ct_overfow_for_load').style.display = 'block'
-        cancelOrderFinal(idM)
-    }
-      if (cancelOrderD !== null) {
-        let orderId = cancelOrderD.parentElement.parentElement.childNodes[1].childNodes[5].innerText
-        let userId = cancelOrderD.parentElement.parentElement.childNodes[1].childNodes[7].innerText
-        document.querySelector('.for_acc_ov').style.display = 'flex'
-        const setUser = async () => {
-            let dbCollection = db.collection(`users`)
-            let res = await dbCollection.get()
+        if (canBtnO !== null) {
+            // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].classList.add('pending')
+            // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].classList.remove('sucess')
+            // canBtnO.parentElement.childNodes[1].childNodes[3].childNodes[3].innerText = 'You canceled this order'
+            let idM = canBtnO.parentElement.childNodes[5].innerText.trim()
+            canBtnO.parentElement.childNodes[3].childNodes[9].style.display = 'none'
+            canBtnO.parentElement.childNodes[3].childNodes[7].innerText = 'You canceled this order'
+            if (canBtnO.parentElement.childNodes[3].childNodes[11].classList.value !== 'ct_bx_info_mob_order') {
+                canBtnO.parentElement.childNodes[3].childNodes[11].style.display = 'none'
 
-            res.docs.forEach(cur1 => {
-                let objD = cur1.data()
-                if (objD.rootAutyh === userId) {
-                    let myratings = objD.myratings
-                    let rootAutyh = objD.rootAutyh
-                    let dislikes = objD.dislikes
-                    let likes = objD.likes
-                    let authUser = objD.authUser
-                    let data = objD.data
-                    let cartGroc = objD.cartGroc
-                    let fstPurchase = objD.fstPurchase
-                    let cartItem = objD.cartItem
+            }
+            canBtnO.style.display = 'none'
+            document.querySelector('.for_acc_dt .yt-loader').style.display = 'block'
+            document.querySelector('.ct_overfow_for_load').style.display = 'block'
+            cancelOrderFinal(idM)
+        }
+        if (cancelOrderD !== null) {
+            let orderId = cancelOrderD.parentElement.parentElement.childNodes[1].childNodes[5].innerText
+            let userId = cancelOrderD.parentElement.parentElement.childNodes[1].childNodes[7].innerText
+            document.querySelector('.for_acc_ov').style.display = 'flex'
+            const setUser = async () => {
+                let dbCollection = db.collection(`users`)
+                let res = await dbCollection.get()
 
-                    objD.myOrders.forEach((cur, ind) => {
-                        if (cur.id === orderId) {
-                            objD.myOrders.splice(ind, 1)
+                res.docs.forEach(cur1 => {
+                    let objD = cur1.data()
+                    if (objD.rootAutyh === userId) {
+                        let myratings = objD.myratings
+                        let rootAutyh = objD.rootAutyh
+                        let dislikes = objD.dislikes
+                        let likes = objD.likes
+                        let authUser = objD.authUser
+                        let data = objD.data
+                        let cartGroc = objD.cartGroc
+                        let fstPurchase = objD.fstPurchase
+                        let cartItem = objD.cartItem
+
+                        objD.myOrders.forEach((cur, ind) => {
+                            if (cur.id === orderId) {
+                                objD.myOrders.splice(ind, 1)
+                            }
+                        })
+                        dbCollection.doc(cur1.id).set({
+                            deliv: objD.deliv,
+                            admin: objD.admin,
+                            myratings: myratings,
+                            rootAutyh: rootAutyh,
+                            likes: likes,
+                            dislikes: dislikes,
+                            authUser: authUser,
+                            myOrders: objD.myOrders,
+                            data: data,
+                            cartGroc: cartGroc,
+                            fstPurchase: fstPurchase,
+                            cartItem: cartItem
+                        })
+                    }
+                })
+            }
+
+
+            const setOrder = async () => {
+                let dbCollection = db.collection(`orders`)
+                let res = await dbCollection.get()
+
+                res.docs.forEach(cur1 => {
+                    let objD = cur1.data().obj
+                    if (objD.idM === orderId) {
+                        let canceled = objD.canceled
+                        let idM = objD.idM
+                        let isAccepted = objD.isAccepted
+                        let isDelivered = objD.isDelivered
+                        let op = objD.op
+                        let order = objD.order
+                        let time = objD.time
+                        let user = objD.user
+                        let usN = getCookie('user')
+                        usN = JSON.parse(usN)
+                        usN = usN.n + ' ' + usN.ln
+                        let d = new Date()
+                        let hours = d.getHours()
+
+                        let typ = hours >= 12 ? 'pm' : "am"
+                        let timeN = new Date().toLocaleTimeString()
+                        let l = timeN.split(' ')[1]
+                        l = l.toLowerCase()
+                        let l1 = timeN.split(':')
+
+                        timeN = `${l1[0]}:${l1[1]} ${typ}`
+                        canceled = { by: `${usN} canceled this order at ${timeN}` }
+                        let obj = {
+                            canceled: canceled,
+                            idM: idM,
+                            isAccepted: isAccepted,
+                            isDelivered: isDelivered,
+                            op: op,
+                            time: time,
+                            order: order,
+                            user: user
                         }
-                    })
-                    dbCollection.doc(cur1.id).set({
-                        deliv: objD.deliv,
-                        admin: objD.admin,
-                        myratings: myratings,
-                        rootAutyh: rootAutyh,
-                        likes: likes,
-                        dislikes: dislikes,
-                        authUser: authUser,
-                        myOrders: objD.myOrders,
-                        data: data,
-                        cartGroc: cartGroc,
-                        fstPurchase: fstPurchase,
-                        cartItem: cartItem
-                    })
-                }
-            })
-        }
+                        dbCollection.doc(cur1.id).set({
+                            obj,
+                            createdAt: cur1.data().createdAt
 
-
-        const setOrder = async () => {
-            let dbCollection = db.collection(`orders`)
-            let res = await dbCollection.get()
-
-            res.docs.forEach(cur1 => {
-                let objD = cur1.data().obj
-                if (objD.idM === orderId) {
-                    let canceled = objD.canceled
-                    let idM = objD.idM
-                    let isAccepted = objD.isAccepted
-                    let isDelivered = objD.isDelivered
-                    let op = objD.op
-                    let order = objD.order
-                    let time = objD.time
-                    let user = objD.user
-                    let usN = getCookie('user')
-                    usN = JSON.parse(usN)
-                    usN = usN.n + ' ' + usN.ln
-                    let d = new Date()
-                    let hours = d.getHours()
-
-                    let typ = hours >= 12 ? 'pm' : "am"
-                    let timeN = new Date().toLocaleTimeString()
-                    let l = timeN.split(' ')[1]
-                    l = l.toLowerCase()
-                    let l1 = timeN.split(':')
-
-                    timeN = `${l1[0]}:${l1[1]} ${typ}`
-                    canceled = { by: `${usN} canceled this order at ${timeN}` }
-                    let obj = {
-                        canceled: canceled,
-                        idM: idM,
-                        isAccepted: isAccepted,
-                        isDelivered: isDelivered,
-                        op: op,
-                        time: time,
-                        order: order,
-                        user: user
+                        }).then(() => window.location.reload())
                     }
-                    dbCollection.doc(cur1.id).set({
-                        obj,
-                        createdAt: cur1.data().createdAt
 
-                    }).then(() => window.location.reload())
-                }
-
-            })
-        }
-        setOrder()
-        setUser()
-    }
-
-
-
-            if (e.target.closest('.accept_order') !== null) {
-        // document.querySelectorAll('.accept_order').forEach(cur => {
-        //     cur.style['pointer-events'] = 'none'
-        //     cur.style.opacity = .4
-
-        // })
-        if (document.querySelector('.delivery_body') !== null) {
-            socket.emit('acceptedOrAdm1')
-
-        } else {
-            socket.emit('acceptedOr')
-
-        }
-        document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
-        console.log(e.target.parentElement.parentElement.childNodes)
-        let idOrd
-        e.target.parentElement.parentElement.childNodes.forEach(cur => {
-            if (cur.classList !== undefined) {
-                if (cur.classList.value === 'ct_bx_verifcation_order') {
-                    idOrd = cur.childNodes[5].innerText
-                }
+                })
             }
-        })
-        let phoneNumber = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[3].childNodes[3].childNodes[3].childNodes[5].childNodes[3].innerText
-        let name = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText
-        let amount = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[5].innerText.split('₹')[1]
-        console.log(name, phoneNumber, amount)
-        socket.emit('deliveryOnwaySms', name, phoneNumber, amount)
+            setOrder()
+            setUser()
+        }
 
-        const setUser = async () => {
-            let dbCollection = db.collection(`orders`)
-            let res = await dbCollection.get()
-            res.docs.forEach(cur => {
-                let obj1 = cur.data().obj
-                if (obj1.idM === idOrd) {
-                    let uObj = JSON.parse(getCookie('user'))
-                    let fN = uObj.n + ' ' + uObj.ln
-                    let d = new Date()
-                    let hours = d.getHours()
 
-                    let typ = hours >= 12 ? 'pm' : "am"
-                    let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
-                    let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
-                    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                    let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
-                    let canceled = obj1.canceled
-                    let idM = obj1.idM
-                    let isAccepted = obj1.isAccepted
-                    let isDelivered = obj1.isDelivered
-                    let op = obj1.op
-                    let order = obj1.order
-                    let time = obj1.time
-                    let user = obj1.user
-                    isAccepted = {
 
-                        id: uObj.rootAutyh,
-                        name: fN,
-                        t: date,
+        if (e.target.closest('.accept_order') !== null) {
+            // document.querySelectorAll('.accept_order').forEach(cur => {
+            //     cur.style['pointer-events'] = 'none'
+            //     cur.style.opacity = .4
+
+            // })
+
+            document.querySelector('.ct_bx_overlay_cart').style.display = 'flex'
+            console.log(e.target.parentElement.parentElement.childNodes)
+            let idOrd
+            e.target.parentElement.parentElement.childNodes.forEach(cur => {
+                if (cur.classList !== undefined) {
+                    if (cur.classList.value === 'ct_bx_verifcation_order') {
+                        idOrd = cur.childNodes[5].innerText
                     }
-                    let obj = {
-                        canceled: false,
-                        idM: idM,
-                        isAccepted: isAccepted,
-                        isDelivered: isDelivered,
-                        op: op,
-                        order: order,
-                        time: time,
-                        user: user,
-                    }
-                    dbCollection.doc(cur.id).set({
-                        obj,
-                        createdAt: cur.data().createdAt
+                }
+            })
+            console.log(e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[3].childNodes[3].childNodes[3].childNodes[7].childNodes[3].innerText)
+            let phoneNumber = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[3].childNodes[3].childNodes[3].childNodes[7].childNodes[3].innerText
+            let name = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText
+            let amount = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[5].innerText.split('₹')[1]
+            console.log(name, phoneNumber, amount)
+ const setUserx = async () => {
+         let orderId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[5].innerText
+            let userId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[7].innerText
+                let dbCollection = db.collection(`users`)
+                let res = await dbCollection.get()
 
-                    }).then(() => {
-                        document.querySelector('.ct_bx_overlay_cart').style.display = 'none'
-                    })
+                res.docs.forEach(cur1 => {
+                    let objD = cur1.data()
+                    if (objD.rootAutyh === userId) {
+                        let myratings = objD.myratings
+                        let rootAutyh = objD.rootAutyh
+                        let dislikes = objD.dislikes
+                        let likes = objD.likes
+                        let authUser = objD.authUser
+                        let data = objD.data
+                        let cartGroc = objD.cartGroc
+                        let fstPurchase = objD.fstPurchase
+                        let cartItem = objD.cartItem
+
+                        objD.myOrders.forEach((cur, ind) => {
+                            if (cur.id === orderId) {
+                                cur.confirmed=true
+                            }
+                        })
+                        dbCollection.doc(cur1.id).set({
+                            deliv: objD.deliv,
+                            admin: objD.admin,
+                            myratings: myratings,
+                            rootAutyh: rootAutyh,
+                            likes: likes,
+                            dislikes: dislikes,
+                            authUser: authUser,
+                            myOrders: objD.myOrders,
+                            data: data,
+                            cartGroc: cartGroc,
+                            fstPurchase: fstPurchase,
+                            cartItem: cartItem
+                        })
+                    }
+                })
+            }
+setUserx()
+            const setUser = async () => {
+                let dbCollection = db.collection(`orders`)
+                let res = await dbCollection.get()
+            socket.emit('deliveryOnwaySms', name, phoneNumber, amount)
+
+                res.docs.forEach(cur => {
+                    let obj1 = cur.data().obj
+                    if (obj1.idM === idOrd) {
+                        let uObj = JSON.parse(getCookie('user'))
+                        let fN = uObj.n + ' ' + uObj.ln
+                        let d = new Date()
+                        let hours = d.getHours()
+
+                        let typ = hours >= 12 ? 'pm' : "am"
+                        let timeH = parseFloat(d.toLocaleString().split(',')[1].split(':')[0])
+                        let timeMin = parseFloat(d.toLocaleString().split(',')[1].split(':')[1])
+                        const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                        let date = d.getDate() + " " + month[d.getMonth()] + ` , ${timeH}:${timeMin} ${typ}`
+                        let canceled = obj1.canceled
+                        let idM = obj1.idM
+                        let isAccepted = obj1.isAccepted
+                        let isDelivered = obj1.isDelivered
+                        let op = obj1.op
+                        let order = obj1.order
+                        let time = obj1.time
+                        let user = obj1.user
+                        isAccepted = {
+
+                            id: uObj.rootAutyh,
+                            name: fN,
+                            t: date,
+                        }
+                        let obj = {
+                            canceled: false,
+                            idM: idM,
+                            isAccepted: isAccepted,
+                            isDelivered: isDelivered,
+                            op: op,
+                            order: order,
+                            time: time,
+                            user: user,
+                        }
+                        dbCollection.doc(cur.id).set({
+                            obj,
+                            createdAt: cur.data().createdAt
+
+                        }).then(() => {
+                            document.querySelector('.ct_bx_overlay_cart').style.display = 'none'
+                        })
+                    }
+                })
+            }
+            setUser()
+
+            e.target.parentElement.parentElement.childNodes.forEach(cur => {
+                if (cur.classList !== undefined) {
+                    if (cur.classList.value === 'ct_bx_verifcation_order') {
+                        cur.style.display = 'block'
+
+                    } else {
+                        cur.style.display = 'none'
+
+                    }
                 }
             })
         }
-        setUser()
-
-        e.target.parentElement.parentElement.childNodes.forEach(cur => {
-            if (cur.classList !== undefined) {
-                if (cur.classList.value === 'ct_bx_verifcation_order') {
-                    cur.style.display = 'block'
-
-                } else {
-                    cur.style.display = 'none'
-
-                }
-            }
-        })
-    }
         if (selectUn !== null) {
             if (selectUn.parentElement.classList.value.split(' ').includes('nottog')) {
                 selectUn.parentElement.classList.remove('nottog')
@@ -1363,124 +2685,124 @@ ion-icon{pointer-events:none;}
         }
     })
     document.querySelector('html').addEventListener('click', (e) => {
-    let bxOrder = e.target.closest('.main_li_itm_order')
-    let order = e.target.closest(' .main_ul_orders .orders')
-    let orderI = e.target.closest(' .main_ul_orders .orders .ct_inner_item_dt_order')
-    let otherBx = e.target.closest('.ct_bx_for_others_dash')
-    if (otherBx !== null) {
-        if (otherBx.classList.value.split(' ').includes('nottog')) {
-            otherBx.parentElement.childNodes[3].style.display = 'block'
-            otherBx.classList.add('tog')
-            otherBx.classList.remove('nottog')
-        } else {
-            otherBx.parentElement.childNodes[3].style.display = 'none'
-            otherBx.classList.remove('tog')
-            otherBx.classList.add('nottog')
-        }
-    }
-    if (order !== null) {
-        if (orderI === null) {
-            let inner = order.childNodes[1].childNodes[3]
-            if (order.classList.value.split(' ').includes('unselect_order')) {
-                order.classList.add('select_order')
-                order.classList.remove('unselect_order')
-
-                inner.style.display = 'block'
-                console.log(order.childNodes[1].childNodes[1].childNodes[1])
+        let bxOrder = e.target.closest('.main_li_itm_order')
+        let order = e.target.closest(' .main_ul_orders .orders')
+        let orderI = e.target.closest(' .main_ul_orders .orders .ct_inner_item_dt_order')
+        let otherBx = e.target.closest('.ct_bx_for_others_dash')
+        if (otherBx !== null) {
+            if (otherBx.classList.value.split(' ').includes('nottog')) {
+                otherBx.parentElement.childNodes[3].style.display = 'block'
+                otherBx.classList.add('tog')
+                otherBx.classList.remove('nottog')
             } else {
-                if (!e.target.closest('.ct_bx_verifcation_order') && !e.target.closest('.ct_bx_for_others_dash')&& !e.target.closest('.accept_order')) {
-
-                    order.classList.add('unselect_order')
-                    order.classList.remove('select_order')
-                    inner.style.display = 'none'
-                }
+                otherBx.parentElement.childNodes[3].style.display = 'none'
+                otherBx.classList.remove('tog')
+                otherBx.classList.add('nottog')
             }
         }
-    } else {
+        if (order !== null) {
+            if (orderI === null) {
+                let inner = order.childNodes[1].childNodes[3]
+                if (order.classList.value.split(' ').includes('unselect_order')) {
+                    order.classList.add('select_order')
+                    order.classList.remove('unselect_order')
 
-        if (document.querySelector('.select_order') !== null && !e.target.closest('.ct_bx_verifcation_order') && !e.target.closest('.ct_bx_for_others_dash')&& !e.target.closest('.accept_order')) {
-            document.querySelector('.select_order .ct_data_inside').style.display = 'none'
+                    inner.style.display = 'block'
+                    console.log(order.childNodes[1].childNodes[1].childNodes[1])
+                } else {
+                    if (!e.target.closest('.ct_bx_verifcation_order') && !e.target.closest('.ct_bx_for_others_dash') && !e.target.closest('.accept_order')) {
 
-            document.querySelector('.select_order').classList.add('unselect_order')
-            document.querySelector('.select_order').classList.remove('select_order')
-        }
-    }
-    if (bxOrder) {
-        console.log(bxOrder.childNodes[1].childNodes)
-        if (bxOrder.classList.value.split(' ').includes('notselected_order_itm')) {
-            if (!e.target.closest('.ct_select_dat')) {
-                if (document.querySelector('.selected_order_itm') !== null) {
-                    document.querySelector('.selected_order_itm').classList.add('notselected_order_itm')
-                    document.querySelector('.selected_order_itm').classList.remove('selected_order_itm')
-
+                        order.classList.add('unselect_order')
+                        order.classList.remove('select_order')
+                        inner.style.display = 'none'
+                    }
                 }
-                if (bxOrder.childNodes[1].childNodes[1].classList.value.includes('ct_bx_if_new')) {
-                    bxOrder.childNodes[1].childNodes[1].style.display = 'none'
-
-                }
-
-                bxOrder.classList.remove('notselected_order_itm')
-                bxOrder.classList.add('selected_order_itm')
             }
         } else {
-            if (!e.target.closest('.ct_select_dat')) {
-                if (document.querySelector('.selected_order_itm') !== null) {
-                    document.querySelector('.selected_order_itm').classList.add('selected_order_itm')
-                    document.querySelector('.selected_order_itm').classList.remove('notselected_order_itm')
 
-                }
+            if (document.querySelector('.select_order') !== null && !e.target.closest('.ct_bx_verifcation_order') && !e.target.closest('.ct_bx_for_others_dash') && !e.target.closest('.accept_order')) {
+                document.querySelector('.select_order .ct_data_inside').style.display = 'none'
 
-                bxOrder.classList.remove('selected_order_itm')
-                bxOrder.classList.add('notselected_order_itm')
+                document.querySelector('.select_order').classList.add('unselect_order')
+                document.querySelector('.select_order').classList.remove('select_order')
             }
         }
-        //  bxOrder.childNodes[3].style.display='block'
-    }
-    if (e.target.closest('.ct_bx_dt_sle_date') !== null) {
-        if (!e.target.closest('.ct_select_dat')) {
+        if (bxOrder) {
+            console.log(bxOrder.childNodes[1].childNodes)
+            if (bxOrder.classList.value.split(' ').includes('notselected_order_itm')) {
+                if (!e.target.closest('.ct_select_dat')) {
+                    if (document.querySelector('.selected_order_itm') !== null) {
+                        document.querySelector('.selected_order_itm').classList.add('notselected_order_itm')
+                        document.querySelector('.selected_order_itm').classList.remove('selected_order_itm')
 
-            let selectedBx = document.querySelector('.ct_bx_dt_sle_date').classList
+                    }
+                    if (bxOrder.childNodes[1].childNodes[1].classList.value.includes('ct_bx_if_new')) {
+                        bxOrder.childNodes[1].childNodes[1].style.display = 'none'
 
-            if (selectedBx.value.split(' ').includes('tog_date_select')) {
-                let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    }
+
+                    bxOrder.classList.remove('notselected_order_itm')
+                    bxOrder.classList.add('selected_order_itm')
+                }
+            } else {
+                if (!e.target.closest('.ct_select_dat')) {
+                    if (document.querySelector('.selected_order_itm') !== null) {
+                        document.querySelector('.selected_order_itm').classList.add('selected_order_itm')
+                        document.querySelector('.selected_order_itm').classList.remove('notselected_order_itm')
+
+                    }
+
+                    bxOrder.classList.remove('selected_order_itm')
+                    bxOrder.classList.add('notselected_order_itm')
+                }
+            }
+            //  bxOrder.childNodes[3].style.display='block'
+        }
+        if (e.target.closest('.ct_bx_dt_sle_date') !== null) {
+            if (!e.target.closest('.ct_select_dat')) {
+
+                let selectedBx = document.querySelector('.ct_bx_dt_sle_date').classList
+
+                if (selectedBx.value.split(' ').includes('tog_date_select')) {
+                    let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
         `
+                    document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
+
+                    document.querySelector('.ct_sld_icon_order').innerHTML = icon
+                    document.querySelector('.ct_select_dat').style.display = 'none'
+
+                    selectedBx.remove('tog_date_select')
+                    selectedBx.add('nottog_date_select')
+                } else {
+                    let icon = `                    <ion-icon name="chevron-up-outline"></ion-icon>
+        `
+                    document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
+
+                    document.querySelector('.ct_sld_icon_order').innerHTML = icon
+                    document.querySelector('.ct_select_dat').style.display = 'block'
+
+                    selectedBx.add('tog_date_select')
+                    selectedBx.remove('nottog_date_select')
+                }
+            }
+
+        } else {
+            if (e.target.closest('.ct_select_dat') !== null) {
+
+                let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
+    `
                 document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
 
                 document.querySelector('.ct_sld_icon_order').innerHTML = icon
                 document.querySelector('.ct_select_dat').style.display = 'none'
+                document.querySelector('.ct_select_dat').style.display = 'none'
 
-                selectedBx.remove('tog_date_select')
-                selectedBx.add('nottog_date_select')
-            } else {
-                let icon = `                    <ion-icon name="chevron-up-outline"></ion-icon>
-        `
-                document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
-
-                document.querySelector('.ct_sld_icon_order').innerHTML = icon
-                document.querySelector('.ct_select_dat').style.display = 'block'
-
-                selectedBx.add('tog_date_select')
-                selectedBx.remove('nottog_date_select')
+                document.querySelector('.ct_bx_dt_sle_date').classList.remove('tog_date_select')
+                document.querySelector('.ct_bx_dt_sle_date').classList.add('nottog_date_select')
             }
         }
 
-    } else {
-        if (e.target.closest('.ct_select_dat') !== null) {
-
-            let icon = `                    <ion-icon name="chevron-down-outline"></ion-icon>
-    `
-            document.querySelector('.ct_sld_icon_order').childNodes[1].remove()
-
-            document.querySelector('.ct_sld_icon_order').innerHTML = icon
-            document.querySelector('.ct_select_dat').style.display = 'none'
-            document.querySelector('.ct_select_dat').style.display = 'none'
-
-            document.querySelector('.ct_bx_dt_sle_date').classList.remove('tog_date_select')
-            document.querySelector('.ct_bx_dt_sle_date').classList.add('nottog_date_select')
-        }
-    }
-
-})
+    })
     if (document.querySelector('.ct_select_dat') !== null) {
 
         let date = new Date()
@@ -1985,7 +3307,7 @@ ion-icon{pointer-events:none;}
                         classD = ''
 
                     }
-                    let html13=``
+                    let html13 = ``
 
                     let accep1 = false
                     if (objD.isAccepted) {
@@ -2333,98 +3655,98 @@ ion-icon{pointer-events:none;}
     loadOrders()
     let totalGroupsId = [1, 2, 3]
     document.querySelector('.ct_bx_set_delivery_time .button').addEventListener('click', () => {
-        if(document.querySelectorAll('.ct_hr_bx input')[1].value===''){document.querySelectorAll('.ct_hr_bx input')[1].value=0}
-        if(document.querySelectorAll('.ct_hr_bx input')[0].value===''){document.querySelectorAll('.ct_hr_bx input')[0].value=0}
+        if (document.querySelectorAll('.ct_hr_bx input')[1].value === '') { document.querySelectorAll('.ct_hr_bx input')[1].value = 0 }
+        if (document.querySelectorAll('.ct_hr_bx input')[0].value === '') { document.querySelectorAll('.ct_hr_bx input')[0].value = 0 }
         let hour = document.querySelectorAll('.ct_hr_bx input')[0].value + ' hour'
         let min = document.querySelectorAll('.ct_hr_bx input')[1].value + ' minute'
         let hourNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[0].value)
         let minNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[1].value)
-        let dTime=``
-        if(minNum !== 0){
-                        if(hourNum!==0){
-                        dTime = hour + ' ' + min
-                        }else{
-                        dTime = min
-                        }
-                    }else{
-                      dTime = hour
-                    }
-        if ( hourNum !== 0||minNum!==0) {
-        const setAllItems = async () => {
+        let dTime = ``
+        if (minNum !== 0) {
+            if (hourNum !== 0) {
+                dTime = hour + ' ' + min
+            } else {
+                dTime = min
+            }
+        } else {
+            dTime = hour
+        }
+        if (hourNum !== 0 || minNum !== 0) {
+            const setAllItems = async () => {
 
                 let dbCollection = db.collection(`items`)
                 let res = await dbCollection.get()
-                socket.emit('dTimeChanged',( dTime))
+                socket.emit('dTimeChanged', (dTime))
                 confirm('sucessfully updated')
                 res.docs.forEach(cur => {
-                    let sucess=0
-                    let err=0
+                    let sucess = 0
+                    let err = 0
                     let data = cur.data().item
-                    if(minNum !== 0){
-                        if(hourNum!==0){
-                        data.deliveryTime = hour + ' ' + min
-                        }else{
-                        data.deliveryTime = min
+                    if (minNum !== 0) {
+                        if (hourNum !== 0) {
+                            data.deliveryTime = hour + ' ' + min
+                        } else {
+                            data.deliveryTime = min
 
                         }
 
-                    }else{
-                      data.deliveryTime = hour
+                    } else {
+                        data.deliveryTime = hour
                     }
-                    if(data.profit===undefined){
-                        data.profit=`20`
+                    if (data.profit === undefined) {
+                        data.profit = `20`
                     }
-                      if(data.imgBanner===undefined){
-                        data.imgBanner=null
+                    if (data.imgBanner === undefined) {
+                        data.imgBanner = null
                     }
-                    if(data.cookingTime===undefined){
-                        data.cookingTime=`10 minute`
+                    if (data.cookingTime === undefined) {
+                        data.cookingTime = `10 minute`
                     }
-                    if(data.offer===undefined){
-                        data.offer=20
+                    if (data.offer === undefined) {
+                        data.offer = 20
                     }
-                     if(data.commSoon===undefined){
-                        data.commSoon=false
+                    if (data.commSoon === undefined) {
+                        data.commSoon = false
                     }
-                    if(cur.data().maxqt===undefined){
-                        cur.data().maxqt=[]
+                    if (cur.data().maxqt === undefined) {
+                        cur.data().maxqt = []
                     }
-                    if(data.video===undefined){
-                        data.video=null
+                    if (data.video === undefined) {
+                        data.video = null
                     }
                     dbCollection.doc(cur.id).set({
-                    group:cur.data().group,
-                    item:{
-                        about:data.about,
-                        cook:data.cook,
-                        cookingTime:data.cookingTime,
-                        deliveryTime:data.deliveryTime,
-                        fdInside:data.fdInside,
-                        commSoon:data.comSoon,
-                        id:data.id,
-                        img:data.img,
-                        name:data.name,
-                        imgBanner:data.imgBanner,
-                        initUnit:data.initUnit,
-                        itemsOthers:data.itemsOthers,
-                        netweight:data.netweight,
-                        g:data.g,
-                        profit:data.profit,
-                        ratings:data.ratings,
-                        restPrice:data.restPrice,
-                        offer:data.offer,
-                        review:data.review,
-                        unitUni:data.unitUni,
-                        video:data.video,
-                        unitInit:data.unitInit,
-                    },
-                    maxqt:cur.data().maxqt,
+                        group: cur.data().group,
+                        item: {
+                            about: data.about,
+                            cook: data.cook,
+                            cookingTime: data.cookingTime,
+                            deliveryTime: data.deliveryTime,
+                            fdInside: data.fdInside,
+                            commSoon: data.comSoon,
+                            id: data.id,
+                            img: data.img,
+                            name: data.name,
+                            imgBanner: data.imgBanner,
+                            initUnit: data.initUnit,
+                            itemsOthers: data.itemsOthers,
+                            netweight: data.netweight,
+                            g: data.g,
+                            profit: data.profit,
+                            ratings: data.ratings,
+                            restPrice: data.restPrice,
+                            offer: data.offer,
+                            review: data.review,
+                            unitUni: data.unitUni,
+                            video: data.video,
+                            unitInit: data.unitInit,
+                        },
+                        maxqt: cur.data().maxqt,
 
                     })
                 })
-            
-        }
-        setAllItems()
+
+            }
+            setAllItems()
         }
 
     })

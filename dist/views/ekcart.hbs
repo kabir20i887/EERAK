@@ -17,11 +17,77 @@
         ion-icon {
             visibility: hidden;
         }
-.ct_nav_erak ul .cart_nav span{display: none;}
+
+        .ct_nav_erak ul .cart_nav span {
+            display: none;
+        }
+        .
+
         .recomended_cart h2 {
             font-size: 18px;
             margin: 15px 0 0px 85px;
         }
+
+        .ct_bx_click {
+            border: 1px solid #555555;
+            display: flex;
+            width: 19px;
+            justify-content: center;
+            height: 19px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        .no_deliv_av {display: none;}
+        .ct_deliv_box.notavailble .no_deliv_av{display: block;}
+        .ct_deliv_box.notavailble .prc{display: none;}
+                .ct_deliv_box.notavailble{
+pointer-events: none;
+
+                }
+        .ct_deliv_box.notavailble p{
+filter: grayscale(1);
+        }
+        .select_delivery_t .main_deliv_block {
+    color: #2b2828;
+    font-size: 20px;
+    font-family: 'Open sans';
+    margin: 17px 5px;
+}
+.ct_deliv_box {
+    cursor: pointer;
+    display: flex;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 13px 9px;
+    background: #b7b7b730;
+}
+.ct_deliv_box.active {
+    background: #e27d7d30;
+}
+
+      .ct_deliv_box span {
+    font-size: 16px;
+    color: rgb(195 33 33);
+    font-family: 'Open Sans';
+}
+
+        .ct_deliv_box p {
+            font-size: 16px;
+            color: black;
+            font-family: 'Open Sans';
+
+        }
+
+      .cl_xmma {
+    background: #ae1010;    width: 12px;
+    margin-top:2px;
+    height: 12px;
+    border-radius: 50%;
+}
+.select_delivery_t{
+        margin: 25px 0 20px 19px;
+}
         .body_cart .recomended_cart h2 {
             font-size: 25px;
         }
@@ -293,7 +359,10 @@
                 margin-left: 16px;
                 padding: 0;
             }
-
+.ct_deliv_box span {
+    font-size: 14px;}
+    .ct_deliv_box p {
+    font-size: 14px;}
             .forward_acc {
                 right: 47px;
             }
@@ -720,9 +789,10 @@
                 width: 23%;
             }
 
-            .to_pay_cahge p {
-                font-size: 14px;
-            }
+           .to_pay_cahge p {
+    font-size: 19px;
+    margin-top: 0px;
+}
 
             .crousel {
                 margin-left: 80px;
@@ -3704,10 +3774,9 @@
                 font-size: 12px;
             }
 
-            .to_pay_cahge p {
-                font-size: 14px;
-            }
-
+           .to_pay_cahge p {
+    font-size: 14px;
+}
             .ct_subotatal {
                 margin: 20px 0 0 -30px;
             }
@@ -4578,7 +4647,7 @@
 
         .ct_bx_footer {
             margin-top: auto;
-                background-color: #000000;
+            background-color: #000000;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -4909,14 +4978,7 @@
             width: 80%;
         }
 
-        .to_pay_cahge1:after {
-            content: '';
-            display: block;
-            position: absolute;
-            height: 1px;
-            margin-top: -8px;
-            background-color: rgb(48, 177, 228);
-        }
+    
 
         .block_2_charge p,
         .block_1_charge p {
@@ -4924,22 +4986,23 @@
             color: rgb(39, 37, 37);
         }
 
-        .to_pay_cahge p {
-            font-size: 15px;
-            font-weight: 600;
-            width: 184px;
-            padding-top: 4px;
-            color: rgb(0, 0, 0);
-        }
+       .to_pay_cahge p {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 11px;
+    width: 184px;
+    padding-top: 4px;
+    color: rgb(0 0 0);
+}
 
         .to_pay_cahge span b {
-            font-size: 12px;
+            font-size:21px;
             color: rgb(29, 29, 28);
         }
 
         .to_pay_cahge span c {
             color: rgb(0, 0, 0);
-            font-size: 26px;
+            font-size: 34px;
         }
 
         .block_2_charge,
@@ -5250,12 +5313,12 @@
             display: inline-block;
         }
 
-        .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon {
-            pointer-events: none;
-            color: rgb(70 158 121);
-            font-size: 38px;
-            margin: 27px 4px 0 20px;
-        }
+       .ct_bx_message_succesfully_ordered.for_erak_cart ion-icon {
+    pointer-events: none;
+    color: rgb(70 158 121);
+    font-size: 38px;
+    margin: 35px 4px 0 20px;
+}
 
         .ct_ct_text_about_acc h3 {
             font-size: 30px;
@@ -6850,11 +6913,6 @@
             .ct_for_price_sub_load:nth-of-type(2) {
                 transform: translate(0);
             }
-
-            .ct_loading_bx_all.for_cart_sub {
-                width: 100%;
-            }
-
             .ct_bx_slide_bx {
                 right: -460px;
                 width: 26%;
@@ -6978,10 +7036,10 @@
                 width: 23%;
             }
 
-            .to_pay_cahge p {
-                font-size: 14px;
-            }
-
+                 .to_pay_cahge p {
+    font-size: 19px;
+    margin-top: 0px;
+}
             .crousel {
                 margin-left: 80px;
             }
@@ -7003,7 +7061,7 @@
             .for_ek_fd_cart_load {
                 margin: -60px 0 180px 0px;
             }
-
+.ct_deliv_box {width: 84%;}
             .list_itm_sub_cart span {
                 margin-top: 4px;
             }
@@ -7752,7 +7810,7 @@
             }
 
             .ct_order_confirm {
-                margin-top: 20px;
+                margin-top: 3px;
             }
 
             .for_cart_checkout p {
@@ -8430,10 +8488,12 @@
             }
 
             .to_pay_cahge p {
-                font-size: 15px;
-                padding-top: 6px;
+                font-size:21px;
+                padding-top: 13px;
             }
-
+.ct_deliv_box p {
+    font-size: 20px;
+}
             .ct_inner_fd_dt_grid {
                 display: flex;
             }
@@ -9248,7 +9308,7 @@
         }
 
         .ct_bx_message_succesfully_ordered h2 {
-            font-size: 25px;
+            font-size: 34px;
         }
 
         .ct_itm_food_cart h4 {
@@ -9267,8 +9327,9 @@
 
         .for_cart_checkout p {
             font-size: 17px;
-                margin-top: 8px;
-}
+            margin-top: 8px;
+        }
+
         .inner_slide .price_food span {
             font-size: 14px;
         }
@@ -9568,7 +9629,9 @@
             .img_a_cart {
                 width: 232px;
             }
-
+.ct_deliv_box p {
+    font-size: 17px;
+}
             .for_ek_fd_cart_load {
                 margin: -50px 0 180px 0px;
             }
@@ -9997,8 +10060,7 @@
             }
 
             .to_pay_cahge p {
-                font-size: 13px;
-                padding-top: 2px;
+                padding-top:8px;
             }
 
             .to_pay_cahge span c {
@@ -10023,7 +10085,7 @@
             }
 
             .to_pay_cahge p {
-                font-size: 14px;
+                font-size: 20px;
             }
 
             .ct_subotatal {
@@ -10035,7 +10097,36 @@
             .ct_inner_nav {
                 justify-content: space-around;
             }
-
+.ct_deliv_box {
+    width: 94%;
+}
+.placeneworder, .for_cart_checkout {
+    width: 93vw;
+}
+.select_delivery_t {
+    margin: 25px 0 20px 7px;
+}
+.ct_deliv_box p {
+    font-size: 15px;
+}
+.list_itm_sub_cart span {
+    margin-top: 9px;
+}
+.to_pay_cahge span b {
+    font-size: 16px;}
+.ct_deliv_box {
+    width: 96%;
+}
+.to_pay_cahge span c {
+    font-size: 20px;}
+.to_pay_cahge p {
+    font-size: 17px;
+    padding-top: 12px;
+}
+.cl_xmma {
+    width: 13px;
+    margin-top: 2px;
+    height: 13px;}
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
                 margin-top: 18px;
             }
@@ -10342,7 +10433,7 @@
                 padding: 20px 20px 10px 18px;
             }
 
-         
+
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0);
             }
@@ -10649,7 +10740,7 @@
             }
 
             .ct_bx_message_succesfully_ordered.for_erak_cart p {
-                font-size: 14px;
+                font-size: 17px;line-height: 24px;
             }
 
             .for_seravh_in_nav {
@@ -11166,7 +11257,7 @@
         <div class="inner_seperation">
             <section class="ek_cart">
 
-                <div class="ct_box_info">
+                {{!-- <div class="ct_box_info">
                     <div class="ct_inner_info">
                         <div class="ct_bx_infoicon">
                             <ion-icon name="alert-circle-sharp"></ion-icon>
@@ -11176,7 +11267,7 @@
                             <ion-icon name="close-outline"></ion-icon>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="ct_shopping_cart">
                     <div class="ct_l">
 
@@ -11188,7 +11279,7 @@
                     <rs class="hidden"></rs>
                     <div class="ct_flex_bx_msg">
                         <ion-icon name="checkmark-circle"></ion-icon>
-                        <h2>Experience Freedom.</h2>
+                        <h2>Thank you !</h2>
 
                     </div>
                     <p> <span></span></p>
@@ -11338,7 +11429,29 @@
                             <ion-icon name="close-outline"></ion-icon>
                         </div>
 
-                        <h3>Orders bill</h3>
+           <div class="select_delivery_t">
+                            {{!-- notavailble --}}
+
+                            {{!-- <p class="main_deliv_block">Delivery</p> --}}
+                            <div class="ct_deliv_box deliv_xs1">
+                                <div class="ct_bx_click">
+                                    </div>
+                                <dv class="main_deliv">
+                                    <p>Delivery within <xm>1</xm> hour</p>
+                                    <span class="no_deliv_av">Not available</span>
+                                    <span class="prc">₹ 80</span>
+                                </dv>
+                            </div>
+                            <div class="ct_deliv_box deliv_xs2 active">
+                                <div class="ct_bx_click">
+                                        <div class="cl_xmma"></div>
+                                    </div>
+                                <dv class="main_deliv">
+                                    <p>Delivery within <xm>24</xm> hour</p>
+                                    <span>Free</span>
+                                </dv>
+                            </div>
+                        </div>
                         <div class="ct_full_loading_box for_groc_full_load">
 
                             <div class="ct_loading_bx_all for_cart_sub">
@@ -11350,42 +11463,27 @@
 
                                     </div>
                                 </div>
-                                <div class="ct_flex_bx">
-                                    <div class="ct_for_price_sub_load">
-
-                                    </div>
-                                    <div class="ct_for_price_sub_load">
-
-                                    </div>
-                                </div>
-                                <div class="ct_flex_bx">
-                                    <div class="ct_for_price_sub_load">
-
-                                    </div>
-                                    <div class="ct_for_price_sub_load">
-
-                                    </div>
-                                </div>
+                                
 
 
                             </div>
 
                         </div>
                         <div class="ct_order_confirm">
-                            <div class="list_itm_sub_cart block_1_charge">
+                            {{!-- <div class="list_itm_sub_cart block_1_charge">
                                 <p>Total Amount:</p>
                                 <span>&mdash;</span>
 
-                            </div>
+                            </div> --}}
 
 
-                            <div class="list_itm_sub_cart block_2_charge">
+                            {{!-- <div class="list_itm_sub_cart block_2_charge">
                                 <p>Delivery Charge:</p>
                                 <span class="free">&mdash;</span>
 
-                            </div>
+                            </div> --}}
                             <div class="list_itm_sub_cart to_pay_cahge to_pay_cahge1">
-                                <p>Amount To Pay:</p>
+                                <p>Total amount:</p>
                                 <span> <b>₹</b>
                                     <c></c>
                                 </span>
@@ -11393,6 +11491,7 @@
                             </div>
 
                         </div>
+            
                         {{!-- <div class="ct_suggested_bx">
                             <h4>Any Suggestion?</h4>
                             <textarea name="suggested_msg" cols="42" placeholder="We will pass it on with this order"
@@ -11908,7 +12007,7 @@
 
             }
         })
-document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+        document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
 
         let ifd = []
         let stockFin = false
@@ -11935,15 +12034,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
             let remBtn = e.target.closest('.itm_cart_nav')
             let rmItm = e.target.closest('.remove_fd_itm_ct')
             let removeInfoDeliv = e.target.closest('.ct_remove_this')
-            if (removeInfoDeliv !== null) {
-                let fd = JSON.parse(localStorage.getItem('foodsAdded'))
-                let dBx = document.querySelector('.ct_box_info p a').innerText
-                fd.forEach(cur => {
-                    cur.dTime = dBx
-                })
-                localStorage.setItem('foodsAdded', JSON.stringify(fd))
-                document.querySelector('.ct_box_info').style.display = 'none'
-            }
+            
             if (rmItm !== null) {
                 let h4
                 let groc
@@ -11988,24 +12079,24 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 rmItm.parentElement.parentElement.parentElement.remove()
                                 if (cur.id === h4) {
 
-                                allfd.splice(i1, 1)
-                                localStorage.setItem('foodsAdded', JSON.stringify(allfd))
-                                                               if (allfd.length === 0 && allfd2.length === 0) {
-                                    document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
-                                    document.querySelector('.for_ek_food_cart').style.display = 'flex'
-                                    document.querySelector('.ct_subotatal').style.display = 'none'
-                                    document.querySelector('.ct_list_food').style.borderBottom = 'none'
-                                    document.querySelector('.no_req .ct_list_food').style.width = '97%'
-                                    document.querySelector('.ct_other_nav_cart .ct_bin_ts_nav_ck ').style.display = 'none'
+                                    allfd.splice(i1, 1)
+                                    localStorage.setItem('foodsAdded', JSON.stringify(allfd))
+                                    if (allfd.length === 0 && allfd2.length === 0) {
+                                        document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
+                                        document.querySelector('.for_ek_food_cart').style.display = 'flex'
+                                        document.querySelector('.ct_subotatal').style.display = 'none'
+                                        document.querySelector('.ct_list_food').style.borderBottom = 'none'
+                                        document.querySelector('.no_req .ct_list_food').style.width = '97%'
+                                        document.querySelector('.ct_other_nav_cart .ct_bin_ts_nav_ck ').style.display = 'none'
 
+                                    }
                                 }
-                                }
- 
+
                                 addBill()
 
 
 
-                                
+
 
 
 
@@ -12019,9 +12110,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
 
 
                         if (allfd2.length === 0 && allfd.length === 0) {
-                            document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
                             document.querySelector('.to_pay_cahge span').innerHTML = '&mdash;'
-                            document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
 
                             document.querySelector('.ct_btns_group_check_ek').style.opacity = .5
 
@@ -12058,9 +12147,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 rmItm.parentElement.parentElement.parentElement.parentElement.remove()
                                 addBill()
                                 if (allfd2.length === 0 && allfd.length === 0) {
-                                    document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
                                     document.querySelector('.to_pay_cahge span').innerHTML = '&mdash;'
-                                    document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
 
                                     document.querySelector('.ct_btns_group_check_ek').style.opacity = .5
                                     document.querySelector('.for_ek_food_cart').style.display = 'flex'
@@ -12098,11 +12185,8 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                 document.querySelector('.ct_bx_grocery_required').style.display = 'none'
                 localStorage.setItem('foodsAdded', JSON.stringify([]))
                 if (document.querySelectorAll('.only_for_grocery_item li').length === 0) {
-                    document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
-
                     document.querySelector('.to_pay_cahge span').innerHTML = '&mdash;'
 
-                    document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
                 }
 
 
@@ -12116,11 +12200,9 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                 localStorage.setItem('grocFoodListCart', JSON.stringify([]))
                 addBill()
                 if (document.querySelectorAll('.bx_evt_cart_item li').length === 0) {
-                    document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
 
                     document.querySelector('.to_pay_cahge span').innerHTML = '&mdash;'
 
-                    document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
                 }
 
             }
@@ -12284,9 +12366,14 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
 
             if (bxA !== null) {
                 let unitPrice
-                console.log(bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges'))
+                console.log(bxA.classList)
+                if(bxA.classList.value.split(' ').includes('no_stock')){
+document.querySelector('.deliv_xs1').classList.add('notavailble')
+                }else{document.querySelector('.deliv_xs1').classList.remove('notavailble')
+}
+
                 if (bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges')) { return }
-                if (bxA.classList.value === 'Add_c_unit') {
+                if (bxA.classList.value.split(' ').includes('Add_c_unit')) {
                     let bxUl = bxA.parentElement.parentElement
                     bxUl.style.width = '200px'
                     bxUl.classList.add('add_c_un')
@@ -12468,8 +12555,8 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                     posOthelem = parseFloat(posOthelem)
 
                     let sel2
-
-                    if (bxA.classList.value === 'othTog') {
+                    console.log(bxA.classList.value,'-------------------------------------sssssssssssssssssssssssssssssssssssss')
+                    if (bxA.classList.value.split(' ').includes('othTog')) {
                         noBa = true
                         let othP = resP
 
@@ -12536,6 +12623,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                         }
                         othP *= unnN
                         mainSelp = othP
+                        console.log(bxA.childNodes[3].innerText,'pfoofjasdfiohd--------------------------------------------')
                         repl = bxA.childNodes[3].innerText.split('₹')[1].split(',').join('')
                         repl = parseFloat(repl)
                         sel2 = repl
@@ -12685,7 +12773,6 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             cu.baseU = unit.innerText
                             if (noBa) {
                                 cu.selU2 = 0
-
                                 cu.baseU = `not selected`
                             }
                             cu.price = mainp
@@ -13018,6 +13105,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                     document.querySelector('.ct_overfow_for_load').style.display = 'block'
                     document.querySelector('html').style.overflowY = 'hidden'
                     let fd1 = JSON.parse(localStorage.getItem('foodsAdded'))
+                    
                     fd1.forEach(cur => {
                         let off = parseFloat(cur.offer)
                         let price
@@ -13028,22 +13116,15 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             price = parseFloat(cur.price.split(',').join(''))
 
                         }
-                        if (cur.offer !== null && cur.offer !== 'null') {
-                            let ffP = price - (price * (off / 100))
-                            console.log(ffP)
-                            ffP = Math.round(ffP)
-                            priceBox.push(ffP)
+                
+                            priceBox.push(parseFloat(price))
 
-                        } else {
-                            priceBox.push(price)
-
-                        }
+                        
                     })
                     let tot = 0
                     priceBox.forEach(cu => {
                         tot += cu
                     })
-                    tot += 30
                     tot = tot.toLocaleString()
                     socket.emit('sendAdmmessage', namefull, phonec, tot)
 
@@ -13114,7 +13195,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             }
                             price = parseFloat(price)
                             qt = parseFloat(qt)
-                            let priceFinal= price
+                            let priceFinal = price
 
                             console.log(priceFinal, 'c9000a9')
 
@@ -13211,17 +13292,17 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                         const checkMaxqt = async () => {
                                             let userId = JSON.parse(getCookie('user')).rootAutyh
                                             if (cur.baseU !== undefined) {
-                                                let freeM=false
-                                                cur.permGroup.forEach(cu=>{
-                                                    if(cu.id==='spices'&&cu.eprice){
-                                                        freeM=true
+                                                let freeM = false
+                                                cur.permGroup.forEach(cu => {
+                                                    if (cu.id === 'spices' && cu.eprice) {
+                                                        freeM = true
                                                     }
                                                 })
-                                                if(freeM){
-                                                maxqt.push({ id: JSON.parse(getCookie('user')).rootAutyh, qt: qt,free:true })
+                                                if (freeM) {
+                                                    maxqt.push({ id: JSON.parse(getCookie('user')).rootAutyh, qt: qt, free: true })
 
-                                                }else{
-                                                maxqt.push({ id: JSON.parse(getCookie('user')).rootAutyh, qt: qt, })
+                                                } else {
+                                                    maxqt.push({ id: JSON.parse(getCookie('user')).rootAutyh, qt: qt, })
 
                                                 }
                                                 maxqt.forEach(itm => {
@@ -13389,7 +13470,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                         price = parseFloat(price)
 
                                     }
-                                    let priceF= price
+                                    let priceF = price
                                     priceF = Math.round(priceF)
                                     priceF = priceF.toLocaleString()
 
@@ -13458,17 +13539,18 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 }
                             })
 
-
+                            let dmain_time=document.querySelector('.ct_deliv_box.active p').innerText
                             let obj = {
                                 time: { date: datNum, time: time, mon: mon },
                                 order: arrOrders,
                                 idM: hash,
-                                dTime: dTime,
+                                dTime: dmain_time,
                                 isAccepted: false,
                                 user: user,
                                 canceled: false,
                                 isDelivered: false,
                                 op: secret,
+                                
                             }
                             let obj1 = {
                                 isDelivered: false,
@@ -13519,16 +13601,17 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             let dNum3 = dtF.split('/')[2]
                             user.n = user.n.replace(/\b\w/g, l => l.toUpperCase())
                             user.ln = user.ln.replace(/\b\w/g, l => l.toUpperCase())
+                            let timeX=document.querySelector('.ct_deliv_box.active p xm').innerText+' hour'
                             if (hours >= 21 && timeMin >= 15 || hours <= 9) {
-                               // document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed.Please use the OTP that has been sent to you for verifying this delivery.Our all delivery service
-                                   //     closes after 9:30 pm,so your order wil be delivered on tommorow,with in 10 am.
-                                     // `
-                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${dTime} . Please use the OTP that has been sent to you for verifying this delivery.`
+                                // document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed.Please use the OTP that has been sent to you for verifying this delivery.Our all delivery service
+                                //     closes after 9:30 pm,so your order wil be delivered on tommorow,with in 10 am.
+                                // `
+                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${timeX} . Please use the OTP that has been sent to you for verifying this delivery.`
 
                                 noLt = false
 
                             } else {
-                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${dTime} . Please use the OTP that has been sent to you for verifying this delivery.`
+                                document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${timeX} . Please use the OTP that has been sent to you for verifying this delivery.`
                             }
 
                             document.querySelector('.for_erak_cart').style.display = 'block'
@@ -13546,7 +13629,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 let rootAutyh = d.data().rootAutyh
                                 let orders = d.data().myOrders
                                 let fstPurchase = d.data().fstPurchase
-                                if (fstPurchase === undefined) { fstPurchase =false }
+                                if (fstPurchase === undefined) { fstPurchase = false }
                                 console.log(orders.length, rootAutyh, arr, fstPurchase, '2544')
 
                                 if (d.data().rootAutyh === user.rootAutyh) {
@@ -13555,24 +13638,24 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                         cu1.permGroup.forEach(cu2 => {
                                             if (cu2.id === 'spices') {
                                                 if (cu2.eprice) {
-                                                    hasKrick=true
+                                                    hasKrick = true
                                                 }
                                             }
                                         })
                                     })
                                     if (hasKrick) {
-                                        for(let i=0;i<Allfds.length;i++){
-                                            let cu1=Allfds[i]
-                                            if(cu1.id===JSON.parse(getCookie('firstpurchase'))){
-                                                Allfds.splice(i,1)
+                                        for (let i = 0; i < Allfds.length; i++) {
+                                            let cu1 = Allfds[i]
+                                            if (cu1.id === JSON.parse(getCookie('firstpurchase'))) {
+                                                Allfds.splice(i, 1)
                                                 i--
                                             }
                                         }
-                                        localStorage.setItem('foodsAdded',JSON.stringify(Allfds))
-                                    document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 1970  12:00:00 UTC;path=/" + ' ';
-                                    let pDetails = JSON.parse(getCookie('user'))
-                                    pDetails.fstPurchase = false
-                                    document.cookie = "user" + "=" + JSON.stringify(pDetails) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
+                                        localStorage.setItem('foodsAdded', JSON.stringify(Allfds))
+                                        document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 1970  12:00:00 UTC;path=/" + ' ';
+                                        let pDetails = JSON.parse(getCookie('user'))
+                                        pDetails.fstPurchase = false
+                                        document.cookie = "user" + "=" + JSON.stringify(pDetails) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
                                         fstPurchase = false
                                     }
 
@@ -13815,13 +13898,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
             am = Math.round(am)
             if (am !== 0 && !isNaN(am)) {
 
-                document.querySelector('.block_1_charge span').innerText = '₹' + ' ' + am.toLocaleString()
-                document.querySelector('.block_2_charge span').innerText = 'Free'
                 document.querySelector('.to_pay_cahge c').innerText = (am).toLocaleString()
-            } else {
-
-                document.querySelector('.block_1_charge span').innerHTML = '&mdash;'
-                document.querySelector('.block_2_charge span').innerHTML = '&mdash;'
             }
 
         }
@@ -14165,12 +14242,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
             let html2 = null
             let html
             let timeD = elem.dTime
-            socket.on('timeChanged', (data) => {
-                if (timeD.split(' ').join('').toLowerCase() !== data.split(' ').join('').toLowerCase()) {
-                    document.querySelector('.ct_box_info').style.display = 'block'
-                    document.querySelector('.ct_box_info p').innerHTML = `Delivery time for this order has been changed from ${timeD} to <a>${data}</a>.`
-                }
-            })
+           
             document.querySelector('.for_ek_fd_cart_load').style.display = 'flex'
             let dbCollection = db.collection(`items`)
             dbCollection.get().then(async res => {
@@ -14178,12 +14250,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                     let itemDb = cur.data().item
                     let namefooodDb = itemDb.name.toLowerCase().trim()
                     if (itemDb.id === elem.id) {
-                        document.querySelector('.ct_box_info').style.display = 'none'
-                        let timeDeliv = itemDb.deliveryTime
-                        if (timeD.split(' ').join('').toLowerCase() !== timeDeliv.split(' ').join('').toLowerCase()) {
-                            document.querySelector('.ct_box_info').style.display = 'block'
-                            document.querySelector('.ct_box_info p').innerHTML = `Delivery time for this order has been changed from ${timeD} to <a>${timeDeliv}</a>.`
-                        }
+                        
                         document.querySelector('.for_ek_food_cart').style.display = 'none'
                         document.querySelector('.ct_other_nav_cart').style.display = 'block'
                         let groc = itemDb.requiredGroc
@@ -14442,11 +14509,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                         let numUnit = 0
                         let noReqStock = false
                         if (itm.unitInit !== null) {
-                            itm.unitInit.forEach((cur1, i) => {
-                                if (parseFloat(cur1.stock) === 0) {
-                                    itm.unitInit.splice(i, 1)
-                                }
-                            })
+                           
                             itm.unitInit.forEach(cur22 => {
                                 if (cur22.name === undefined) {
                                     if (cur22.sm !== undefined) {
@@ -14579,26 +14642,27 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             let matchedU
                             let postionRem = 1
                             if (itm.unitInit !== null) {
-                                for (let ind = 0; ind < itm.unitInit.length; ind++) {
-                                    let cu = itm.unitInit[ind]
-                                    console.log(cu, 'aa3')
-                                    if (cu.name === undefined) {
+                                // stock -> 0 , donot remove. stock = 0 -> 24 hr delivery
+                               //for (let ind = 0; ind < itm.unitInit.length; ind++) {
+                               //    let cu = itm.unitInit[ind]
+                               //    console.log(cu, 'aa3')
+                               //    if (cu.name === undefined) {
 
-                                        if (parseFloat(cu.stock) === 0) {
-                                            postionRem = ind
-                                            itm.unitInit.splice(ind, 1)
-                                            ind--
-                                        }
+                               //        if (parseFloat(cu.stock) === 0) {
+                               //            postionRem = ind
+                               //            itm.unitInit.splice(ind, 1)
+                               //            ind--
+                               //        }
 
-                                    } else {
-                                        let stock = parseFloat(cu.stock)
-                                        if (stock === 0) {
-                                            postionRem = ind
-                                            itm.unitInit.splice(ind, 1)
-                                            ind--
-                                        }
-                                    }
-                                }
+                               //    } else {
+                               //        let stock = parseFloat(cu.stock)
+                               //        if (stock === 0) {
+                               //            postionRem = ind
+                               //            itm.unitInit.splice(ind, 1)
+                               //            ind--
+                               //        }
+                               //    }
+                               //}
                                 let has2selU = false
                                 if (itm.unitInit !== null) {
                                     if (itm.unitInit.length > 0) {
@@ -14809,7 +14873,6 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             }
                             let totInside = 0
                             let totInside2 = 0
-                            elem.selU = 0
                             let pff = parseFloat(itm.profit)
                             itm.fdInside.forEach(elm => {
                                 let nameA = elm.name.split('').join('').toLowerCase()
@@ -14879,7 +14942,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                             let pricewithoutOff = parseFloat(elem.selU2) + totInside2
                             price = parseFloat(elem.selU2) + totInside
                             price *= parseFloat(elem.qt)
-                            pricewithoutOff*= parseFloat(elem.qt)
+                            pricewithoutOff *= parseFloat(elem.qt)
                             price += priceMainOth
                             elem.price = "₹" + (price)
                             elem.img = itm.img
@@ -14934,9 +14997,16 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                 let sizeX = `220px`
                                 let priceBaseQty = elem.selU2
                                 if (!has2selU) {
+                                    // all unit items(1kg, 500g) are added to itm.unitInit from top
                                     if (itm.unitInit !== null) {
                                         unFd = itm.unitInit.map(((el, iN) => {
                                             let ht
+                                            let classStkno='has_stock'
+                                            //stock -> 0, so order will be delivered in 24 hour. 
+
+                                             if(parseFloat(el.stock)===0){
+                                                 classStkno='no_stock'
+                                             }
 
                                             if (el.price !== null) {
                                                 el.price = parseFloat(el.price).toLocaleString()
@@ -14956,7 +15026,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
                                                     htmlX = `<span class='hidden hasnameX'>${el.nameX}</span>
 `
                                                 }
-                                                ht = ` <li>
+                                                ht = ` <li class=${classStkno}>
         
                      <span>${fUnn}</span>
                      <am>₹ ${el.price}</am>
@@ -14967,7 +15037,7 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
 
                  </li>`
                                             } else {
-                                                ht = ` <li class='othTog'>
+                                                ht = ` <li class='othTog ${classStkno}'>
                             
                             <span>${el.unit}</span>
                             <span class='hidden'>${el.stock}</span>
@@ -15559,6 +15629,21 @@ document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:
 
             }
         }
+
+        document.querySelector('html').addEventListener('click',(e)=>{
+            let deliv_set=e.target.closest('.ct_deliv_box ')
+            if(deliv_set!==null){
+                document.querySelector('.cl_xmma').remove()
+                deliv_set.childNodes[1].innerHTML='<div class="cl_xmma"></div>'
+                document.querySelectorAll('.ct_deliv_box').forEach(cur=>{
+                    cur.classList.remove('active')
+                })
+                deliv_set.classList.remove('unactive')
+
+                deliv_set.classList.add('active')
+            }
+        })
+
         function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);

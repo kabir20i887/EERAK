@@ -17,6 +17,20 @@
         .ct_bx_slide_bx.active {
             right: 0px
         }
+.ct_deliv_status_mob p {
+    color: #535353;
+    font-size: 13px;
+    font-family: 'Open Sans';
+}
+.ct_deliv_status_mob .canceled, .ct_deliv_status_mob .delivered, .ct_deliv_status_mob .out_deliv {
+    color: #006000;
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+.ct_deliv_status_mob{
+    margin: 20px 0 0 14px;
+}
+.ct_deliv_status_mob .canceled{color: red;}
 
         ion-icon {
             visibility: hidden;
@@ -3577,9 +3591,9 @@
 
         .ct_bx_staus_delivery_od .Pending_order p {
             color: red;
-            font-size: 12px;
+            font-size: 16px;
             font-family: 'Open Sans';
-            margin-left: 20px;
+            margin-left:8px;
         }
 
         .nick_name {
@@ -21875,6 +21889,18 @@
                             </div>
                         </div>
                     </div>`                    }
+                    
+                        if (cur1.confirmed) {
+                             htmlP = `<p class="pending" style='color:#16740b'>out for delivery</p>`
+                            htmlD = `<div class="date_time_order delivery_stat">
+                        <p>DELIVERY STATUS</p>
+                        <div class="ct_bx_staus_delivery_od">
+                            <div class="Pending_order">
+                                <p style='color:#16740b'>out for delivery</p>
+                            </div>
+                        </div>
+                    </div>` 
+                        }
 
                         if (cur1.isTom) {
                             // htmlP = `<p class="sucess">Delivery will be on ${cur1.isTom} after 8:00 am</p>`
@@ -21912,6 +21938,38 @@
                         if (cur1.isDelivered) {
                             cancelBtn = ``
                         }
+                        let html_for_deliv_status= `  
+                                                 <div class="ct_deliv_status_mob">
+    <p>Delivery status</p>
+    <span class='canceled'>Pending...</span>
+
+</div>`
+                        
+                        if (cur1.isDelivered) {
+           html_for_deliv_status= `  
+                                                 <div class="ct_deliv_status_mob">
+    <p>Delivery status</p>
+    <span class='delivered'>Delivered</span>
+
+</div>`
+                        }
+                           if (cur1.canceled) {
+           html_for_deliv_status= `  
+                                                 <div class="ct_deliv_status_mob">
+    <p>Delivery status</p>
+    <span class='canceled'>Canceled by you</span>
+
+</div>`
+                        }
+                          if (cur1.confirmed) {
+           html_for_deliv_status= `  
+                                                 <div class="ct_deliv_status_mob">
+    <p>Delivery status</p>
+    <span class='out_deliv'>Out for delivery</span>
+
+</div>`
+                        }
+             
                         let html = `        <div class="ct_box_half_order">
                     <div class="ct_bx_items_order_details nottog22">
                     
@@ -21993,8 +22051,10 @@ ${htmlD2}
 
                                             </div>
                                         </div>
-                                        <span class="hidden">${cur1.id}</span>
                                         ${cancelBtn}
+
+                                        ${html_for_deliv_status}
+                                        <span class="hidden">${cur1.id}</span>
                     <div class="bx_inner">
                      
                         <ul>

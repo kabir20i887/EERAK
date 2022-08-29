@@ -30,7 +30,6 @@ var jwt = require('jsonwebtoken');
 var otpGenerator = require('otp-generator')
 var cookie = require('cookie')
 var Cookies = require('cookies')
-console.log(process.env.API_KEY)
 
 function secret(token) {
     var base64Url = token.split('.')[1];
@@ -46,7 +45,8 @@ function secret(token) {
     }
 };
 var fast2sms = require('fast2sms');
-var options = { API_KEY: 'rZ2EkKyVRPNJq0f4WBGlXQMhub9eIaov6jCTzdY3Hm8tD1FUpgeKUfDoCbc6i5MWZG8ELds4rqVTQawX' };
+var options = { API_KEY: 'hRjIFun3b4KAMciGS1e086yOD5afQEXrNxd7lqVmzokwLCvJYUWAOacku9ITfDv280so4BFSVPqMnJG3' };
+let authfst='hRjIFun3b4KAMciGS1e086yOD5afQEXrNxd7lqVmzokwLCvJYUWAOacku9ITfDv280so4BFSVPqMnJG3'
 fast2sms.init(options)
 var unirest = require("unirest");
 var fst = unirest("GET", "https://www.fast2sms.com/dev/bulkV2");
@@ -67,45 +67,45 @@ app.get('/Login', (req, res) => {
         })
         var token2 = jwt.sign({ n: numberUn }, 'shhhhh');
 
-        // fst.query({
-        //     authorization: process.env.API_KEY,
-        //     route: 'dlt',
-        //     sender_id: 'krickG',
-        //     message: 132058,
-        //     variables_values: numberUn,
-        //     numbers: phone,
-        //     flash: "0",
-        // });
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145384,
+            variables_values: numberUn,
+            numbers: phone,
+            flash: "0",
+        });
 
-        // fst.headers({
-        //     "cache-control": "no-cache"
-        // });
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
-        // fst.end(function (res) {
-        //     if (res.error) console.log(res.error);
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
 
-        //     console.log(res.body);
-        // });
+            console.log(res.body);
+        });
         res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
-        // fst.query({
-        //     authorization: process.env.API_KEY,
-        //     route: 'dlt',
-        //     sender_id: 'krickG',
-        //     message: 132058,
-        //     variables_values: numberUn,
-        //     numbers: phone,
-        //     flash: "0",
-        // });
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145384,
+            variables_values: numberUn,
+            numbers: phone,
+            flash: "0",
+        });
 
-        // fst.headers({
-        //     "cache-control": "no-cache"
-        // });
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
-        // fst.end(function (res) {
-        //     if (res.error) console.log(res.error);
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
 
-        //     console.log(res.body);
-        // });
+            console.log(res.body);
+        });
 
 
 
@@ -162,87 +162,89 @@ app.get('/signup', [all_midellare.data], (req, res) => {
                 phone.splice(0, 1)
                 phone = phone.join('')
             }
+            console.log(req.query)
             if (req.query.checked !== undefined) {
                 let pass = req.query.checked
                 if (decoded.id.trim() === pass.trim()) {
-                    // fst.query({
-                    //     authorization: process.env.API_KEY,
-                    //     route: 'dlt',
-                    //     sender_id: 'krickG',
-                    //     message: 132059,
-                    //     variables_values: `${name}`,
-                    //     numbers: phone,
-                    //     flash: "0",
-                    // });
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145385,
+                        variables_values: `${name}`,
+                        numbers: phone,
+                        flash: "0",
+                    });
 
-                    // fst.headers({
-                    //     "cache-control": "no-cache"
-                    // });
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
 
 
-                    // fst.end(function (res) {
-                    //     if (res.error) console.log(res.error);
+                    fst.end(function (res) {
+                        if (res.error) console.log(res.error);
 
-                    //     console.log(res.body);
-                    // });
+                        console.log(res.body);
+                    });
                     res.redirect('/login')
                 }
             }
             var cookies2 = new Cookies(req, res)
 
             var checkSign = cookies2.get('checkSign');
+            //checkSign:  not send otp again if loaded the page , checkSign view if loaded
             console.log(checkSign, '#########12###################22####')
-            // if(checkSign!==undefined){
-            //     var sign = cookies2.get('processSign');
-            //     if(sign!==undefined){
-            //         fst.query({
-            //             authorization: process.env.API_KEY,
-            //             route: 'dlt',
-            //             sender_id: 'krickG',
-            //             message: 132058,
-            //             variables_values: decoded.id,
-            //             numbers: phone,
-            //             flash: "0",
-            //         });
+            if(checkSign===undefined){
+                var sign = cookies2.get('processSign');
+                if(sign!==undefined){
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145384,
+                        variables_values: decoded.id,
+                        numbers: phone,
+                        flash: "0",
+                    });
 
-            //         fst.headers({
-            //             "cache-control": "no-cache"
-            //         });
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
 
 
-            //         fst.end(function (resp) {
-            //             if (resp.error) console.log(resp.error);
+                    fst.end(function (resp) {
+                        if (resp.error) console.log(resp.error);
 
-            //             console.log(resp.body);
+                        console.log(resp.body);
 
-            //         });
-            //     }
-            // }
+                    });
+                }
+            }
             var token2 = jwt.sign({ n: number }, 'shhhhh');
 
 
             if (req.query.rd !== undefined) {
                 var token2 = jwt.sign({ n: number }, 'shhhhh');
-                // fst.query({
-                //     authorization: process.env.API_KEY,
-                //     route: 'dlt',
-                //     sender_id: 'krickG',
-                //     message: 132058,
-                //     variables_values: decoded.id,
-                //     numbers: phone,
-                //     flash: "0",
-                // });
+                fst.query({
+                    authorization: authfst,
+                    route: 'dlt',
+                    sender_id: 'krickG',
+                    message: 145384,
+                    variables_values: decoded.id,
+                    numbers: phone,
+                    flash: "0",
+                });
 
-                // fst.headers({
-                //     "cache-control": "no-cache"
-                // });
+                fst.headers({
+                    "cache-control": "no-cache"
+                });
 
 
-                // fst.end(function (res) {
-                //     if (res.error) console.log(res.error);
+                fst.end(function (res) {
+                    if (res.error) console.log(res.error);
 
-                //     console.log(res.body);
-                // });
+                    console.log(res.body);
+                });
                 res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
                 return
             }
@@ -355,7 +357,7 @@ app.get('/your-account', (req, res) => {
                     // }
                     // let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
 
-                    // var token = jwt.sign({ user: user, m: process.env.API_KEY, updated: req.query, id: numberUn }, 'shhhhh');
+                    // var token = jwt.sign({ user: user, m: authfst, updated: req.query, id: numberUn }, 'shhhhh');
                     // console.log(req.query, ';opa')
 
                     // res.redirect(`/your-account/editAccount?user=${token}`)
@@ -364,7 +366,6 @@ app.get('/your-account', (req, res) => {
 
                 res.render('myaccount')
 })
-
 app.get('/your-account/editAccount', (req, res) => {
     if (Object.keys(req.query).length !== 0) {
         if (req.query.rd !== undefined) {
@@ -380,26 +381,26 @@ app.get('/your-account/editAccount', (req, res) => {
                     var processOTp = cookies2.get('processOTp2');
 
                     if (processOTp === undefined) {
-                        // fst.query({
-                        //     authorization: process.env.API_KEY,
-                        //     route: 'dlt',
-                        //     sender_id: 'krickG',
-                        //     message: 132058,
-                        //     variables_values: numberUn,
-                        //     numbers: phone,
-                        //     flash: "0",
-                        // });
+                        fst.query({
+                            authorization: authfst,
+                            route: 'dlt',
+                            sender_id: 'krickG',
+                            message: 145384,
+                            variables_values: numberUn,
+                            numbers: phone,
+                            flash: "0",
+                        });
 
-                        // fst.headers({
-                        //     "cache-control": "no-cache"
-                        // });
+                        fst.headers({
+                            "cache-control": "no-cache"
+                        });
 
 
-                        // fst.end(function (res) {
-                        //     if (res.error) console.log(res.error);
+                        fst.end(function (res) {
+                            if (res.error) console.log(res.error);
 
-                        //     console.log(res.body);
-                        // });
+                            console.log(res.body);
+                        });
                         res.setHeader('Set-Cookie', cookie.serialize('processOTp2', true, {
                             httpOnly: false,
                             maxAge: 60 * 60 * 24 * 1 // 1 week
@@ -460,10 +461,10 @@ io.on('connection', (sock) => {
     // })
     sock.on('signedUp', (name,phone) => {
             fst.query({
-            authorization: process.env.API_KEY,
+            authorization: authfst,
             route: 'dlt',
             sender_id: 'krickG',
-            message: 132061,
+            message: 145385,
             variables_values: name,
             numbers: phone,
             flash: "0",
@@ -483,86 +484,63 @@ io.on('connection', (sock) => {
     })
     sock.on('resndCart', (phone) => {
         let unique = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-        // fst.query({
-        //     authorization: process.env.API_KEY,
-        //     route: 'dlt',
-        //     sender_id: 'krickG',
-        //     message: 132058,
-        //     variables_values: unique,
-        //     numbers: phone,
-        //     flash: "0",
-        // });
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145384,
+            variables_values: unique,
+            numbers: phone,
+            flash: "0",
+        });
 
-        // fst.headers({
-        //     "cache-control": "no-cache"
-        // });
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
 
-        // fst.end(function (res) {
-        //     if (res.error) console.log(res.error);
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
 
-        //     console.log(res.body);
-        // });
+            console.log(res.body);
+        });
 
 
     })
     sock.on('newOrderClient', (phone, namefull, amount, address) => {
         console.log(phone, amount, namefull)
         let unique = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-        // fst.query({
-        //     authorization: process.env.API_KEY,
-        //     route: 'dlt',
-        //     sender_id: 'krickG',
-        //     message: 132060,
-        //     variables_values: `${namefull}|${amount}|${unique}|`,
-        //     numbers: phone,
-        //     flash: "0",
-        // });
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145386,
+            variables_values: `${namefull}|${amount}|${unique}|`,
+            numbers: phone,
+            flash: "0",
+        });
 
-        // fst.headers({
-        //     "cache-control": "no-cache"
-        // });
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
 
-        // fst.end(function (res) {
-        //     if (res.error) console.log(res.error);
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
 
-        //     console.log(res.body);
-        // });
+            console.log(res.body);
+        });
 
         io.emit('newOrderClient2', unique)
     })
     sock.on('resendOtp', (phone) => {
         let numberOtp = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
         io.emit('#ot1200w',numberOtp)
-        // fst.query({
-        //     authorization: process.env.API_KEY,
-        //     route: 'dlt',
-        //     sender_id: 'krickG',
-        //     message: 132058,
-        //     variables_values: `${number11}|`,
-        //     numbers:phone,
-        //     flash: "0",
-        // });
-
-        // fst.headers({
-        //     "cache-control": "no-cache"
-        // });
-
-
-        // fst.end(function (res) {
-        //     if (res.error) console.log(res.error);
-
-        //     console.log(res.body);
-        // });
-    })
-
-    sock.on('otpACC', (phone) => {
         fst.query({
-            authorization: process.env.API_KEY,
+            authorization: authfst,
             route: 'dlt',
             sender_id: 'krickG',
-            message: 132058,
+            message: 145384,
             variables_values: `${number11}|`,
             numbers:phone,
             flash: "0",
@@ -579,50 +557,75 @@ io.on('connection', (sock) => {
             console.log(res.body);
         });
     })
-    // sock.on('sendAdmmessage', (name, phone, amount) => {
-    //     fst.query({
-    //         authorization: process.env.API_KEY,
-    //         route: 'dlt',
-    //         sender_id: 'krickG',
-    //         message: 132467,
-    //         variables_values: `${name}|(in website)|${phone}|${amount}|`,
-    //         numbers: 7005328132,
-    //         flash: "0",
-    //     });
 
-    //     fst.headers({
-    //         "cache-control": "no-cache"
-    //     });
+    sock.on('otpACC', (phone) => {
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145384,
+            variables_values: `${number11}|`,
+            numbers:phone,
+            flash: "0",
+        });
 
-
-    //     fst.end(function (res) {
-    //         if (res.error) console.log(res.error);
-
-    //         console.log(res.body);
-    //     });
-    // })
-    // sock.on('deliveryOnwaySms', (name, phone, amount) => {
-    //     fst.query({
-    //         authorization: process.env.API_KEY,
-    //         route: 'dlt',
-    //         sender_id: 'krickG',
-    //         message: 132062,
-    //         variables_values: `${name}|${amount}|`,
-    //         numbers: phone,
-    //         flash: "0",
-    //     });
-
-    //     fst.headers({
-    //         "cache-control": "no-cache"
-    //     });
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
 
-    //     fst.end(function (res) {
-    //         if (res.error) console.log(res.error);
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
 
-    //         console.log(res.body);
-    //     });
-    // })
+            console.log(res.body);
+        });
+    })
+    sock.on('sendAdmmessage', (name, phone, amount) => {
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145390,
+            variables_values: `${name}|(in website)|${phone}|${amount}|`,
+            numbers: 9233054806,
+            flash: "0",
+        });
+
+        fst.headers({
+            "cache-control": "no-cache"
+        });
+
+
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
+
+            console.log(res.body);
+        });
+    })
+    sock.on('deliveryOnwaySms', (name, phone, amount) => {
+        //delivery in way
+        console.log(name, phone, amount)
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145388,
+            variables_values: `${name}|${amount}|`,
+            numbers: phone,
+            flash: "0",
+        });
+
+        fst.headers({
+            "cache-control": "no-cache"
+        });
+
+
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
+
+            console.log(res.body);
+        });
+    })
     sock.on('dTimeChanged', (data) => {
         io.emit('timeChanged',data)
     })
