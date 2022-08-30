@@ -4922,6 +4922,18 @@
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
                 document.querySelector('.ct_video_box').style.display = 'none'
                 document.querySelector('.ct_video_over').style.display = 'none'
+                var stopVideos = function () {
+                    var videos = document.querySelectorAll('iframe, video');
+                    Array.prototype.forEach.call(videos, function (video) {
+                        if (video.tagName.toLowerCase() === 'video') {
+                            video.pause();
+                        } else {
+                            var src = video.src;
+                            video.src = src;
+                        }
+                    });
+                };
+                stopVideos()
             }
 
             if (e.target.closest('.ct_close_video')) {

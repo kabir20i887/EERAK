@@ -14996,7 +14996,6 @@
                             elem.price = "₹" + (price)
                             elem.img = itm.img
                             ifd.push(elem)
-                            console.log(totInside2, parseFloat(elem.selU2), totInside, '-------------------------111-1---------------111-1--------------------------')
 
                             localStorage.setItem('foodsAdded', JSON.stringify(ifd))
 
@@ -15018,7 +15017,7 @@
                                     if (window.screen.width > 600) {
                                         styleX = `style='margin-left:10px'`
                                     }
-                                    priceBox = `<p class="price_am_cart_fd2"><del>₹ ${pricewithoutOff}</del> <span>₹ ${price}</span> <of>( ${itm.offer.off} % off)</of> </p>`
+                                    priceBox = `<p class="price_am_cart_fd2"><del>₹ ${pricewithoutOff.toLocaleString()}</del> <span>₹ ${price}</span> <of>( ${itm.offer.off} % off)</of> </p>`
                                 } else {
                                     price = price.toLocaleString()
                                     priceBox = `<p class="price_am_cart_fd2"><span>₹ ${price}</span> </p>`
