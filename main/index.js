@@ -58,7 +58,8 @@ app.get('/about', (req, res) => {
 app.get('/Login', (req, res) => {
     let phone = parseFloat(req.query.sv)
     let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-    console.log(res.query)
+    console.log(Object.keys(req.query).length !== 0,(req.query.forgotpass===undefined),(req.query.updated===undefined),req.query.forgotpass,'hellloooo')
+    console.log(req.query)
 
     if (req.query.rd === 'true') {
         jwt.verify(req.query.forgotpass, 'shhhhh', function (err, decoded) {
@@ -87,6 +88,13 @@ app.get('/Login', (req, res) => {
             console.log(res.body);
         });
         res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
+ 
+
+
+
+    }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
+        var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
+        phone = parseFloat(req.query.pn)
         fst.query({
             authorization: authfst,
             route: 'dlt',
@@ -106,12 +114,8 @@ app.get('/Login', (req, res) => {
 
             console.log(res.body);
         });
-
-
-
-    }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
-        var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
         res.redirect(`/login?forgotpass=${token}`)
+        
 
     }else{
         res.render('login')
@@ -196,7 +200,8 @@ app.get('/signup', [all_midellare.data], (req, res) => {
             console.log(checkSign, '#########12###################22####')
             if(checkSign===undefined){
                 var sign = cookies2.get('processSign');
-                if(sign!==undefined){
+                console.log(sign)
+                if(sign===undefined){
                     fst.query({
                         authorization: authfst,
                         route: 'dlt',
