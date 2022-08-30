@@ -10693,7 +10693,7 @@
                     mUnit = ''
                     mUnit2 = bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText
                 }
-                if (bxA.classList.value === 'no_stock') {
+                if (bxA.classList.value.includes('no_stock')) {
                     document.querySelector('.outStk').style.display = 'block'
                     document.querySelector('.inStk').style.display = 'none'
                     document.querySelector('.ct_bx_item_stock p').style.display = 'block'
@@ -13573,7 +13573,6 @@ ${hmOTH}
                             let price = 0
                             let ep = false
                             if (cur.childNodes[1].childNodes[1].classList.value.split(' ').includes('ct_bx_offer_box_items')) {
-                                ep = true
                                 name = cur.childNodes[1].childNodes[3].childNodes[1].innerText
                                 price = cur.childNodes[1].childNodes[5].childNodes[1].innerText
                                 console.log(cur.childNodes[1].childNodes, '10261')
@@ -13743,7 +13742,11 @@ ${hmOTH}
                     price *= parseFloat(document.querySelectorAll('.ct_bx_qt_foods input')[1].value)
                     price = "₹" + price
                     // ct_bx_Time p strong
-                    let dtime = document.querySelectorAll('.ct_bx_Time p')[1].innerText
+                    let deliv_x='1 hour'
+                    if(document.querySelector('.outStk').style.display==='block'){
+                        deliv_x='24 hour'
+                    }
+                    let dtime = deliv_x
                     let off = document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0]
                     if (document.querySelector('.ct_offer_box_cook2 span').innerText === '') { off = null }
                     let initU = document.querySelector('.int_unit').innerText
