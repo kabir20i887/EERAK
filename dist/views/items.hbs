@@ -13,7 +13,8 @@
         .ct_bx_ins_items.perm .inner span pr {
             margin: -2px 0 0 0px;
         }
-
+        
+.for_otherItems.no_groc{display: none;}
         .ct_bx_download_btn_x:hover {
             box-shadow: 0 0 20px #d7d7d7;
             border-radius: 7px;
@@ -6976,6 +6977,18 @@
             .ct_bx_play {
                 font-size: 36px;
             }
+.contianer_items_inside {
+    width: 95%;
+    display: block;
+}
+
+            .ct_bx_inside_base {
+                left: 0;
+                width: 100vw;
+                bottom: -13px;
+                position: fixed;
+                padding-bottom: 30px;
+            }
 
             .ct_bx_qt_foods input {
                 font-size: 18px;
@@ -7028,7 +7041,7 @@
             }
 
             .ct_bx_ins_items .inner p {
-                font-size: 16px;
+                font-size: 24px;
             }
 
             .ct_nav_erak .mai_ul {
@@ -7422,14 +7435,6 @@
 
             .ct_bx_matched_itm p {
                 font-size: 14px;
-            }
-
-            .ct_bx_inside_base {
-                left: 0;
-                width: 100vw;
-                bottom: -13px;
-                position: fixed;
-                padding-bottom: 30px;
             }
 
             .for_mobile_search .ct_bx_matched_itm {
@@ -9746,7 +9751,7 @@
                                 <div class="ct_bx_item_rem">
                                     <ion-icon name="remove-outline"></ion-icon>
                                 </div>
-                                <input type="text" value="1">
+                                <input type="text" value="1" readonly>
                                 <div class="ct_bx_item_add">
                                     <ion-icon name="add-outline"></ion-icon>
                                 </div>
@@ -9839,7 +9844,7 @@
                                 <div class="ct_bx_item_rem">
                                     <ion-icon name="remove-outline"></ion-icon>
                                 </div>
-                                <input type="text" value="1">
+                                <input type="text" value="1" readonly>
                                 <div class="ct_bx_item_add">
                                     <ion-icon name="add-outline"></ion-icon>
                                 </div>
@@ -9861,7 +9866,7 @@
                                 <div class="ct_bx_item_rem">
                                     <ion-icon name="remove-outline"></ion-icon>
                                 </div>
-                                <input type="text" value="1">
+                                <input type="text" value="1" readonly>
                                 <div class="ct_bx_item_add">
                                     <ion-icon name="add-outline"></ion-icon>
                                 </div>
@@ -10233,6 +10238,8 @@
             }
             if (closeReviews !== null) {
                 document.querySelector('.ct_bx_btn_show_rev').style.display = 'flex'
+document.querySelector('.for_submit_form_rev').style.display='none'
+document.querySelector('.closeReview ').style.display='none'
 
                 document.querySelectorAll('.openBoxrev').forEach(cur => {
                     cur.classList.remove('openBoxrev')
@@ -11634,6 +11641,7 @@ if(window.screen.width<=620){
                             if (parseFloat(cur1.stock) === 0) {
                                 classStkno = 'no_stock'
                             }
+                            console.log(cur1.name,'........................................')
                             if (cur1.name === undefined) {
                                 if (cur1.price !== null) {
                                     cur1.price = parseFloat(cur1.price).toLocaleString()
@@ -11675,7 +11683,7 @@ if(window.screen.width<=620){
                             } else {
                                 let removedClass = ``
                                 let htmBtns = `<button class="add_base_itm">Add</button>
-                                <button class="remove_base_itm" style='none'>Remove</button>`
+                                <button class="remove_base_itm" style='display:none'>Remove</button>`
                                 let priceM = cur1.price
 
                                 if (cur1.price !== null) {
@@ -11685,9 +11693,9 @@ if(window.screen.width<=620){
                                                 priceM = parseFloat(cur1.price) * parseFloat(cu.qt)
                                                 if (cuItm.name === cur1.name) {
                                                     if (cuItm.added) {
-                                                        removedClass = `class="alreadyselected ${classStkno}`
-                                                        htmBtns = `<button  style='none' class="add_base_itm">Add</button>
-                                                        <button class="remove_base_itm" style='block'>Remove</button>`
+                                                        removedClass = `alreadyselected ${classStkno}`
+                                                        htmBtns = `<button  sstyle='display:none' class="add_base_itm">Add</button>
+                                                        <button class="remove_base_itm" style='display:block'>Remove</button>`
                                                     }
                                                 }
                                             })
@@ -11695,7 +11703,7 @@ if(window.screen.width<=620){
 
 
                                     })
-                                    html = `<li  ${removedClass}>
+                                    html = `<li  class=${removedClass}>
 <div class="ct_inner_inside_bs">
     <p>${cur1.name}</p>
     <span>₹${priceM}</span>
@@ -11768,52 +11776,7 @@ ${htmBtns}
 
                     if (item.fdInside.length > 1 && item.offer === null) {
                         let fd = JSON.parse(localStorage.getItem('foodsAdded'))
-                        if (fd.length > 0 && getCookie('firstpurchase') !== '') {
-                            if (JSON.parse(getCookie('firstpurchase')) === window.location.pathname.split('/')[2]
-                            ) {
-                                if (JSON.parse(getCookie('user')).fstPurchase) {
-
-                                    let fdIns = item.fdInside
-                                    let fdP = 0
-                                    fdIns.forEach(cur => {
-                                        if (cur.price !== undefined && cur.id !== 'spices') {
-                                            let p = parseFloat(cur.price)
-                                            fdP += p
-                                        }
-
-                                    })
-                                    deductedPrice = fdP
-                                    let selUp = 0
-                                    if (item.unitInit !== null) {
-                                        let m1 = 0
-                                        item.unitInit.forEach(cu => {
-                                            if (cu.price !== null) {
-                                                let unitName = cu.unitNum + cu.unitU
-                                                fd.forEach(cuItm => {
-                                                    if (cuItm.id === item.id) {
-
-                                                        let baseU = cuItm.baseU.split(' ').join('').toLowerCase()
-                                                        if (baseU !== 'notselected') {
-                                                            let fUnit = `${cu.unitNum}${cu.unitU}`.split(' ').join('').toLowerCase()
-                                                            if (fUnit === baseU) {
-                                                                m1 = parseFloat(cu.price) * parseFloat(cu.count)
-
-                                                            }
-                                                        }
-                                                        selUp = m1 + fdP
-                                                        cuItm.selU = selUp
-                                                    }
-
-                                                })
-
-                                            }
-
-                                        })
-                                    }
-                                    localStorage.setItem('foodsAdded', JSON.stringify(fd))
-                                }
-                            }
-                        } else {
+                   
                             let freePur = false
                             if (getCookie('user') !== '') {
 
@@ -11831,9 +11794,7 @@ ${htmBtns}
 
                                     })
                                     let id = false
-                                    if (getCookie('firstpurchase') !== '') {
-                                        id = JSON.parse(getCookie('firstpurchase'))
-                                    }
+                                    
                                     if (fd.length > 0) {
                                         fd.forEach(cu => {
                                             if (cu.id === window.location.pathname.split('/')[2]
@@ -11879,9 +11840,7 @@ ${htmBtns}
 
                                     })
                                     let id = false
-                                    if (getCookie('firstpurchase') !== '') {
-                                        id = JSON.parse(getCookie('firstpurchase'))
-                                    }
+                                    
                                     if (fd.length > 0) {
                                         fd.forEach(cu => {
                                             if (cu.id === window.location.pathname.split('/')[2]
@@ -11916,7 +11875,7 @@ ${htmBtns}
                                 }
 
                             }
-                        }
+                        
 
 
                     }
@@ -12052,30 +12011,6 @@ ${htmBtns}
 
                     }
                     let fstPurN = false
-
-                    if (getCookie('user') !== '') {
-                        if (JSON.parse(getCookie('user')).fstPurchase) {
-                            document.querySelectorAll('.ct_bx_qty').forEach(cur => {
-                                cur.classList.add('for_fst_pur')
-                            })
-                        }
-                        if (getCookie('firstpurchase') !== '') {
-
-                            if (JSON.parse(getCookie('firstpurchase')) === window.location.pathname.split('/')[2]
-                            ) {
-                                fstPurN = JSON.parse(getCookie('user')).fstPurchase
-
-                            } else {
-                                document.querySelectorAll('.ct_bx_qty').forEach(cur => {
-                                    cur.classList.remove('for_fst_pur')
-                                })
-                            }
-                        } else {
-                            fstPurN = JSON.parse(getCookie('user')).fstPurchase
-
-
-                        }
-                    }
                     let otherItems = null
 
                     let pff = parseFloat(item.profit)
@@ -12444,6 +12379,15 @@ ${htmBtns}
                                 </li>`
                                 return htmlM
                             })
+                            let ifgroceries=1
+                            if(item.itemsOthers!==null){
+                             ifgroceries=item.itemsOthers[0].price
+                            }
+                            ifgroceries=parseFloat(ifgroceries)
+                            let nogroceries=''
+                            if(ifgroceries===0){
+                                nogroceries='no_groc'
+                            }
                             document.querySelectorAll('.ct_bx_what_erak_foods ul').forEach(cur => { cur.innerHTML = itmAbout.join('') })
                             let styleBase = ``
                             if (window.screen.width < 1550 && window.screen.width > 470) {
@@ -12454,7 +12398,7 @@ ${htmBtns}
                                 styleBase = `style=left:${twidth}px`
                             }
                             if (otherItems !== null) {
-                                hmOTH = `<div class="ct_bx_ins_items nottog for_otherItems ">
+                                hmOTH = `<div class="ct_bx_ins_items nottog for_otherItems ${nogroceries}">
 <div class="selc">
     <div class='inner'>
 
@@ -12472,7 +12416,7 @@ ${htmBtns}
 
 </div>
 
-<div class="ct_list_other_item"  ${styleBase}>
+<div class="ct_list_other_item" ${nogroceries}  ${styleBase}>
 <div class='iconBx'><ion-icon name="close-outline"></ion-icon></div>
 <div>
 <h5>
@@ -12557,7 +12501,7 @@ ${otherItems.join('')}
 
                                 let twidth = 0
                                 let styleBase = ``
-                                if (window.screen.width < 1550 && window.screen.width > 550) {
+                                if (window.screen.width < 1550 && window.screen.width > 470) {
                                     let widthScreen = window.screen.width
                                     let width2 = 430
                                     twidth = (widthScreen - width2) / 2
@@ -12651,9 +12595,7 @@ ${hmOTH}
                                 let fd = JSON.parse(localStorage.getItem('foodsAdded'))
 
                                 let id = false
-                                if (getCookie('firstpurchase') !== '') {
-                                    id = JSON.parse(getCookie('firstpurchase'))
-                                }
+                              
                                 if (fd !== null) {
                                     fd.forEach(cu => {
                                         if (cu.id === window.location.pathname.split('/')[2]
@@ -12684,24 +12626,7 @@ ${hmOTH}
                                 }
                                 let firstPurchase = false
                                 priceBox = ` <span> ₹ ${dt.price} </span>`
-                                if (getCookie('user') !== '') {
-                                    if (JSON.parse(getCookie('user')).fstPurchase !== undefined) {
-                                        if (JSON.parse(getCookie('user')).fstPurchase) {
-                                            priceBox = ` <span > <del>₹ ${dt.price}</del><pr>Free</pr> </span>
-                                                    `
-                                            firstPurchase = true
-                                            let fd = JSON.parse(localStorage.getItem('foodsAdded'))
-                                            if (fd.length > 0 && getCookie('firstpurchase') !== '') {
-
-                                                if (JSON.parse(getCookie('firstpurchase')) !== item.id) {
-                                                    priceBox = ` <span> ₹ ${dt.price} </span>`
-                                                    firstPurchase = false
-                                                }
-                                            }
-                                        }
-
-                                    }
-                                }
+                        
                                 let stylenoprice = ''
                                 if (dt.name.split(' ').join('').toLowerCase() === 'currysauce') {
                                     priceBox = ` <span> ₹ ${dt.price} </span>
@@ -12766,11 +12691,12 @@ ${hmOTH}
                                                     `
                                         }
                                     }
-                                    if (firstPurchase && dt.id === 'spices') {
-
+                                    let displayStyle=' display: flex'
+                                    if ( dt.id === 'spices') {
+                                    displayStyle=' display: none'
                                     }
                                     ht = ` <div class="ct_bx_ins_items perm ${namePerm} itemsSelected" style='align-items: center;
-                                    display: flex;${styleX1}'>
+                                   ${displayStyle};${styleX1}'>
                                     <div class='inner'>
  ${offBox}
                                     <div class="inner_ov_box">
@@ -12856,21 +12782,7 @@ ${hmOTH}
                         posOthelem2 += 1
                         let fstPur = false
                         let totPermP = 0
-                        if (getCookie('user') !== '') {
-                            if (getCookie('firstpurchase') !== '') {
-                                if (JSON.parse(getCookie('firstpurchase')) === item.id) {
-                                    if (JSON.parse(getCookie('user')).fstPurchase !== undefined) {
-                                        fstPur = JSON.parse(getCookie('user')).fstPurchase
-
-                                    }
-
-                                }
-                            } else {
-                                fstPur = JSON.parse(getCookie('user')).fstPurchase
-                            }
-
-
-                        }
+                       
                         console.log(item.fdInside, '9999999999999999999999999ssidgfdfffffffffffffff')
 
                         item.fdInside.forEach(cm => {
@@ -12918,16 +12830,7 @@ ${hmOTH}
                                 if (id === token11.trim()) {
 
                                     if (getCookie('user') !== '') {
-                                        if (getCookie('firstpurchase') !== '') {
-                                            if (JSON.parse(getCookie('firstpurchase')) === id) {
-                                                if (JSON.parse(getCookie('user')).fstPurchase !== undefined) {
-                                                    fstPurN2 = JSON.parse(getCookie('user')).fstPurchase
-
-                                                }
-                                                cur.qt = 1
-
-                                            }
-                                        }
+                                   
                                         let countNum = 1
                                         let baseSelected = cur.baseU.split(' ').join('')
                                         item.unitInit.forEach(cu => {
@@ -13574,16 +13477,7 @@ ${hmOTH}
                             let ep = false
                             if (cur.childNodes[1].childNodes[1].classList.value.split(' ').includes('ct_bx_offer_box_items')) {
                                 name = cur.childNodes[1].childNodes[3].childNodes[1].innerText
-                                price = cur.childNodes[1].childNodes[5].childNodes[1].innerText
-                                console.log(cur.childNodes[1].childNodes, '10261')
-                                if (getCookie('user') !== '') {
-                                    if (JSON.parse(getCookie('user')).fstPurchase && getCookie('firstpurchase') === '') {
-                                        document.cookie = "firstpurchase" + "=" + JSON.stringify(window.location.pathname.split('/')[2]
-                                        ) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
-
-                                    }
-                                }
-
+                                price = cur.childNodes[1].childNodes[5].childNodes[1].innerText                               
                             }
                             permGroup.push({ name: name, price: price, eprice: ep })
 
@@ -13927,12 +13821,6 @@ ${hmOTH}
                         document.querySelector('.yt-loader').style.display = 'block'
                         document.querySelector('.ct_overfow_for_load').style.display = 'block'
                         document.querySelector('.rate_prod_h4').innerText = 'Rate this product'
-
-
-                        let catid = window.location.search.split('&')[2].split('=')[1]
-
-
-
                         document.querySelector('.ct_rate_star_wrapper').classList.add('not_rated')
                         document.querySelector('.ct_rate_star_wrapper').classList.remove('rated_success')
                         const removeRatings = async () => {
@@ -14003,8 +13891,10 @@ ${hmOTH}
                                                         })
                                                         for (let i2 = 0; i2 < reviews.length; i2++) {
                                                             let doc = reviews[i2]
+                                                                console.log('removed from doc11111...............................................',doc,doc.userId , user.rootAutyh)
                                                             if (doc.userId === user.rootAutyh) {
                                                                 reviews.splice(i2, 1)
+                                                                console.log('removed from doc...............................................')
                                                                 let obj = {
                                                                     group: el1.data().group,
                                                                     item: {
@@ -14199,18 +14089,6 @@ ${hmOTH}
                     }
                 } else {
                     let idn = window.location.pathname.split('/')[2]
-
-
-                    if (getCookie('firstpurchase') !== '') {
-                        if (idn === JSON.parse(getCookie('firstpurchase'))) {
-                            document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 1970  12:00:00 UTC;path=/" + ' ';
-
-                        }
-                    }
-
-
-
-
                     let hm
                     if (document.querySelectorAll('.ct_bx_for_added_itm')[0].style.display = 'block') {
                         document.querySelectorAll('.ct_bx_for_added_itm').forEach(cur => {
@@ -14266,9 +14144,9 @@ ${hmOTH}
 
                 let i = parseFloat(qtekfd.parentElement.childNodes[3].value)
                 i++
-                if (qtekfd.parentElement.parentElement.classList.value.split(' ').includes('for_fst_pur')) {
-                    return
-                }
+               //if (qtekfd.parentElement.parentElement.classList.value.split(' ').includes('for_fst_pur')) {
+               //    return
+               //}
                 //Maxqt
                 if (i > 4) {
                     // document.querySelectorAll('.ct_err_max_stock').forEach((cur) => {
@@ -14751,23 +14629,7 @@ ${hmOTH}
                 }
                 if (getCookie('user') !== '') {
                     if (JSON.parse(getCookie('user')).fstPurchase) {
-                        if (getCookie('firstpurchase') !== '') {
-                            if (JSON.parse(getCookie('firstpurchase')) !== itmDb.id) {
-                                itmDb.fdInside.forEach(cur1 => {
-                                    if (cur1.price !== undefined) {
-                                        let pr = parseFloat(cur1.price)
-                                        if (itmDb.offer !== null && cur1.id !== 'spices') {
-                                            if (itmDb.offer.sauce !== null) {
-                                                let offX = parseFloat(itmDb.offer.sauce)
-                                                pr = pr - (pr * (offX / 100))
-                                            }
-                                        }
-                                        pr = Math.round(pr)
-                                        priceN += pr
-                                    }
-                                })
-                            }
-                        } else {
+                 
                             itmDb.fdInside.forEach(cur1 => {
                                 if (cur1.id !== 'spices' && cur1.price !== undefined) {
                                     let pr = parseFloat(cur1.price)
@@ -14781,7 +14643,7 @@ ${hmOTH}
                                     priceN += pr
                                 }
                             })
-                        }
+                        
                     } else {
                         itmDb.fdInside.forEach(cur1 => {
                             if (cur1.price !== undefined) {
@@ -15011,13 +14873,13 @@ ${hmOTH}
             console.log(imgs)
             downloadAll(imgs, "jpg", -1);
         }
-        var btnDownload = document.querySelector(".ct_bx_download_btn_x");
-        if (btnDownload !== null) {
-            btnDownload.addEventListener("click", (e) => {
+            document.querySelector('html').addEventListener("click", (e) => {
+                if(e.target.closest('.ct_bx_download_btn_x')!==null){
                 e.preventDefault()
                 doit()
+                }
             });
-        }
+        
 
         function checkChar(letter, limit = 10) {
             if (letter.length <= limit) {
@@ -15067,7 +14929,7 @@ ${hmOTH}
 
             if (parsedData.admin === true) {
 
-                document.querySelectorAll('.mekuud a').forEach(cur => cur.setAttribute('href', `/admin?authUser=${parsedData.rootAutyh}`))
+                  document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
                 if (window.screen.width > 1200) {
                     if (document.querySelector('.mai_ul') != null) {
                         document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')

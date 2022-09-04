@@ -73,7 +73,7 @@
         }
 
         .ct_bx_btn_play {
-            background-color: #ff0000d1;
+            background-color: #0000005e;
             border-radius: 50%;
             position: absolute;
             padding: 19px 20px 19px 23px;
@@ -132,7 +132,8 @@
         .ct_content_all_searched ul a {
             display: flex;
             width: 100%;
-            padding-left: 15px;
+            padding-left: 15px;    padding-left: 15px;
+    padding-bottom: 10px;
         }
 
         .ct_list_food_res_ek h1 {
@@ -140,7 +141,7 @@
             margin-left: 27px;
             font-size: 31px;
             margin-bottom: 8px;
-            font-family: 'MONTSERRAT';
+            font-family: 'Open Sans';
         }
 
         .ct_bx_copy_right a {
@@ -1222,13 +1223,14 @@
         }
 
         .list_food_at_ov h3 {
-            font-size: 17px;
-            color: #181717;
+            font-size: 25px;
+            color: #891e1e;
             text-transform: capitalize;
             padding: 0 40px 10px 10px;
             margin-left: 108px;
-            margin-top: 10px;
-            font-family: Montserrat
+            margin-top: 30px;
+                margin-bottom: 20px;
+            font-family: Montserrat;
         }
 
         .ct_bx_fooditm .ct_bx_price_fd del {
@@ -1649,7 +1651,8 @@
             .ct_bx_ratings span .not_filed_rating_itm {
                 font-size: 20px
             }
-
+.list_food_at_ov h3 {
+    font-size: 21px;}
             .for_nav_main {
                 height: 82px;
             }
@@ -2183,7 +2186,7 @@
             }
 
             .list_food_at_ov h3 {
-                font-size: 16px;
+                font-size:22px;
                 transform: translate(2%, 0px);
                 margin: 0;
                 margin-bottom: -14px
@@ -2622,7 +2625,7 @@
 
             .ct_list_food_res_ek h1 {
                 margin-left: 14px;
-                font-size: 24px;
+                font-size: 32px;
             }
 
             .groc_list .ct_cat_by_list {
@@ -2700,10 +2703,12 @@
                 width: 80%;
                 margin-left: 2px
             }
-
+.groc_list h3 {
+    margin: 50px 0 20px 10px;
+}
             .ct_bx_btn_play {
-                margin-top: 29%;
-                left: 36%;
+                margin-top: 38%;
+                left: 37%;
             }
 
             .ct_bx_btn_play ion-icon {
@@ -2778,7 +2783,7 @@
             }
 
             .erak_fd_body .list_food_at_ov h3 {
-                margin-bottom: 20px
+                margin-bottom: 33px
             }
 
             .groc_list .ct_cat_by_list {
@@ -3026,10 +3031,11 @@
                 margin-left: 0
             }
 
-            .cart_nav a {
-                margin-top: 5px
-            }
-
+           .cart_nav a {
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 20px;
+}
             .ct_field_small_size_bx {
                 margin: 3px 0 0
             }
@@ -3338,7 +3344,7 @@
             }
 
             .ct_bx_fooditm .main_im {
-                width: 37%
+                width: 42%
             }
 
             .ct_bx_fooditm a {
@@ -3407,7 +3413,7 @@
         .ct_bx_fooditm {
     height: max-content;
     margin: 0;
-    width: 87%;
+    width: 92%;
     margin-bottom: 26px;
     margin-left: 14px;
     border-radius: 13px;
@@ -3516,7 +3522,7 @@
 
 
             .ct_nav_erak .ct_bx_search {
-                width: 90%
+                width: 100%
             }
 
             .cart_nav ion-icon {
@@ -3705,16 +3711,16 @@
                 margin-left: 0;
             }
 
-            .erak_fd_body .list_food_at_ov h3 {
+            .erak_fd_body .list_food_at_ov h3{
                 margin-left: 5px;
-                    margin-top: 34px;
+                    margin-top: 78px;margin-bottom: 33px;
 
             }
-
+.list_food_at_ov h3{font-size: 22px;    color: #891e1e;}
            .ct_list_food_res_ek h1 {
     font-size: 28px;
     font-family: 'Open Sans';
-    margin-top: 17px;
+    margin-top: 17px;    margin-bottom: -24px;
 }
 
             .ct_bx_fooditm a {
@@ -3824,7 +3830,6 @@
             }
 
             .erak_fd_body .list_food_at_ov h3 {
-                margin-bottom: 9px;
                 margin-left: 4px
             }
 
@@ -3888,7 +3893,7 @@
             }
 
             .list_food_at_ov h3 {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .ct_bx_ads {
@@ -3939,9 +3944,7 @@
                 margin-top: 23%;
                 left: 33%;
             }
-.erak_fd_body .list_food_at_ov h3 {
-    margin-top: 21px;
-}
+
             .ct_bx_price_fd.hasoffPrice {
                 margin-top: 8px;
             }
@@ -4029,12 +4032,9 @@
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 2px;
-                font-size: 16px;
+                font-size: 20px;
             }
 
-            .ct_list_food_res_ek h1 {
-                margin-bottom: 26px;
-            }
 
             .ct_list_food_res_ek h1 {
                 font-size: 24px;
@@ -5118,7 +5118,7 @@
                     li.forEach(cur => {
                         cur.remove()
                     })
-
+document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'})
 
                     document.querySelector('.ct_content_all_searched ul').innerHTML = ''
 
@@ -5182,7 +5182,7 @@
                 })
             })
         }
-        if (window.screen.width <= 400) {
+        if (window.screen.width <= 470) {
             if (document.querySelector('.for_nav_search') !== null) {
                 document.querySelector('.for_nav_search input').addEventListener('click', (e) => {
                     document.querySelector('.ct_field_small_size_bx').style.display = 'none'
@@ -5264,7 +5264,7 @@
                             document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
                         }
                     }
-                    if (window.screen.width <= 400) {
+                    if (window.screen.width <= 470) {
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
                             cur1.style.padding = '13px 0px 10px 0px'
 
@@ -5313,7 +5313,7 @@
                             document.querySelector('.ct_bx_matched_itm').style.marginLeft = '0'
                             document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
 
-                            if (window.screen.width <= 400) {
+                            if (window.screen.width <= 470) {
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
                             }
@@ -5356,7 +5356,7 @@
                         document.querySelector('.ct_nav_erak .mai_ul').style.width = '42%'
 
                     }
-                    if (window.screen.width <= 400) {
+                    if (window.screen.width <= 470) {
                         document.querySelector('.ct_nav_erak .mai_ul').style.width = '36%'
 
                         document.querySelector('.ct_inner_nav').style.overflow = 'hidden'
@@ -5463,10 +5463,9 @@
 
                 document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
             }
-
             if (parsedData.admin === true) {
 
-                document.querySelectorAll('.mekuud a').forEach(cur => cur.setAttribute('href', `/admin?authUser=${parsedData.rootAutyh}`))
+                document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
                 if (window.screen.width > 1200) {
                     if (document.querySelector('.mai_ul') != null) {
                         document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')

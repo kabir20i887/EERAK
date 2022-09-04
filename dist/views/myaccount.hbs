@@ -28,6 +28,7 @@
     font-family: 'Open Sans';
 }
 .ct_deliv_status_mob{
+    display: none;
     margin: 20px 0 0 14px;
 }
 .ct_deliv_status_mob .canceled{color: red;}
@@ -318,7 +319,8 @@
             .bx_acc input {
                 width: 87%;
             }
-
+.ct_deliv_status_mob{
+    display: block;}
             .ct_create_acc {
                 transform: translate(0px);
             }
@@ -21804,54 +21806,54 @@
                         let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                         let expNumber = month.indexOf(date.split(' ')[1]) + 1
                         //removing order after 1 month
-                        if (fdMonth >= expNumber) {
-                            const removeFd = async () => {
-                                let dbCollection = db.collection("users")
-                                let res = await dbCollection.get()
+                       //if (fdMonth >= expNumber) {
+                       //    const removeFd = async () => {
+                       //        let dbCollection = db.collection("users")
+                       //        let res = await dbCollection.get()
 
-                                mOrder.splice(index, 1)
-                                let user = getCookie('user')
-                                console.log(mOrder, 'kiooo')
+                       //        mOrder.splice(index, 1)
+                       //        let user = getCookie('user')
+                       //        console.log(mOrder, 'kiooo')
 
-                                user = JSON.parse(user)
-                                res.docs.forEach(cur => {
-                                    let item = cur.data().data
-                                    if (cur.data().rootAutyh === user.rootAutyh) {
-                                        let cartGroc = cur.data().cartGroc
-                                        let cartItem = cur.data().cartItem
-                                        let likes = cur.data().likes
-                                        let fstPurchase = cur.data().fstPurchase
+                       //        user = JSON.parse(user)
+                       //        res.docs.forEach(cur => {
+                       //            let item = cur.data().data
+                       //            if (cur.data().rootAutyh === user.rootAutyh) {
+                       //                let cartGroc = cur.data().cartGroc
+                       //                let cartItem = cur.data().cartItem
+                       //                let likes = cur.data().likes
+                       //                let fstPurchase = cur.data().fstPurchase
 
-                                        let dislikes = cur.data().dislikes
-                                        let rtr = cur.data().myratings
+                       //                let dislikes = cur.data().dislikes
+                       //                let rtr = cur.data().myratings
 
-                                        dbCollection.doc(cur.id).set({
-                                            data: item,
-                                            cartGroc: cartGroc,
-                                            authUser: cur.data().authUser,
-                                            rootAutyh: cur.data().rootAutyh,
-                                            deliv: cur.data().deliv,
-                                            admin: cur.data().admin,
-                                            cartItem: cartItem,
-                                            likes: likes,
-                                            dislikes: dislikes,
-                                            fstPurchase: fstPurchase,
-                                            myOrders: mOrder,
-                                            myratings: rtr
-                                        })
+                       //                dbCollection.doc(cur.id).set({
+                       //                    data: item,
+                       //                    cartGroc: cartGroc,
+                       //                    authUser: cur.data().authUser,
+                       //                    rootAutyh: cur.data().rootAutyh,
+                       //                    deliv: cur.data().deliv,
+                       //                    admin: cur.data().admin,
+                       //                    cartItem: cartItem,
+                       //                    likes: likes,
+                       //                    dislikes: dislikes,
+                       //                    fstPurchase: fstPurchase,
+                       //                    myOrders: mOrder,
+                       //                    myratings: rtr
+                       //                })
 
-                                        if (addedOrder === 0) {
-                                            document.querySelector('.ct_bx_no_order_yet').style.display = 'block'
-                                        }
-                                    }
-                                })
+                       //                if (addedOrder === 0) {
+                       //                    document.querySelector('.ct_bx_no_order_yet').style.display = 'block'
+                       //                }
+                       //            }
+                       //        })
 
-                            }
+                       //    }
 
-                            removeFd()
+                       //    removeFd()
 
-                            return
-                        }
+                       //    return
+                       //}
                         let time1 = time.split(':')[0]
                         let time2 = time.split(':')[1]
                         console.log(time)
@@ -22250,7 +22252,7 @@ ${htmlD2}
 
             if (parsedData.admin === true) {
 
-                document.querySelectorAll('.mekuud a').forEach(cur => cur.setAttribute('href', `/admin?authUser=${parsedData.rootAutyh}`))
+                  document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
                 if (window.screen.width > 1200) {
                     if (document.querySelector('.mai_ul') != null) {
                         document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')

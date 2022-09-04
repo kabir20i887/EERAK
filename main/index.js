@@ -322,10 +322,19 @@ app.get('/events', (req, res) => {
     res.render('index')
 
 })
+app.get('/admin/:id', (req, res) => {
+console.log(req.params)
+    if (req.params.id === 'msdhooni7') {
+        res.render('admin')
 
+    }else{
+        res.redirect('/')
+
+    }
+})
 app.get('/admin', (req, res) => {
 
-    res.render('admin')
+    res.redirect('/')
 })
 app.get('/recipes/:id', (req, res) => {
     console.log(req.params)
@@ -465,147 +474,147 @@ io.on('connection', (sock) => {
     //     io.emit('msgOrder')
     // })
     sock.on('signedUp', (name,phone) => {
-            fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145385,
-            variables_values: name,
-            numbers: phone,
-            flash: "0",
-        });
+        //     fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145385,
+        //     variables_values: name,
+        //     numbers: phone,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
 
     })
     sock.on('resndCart', (phone) => {
         let unique = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145384,
-            variables_values: unique,
-            numbers: phone,
-            flash: "0",
-        });
+        // fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145384,
+        //     variables_values: unique,
+        //     numbers: phone,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
 
 
     })
     sock.on('newOrderClient', (phone, namefull, amount, address) => {
         console.log(phone, amount, namefull)
         let unique = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145386,
-            variables_values: `${namefull}|${amount}|${unique}|`,
-            numbers: phone,
-            flash: "0",
-        });
+        // fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145386,
+        //     variables_values: `${namefull}|${amount}|${unique}|`,
+        //     numbers: phone,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
 
         io.emit('newOrderClient2', unique)
     })
     sock.on('resendOtp', (phone) => {
         let numberOtp = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
         io.emit('#ot1200w',numberOtp)
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145384,
-            variables_values: `${number11}|`,
-            numbers:phone,
-            flash: "0",
-        });
+        // fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145384,
+        //     variables_values: `${number11}|`,
+        //     numbers:phone,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
     })
 
     sock.on('otpACC', (phone) => {
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145384,
-            variables_values: `${number11}|`,
-            numbers:phone,
-            flash: "0",
-        });
+        // fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145384,
+        //     variables_values: `${number11}|`,
+        //     numbers:phone,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
     })
     sock.on('sendAdmmessage', (name, phone, amount) => {
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145390,
-            variables_values: `${name}|(in website)|${phone}|${amount}|`,
-            numbers: 9233054806,
-            flash: "0",
-        });
+        // fst.query({
+        //     authorization: authfst,
+        //     route: 'dlt',
+        //     sender_id: 'krickG',
+        //     message: 145390,
+        //     variables_values: `${name}|(in website)|${phone}|${amount}|`,
+        //     numbers: 9233054806,
+        //     flash: "0",
+        // });
 
-        fst.headers({
-            "cache-control": "no-cache"
-        });
+        // fst.headers({
+        //     "cache-control": "no-cache"
+        // });
 
 
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
+        // fst.end(function (res) {
+        //     if (res.error) console.log(res.error);
 
-            console.log(res.body);
-        });
+        //     console.log(res.body);
+        // });
     })
     sock.on('deliveryOnwaySms', (name, phone, amount) => {
         //delivery in way
