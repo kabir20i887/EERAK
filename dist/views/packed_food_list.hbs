@@ -14,7 +14,41 @@
         /*! CSS Used from: Embedded */
         .ct_bx_slide_bx.active {
             right: 0;
+        }   .ct_bx_slide_bx ul li.delivery_account_info a{color: red}
+        .delivery_account_info{
+                background: #fef9fa;
+    color: red}
+        .ct_field_small_size.delivery_account_info{
+                background: #fef9fa;
+    color: red;
         }
+             .ct_bx_info {
+            display: none;
+        }
+.ct_bx_info {
+    width: 26px;
+    height: 24px;
+    z-index: 999999;
+    border-radius: 50%;
+    background-color: #ee2747;
+    padding: 2px;
+    color: white;
+    top: 11px;
+    position: absolute;
+}
+.ct_bx_slide_bx ul li.delivery_account_info{display: flex;}
+.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info ion-icon {
+    font-size: 15px;
+    margin-top: 0px;
+    display: block;
+}
+.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info{    position: relative;
+    width: 21px;
+    height: 19px;
+    margin-left: -10px;
+    transform: translate(20px, 0px);
+}
+   
 
         .cart_nav span {
             width: 37px;
@@ -4904,6 +4938,14 @@
         if (localStorage.getItem('foodsAdded') === null) {
             localStorage.setItem('foodsAdded', '[]')
         }
+            if (getCookie('info_delivery_user') !== '') {
+            document.querySelector('.my_orders').classList.add('delivery_account_info')
+            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+
+            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+
+        }
         if (getCookie('user') !== '') {
             let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
             let lengthX = allfds.length
@@ -5564,7 +5606,9 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                                 pr = pr - (pr * (offX / 100))
                                             }
                                         }
-                                        pr = Math.round(pr)
+                                         pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                         priceN += pr
                                         console.log(priceN, 'priceN2')
                                     }
@@ -5580,7 +5624,9 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                             pr = pr - (pr * (offX / 100))
                                         }
                                     }
-                                    pr = Math.round(pr)
+                                    pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                     priceN += pr
                                 }
 
@@ -5596,7 +5642,9 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                         pr = pr - (pr * (offX / 100))
                                     }
                                 }
-                                pr = Math.round(pr)
+                                 pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                 priceN += pr
                             }
 
@@ -5713,15 +5761,15 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
 
             let dbCollection = db.collection(`items`)
             let res = await dbCollection.get()
-            dbCollection.doc('butter-paneer-curry').set({
-                    group: 'b',
+            dbCollection.doc('fish-curry').set({
+                          group: 'a',
                     item: {
-                        about: ['Curry sauce, Seasoning Mix, Chicken, Ginger garlic paste, Butter', 'Please select your required item from those below options.Curry sauce and seasoning mix are already added.'],
+                        about: ['Curry sauce, Seasoning Mix, Chicken, Ginger garlic paste, Butter', 'Please select your required item from those below options.Curry sauce is already added.'],
                         cook: [{ name: '../img/cookAuthenticChickenCurry.jpg' }],
                         cookingTime: `10 minutes`,
                         deliveryTime: '1 hour',
                         fdInside: [{
-                            name: "Chicken",
+                            name: "Mutton",
                             s: true,
                             selUn: true
                         }, {
@@ -5773,17 +5821,17 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                     ,
                                     "Cinnamon"], text: 'It is a mix of vegetables and spices, cooked in pure mustard oil, with no chemicals and preservatives.'
                             },
-                            id: 'curry sauce', name: 'Curry sauce', price: 250
+                            id: 'curry sauce', name: 'Curry sauce', price: 62
                         }],
                         commSoon: false,
-                        id: 'butter-paneer-curry',
-                        img: '../img/butter_paneer.jpg',
-                        name: 'Butter Paneer Curry',
-                        imgBanner: '../img/bannerAuthenticChicken.webp',
+                        id: 'fish-curry',
+                        img: '../img/fish_curry.jpg',
+                        name: 'Fish Curry',
+                        imgBanner: '../img/bannerfishCurry1.png',
                         initUnit: null,
-                        itemsOthers: [{ name: 'Amul butter 10g', price: 5 }, { name: 'Ginger garlic paste', price: 5 }],
+                        itemsOthers: [{ name: 'Amul butter 10g', price: 0 }, { name: 'Ginger garlic paste', price: 0 }],
                         netweight: 20,
-                        g: 'b',
+                        g: 'a',
                         profit: 50,
                         ratings: [{
                             ratings: 0,
@@ -5804,34 +5852,43 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                         }],
                         restPrice: 0,
                         offer: {
-                            off: "40",
-                           
+                            off: "20",
+                           sauce:'20',
                         },
                         review: [],
-                        unitUni: [{
+                        unitInit: [{
                             count: 1,
-                            price: 60,
+                            price: 160,
                             sm: true,
                             stock: 100,
-                            unitNum: "500",
-                            unitU: "g"
+                            unitNum: "",
+                            unitU: "Rui"
+                        },
+                        {
+                                  count: 1,
+                            price: 260,
+                            sm: true,
+                            stock: 100,
+                            unitNum: "",
+                            unitU: "Katal"
                         }, {
+                            unitU:'',
                             count: 1,
                             price: null,
                             sm: true,
                             stock: 100,
-                            unit: "no paneer",
+                            unit: "no fish",
                             unitNum: "0"
                         }],
-                        video: null,
-                        unitInit: 'g',
+                        video: 'https://www.youtube.com/embed/GT75H2Fk1_0',
+                        unitUni: 'g',
                     },
                     maxqt: [],
 
                 })
         
         }
-        //setAllItems()
+    //setAllItems()
         document.querySelector('html').addEventListener('click', (e) => {
             let bx2 = e.target.closest('.ct_slide_menu_acc')
 

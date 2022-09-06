@@ -17,6 +17,10 @@
         .ct_bx_slide_bx.active {
             right: 0px
         }
+             .ct_bx_info {
+            display: none;
+        }
+
 .ct_deliv_status_mob p {
     color: #535353;
     font-size: 13px;
@@ -20838,6 +20842,12 @@
                 return letter
             }
         }
+          if (getCookie('info_delivery_user') !== '') {
+
+        document.cookie = "info_delivery_user" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+
+
+                }
         if (getCookie('user') === '') {
             window.location.replace('/')
 

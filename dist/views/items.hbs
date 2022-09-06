@@ -13,7 +13,41 @@
         .ct_bx_ins_items.perm .inner span pr {
             margin: -2px 0 0 0px;
         }
-        
+           .ct_bx_slide_bx ul li.delivery_account_info a{color: red}
+        .delivery_account_info{
+                background: #fef9fa;
+    color: red}
+        .ct_field_small_size.delivery_account_info{
+                background: #fef9fa;
+    color: red;
+        }
+             .ct_bx_info {
+            display: none;
+        }
+.ct_bx_info {
+    width: 26px;
+    height: 24px;
+    z-index: 999999;
+    border-radius: 50%;
+    background-color: #ee2747;
+    padding: 2px;
+    color: white;
+    top: 11px;
+    position: absolute;
+}
+.ct_bx_slide_bx ul li.delivery_account_info{display: flex;}
+.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info ion-icon {
+    font-size: 15px;
+    margin-top: 0px;
+    display: block;
+}
+.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info{    position: relative;
+    width: 21px;
+    height: 19px;
+    margin-left: -10px;
+    transform: translate(20px, 0px);
+}
+   
 .for_otherItems.no_groc{display: none;}
         .ct_bx_download_btn_x:hover {
             box-shadow: 0 0 20px #d7d7d7;
@@ -10755,7 +10789,7 @@ if(window.screen.width<=620){
                     let priceMain = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText
                     priceMain = parseFloat(priceMain.split('₹')[1].split(',').join(''))
                     let pBase = bxA.childNodes[3].innerText.split('₹')[1]
-                    pBase = parseFloat(pBase) * qt
+                    pBase = parseFloat(pBase)
                     bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pBase.toLocaleString()
 
 
@@ -10829,13 +10863,20 @@ if(window.screen.width<=620){
                         }
                         span = parseFloat(span)
                         let newSp = (span / (placeQt1)) * countNumer
-                        selPM2 = newSp
+                       
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
                             if (cur.childNodes[1].childNodes[5].childNodes[3].tagName === 'DEL') {
                                 console.log(cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1], placeQt1, countNumer)
                                 let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1]
                                 delX = parseFloat(delX)
                                 delX = (delX / (placeQt1)) * countNumer
+                                let offX=document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
+                                offX=parseFloat(offX)
+                                newSp=delX-(delX*(offX/100))
+                             newSp=String(newSp)
+                            newSp = newSp.split('.')[0]
+                            newSp = parseFloat(newSp)
+ selPM2 = newSp
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
                                 cur.childNodes[1].childNodes[5].childNodes[3].innerText = '₹ ' + delX.toLocaleString()
                             } else {
@@ -11645,7 +11686,7 @@ if(window.screen.width<=620){
                             if (cur1.name === undefined) {
                                 if (cur1.price !== null) {
                                     cur1.price = parseFloat(cur1.price).toLocaleString()
-                                    let uNum = parseFloat(item.unitUni)
+                                    let uNum = parseFloat(item.unitInit[0].unitNum)
                                     let fUnn = `${cur1.unitNum}${cur1.unitU}`
                                     if (item.unitUni === '') {
                                         fUnn = item.fdInside[0].name + ` (${uNum})`
@@ -12030,7 +12071,9 @@ ${htmBtns}
                                         pr = pr - (pr * (offX / 100))
                                     }
                                 }
-                                pr = Math.round(pr)
+                                     pr=String(pr)
+                pr = pr.split('.')[0]
+                pr = parseFloat(pr)
                                 if (fstPurN) {
                                     if (cur.id !== 'spices') {
                                         tm2 += (pr * countNumber);
@@ -12044,8 +12087,7 @@ ${htmBtns}
 
                             };
                         });
-                        let maip
-
+                        let pr
                         if (item.unitInit !== null) {
 
 
@@ -12057,12 +12099,11 @@ ${htmBtns}
                             //         }
                             //     })
                             // }
-                            console.log(tm3, tm, tm2, '---------kai--------------------')
                             maip = tm2
                         } else {
                             maip = item.price
                         }
-                        console.log(maip, '---------kai--------------------')
+
                         maip = parseFloat(maip)
                         maip = maip
                         document.querySelector('.ct_bx_pf1390').innerText = pff
@@ -12071,17 +12112,19 @@ ${htmBtns}
                             //+ maip.toLocaleString()
                             document.querySelector('.mrp_ammount').style.display = 'none'
                             let ffp
-                            ffp = Math.round(maip)
+                         
+                
+                            ffp = maip
                             ffp = ffp.toLocaleString()
                             document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                                 cur.innerText = `₹ ${ffp}`
                             })
-                            document.querySelector('.ct_offer_box_cook2').style.display = 'block'
                             document.querySelectorAll('.ct_bx_price span').forEach(cur => {
                                 cur.innerText = ffp
                             })
 
                         } else {
+                            
                             document.querySelector('.ct_offer_box_cook2').style.display = 'none'
                             document.querySelector('.mrp_ammount').style.display = 'none'
                             price2 = maip.toLocaleString()
@@ -12679,7 +12722,11 @@ ${hmOTH}
                                             let offX = parseFloat(item.offer.sauce)
                                             let priceXoff = parseFloat(dt.price)
                                             priceXoff = priceXoff - (priceXoff * (offX / 100))
+                                            priceXoff=String(priceXoff)
+                priceXoff = priceXoff.split('.')[0]
+                priceXoff = parseFloat(priceXoff)
                                             priceXoff = priceXoff.toLocaleString()
+                                            
                                             let styleX = `style='font-size: 11px;margin: 2px 9px;'`
                                             if (window.screen.width <= 360) {
                                                 styleX = `style='font-size: 13px;margin: 3px 9px;'`
@@ -12792,7 +12839,9 @@ ${hmOTH}
                                     if (item.offer !== null && cm.id !== 'spices') {
                                         let off = parseFloat(item.offer.sauce)
                                         pr1 = pr1 - (pr1 * (off / 100))
-                                        pr1 = Math.round(pr1)
+                             pr1=String(pr1)
+                            pr1 = pr1.split('.')[0]
+                            pr1 = parseFloat(pr1)
 
                                     }
                                     totPermP += pr1
@@ -12803,8 +12852,9 @@ ${hmOTH}
                                     if (item.offer !== null && cm.id !== 'spices') {
                                         let off = parseFloat(item.offer.sauce)
                                         pr1 = pr1 - (pr1 * (off / 100))
-                                        pr1 = Math.round(pr1)
-
+                              pr1=String(pr1)
+                            pr1 = pr1.split('.')[0]
+                            pr1 = parseFloat(pr1)
                                     }
 
                                     totPermP += pr1
@@ -13081,7 +13131,9 @@ ${hmOTH}
                                                                     })
                                                                     let offX = parseFloat(item.offer.sauce)
                                                                     pr = pr - (pr * (offX / 100))
-                                                                    pr = Math.round(pr)
+                                                                                                  pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                                                     document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
                                                                         cuItm.innerText = '₹ ' + pr.toLocaleString()
                                                                     })
@@ -13233,7 +13285,9 @@ ${hmOTH}
                                         document.querySelectorAll('.mrp_ammount del').forEach(cur => {
                                             cur.innerText = '₹ ' + pr.toLocaleString()
                                         })
-                                        totAm = Math.round(totAm)
+                                         totAm=String(totAm)
+                totAm = totAm.split('.')[0]
+                totAm = parseFloat(totAm)
                                         // (totAm)
 
                                         document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
@@ -13426,7 +13480,14 @@ ${hmOTH}
         document.querySelector('html').style.overflowY = 'hidden'
         addLoadedItm()
 
+    if (getCookie('info_delivery_user') !== '') {
+            document.querySelector('.my_orders').classList.add('delivery_account_info')
+            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
+            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+
+        }
         if (getCookie('user') !== '') {
             let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
             let lengthX = allfds.length
@@ -13996,7 +14057,9 @@ ${hmOTH}
                     console.log(p)
                     let tot = (p / (i + 1)) * i
 
-                    tot = Math.round(tot)
+                    tot=String(tot)
+                tot = tot.split('.')[0]
+                tot = parseFloat(tot)
                     tot = tot.toLocaleString()
                     document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                         cur.innerText = '₹  ' + (tot)
@@ -14222,9 +14285,9 @@ ${hmOTH}
                 p = parseFloat(p)
                 console.log(p)
                 let tot = (p / (i - 1)) * i
-
-                tot = Math.round(tot)
-
+                tot=String(tot)
+                tot = tot.split('.')[0]
+                tot = parseFloat(tot)
                 tot = tot.toLocaleString()
                 document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                     cur.innerText = '₹  ' + (tot)
@@ -14639,7 +14702,9 @@ ${hmOTH}
                                             pr = pr - (pr * (offX / 100))
                                         }
                                     }
-                                    pr = Math.round(pr)
+                                                                pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                     priceN += pr
                                 }
                             })
@@ -14654,7 +14719,9 @@ ${hmOTH}
                                         pr = pr - (pr * (offX / 100))
                                     }
                                 }
-                                pr = Math.round(pr)
+                                                           pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                                 priceN += pr
                             }
 
@@ -14670,7 +14737,9 @@ ${hmOTH}
                                     pr = pr - (pr * (offX / 100))
                                 }
                             }
-                            pr = Math.round(pr)
+                            pr=String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                             priceN += pr
                         }
 
@@ -14687,7 +14756,7 @@ ${hmOTH}
                 let fdAll = JSON.parse(localStorage.getItem('foodsAdded'))
                 fdAll.forEach(cu => {
                     if (cu.id === itmDb.id) {
-                        priceN = cu.price.split('₹')[1]
+                        priceN = cu.price.split('₹')[1].split(',').join('')
                         priceN = parseFloat(priceN)
                     }
                 })
@@ -15487,10 +15556,6 @@ ${hmOTH}
         })
         btn2.addEventListener("click", () => {
             document.querySelector('.ct_bx_play').style.display = 'none'
-            if (document.querySelector('.ct_offer_box_cook2 span').innerText !== '') {
-                document.querySelector('.ct_offer_box_cook2').style.display = 'block'
-
-            }
             document.querySelector(".carousel-control-next").style.opacity = "1"
             document.querySelector(".carousel-control-next").style["pointer-events"] = "auto"
             document.querySelector(".carousel-control-prev").style.opacity = ".5"

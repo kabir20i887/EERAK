@@ -18,6 +18,58 @@
             visibility: hidden;
         }
 
+        .ct_bx_slide_bx ul li.delivery_account_info a {
+            color: red
+        }
+
+        .delivery_account_info {
+            background: #fef9fa;
+            color: red
+        }
+
+        .ct_field_small_size.delivery_account_info {
+            background: #fef9fa;
+            color: red;
+        }
+
+        .ct_bx_info {
+            display: none;
+        }
+
+        .delivery_account_info .ct_bx_info {
+            display: block;
+        }
+
+        .ct_bx_info {
+            width: 26px;
+            height: 24px;
+            z-index: 999999;
+            border-radius: 50%;
+            background-color: #ee2747;
+            padding: 2px;
+            color: white;
+            top: 11px;
+            position: absolute;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info {
+            display: flex;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info ion-icon {
+            font-size: 15px;
+            margin-top: 0px;
+            display: block;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info {
+            position: relative;
+            width: 21px;
+            height: 19px;
+            margin-left: -10px;
+            transform: translate(20px, 0px);
+        }
+
         .ct_nav_erak ul .cart_nav span {
             display: none;
         }
@@ -1463,7 +1515,8 @@
             }
 
             .price_am_cart_fd2 del {
-                font-size: 11px;display: none;
+                font-size: 11px;
+                display: none;
             }
 
             .xclose_icon ion-icon {
@@ -3357,7 +3410,7 @@
                 margin-bottom: 65px;
             }
 
-          
+
 
             .bx_evt_cart_item::-webkit-scrollbar {
                 visibility: hidden;
@@ -9679,7 +9732,7 @@
                 margin-bottom: 65px;
             }
 
-        
+
             .price_am_cart_fd2 del {
                 display: none;
             }
@@ -12094,7 +12147,7 @@
                     let isKrb = rmItm.parentElement.parentElement.parentElement.classList.value.includes('for_kr_business')
                     // return
                     h4 = rmItm.parentElement.parentElement.childNodes[7].innerText
-                   
+
                     let allfd2 = JSON.parse(localStorage.getItem('grocFoodListCart'))
 
 
@@ -12355,7 +12408,7 @@
                 if (off !== null) {
                     let delAm = tPr2
                     off = parseFloat(off)
-                    console.log(price,'pricemain------------------------------------------------')
+                    console.log(price, 'pricemain------------------------------------------------')
                     tPr = tPr
 
                     tPr = Math.round(tPr)
@@ -12545,8 +12598,9 @@
                                             pr = pr - (pr * (offX / 100))
                                         }
                                     }
-
-                                    pr = Math.round(pr)
+                                    pr = String(pr)
+                                    pr = pr.split('.')[0]
+                                    pr = parseFloat(pr)
                                     toTPriceFdin += pr
                                 }
                             })
@@ -12672,7 +12726,7 @@
                         repl = parseFloat(repl)
                         sel2 = repl
                         console.log(othP, posOthelem, selB, toTPriceFdin, pp12, repl, '222222')
- repl2 = repl
+                        repl2 = repl
                         repl2 += toTPriceFdin2
                         repl2 *= qt
                         repl2 += pp12
@@ -12682,8 +12736,8 @@
                         repl += toTPriceFdin
                         repl *= qt
                         repl += pp12
-                       
-                    
+
+
                         let baseMain = ``
                         if (mainuNIT.split('—')[0] !== undefined) {
                             baseMain = mainuNIT.split('—')[0]
@@ -13132,6 +13186,14 @@
 
 
         }
+        if (getCookie('info_delivery_user') !== '') {
+            document.querySelector('.my_orders').classList.add('delivery_account_info')
+            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+
+            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+
+        }
         if (getCookie('user') !== '') {
 
             let getuser = JSON.parse(getCookie('user'))
@@ -13296,8 +13358,8 @@
                                                                 if (cuItm.added) {
                                                                     let stk = parseFloat(cu.stock)
                                                                     stk--
-                                                                    if(stk<=0){
-                                                                        stk=0
+                                                                    if (stk <= 0) {
+                                                                        stk = 0
                                                                     }
                                                                     cu.stock = stk
                                                                 }
@@ -13309,9 +13371,9 @@
                                                         if (fUnn === selBase) {
                                                             let stk = parseFloat(cu.stock)
                                                             stk -= qt
-                                                            if(stk<=0){
-                                                                        stk=0
-                                                                    }
+                                                            if (stk <= 0) {
+                                                                stk = 0
+                                                            }
                                                             cu.stock = stk
                                                         }
                                                     }
@@ -13320,9 +13382,9 @@
                                                     if (cu.price === null) {
                                                         let stk = parseFloat(cu.stock)
                                                         stk -= qt
-                                                        if(stk<=0){
-                                                                        stk=0
-                                                                    }
+                                                        if (stk <= 0) {
+                                                            stk = 0
+                                                        }
                                                         cu.stock = stk
                                                     }
                                                 }
@@ -13585,7 +13647,7 @@
                                     }
                                     arrOrders.push(obj)
                                 }
-                               
+
                             })
 
                             let dmain_time = document.querySelector('.ct_deliv_box.active p').innerText
@@ -13662,6 +13724,13 @@
                             } else {
                                 document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${timeX} . Please use the OTP that has been sent to you for verifying this delivery.`
                             }
+                            document.querySelector('.my_orders').classList.add('delivery_account_info')
+                            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+
+                                                    document.querySelector('.delivery_account_info .ct_bx_info').style.display='block'
+                            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display='block'
+
+                            document.cookie = "info_delivery_user" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
 
                             document.querySelector('.for_erak_cart').style.display = 'block'
                             let conf
@@ -13693,7 +13762,7 @@
                                         })
                                     })
                                     if (hasKrick) {
-                                    
+
                                         localStorage.setItem('foodsAdded', JSON.stringify(Allfds))
                                         let pDetails = JSON.parse(getCookie('user'))
                                         pDetails.fstPurchase = false
@@ -13814,7 +13883,7 @@
 
             if (parsedData.admin === true) {
 
-                  document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
+                document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
                 if (window.screen.width > 1200) {
                     if (document.querySelector('.mai_ul') != null) {
                         document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')
@@ -13988,20 +14057,23 @@
                         return
                     }
                     // grocery items selection box -> changing the price 
-                    qtcart.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].childNodes[5].childNodes.forEach(cu11=>{
-                        if(cu11.tagName==='LI'){
-                        let prbaseM = cu11.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
-                        prbaseM = parseFloat(prbaseM)
-                        cu11.childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i - 1)) * i
+                    qtcart.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].childNodes[5].childNodes.forEach(cu11 => {
+                        if (cu11.tagName === 'LI') {
+                            if (cu11.childNodes[1].childNodes[3] !== undefined) {
+                                let prbaseM = cu11.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
+                                prbaseM = parseFloat(prbaseM)
+                                cu11.childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i - 1)) * i
+                            }
                         }
                     })
                     // grocery items options box -> changing the price 
                     if (qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'notselected') {
                         let prbaseM = qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         prbaseM = parseFloat(prbaseM)
-                        qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i - 1)) * i
+                        //(prbaseM / (i + 1)) * i
+                        qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + prbaseM
                     }
-        
+
                     qtcart.parentElement.childNodes[3].value = i
                     let qt = parseFloat(qtcart.parentElement.childNodes[3].value)
 
@@ -14093,7 +14165,7 @@
                     console.log(qtcart2.parentElement.parentElement.parentElement.parentElement.childNodes, 'jioo')
                     // return
                     let id = qtcart2.parentElement.parentElement.parentElement.parentElement.childNodes[7].innerText
-            
+
                     let idM
                     qtcart2.parentElement.parentElement.parentElement.parentElement.childNodes.forEach(cur => {
                         if (cur.classList !== undefined) {
@@ -14108,25 +14180,28 @@
 
                     let i = parseFloat(qtcart2.parentElement.childNodes[3].value)
                     i--
-                   // grocery items selection box -> changing the price 
-                    qtcart2.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].childNodes[5].childNodes.forEach(cu11=>{
-                        if(cu11.tagName==='LI'){
-                        let prbaseM = cu11.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
-                        prbaseM = parseFloat(prbaseM)
-                        cu11.childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i + 1)) * i
+                    // grocery items selection box -> changing the price 
+                    qtcart2.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].childNodes[5].childNodes.forEach(cu11 => {
+                        if (cu11.tagName === 'LI') {
+                            if (cu11.childNodes[1].childNodes[3] !== undefined) {
+                                let prbaseM = cu11.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
+                                prbaseM = parseFloat(prbaseM)
+                                cu11.childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i + 1)) * i
+                            }
                         }
                     })
                     // grocery items options box -> changing the price 
                     if (qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'notselected') {
                         let prbaseM = qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         prbaseM = parseFloat(prbaseM)
-                        qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + (prbaseM / (i + 1)) * i
+                        //(prbaseM / (i + 1)) * i
+                        qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + prbaseM
                     }
 
                     let off
                     let p
                     let p2
-                   
+
                     JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur => {
                         console.log(cur)
                         let itm = cur
@@ -14907,12 +14982,13 @@
                                 if (elem.permGroup !== undefined) {
 
                                     elem.permGroup.forEach(em => {
-                                        
+
                                         if (em.name.split('').join('').toLowerCase() === nameA) {
 
                                             let pr = parseFloat(elm.price)
                                             if (elem.unitInit[0].unitNum !== null) {
                                                 pr = parseFloat(elm.price) * posEm
+                                                console.log(pr, '..................................------------------------------...............................................xxxxxx')
                                             }
                                             totInside2 += pr
 
@@ -14922,9 +14998,13 @@
 
                                                     let offX = parseFloat(itm.offer.sauce)
                                                     pr = pr - (pr * (offX / 100))
+                                                    console.log(pr, '..................................------------------------------...............................................xxxxxx')
+
                                                 }
                                             }
-                                            pr = Math.round(pr)
+                                            pr = String(pr)
+                                            pr = pr.split('.')[0]
+                                            pr = parseFloat(pr)
                                             em.price = "₹ " + pr
                                             totInside += pr
                                         }
@@ -14934,7 +15014,7 @@
                             })
                             let arrPermA = []
                             elem.permGroup.forEach(cu => {
-                                itm.fdInside.forEach(cu1 => {                                  
+                                itm.fdInside.forEach(cu1 => {
                                     if (cu.name.toLowerCase().split(' ').join('') === cu1.name.toLowerCase().split(' ').join('')) {
                                         let obj = { name: cu.name, price: "₹ " + (cu1.price * posEm), eprice: cu.eprice, id: cu1.id }
                                         arrPermA.push(obj)
@@ -14966,15 +15046,16 @@
                                     })
                                 })
                             }
-                            let pricewithoutOff = parseFloat(elem.selU2) + totInside2
+                            let pricewithoutOff = 0
+                            console.log(parseFloat(elem.selU2), totInside, priceMainOth, '---------------------------------------------------')
                             price = parseFloat(elem.selU2) + totInside
                             price *= parseFloat(elem.qt)
-                            pricewithoutOff *= parseFloat(elem.qt)
+                            // pricewithoutOff *= parseFloat(elem.qt)
                             price += priceMainOth
                             elem.price = "₹" + (price)
                             elem.img = itm.img
                             ifd.push(elem)
-
+                            console.log(price, '---------------------------------------------------')
                             localStorage.setItem('foodsAdded', JSON.stringify(ifd))
 
                             let netweight = itm.netweight
@@ -15140,7 +15221,7 @@
                                     }
 
                                 }
-                             
+
                                 let Qty_units = baseSelect.split(' ')[0]
                                 if (baseSelect.split(' ').includes('k')) {
                                     Qty_units = baseSelect.split('k')[0]
@@ -15160,7 +15241,8 @@
                                     htmUNITS = `     <span>${elem.baseMain}</span>
                                 <ar>${elem.baseU}</ar>`
                                 } else {
-                                    let priceSelU2 = parseFloat(elem.selU2) * parseFloat(elem.qt)
+                                    // no quantity will be multiplied
+                                    let priceSelU2 = parseFloat(elem.selU2)
                                     priceSelU2 = priceSelU2.toLocaleString()
                                     let prBox = `<ar>₹${priceSelU2}</ar>`
                                     if (parseFloat(elem.selU2) === 0) {
@@ -15414,16 +15496,33 @@
                             cur.style['pointer-events'] = 'auto'
                             cur.style.opacity = '1'
                         })
-                        JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur11=>{
-if(cur11.dTime==='24 hour'){
-                    document.querySelector('.deliv_xs1').classList.add('notavailble')
+                        let dN = moment().format('hh:mm A');
+                        let hours = parseFloat(moment().format("HH:mm").split(':')[0])
+                        let pm_or_am = moment().format('hh:mm A').split(' ')[1]
 
-}else{
-                        document.querySelector('.deliv_xs1').classList.remove('notavailble')
+                        console.log(hours >= 12, pm_or_am === 'PM', hours >= 18, pm_or_am === 'PM')
 
-}
+
+                        JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur11 => {
+                            if (cur11.dTime === '24 hour') {
+                                document.querySelector('.deliv_xs1').classList.add('notavailble')
+
+                            } else {
+                                document.querySelector('.deliv_xs1').classList.remove('notavailble')
+
+                            }
                         })
-                  
+                        // 9pm to 9am
+                        if (hours <= 9 && pm_or_am === 'AM') {
+                            // from 12am to 9am
+                            document.querySelector('.deliv_xs1').classList.add('notavailble')
+
+                        } else if (hours >= 21 && pm_or_am === 'PM') {
+                            // from 9pm to 12am
+                            document.querySelector('.deliv_xs1').classList.add('notavailble')
+
+                        }
+
                     } else if (html2 === null) {
                         document.querySelectorAll('.for_ek_fd_cart_load').forEach(cur => {
                             cur.style.display = 'none'
@@ -15499,22 +15598,24 @@ if(cur11.dTime==='24 hour'){
                     }
                 }
                 if (getCookie('user') !== '') {
-             
-                        itmDb.fdInside.forEach(cur1 => {
-                            if (cur1.price !== undefined) {
-                                let pr = parseFloat(cur1.price)
-                                if (itmDb.offer !== null && cur1.id !== 'spices') {
-                                    if (itmDb.offer.sauce !== null) {
-                                        let offX = parseFloat(itmDb.offer.sauce)
-                                        pr = pr - (pr * (offX / 100))
-                                    }
-                                }
-                                pr = Math.round(pr)
-                                priceN += pr
-                            }
 
-                        })
-                    
+                    itmDb.fdInside.forEach(cur1 => {
+                        if (cur1.price !== undefined) {
+                            let pr = parseFloat(cur1.price)
+                            if (itmDb.offer !== null && cur1.id !== 'spices') {
+                                if (itmDb.offer.sauce !== null) {
+                                    let offX = parseFloat(itmDb.offer.sauce)
+                                    pr = pr - (pr * (offX / 100))
+                                }
+                            }
+                            pr = String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
+                            priceN += pr
+                        }
+
+                    })
+
                 } else {
                     itmDb.fdInside.forEach(cur1 => {
                         if (cur1.price !== undefined) {
@@ -15525,7 +15626,9 @@ if(cur11.dTime==='24 hour'){
                                     pr = pr - (pr * (offX / 100))
                                 }
                             }
-                            pr = Math.round(pr)
+                            pr = String(pr)
+                            pr = pr.split('.')[0]
+                            pr = parseFloat(pr)
                             priceN += pr
                         }
 
