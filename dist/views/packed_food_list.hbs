@@ -4938,13 +4938,14 @@
         if (localStorage.getItem('foodsAdded') === null) {
             localStorage.setItem('foodsAdded', '[]')
         }
-            if (getCookie('info_delivery_user') !== '') {
+             if (getCookie('info_delivery_user') !== '') {
+        if (window.screen.width <= 1200) {
             document.querySelector('.my_orders').classList.add('delivery_account_info')
             document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
             document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
             document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
-
+         }
         }
         if (getCookie('user') !== '') {
             let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
