@@ -595,26 +595,26 @@ io.on('connection', (sock) => {
         });
     })
     sock.on('canceled_delivery', (name, phone, amount) => {
-            // fst.query({
-            //     authorization: authfst,
-            //     route: 'dlt',
-            //     sender_id: 'krickG',
-            //     message: 145390,
-            //     variables_values: `${name}|(canceled by customer)|${phone}|${amount}|`,
-            //     numbers: 9233054806,
-            //     flash: "0",
-            // });
+            fst.query({
+                authorization: authfst,
+                route: 'dlt',
+                sender_id: 'krickG',
+                message: 145390,
+                variables_values: `${name}|(canceled by customer)|${phone}|${amount}|`,
+                numbers: 9233054806,
+                flash: "0",
+            });
     
-            // fst.headers({
-            //     "cache-control": "no-cache"
-            // });
+            fst.headers({
+                "cache-control": "no-cache"
+            });
     
     
-            // fst.end(function (res) {
-            //     if (res.error) console.log(res.error);
+            fst.end(function (res) {
+                if (res.error) console.log(res.error);
     
-            //     console.log(res.body);
-            // });
+                console.log(res.body);
+            });
         })
     sock.on('sendAdmmessage', (name, phone, amount) => {
     //     fst.query({

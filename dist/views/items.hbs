@@ -10803,7 +10803,7 @@
                     selP = parseFloat(document.querySelector('.seleted_unit_price').innerText)
                     let priceMain = document.querySelectorAll('.ct_bx_total_ammount span')[1].innerText
                     priceMain = parseFloat(priceMain.split('₹')[1].split(',').join(''))
-                    let pBase = bxA.childNodes[3].innerText.split('₹')[1]
+                    let pBase = bxA.childNodes[3].innerText.split('₹')[1].split(',').join('')
                     pBase = parseFloat(pBase)
                     bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pBase.toLocaleString()
 
@@ -10886,27 +10886,26 @@
                     document.querySelectorAll('.ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
                         let span = 0
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
-                            span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1]
+                            span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1].split(',').join('')
                         }
                         span = parseFloat(span)
                         let newSp = (span / (placeQt1)) * countNumer
 
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
                             if (cur.childNodes[1].childNodes[5].childNodes[3].tagName === 'DEL') {
-                                console.log(cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1], placeQt1, countNumer)
-                                let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1]
+                                let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1].split(',').join('')
                                 delX = parseFloat(delX)
                                 delX = (delX / (placeQt1)) * countNumer
                                 let offX = document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
                                 offX = parseFloat(offX)
+                                newSp = (span / (placeQt1)) * countNumer
+
                                 newSp = delX - (delX * (offX / 100))
                                 newSp = String(newSp)
 
                                 newSp = newSp.split('.')[0]
                                 newSp = parseFloat(newSp)
-                                newSp = (span / (placeQt1)) * countNumer
                                 selPM2 = newSp
-                                console.log(cur.childNodes[1].childNodes[5].childNodes, '.....................................................')
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
                                 cur.childNodes[1].childNodes[5].childNodes[3].innerText = '₹ ' + delX.toLocaleString()
                             } else {
@@ -11097,26 +11096,33 @@
                     }
                     let selPM2 = document.querySelector('.seleted_unit_price2').innerText
 
-                    document.querySelectorAll('.ct_x_fd_dt_itm .ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
-
-                        let span = cur.childNodes[1].childNodes[3].innerText.split('₹')[1]
+                    document.querySelectorAll('.ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
+                        let span=''
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
-                            span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1]
+                            span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1].split(',').join('')
+                        }else{
+                            span = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         }
                         span = parseFloat(span)
                         let newSp = (span / (placeQt1)) * countNumer
-                        selPM2 = newSp
 
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
 
                             if (cur.childNodes[1].childNodes[5].childNodes[3].tagName === 'DEL') {
-                                let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1]
+               let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1].split(',').join('')
                                 delX = parseFloat(delX)
                                 delX = (delX / (placeQt1)) * countNumer
-                                if (document.querySelector('.seleted_unit_price2') !== null) {
-                                    document.querySelector('.seleted_unit_price2').innerText = selPM2
+                                let offX = document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
+                                offX = parseFloat(offX)
+                                newSp = (span / (placeQt1)) * countNumer
 
-                                } cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
+                                newSp = delX - (delX * (offX / 100))
+                                newSp = String(newSp)
+
+                                newSp = newSp.split('.')[0]
+                                newSp = parseFloat(newSp)
+                                selPM2 = newSp
+                                cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
                                 cur.childNodes[1].childNodes[5].childNodes[3].innerText = '₹ ' + delX.toLocaleString()
                             } else {
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
@@ -14168,7 +14174,7 @@ ${hmOTH}
                     if (document.querySelector('.ct_bx_inside_base') !== null) {
                         if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
 
-                            let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1]
+                            let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
                             bsPr = parseFloat(bsPr)
                             bsPr = (bsPr / (i + 1)) * i
                             document.querySelectorAll('.unit_fds').forEach(cur => cur.innerText = '₹' + bsPr)
@@ -14290,7 +14296,7 @@ ${hmOTH}
                 qtekfd.parentElement.childNodes[3].value = i
                 if (document.querySelector('.ct_bx_inside_base') !== null) {
                     if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
-                        let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1]
+                        let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
                         bsPr = parseFloat(bsPr)
                         bsPr = bsPr * i
                         console.log(bsPr)

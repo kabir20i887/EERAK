@@ -11735,7 +11735,6 @@
     <script>
         var socket = io()
         document.querySelector('.yt-loader').style.position = 'absolute'
-        //search bar
 
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
@@ -12742,7 +12741,7 @@
                         if (mainuNIT.split('—')[0] !== undefined) {
                             baseMain = mainuNIT.split('—')[0]
                         }
-                        let pBase = unitPriceN.innerText.split('₹')[1]
+                        let pBase = unitPriceN.innerText.split('₹')[1].split(',').join('')
                         console.log(pBase, bxA.childNodes[1].innerText)
                         pBase = parseFloat(pBase) * qt
                         if (bxA.childNodes[9] !== undefined) {
@@ -13187,13 +13186,13 @@
 
         }
         if (getCookie('info_delivery_user') !== '') {
-        if (window.screen.width <= 1200) {
-            document.querySelector('.my_orders').classList.add('delivery_account_info')
-            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+            if (window.screen.width <= 1200) {
+                document.querySelector('.my_orders').classList.add('delivery_account_info')
+                document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
-            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
-            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
-         }
+                document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+                document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+            }
         }
         if (getCookie('user') !== '') {
 
@@ -13203,7 +13202,7 @@
             let phonec = parseFloat(getuser.ct)
             let address = getuser.ad
 
-            document.querySelector('.for_cart_checkout').addEventListener('click', () => {
+            document.querySelector('.for_cart_checkout').addEventListener('click', async () => {
                 setTimeout(() => {
                     let secret
                     let priceBox = []
@@ -13236,7 +13235,9 @@
                     socket.emit('sendAdmmessage', namefull, phonec, tot)
 
                     socket.emit('newOrderClient', phonec, namefull, tot)
-                    socket.on('newOrderClient2', (unique) => {
+                    socket.on('newOrderClient2',async (unique) => {
+                                     let dbCollection_deliv_pr = db.collection("delivery_price")
+                        let res_deliv_pr = await dbCollection_deliv_pr.get()
                         secret = unique
                         var header = {
                             "alg": "HS256",
@@ -13274,7 +13275,7 @@
                             }
                         }
                         console.log(fd, 'c9000a9')
-                        fd.forEach(cur => {
+                        fd.forEach(async (cur) => {
                             let itm = cur
                             let name = itm.id
                             let off = itm.offer
@@ -13482,6 +13483,13 @@
 
                         let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
                         let totAm = []
+                        let deliv_price =0
+                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                                deliv_price =  res_deliv_pr.docs[0].data().hour_1
+                            }
+                        deliv_price = parseFloat(deliv_price)
+
+                        totAm.push(deliv_price)
                         let arrOrders = []
                         foodsarr.forEach(cur => {
                             totAm.push(cur.price)
@@ -13534,7 +13542,10 @@
 
 
                         const addOrder = async () => {
+                                         let dbCollection_deliv_pr = db.collection("delivery_price")
+                        let res_deliv_pr = await dbCollection_deliv_pr.get()
                             let dbCollection = db.collection("orders")
+
                             document.querySelector('.orderId').innerText = hash
 
                             document.querySelector('.nOp').innerText = secret
@@ -13651,6 +13662,12 @@
 
                             })
 
+                            let priceDeliv =0
+                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                                priceDeliv =  res_deliv_pr.docs[0].data().hour_1
+                            }
+                            priceDeliv = parseFloat(priceDeliv)
+
                             let dmain_time = document.querySelector('.ct_deliv_box.active p').innerText
                             let obj = {
                                 time: { date: datNum, time: time, mon: mon },
@@ -13662,8 +13679,12 @@
                                 canceled: false,
                                 isDelivered: false,
                                 op: secret,
+                                delivery_amount: priceDeliv,
 
                             }
+
+
+                            // this obj1 contains -> user ordered item data
                             let obj1 = {
                                 isDelivered: false,
                                 isTom: delivTommo,
@@ -13725,15 +13746,15 @@
                             } else {
                                 document.querySelector('.for_erak_cart p').innerHTML = `Hello ${user.n} ${user.ln} your order has been successfully placed,your order wil be delivered within ${timeX} . Please use the OTP that has been sent to you for verifying this delivery.`
                             }
-                    if (window.screen.width <= 1200) {
-                            document.querySelector('.my_orders').classList.add('delivery_account_info')
-                            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+                            if (window.screen.width <= 1200) {
+                                document.querySelector('.my_orders').classList.add('delivery_account_info')
+                                document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
-                            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
-                            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+                                document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+                                document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
 
-                            document.cookie = "info_delivery_user" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
-                    }
+                                document.cookie = "info_delivery_user" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
+                            }
                             document.querySelector('.for_erak_cart').style.display = 'block'
                             let conf
                             console.log(arratOrders)
@@ -13976,7 +13997,9 @@
                 (navigator.maxTouchPoints > 0) ||
                 (navigator.msMaxTouchPoints > 0);
         }
-        const addBill = () => {
+        const addBill = async () => {
+              let dbCollection_deliv_pr = db.collection("delivery_price")
+            let res_deliv_pr = await dbCollection_deliv_pr.get()
             let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
             let totalAmount = []
             if (allfd !== null) {
@@ -14007,7 +14030,16 @@
             })
             console.log(totalAmount, 'ama')
             console.log(totalAmount, 'new111')
+          
+          let priceDeliv =0
+                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                                priceDeliv =  res_deliv_pr.docs[0].data().hour_1
+                            }
+            priceDeliv = parseFloat(priceDeliv)
 
+
+            priceDeliv = parseFloat(priceDeliv)
+            am += priceDeliv
             am = Math.round(am)
             if (am !== 0 && !isNaN(am)) {
 
@@ -15738,6 +15770,7 @@
         document.querySelector('html').addEventListener('click', (e) => {
             let deliv_set = e.target.closest('.ct_deliv_box ')
             if (deliv_set !== null) {
+
                 document.querySelector('.cl_xmma').remove()
                 deliv_set.childNodes[1].innerHTML = '<div class="cl_xmma"></div>'
                 document.querySelectorAll('.ct_deliv_box').forEach(cur => {
@@ -15746,6 +15779,7 @@
                 deliv_set.classList.remove('unactive')
 
                 deliv_set.classList.add('active')
+                addBill()
             }
         })
 

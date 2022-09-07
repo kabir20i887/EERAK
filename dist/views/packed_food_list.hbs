@@ -5762,7 +5762,7 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
 
             let dbCollection = db.collection(`items`)
             let res = await dbCollection.get()
-            dbCollection.doc('fish-curry').set({
+            dbCollection.doc('mutton-curry').set({
                           group: 'a',
                     item: {
                         about: ['Curry sauce, Seasoning Mix, Chicken, Ginger garlic paste, Butter', 'Please select your required item from those below options.Curry sauce is already added.'],
@@ -5825,10 +5825,10 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                             id: 'curry sauce', name: 'Curry sauce', price: 62
                         }],
                         commSoon: false,
-                        id: 'fish-curry',
-                        img: '../img/fish_curry.jpg',
-                        name: 'Fish Curry',
-                        imgBanner: '../img/bannerfishCurry1.png',
+                        id: 'mutton-curry',
+                        img: '../img/mutton_curry.jpg',
+                        name: 'Masala Mutton Curry',
+                        imgBanner: '../img/masalaMuttonBanner.png',
                         initUnit: null,
                         itemsOthers: [{ name: 'Amul butter 10g', price: 0 }, { name: 'Ginger garlic paste', price: 0 }],
                         netweight: 20,
@@ -5859,29 +5859,29 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                         review: [],
                         unitInit: [{
                             count: 1,
-                            price: 160,
+                            price: 8,
                             sm: true,
                             stock: 100,
-                            unitNum: "",
-                            unitU: "Rui"
+                            unitNum: "500",
+                            unitU: "g"
                         },
                         {
                                   count: 1,
                             price: 260,
                             sm: true,
-                            stock: 100,
-                            unitNum: "",
-                            unitU: "Katal"
+                            stock: 4,
+                            unitNum: "1",
+                            unitU: "kg"
                         }, {
                             unitU:'',
                             count: 1,
                             price: null,
                             sm: true,
                             stock: 100,
-                            unit: "no fish",
+                            unit: "no mutton",
                             unitNum: "0"
                         }],
-                        video: 'https://www.youtube.com/embed/GT75H2Fk1_0',
+                        video: 'https://www.youtube.com/embed/S41QFqNtDN4',
                         unitUni: 'g',
                     },
                     maxqt: [],

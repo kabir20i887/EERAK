@@ -256,10 +256,12 @@
                 margin-top: 0;
                 margin-left: 0;
             }
-.ct_bx_panel_main {
-    overflow: scroll;
-}
-       .ct_bx_panel_main {
+
+            .ct_bx_panel_main {
+                overflow: scroll;
+            }
+
+            .ct_bx_panel_main {
                 background-color: white;
             }
 
@@ -512,18 +514,18 @@
             font-size: 18px;
         }
 
-.ct_bx_stock_message {
-    display: none;
-    margin: 20px;
-    box-shadow: 0 0 4px rgb(0 0 0 / 14%);
-    right: 20px;
-                background-color: rgb(255 238 238);
+        .ct_bx_stock_message {
+            display: none;
+            margin: 20px;
+            box-shadow: 0 0 4px rgb(0 0 0 / 14%);
+            right: 20px;
+            background-color: rgb(255 238 238);
 
-    padding: 13px 12px 9px 30px;
-    font-size: 23px;
-    z-index: 999999999;
-    color: rgb(41, 39, 39);
-}
+            padding: 13px 12px 9px 30px;
+            font-size: 23px;
+            z-index: 999999999;
+            color: rgb(41, 39, 39);
+        }
 
         .ct_bx_flex {
             display: flex;
@@ -1303,17 +1305,20 @@
             .ct_nav_mobile_adm .ct_bx_inner {
                 width: 46%;
             }
+
             .ct_bx_stock_message {
-    padding: 13px 12px 9px 12px;}
-    
-    .ct_bx_stock_message p {
-    margin: 14px 0 0 10px;
-    font-size: 13px;
-}
-.ct_bx_remove_msg_stk {
-    margin-top: -10px;
-}
-     
+                padding: 13px 12px 9px 12px;
+            }
+
+            .ct_bx_stock_message p {
+                margin: 14px 0 0 10px;
+                font-size: 13px;
+            }
+
+            .ct_bx_remove_msg_stk {
+                margin-top: -10px;
+            }
+
         }
 
         @media only screen and (max-width:400px) {
@@ -1723,7 +1728,7 @@
         <source src="../img//whatsapp.mp3" type="audio/mp3">
     </audio>
 
- 
+
     <div class="ct_error_stock for_adm succ">
         <div class="ct_inner_msg">
 
@@ -1834,14 +1839,14 @@
                 <div class="button">Submit!</div>
             </div>
         </div> --}}
-           <div class="ct_bx_stock_message">
-<ion-icon class="succ_stk" name="alert-circle-outline"></ion-icon>
-    <p>A order has been canceled.Reload the page ! </p>
-        <div class="ct_bx_remove_msg_stk">
-            <ion-icon name="close-outline"></ion-icon>
+        <div class="ct_bx_stock_message">
+            <ion-icon class="succ_stk" name="alert-circle-outline"></ion-icon>
+            <p>A order has been canceled.Reload the page ! </p>
+            <div class="ct_bx_remove_msg_stk">
+                <ion-icon name="close-outline"></ion-icon>
 
+            </div>
         </div>
-    </div>
         <div class="ct_x_users">
             <div class="ct_all_users">
                 <div class="nav_user_data">
@@ -2025,7 +2030,7 @@
             return null
         }
     };
-  
+
 
     document.querySelector('html').addEventListener('click', (e) => {
         let selectUn = e.target.closest('.ct_bx_selected_units_groc')
@@ -2560,9 +2565,9 @@
             let name = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText
             let amount = e.target.closest('.accept_order').parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[5].innerText.split('₹')[1]
             console.log(name, phoneNumber, amount)
- const setUserx = async () => {
-         let orderId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[5].innerText
-            let userId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[7].innerText
+            const setUserx = async () => {
+                let orderId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[5].innerText
+                let userId = e.target.closest('.accept_order').parentElement.parentElement.childNodes[1].childNodes[7].innerText
                 let dbCollection = db.collection(`users`)
                 let res = await dbCollection.get()
 
@@ -2581,7 +2586,7 @@
 
                         objD.myOrders.forEach((cur, ind) => {
                             if (cur.id === orderId) {
-                                cur.confirmed=true
+                                cur.confirmed = true
                             }
                         })
                         dbCollection.doc(cur1.id).set({
@@ -2601,11 +2606,11 @@
                     }
                 })
             }
-setUserx()
+            setUserx()
             const setUser = async () => {
                 let dbCollection = db.collection(`orders`)
                 let res = await dbCollection.get()
-            socket.emit('deliveryOnwaySms', name, phoneNumber, amount)
+                socket.emit('deliveryOnwaySms', name, phoneNumber, amount)
 
                 res.docs.forEach(cur => {
                     let obj1 = cur.data().obj
@@ -2664,7 +2669,7 @@ setUserx()
                     } else if (cur.classList.value.split(' ').includes('ct_bx_btns_order')) {
                         cur.style.display = 'none'
 
-                    } 
+                    }
                 }
             })
         }
@@ -2922,9 +2927,9 @@ setUserx()
         let smOrder = []
         let res = await dbCollection.orderBy('createdAt', 'desc').get()
         socket.on('oDcancel', (i) => {
-document.querySelector('.ct_bx_stock_message').style.display='flex'
+            document.querySelector('.ct_bx_stock_message').style.display = 'flex'
         })
-      
+
         res.docs.forEach(cur => {
             let user = cur.data().obj.user
             let time = `${cur.data().obj.time.date} ${cur.data().obj.time.mon}, ${cur.data().obj.time.time.split(':')[0]}:${cur.data().obj.time.time.split(':')[1]} ${cur.data().obj.time.time.split(' ')[1].toLowerCase()}`
@@ -2935,6 +2940,7 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
 
             let objD = cur.data().obj
             let orders = cur.data().obj.order
+            let delivery_amount = cur.data().obj.delivery_amount
             let d = new Date()
             let hr = parseFloat(time.split(',')[1].split(':')[0])
             let min = parseFloat(time.split(',')[1].split(':')[1])
@@ -3068,6 +3074,7 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
                             price = parseFloat(res.price.split(',').join(''))
 
                         }
+                    amount += parseFloat(delivery_amount)
                     amount += price
                     console.log(priceH, 'pricesss')
                     if (res.unit === undefined) {
@@ -3190,141 +3197,141 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
 
                 let curDate = `${splitedD[1]}-${splitedD[0]}`
                 console.log(date2num, cNumD, cMon, totMon)
-               //   if (monthofexp < cMon || fullExpdate === curDate) {
-               //    const delOrders = async () => {
-               //        let dbCollection = db.collection(`orders`)
-               //        let res = await dbCollection.get()
-               //        res.docs.forEach(doc => {
-               //            let el = doc.data()
-               //            let id = el.idM
-               //            if (id === cur.data().idM) {
-               //                dbCollection.doc(doc.id).delete().then(() => {
-               //                })
-               //            }
+                //   if (monthofexp < cMon || fullExpdate === curDate) {
+                //    const delOrders = async () => {
+                //        let dbCollection = db.collection(`orders`)
+                //        let res = await dbCollection.get()
+                //        res.docs.forEach(doc => {
+                //            let el = doc.data()
+                //            let id = el.idM
+                //            if (id === cur.data().idM) {
+                //                dbCollection.doc(doc.id).delete().then(() => {
+                //                })
+                //            }
 
-               //        })
-               //        if (res.docs.length === 0) {
-               //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
-               //        }
-               //    }
-               //    delOrders()
+                //        })
+                //        if (res.docs.length === 0) {
+                //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
+                //        }
+                //    }
+                //    delOrders()
 
-               //    html = null
-               //} else if (date2num < cNumD && cMon === totMon) {
-               //    const delOrders = async () => {
-               //        let dbCollection = db.collection(`orders`)
-               //        let res = await dbCollection.get()
-               //        res.docs.forEach(doc => {
-               //            let el = doc.data()
-               //            let id = el.idM
-               //            if (id === cur.data().idM) {
-               //                dbCollection.doc(doc.id).delete().then(() => {
-               //                })
-               //            }
+                //    html = null
+                //} else if (date2num < cNumD && cMon === totMon) {
+                //    const delOrders = async () => {
+                //        let dbCollection = db.collection(`orders`)
+                //        let res = await dbCollection.get()
+                //        res.docs.forEach(doc => {
+                //            let el = doc.data()
+                //            let id = el.idM
+                //            if (id === cur.data().idM) {
+                //                dbCollection.doc(doc.id).delete().then(() => {
+                //                })
+                //            }
 
-               //        })
-               //        if (res.docs.length === 0) {
-               //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
-               //        }
-               //    }
-               //    delOrders()
+                //        })
+                //        if (res.docs.length === 0) {
+                //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
+                //        }
+                //    }
+                //    delOrders()
 
-               //    html = null
+                //    html = null
 
-               //} 
-             
-                    let html12
-                    let elemStat
-                    let elemStat2
+                //} 
 
-                    let nHtm
+                let html12
+                let elemStat
+                let elemStat2
 
-                    let cDt
-                    console.log(minFinal, rlHour, 'timeTake')
-                    if (minFinal <= 55 && rlHour < 1) {
-                        nHtm = `<div class="ct_bx_if_new">
+                let nHtm
+
+                let cDt
+                console.log(minFinal, rlHour, 'timeTake')
+                if (minFinal <= 55 && rlHour < 1) {
+                    nHtm = `<div class="ct_bx_if_new">
                                 
                             </div>`
-                    } else {
-                        nHtm = ''
-                    }
-                    if (objD.isDelivered) {
-                        elemStat2 = ` <div class="ct_bx_flex delivery_bx">
+                } else {
+                    nHtm = ''
+                }
+                if (objD.isDelivered) {
+                    elemStat2 = ` <div class="ct_bx_flex delivery_bx">
                         <span>Delivery Status:-</span>
                         <p class="pending_order" style="display: none;">Pending.</p>
                         <p class="success_order">Delivered.</p>
 
                     </div>`
-                        elemStat = `
+                    elemStat = `
                         <div class="col success_order">
                         <p>Delivered</p>
                     </div>
                         `
-                    } else {
-                        elemStat = `
+                } else {
+                    elemStat = `
                         <div class="col pending_order">
                         <p>Pending</p>
                     </div>
                         `
-                        elemStat2 = ` <div class="ct_bx_flex delivery_bx">
+                    elemStat2 = ` <div class="ct_bx_flex delivery_bx">
                         <span>Delivery Status:-</span>
                         <p class="pending_order">Pending.</p>
                         <p class="success_order" style="display: none;">Delivered.</p>
 
                     </div>
                         `
+                }
+                if (objD.canceled) {
+                    let nm
+                    if (objD.canceled.by !== undefined) {
+                        nm = objD.canceled.by
+                    } else {
+                        nm = 'This delivery is canceled by the customer.'
+
                     }
-                    if (objD.canceled) {
-                        let nm
-                        if (objD.canceled.by !== undefined) {
-                            nm = objD.canceled.by
-                        } else {
-                            nm = 'This delivery is canceled by the customer.'
+                    html12 = `                                            <button class="accept_order" style='opacity:.2;pointer-events:none'>Accept</button>`
 
-                        }
-                        html12 = `                                            <button class="accept_order" style='opacity:.2;pointer-events:none'>Accept</button>`
-
-                        nHtm = `<div style='background-color:#d60303' class="ct_bx_if_new">
+                    nHtm = `<div style='background-color:#d60303' class="ct_bx_if_new">
                                 
                         </div>`
-                        cDt = `      <div class="ct_bx_canceled_order_b_cus">
+                    cDt = `      <div class="ct_bx_canceled_order_b_cus">
                         <ion-icon name="alert-outline"></ion-icon>
                         <dr>${nm}</dr>
                     </div>`
-                        elemStat = ` <div class="col pending_order">
+                    elemStat = ` <div class="col pending_order">
                         <p>Canceled</p>
                         </div>
                     `
-                        elemStat2 = `
+                    elemStat2 = `
                     `
-                    } else {
-                        cDt = ''
+                } else {
+                    cDt = ''
 
-                    }
-                    let bHtml
-                    let classD
-                    let htmlCancel = ``
-                    if (document.querySelector('.delivery_body') !== null) {
-                        classD = 'for_deliv'
-                    } else {
-                        classD = ''
+                }
+                let bHtml
+                let classD
+                let htmlCancel = ``
+                if (document.querySelector('.delivery_body') !== null) {
+                    classD = 'for_deliv'
+                } else {
+                    classD = ''
 
-                    }
-                    let html13 = ``
+                }
+                let html13 = ``
 
-                    let accep1 = false
-                    if (objD.isAccepted) {
+                let accep1 = false
+                if (objD.isAccepted) {
 
-                        let person = JSON.parse(getCookie('user'))
-                        console.log(objD.isAccepted.id, person.rootAutyh)
-                        if (objD.isAccepted.id === person.rootAutyh) {
-                            document.querySelectorAll('.ct_bx_btns_order button:nth-of-type(1)').forEach(cur => {
-                                cur.remove()
-                            })
-                            nHtm = `<div style='background-color:purple' class="ct_bx_if_new">
+                    let person = JSON.parse(getCookie('user'))
+                    console.log(objD.isAccepted.id, person.rootAutyh)
+                    if (objD.isAccepted.id === person.rootAutyh) {
+                        document.querySelectorAll('.ct_bx_btns_order button:nth-of-type(1)').forEach(cur => {
+                            cur.remove()
+                        })
+                        nHtm = `<div style='background-color:purple' class="ct_bx_if_new">
                             
                             </div>`
-                            let forAC = `           <div style='display:block' class="ct_bx_verifcation_order">
+                        let forAC = `           <div style='display:block' class="ct_bx_verifcation_order">
                             <h4>OTP verification</h4>
                       
                          <p class='hidden'>${objD.op}</p>
@@ -3343,45 +3350,45 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
                          </div>
      
                          </div>`
-                            gAccept = true
+                        gAccept = true
 
-                        }
+                    }
+                    htmlCancel = `            <button class="cancel_order" style='display:none'>Cancel</button>
+                        `
+                    html12 = `                                            <button style='display:none' class="${classD} accept_order" style='opacity:.2;pointer-events:none'>Accept</button>
+`
+                    accep12 = true
+                    accep1 = true
+                } else if (!objD.canceled) {
+
+                    html12 = `                                            <button class="${classD} accept_order">Accept</button>
+`
+                    htmlCancel = `            <button class="cancel_order">Cancel</button>
+`
+
+                } else {
+                    if (objD.canceled.by !== undefined) {
                         htmlCancel = `            <button class="cancel_order" style='display:none'>Cancel</button>
-                        `
-                        html12 = `                                            <button style='display:none' class="${classD} accept_order" style='opacity:.2;pointer-events:none'>Accept</button>
-`
-                        accep12 = true
-                        accep1 = true
-                    } else if (!objD.canceled) {
-
-                        html12 = `                                            <button class="${classD} accept_order">Accept</button>
-`
-                        htmlCancel = `            <button class="cancel_order">Cancel</button>
-`
-
-                    } else {
-                        if (objD.canceled.by !== undefined) {
-                            htmlCancel = `            <button class="cancel_order" style='display:none'>Cancel</button>
                             `
-                            html12 = `                                            <button style='display:inline-block' class="${classD} accept_order" >Accept</button>
+                        html12 = `                                            <button style='display:inline-block' class="${classD} accept_order" >Accept</button>
                     `
-                        }
                     }
-                    let styleX = ``
+                }
+                let styleX = ``
 
-                    if (accep1) {
-                        htmlCancel = `            <button class="cancel_order">Cancel</button>
+                if (accep1) {
+                    htmlCancel = `            <button class="cancel_order">Cancel</button>
                         `
-                        html12 = `                                            <button class="${classD} accept_order" style='display:none'>Accept</button>
+                    html12 = `                                            <button class="${classD} accept_order" style='display:none'>Accept</button>
                         `
-                        styleX = 'style=display:block'
-                    } else {
-                        html13 = ''
-                    }
+                    styleX = 'style=display:block'
+                } else {
+                    html13 = ''
+                }
 
-                    let styleEscV = ``
+                let styleEscV = ``
 
-                    let escV = `        <div class='ct_inner_data_inside' ${styleEscV}>
+                let escV = `        <div class='ct_inner_data_inside' ${styleEscV}>
                 <h3>Order information.</h3>
                     <div class="ct_bx_information">
                         <div class="ct_bx_flex person_name_bx">
@@ -3453,7 +3460,7 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
                 </div>
                 ${html13}  
             </div>`
-                    let forAC = `           <div class="ct_bx_verifcation_order" ${styleX}>
+                let forAC = `           <div class="ct_bx_verifcation_order" ${styleX}>
                     <h4>OTP verification</h4>
                  
                     <p class='hidden'>${objD.op}</p>
@@ -3473,17 +3480,17 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
 
                     </div>`
 
-                    if (objD.isDelivered === false) {
+                if (objD.isDelivered === false) {
 
-                        bHtml = `  <button class="${classD} cancel_order">Cancel</button>`
+                    bHtml = `  <button class="${classD} cancel_order">Cancel</button>`
 
-                        let nACC
-                        if (!accep1) {
-                            nACC = 'no_accepted_order'
-                        } else {
-                            nACC = ``
-                        }
-                        html = `<li class="orders unselect_order ${nACC}">
+                    let nACC
+                    if (!accep1) {
+                        nACC = 'no_accepted_order'
+                    } else {
+                        nACC = ``
+                    }
+                    html = `<li class="orders unselect_order ${nACC}">
                         <div class="ct_bx_item_foods">
                             <div class="container">
                                 <div class="row">
@@ -3513,23 +3520,23 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
                         </div>
                     </li>`
 
-                        if (accep1) {
-                            acceptedArr.push(html)
-                        } else if (objD.canceled) {
-                            canceledArr.push(html)
+                    if (accep1) {
+                        acceptedArr.push(html)
+                    } else if (objD.canceled) {
+                        canceledArr.push(html)
 
-                        } else {
-                            nonacceptedArr.push(html)
-
-                        }
-
-                        console.log(acceptedArr.join(''))
-                        delivered = false
                     } else {
-                        nHtm = `<div style='background-color:green' class="ct_bx_if_new">
+                        nonacceptedArr.push(html)
+
+                    }
+
+                    console.log(acceptedArr.join(''))
+                    delivered = false
+                } else {
+                    nHtm = `<div style='background-color:green' class="ct_bx_if_new">
                                 
                         </div>`
-                        html = `<li class="orders unselect_order">
+                    html = `<li class="orders unselect_order">
                         <div class="ct_bx_item_foods">
                             <div class="container">
                                 <div class="row">
@@ -3562,13 +3569,13 @@ document.querySelector('.ct_bx_stock_message').style.display='flex'
                         </div>
                     </li>`
 
-                        smOrder.push(html)
-                    }
+                    smOrder.push(html)
+                }
 
 
 
 
-                
+
                 if (html !== null) {
                     let wholeArr = acceptedArr.concat(canceledArr)
                     wholeArr = wholeArr.concat(nonacceptedArr)
