@@ -256,7 +256,9 @@
                 margin-top: 0;
                 margin-left: 0;
             }
-
+.ct_bx_panel_main {
+    overflow: scroll;
+}
             .ct_bx_panel_main {
                 background-color: white;
             }
@@ -1817,7 +1819,7 @@
 
     <div class="ct_bx_panel_main">
         <h3 class="order_h3">Manage And Recive Orders</h3>
-        <div class="ct_bx_set_delivery_time">
+        {{!-- <div class="ct_bx_set_delivery_time">
             <h2>Set delivery time for all the items.</h2>
             <div class="ct_flex_time_bx">
                 <div class="ct_hr_bx">
@@ -1830,7 +1832,7 @@
                 </div>
                 <div class="button">Submit!</div>
             </div>
-        </div>
+        </div> --}}
         <div class="ct_x_users">
             <div class="ct_all_users">
                 <div class="nav_user_data">
@@ -3643,102 +3645,102 @@ setUserx()
 
     loadOrders()
     let totalGroupsId = [1, 2, 3]
-    document.querySelector('.ct_bx_set_delivery_time .button').addEventListener('click', () => {
-        if (document.querySelectorAll('.ct_hr_bx input')[1].value === '') { document.querySelectorAll('.ct_hr_bx input')[1].value = 0 }
-        if (document.querySelectorAll('.ct_hr_bx input')[0].value === '') { document.querySelectorAll('.ct_hr_bx input')[0].value = 0 }
-        let hour = document.querySelectorAll('.ct_hr_bx input')[0].value + ' hour'
-        let min = document.querySelectorAll('.ct_hr_bx input')[1].value + ' minute'
-        let hourNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[0].value)
-        let minNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[1].value)
-        let dTime = ``
-        if (minNum !== 0) {
-            if (hourNum !== 0) {
-                dTime = hour + ' ' + min
-            } else {
-                dTime = min
-            }
-        } else {
-            dTime = hour
-        }
-        if (hourNum !== 0 || minNum !== 0) {
-            const setAllItems = async () => {
+   //document.querySelector('.ct_bx_set_delivery_time .button').addEventListener('click', () => {
+   //    if (document.querySelectorAll('.ct_hr_bx input')[1].value === '') { document.querySelectorAll('.ct_hr_bx input')[1].value = 0 }
+   //    if (document.querySelectorAll('.ct_hr_bx input')[0].value === '') { document.querySelectorAll('.ct_hr_bx input')[0].value = 0 }
+   //    let hour = document.querySelectorAll('.ct_hr_bx input')[0].value + ' hour'
+   //    let min = document.querySelectorAll('.ct_hr_bx input')[1].value + ' minute'
+   //    let hourNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[0].value)
+   //    let minNum = parseFloat(document.querySelectorAll('.ct_hr_bx input')[1].value)
+   //    let dTime = ``
+   //    if (minNum !== 0) {
+   //        if (hourNum !== 0) {
+   //            dTime = hour + ' ' + min
+   //        } else {
+   //            dTime = min
+   //        }
+   //    } else {
+   //        dTime = hour
+   //    }
+   //    if (hourNum !== 0 || minNum !== 0) {
+   //        const setAllItems = async () => {
 
-                let dbCollection = db.collection(`items`)
-                let res = await dbCollection.get()
-                socket.emit('dTimeChanged', (dTime))
-                confirm('sucessfully updated')
-                res.docs.forEach(cur => {
-                    let sucess = 0
-                    let err = 0
-                    let data = cur.data().item
-                    if (minNum !== 0) {
-                        if (hourNum !== 0) {
-                            data.deliveryTime = hour + ' ' + min
-                        } else {
-                            data.deliveryTime = min
+   //            let dbCollection = db.collection(`items`)
+   //            let res = await dbCollection.get()
+   //            socket.emit('dTimeChanged', (dTime))
+   //            confirm('sucessfully updated')
+   //            res.docs.forEach(cur => {
+   //                let sucess = 0
+   //                let err = 0
+   //                let data = cur.data().item
+   //                if (minNum !== 0) {
+   //                    if (hourNum !== 0) {
+   //                        data.deliveryTime = hour + ' ' + min
+   //                    } else {
+   //                        data.deliveryTime = min
 
-                        }
+   //                    }
 
-                    } else {
-                        data.deliveryTime = hour
-                    }
-                    if (data.profit === undefined) {
-                        data.profit = `20`
-                    }
-                    if (data.imgBanner === undefined) {
-                        data.imgBanner = null
-                    }
-                    if (data.cookingTime === undefined) {
-                        data.cookingTime = `10 minute`
-                    }
-                    if (data.offer === undefined) {
-                        data.offer = 20
-                    }
-                    if (data.commSoon === undefined) {
-                        data.commSoon = false
-                    }
-                    if (cur.data().maxqt === undefined) {
-                        cur.data().maxqt = []
-                    }
-                    if (data.video === undefined) {
-                        data.video = null
-                    }
-                    dbCollection.doc(cur.id).set({
-                        group: cur.data().group,
-                        item: {
-                            about: data.about,
-                            cook: data.cook,
-                            cookingTime: data.cookingTime,
-                            deliveryTime: data.deliveryTime,
-                            fdInside: data.fdInside,
-                            commSoon: data.comSoon,
-                            id: data.id,
-                            img: data.img,
-                            name: data.name,
-                            imgBanner: data.imgBanner,
-                            initUnit: data.initUnit,
-                            itemsOthers: data.itemsOthers,
-                            netweight: data.netweight,
-                            g: data.g,
-                            profit: data.profit,
-                            ratings: data.ratings,
-                            restPrice: data.restPrice,
-                            offer: data.offer,
-                            review: data.review,
-                            unitUni: data.unitUni,
-                            video: data.video,
-                            unitInit: data.unitInit,
-                        },
-                        maxqt: cur.data().maxqt,
+   //                } else {
+   //                    data.deliveryTime = hour
+   //                }
+   //                if (data.profit === undefined) {
+   //                    data.profit = `20`
+   //                }
+   //                if (data.imgBanner === undefined) {
+   //                    data.imgBanner = null
+   //                }
+   //                if (data.cookingTime === undefined) {
+   //                    data.cookingTime = `10 minute`
+   //                }
+   //                if (data.offer === undefined) {
+   //                    data.offer = 20
+   //                }
+   //                if (data.commSoon === undefined) {
+   //                    data.commSoon = false
+   //                }
+   //                if (cur.data().maxqt === undefined) {
+   //                    cur.data().maxqt = []
+   //                }
+   //                if (data.video === undefined) {
+   //                    data.video = null
+   //                }
+   //                dbCollection.doc(cur.id).set({
+   //                    group: cur.data().group,
+   //                    item: {
+   //                        about: data.about,
+   //                        cook: data.cook,
+   //                        cookingTime: data.cookingTime,
+   //                        deliveryTime: data.deliveryTime,
+   //                        fdInside: data.fdInside,
+   //                        commSoon: data.comSoon,
+   //                        id: data.id,
+   //                        img: data.img,
+   //                        name: data.name,
+   //                        imgBanner: data.imgBanner,
+   //                        initUnit: data.initUnit,
+   //                        itemsOthers: data.itemsOthers,
+   //                        netweight: data.netweight,
+   //                        g: data.g,
+   //                        profit: data.profit,
+   //                        ratings: data.ratings,
+   //                        restPrice: data.restPrice,
+   //                        offer: data.offer,
+   //                        review: data.review,
+   //                        unitUni: data.unitUni,
+   //                        video: data.video,
+   //                        unitInit: data.unitInit,
+   //                    },
+   //                    maxqt: cur.data().maxqt,
 
-                    })
-                })
+   //                })
+   //            })
 
-            }
-            setAllItems()
-        }
+   //        }
+   //        setAllItems()
+   //    }
 
-    })
+   //})
 
 </script>
 

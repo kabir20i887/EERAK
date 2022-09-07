@@ -13,42 +13,59 @@
         .ct_bx_ins_items.perm .inner span pr {
             margin: -2px 0 0 0px;
         }
-           .ct_bx_slide_bx ul li.delivery_account_info a{color: red}
-        .delivery_account_info{
-                background: #fef9fa;
-    color: red}
-        .ct_field_small_size.delivery_account_info{
-                background: #fef9fa;
-    color: red;
+
+        .ct_bx_slide_bx ul li.delivery_account_info a {
+            color: red
         }
-             .ct_bx_info {
+
+        .delivery_account_info {
+            background: #fef9fa;
+            color: red
+        }
+
+        .ct_field_small_size.delivery_account_info {
+            background: #fef9fa;
+            color: red;
+        }
+
+        .ct_bx_info {
             display: none;
         }
-.ct_bx_info {
-    width: 26px;
-    height: 24px;
-    z-index: 999999;
-    border-radius: 50%;
-    background-color: #ee2747;
-    padding: 2px;
-    color: white;
-    top: 11px;
-    position: absolute;
-}
-.ct_bx_slide_bx ul li.delivery_account_info{display: flex;}
-.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info ion-icon {
-    font-size: 15px;
-    margin-top: 0px;
-    display: block;
-}
-.ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info{    position: relative;
-    width: 21px;
-    height: 19px;
-    margin-left: -10px;
-    transform: translate(20px, 0px);
-}
-   
-.for_otherItems.no_groc{display: none;}
+
+        .ct_bx_info {
+            width: 26px;
+            height: 24px;
+            z-index: 999999;
+            border-radius: 50%;
+            background-color: #ee2747;
+            padding: 2px;
+            color: white;
+            top: 11px;
+            position: absolute;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info {
+            display: flex;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info ion-icon {
+            font-size: 15px;
+            margin-top: 0px;
+            display: block;
+        }
+
+        .ct_bx_slide_bx ul li.delivery_account_info .ct_bx_info {
+            position: relative;
+            width: 21px;
+            height: 19px;
+            margin-left: -10px;
+            transform: translate(20px, 0px);
+        }
+
+        .for_otherItems.no_groc {
+            display: none;
+        }
+
         .ct_bx_download_btn_x:hover {
             box-shadow: 0 0 20px #d7d7d7;
             border-radius: 7px;
@@ -7011,10 +7028,11 @@
             .ct_bx_play {
                 font-size: 36px;
             }
-.contianer_items_inside {
-    width: 95%;
-    display: block;
-}
+
+            .contianer_items_inside {
+                width: 95%;
+                display: block;
+            }
 
             .ct_bx_inside_base {
                 left: 0;
@@ -10272,8 +10290,8 @@
             }
             if (closeReviews !== null) {
                 document.querySelector('.ct_bx_btn_show_rev').style.display = 'flex'
-document.querySelector('.for_submit_form_rev').style.display='none'
-document.querySelector('.closeReview ').style.display='none'
+                document.querySelector('.for_submit_form_rev').style.display = 'none'
+                document.querySelector('.closeReview ').style.display = 'none'
 
                 document.querySelectorAll('.openBoxrev').forEach(cur => {
                     cur.classList.remove('openBoxrev')
@@ -10757,10 +10775,6 @@ document.querySelector('.closeReview ').style.display='none'
 
                     }
                 }
-if(window.screen.width<=620){
-    window.scrollTo({top: 0, behavior: 'smooth'});
-
-}
                 let countNumer = bxA.childNodes[7].innerText
                 countNumer = parseFloat(countNumer)
                 unit = bxA.childNodes[1].innerText
@@ -10832,9 +10846,15 @@ if(window.screen.width<=620){
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
-                            bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + unitNum
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                                cu11.innerHTML=mUnit2 + ' &mdash; ' + unitNum
+                            })
+                            //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + unitNum
                         } else {
-                            bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + textBoxa
+                             document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                                cu11.innerHTML=mUnit2 + ' &mdash; ' + textBoxa
+                            })
+                           // bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + textBoxa
                         }
                     } else {
                         if (bxA.parentElement.parentElement.parentElement.classList.value.includes('for_reg_base')) {
@@ -10843,9 +10863,15 @@ if(window.screen.width<=620){
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
-                            bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = unitNum
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                                cu11.innerHTML=unitNum
+                            })
+                            //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = unitNum
                         } else {
-                            bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = textBoxa
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                                cu11.innerHTML=textBoxa
+                            })
+                            //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = textBoxa
                         }
                     }
                     unit = unit
@@ -10856,30 +10882,34 @@ if(window.screen.width<=620){
 
                     selU1 = parseFloat(selU1)
                     selU1 = (selU1 / (placeQt1)) * placeQt
-                    document.querySelectorAll('.ct_x_fd_dt_itm .ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
+                    document.querySelectorAll('.ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
                         let span = 0
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
                             span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1]
                         }
                         span = parseFloat(span)
                         let newSp = (span / (placeQt1)) * countNumer
-                       
+
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
                             if (cur.childNodes[1].childNodes[5].childNodes[3].tagName === 'DEL') {
                                 console.log(cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1], placeQt1, countNumer)
                                 let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1]
                                 delX = parseFloat(delX)
                                 delX = (delX / (placeQt1)) * countNumer
-                                let offX=document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
-                                offX=parseFloat(offX)
-                                newSp=delX-(delX*(offX/100))
-                             newSp=String(newSp)
-                            newSp = newSp.split('.')[0]
-                            newSp = parseFloat(newSp)
- selPM2 = newSp
+                                let offX = document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
+                                offX = parseFloat(offX)
+                                newSp = delX - (delX * (offX / 100))
+                                newSp = String(newSp)
+
+                                newSp = newSp.split('.')[0]
+                                newSp = parseFloat(newSp)
+                                newSp = (span / (placeQt1)) * countNumer
+                                selPM2 = newSp
+                                console.log(cur.childNodes[1].childNodes[5].childNodes,'.....................................................')
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
                                 cur.childNodes[1].childNodes[5].childNodes[3].innerText = '₹ ' + delX.toLocaleString()
                             } else {
+                                
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
 
                             }
@@ -11021,7 +11051,10 @@ if(window.screen.width<=620){
 
                 } else {
                     let stockT = false
-                    bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = `not selected`
+                     document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                                cu11.innerText=`not selected`
+                            })
+                    //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = `not selected`
                     let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
@@ -11682,7 +11715,7 @@ if(window.screen.width<=620){
                             if (parseFloat(cur1.stock) === 0) {
                                 classStkno = 'no_stock'
                             }
-                            console.log(cur1.name,'........................................')
+                            console.log(cur1.name, '........................................')
                             if (cur1.name === undefined) {
                                 if (cur1.price !== null) {
                                     cur1.price = parseFloat(cur1.price).toLocaleString()
@@ -11817,106 +11850,106 @@ ${htmBtns}
 
                     if (item.fdInside.length > 1 && item.offer === null) {
                         let fd = JSON.parse(localStorage.getItem('foodsAdded'))
-                   
-                            let freePur = false
-                            if (getCookie('user') !== '') {
+
+                        let freePur = false
+                        if (getCookie('user') !== '') {
 
 
-                                if (JSON.parse(getCookie('user')).fstPurchase) {
+                            if (JSON.parse(getCookie('user')).fstPurchase) {
 
-                                    let fdIns = item.fdInside
-                                    let fdP = 0
-                                    fdIns.forEach(cur => {
-                                        console.log(cur.name, 'currysauce', 'kaiiis')
-                                        if (cur.price !== undefined && cur.id !== 'spices') {
-                                            let p = parseFloat(cur.price)
-                                            fdP += p
+                                let fdIns = item.fdInside
+                                let fdP = 0
+                                fdIns.forEach(cur => {
+                                    console.log(cur.name, 'currysauce', 'kaiiis')
+                                    if (cur.price !== undefined && cur.id !== 'spices') {
+                                        let p = parseFloat(cur.price)
+                                        fdP += p
+                                    }
+
+                                })
+                                let id = false
+
+                                if (fd.length > 0) {
+                                    fd.forEach(cu => {
+                                        if (cu.id === window.location.pathname.split('/')[2]
+                                        ) {
+                                            cu.permGroup.forEach(m => {
+                                                if (m.price === 'Free') {
+                                                    freePur = true
+                                                }
+                                            })
                                         }
 
                                     })
-                                    let id = false
-                                    
-                                    if (fd.length > 0) {
-                                        fd.forEach(cu => {
-                                            if (cu.id === window.location.pathname.split('/')[2]
-                                            ) {
-                                                cu.permGroup.forEach(m => {
-                                                    if (m.price === 'Free') {
-                                                        freePur = true
-                                                    }
-                                                })
-                                            }
+                                } else {
+                                    if (!id) {
+                                        freePur = true
 
-                                        })
-                                    } else {
-                                        if (!id) {
-                                            freePur = true
-
-                                        }
-
-                                    }
-                                    if (freePur) {
-                                        price2 -= fdP
-                                        deductedPrice = fdP
-                                    } else {
-                                        if (id === window.location.pathname.split('/')[2]
-
-                                        ) {
-                                            price2 -= fdP
-                                            deductedPrice = fdP
-                                        }
                                     }
 
                                 }
-                            } else {
-                                if (item.offer == null) {
-                                    let fdIns = item.fdInside
-                                    let fdP = 0
-                                    fdIns.forEach(cur => {
-                                        console.log(cur.name, 'currysauce', 'kaiiis')
-                                        if (cur.price !== undefined && cur.name.split(' ').join('').toLowerCase() !== 'currysauce') {
-                                            let p = parseFloat(cur.price)
-                                            fdP += p
-                                        }
+                                if (freePur) {
+                                    price2 -= fdP
+                                    deductedPrice = fdP
+                                } else {
+                                    if (id === window.location.pathname.split('/')[2]
 
-                                    })
-                                    let id = false
-                                    
-                                    if (fd.length > 0) {
-                                        fd.forEach(cu => {
-                                            if (cu.id === window.location.pathname.split('/')[2]
-                                            ) {
-                                                cu.permGroup.forEach(m => {
-                                                    if (m.price === 'Free') {
-                                                        freePur = true
-                                                    }
-                                                })
-                                            }
-
-                                        })
-                                    } else {
-                                        if (!id) {
-                                            freePur = true
-
-                                        }
-
-                                    }
-                                    if (freePur) {
+                                    ) {
                                         price2 -= fdP
                                         deductedPrice = fdP
-                                    } else {
-                                        if (id === window.location.pathname.split('/')[2]
-
-                                        ) {
-                                            price2 -= fdP
-                                            deductedPrice = fdP
-                                        }
                                     }
-
                                 }
 
                             }
-                        
+                        } else {
+                            if (item.offer == null) {
+                                let fdIns = item.fdInside
+                                let fdP = 0
+                                fdIns.forEach(cur => {
+                                    console.log(cur.name, 'currysauce', 'kaiiis')
+                                    if (cur.price !== undefined && cur.name.split(' ').join('').toLowerCase() !== 'currysauce') {
+                                        let p = parseFloat(cur.price)
+                                        fdP += p
+                                    }
+
+                                })
+                                let id = false
+
+                                if (fd.length > 0) {
+                                    fd.forEach(cu => {
+                                        if (cu.id === window.location.pathname.split('/')[2]
+                                        ) {
+                                            cu.permGroup.forEach(m => {
+                                                if (m.price === 'Free') {
+                                                    freePur = true
+                                                }
+                                            })
+                                        }
+
+                                    })
+                                } else {
+                                    if (!id) {
+                                        freePur = true
+
+                                    }
+
+                                }
+                                if (freePur) {
+                                    price2 -= fdP
+                                    deductedPrice = fdP
+                                } else {
+                                    if (id === window.location.pathname.split('/')[2]
+
+                                    ) {
+                                        price2 -= fdP
+                                        deductedPrice = fdP
+                                    }
+                                }
+
+                            }
+
+                        }
+
 
 
                     }
@@ -12071,9 +12104,9 @@ ${htmBtns}
                                         pr = pr - (pr * (offX / 100))
                                     }
                                 }
-                                     pr=String(pr)
-                pr = pr.split('.')[0]
-                pr = parseFloat(pr)
+                                pr = String(pr)
+                                pr = pr.split('.')[0]
+                                pr = parseFloat(pr)
                                 if (fstPurN) {
                                     if (cur.id !== 'spices') {
                                         tm2 += (pr * countNumber);
@@ -12112,8 +12145,8 @@ ${htmBtns}
                             //+ maip.toLocaleString()
                             document.querySelector('.mrp_ammount').style.display = 'none'
                             let ffp
-                         
-                
+
+
                             ffp = maip
                             ffp = ffp.toLocaleString()
                             document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
@@ -12124,7 +12157,7 @@ ${htmBtns}
                             })
 
                         } else {
-                            
+
                             document.querySelector('.ct_offer_box_cook2').style.display = 'none'
                             document.querySelector('.mrp_ammount').style.display = 'none'
                             price2 = maip.toLocaleString()
@@ -12422,14 +12455,14 @@ ${htmBtns}
                                 </li>`
                                 return htmlM
                             })
-                            let ifgroceries=1
-                            if(item.itemsOthers!==null){
-                             ifgroceries=item.itemsOthers[0].price
+                            let ifgroceries = 1
+                            if (item.itemsOthers !== null) {
+                                ifgroceries = item.itemsOthers[0].price
                             }
-                            ifgroceries=parseFloat(ifgroceries)
-                            let nogroceries=''
-                            if(ifgroceries===0){
-                                nogroceries='no_groc'
+                            ifgroceries = parseFloat(ifgroceries)
+                            let nogroceries = ''
+                            if (ifgroceries === 0) {
+                                nogroceries = 'no_groc'
                             }
                             document.querySelectorAll('.ct_bx_what_erak_foods ul').forEach(cur => { cur.innerHTML = itmAbout.join('') })
                             let styleBase = ``
@@ -12638,7 +12671,7 @@ ${hmOTH}
                                 let fd = JSON.parse(localStorage.getItem('foodsAdded'))
 
                                 let id = false
-                              
+
                                 if (fd !== null) {
                                     fd.forEach(cu => {
                                         if (cu.id === window.location.pathname.split('/')[2]
@@ -12669,7 +12702,7 @@ ${hmOTH}
                                 }
                                 let firstPurchase = false
                                 priceBox = ` <span> ₹ ${dt.price} </span>`
-                        
+
                                 let stylenoprice = ''
                                 if (dt.name.split(' ').join('').toLowerCase() === 'currysauce') {
                                     priceBox = ` <span> ₹ ${dt.price} </span>
@@ -12722,11 +12755,11 @@ ${hmOTH}
                                             let offX = parseFloat(item.offer.sauce)
                                             let priceXoff = parseFloat(dt.price)
                                             priceXoff = priceXoff - (priceXoff * (offX / 100))
-                                            priceXoff=String(priceXoff)
-                priceXoff = priceXoff.split('.')[0]
-                priceXoff = parseFloat(priceXoff)
+                                            priceXoff = String(priceXoff)
+                                            priceXoff = priceXoff.split('.')[0]
+                                            priceXoff = parseFloat(priceXoff)
                                             priceXoff = priceXoff.toLocaleString()
-                                            
+
                                             let styleX = `style='font-size: 11px;margin: 2px 9px;'`
                                             if (window.screen.width <= 360) {
                                                 styleX = `style='font-size: 13px;margin: 3px 9px;'`
@@ -12738,9 +12771,9 @@ ${hmOTH}
                                                     `
                                         }
                                     }
-                                    let displayStyle=' display: flex'
-                                    if ( dt.id === 'spices') {
-                                    displayStyle=' display: none'
+                                    let displayStyle = ' display: flex'
+                                    if (dt.id === 'spices') {
+                                        displayStyle = ' display: none'
                                     }
                                     ht = ` <div class="ct_bx_ins_items perm ${namePerm} itemsSelected" style='align-items: center;
                                    ${displayStyle};${styleX1}'>
@@ -12829,7 +12862,7 @@ ${hmOTH}
                         posOthelem2 += 1
                         let fstPur = false
                         let totPermP = 0
-                       
+
                         console.log(item.fdInside, '9999999999999999999999999ssidgfdfffffffffffffff')
 
                         item.fdInside.forEach(cm => {
@@ -12839,9 +12872,9 @@ ${hmOTH}
                                     if (item.offer !== null && cm.id !== 'spices') {
                                         let off = parseFloat(item.offer.sauce)
                                         pr1 = pr1 - (pr1 * (off / 100))
-                             pr1=String(pr1)
-                            pr1 = pr1.split('.')[0]
-                            pr1 = parseFloat(pr1)
+                                        pr1 = String(pr1)
+                                        pr1 = pr1.split('.')[0]
+                                        pr1 = parseFloat(pr1)
 
                                     }
                                     totPermP += pr1
@@ -12852,9 +12885,9 @@ ${hmOTH}
                                     if (item.offer !== null && cm.id !== 'spices') {
                                         let off = parseFloat(item.offer.sauce)
                                         pr1 = pr1 - (pr1 * (off / 100))
-                              pr1=String(pr1)
-                            pr1 = pr1.split('.')[0]
-                            pr1 = parseFloat(pr1)
+                                        pr1 = String(pr1)
+                                        pr1 = pr1.split('.')[0]
+                                        pr1 = parseFloat(pr1)
                                     }
 
                                     totPermP += pr1
@@ -12880,7 +12913,7 @@ ${hmOTH}
                                 if (id === token11.trim()) {
 
                                     if (getCookie('user') !== '') {
-                                   
+
                                         let countNum = 1
                                         let baseSelected = cur.baseU.split(' ').join('')
                                         item.unitInit.forEach(cu => {
@@ -13131,9 +13164,9 @@ ${hmOTH}
                                                                     })
                                                                     let offX = parseFloat(item.offer.sauce)
                                                                     pr = pr - (pr * (offX / 100))
-                                                                                                  pr=String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
+                                                                    pr = String(pr)
+                                                                    pr = pr.split('.')[0]
+                                                                    pr = parseFloat(pr)
                                                                     document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
                                                                         cuItm.innerText = '₹ ' + pr.toLocaleString()
                                                                     })
@@ -13285,9 +13318,9 @@ ${hmOTH}
                                         document.querySelectorAll('.mrp_ammount del').forEach(cur => {
                                             cur.innerText = '₹ ' + pr.toLocaleString()
                                         })
-                                         totAm=String(totAm)
-                totAm = totAm.split('.')[0]
-                totAm = parseFloat(totAm)
+                                        totAm = String(totAm)
+                                        totAm = totAm.split('.')[0]
+                                        totAm = parseFloat(totAm)
                                         // (totAm)
 
                                         document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
@@ -13480,14 +13513,14 @@ ${hmOTH}
         document.querySelector('html').style.overflowY = 'hidden'
         addLoadedItm()
 
-     if (getCookie('info_delivery_user') !== '') {
-        if (window.screen.width <= 1200) {
-            document.querySelector('.my_orders').classList.add('delivery_account_info')
-            document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
+        if (getCookie('info_delivery_user') !== '') {
+            if (window.screen.width <= 1200) {
+                document.querySelector('.my_orders').classList.add('delivery_account_info')
+                document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
-            document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
-            document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
-         }
+                document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
+                document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
+            }
         }
         if (getCookie('user') !== '') {
             let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
@@ -13539,7 +13572,7 @@ ${hmOTH}
                             let ep = false
                             if (cur.childNodes[1].childNodes[1].classList.value.split(' ').includes('ct_bx_offer_box_items')) {
                                 name = cur.childNodes[1].childNodes[3].childNodes[1].innerText
-                                price = cur.childNodes[1].childNodes[5].childNodes[1].innerText                               
+                                price = cur.childNodes[1].childNodes[5].childNodes[1].innerText
                             }
                             permGroup.push({ name: name, price: price, eprice: ep })
 
@@ -13698,9 +13731,9 @@ ${hmOTH}
                     price *= parseFloat(document.querySelectorAll('.ct_bx_qt_foods input')[1].value)
                     price = "₹" + price
                     // ct_bx_Time p strong
-                    let deliv_x='1 hour'
-                    if(document.querySelector('.outStk').style.display==='block'){
-                        deliv_x='24 hour'
+                    let deliv_x = '1 hour'
+                    if (document.querySelector('.outStk').style.display === 'block') {
+                        deliv_x = '24 hour'
                     }
                     let dtime = deliv_x
                     let off = document.querySelector('.ct_offer_box_cook2 span').innerText.split('%')[0]
@@ -13953,7 +13986,7 @@ ${hmOTH}
                                                         })
                                                         for (let i2 = 0; i2 < reviews.length; i2++) {
                                                             let doc = reviews[i2]
-                                                                console.log('removed from doc11111...............................................',doc,doc.userId , user.rootAutyh)
+                                                            console.log('removed from doc11111...............................................', doc, doc.userId, user.rootAutyh)
                                                             if (doc.userId === user.rootAutyh) {
                                                                 reviews.splice(i2, 1)
                                                                 console.log('removed from doc...............................................')
@@ -14058,9 +14091,9 @@ ${hmOTH}
                     console.log(p)
                     let tot = (p / (i + 1)) * i
 
-                    tot=String(tot)
-                tot = tot.split('.')[0]
-                tot = parseFloat(tot)
+                    tot = String(tot)
+                    tot = tot.split('.')[0]
+                    tot = parseFloat(tot)
                     tot = tot.toLocaleString()
                     document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                         cur.innerText = '₹  ' + (tot)
@@ -14208,9 +14241,9 @@ ${hmOTH}
 
                 let i = parseFloat(qtekfd.parentElement.childNodes[3].value)
                 i++
-               //if (qtekfd.parentElement.parentElement.classList.value.split(' ').includes('for_fst_pur')) {
-               //    return
-               //}
+                //if (qtekfd.parentElement.parentElement.classList.value.split(' ').includes('for_fst_pur')) {
+                //    return
+                //}
                 //Maxqt
                 if (i > 4) {
                     // document.querySelectorAll('.ct_err_max_stock').forEach((cur) => {
@@ -14286,7 +14319,7 @@ ${hmOTH}
                 p = parseFloat(p)
                 console.log(p)
                 let tot = (p / (i - 1)) * i
-                tot=String(tot)
+                tot = String(tot)
                 tot = tot.split('.')[0]
                 tot = parseFloat(tot)
                 tot = tot.toLocaleString()
@@ -14693,23 +14726,23 @@ ${hmOTH}
                 }
                 if (getCookie('user') !== '') {
                     if (JSON.parse(getCookie('user')).fstPurchase) {
-                 
-                            itmDb.fdInside.forEach(cur1 => {
-                                if (cur1.id !== 'spices' && cur1.price !== undefined) {
-                                    let pr = parseFloat(cur1.price)
-                                    if (itmDb.offer !== null && cur1.id !== 'spices') {
-                                        if (itmDb.offer.sauce !== null) {
-                                            let offX = parseFloat(itmDb.offer.sauce)
-                                            pr = pr - (pr * (offX / 100))
-                                        }
+
+                        itmDb.fdInside.forEach(cur1 => {
+                            if (cur1.id !== 'spices' && cur1.price !== undefined) {
+                                let pr = parseFloat(cur1.price)
+                                if (itmDb.offer !== null && cur1.id !== 'spices') {
+                                    if (itmDb.offer.sauce !== null) {
+                                        let offX = parseFloat(itmDb.offer.sauce)
+                                        pr = pr - (pr * (offX / 100))
                                     }
-                                                                pr=String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
-                                    priceN += pr
                                 }
-                            })
-                        
+                                pr = String(pr)
+                                pr = pr.split('.')[0]
+                                pr = parseFloat(pr)
+                                priceN += pr
+                            }
+                        })
+
                     } else {
                         itmDb.fdInside.forEach(cur1 => {
                             if (cur1.price !== undefined) {
@@ -14720,9 +14753,9 @@ ${hmOTH}
                                         pr = pr - (pr * (offX / 100))
                                     }
                                 }
-                                                           pr=String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
+                                pr = String(pr)
+                                pr = pr.split('.')[0]
+                                pr = parseFloat(pr)
                                 priceN += pr
                             }
 
@@ -14738,7 +14771,7 @@ ${hmOTH}
                                     pr = pr - (pr * (offX / 100))
                                 }
                             }
-                            pr=String(pr)
+                            pr = String(pr)
                             pr = pr.split('.')[0]
                             pr = parseFloat(pr)
                             priceN += pr
@@ -14943,13 +14976,13 @@ ${hmOTH}
             console.log(imgs)
             downloadAll(imgs, "jpg", -1);
         }
-            document.querySelector('html').addEventListener("click", (e) => {
-                if(e.target.closest('.ct_bx_download_btn_x')!==null){
+        document.querySelector('html').addEventListener("click", (e) => {
+            if (e.target.closest('.ct_bx_download_btn_x') !== null) {
                 e.preventDefault()
                 doit()
-                }
-            });
-        
+            }
+        });
+
 
         function checkChar(letter, limit = 10) {
             if (letter.length <= limit) {
@@ -14999,7 +15032,7 @@ ${hmOTH}
 
             if (parsedData.admin === true) {
 
-                  document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
+                document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
                 if (window.screen.width > 1200) {
                     if (document.querySelector('.mai_ul') != null) {
                         document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')
