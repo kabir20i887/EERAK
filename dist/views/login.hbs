@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in | KRICK</title>
     <meta name="keywords" content="account on krick, my account krick, my orders krick">
-    <meta name="description"  content="Login to get started">
+    <meta name="description" content="Login to get started">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     {{>favicon}}
     <style>
@@ -1329,10 +1329,12 @@
             .body_login .ct_bx_verif2 .account_cont11 {
                 margin-left: 0;
             }
-.body_login .ct_bx_verify .nick_name input {
-    height: 50px;
-    width: 100%;
-}
+
+            .body_login .ct_bx_verify .nick_name input {
+                height: 50px;
+                width: 100%;
+            }
+
             .go_back {
                 right: 230px;
             }
@@ -1404,10 +1406,11 @@
                 margin-left: 117px;
                 width: 74%;
             }
-.body_login .ct_bx_verif2 .ct_btn_acc {
-    width: 85%;
-    margin-left: 65px;
-}
+
+            .body_login .ct_bx_verif2 .ct_btn_acc {
+                width: 85%;
+                margin-left: 65px;
+            }
 
             .phonenum {
                 transform: translate(0);
@@ -1526,7 +1529,8 @@
             }
 
             .body_login .for_login_verif {
-    padding: 10px;            }
+                padding: 10px;
+            }
 
             .body_login .ct_bx_verify .cont_btn_acc {
                 width: 100%;
@@ -1776,7 +1780,8 @@
             }
 
             .body_login .for_login_verif {
-                margin-left: -10px;padding: 0;
+                margin-left: -10px;
+                padding: 0;
             }
         }
 
@@ -2363,8 +2368,8 @@
                                     <div class="nick_name bx_acc">
                                         <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
 
-                                        <input name="usfstnm" class="name_of_user" id="name_inp_main" 
-                                            spellcheck="false" type="text" required>
+                                        <input name="usfstnm" class="name_of_user" id="name_inp_main" spellcheck="false"
+                                            type="text" required>
                                         <label for="name_inp_main"> First name</label>
 
 
@@ -2535,7 +2540,7 @@
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyDZm_3Q1hGYk9JOHZrU0uHDYRbD58-FsRo",
             authDomain: "krick-5050e.firebaseapp.com",
             projectId: "krick-5050e",
@@ -2551,16 +2556,17 @@
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
-    {{!-- <script src="../js/jQery.js"></script> --}}
+    {{!--
+    <script src="../js/jQery.js"></script> --}}
 
     <script>
-         if (document.querySelector('.go_back') !== null) {
+        if (document.querySelector('.go_back') !== null) {
             document.querySelector('.go_back').addEventListener('click', () => {
 
                 window.location.replace('/login?#forgot')
             })
         }
-      
+
         function checkChar(letter, limit = 10) {
             if (letter.length <= limit) {
                 return letter
@@ -2584,141 +2590,141 @@
             }
         }
         if (document.querySelector('#phone_num_inp') !== null) {
-    document.querySelector('#phone_num_inp').addEventListener("keydown", function(e) {
-        var a = e.which;
-        var k = isFinite(e.key);
-        if (!k && a !== 8)
-            e.preventDefault();
-    });
+            document.querySelector('#phone_num_inp').addEventListener("keydown", function (e) {
+                var a = e.which;
+                var k = isFinite(e.key);
+                if (!k && a !== 8)
+                    e.preventDefault();
+            });
 
-}
-            if (document.querySelector('.body_login') !== null) {
-
-
-                if (window.location.search !== '') {
-                    if (window.location.search.split('?')[1].split('=')[0] === 'forgotpass') {
-                        let hrefStr = `/login${window.location.search.split('&')[0]}&rd=true`
-                        document.querySelector('.send_again a').setAttribute('href', hrefStr)
-                        let query = decodeURIComponent(window.location.search).split('?')[1].split('&')
-
-                        document.querySelector('.ct_field_first_acc').style.display = 'none'
-
-                        document.querySelector('.ov_welcome_acxc').style.display = 'none'
-
-                        document.querySelector('.for_login_signup').style.display = 'none'
-
-                        document.querySelector('.for_login_verif').style.display = 'block'
-
-                        let dbCollection = db.collection("users")
-                        let parser = secret(query[0].split('=')[1])
-                        console.log(parser)
-                        let code = parseFloat(parser.n)
-                        if (decodeURIComponent(window.location.search).split('?')[1].split('&')[1] != undefined) {
-                            let parser2 = secret(decodeURIComponent(window.location.search).split('?')[1].split('&')[1].split('=')[1])
-                            code = parseFloat(parser2.n)
-
-                        }
-                        const updateUser = async () => {
-                            let resp = await dbCollection.get()
-                            for (let i = 0; i < resp.docs.length; i++) {
-                                let cur = resp.docs[i]
-                                let cartGroc = cur.data().cartGroc
-                                let cartItem = cur.data().cartItem
-                                let order = cur.data().myOrders
-                                let itm = cur.data()
-                                let likes = cur.data().likes
-                                let authUser = cur.data().authUser
-                                let rootAutyh = cur.data().rootAutyh
-                                let dislikes = cur.data().dislikes
-                                let rtr = cur.data().myratings
-
-                                let user = parser.user
-                                if (cur.data().data[5] === user.sv && cur.data().data[0].trim() === user.n.trim()) {
-                                    let fstPurchase = cur.data().fstPurchase
-                                    console.log(fstPurchase, '12344a')
-
-                                    var bcrypt = dcodeIO.bcrypt;
-                                    console.log(user.pass)
-                                    var hash = bcrypt.hashSync(user.pass, 4);
-                                    console.log(user.n, user.ln, user.ad, hash, user.pn, user.sv, cur.data().data, 'hus')
-                                    dbCollection.doc(resp.docs[i].id).set({
-                                        data: [user.n, user.ln, user.ad, hash, user.pn,cur.data().data[5]],
-                                        cartGroc: cartGroc,
-                                        authUser: authUser,
-                                        rootAutyh: rootAutyh,
-                                        deliv: itm.deliv,
-                                        admin: itm.admin,
-                                        cartItem: cartItem,
-                                        likes: likes,
-                                        dislikes: dislikes,
-                                        myOrders: order,
-                                        myratings: rtr,
-                                        fstPurchase: fstPurchase,
-
-                                    })
-                                        .then(res => {
-
-                                            if (window.screen.width <= 650) {
-
-                                                document.querySelector('.yt-loader').style.display = 'none'
-
-                                            } else {
-                                                document.querySelector('.ct_acc .yt-loader').style.display = 'none'
-
-                                            }
-                                            document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'auto'
-
-                                            document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = 1
-                                            window.location.replace('/login?updated=true')
-                                        })
-
-                                    break
-                                }
-                            }
+        }
+        if (document.querySelector('.body_login') !== null) {
 
 
-                        }
-                        document.querySelector('.account_cont11').addEventListener('click', () => {
-                            let inp = document.querySelector('.ct_bx_verif2 input').value
-                            if (inp !== '') {
+            if (window.location.search !== '') {
+                if (window.location.search.split('?')[1].split('=')[0] === 'forgotpass') {
+                    let hrefStr = `/login${window.location.search.split('&')[0]}&rd=true`
+                    document.querySelector('.send_again a').setAttribute('href', hrefStr)
+                    let query = decodeURIComponent(window.location.search).split('?')[1].split('&')
 
-                                inp = parseFloat(inp)
-                                if (code === inp) {
-                                    document.querySelectorAll('.error_login').forEach(cur => {
-                                        cur.style.display = 'none'
-                                    })
-                                    if (window.screen.width <= 650) {
+                    document.querySelector('.ct_field_first_acc').style.display = 'none'
 
-                                        document.querySelector('.yt-loader').style.display = 'block'
+                    document.querySelector('.ov_welcome_acxc').style.display = 'none'
 
-                                    } else {
-                                        document.querySelector('.ct_acc .yt-loader').style.display = 'block'
+                    document.querySelector('.for_login_signup').style.display = 'none'
 
-                                    }
-                                    document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'none'
+                    document.querySelector('.for_login_verif').style.display = 'block'
 
-                                    document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = .4
-                                    updateUser()
-                                } else {
-                                    document.querySelector('.otp_err2').style.display = 'none'
-
-                                    document.querySelector('.otp_err1').style.display = 'flex'
-                                }
-                            } else {
-                                document.querySelector('.otp_err2').style.display = 'flex'
-
-                                document.querySelector('.otp_err1').style.display = 'none'
-
-                            }
-                        })
+                    let dbCollection = db.collection("users")
+                    let parser = secret(query[0].split('=')[1])
+                    console.log(parser)
+                    let code = parseFloat(parser.n)
+                    if (decodeURIComponent(window.location.search).split('?')[1].split('&')[1] != undefined) {
+                        let parser2 = secret(decodeURIComponent(window.location.search).split('?')[1].split('&')[1].split('=')[1])
+                        code = parseFloat(parser2.n)
 
                     }
+                    const updateUser = async () => {
+                        let resp = await dbCollection.get()
+                        for (let i = 0; i < resp.docs.length; i++) {
+                            let cur = resp.docs[i]
+                            let cartGroc = cur.data().cartGroc
+                            let cartItem = cur.data().cartItem
+                            let order = cur.data().myOrders
+                            let itm = cur.data()
+                            let likes = cur.data().likes
+                            let authUser = cur.data().authUser
+                            let rootAutyh = cur.data().rootAutyh
+                            let dislikes = cur.data().dislikes
+                            let rtr = cur.data().myratings
+
+                            let user = parser.user
+                            if (cur.data().data[5] === user.sv && cur.data().data[0].trim() === user.n.trim()) {
+                                let fstPurchase = cur.data().fstPurchase
+                                console.log(fstPurchase, '12344a')
+
+                                var bcrypt = dcodeIO.bcrypt;
+                                console.log(user.pass)
+                                var hash = bcrypt.hashSync(user.pass, 4);
+                                console.log(user.n, user.ln, user.ad, hash, user.pn, user.sv, cur.data().data, 'hus')
+                                dbCollection.doc(resp.docs[i].id).set({
+                                    data: [user.n, user.ln, user.ad, hash, user.pn, cur.data().data[5]],
+                                    cartGroc: cartGroc,
+                                    authUser: authUser,
+                                    rootAutyh: rootAutyh,
+                                    deliv: itm.deliv,
+                                    admin: itm.admin,
+                                    cartItem: cartItem,
+                                    likes: likes,
+                                    dislikes: dislikes,
+                                    myOrders: order,
+                                    myratings: rtr,
+                                    fstPurchase: fstPurchase,
+
+                                })
+                                    .then(res => {
+
+                                        if (window.screen.width <= 650) {
+
+                                            document.querySelector('.yt-loader').style.display = 'none'
+
+                                        } else {
+                                            document.querySelector('.ct_acc .yt-loader').style.display = 'none'
+
+                                        }
+                                        document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'auto'
+
+                                        document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = 1
+                                        window.location.replace('/login?updated=true')
+                                    })
+
+                                break
+                            }
+                        }
+
+
+                    }
+                    document.querySelector('.account_cont11').addEventListener('click', () => {
+                        let inp = document.querySelector('.ct_bx_verif2 input').value
+                        if (inp !== '') {
+
+                            inp = parseFloat(inp)
+                            if (code === inp) {
+                                document.querySelectorAll('.error_login').forEach(cur => {
+                                    cur.style.display = 'none'
+                                })
+                                if (window.screen.width <= 650) {
+
+                                    document.querySelector('.yt-loader').style.display = 'block'
+
+                                } else {
+                                    document.querySelector('.ct_acc .yt-loader').style.display = 'block'
+
+                                }
+                                document.querySelector('.body_login .ct_acc .account_cont11').style['pointer-events'] = 'none'
+
+                                document.querySelector('.body_login .ct_acc .account_cont11').style.opacity = .4
+                                updateUser()
+                            } else {
+                                document.querySelector('.otp_err2').style.display = 'none'
+
+                                document.querySelector('.otp_err1').style.display = 'flex'
+                            }
+                        } else {
+                            document.querySelector('.otp_err2').style.display = 'flex'
+
+                            document.querySelector('.otp_err1').style.display = 'none'
+
+                        }
+                    })
+
                 }
-
-
-
             }
-          document.querySelector('.for_login').addEventListener('click', () => {
+
+
+
+        }
+        document.querySelector('.for_login').addEventListener('click', () => {
             let n = document.getElementsByName('usfstnm')[0].value
             let ln = document.querySelector('.last_of_user').value
 
@@ -2838,7 +2844,7 @@
                                     deliv = false
                                 }
 
-                                let dtus = JSON.stringify({ rootAutyh: item.data().rootAutyh, fstPurchase: item.data().fstPurchase, n: item.data().data[0], ln: item.data().data[1], ad: item.data().data[2], ct: item.data().data[4], pass: item.data().data[3], service: item.data().data[4], deliv: deliv, admin: admin,city:item.data().data[5] })
+                                let dtus = JSON.stringify({ rootAutyh: item.data().rootAutyh, fstPurchase: item.data().fstPurchase, n: item.data().data[0], ln: item.data().data[1], ad: item.data().data[2], ct: item.data().data[4], pass: item.data().data[3], service: item.data().data[4], deliv: deliv, admin: admin, city: item.data().data[5] })
                                 document.cookie = "user" + "=" + dtus + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
                                 if (item.data().cartItem !== undefined) {
                                     localStorage.setItem('foodsAdded', JSON.stringify(item.data().cartItem))
@@ -2898,80 +2904,80 @@
             }
         })
 
-         if (document.querySelector('.goback') !== null) {
-        document.querySelector('.goback').addEventListener('click', e => {
-            if (document.querySelector('.body_login') !== null) {
-                if (window.screen.width <= 360) {
-                    document.querySelector('.body_login .name_err').style.transform = 'translate(30px,0px)'
+        if (document.querySelector('.goback') !== null) {
+            document.querySelector('.goback').addEventListener('click', e => {
+                if (document.querySelector('.body_login') !== null) {
+                    if (window.screen.width <= 360) {
+                        document.querySelector('.body_login .name_err').style.transform = 'translate(30px,0px)'
+                    }
                 }
-            }
-            document.querySelectorAll('.error_login').forEach(cur => {
-                cur.style.display = 'none'
+                document.querySelectorAll('.error_login').forEach(cur => {
+                    cur.style.display = 'none'
+                })
+                window.history.back()
+                document.querySelector('.phone_number_login_forg').style.display = 'none'
+
+                document.querySelector('.password_err_exsist').style.display = 'none'
+
+                document.querySelector('.for_login_signup').style.display = 'block'
+
+                document.querySelector('.lstname_err3').style.display = 'none'
+
+                document.querySelector('.or').style.display = 'block'
+
+                document.querySelector('.goback').style.display = 'none'
+
+                document.querySelector('.pass_bx_field').style.display = 'block'
+                document.querySelector('.new_pass_bx').style.display = 'none'
+                document.querySelector('.password_err').style.display = 'none'
+
+                document.querySelector('.name_err').style.display = 'none'
+                document.querySelector('.lstname_err').style.display = 'none'
+
+
+                document.querySelector('.hiden_update2').style.display = 'none'
+                document.querySelector('.for_login').style.display = 'block'
+                document.querySelector('.forgot_pass').style.display = 'block'
+
             })
-            window.history.back()
-            document.querySelector('.phone_number_login_forg').style.display = 'none'
+        }
+        function sameCode() {
+            document.querySelector('.phone_number_login_forg').style.display = 'flex'
 
-            document.querySelector('.password_err_exsist').style.display = 'none'
-
-            document.querySelector('.for_login_signup').style.display = 'block'
+            document.querySelector('.for_login_signup').style.display = 'none'
 
             document.querySelector('.lstname_err3').style.display = 'none'
 
-            document.querySelector('.or').style.display = 'block'
+            document.querySelector('.or').style.display = 'none'
 
-            document.querySelector('.goback').style.display = 'none'
-
-            document.querySelector('.pass_bx_field').style.display = 'block'
-            document.querySelector('.new_pass_bx').style.display = 'none'
+            document.querySelector('.goback').style.display = 'block'
+            document.querySelector('.pass_bx_field').style.display = 'none'
+            document.querySelector('.new_pass_bx').style.display = 'block'
             document.querySelector('.password_err').style.display = 'none'
 
             document.querySelector('.name_err').style.display = 'none'
             document.querySelector('.lstname_err').style.display = 'none'
 
-
-            document.querySelector('.hiden_update2').style.display = 'none'
-            document.querySelector('.for_login').style.display = 'block'
-            document.querySelector('.forgot_pass').style.display = 'block'
-
-        })
-    }
-    function sameCode() {
-        document.querySelector('.phone_number_login_forg').style.display = 'flex'
-
-        document.querySelector('.for_login_signup').style.display = 'none'
-
-        document.querySelector('.lstname_err3').style.display = 'none'
-
-        document.querySelector('.or').style.display = 'none'
-
-        document.querySelector('.goback').style.display = 'block'
-        document.querySelector('.pass_bx_field').style.display = 'none'
-        document.querySelector('.new_pass_bx').style.display = 'block'
-        document.querySelector('.password_err').style.display = 'none'
-
-        document.querySelector('.name_err').style.display = 'none'
-        document.querySelector('.lstname_err').style.display = 'none'
-
-        document.querySelector('.password_err_exsist').style.transform = 'translate(180px,210px);'
+            document.querySelector('.password_err_exsist').style.transform = 'translate(180px,210px);'
 
 
-        document.querySelector('.hiden_update2').style.display = 'block'
-        document.querySelector('.for_login').style.display = 'none'
-        document.querySelector('.forgot_pass').style.display = 'none'
-    }
-    if (document.querySelector('.forgot_pass') !== null) {
-        document.querySelector('.forgot_pass').addEventListener('click', e => {
+            document.querySelector('.hiden_update2').style.display = 'block'
+            document.querySelector('.for_login').style.display = 'none'
+            document.querySelector('.forgot_pass').style.display = 'none'
+        }
+        if (document.querySelector('.forgot_pass') !== null) {
+            document.querySelector('.forgot_pass').addEventListener('click', e => {
 
+                sameCode()
+            })
+        }
+
+        if (window.location.href.split('#')[1] === 'forgot' && window.location.pathname === '/login') {
+            document.querySelector('.body_login').classList.add('login_forgot')
             sameCode()
-        })
-    }
-
-    if (window.location.href.split('#')[1] === 'forgot' && window.location.pathname === '/login') {
-        document.querySelector('.body_login').classList.add('login_forgot')
-        sameCode()
 
 
-    }
+        }
         document.querySelector('.hiden_update2').addEventListener('click', () => {
             let dbCollection = db.collection("users")
             let pn = document.querySelector('.phone_numforg').value
@@ -3099,44 +3105,44 @@
             forgotpass()
 
         })
-    
-    document.querySelector('html').addEventListener("keydown", function (e) {
-        if(e.target.id===`phone_num_forg`){
- var a = e.which;
-        var k = isFinite(e.key);
-        if (!k && a !== 8)
-            e.preventDefault();
+
+        document.querySelector('html').addEventListener("keydown", function (e) {
+            if (e.target.id === `phone_num_forg`) {
+                var a = e.which;
+                var k = isFinite(e.key);
+                if (!k && a !== 8)
+                    e.preventDefault();
+            }
+
+        });
+        if (document.querySelector('.ct_bx_show_password') !== null) {
+            document.querySelector('.ct_bx_show_password').addEventListener('click', (e) => {
+                document.querySelector('.ct_bx_show_password').style.display = 'none'
+                document.querySelector('.ct_nhide_pass').style.display = 'block'
+
+                console.log(e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].tagName)
+                if (e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].tagName === 'INPUT') {
+                    e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].type = 'password'
+
+                } else {
+                    e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].type = 'password'
+
+                }
+            })
         }
-       
-    });
-    if (document.querySelector('.ct_bx_show_password') !== null) {
-        document.querySelector('.ct_bx_show_password').addEventListener('click', (e) => {
-            document.querySelector('.ct_bx_show_password').style.display = 'none'
-            document.querySelector('.ct_nhide_pass').style.display = 'block'
+        if (document.querySelector('.ct_nhide_pass') !== null) {
+            document.querySelector('.ct_nhide_pass').addEventListener('click', (e) => {
+                document.querySelector('.ct_bx_show_password').style.display = 'block'
+                document.querySelector('.ct_nhide_pass').style.display = 'none'
+                if (e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].tagName === 'INPUT') {
+                    e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].type = 'text'
 
-            console.log(e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].tagName)
-            if (e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].tagName === 'INPUT') {
-                e.target.closest('.ct_bx_show_password').parentElement.childNodes[1].type = 'password'
+                } else {
+                    e.target.closest('.ct_nhide_pass').parentElement.childNodes[3].type = 'text'
 
-            } else {
-                e.target.closest('.ct_bx_show_password').parentElement.childNodes[3].type = 'password'
-
-            }
-        })
-    }
-    if (document.querySelector('.ct_nhide_pass') !== null) {
-        document.querySelector('.ct_nhide_pass').addEventListener('click', (e) => {
-            document.querySelector('.ct_bx_show_password').style.display = 'block'
-            document.querySelector('.ct_nhide_pass').style.display = 'none'
-            if (e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].tagName === 'INPUT') {
-                e.target.closest('.ct_nhide_pass').parentElement.childNodes[1].type = 'text'
-
-            } else {
-                e.target.closest('.ct_nhide_pass').parentElement.childNodes[3].type = 'text'
-
-            }
-        })
-    }
+                }
+            })
+        }
 
 
     </script>

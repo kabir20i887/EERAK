@@ -259,7 +259,7 @@
 .ct_bx_panel_main {
     overflow: scroll;
 }
-            .ct_bx_panel_main {
+       .ct_bx_panel_main {
                 background-color: white;
             }
 
@@ -495,13 +495,12 @@
         }
 
         .ct_bx_stock_message .succ_stk {
-            color: rgb(0, 140, 255);
+            color: rgb(255, 0, 0);
             font-size: 40px;
         }
 
         .ct_bx_remove_msg_stk {
             position: absolute;
-            top: 20px;
             right: 40px;
             cursor: pointer;
         }
@@ -509,24 +508,22 @@
         .ct_bx_stock_message p {
             margin: 8px 0 0 10px;
             font-family: 'Open Sans';
-            color: black;
+            color: rgb(224, 12, 12);
             font-size: 18px;
         }
 
-        .ct_bx_stock_message {
-            display: none;
-            width: 40%;
-            height: 40px;
-            background-color: white;
-            position: fixed;
-            top: 50px;
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.144);
-            right: 20px;
-            padding: 13px 12px 9px 30px;
-            font-size: 23px;
-            z-index: 999999999;
-            color: rgb(41, 39, 39);
-        }
+.ct_bx_stock_message {
+    display: none;
+    margin: 20px;
+    box-shadow: 0 0 4px rgb(0 0 0 / 14%);
+    right: 20px;
+                background-color: rgb(255 238 238);
+
+    padding: 13px 12px 9px 30px;
+    font-size: 23px;
+    z-index: 999999999;
+    color: rgb(41, 39, 39);
+}
 
         .ct_bx_flex {
             display: flex;
@@ -1306,6 +1303,17 @@
             .ct_nav_mobile_adm .ct_bx_inner {
                 width: 46%;
             }
+            .ct_bx_stock_message {
+    padding: 13px 12px 9px 12px;}
+    
+    .ct_bx_stock_message p {
+    margin: 14px 0 0 10px;
+    font-size: 13px;
+}
+.ct_bx_remove_msg_stk {
+    margin-top: -10px;
+}
+     
         }
 
         @media only screen and (max-width:400px) {
@@ -1715,14 +1723,7 @@
         <source src="../img//whatsapp.mp3" type="audio/mp3">
     </audio>
 
-    <div class="ct_bx_stock_message">
-        <ion-icon class="succ_stk" name="checkmark-circle-outline"></ion-icon>
-        <p>Successfully added to stock</p>
-        <div class="ct_bx_remove_msg_stk">
-            <ion-icon name="close-outline"></ion-icon>
-
-        </div>
-    </div>
+ 
     <div class="ct_error_stock for_adm succ">
         <div class="ct_inner_msg">
 
@@ -1833,6 +1834,14 @@
                 <div class="button">Submit!</div>
             </div>
         </div> --}}
+           <div class="ct_bx_stock_message">
+<ion-icon class="succ_stk" name="alert-circle-outline"></ion-icon>
+    <p>A order has been canceled.Reload the page ! </p>
+        <div class="ct_bx_remove_msg_stk">
+            <ion-icon name="close-outline"></ion-icon>
+
+        </div>
+    </div>
         <div class="ct_x_users">
             <div class="ct_all_users">
                 <div class="nav_user_data">
@@ -2016,6 +2025,7 @@
             return null
         }
     };
+  
 
     document.querySelector('html').addEventListener('click', (e) => {
         let selectUn = e.target.closest('.ct_bx_selected_units_groc')
@@ -2651,10 +2661,10 @@ setUserx()
                     if (cur.classList.value === 'ct_bx_verifcation_order') {
                         cur.style.display = 'block'
 
-                    } else {
+                    } else if (cur.classList.value.split(' ').includes('ct_bx_btns_order')) {
                         cur.style.display = 'none'
 
-                    }
+                    } 
                 }
             })
         }
@@ -2912,8 +2922,9 @@ setUserx()
         let smOrder = []
         let res = await dbCollection.orderBy('createdAt', 'desc').get()
         socket.on('oDcancel', (i) => {
-            console.log(i)
+document.querySelector('.ct_bx_stock_message').style.display='flex'
         })
+      
         res.docs.forEach(cur => {
             let user = cur.data().obj.user
             let time = `${cur.data().obj.time.date} ${cur.data().obj.time.mon}, ${cur.data().obj.time.time.split(':')[0]}:${cur.data().obj.time.time.split(':')[1]} ${cur.data().obj.time.time.split(' ')[1].toLowerCase()}`
@@ -3179,48 +3190,49 @@ setUserx()
 
                 let curDate = `${splitedD[1]}-${splitedD[0]}`
                 console.log(date2num, cNumD, cMon, totMon)
-                if (monthofexp < cMon || fullExpdate === curDate) {
-                    const delOrders = async () => {
-                        let dbCollection = db.collection(`orders`)
-                        let res = await dbCollection.get()
-                        res.docs.forEach(doc => {
-                            let el = doc.data()
-                            let id = el.idM
-                            if (id === cur.data().idM) {
-                                dbCollection.doc(doc.id).delete().then(() => {
-                                })
-                            }
+               //   if (monthofexp < cMon || fullExpdate === curDate) {
+               //    const delOrders = async () => {
+               //        let dbCollection = db.collection(`orders`)
+               //        let res = await dbCollection.get()
+               //        res.docs.forEach(doc => {
+               //            let el = doc.data()
+               //            let id = el.idM
+               //            if (id === cur.data().idM) {
+               //                dbCollection.doc(doc.id).delete().then(() => {
+               //                })
+               //            }
 
-                        })
-                        if (res.docs.length === 0) {
-                            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
-                        }
-                    }
-                    delOrders()
+               //        })
+               //        if (res.docs.length === 0) {
+               //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
+               //        }
+               //    }
+               //    delOrders()
 
-                    html = null
-                } else if (date2num < cNumD && cMon === totMon) {
-                    const delOrders = async () => {
-                        let dbCollection = db.collection(`orders`)
-                        let res = await dbCollection.get()
-                        res.docs.forEach(doc => {
-                            let el = doc.data()
-                            let id = el.idM
-                            if (id === cur.data().idM) {
-                                dbCollection.doc(doc.id).delete().then(() => {
-                                })
-                            }
+               //    html = null
+               //} else if (date2num < cNumD && cMon === totMon) {
+               //    const delOrders = async () => {
+               //        let dbCollection = db.collection(`orders`)
+               //        let res = await dbCollection.get()
+               //        res.docs.forEach(doc => {
+               //            let el = doc.data()
+               //            let id = el.idM
+               //            if (id === cur.data().idM) {
+               //                dbCollection.doc(doc.id).delete().then(() => {
+               //                })
+               //            }
 
-                        })
-                        if (res.docs.length === 0) {
-                            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
-                        }
-                    }
-                    delOrders()
+               //        })
+               //        if (res.docs.length === 0) {
+               //            document.querySelector('.ct_as_per_date_order h1').style.display = 'block'
+               //        }
+               //    }
+               //    delOrders()
 
-                    html = null
+               //    html = null
 
-                } else {
+               //} 
+             
                     let html12
                     let elemStat
                     let elemStat2
@@ -3556,7 +3568,7 @@ setUserx()
 
 
 
-                }
+                
                 if (html !== null) {
                     let wholeArr = acceptedArr.concat(canceledArr)
                     wholeArr = wholeArr.concat(nonacceptedArr)

@@ -7232,7 +7232,6 @@
 
             .for_mobile_search .ct_bx_matched_itm {
                 z-index: 99999999999999;
-                transform: translate(14px, 50px);
             }
 
             .ct_bx_matched_itm {
@@ -7245,7 +7244,7 @@
             }
 
             .ct_nav_erak .ct_bx_search {
-                width: 90%;
+                width: 100%;
             }
 
             .cart_nav ion-icon {
@@ -7254,6 +7253,8 @@
 
             .ct_nav_erak ul .nav_main_ek_li {
                 padding: 5px 0 7px 0;
+                margin-right: 10px;
+                margin-left: 20px;
             }
 
             .itm_dt_body .yt-loader {
@@ -10846,15 +10847,15 @@
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
-                                cu11.innerHTML=mUnit2 + ' &mdash; ' + unitNum
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                                cu11.innerHTML = mUnit2 + ' &mdash; ' + unitNum
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + unitNum
                         } else {
-                             document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
-                                cu11.innerHTML=mUnit2 + ' &mdash; ' + textBoxa
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                                cu11.innerHTML = mUnit2 + ' &mdash; ' + textBoxa
                             })
-                           // bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + textBoxa
+                            // bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + textBoxa
                         }
                     } else {
                         if (bxA.parentElement.parentElement.parentElement.classList.value.includes('for_reg_base')) {
@@ -10863,13 +10864,13 @@
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
-                                cu11.innerHTML=unitNum
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                                cu11.innerHTML = unitNum
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = unitNum
                         } else {
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
-                                cu11.innerHTML=textBoxa
+                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                                cu11.innerHTML = textBoxa
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = textBoxa
                         }
@@ -10905,11 +10906,11 @@
                                 newSp = parseFloat(newSp)
                                 newSp = (span / (placeQt1)) * countNumer
                                 selPM2 = newSp
-                                console.log(cur.childNodes[1].childNodes[5].childNodes,'.....................................................')
+                                console.log(cur.childNodes[1].childNodes[5].childNodes, '.....................................................')
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
                                 cur.childNodes[1].childNodes[5].childNodes[3].innerText = '₹ ' + delX.toLocaleString()
                             } else {
-                                
+
                                 cur.childNodes[1].childNodes[5].childNodes[1].innerText = '₹ ' + newSp.toLocaleString()
 
                             }
@@ -11051,10 +11052,10 @@
 
                 } else {
                     let stockT = false
-                     document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
-                                cu11.innerText=`not selected`
-                            })
-                    //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = `not selected`
+                    //document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                    //        cu11.innerText=`not selected`
+                    //  })
+                    bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = `not selected`
                     let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
@@ -11469,7 +11470,7 @@
 
             let vHeight = window.screen.height / 1.6
             let width = window.screen.width / 1.6
-            if (window.screen.width <= 400) {
+            if (window.screen.width <= 470) {
                 vHeight = width - 100
 
             }
@@ -11536,20 +11537,52 @@
                     numU = parseFloat(numU)
                     let stk = item.netweight
                     document.querySelector('.ct_bx_fex_fd_dt_ov').style.height = 'auto'
-                    if (item.netweight <= 0) {
-                        document.querySelector('.outStk').style.display = 'block'
-                        document.querySelector('.inStk').style.display = 'none'
-                        document.querySelector('.ct_bx_item_stock p').style.display = 'block'
-                        document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-                        if (window.screen.width <= 935) {
-                            document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
-                            document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
-                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
-                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                    function nostk(){
+  document.querySelector('.outStk').style.display = 'block'
+                                        document.querySelector('.inStk').style.display = 'none'
+                                        document.querySelector('.ct_bx_item_stock p').style.display = 'block'
+                                        document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                                        if (window.screen.width <= 935) {
+                                            document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
+                                            document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
+                                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
+                                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
 
-                        }
+                                        }
+                    }
+                    if (item.netweight <= 0) {
+                       nostk()
 
                     }
+                    // stock checking if item is in cart
+                    let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+                    allfds.forEach(cur11 => {
+                        if (cur11.id === token) {
+
+                                item.unitInit.forEach(cu => {
+                                    let no_chick=''
+                                    let no_chick2=cur11.baseU.split(' ').join('').toLowerCase()
+                                    if(cu.price===null){
+                                        no_chick='notselected'
+                                    }
+
+                                    if (no_chick2 === no_chick && parseFloat(cu.stock) === 0) {
+                                      nostk()
+                                      
+                                    }else{
+                                        let unitFull=cu.unitNum+'' + cu.unitU
+                                      if(unitFull.split(' ').join('')===cur11.baseU.split(' ').join('')){
+                                       if(parseFloat(cu.stock) === 0) {
+                                      nostk()
+                                       }
+
+                                      }
+                                    }
+                                })
+                            
+                        }
+                    })
+                    //----------------------------------------
                     document.querySelectorAll('.for_banner').forEach(cur => cur.src = item.imgBanner)
                     document.querySelector('.ct_bx_img_itm').style.visibility = 'visible'
                     let fds = JSON.parse(localStorage.getItem('foodsAdded'))
@@ -15276,7 +15309,7 @@ ${hmOTH}
                 })
             })
         }
-        if (window.screen.width <= 400) {
+        if (window.screen.width <= 470) {
             if (document.querySelector('.for_nav_search') !== null) {
                 document.querySelector('.for_nav_search input').addEventListener('click', (e) => {
                     document.querySelector('.ct_field_small_size_bx').style.display = 'none'
@@ -15346,7 +15379,7 @@ ${hmOTH}
                             document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
                         }
                     }
-                    if (window.screen.width <= 400) {
+                    if (window.screen.width <= 470) {
                         document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
                             cur1.style.padding = '13px 0px 10px 0px'
 
@@ -15395,15 +15428,16 @@ ${hmOTH}
                             document.querySelector('.ct_bx_matched_itm').style.marginLeft = '0'
                             document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
 
-                            if (window.screen.width <= 400) {
+                            if (window.screen.width <= 470) {
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
                             }
                             let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
 
                             if (searchLi !== 0) {
-                                let wh = document.querySelector('.ct_nav_erak .ct_bx_search').getBoundingClientRect().width
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.width = wh + 'px'
+                                let wh = document.querySelector('.ct_nav_erak .ct_bx_search').clientWidth
+                                console.log(document.querySelector('.ct_nav_erak .ct_bx_search').getBoundingClientRect().width)
+                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.width = '100%'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'block'
 
                             }
@@ -15438,7 +15472,7 @@ ${hmOTH}
                         document.querySelector('.ct_nav_erak .mai_ul').style.width = '42%'
 
                     }
-                    if (window.screen.width <= 400) {
+                    if (window.screen.width <= 470) {
                         document.querySelector('.ct_nav_erak .mai_ul').style.width = '36%'
 
                         document.querySelector('.ct_inner_nav').style.overflow = 'hidden'
@@ -15574,7 +15608,7 @@ ${hmOTH}
             document.querySelector('.ct_bx_play').style.top = (h - 30) + 'px'
             document.querySelector('.ct_bx_play').style.left = wi + 'px'
 
-            if (window.screen.width <= 400) {
+            if (window.screen.width <= 470) {
                 wi += 20
                 document.querySelector('.ct_bx_play').style.left = wi + 'px'
 

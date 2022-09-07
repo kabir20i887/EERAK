@@ -21296,6 +21296,9 @@
             document.querySelector('.ct_overfow_for_load').style.display = 'none'
             for_acc_dt = true
             Uid = idM
+                        
+                        socket.emit('canceled_delivery',JSON.parse(getCookie('user')).n,JSON.parse(getCookie('user')).service,null)
+                        socket.emit('canceled_delivery_info')
 
             od.docs.forEach(cur => {
                 let el = cur.data().obj
@@ -21304,6 +21307,7 @@
                 let userE = el.user
                 if (el.idM === Uid) {
                     order.forEach(async elm => {
+                        
                         let orderItmqt = elm.qt
                         if (elm.typ === 'fd') {
                             let dbCollectionM = db.collection(`items`)
@@ -22208,7 +22212,7 @@ ${htmlD2}
 
             }
             if (canBtnO !== null) {
-                let idM = canBtnO.parentElement.childNodes[5].innerText.trim()
+                let idM = canBtnO.parentElement.childNodes[9].innerText.trim()
                 canBtnO.parentElement.childNodes[3].childNodes[9].style.display = 'none'
                 canBtnO.parentElement.childNodes[3].childNodes[7].innerText = 'You canceled this order'
                 if (canBtnO.parentElement.childNodes[3].childNodes[11].classList.value !== 'ct_bx_info_mob_order') {
@@ -22218,7 +22222,7 @@ ${htmlD2}
                 canBtnO.style.display = 'none'
                 document.querySelector('.for_acc_dt .yt-loader').style.display = 'block'
                 document.querySelector('.ct_overfow_for_load').style.display = 'block'
-                cancelOrderFinal(idM)
+             cancelOrderFinal(idM)
             }
         })
         let userM = getCookie('user')
