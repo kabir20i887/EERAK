@@ -10794,10 +10794,15 @@
                 let stock
                 let stockT = false
                 if (!bxA.classList.value.split(' ').includes('othUn')) {
+                   
                     let Mqt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     Mqt = parseFloat(Mqt)
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
+                     if(window.screen.width<=470){
+                        qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                        Mqt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                    }
                     selP = parseFloat(selP)
                     let fdP = parseFloat(bxA.childNodes[3].innerText.split('₹')[1].split(',').join(''))
                     selP = parseFloat(document.querySelector('.seleted_unit_price').innerText)
@@ -11058,6 +11063,9 @@
                     let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
+                     if(window.screen.width<=470){
+                        qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                    }
                     let fdP = 0
                     let off = document.querySelector('.ct_bx_fex_fd_dt_ov .ct_offer_box_cook2 span').innerText
                     qt = parseFloat(qt)
@@ -13679,18 +13687,18 @@ ${hmOTH}
                     let globalNamex = false
                     let unitInit2 = []
                     if (document.querySelector('.ct_bx_inside_base') !== null) {
-                        if (window.screen.width <= 800) {
-                            Array.from(document.querySelectorAll('.cont2_itemskr .ct_bx_inside_base li')).forEach(cur => {
-                                let name = cur.childNodes[1].childNodes[1].innerText
-                                let price = cur.childNodes[1].childNodes[3].innerText
-                                let added = false
+                       // if (window.screen.width <= 800) {
+                          //Array.from(document.querySelectorAll('.cont2_itemskr .ct_bx_inside_base li')).forEach(cur => {
+                          //    let name = cur.childNodes[1].childNodes[1].innerText
+                          //    let price = cur.childNodes[1].childNodes[3].innerText
+                          //    let added = false
 
-                                if (cur.classList.value === 'alreadyselected') {
-                                    added = true
-                                }
-                                unitInit.push({ name: name, price: price, added: added })
-                            })
-                        } else {
+                          //    if (cur.classList.value === 'alreadyselected') {
+                          //        added = true
+                          //    }
+                          //    unitInit.push({ name: name, price: price, added: added })
+                          //})
+                        //} else {
                             Array.from(document.querySelectorAll('.cont1_itemskr .ct_bx_inside_base li')).forEach(cur => {
                                 let name = cur.childNodes[1].childNodes[1].innerText
                                 let price = cur.childNodes[1].childNodes[3].innerText
@@ -13701,7 +13709,6 @@ ${hmOTH}
                                 }
                                 unitInit.push({ name: name, price: price, added: added })
                             })
-                        }
 
                     } else {
                         Array.from(unitInU.childNodes).forEach(cur => {
@@ -14319,7 +14326,7 @@ ${hmOTH}
                     document.querySelectorAll('.ct_bx_inside_base li').forEach(cur => {
                         let price = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         price = parseFloat(price)
-                        let tPr = price * i
+                        let tPr = (price / (i - 1)) * i
                         tPr = tPr.toLocaleString()
                         cur.childNodes[1].childNodes[3].innerText = '₹' + tPr
 
