@@ -21879,6 +21879,19 @@
                         let htmlD2 = ``
                         let htmlP = ``
                         let htmlT2 = ``
+
+                           if (cur1.confirmed) {
+                             htmlP = `<p class="pending" style='color:#16740b'>out for delivery</p>`
+                            htmlD = `<div class="date_time_order delivery_stat">
+                        <p>DELIVERY STATUS</p>
+                        <div class="ct_bx_staus_delivery_od">
+                            <div class="Pending_order">
+                                <p style='color:#16740b'>out for delivery</p>
+                            </div>
+                        </div>
+                    </div>` 
+                        }
+
                         // cur1.isTom
                         // XXX -> ${mainPriceFdT.toLocaleString()}
                         if (cur1.isDelivered) {
@@ -21906,18 +21919,7 @@
                         </div>
                     </div>`                    }
                     
-                        if (cur1.confirmed) {
-                             htmlP = `<p class="pending" style='color:#16740b'>out for delivery</p>`
-                            htmlD = `<div class="date_time_order delivery_stat">
-                        <p>DELIVERY STATUS</p>
-                        <div class="ct_bx_staus_delivery_od">
-                            <div class="Pending_order">
-                                <p style='color:#16740b'>out for delivery</p>
-                            </div>
-                        </div>
-                    </div>` 
-                        }
-
+                     
                         if (cur1.isTom) {
                             // htmlP = `<p class="sucess">Delivery will be on ${cur1.isTom} after 8:00 am</p>`
 

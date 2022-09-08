@@ -2217,6 +2217,8 @@
                             order: order,
                             time: time,
                             user: user,
+                            dTime:obj1.dTime,
+                             delivery_amount:obj1.delivery_amount
                         }
                         dbCollection.doc(cur.id).set({
                             obj,
@@ -2397,6 +2399,9 @@
                                                 order: order,
                                                 time: time,
                                                 user: user,
+                                                dTime:obj1.dTime,
+                            delivery_amount:obj1.delivery_amount
+
                                             }
                                             dbCollection.doc(cur.id).set({
                                                 obj,
@@ -2526,7 +2531,9 @@
                             op: op,
                             time: time,
                             order: order,
-                            user: user
+                            user: user,
+                            dTime:objD.dTime,
+                            delivery_amount:objD.delivery_amount
                         }
                         dbCollection.doc(cur1.id).set({
                             obj,
@@ -2648,6 +2655,8 @@
                             order: order,
                             time: time,
                             user: user,
+                            dTime:obj1.dTime,
+                            delivery_amount:obj1.delivery_amount
                         }
                         dbCollection.doc(cur.id).set({
                             obj,

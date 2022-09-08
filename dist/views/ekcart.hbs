@@ -17,7 +17,8 @@
         ion-icon {
             visibility: hidden;
         }
-
+        .for_groc_full_load2{position: absolute;}
+.ct_deliv_box .prc{display: none;}
         .ct_bx_slide_bx ul li.delivery_account_info a {
             color: red
         }
@@ -4700,7 +4701,17 @@
             background-size: 200% 100%;
             animation: .8s shine linear infinite;
         }
-
+.ct_for_price_sub_load2 {
+    background: linear-gradient(110deg, #949494 8%, #949494 18%, #949494 26%);
+    background-size: 200% 100%;
+    animation: .8s shine linear infinite;
+}
+.ct_for_price_sub_load2 {
+    width: 46px;
+    margin: 4px 0 0 -16px;
+    height: 20px;
+    position: absolute;
+}
         .ct_loading_bx_all {
             display: flex;
             margin: 60px 0 20px 0;
@@ -6797,7 +6808,9 @@
             .ct_subotatal .for_groc_full_load {
                 margin-top: 40px;
             }
-
+.ct_subotatal .for_groc_full_load2 {
+    margin-top: 23px;
+}
             .inner_slide {
                 width: 84vw;
             }
@@ -7124,10 +7137,9 @@
                 margin-right: 0px;
             }
 
-            .ct_loading_bx_all.for_cart_sub {
-                margin: -40px 0 20px 13px;
-            }
-
+          .ct_loading_bx_all.for_cart_sub {
+    margin: -21px 0 20px 18px;
+}
             .check_out_btn_order {
                 margin: 31px 0 0 3px;
             }
@@ -7137,7 +7149,12 @@
             .for_ek_fd_cart_load {
                 margin: -60px 0 180px 0px;
             }
+.ct_for_price_sub_load2 {
+    width: 43px;
+    margin: 2px 0 0 -16px;
+    height: 13px;
 
+}
             .ct_deliv_box {
                 width: 84%;
             }
@@ -11539,7 +11556,22 @@
                                 <dv class="main_deliv">
                                     <p>Delivery within <xm>1</xm> hour</p>
                                     <span class="no_deliv_av">Not available</span>
-                                    <span class="prc">₹ 80</span>
+                                    <span class="prc"></span>
+                                    <div class="ct_full_loading_box for_groc_full_load for_groc_full_load2">
+
+                                        <div class="ct_loading_bx_all for_cart_sub">
+                                            <div class="ct_flex_bx">
+
+                                                <div class="ct_for_price_sub_load2">
+
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
                                 </dv>
                             </div>
                             <div class="ct_deliv_box deliv_xs2 active">
@@ -11734,6 +11766,16 @@
 
     <script>
         var socket = io()
+
+        const deliv_price = async () => {
+            let dbCollection_deliv_pr = db.collection("delivery_price")
+            let res_deliv_pr = await dbCollection_deliv_pr.get()
+            let deliv_price = 0
+            deliv_price = res_deliv_pr.docs[0].data().hour_1
+            document.querySelector('.deliv_xs1 .main_deliv .prc').innerText = `₹ ${deliv_price}`
+
+        }
+        deliv_price()
         document.querySelector('.yt-loader').style.position = 'absolute'
 
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
@@ -13235,8 +13277,8 @@
                     socket.emit('sendAdmmessage', namefull, phonec, tot)
 
                     socket.emit('newOrderClient', phonec, namefull, tot)
-                    socket.on('newOrderClient2',async (unique) => {
-                                     let dbCollection_deliv_pr = db.collection("delivery_price")
+                    socket.on('newOrderClient2', async (unique) => {
+                        let dbCollection_deliv_pr = db.collection("delivery_price")
                         let res_deliv_pr = await dbCollection_deliv_pr.get()
                         secret = unique
                         var header = {
@@ -13483,10 +13525,10 @@
 
                         let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
                         let totAm = []
-                        let deliv_price =0
-                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
-                                deliv_price =  res_deliv_pr.docs[0].data().hour_1
-                            }
+                        let deliv_price = 0
+                        if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                            deliv_price = res_deliv_pr.docs[0].data().hour_1
+                        }
                         deliv_price = parseFloat(deliv_price)
 
                         totAm.push(deliv_price)
@@ -13542,8 +13584,8 @@
 
 
                         const addOrder = async () => {
-                                         let dbCollection_deliv_pr = db.collection("delivery_price")
-                        let res_deliv_pr = await dbCollection_deliv_pr.get()
+                            let dbCollection_deliv_pr = db.collection("delivery_price")
+                            let res_deliv_pr = await dbCollection_deliv_pr.get()
                             let dbCollection = db.collection("orders")
 
                             document.querySelector('.orderId').innerText = hash
@@ -13662,9 +13704,9 @@
 
                             })
 
-                            let priceDeliv =0
-                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
-                                priceDeliv =  res_deliv_pr.docs[0].data().hour_1
+                            let priceDeliv = 0
+                            if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                                priceDeliv = res_deliv_pr.docs[0].data().hour_1
                             }
                             priceDeliv = parseFloat(priceDeliv)
 
@@ -13998,7 +14040,7 @@
                 (navigator.msMaxTouchPoints > 0);
         }
         const addBill = async () => {
-              let dbCollection_deliv_pr = db.collection("delivery_price")
+            let dbCollection_deliv_pr = db.collection("delivery_price")
             let res_deliv_pr = await dbCollection_deliv_pr.get()
             let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
             let totalAmount = []
@@ -14030,11 +14072,11 @@
             })
             console.log(totalAmount, 'ama')
             console.log(totalAmount, 'new111')
-          
-          let priceDeliv =0
-                              if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
-                                priceDeliv =  res_deliv_pr.docs[0].data().hour_1
-                            }
+
+            let priceDeliv = 0
+            if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
+                priceDeliv = res_deliv_pr.docs[0].data().hour_1
+            }
             priceDeliv = parseFloat(priceDeliv)
 
 
@@ -14699,7 +14741,12 @@
                             }
                             document.querySelector('.ct_order_confirm').style.display = 'block'
 
-                            document.querySelector('.ct_full_loading_box').style.display = 'none'
+   document.querySelectorAll('.ct_deliv_box .prc').forEach(cu11=>{
+cu11.style.display = 'block'
+                            })
+                            document.querySelectorAll('.ct_full_loading_box').forEach(cu11=>{
+cu11.style.display = 'none'
+                            })
 
 
                             //uniqu
