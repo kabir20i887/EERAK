@@ -222,11 +222,12 @@
             padding: 0;
         }
 
-        .ct_content_all_searched ul a {
-            display: flex;
-            width: 100%;
-            padding-left: 15px;
-        }
+      .ct_content_all_searched ul a {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 15px;
+}
 
         .ct_nav_erak .for_seravh_in_nav.active {
             width: 100%;
@@ -15164,7 +15165,7 @@ ${hmOTH}
                             let emptyArr = matched.map(cur => {
                                 let name = cur.data().name
                                 let html = `<li>
-                          <a href=/${cur.data().id}>
+                          <a href=/recipes/${cur.data().id}>
                           <ion-icon name="search-outline"></ion-icon>
     <p>${name}</p>
    
