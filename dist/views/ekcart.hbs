@@ -14741,9 +14741,6 @@
                             }
                             document.querySelector('.ct_order_confirm').style.display = 'block'
 
-   document.querySelectorAll('.ct_deliv_box .prc').forEach(cu11=>{
-cu11.style.display = 'block'
-                            })
                             document.querySelectorAll('.ct_full_loading_box').forEach(cu11=>{
 cu11.style.display = 'none'
                             })
@@ -15590,9 +15587,13 @@ cu11.style.display = 'none'
 
                             } else {
                                 document.querySelector('.deliv_xs1').classList.remove('notavailble')
-
+document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11=>{
+cu11.style.display = 'block'
+                            })
                             }
                         })
+           
+
                         // 9pm to 9am
                         if (hours <= 9 && pm_or_am === 'AM') {
                             // from 12am to 9am

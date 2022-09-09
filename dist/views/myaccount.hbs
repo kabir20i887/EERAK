@@ -20812,7 +20812,10 @@
 
             }
         })
+if(window.location.search===''&&window.location.pathname=='/your-account'){
+                        document.cookie = "opt_for_update_send" + "=" + true + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/"
 
+}
         let directionSv = new google.maps.DirectionsService()
 
         const center = { lat: 23.798500, lng: 91.263560 };
@@ -21104,11 +21107,18 @@
                             document.querySelector('.phone_err').style.display = 'block'
                         }
                         }
+                        // check if the pass is same as the earlier pass of user
+                        let user_elarlier_pass=bcrypt.compareSync(jwt.a.pass,JSON.parse(getCookie('user')).pass);
+                        //-----------------------//
 
-                        if (!checkPas) {
+                        // checking if there is same pass in database
+                        if (!checkPas&&!user_elarlier_pass) {
                             checkPas = bcrypt.compareSync(jwt.a.pass, dt[3]);
 
                         }
+                        //---------------------------------------------//
+
+
                         if (checkPas) {
                             document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
                                 cur.style.display = 'none'
@@ -21126,7 +21136,12 @@
                         document.querySelector('.ct_bx_acc_user_dt h3').style.display = 'none'
                         document.querySelector('.ct_edit_cc .ct_acc').style.display = 'block'
                         document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'none'
+                        // donot send otp again if the page is reloaded
+                      if(getCookie('opt_for_update_send')===''){
                         socket.emit('otpACC', jwt.a.ph[0])
+                        document.cookie = "opt_for_update_send" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+
+                        }
 
                     }
 
@@ -21189,7 +21204,7 @@
                                 user1.admin = cur.data().admin
                                 user1.deliv = cur.data().deliv
                                 user1.authUser = user.authUser
-                                user1.city = user.city
+                                user1.city =  jwt.a.city
                                 document.querySelector('.yt-loader').style.display = 'none'
                                 document.querySelector('.ct_overfow_for_load').style.display = 'none'
                                 user1.rootAutyh = rootAutyh
@@ -21255,7 +21270,6 @@
 
                         inp = parseFloat(inp)
                         code = parseFloat(code)
-                        console.log(code)
                         if (code === inp) {
                             document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
                                 cur.style.display = 'none'
@@ -21297,8 +21311,8 @@
             for_acc_dt = true
             Uid = idM
                         
-                        socket.emit('canceled_delivery',JSON.parse(getCookie('user')).n,JSON.parse(getCookie('user')).service,null)
-                        socket.emit('canceled_delivery_info')
+            socket.emit('canceled_delivery',JSON.parse(getCookie('user')).n,JSON.parse(getCookie('user')).service,null)
+            socket.emit('canceled_delivery_info')
 
             od.docs.forEach(cur => {
                 let el = cur.data().obj
@@ -21364,7 +21378,6 @@
                                     }
 
                                     let nStk = parseFloat(item.netweight) + parseFloat(elm.qt)
-                                    console.log(nStk, elm.qt, item.unitInit, elem1.id, 'kaiiooos')
 
                                     let resp2 = maxqt
 
@@ -21372,7 +21385,6 @@
 
                                     resp2.forEach((m, indx) => {
                                         let idMain = m.id
-                                        console.log(idMain, userId, 'oopsfgvdf')
                                         if (idMain === userId && elm.qt === m.qt) {
                                             if (elm.free !== undefined) {
                                                 async function dataUsers() {
@@ -21429,7 +21441,6 @@
                                         review: review,
                                         video: item.video,
                                     }
-                                    console.log(obj, dbCollectionM.doc(elem1.id), 'kii')
                                     dbCollectionM.doc(elem1.id).set({
                                         group: elem1.data().group,
                                         item: obj,
@@ -21495,7 +21506,6 @@
                                             unitUniv: unitUniv,
                                             group: group
                                         }
-                                        console.log(obj, 'fproduct')
                                     } else {
                                         //both the stock and the selectedUnit on unitIn
                                         stock = parseFloat(stock)
@@ -21603,7 +21613,6 @@
             })
         }
         let user = getCookie('user')
-        console.log(user)
         user = JSON.parse(user)
 
         document.querySelector('.phone_num_dt span').innerText = user.ct
@@ -21668,7 +21677,6 @@
                                     el1 = parseFloat(el1)
                                     priceFdT += el1
                                 })
-                                console.log(priceFdT)
                                 let name = item.name
 
 
@@ -21722,7 +21730,6 @@
 
                                 let item = el
                                 cur1.amount.forEach((el1) => {
-                                    console.log(el1)
                                     el1 = parseFloat(el1)
                                     priceFdT += el1
                                 })
@@ -21870,7 +21877,6 @@
                        //}
                         let time1 = time.split(':')[0]
                         let time2 = time.split(':')[1]
-                        console.log(time)
                         let em = time.split(' ')[1].toLowerCase()
                         let cHtml
                         let htmlT
@@ -22240,7 +22246,6 @@ ${htmlD2}
                     if (document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov') !== null) {
 
                         document.querySelectorAll('.ct_bx_slide_bx .ct_acc_dt_ov p').forEach(cur => {
-                            console.log(cur)
                             cur.innerText = 'Hello ' + parsedData.n.split(' ').join('')
                         })
                         let dS = document.querySelectorAll('.ct_bx_slide_bx .ct_acc_dt_ov  a')
@@ -22327,7 +22332,6 @@ ${htmlD2}
         }
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
-                console.log(cur.value)
                 let txt = cur.value.toLowerCase()
                 if (txt !== '') {
 
@@ -22335,8 +22339,6 @@ ${htmlD2}
                         let dbCollection = db.collection(`searchFd`)
                         let res = await dbCollection.get()
                         let matched = res.docs.filter(cur => {
-                            console.log(cur.data().name.toLowerCase().startsWith(txt))
-
                             return cur.data().name.toLowerCase().startsWith(txt)
                         })
 
@@ -22443,7 +22445,6 @@ ${htmlD2}
                     searchFood()
                 } else {
                     let li = document.querySelectorAll('.ct_bx_matched_itm li')
-                    console.log(li)
                     li.forEach(cur => {
                         cur.remove()
                     })
