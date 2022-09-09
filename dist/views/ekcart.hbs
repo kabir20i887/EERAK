@@ -17,8 +17,15 @@
         ion-icon {
             visibility: hidden;
         }
-        .for_groc_full_load2{position: absolute;}
-.ct_deliv_box .prc{display: none;}
+
+        .for_groc_full_load2 {
+            position: absolute;
+        }
+
+        .ct_deliv_box .prc {
+            display: none;
+        }
+
         .ct_bx_slide_bx ul li.delivery_account_info a {
             color: red
         }
@@ -165,12 +172,13 @@
             display: none;
         }
 
-    .ct_content_all_searched ul a {
-    display: flex;
-    width: 100%;
-    padding: 10px 0;
-    padding-left: 15px;
-}
+        .ct_content_all_searched ul a {
+            display: flex;
+            width: 100%;
+            padding: 10px 0;
+            padding-left: 15px;
+        }
+
         .ct_bx_slide_bx.active {
             right: 0;
         }
@@ -4701,17 +4709,20 @@
             background-size: 200% 100%;
             animation: .8s shine linear infinite;
         }
-.ct_for_price_sub_load2 {
-    background: linear-gradient(110deg, #949494 8%, #949494 18%, #949494 26%);
-    background-size: 200% 100%;
-    animation: .8s shine linear infinite;
-}
-.ct_for_price_sub_load2 {
-    width: 46px;
-    margin: 4px 0 0 -16px;
-    height: 20px;
-    position: absolute;
-}
+
+        .ct_for_price_sub_load2 {
+            background: linear-gradient(110deg, #949494 8%, #949494 18%, #949494 26%);
+            background-size: 200% 100%;
+            animation: .8s shine linear infinite;
+        }
+
+        .ct_for_price_sub_load2 {
+            width: 46px;
+            margin: 4px 0 0 -16px;
+            height: 20px;
+            position: absolute;
+        }
+
         .ct_loading_bx_all {
             display: flex;
             margin: 60px 0 20px 0;
@@ -6808,9 +6819,11 @@
             .ct_subotatal .for_groc_full_load {
                 margin-top: 40px;
             }
-.ct_subotatal .for_groc_full_load2 {
-    margin-top: 23px;
-}
+
+            .ct_subotatal .for_groc_full_load2 {
+                margin-top: 23px;
+            }
+
             .inner_slide {
                 width: 84vw;
             }
@@ -7137,9 +7150,10 @@
                 margin-right: 0px;
             }
 
-          .ct_loading_bx_all.for_cart_sub {
-    margin: -21px 0 20px 18px;
-}
+            .ct_loading_bx_all.for_cart_sub {
+                margin: -21px 0 20px 18px;
+            }
+
             .check_out_btn_order {
                 margin: 31px 0 0 3px;
             }
@@ -7149,12 +7163,14 @@
             .for_ek_fd_cart_load {
                 margin: -60px 0 180px 0px;
             }
-.ct_for_price_sub_load2 {
-    width: 43px;
-    margin: 2px 0 0 -16px;
-    height: 13px;
 
-}
+            .ct_for_price_sub_load2 {
+                width: 43px;
+                margin: 2px 0 0 -16px;
+                height: 13px;
+
+            }
+
             .ct_deliv_box {
                 width: 84%;
             }
@@ -9159,7 +9175,7 @@
             }
 
             .list_food_cart {
-                margin-top:40px;
+                margin-top: 40px;
             }
 
             .ct_bx_required_groc h3 {
@@ -12569,8 +12585,15 @@
                     let tmp
                     let mainSelp = bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].innerText
                     mainSelp = parseFloat(mainSelp)
+                    // quantity of an item
                     let qt = bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[7].childNodes[3].value
+                    //--------------------
                     qt = parseFloat(qt)
+                    // checking the stock
+                    if(qt>stock){
+qt=stock
+bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[7].childNodes[3].value = stock
+                    }
                     let selU = bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1]
                     let chQt = false
                     let repl = 0
@@ -14127,9 +14150,10 @@
                             p2 = itm.price
                         }
                     })
-                    console.log(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes, '9415')
+                    console.log(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes[3].innerText, '9415')
+                    let stk=parseFloat(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes[3].innerText)
                     //Maxqt
-                    if (i > 4) {
+                    if (i > stk) {
                         return
                     }
                     // grocery items selection box -> changing the price 
@@ -14741,8 +14765,8 @@
                             }
                             document.querySelector('.ct_order_confirm').style.display = 'block'
 
-                            document.querySelectorAll('.ct_full_loading_box').forEach(cu11=>{
-cu11.style.display = 'none'
+                            document.querySelectorAll('.ct_full_loading_box').forEach(cu11 => {
+                                cu11.style.display = 'none'
                             })
 
 
@@ -15052,6 +15076,39 @@ cu11.style.display = 'none'
 
                                 })
                             }
+                                                    let Qty_units
+                           let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                           if (itm.unitInit[0].name!==undefined) {
+                               Qty_units = parseFloat(stocks_item[0].stock)
+                           } else {
+                               itm.unitInit.forEach(cu11 => {
+                                let unitX=cu11.unitNum+''+cu11.unitU
+                                   if (elem.baseU.toLowerCase().split(' ').join('') === 'notselected') {
+                                       Qty_units = parseFloat(cu11.stock)
+
+                                    if(Qty_units===0){
+Qty_units= parseFloat(cu11.no_stk_limit)
+                                    }
+
+
+                                   } else if (cu11.price !== null) {
+                                       if (elem.baseU.toLowerCase().split(' ').join('') === unitX.split(' ').join('')) {
+                                           Qty_units = parseFloat(cu11.stock)
+   if(Qty_units===0){
+Qty_units= parseFloat(cu11.no_stk_limit)
+                                    }
+                                       }
+                                   }
+                               })
+
+                           }
+                             Qty_units= parseFloat(Qty_units)
+                                if(parseFloat(elem.qt)>Qty_units){
+                                Qty_units = parseFloat(Qty_units)
+                                }else{
+                               Qty_units= elem.qt
+                                }
+                                //----------------------------
                             let totInside = 0
                             let totInside2 = 0
                             let pff = parseFloat(itm.profit)
@@ -15112,7 +15169,7 @@ cu11.style.display = 'none'
                                                 let priceM1 = cua.price
                                                 priceM1 = parseFloat(priceM1)
                                                 priceM1 *= posEm
-                                                priceM1 *= parseFloat(elem.qt)
+                                                priceM1 *= Qty_units
                                                 im.price = "₹ " + priceM1
 
                                                 priceMainOth += priceM1
@@ -15127,7 +15184,7 @@ cu11.style.display = 'none'
                             let pricewithoutOff = 0
                             console.log(parseFloat(elem.selU2), totInside, priceMainOth, '---------------------------------------------------')
                             price = parseFloat(elem.selU2) + totInside
-                            price *= parseFloat(elem.qt)
+                            price *= Qty_units
                             // pricewithoutOff *= parseFloat(elem.qt)
                             price += priceMainOth
                             elem.price = "₹" + (price)
@@ -15143,7 +15200,7 @@ cu11.style.display = 'none'
                             if (itm.unitInit !== null) {
 
                                 let hasTwoSelection = false
-                                let qtFood = elem.qt
+                                let qtFood = Qty_units
                                 qtFood = parseFloat(qtFood)
                                 let priceBox = ``
                                 let offer = null
@@ -15192,7 +15249,10 @@ cu11.style.display = 'none'
                                             if (parseFloat(el.stock) === 0) {
                                                 classStkno = 'no_stock'
                                             }
-
+ let stk_item=parseFloat(el.stock)
+                                                if(parseFloat(el.stock)===0){
+                                                stk_item=parseFloat(el.no_stk_limit)
+                                                }
                                             if (el.price !== null) {
                                                 el.price = parseFloat(el.price).toLocaleString()
                                                 let uNum = parseFloat(el.unitNum)
@@ -15211,11 +15271,12 @@ cu11.style.display = 'none'
                                                     htmlX = `<span class='hidden hasnameX'>${el.nameX}</span>
 `
                                                 }
+                                            
                                                 ht = ` <li class=${classStkno}>
         
                      <span>${fUnn}</span>
                      <am>₹ ${el.price}</am>
-                     <span class='hidden'>${el.stock}</span>
+                     <span class='hidden'>${stk_item}</span>
                          <span class='hidden count'>${el.count}</span>
                          ${optionX}
                          ${htmlX}
@@ -15225,7 +15286,7 @@ cu11.style.display = 'none'
                                                 ht = ` <li class='othTog ${classStkno}'>
                             
                             <span>${el.unit}</span>
-                            <span class='hidden'>${el.stock}</span>
+                            <span class='hidden'>${stk_item}</span>
                              <span class='hidden count'>${el.count}</span>
 
                         </li>`
@@ -15300,16 +15361,18 @@ cu11.style.display = 'none'
 
                                 }
 
-                                let Qty_units = baseSelect.split(' ')[0]
-                                if (baseSelect.split(' ').includes('k')) {
-                                    Qty_units = baseSelect.split('k')[0]
-                                } else if (baseSelect.split(' ').includes('g')) {
-                                    Qty_units = baseSelect.split('g')[0]
-                                }
+                               // Qty_units = baseSelect.split(' ')[0]
+                               //(baseSelect.split(' ').includes('k')) {
+                               // Qty_units = baseSelect.split('k')[0]
+                               //lse if (baseSelect.split(' ').includes('g')) {
+                               // Qty_units = baseSelect.split('g')[0]
+                               //
 
-                                if (Qty_units >= itm.netweight) {
-                                    Qty_units = itm.netweight
-                                }
+                               //(Qty_units >= itm.netweight) {
+                               // Qty_units = itm.netweight
+                               
+                               //setting the stock to quantity
+
                                 let htmUNITS = ``
                                 let baseUx = elem.baseU
                                 if (elem.unitInit[0].unitNum === null) {
@@ -15349,7 +15412,7 @@ cu11.style.display = 'none'
                                     htmUNITS = `  <span>${elem.baseMain}</span>
                                 ${prBox}`
                                 }
-                                Qty_units = parseFloat(Qty_units)
+                              
                                 let contBxqt = ''
                                 contBxqt = `   <div class="ct_bx_qty_inner nottog">
     <div class="ct_bx_weight_qt">
@@ -15437,7 +15500,7 @@ cu11.style.display = 'none'
                                                     <div class="ct_bx_item_rem">
                                                         <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
                                                     </div>
-                                                    <input type="text" value="${elem.qt}" readonly>
+                                                    <input type="text" value="${Qty_units}" readonly>
                                                     <div class="ct_bx_item_add">
                                                         <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
                                                     </div>
@@ -15584,15 +15647,18 @@ cu11.style.display = 'none'
                         JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur11 => {
                             if (cur11.dTime === '24 hour') {
                                 document.querySelector('.deliv_xs1').classList.add('notavailble')
-
+document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'none'
+                            })
                             } else {
                                 document.querySelector('.deliv_xs1').classList.remove('notavailble')
-document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11=>{
-cu11.style.display = 'block'
+document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'block'
                             })
                             }
                         })
-           
+                      
+
 
                         // 9pm to 9am
                         if (hours <= 9 && pm_or_am === 'AM') {

@@ -222,12 +222,12 @@
             padding: 0;
         }
 
-      .ct_content_all_searched ul a {
-    display: flex;
-    width: 100%;
-    padding: 10px 0;
-    padding-left: 15px;
-}
+        .ct_content_all_searched ul a {
+            display: flex;
+            width: 100%;
+            padding: 10px 0;
+            padding-left: 15px;
+        }
 
         .ct_nav_erak .for_seravh_in_nav.active {
             width: 100%;
@@ -10795,12 +10795,12 @@
                 let stock
                 let stockT = false
                 if (!bxA.classList.value.split(' ').includes('othUn')) {
-                   
+
                     let Mqt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     Mqt = parseFloat(Mqt)
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
-                     if(window.screen.width<=470){
+                    if (window.screen.width <= 470) {
                         qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
                         Mqt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
                     }
@@ -10987,6 +10987,51 @@
 
                         })
                     }
+
+                    let baseU = ''
+                    if (document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1] !== undefined) {
+                        baseMain = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[0]
+                        if (document.querySelector('.ct_bx_inside_base') === null) {
+                            baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+
+                            if (document.querySelector('.hidden.option') !== null) {
+                                baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+                                baseU = baseU.split(' ').join('')
+                            }
+                        }
+                    } else {
+                        baseMain = document.querySelector('.ct_bx_qty_inner p').innerText
+                        if (document.querySelector('.ct_bx_inside_base') === null) {
+                            baseU = document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText
+                        }
+                    }
+                    let qt_taken
+                    let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                    if (stocks_item[0].unit === 'forall') {
+                        qt_taken = parseFloat(stocks_item[0].stock)
+                    } else {
+                        stocks_item.forEach(cu11 => {
+                            if (baseU.split(' ').join('').toLowerCase() === 'notselected') {
+                                qt_taken = parseFloat(cu11.stock)
+
+
+                            } else if (cu11.unit !== null) {
+                                console.log(baseU.split(' ').join('') === cu11.unit.split(' ').join(''), '--------------------------------')
+                                if (baseU.split(' ').join('') === cu11.unit.split(' ').join('')) {
+                                    qt_taken = parseFloat(cu11.stock)
+
+                                }
+                            }
+                        })
+
+                    }
+                    if (parseFloat(qt) > parseFloat(qt_taken)) {
+                        document.querySelectorAll('.ct_bx_qt_foods input').forEach(cu112 => {
+                            cu112.value = qt_taken
+                        })
+                       qt =qt_taken
+                    }
+
                     fnPr = Math.round(fnPr)
                     document.querySelectorAll('.seleted_unit_price').forEach(cur => {
                         cur.innerText = fdP
@@ -11064,7 +11109,7 @@
                     let allItm = JSON.parse(localStorage.getItem('foodsAdded'))
                     let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
                     qt = parseFloat(qt)
-                     if(window.screen.width<=470){
+                    if (window.screen.width <= 470) {
                         qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
                     }
                     let fdP = 0
@@ -11106,10 +11151,10 @@
                     let selPM2 = document.querySelector('.seleted_unit_price2').innerText
 
                     document.querySelectorAll('.ct_bx_ins_items.perm.curry_sauce ').forEach(cur => {
-                        let span=''
+                        let span = ''
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
                             span = cur.childNodes[1].childNodes[5].childNodes[1].innerText.split('₹')[1].split(',').join('')
-                        }else{
+                        } else {
                             span = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         }
                         span = parseFloat(span)
@@ -11118,7 +11163,7 @@
                         if (cur.childNodes[1].childNodes[1].classList.value === 'ct_bx_offer_box_items') {
 
                             if (cur.childNodes[1].childNodes[5].childNodes[3].tagName === 'DEL') {
-               let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1].split(',').join('')
+                                let delX = cur.childNodes[1].childNodes[5].childNodes[3].innerText.split('₹')[1].split(',').join('')
                                 delX = parseFloat(delX)
                                 delX = (delX / (placeQt1)) * countNumer
                                 let offX = document.querySelector('.ct_bx_offer_box_items p').innerText.split(' ')[0].split('%')[0]
@@ -11552,21 +11597,21 @@
                     numU = parseFloat(numU)
                     let stk = item.netweight
                     document.querySelector('.ct_bx_fex_fd_dt_ov').style.height = 'auto'
-                    function nostk(){
-  document.querySelector('.outStk').style.display = 'block'
-                                        document.querySelector('.inStk').style.display = 'none'
-                                        document.querySelector('.ct_bx_item_stock p').style.display = 'block'
-                                        document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-                                        if (window.screen.width <= 935) {
-                                            document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
-                                            document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
-                                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
-                                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                    function nostk() {
+                        document.querySelector('.outStk').style.display = 'block'
+                        document.querySelector('.inStk').style.display = 'none'
+                        document.querySelector('.ct_bx_item_stock p').style.display = 'block'
+                        document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                        if (window.screen.width <= 935) {
+                            document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
+                            document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
+                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
+                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
 
-                                        }
+                        }
                     }
                     if (item.netweight <= 0) {
-                       nostk()
+                        nostk()
 
                     }
                     // stock checking if item is in cart
@@ -11574,27 +11619,27 @@
                     allfds.forEach(cur11 => {
                         if (cur11.id === token) {
 
-                                item.unitInit.forEach(cu => {
-                                    let no_chick=''
-                                    let no_chick2=cur11.baseU.split(' ').join('').toLowerCase()
-                                    if(cu.price===null){
-                                        no_chick='notselected'
-                                    }
+                            item.unitInit.forEach(cu => {
+                                let no_chick = ''
+                                let no_chick2 = cur11.baseU.split(' ').join('').toLowerCase()
+                                if (cu.price === null) {
+                                    no_chick = 'notselected'
+                                }
 
-                                    if (no_chick2 === no_chick && parseFloat(cu.stock) === 0) {
-                                      nostk()
-                                      
-                                    }else{
-                                        let unitFull=cu.unitNum+'' + cu.unitU
-                                      if(unitFull.split(' ').join('')===cur11.baseU.split(' ').join('')){
-                                       if(parseFloat(cu.stock) === 0) {
-                                      nostk()
-                                       }
+                                if (no_chick2 === no_chick && parseFloat(cu.stock) === 0) {
+                                    nostk()
 
-                                      }
+                                } else {
+                                    let unitFull = cu.unitNum + '' + cu.unitU
+                                    if (unitFull.split(' ').join('') === cur11.baseU.split(' ').join('')) {
+                                        if (parseFloat(cu.stock) === 0) {
+                                            nostk()
+                                        }
+
                                     }
-                                })
-                            
+                                }
+                            })
+
                         }
                     })
                     //----------------------------------------
@@ -12188,6 +12233,42 @@ ${htmBtns}
                         maip = parseFloat(maip)
                         maip = maip
                         document.querySelector('.ct_bx_pf1390').innerText = pff
+                        // stock of the item
+                        let objStocks = []
+                        if (item.unitInit[0].name === undefined) {
+                            // for fish,chicken....
+                            item.unitInit.forEach(cu11 => {
+                                let obj
+                                if (cu11.price !== null) {
+                                    if (parseFloat(cu11.stock) === 0) {
+                                        // setting the limit. if it is out of stock                                     
+                                        obj = { unit: cu11.unitNum + '' + cu11.unitU, stock: cu11.no_stk_limit }
+
+                                    } else {
+                                        obj = { unit: cu11.unitNum + '' + cu11.unitU, stock: cu11.stock }
+
+                                    }
+
+                                } else {
+                                    if (parseFloat(cu11.stock) === 0) {
+                                        // setting the limit. if it is out of stock                                     
+                                        obj = { unit: null, stock: cu11.no_stk_limit }
+
+                                    } else {
+                                        obj = { unit: null, stock: cu11.stock }
+
+                                    }
+                                }
+                                objStocks.push(obj)
+                            })
+                        } else {
+                            // for paneer,chole..
+
+                            objStocks.push({ unit: 'forall', stock: item.netweight })
+                        }
+
+                        localStorage.setItem('stocks_item', JSON.stringify(objStocks))
+
                         if (offer2 !== null) {
                             offer2 = parseFloat(item.offer.off)
                             //+ maip.toLocaleString()
@@ -13316,6 +13397,9 @@ ${hmOTH}
                                         //    }
                                         // }
                                         //}
+                                           document.querySelectorAll('.ct_bx_qt_foods input').forEach(cu112 => {
+                            cu112.value = cur.qt
+                        })
                                         if (cur.permGroup !== undefined) {
                                             cur.permGroup.forEach(cm => {
                                                 ///fstPurN for first purchase discount -> bolean
@@ -13352,15 +13436,61 @@ ${hmOTH}
                                         //calculating the selected unit price
                                         let pff = parseFloat(item.profit)
                                         //totPermP=totPermP+(totPermP*pff/100)
+                                        let qtMain = parseFloat(cur.qt)
+                                        let baseU = ''
+                                        if (document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1] !== undefined) {
+                                            baseMain = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[0]
+                                            if (document.querySelector('.ct_bx_inside_base') === null) {
+                                                baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+
+                                                if (document.querySelector('.hidden.option') !== null) {
+                                                    baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+                                                    baseU = baseU.split(' ').join('')
+                                                }
+                                            }
+                                        } else {
+                                            baseMain = document.querySelector('.ct_bx_qty_inner p').innerText
+                                            if (document.querySelector('.ct_bx_inside_base') === null) {
+                                                baseU = document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText
+                                            }
+                                        }
+
+                                        let limit
+                                        let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                                        if (stocks_item[0].unit === 'forall') {
+                                            limit = parseFloat(stocks_item[0].stock)
+                                        } else {
+                                            stocks_item.forEach(cu11 => {
+                                                if (baseU.split(' ').join('').toLowerCase() === 'notselected') {
+                                                    limit = parseFloat(cu11.stock)
+
+
+                                                } else if (cu11.unit !== null) {
+                                                    console.log(baseU.split(' ').join('') === cu11.unit.split(' ').join(''), '--------------------------------')
+                                                    if (baseU.split(' ').join('') === cu11.unit.split(' ').join('')) {
+                                                        limit = parseFloat(cu11.stock)
+
+                                                    }
+                                                }
+                                            })
+
+                                        }
+                                     
+                                        if(qtMain>limit){
+                                            qtMain=limit
+                     document.querySelectorAll('.ct_bx_qt_foods input').forEach(cu112 => {
+                            cu112.value = limit
+                        })
+                                        }
                                         if (item.unitInit[0].name === undefined && item.unitInit !== null) {
-                                            totAm = (totAm) * parseFloat(cur.qt)
-                                            totAm += totPermP * parseFloat(cur.qt)
+                                            totAm = (totAm) * qtMain
+                                            totAm += totPermP * qtMain
                                             totAm += othp
 
                                         } else {
                                             totAm += totPermP
                                             totAm += othp
-                                            totAm = (totAm) * parseFloat(cur.qt)
+                                            totAm = (totAm) * qtMain
                                         }
                                         //totAm.toLocaleString()
                                         document.querySelectorAll('.mrp_ammount del').forEach(cur => {
@@ -13386,10 +13516,7 @@ ${hmOTH}
 
 
 
-                                        document.querySelectorAll('.ct_bx_qt_foods input').forEach(cur1 => {
-                                            cur1.value = cur.qt
-                                        })
-
+                                    
                                         document.querySelectorAll('.ct_bx_weight_qt span').forEach(cur1 => {
                                             cur1.innerText = cur.itemUnit
                                         })
@@ -13688,28 +13815,28 @@ ${hmOTH}
                     let globalNamex = false
                     let unitInit2 = []
                     if (document.querySelector('.ct_bx_inside_base') !== null) {
-                       // if (window.screen.width <= 800) {
-                          //Array.from(document.querySelectorAll('.cont2_itemskr .ct_bx_inside_base li')).forEach(cur => {
-                          //    let name = cur.childNodes[1].childNodes[1].innerText
-                          //    let price = cur.childNodes[1].childNodes[3].innerText
-                          //    let added = false
+                        // if (window.screen.width <= 800) {
+                        //Array.from(document.querySelectorAll('.cont2_itemskr .ct_bx_inside_base li')).forEach(cur => {
+                        //    let name = cur.childNodes[1].childNodes[1].innerText
+                        //    let price = cur.childNodes[1].childNodes[3].innerText
+                        //    let added = false
 
-                          //    if (cur.classList.value === 'alreadyselected') {
-                          //        added = true
-                          //    }
-                          //    unitInit.push({ name: name, price: price, added: added })
-                          //})
+                        //    if (cur.classList.value === 'alreadyselected') {
+                        //        added = true
+                        //    }
+                        //    unitInit.push({ name: name, price: price, added: added })
+                        //})
                         //} else {
-                            Array.from(document.querySelectorAll('.cont1_itemskr .ct_bx_inside_base li')).forEach(cur => {
-                                let name = cur.childNodes[1].childNodes[1].innerText
-                                let price = cur.childNodes[1].childNodes[3].innerText
-                                let added = false
+                        Array.from(document.querySelectorAll('.cont1_itemskr .ct_bx_inside_base li')).forEach(cur => {
+                            let name = cur.childNodes[1].childNodes[1].innerText
+                            let price = cur.childNodes[1].childNodes[3].innerText
+                            let added = false
 
-                                if (cur.classList.value === 'alreadyselected') {
-                                    added = true
-                                }
-                                unitInit.push({ name: name, price: price, added: added })
-                            })
+                            if (cur.classList.value === 'alreadyselected') {
+                                added = true
+                            }
+                            unitInit.push({ name: name, price: price, added: added })
+                        })
 
                     } else {
                         Array.from(unitInU.childNodes).forEach(cur => {
@@ -13747,6 +13874,7 @@ ${hmOTH}
                             }
                         })
                     }
+                    // which unit does the user choosen ?
                     if (document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1] !== undefined) {
                         baseMain = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[0]
                         if (document.querySelector('.ct_bx_inside_base') === null) {
@@ -14291,14 +14419,46 @@ ${hmOTH}
                 //if (qtekfd.parentElement.parentElement.classList.value.split(' ').includes('for_fst_pur')) {
                 //    return
                 //}
-                //Maxqt
-                if (i > 4) {
-                    // document.querySelectorAll('.ct_err_max_stock').forEach((cur) => {
-                    //     cur.style.display = 'flex'
-                    // })
-                    // document.querySelectorAll('.ct_err_max_stock p').forEach((cur) => {
-                    //     cur.innerText = `You have reached max order quantity to order more, please contact us.`
-                    // })
+                // which unit does the user choosen ?
+                let baseU = ''
+                if (document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1] !== undefined) {
+                    baseMain = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[0]
+                    if (document.querySelector('.ct_bx_inside_base') === null) {
+                        baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+
+                        if (document.querySelector('.hidden.option') !== null) {
+                            baseU = document.querySelector('.ct_bx_qty_inner p').innerText.split('—')[1]
+                            baseU = baseU.split(' ').join('')
+                        }
+                    }
+                } else {
+                    baseMain = document.querySelector('.ct_bx_qty_inner p').innerText
+                    if (document.querySelector('.ct_bx_inside_base') === null) {
+                        baseU = document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText
+                    }
+                }
+
+                let limit = 4
+                let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                if (stocks_item[0].unit === 'forall') {
+                    limit = parseFloat(stocks_item[0].stock)
+                } else {
+                    stocks_item.forEach(cu11 => {
+                        if (baseU.split(' ').join('').toLowerCase() === 'notselected') {
+                            limit = parseFloat(cu11.stock)
+
+
+                        } else if (cu11.unit !== null) {
+                            console.log(baseU.split(' ').join('') === cu11.unit.split(' ').join(''), '--------------------------------')
+                            if (baseU.split(' ').join('') === cu11.unit.split(' ').join('')) {
+                                limit = parseFloat(cu11.stock)
+
+                            }
+                        }
+                    })
+
+                }
+                if (i > limit) {
                     return
                 }
                 qtekfd.parentElement.childNodes[3].value = i
@@ -15796,6 +15956,303 @@ ${hmOTH}
             xDown = firstTouch.clientX;
             yDown = firstTouch.clientY;
         };
+        let allR = 0
+        const clacRate = async () => {
+
+            let token = window.location.pathname.split('/')[2]
+            let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
+            let dbCollection = db.collection(`items`)
+            let res = await dbCollection.get()
+            document.querySelector('.ct_bx_form_rating').style.opacity = 1
+
+            res.docs.forEach(cur => {
+                onGolen = res.docs.length
+                let item = cur.data().item
+                let html1
+
+                if (item.id === token) {
+
+
+                    item.ratings.forEach(cur1 => {
+                        r = cur1.ratings
+                        r = parseFloat(r)
+
+                        allR += r
+                    })
+                    let numenator = 0
+                    let denomenator = 0
+                    item.ratings.forEach(cur1 => {
+                        numenator += cur1.star * cur1.ratings
+                        denomenator += cur1.ratings
+                    })
+
+                    let ratedFront = parseFloat((numenator / denomenator).toFixed(2).split('.')[0])
+
+                    let ratedBack = parseFloat((numenator / denomenator).toFixed(2).split('.')[1].split('')[0])
+                    let html1
+
+                    if (ratedFront === 5) {
+
+                        html1 = `       <span>
+                <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+            </span>
+        
+            <span>
+                <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+            </span>
+        
+            <span>
+                <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+            </span>
+        
+        
+            <span>
+                <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+            </span>
+        
+            <span>
+                <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+            </span>`
+
+                    } else {
+                        if (ratedFront === 4) {
+
+                            if (ratedBack > 1) {
+                                html1 = `       <span>
+        <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+        </span>
+        
+        <span>
+        <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+        </span>
+        
+        <span>
+        <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+        </span>
+        
+        
+        <span>
+        <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+        </span>
+        
+        <span>
+        <ion-icon class="filed_rating_itm" name="star-half"></ion-icon>
+        </span>`
+                            } else {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+
+                            }
+                        } else if (ratedFront === 3) {
+                            if (ratedBack > 1) {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            } else {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            }
+                        } else if (ratedFront === 2) {
+                            if (ratedBack > 1) {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            } else {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            }
+                        } else if (ratedFront === 1) {
+                            if (ratedBack > 1) {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            } else {
+                                html1 = `       <span>
+                    <ion-icon class="filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star-half"></ion-icon>
+                    </span>
+                    
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>
+                    
+                    <span>
+                    <ion-icon class="not_filed_rating_itm" name="star"></ion-icon>
+                    </span>`
+                            }
+                        }
+                    }
+                    document.querySelector('.ct_bx_ratings_info a').innerHTML = html1
+
+                    let star5 = parseFloat(item.ratings[0].ratings)
+                    let star4 = parseFloat(item.ratings[1].ratings)
+
+                    let star3 = parseFloat(item.ratings[2].ratings)
+
+                    let star2 = parseFloat(item.ratings[3].ratings)
+
+                    let star1 = parseFloat(item.ratings[4].ratings)
+
+                    if (star5 !== 0) {
+                        let rate5 = Math.round((star5 / allR) * 100)
+                        document.querySelector('.star5th .ct_level').style.width = `${rate5}%`
+                        document.querySelector('.star5th .bx_star_dis span').innerText = `${rate5}%`
+
+                    } else {
+                        document.querySelector('.star5th .ct_level').style.width = `0%`
+                        document.querySelector('.star5th span').innerHTML = `&mdash;`
+                    }
+                    if (star4 !== 0) {
+                        let rate5 = Math.round((star4 / allR) * 100)
+                        document.querySelector('.star4th .ct_level').style.width = `${rate5}%`
+                        document.querySelector('.star4th  span').innerText = `${rate5}%`
+                    } else {
+                        document.querySelector('.star4th .ct_level').style.width = `0%`
+                        document.querySelector('.star4th  span').innerHTML = `&mdash;`
+                    }
+                    if (star3 !== 0) {
+                        let rate5 = Math.round((star3 / allR) * 100)
+                        document.querySelector('.star3th .ct_level').style.width = `${rate5}%`
+                        document.querySelector('.star3th  span').innerText = `${rate5}%`
+                    } else {
+                        document.querySelector('.star3th .ct_level').style.width = `0%`
+                        document.querySelector('.star3th  span').innerHTML = `&mdash;`
+                    }
+                    if (star2 !== 0) {
+                        let rate5 = Math.round((star2 / allR) * 100)
+                        document.querySelector('.star2th .ct_level').style.width = `${rate5}%`
+                        document.querySelector('.star2th  span').innerText = `${rate5}%`
+                    } else {
+                        document.querySelector('.star2th .ct_level').style.width = `0%`
+                        document.querySelector('.star2th  span').innerHTML = `&mdash;`
+                    }
+                    if (star1 !== 0) {
+                        let rate5 = Math.round((star1 / allR) * 100)
+                        document.querySelector('.star1th .ct_level').style.width = `${rate5}%`
+                        document.querySelector('.star1th  span').innerText = `${rate5}%`
+                    } else {
+                        document.querySelector('.star1th .ct_level').style.width = `0%`
+                        document.querySelector('.star1th  span').innerHTML = `&mdash;`
+                    }
+                }
+
+            })
+
+        }
+        clacRate()
     </script>
 </body>
 
