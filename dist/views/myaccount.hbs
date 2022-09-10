@@ -21107,6 +21107,18 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                             document.querySelector('.phone_err').style.display = 'block'
                         }
                         }
+                                                if(!isNaN(parseFloat(jwt.a.ph))){
+                                                    phValid = true
+                                                      document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
+                                cur.style.display = 'none'
+                            })
+                            document.querySelector('.err_otp p').innerText='Invalid phone number.Please try again.'
+
+                            document.querySelector('.err_otp').style.display = 'block'
+                            document.querySelector('.ct_edit_cc .ct_acc').style.display = 'none'
+                            document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'block'
+                            return
+                                                }
                         // check if the pass is same as the earlier pass of user
                         let user_elarlier_pass=bcrypt.compareSync(jwt.a.pass,JSON.parse(getCookie('user')).pass);
                         //-----------------------//
@@ -21123,6 +21135,7 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                             document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
                                 cur.style.display = 'none'
                             })
+                            document.querySelector('.err_otp p').innerText='Your provided password already exist,please try again.'
                             document.querySelector('.err_otp').style.display = 'block'
                             document.querySelector('.ct_edit_cc .ct_acc').style.display = 'none'
                             document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'block'

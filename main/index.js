@@ -219,7 +219,6 @@ app.get('/signup', [all_midellare.data], (req, res) => {
 
                     fst.end(function (resp) {
                         if (resp.error) console.log(resp.error);
-
                         console.log(resp.body);
 
                     });
