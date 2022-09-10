@@ -1687,6 +1687,7 @@
         .ct_bx_item_stock .outStk,
         .ct_bx_item_stock .inStk {
             font-size: 26px;
+            display: none;
             font-family: 'Nanum Gothic';
         }
 
@@ -10842,6 +10843,7 @@
                     let textBoxa = bxA.childNodes[1].innerText
                     console.log(bxA.childNodes, 'op0duidfjfkfhfwfsf')
                     if (bxA.childNodes[9] !== undefined) {
+                         
                         textBoxa = bxA.childNodes[1].innerText.split(' ')[0]
                         countNumer = 1
                         placeQt = 1
@@ -10853,11 +10855,13 @@
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
+
                             document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
                                 cu11.innerHTML = mUnit2 + ' &mdash; ' + unitNum
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + unitNum
                         } else {
+
                             document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
                                 cu11.innerHTML = mUnit2 + ' &mdash; ' + textBoxa
                             })
@@ -11597,51 +11601,51 @@
                     numU = parseFloat(numU)
                     let stk = item.netweight
                     document.querySelector('.ct_bx_fex_fd_dt_ov').style.height = 'auto'
-                    function nostk() {
-                        document.querySelector('.outStk').style.display = 'block'
-                        document.querySelector('.inStk').style.display = 'none'
-                        document.querySelector('.ct_bx_item_stock p').style.display = 'block'
-                        document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-                        if (window.screen.width <= 935) {
-                            document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
-                            document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
-                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
-                            document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                  ///function nostk() {
+                  ///    document.querySelector('.outStk').style.display = 'block'
+                  ///    document.querySelector('.inStk').style.display = 'none'
+                  ///    document.querySelector('.ct_bx_item_stock p').style.display = 'block'
+                  ///    document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                  ///    if (window.screen.width <= 935) {
+                  ///        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
+                  ///        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
+                  ///        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
+                  ///        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
 
-                        }
-                    }
+                  ///    }
+                  ///}
                     if (item.netweight <= 0) {
-                        nostk()
+                       // nostk()
 
                     }
                     // stock checking if item is in cart
-                    let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
-                    allfds.forEach(cur11 => {
-                        if (cur11.id === token) {
-
-                            item.unitInit.forEach(cu => {
-                                let no_chick = ''
-                                let no_chick2 = cur11.baseU.split(' ').join('').toLowerCase()
-                                if (cu.price === null) {
-                                    no_chick = 'notselected'
-                                }
-
-                                if (no_chick2 === no_chick && parseFloat(cu.stock) === 0) {
-                                    nostk()
-
-                                } else {
-                                    let unitFull = cu.unitNum + '' + cu.unitU
-                                    if (unitFull.split(' ').join('') === cur11.baseU.split(' ').join('')) {
-                                        if (parseFloat(cu.stock) === 0) {
-                                            nostk()
-                                        }
-
-                                    }
-                                }
-                            })
-
-                        }
-                    })
+                   // let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
+                   // allfds.forEach(cur11 => {
+                   //     if (cur11.id === token) {
+//
+                   //         item.unitInit.forEach(cu => {
+                   //             let no_chick = ''
+                   //             let no_chick2 = cur11.baseU.split(' ').join('').toLowerCase()
+                   //             if (cu.price === null) {
+                   //                 no_chick = 'notselected'
+                   //             }
+//
+                   //             if (no_chick2 === no_chick && parseFloat(cu.stock) === 0) {
+                   //                 nostk()
+//
+                   //             } else {
+                   //                 let unitFull = cu.unitNum + '' + cu.unitU
+                   //                 if (unitFull.split(' ').join('') === cur11.baseU.split(' ').join('')) {
+                   //                     if (parseFloat(cu.stock) === 0) {
+                   //                         nostk()
+                   //                     }
+//
+                   //                 }
+                   //             }
+                   //         })
+//
+                   //     }
+                   // })
                     //----------------------------------------
                     document.querySelectorAll('.for_banner').forEach(cur => cur.src = item.imgBanner)
                     document.querySelector('.ct_bx_img_itm').style.visibility = 'visible'
@@ -15985,10 +15989,13 @@ ${hmOTH}
                         numenator += cur1.star * cur1.ratings
                         denomenator += cur1.ratings
                     })
-
-                    let ratedFront = parseFloat((numenator / denomenator).toFixed(2).split('.')[0])
-
-                    let ratedBack = parseFloat((numenator / denomenator).toFixed(2).split('.')[1].split('')[0])
+                    let ratedFront = 0
+                    let ratedBack =0
+if(numenator!==0&&denomenator!==0){
+                    ratedFront = parseFloat((numenator / denomenator).toFixed(2).split('.')[0])
+                    ratedBack = parseFloat((numenator / denomenator).toFixed(2).split('.')[1].split('')[0])
+}
+ 
                     let html1
 
                     if (ratedFront === 5) {

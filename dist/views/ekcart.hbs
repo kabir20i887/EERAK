@@ -12522,8 +12522,14 @@
                 console.log(bxA.classList)
                 if (bxA.classList.value.split(' ').includes('no_stock')) {
                     document.querySelector('.deliv_xs1').classList.add('notavailble')
+                    document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'none'
+                            })
                 } else {
                     document.querySelector('.deliv_xs1').classList.remove('notavailble')
+                    document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'block'
+                            })
                 }
 
                 if (bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges')) { return }
