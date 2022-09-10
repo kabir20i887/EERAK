@@ -12523,13 +12523,13 @@
                 if (bxA.classList.value.split(' ').includes('no_stock')) {
                     document.querySelector('.deliv_xs1').classList.add('notavailble')
                     document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                cu11.style.display = 'none'
-                            })
+                        cu11.style.display = 'none'
+                    })
                 } else {
                     document.querySelector('.deliv_xs1').classList.remove('notavailble')
                     document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                cu11.style.display = 'block'
-                            })
+                        cu11.style.display = 'block'
+                    })
                 }
 
                 if (bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges')) { return }
@@ -12596,9 +12596,9 @@
                     //--------------------
                     qt = parseFloat(qt)
                     // checking the stock
-                    if(qt>stock){
-qt=stock
-bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[7].childNodes[3].value = stock
+                    if (qt > stock) {
+                        qt = stock
+                        bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[7].childNodes[3].value = stock
                     }
                     let selU = bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1]
                     let chQt = false
@@ -14157,7 +14157,7 @@ bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childN
                         }
                     })
                     console.log(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes[3].innerText, '9415')
-                    let stk=parseFloat(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes[3].innerText)
+                    let stk = parseFloat(qtcart.parentElement.parentElement.parentElement.parentElement.childNodes[3].innerText)
                     //Maxqt
                     if (i > stk) {
                         return
@@ -15082,39 +15082,39 @@ bxA.parentElement.parentElement.parentElement.parentElement.parentElement.childN
 
                                 })
                             }
-                                                    let Qty_units
-                           let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
-                           if (itm.unitInit[0].name!==undefined) {
-                               Qty_units = parseFloat(stocks_item[0].stock)
-                           } else {
-                               itm.unitInit.forEach(cu11 => {
-                                let unitX=cu11.unitNum+''+cu11.unitU
-                                   if (elem.baseU.toLowerCase().split(' ').join('') === 'notselected') {
-                                       Qty_units = parseFloat(cu11.stock)
+                            let Qty_units
+                            let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                            if (itm.unitInit[0].name !== undefined) {
+                                Qty_units = parseFloat(stocks_item[0].stock)
+                            } else {
+                                itm.unitInit.forEach(cu11 => {
+                                    let unitX = cu11.unitNum + '' + cu11.unitU
+                                    if (elem.baseU.toLowerCase().split(' ').join('') === 'notselected') {
+                                        Qty_units = parseFloat(cu11.stock)
 
-                                    if(Qty_units===0){
-Qty_units= parseFloat(cu11.no_stk_limit)
+                                        if (Qty_units === 0) {
+                                            Qty_units = parseFloat(cu11.no_stk_limit)
+                                        }
+
+
+                                    } else if (cu11.price !== null) {
+                                        if (elem.baseU.toLowerCase().split(' ').join('') === unitX.split(' ').join('')) {
+                                            Qty_units = parseFloat(cu11.stock)
+                                            if (Qty_units === 0) {
+                                                Qty_units = parseFloat(cu11.no_stk_limit)
+                                            }
+                                        }
                                     }
+                                })
 
-
-                                   } else if (cu11.price !== null) {
-                                       if (elem.baseU.toLowerCase().split(' ').join('') === unitX.split(' ').join('')) {
-                                           Qty_units = parseFloat(cu11.stock)
-   if(Qty_units===0){
-Qty_units= parseFloat(cu11.no_stk_limit)
-                                    }
-                                       }
-                                   }
-                               })
-
-                           }
-                             Qty_units= parseFloat(Qty_units)
-                                if(parseFloat(elem.qt)>Qty_units){
+                            }
+                            Qty_units = parseFloat(Qty_units)
+                            if (parseFloat(elem.qt) > Qty_units) {
                                 Qty_units = parseFloat(Qty_units)
-                                }else{
-                               Qty_units= elem.qt
-                                }
-                                //----------------------------
+                            } else {
+                                Qty_units = elem.qt
+                            }
+                            //----------------------------
                             let totInside = 0
                             let totInside2 = 0
                             let pff = parseFloat(itm.profit)
@@ -15255,10 +15255,10 @@ Qty_units= parseFloat(cu11.no_stk_limit)
                                             if (parseFloat(el.stock) === 0) {
                                                 classStkno = 'no_stock'
                                             }
- let stk_item=parseFloat(el.stock)
-                                                if(parseFloat(el.stock)===0){
-                                                stk_item=parseFloat(el.no_stk_limit)
-                                                }
+                                            let stk_item = parseFloat(el.stock)
+                                            if (parseFloat(el.stock) === 0) {
+                                                stk_item = parseFloat(el.no_stk_limit)
+                                            }
                                             if (el.price !== null) {
                                                 el.price = parseFloat(el.price).toLocaleString()
                                                 let uNum = parseFloat(el.unitNum)
@@ -15277,7 +15277,7 @@ Qty_units= parseFloat(cu11.no_stk_limit)
                                                     htmlX = `<span class='hidden hasnameX'>${el.nameX}</span>
 `
                                                 }
-                                            
+
                                                 ht = ` <li class=${classStkno}>
         
                      <span>${fUnn}</span>
@@ -15367,17 +15367,17 @@ Qty_units= parseFloat(cu11.no_stk_limit)
 
                                 }
 
-                               // Qty_units = baseSelect.split(' ')[0]
-                               //(baseSelect.split(' ').includes('k')) {
-                               // Qty_units = baseSelect.split('k')[0]
-                               //lse if (baseSelect.split(' ').includes('g')) {
-                               // Qty_units = baseSelect.split('g')[0]
-                               //
+                                // Qty_units = baseSelect.split(' ')[0]
+                                //(baseSelect.split(' ').includes('k')) {
+                                // Qty_units = baseSelect.split('k')[0]
+                                //lse if (baseSelect.split(' ').includes('g')) {
+                                // Qty_units = baseSelect.split('g')[0]
+                                //
 
-                               //(Qty_units >= itm.netweight) {
-                               // Qty_units = itm.netweight
-                               
-                               //setting the stock to quantity
+                                //(Qty_units >= itm.netweight) {
+                                // Qty_units = itm.netweight
+
+                                //setting the stock to quantity
 
                                 let htmUNITS = ``
                                 let baseUx = elem.baseU
@@ -15418,7 +15418,7 @@ Qty_units= parseFloat(cu11.no_stk_limit)
                                     htmUNITS = `  <span>${elem.baseMain}</span>
                                 ${prBox}`
                                 }
-                              
+
                                 let contBxqt = ''
                                 contBxqt = `   <div class="ct_bx_qty_inner nottog">
     <div class="ct_bx_weight_qt">
@@ -15634,7 +15634,26 @@ Qty_units= parseFloat(cu11.no_stk_limit)
 
                         if (html2 !== null && stockFin !== null) {
                             document.querySelector('.bx_evt_cart_item .loader_cart').style.display = 'none'
-                            document.querySelector(bx).insertAdjacentHTML('beforeend', html2)
+                            let fds = JSON.parse(localStorage.getItem('foodsAdded'))
+                            // if krick not available for some reason
+                            if (itemDb.netweight === null) {
+                                document.querySelectorAll('.ct_bx_item_stock p').forEach(cur => {
+                                    cur.style.display = 'none'
+                                })
+                                document.querySelectorAll('.ct_sbout_this_itm').forEach(cur => {
+                                    cur.style['pointer-events'] = 'none'
+                                })
+                                fds.forEach((cur, indx) => {
+                                    if (cur.id === itemDb.id) {
+                                        fds.splice(indx, 1)
+                                        localStorage.setItem('foodsAdded', JSON.stringify(fds))
+
+                                    }
+                                })
+                            }else{
+                                                            document.querySelector(bx).insertAdjacentHTML('beforeend', html2)
+
+                            }
 
                             addBill()
                         }
@@ -15653,17 +15672,17 @@ Qty_units= parseFloat(cu11.no_stk_limit)
                         JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur11 => {
                             if (cur11.dTime === '24 hour') {
                                 document.querySelector('.deliv_xs1').classList.add('notavailble')
-document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                cu11.style.display = 'none'
-                            })
+                                document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                    cu11.style.display = 'none'
+                                })
                             } else {
                                 document.querySelector('.deliv_xs1').classList.remove('notavailble')
-document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                cu11.style.display = 'block'
-                            })
+                                document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                    cu11.style.display = 'block'
+                                })
                             }
                         })
-                      
+
 
 
                         // 9pm to 9am

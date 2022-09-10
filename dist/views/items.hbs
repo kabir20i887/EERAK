@@ -10755,29 +10755,28 @@
                     mUnit = ''
                     mUnit2 = bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText
                 }
-                if (bxA.classList.value.includes('no_stock')) {
-                    document.querySelector('.outStk').style.display = 'block'
-                    document.querySelector('.inStk').style.display = 'none'
-                    document.querySelector('.ct_bx_item_stock p').style.display = 'block'
-                    document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-                    if (window.screen.width <= 935) {
-                        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
-                        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
-                        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
-                        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-
-                    }
-                } else {
-                    document.querySelector('.outStk').style.display = 'none'
-                    document.querySelector('.inStk').style.display = 'block'
-                    document.querySelector('.ct_bx_item_stock p').style.display = 'none'
-                    if (window.screen.width <= 935) {
-                        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'none'
-                        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'block'
-                        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'none'
-
-                    }
-                }
+        //        if (bxA.classList.value.includes('no_stock')) {
+                //    document.querySelector('.outStk').style.display = 'block'
+                //    document.querySelector('.inStk').style.display = 'none'
+                //    document.querySelector('.ct_bx_item_stock p').style.display = 'block'
+                //    document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+                //    if (window.screen.width <= 935) {
+                //        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
+                //        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
+                //        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
+                //        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+//
+                //    }
+                //} else {
+                //    document.querySelector('.outStk').style.display = 'none'
+                //    document.querySelector('.ct_bx_item_stock p').style.display = 'none'
+                //    if (window.screen.width <= 935) {
+                //        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'none'
+                //        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'block'
+                //        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'none'
+//
+                //    }
+                //}
                 let countNumer = bxA.childNodes[7].innerText
                 countNumer = parseFloat(countNumer)
                 unit = bxA.childNodes[1].innerText
@@ -11601,21 +11600,63 @@
                     numU = parseFloat(numU)
                     let stk = item.netweight
                     document.querySelector('.ct_bx_fex_fd_dt_ov').style.height = 'auto'
-                  ///function nostk() {
-                  ///    document.querySelector('.outStk').style.display = 'block'
-                  ///    document.querySelector('.inStk').style.display = 'none'
-                  ///    document.querySelector('.ct_bx_item_stock p').style.display = 'block'
-                  ///    document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
-                  ///    if (window.screen.width <= 935) {
-                  ///        document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
-                  ///        document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
-                  ///        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
-                  ///        document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+              // function nostk() {
+              //     alert('j,,,')
+              //     document.querySelector('.outStk').style.display = 'block'
+              //     document.querySelector('.inStk').style.display = 'none'
+              //     document.querySelector('.ct_bx_item_stock p').style.display = 'block'
+              //     document.querySelector('.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+              //     if (window.screen.width <= 935) {
+              //         document.querySelector('.ct_sbout_this_itm_for_mob .outStk').style.display = 'block'
+              //         document.querySelector('.ct_sbout_this_itm_for_mob .inStk').style.display = 'none'
+              //         document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').style.display = 'block'
+              //         document.querySelector('.ct_sbout_this_itm_for_mob.ct_bx_item_stock p').innerText = 'Delivery will be within 24 hour'
+              //     }
+              // }
+                    let fds = JSON.parse(localStorage.getItem('foodsAdded'))
+                    // if krick not available for some reason
+                    if (item.netweight ===null) {
+                                 document.querySelectorAll('.ct_bx_item_stock p').forEach(cur => {
+                                    cur.style.display = 'none'
+                                })
+                                document.querySelectorAll('.ct_sbout_this_itm').forEach(cur => {
+                                    cur.style['pointer-events'] = 'none'
+                                })
+                                fds.forEach((cur, indx) => {
+                                    if (cur.id === token) {
+                                        fds.splice(indx, 1)
+                                        localStorage.setItem('foodsAdded', JSON.stringify(fds))
 
-                  ///    }
-                  ///}
-                    if (item.netweight <= 0) {
-                       // nostk()
+                                    }
+                                })
+                                
+
+                                document.querySelectorAll('.ct_bx_item_stock .outStk').forEach(cur => {
+                                    cur.style.display = 'block'
+                                    cur.innerText = 'currently unavailable'
+                                })
+
+                                document.querySelectorAll('.bx_op').forEach(cur => {
+                                    cur.style['pointer-events'] = 'none'
+                                })
+                                document.querySelector('.ct_bx_img_itm').style.filter = 'grayscale(1)'
+                                document.querySelectorAll('.ct_sbout_this_itm').forEach(cur => {
+                                    cur.style.filter = 'grayscale(1)'
+                                })
+
+                                if (window.screen.width <= 920) {
+                                    document.querySelectorAll('.ct_bx_items_qt_actions>*:not(:nth-child(2))').forEach(cur => {
+                                        cur.style.filter = 'grayscale(1)'
+                                    })
+                                } else {
+                                    document.querySelectorAll('.ct_bx_items_qt_actions ').forEach(cur => {
+                                        cur.style.filter = 'grayscale(1)'
+                                    })
+                                }
+                                // document.querySelector('.ct_x_fd_dt_itm >:not(:nth-child(9))').style.filter = 'grayscale(1)'
+
+                                document.querySelectorAll('.ct_bx_items_qt_actions').forEach(cur => { cur.style['pointer-events'] = 'none' })
+                                document.querySelectorAll('.ct_bx_item_stock').forEach(cur => { cur.style.filter = 'grayscale(0)' })
 
                     }
                     // stock checking if item is in cart
@@ -11649,7 +11690,6 @@
                     //----------------------------------------
                     document.querySelectorAll('.for_banner').forEach(cur => cur.src = item.imgBanner)
                     document.querySelector('.ct_bx_img_itm').style.visibility = 'visible'
-                    let fds = JSON.parse(localStorage.getItem('foodsAdded'))
                     document.querySelector('.ct_overfow_for_load').style.display = 'none'
                     document.querySelector('.yt-loader').style.display = 'none'
                     document.querySelector('html').style.overflowY = 'scroll'
@@ -11683,9 +11723,7 @@
 
                                     }
                                 })
-                                document.querySelectorAll('.ct_bx_item_stock .inStk').forEach(cur => {
-                                    cur.style.display = 'none'
-                                })
+                                
 
                                 document.querySelectorAll('.ct_bx_item_stock .outStk').forEach(cur => {
                                     cur.style.display = 'block'
