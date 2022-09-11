@@ -5327,7 +5327,12 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                         cur1.style.margin = '0 0px 0 3px'
 
                     })
+ if(window.screen.width<=360){
+  document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
+                        cur1.style.margin = '0 20px 0 3px'
 
+                    })
+                  }
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 740) {
                         document.querySelector('.for_nav_main').style.height = '75px'
