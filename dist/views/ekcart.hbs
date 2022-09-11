@@ -11386,7 +11386,7 @@
         </div>
 
     </div>
- 
+
     <div class="ct_sep_bx">
         <div class="inner_seperation">
             <section class="ek_cart">
@@ -12521,6 +12521,8 @@
             if (bxA !== null) {
                 let unitPrice
                 console.log(bxA.classList)
+
+
                 if (bxA.classList.value.split(' ').includes('no_stock')) {
                     document.querySelector('.deliv_xs1').classList.add('notavailble')
                     document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
@@ -12532,7 +12534,7 @@
                         cu11.style.display = 'block'
                     })
                 }
-
+               
                 if (bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges')) { return }
                 if (bxA.classList.value.split(' ').includes('Add_c_unit')) {
                     let bxUl = bxA.parentElement.parentElement
@@ -12752,7 +12754,7 @@
                             bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText = baseMain
                         }
 
-                        bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = 'not selected'
+                        bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = 'Please click to select'
                         bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].style.color = 'rgb(203 33 33)'
                         bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].style.fontSize = '14px'
                         bxA.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].style.fontFamily = 'Montserrat'
@@ -12942,7 +12944,7 @@
                             cu.baseU = unit.innerText
                             if (noBa) {
                                 cu.selU2 = 0
-                                cu.baseU = `not selected`
+                                cu.baseU = `Please click to select`
                             }
                             cu.price = mainp
 
@@ -13470,7 +13472,7 @@
                                         } else if (unit.split(' ').join('').split('').includes('g')) {
                                             numUnit = 1
                                         }
-                                        if (unit.split(' ').join('') !== 'notselected') {
+                                        if (unit.split(' ').join('') !== 'Please clickt oselect') {
                                             numUnit = parseFloat(numUnit)
                                             ntwe -= (qt * numUnit)
                                         }
@@ -14174,7 +14176,7 @@
                         }
                     })
                     // grocery items options box -> changing the price 
-                    if (qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'notselected') {
+                    if (qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
                         let prbaseM = qtcart.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         prbaseM = parseFloat(prbaseM)
                         //(prbaseM / (i + 1)) * i
@@ -14298,7 +14300,7 @@
                         }
                     })
                     // grocery items options box -> changing the price 
-                    if (qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'notselected') {
+                    if (qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'viewitems.' && qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
                         let prbaseM = qtcart2.parentElement.parentElement.childNodes[5].childNodes[1].childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                         prbaseM = parseFloat(prbaseM)
                         //(prbaseM / (i + 1)) * i
@@ -14938,7 +14940,7 @@
                                             }
 
                                         } else {
-                                            if (elem.baseU.toLowerCase() === 'not selected') {
+                                            if (elem.baseU.toLowerCase() === 'please click to select') {
                                                 matchedU = true
                                                 posEm = 1
                                             }
@@ -15090,7 +15092,7 @@
                             } else {
                                 itm.unitInit.forEach(cu11 => {
                                     let unitX = cu11.unitNum + '' + cu11.unitU
-                                    if (elem.baseU.toLowerCase().split(' ').join('') === 'notselected') {
+                                    if (elem.baseU.toLowerCase().split(' ').join('') === 'pleaseclicktoselect') {
                                         Qty_units = parseFloat(cu11.stock)
 
                                         if (Qty_units === 0) {
@@ -15385,7 +15387,7 @@
                                 if (elem.unitInit[0].unitNum === null) {
                                     baseUx = elem.baseU.split(' ')[0]
                                 }
-                                if (elem.baseU.toLowerCase().split(' ').join('') === 'notselected') {
+                                if (elem.baseU.toLowerCase().split(' ').join('') === 'pleaseclicktoselect') {
                                     htmUNITS = `     <span>${elem.baseMain}</span>
                                 <ar>${elem.baseU}</ar>`
                                 } else {
@@ -15651,8 +15653,8 @@
 
                                     }
                                 })
-                            }else{
-                                                            document.querySelector(bx).insertAdjacentHTML('beforeend', html2)
+                            } else {
+                                document.querySelector(bx).insertAdjacentHTML('beforeend', html2)
 
                             }
 
@@ -15669,32 +15671,40 @@
 
                         console.log(hours >= 12, pm_or_am === 'PM', hours >= 18, pm_or_am === 'PM')
 
-
+                        let found_24hr = false
                         JSON.parse(localStorage.getItem('foodsAdded')).forEach(cur11 => {
                             if (cur11.dTime === '24 hour') {
-                                document.querySelector('.deliv_xs1').classList.add('notavailble')
-                                document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                    cu11.style.display = 'none'
-                                })
-                            } else {
-                                document.querySelector('.deliv_xs1').classList.remove('notavailble')
-                                document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
-                                    cu11.style.display = 'block'
-                                })
+                                found_24hr = true
                             }
                         })
+                        if (found_24hr) {
+                            document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'none'
+                            })
+                            document.querySelector('.deliv_xs1').classList.add('notavailble')
 
+                        } else {
+                            document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'block'
+                            })
+                            document.querySelector('.deliv_xs1').classList.remove('notavailble')
+
+                        }
 
 
                         // 9pm to 9am
                         if (hours <= 9 && pm_or_am === 'AM') {
                             // from 12am to 9am
                             document.querySelector('.deliv_xs1').classList.add('notavailble')
-
+  document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'none'
+                            })
                         } else if (hours >= 21 && pm_or_am === 'PM') {
                             // from 9pm to 12am
                             document.querySelector('.deliv_xs1').classList.add('notavailble')
-
+  document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                                cu11.style.display = 'none'
+                            })
                         }
 
                     } else if (html2 === null) {
