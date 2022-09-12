@@ -12534,7 +12534,7 @@
                         cu11.style.display = 'block'
                     })
                 }
-               
+
                 if (bxA.parentElement.parentElement.parentElement.classList.value.split(' ').includes('hasveges')) { return }
                 if (bxA.classList.value.split(' ').includes('Add_c_unit')) {
                     let bxUl = bxA.parentElement.parentElement
@@ -15204,6 +15204,30 @@
 
                             let netweight = itm.netweight
                             let stock = parseFloat(netweight)
+                            if (elem.id === itm.id) {
+                                itm.unitInit.forEach(cu11 => {
+                                    if (cu11.price === null) {
+                                        if (elem.baseU.toLowerCase() === 'please click to select') {
+                                            stock=parseFloat(cu11.stock)
+
+                                            if(parseFloat(cu11.stock)===0){
+                                            stock=parseFloat(cu11.no_stk_limit)
+                                            }
+
+                                        }
+                                    }else{
+                                        let unitx=cu11.unitNum+''+cu11.unitU
+                                        if(unitx===elem.baseU){
+                                              stock=parseFloat(cu11.stock)
+
+                                            if(parseFloat(cu11.stock)===0){
+                                            stock=parseFloat(cu11.no_stk_limit)
+                                            }
+                                        }
+                                    }
+                                })
+
+                            }
                             let unFd = ``
                             let classListgroc = ``
                             if (itm.unitInit !== null) {
@@ -15696,13 +15720,13 @@
                         if (hours <= 9 && pm_or_am === 'AM') {
                             // from 12am to 9am
                             document.querySelector('.deliv_xs1').classList.add('notavailble')
-  document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                            document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
                                 cu11.style.display = 'none'
                             })
                         } else if (hours >= 21 && pm_or_am === 'PM') {
                             // from 9pm to 12am
                             document.querySelector('.deliv_xs1').classList.add('notavailble')
-  document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
+                            document.querySelectorAll('.deliv_xs1 .prc').forEach(cu11 => {
                                 cu11.style.display = 'none'
                             })
                         }

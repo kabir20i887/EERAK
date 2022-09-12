@@ -23,27 +23,31 @@
             display: none;
         }
 
-  .ct_results {
-    margin: -10px 0 0 28px;
-    display: none;
-    border-radius: 2px;
-    border-top: 1px solid #d9d9d9;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin-bottom: 16px;
-    position: static !important;
-}
-.pac-item-query {
-    font-size: 18px;
-    padding-right: 3px;
-    color: #000;
-}
-.pac-item {
-    padding: 11px;}
+        .ct_results {
+            margin: -10px 0 0 28px;
+            display: none;
+            border-radius: 2px;
+            border-top: 1px solid #d9d9d9;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-bottom: 16px;
+            position: static !important;
+        }
+
+        .pac-item-query {
+            font-size: 18px;
+            padding-right: 3px;
+            color: #000;
+        }
+
+        .pac-item {
+            padding: 11px;
+        }
+
         .ct_bx_verify {
             padding-left: 40px;
         }
@@ -2275,14 +2279,14 @@
                                     <div class="nick_name name_un bx_acc">
                                         <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
 
-                                        <input name='name_user'  class="name_of_user ac_setup" id="name_inp"
-                                         spellcheck="false" type="text" required>
+                                        <input name='name_user' class="name_of_user ac_setup" id="name_inp"
+                                            spellcheck="false" type="text" required>
                                         <label for="name_inp"> First name</label>
 
 
                                     </div>
                                     <div class="nick_name last_name lstN bx_acc">
-                                        <input  name='lastname' class="last_of_user ac_setup" id="last_nam_inp"
+                                        <input name='lastname' class="last_of_user ac_setup" id="last_nam_inp"
                                             spellcheck="false" type="text" required>
 
                                         <label for="last_nam_inp"> last name</label>
@@ -2296,7 +2300,7 @@
                                     <div class="gt_first_nam_second_name">
                                         <div class="nick_name area last_name bx_acc">
                                             <ion-icon name="map-outline"></ion-icon>
-                                            <input autocomplete="off" placeholder=""  name='area'
+                                            <input autocomplete="off" placeholder="" name='area'
                                                 class="last_of_user ac_setup" id="area" spellcheck="false" type="text"
                                                 required>
 
@@ -2309,7 +2313,7 @@
                                         <div class="nick_name bx_acc address">
                                             <ion-icon class="main_icon_acc_log" name="location-outline"></ion-icon>
 
-                                            <input  name='address'  class="name_of_user ac_setup" id="address"
+                                            <input name='address' class="name_of_user ac_setup" id="address"
                                                 spellcheck="false" type="text" required>
                                             <label class="labelM" for="address">Flat, House no., Building, Apartment
                                             </label>
@@ -2334,16 +2338,17 @@
                                             <div class="nick_name bx_acc phone_number">
                                                 <ion-icon name="call-outline"></ion-icon>
 
-                                                <input autocomplete="off" name='phone'  class="name_of_user ac_setup" id="phone"
-                                                    spellcheck="false" type="tel" required>
+                                                <input autocomplete="off" name='phone' class="name_of_user ac_setup"
+                                                    id="phone" spellcheck="false" type="tel" required>
                                                 <label for="phone">Phone Number</label>
 
 
                                             </div>
                                             <div class="nick_name gmail_inp_fl  bx_acc">
                                                 <ion-icon class="main_icon_acc_log" name="lock-open-outline"></ion-icon>
-                                                <input autocomplete="off" name="password_login" spellcheck="false"  minlength="9" class="passMain"
-                                                    id="passMain" type="password" required>
+                                                <input autocomplete="off" name="password_login" spellcheck="false"
+                                                    minlength="9" class="passMain" id="passMain" type="password"
+                                                    required>
                                                 <label class="passMain" for="passMain">Password</label>
                                                 <div class="ct_bx_show_password">
                                                     <ion-icon class="not_hide" name="eye-outline"></ion-icon>
@@ -2393,7 +2398,9 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
@@ -2419,7 +2426,21 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChps3-NrPNMwpBU3t6FywIsC4b6QRxOaA&libraries=places">
     </script>
     <script>
-
+  function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
 
         let directionSv = new google.maps.DirectionsService()
 
@@ -2445,13 +2466,13 @@
 
 
         // });
-               inputX.addEventListener('keyup', () => {
+        inputX.addEventListener('keyup', () => {
             console.log(autocomplete.gm_accessors_.place)
-            let obj=autocomplete.gm_accessors_.place
-            let palcesFound=[]
-            Object.keys(obj).map(cur=>{
-                if(obj[cur].h!==undefined){
-                    palcesFound=obj[cur].h
+            let obj = autocomplete.gm_accessors_.place
+            let palcesFound = []
+            Object.keys(obj).map(cur => {
+                if (obj[cur].h !== undefined) {
+                    palcesFound = obj[cur].h
                 }
             })
             if (palcesFound.length > 0) {
@@ -2466,9 +2487,9 @@
 
         document.querySelector('html').addEventListener('click', (e) => {
             let itemG = e.target.closest('.pac-item')
-            let inpX=e.target.closest('.nick_name.area input')
-            if(inpX===null&&!e.target.closest('.ct_results')){
-                 document.querySelector('.ct_results').style.display='none'
+            let inpX = e.target.closest('.nick_name.area input')
+            if (inpX === null && !e.target.closest('.ct_results')) {
+                document.querySelector('.ct_results').style.display = 'none'
             }
 
             if (itemG !== null) {
@@ -2480,7 +2501,10 @@
                 })
             }
         })
+if (getCookie('user') !== '') {
+            window.location.replace('/')
 
+        }
         console.log(google.maps.places)
         function secret(token) {
             var base64Url = token.split('.')[1];
@@ -2709,6 +2733,8 @@
         if (document.querySelector('.account_cont') !== null) {
             document.querySelector('.account_cont').addEventListener('click', (e) => {
                 var bcrypt = dcodeIO.bcrypt;
+                                                document.querySelector('.phone_invalid').style.display = 'none'
+
                 let emptyField = false;
                 let name_inp = document.querySelector('.name_of_user').value;
                 let lastname_inp = document.querySelector('.last_of_user ').value;
@@ -2763,7 +2789,7 @@
                     travelMode: google.maps.TravelMode.DRIVING,
                     unitSystem: google.maps.UnitSystem.IMPERIAL,
                 }
-                            document.querySelector('.ct_acc .yt-loader').style.display = 'block';
+                document.querySelector('.ct_acc .yt-loader').style.display = 'block';
 
                 directionSv.route(request, (res, stat) => {
                     if (stat === res.status) {
@@ -2772,7 +2798,7 @@
                         // EVERY LOCATION IS WORKING FINE
                         // checking the location by killometer distance from badharghat
                         if (unitKM <= 10) {
- 
+
 
 
                             bxT = bxT.getBoundingClientRect().top;
@@ -2817,10 +2843,10 @@
                                                 cu.style['pointer-events'] = 'auto';
                                                 cu.style.opacity = 1;
                                             });
-                                             document.querySelectorAll('.ct_error_other_signup').forEach(cu => {
+                                            document.querySelectorAll('.ct_error_other_signup').forEach(cu => {
                                                 cu.style.display = 'none';
                                             });
-document.querySelector('.phoneum_error').style.display='flex'
+                                            document.querySelector('.phoneum_error').style.display = 'flex'
 
                                             document.querySelectorAll('.nick_name label').forEach(cur => { cur.style.marginTop = '-55px' });
                                             scrollTo(0, bxT);
@@ -2860,34 +2886,45 @@ document.querySelector('.phoneum_error').style.display='flex'
                                     if (getCookie('processSign') === '') {
                                         socket.emit('getCode');
 
-                                        socket.on('sendCode', number => {
+                                        socket.on('sendCode', (number,key) => {
+                                            var settings = {
+                                                "async": true,
+                                                "crossDomain": true,
+                                                "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${phonenumber_inp}`,
+                                                "method": "GET"
+                                            }
+
+                                            $.ajax(settings).done(function (response) {
+                                                if (response.return) {
+                                               let user = {
+                                                   address_user: address_inp,
+                                                   continue_verify: "",
+                                                   last_user: "",
+                                                   lastname: lastname_inp,
+                                                   name_user: name_inp,
+                                                   password_login: pass_inp,
+                                                   phone: phonenumber_inp,
+                                                   city: city,
+                                               };
+                                               var header = {
+                                                   "alg": "HS256",
+                                                   "typ": "JWT"
+                                               }
+                                               var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
+                                               var encodedHeader = base64url(stringifiedHeader)
+                                               var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
+                                               var encodedData = base64url(stringifiedData);
+                                               var token = encodedHeader + "." + encodedData;;
+                                               console.log(token, 'token');
+                                               window.location.replace(`/signup?authUser=${token}`)
+                                                }else{
+                                document.querySelector('.phone_invalid').style.display = 'flex'
+
+                                                }
+                                            });
 
 
-                                            let user = {
-                                                address_user: address_inp,
-                                                continue_verify: "",
-                                                last_user: "",
-                                                lastname: lastname_inp,
-                                                name_user: name_inp,
-                                                password_login: pass_inp,
-                                                phone: phonenumber_inp,
-                                                city: city,
-                                            };
-                                            var header = {
-                                                "alg": "HS256",
-                                                "typ": "JWT"
-                                            };
 
-
-                                            var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
-                                            var encodedHeader = base64url(stringifiedHeader);
-
-                                            var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
-                                            var encodedData = base64url(stringifiedData);
-                                            var token = encodedHeader + "." + encodedData;;
-                                            console.log(token, 'token');
-                                            window.location.replace(`/signup?authUser=${token}`)
-                                            let delP;
                                         });
                                     };
 
@@ -2899,7 +2936,7 @@ document.querySelector('.phoneum_error').style.display='flex'
 
                             };
 
-                        }else{
+                        } else {
                             document.querySelector('.ct_acc .yt-loader').style.display = 'none';
 
                             document.querySelectorAll('.ct_error_other_signup').forEach(cur => {

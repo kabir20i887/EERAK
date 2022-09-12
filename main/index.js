@@ -196,6 +196,8 @@ app.get('/signup', [all_midellare.data], (req, res) => {
             var cookies2 = new Cookies(req, res)
 
             var checkSign = cookies2.get('checkSign');
+            var processSign = cookies2.get('processSign');
+
             //checkSign:  not send otp again if loaded the page , checkSign view if loaded
             console.log(checkSign, '#########12###################22####')
             if(checkSign===undefined){
@@ -220,7 +222,8 @@ app.get('/signup', [all_midellare.data], (req, res) => {
                     fst.end(function (resp) {
                         if (resp.error) console.log(resp.error);
                         console.log(resp.body);
-
+if(resp.body.return){
+}
                     });
                 }
             }
@@ -247,7 +250,6 @@ app.get('/signup', [all_midellare.data], (req, res) => {
                 fst.end(function (res) {
                     if (res.error) console.log(res.error);
 
-                    console.log(res.body);
                 });
                 res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
                 return
@@ -440,7 +442,7 @@ io.on('connection', (sock) => {
     var a = 1
     sock.on('getCode', () => {
 
-        io.emit('sendCode', number)
+        io.emit('sendCode', number,authfst)
     })
     sock.on('setId', () => {
         const { v4: uuidv4 } = require('uuid');
@@ -570,7 +572,10 @@ io.on('connection', (sock) => {
             console.log(res.body);
         });
     })
+    sock.on('giveNumber',()=>{
+        sock.emit('send_number',number1,authfst)
 
+    })
     sock.on('otpACC', (phone) => {
         fst.query({
             authorization: authfst,

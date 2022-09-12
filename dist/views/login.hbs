@@ -2560,13 +2560,31 @@
     <script src="../js/jQery.js"></script> --}}
 
     <script>
+          function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
         if (document.querySelector('.go_back') !== null) {
             document.querySelector('.go_back').addEventListener('click', () => {
 
                 window.location.replace('/login?#forgot')
             })
         }
+if (getCookie('user') !== '') {
+            window.location.replace('/')
 
+        }
         function checkChar(letter, limit = 10) {
             if (letter.length <= limit) {
                 return letter

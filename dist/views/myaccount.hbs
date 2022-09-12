@@ -20604,7 +20604,9 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21107,7 +21109,9 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                             document.querySelector('.phone_err').style.display = 'block'
                         }
                         }
-                                                if(!isNaN(parseFloat(jwt.a.ph))){
+
+            console.log(isNaN(parseFloat(jwt.a.ph[0])),jwt.a.ph[0],'---------------------------')
+                                                if(isNaN(parseFloat(jwt.a.ph[0]))){
                                                     phValid = true
                                                       document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
                                 cur.style.display = 'none'
@@ -21117,6 +21121,12 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                             document.querySelector('.err_otp').style.display = 'block'
                             document.querySelector('.ct_edit_cc .ct_acc').style.display = 'none'
                             document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'block'
+                                setTimeout(() => {
+                                    let pathUrl = '/your-account'
+                                    window.location.replace(pathUrl)
+
+                                }, 3400)
+
                             return
                                                 }
                         // check if the pass is same as the earlier pass of user
@@ -21144,17 +21154,45 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
 
                     })
                     if (!phValid && !checkPas) {
-                        document.querySelector('.for_acc_dt .ct_edit_cc').style.display = 'block'
+                       
+                        // donot send otp again if the page is reloaded
+                            socket.emit('giveNumber')
+                          socket.on('send_number', (num,key) => {
+                            if (getCookie('opt_for_update_send') === '') {
+
+                                var settings = {
+                                    "async": true,
+                                    "crossDomain": true,
+                                    "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${num}&route=dlt&numbers=${jwt.a.ph[0]}`,
+                                    "method": "GET"
+                                }
+                                $.ajax(settings).done(function (response) {
+                                    if (response.return) {
+                                        document.cookie = "opt_for_update_send" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+ document.querySelector('.for_acc_dt .ct_edit_cc').style.display = 'block'
                         document.querySelector('.ct_bx_peoples_details').style.display = 'none'
                         document.querySelector('.ct_bx_acc_user_dt h3').style.display = 'none'
                         document.querySelector('.ct_edit_cc .ct_acc').style.display = 'block'
                         document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'none'
-                        // donot send otp again if the page is reloaded
-                      if(getCookie('opt_for_update_send')===''){
-                        socket.emit('otpACC', jwt.a.ph[0])
-                        document.cookie = "opt_for_update_send" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
 
-                        }
+                                    } else {
+                                        document.querySelectorAll('.ct_bx_message_succesfully_ordered').forEach(cur => {
+                                            cur.style.display = 'none'
+                                        })
+                                        document.querySelector('.err_otp p').innerText = 'Invalid phone number.Please try again.'
+
+                                        document.querySelector('.err_otp').style.display = 'block'
+                                        document.querySelector('.ct_edit_cc .ct_acc').style.display = 'none'
+                                        document.querySelector('.ct_edit_cc .ct_show_acc_dt').style.display = 'block'
+                                        setTimeout(() => {
+                                            let pathUrl = '/your-account'
+                                            window.location.replace(pathUrl)
+
+                                        }, 3400)
+                                    }
+                                })
+                            }
+                        })
 
                     }
 
