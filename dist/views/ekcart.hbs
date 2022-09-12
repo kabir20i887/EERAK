@@ -4137,7 +4137,7 @@
             }
 
             .body_cart .ct_bx_qt_foods div ion-icon {
-                font-size: 16px;
+                font-size: 21px;
             }
 
             .bx_evt_cart_item .ct_bx_qt_foods {
@@ -9481,7 +9481,30 @@
             .ct_bx_message_succesfully_ordered h2 {
                 margin: 20px 0 1px 8px;
             }
-
+.bx_evt_cart_item .ct_bx_qt_foods {
+    width: 36vw;
+    margin-left: 7px;
+}
+.body_cart .ct_bx_qt_foods div {
+    margin-top: 0;
+    width: 31%;
+}
+.ct_bx_qt_foods input {
+    font-size: 13px;
+    width: 30%;
+}
+.body_cart .ct_bx_qt_foods div {
+    margin-top: 0;
+    box-shadow: -1px 1px 10px #00000030;
+    border-radius: 17px;
+    width: 30%;
+    margin-top: 3px;
+    border-radius: 2px;
+    height: 36px;
+}
+.body_cart .ct_bx_qt_foods div ion-icon {
+    font-size: 31px;
+}
             /* FOOTER 740 */
             .ct_bx_footer {
                 display: block;
@@ -9889,7 +9912,14 @@
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
-
+.body_cart .ct_bx_qt_foods div {
+    width: 27%;
+    margin-top: 5px;
+    height: 31px;
+}
+.body_cart .ct_bx_qt_foods div ion-icon {
+    font-size: 23px;
+}
             .btn_sign_up_cart span2 {
                 font-size: 14px;
             }
@@ -10484,9 +10514,7 @@
                 margin-top: 0;
             }
 
-            .body_cart .ct_bx_qt_foods div {
-                margin-top: 9px;
-            }
+     
 
             .ct_acc_dt_ov p {
                 font-size: 20px;
@@ -10541,11 +10569,11 @@
             }
 
             .body_cart .ct_bx_qt_foods div ion-icon {
-                font-size: 16px;
+                font-size: 24px;
             }
 
             .bx_evt_cart_item .ct_bx_qt_foods {
-                width: 80px;
+                width: 41vw;
             }
 
             .main_li_cart_fd_lis .ct_bx_units_item ul {
@@ -15217,7 +15245,7 @@
                                         }
                                     }else{
                                         let unitx=cu11.unitNum+''+cu11.unitU
-                                        if(unitx===elem.baseU){
+                                        if(unitx.split(' ').join('')===elem.baseU.split(' ').join('')){
                                               stock=parseFloat(cu11.stock)
 
                                             if(parseFloat(cu11.stock)===0){
