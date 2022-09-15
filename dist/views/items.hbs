@@ -15,7 +15,23 @@
         .ct_bx_ins_items.perm .inner span pr {
             margin: -2px 0 0 0px;
         }
-
+ .ct_bx_ins_items .inner  span .qty_info_pr{
+    color: #064db0;
+    font-size: 15px;
+    margin-left: 8px;
+    margin-top: -1px;
+}
+ .ct_bx_ins_items.perm .inner  span .qty_info_pr{
+ }
+.seleced_item_info{
+        font-family: 'Open sans';
+    font-size: 14px;
+    color: #888181;
+    margin: 20px 0 0 15px;
+}
+.ct_bx_ins_items .deleted_price{
+    font-size: 11px;margin: 2px 9px;
+}
         .ct_bx_slide_bx ul li.delivery_account_info a {
             color: red
         }
@@ -1901,20 +1917,20 @@
             transform: translate(-7px, -7px);
         }
 
-        .bx_add_t_cart_btn_itm_dt {
-            width: 92%;
-            border: none;
-            outline: none;
-            font-family: 'Open Sans';
-            text-transform: uppercase;
-            padding: 4px 1px 6px 0px;
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-            font-size: 12px;
-            border-radius: 2px;
-            margin: 10px 0 0 10px;
-            background-image: linear-gradient(to right, rgb(0 116 255), rgb(0 31 255));
-        }
+    .bx_add_t_cart_btn_itm_dt {
+    width: 92%;
+    border: none;
+    outline: none;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    padding: 4px 1px 6px 0px;
+    color: rgb(255 255 255);
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 2px;
+    margin: 10px 0 0 10px;
+    background-image: linear-gradient(to right,#185bc8, rgb(0 109 255));
+}
 
         .sub_btn_rev {
             margin: 10px 0 0 0px;
@@ -2910,7 +2926,7 @@
         .bx_add_t_cart_btn_itm_dt {
             box-shadow: 0 2px 2px #00000021;
             border-radius: 20px;
-            background: linear-gradient(to bottom, #fbcd4c, #fbd61e);
+    background-image: linear-gradient(to right,#185bc8, rgb(0 109 255));
         }
 
         .closeReview,
@@ -4569,13 +4585,15 @@
                 color: rgb(56 0 0);
             }
 
-            .ct_bx_qt_foods div {
-                margin-top: 0px;
-                padding: 0;
-                display: flex;
-                width: 41px;
-                justify-content: center;
-            }
+           .ct_bx_qt_foods div {
+    margin-top: 0px;
+    padding: 0;
+    display: flex;
+    width: 40vw;
+    box-shadow: 3px 2px 8px #56688475;
+    justify-content: center;
+    background: #f2f6ff;
+}
 
             .ct_bx_total_ammount h4 {
                 font-size: 13px;
@@ -5948,7 +5966,13 @@
             .ct_bx_Time2 ion-icon {
                 margin-left: 32px;
             }
-
+            .ct_bx_offer_box_items {
+    background-color: #185bc8;}
+    .ct_bx_ins_items.perm .ct_bx_offer_box_items p {
+    font-size: 17px;    color: #ffffff;}
+.ct_bx_icon_show_info {
+    transform: translate(0px, 28px);
+}
             .ct_err_max_stock2,
             .ct_err_max_stock {
                 margin: 0 0 10px 0;
@@ -6074,7 +6098,7 @@
 
             .ct_bx_item_stock .outStk,
             .ct_bx_item_stock .inStk {
-                margin: -3px 18px 5px 10px;
+                margin: -3px 18px 45px 10px;
             }
 
             .ct_x_fd_dt_itm .ct_bx_item_stock,
@@ -6954,7 +6978,18 @@
             .ct_list_other_item ul li {
                 padding: 20px 10px;
             }
-
+.ct_bx_ins_items .deleted_price{
+    font-size: 16px;margin: 0px 9px;
+}
+.t_bx_about_ins span.textMain {
+    font-family: 'Open sans';
+    font-size: 19px;
+    line-height: 23px;
+}
+.ct_bx_offer_box_items {
+    height: 32px;}
+.ct_bx_ins_items .inner p {
+    margin: 27px 0 0 12px;}
             .ct_bx_unit_mobile {
                 display: block;
             }
@@ -7029,7 +7064,7 @@
                 font-size: 25px;
             }
 
-            .ct_bx_ins_items.perm.curry_sauce {
+            .ct_bx_ins_items.ct_bx_qty_inner  {
                 margin-top: 20px;
             }
 
@@ -10092,7 +10127,7 @@
                         <h4 class="heading">Required Items</h4>
                         <p class="heading_p"></p>
 
-                        <div class="contianer_items_inside cont1_itemskr">
+                        <div class="contianer_items_inside cont1_itemskr2">
 
                         </div>
                     </div>
@@ -10454,6 +10489,7 @@
         if (localStorage.getItem('foodsAdded') === null) {
             localStorage.setItem('foodsAdded', '[]')
         }
+       
         document.querySelector('html').addEventListener('click', (e) => {
             //btn elements
             let bx = e.target.closest('.ct_bx_qty_inner')
@@ -11269,13 +11305,30 @@ let qty_bx_unit=document.querySelectorAll('.ct_bx_qty_inner p')[0]
                         })
 
                     }
+
+
                     if (parseFloat(qt) > parseFloat(qt_taken)) {
                         document.querySelectorAll('.ct_bx_qt_foods input').forEach(cu112 => {
                             cu112.value = qt_taken
                         })
                         qt = qt_taken
                     }
+                    
+                    let qt_info_html=`    <pr class='qty_info_pr'> x ${qt}</pr>`
+                    if( document.querySelectorAll('.ct_bx_qty_inner .inner .qty_info_pr')[1]!==undefined){
+                    document.querySelectorAll('.ct_bx_qty_inner .inner .unit_fds .qty_info_pr')[1].innerHTML=`x ${qt}`
 
+                    }else{
+                    document.querySelectorAll('.ct_bx_qty_inner .inner .unit_fds')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                    }
+                     if( document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0]!==undefined){
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0].innerHTML=`x ${qt}`
+
+                    }else{
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                    }
                     fnPr = Math.round(fnPr)
                     document.querySelectorAll('.seleted_unit_price').forEach(cur => {
                         cur.innerText = fdP
@@ -11481,6 +11534,35 @@ let qty_bx_unit=document.querySelectorAll('.ct_bx_qty_inner p')[0]
 
 
                         }
+                    }
+                      let qt_taken
+                    let stocks_item = JSON.parse(localStorage.getItem('stocks_item'))
+                    if (stocks_item[0].unit === 'forall') {
+                        qt_taken = parseFloat(stocks_item[0].stock)
+                    } else {
+                        stocks_item.forEach(cu11 => {
+                            if (cu11.unit === null) {
+                                qt_taken = parseFloat(cu11.stock)
+
+
+                            }
+                        })
+
+                    }
+                     let qt_info_html=`    <pr class='qty_info_pr'> x ${qt_taken}</pr>`
+                 
+                     if( document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0]!==undefined){
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0].innerHTML=`x ${qt_taken}`
+
+                    }else{
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                    }
+                    if (parseFloat(qt) > parseFloat(qt_taken)) {
+                        document.querySelectorAll('.ct_bx_qt_foods input').forEach(cu112 => {
+                            cu112.value = qt_taken
+                        })
+                        qt = qt_taken
                     }
                     if (otherItms !== 0) {
                         otherItms.forEach(cu => {
@@ -12869,7 +12951,13 @@ ${htmBtns}
                                 }
                             })
                         }
-                        const insideFd = item.fdInside.map((dt) => {
+                        let reverseFdInside=[]
+                         for(let i=item.fdInside.length-1;i>-1;i--){
+                            console.log(item.fdInside[i],'jjjjjjj')
+                                reverseFdInside.push(item.fdInside[i])
+                        }
+                        console.log(reverseFdInside)
+                        const insideFd =reverseFdInside.map((dt) => {
                             let ht
                             if (gIunit) {
                                 selUn = gIunit
@@ -13221,7 +13309,7 @@ ${hmOTH}
                                     }
                                 }
                                 let firstPurchase = false
-                                priceBox = ` <span> ₹ ${dt.price} </span>`
+                                priceBox = ` <span> ₹ ${dt.price} <pr class='qty_info_pr'></pr></span>`
 
                                 let stylenoprice = ''
                                 if (dt.name.split(' ').join('').toLowerCase() === 'currysauce') {
@@ -13280,14 +13368,11 @@ ${hmOTH}
                                             priceXoff = parseFloat(priceXoff)
                                             priceXoff = priceXoff.toLocaleString()
 
-                                            let styleX = `style='font-size: 11px;margin: 2px 9px;'`
-                                            if (window.screen.width <= 360) {
-                                                styleX = `style='font-size: 13px;margin: 3px 9px;'`
-                                            }
+                                           
                                             offBox = `             <div class="ct_bx_offer_box_items">
     <p>${item.offer.sauce}% off</p>
 </div>`
-                                            priceBox = ` <span > <pr>₹ ${priceXoff}</pr> <del ${styleX}>₹ ${dt.price.toLocaleString()}</del> </span>
+                                            priceBox = ` <span > <pr>₹ ${priceXoff}</pr> <del class="deleted_price">₹ ${dt.price.toLocaleString()}</del>  </span><pr class='seleced_item_info'>Selected</pr>
                                                     `
                                         }
                                     }
@@ -13340,6 +13425,7 @@ ${hmOTH}
                                 //  cur.style.width = (220 * length + 60) + 'px'
                             }
                         })
+                   
                         if (item.unitInit !== null) {
 
                             if (item.unitInit !== null) {
@@ -14030,6 +14116,7 @@ ${hmOTH}
                         </div>`
 
                         addedNamesRat.push(user.userId)
+                        
                         document.querySelector('.ct_bx_revies_all').insertAdjacentHTML('beforeend', html)
 
                         document.querySelectorAll('.ct_bx_revies').forEach(cu => {
@@ -14899,6 +14986,21 @@ ${hmOTH}
                 if (i > limit) {
                     return
                 }
+                    let qt_info_html=`    <pr class='qty_info_pr'> x ${i}</pr>`
+                    if( document.querySelectorAll('.ct_bx_qty_inner .inner .qty_info_pr')[0]!==undefined){
+                    document.querySelectorAll('.ct_bx_qty_inner .inner  .qty_info_pr')[0].innerHTML=`x ${i}`
+
+                    }else{
+                    document.querySelectorAll('.ct_bx_qty_inner .inner .unit_fds')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                    }
+                     if( document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0]!==undefined){
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0].innerHTML=`x ${i}`
+
+                    }else{
+                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                    }
                 qtekfd.parentElement.childNodes[3].value = i
                 if (document.querySelector('.ct_bx_inside_base') !== null) {
                     if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
