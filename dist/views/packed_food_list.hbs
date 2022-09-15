@@ -3,11 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducing krickgrocery: The painkiller of cooking</title>
+    <meta name="robots" content="index, follow">
     <meta name="keywords" content="order krickgrocery,krick agartala,krickgrocery agartala,buy krickgrocery,krickgrocery,krick agartala,order food online from krickgrocery,krickgroceries,buy food online from krickgrocery,order food online in agartala">
     <meta name="description" content="Welcome to krickgrocery.in ,the future of cooking . By using krick grocery you can cook just in 15 minutes just by following some provided steps. starting at ₹49">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    
     {{>favicon}}
     <style>
         /*! CSS Used from: Embedded */
@@ -4578,8 +4581,8 @@
                         <ion-icon name="play"></ion-icon>
                     </div>
 
-                    <img class="bannerX" src="../img/imgBanner.webp" alt="img">
-                    <img class="banner2X" src="../img/imgBanner2.webp" alt="img">
+                    <img class="bannerX" alt="Introducing krickgrocery: The painkiller of cooking banner" src="../img/imgBanner.webp" alt="img">
+                    <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2" src="../img/imgBanner2.webp" alt="img">
 
                 </div>
                 {{!-- <div class="ct_x_flex_btns">
@@ -5686,13 +5689,13 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                     if (!item.commSoon) {
                         srcM = `href="/recipes/${item.id}"`
                     } else {
-                        srcM = ''
+                        srcM = `rel="nofollow"`
                     }
                     console.log(item.commSoon, srcM)
                     let html = ` <div class="ct_bx_fooditm">
             <a ${srcM}>
             <div class="ct_bx_flex">
-                <img class="main_im" src="${item.img}" ${commSoonHtml}>
+                <img class="main_im" alt="${item.name}" src="${item.img}" ${commSoonHtml}>
             <div class="ct_bx_inner_food_groc">
             <h4 ${commSoonHtml}>${item.name}</h4>
                    ${priceBox}
