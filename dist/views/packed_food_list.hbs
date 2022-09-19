@@ -717,11 +717,11 @@
             margin-right: 10px
         }
 
-        .ct_bx_price_fd del {
-            font-size: 12px;
-            color: #000;
-            margin-top: 5px
-        }
+     .ct_bx_price_fd del {
+    font-size: 15px;
+    color: #000;
+    margin-top: 2px;
+}
 
         .cart_nav a {
             width: 100%;
@@ -1280,9 +1280,9 @@
         }
 
         .ct_bx_fooditm .ct_bx_price_fd del {
-            color: #861111;
-            font-family: Montserrat
-        }
+    color: #df1717;
+    font-family: 'Montserrat';
+}
 
         .logo img {
             width: 100%;
@@ -4577,7 +4577,7 @@
                     <div class="ct_close_video">
                         <ion-icon name="close-outline"></ion-icon>
                     </div>
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/7-wCsDamc1E"
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/UvrxwU-KFWc"
                         title="Introducing Krick grocery -  The painkiller of cooking" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
@@ -5611,6 +5611,7 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                             break
                         }
                     }
+                    let pricemain=0
                     console.log(priceN)
                     if (getCookie('user') !== '') {
                         if (JSON.parse(getCookie('user')).fstPurchase) {
@@ -5620,6 +5621,7 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                         let pr = parseFloat(cur1.price)
                                         if (item.offer !== null && cur1.id !== 'spices') {
                                             if (item.offer.sauce !== null) {
+                                                pricemain=pr
                                                 let offX = parseFloat(item.offer.sauce)
                                                 pr = pr - (pr * (offX / 100))
                                             }
@@ -5678,14 +5680,13 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
 
                         priceBox = ` <div class="ct_bx_price_fd hasoffPrice">
                         <p class="price">₹ ${priceN.toLocaleString()}</p>
-                     
-            <div class="ct_offer_box">
+<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>            <div class="ct_offer_box">
             <span>${off}% off</span>
         </div>
                     </div>`
                     } else {
                         priceBox = ` <div class="ct_bx_price_fd hasPrice">
-<p class="price">₹ ${priceN.toLocaleString()}</p>  
+<p class="price">₹ ${priceN.toLocaleString()}</p>  <del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>
                     </div>`
 
                     }

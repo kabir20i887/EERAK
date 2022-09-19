@@ -21,7 +21,14 @@
             margin-left: 8px;
             margin-top: -1px;
         }
-
+.ct_bx_price del {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-family: 'Roboto';
+    margin-top: 15px;
+    margin-left: 10px;
+}
         .ct_bx_ins_items.perm .inner span .qty_info_pr {}
 
         .seleced_item_info {
@@ -5280,7 +5287,6 @@
             }
 
             .itm_dt_body .ct_bx_qt_foods {
-                width: 140px;
                 margin: -10px 0 2px 36px;
                 border-radius: 4px;
             }
@@ -5952,10 +5958,10 @@
                 visibility: hidden;
             }
 
-            .ct_bx_ins_items {
-                width: auto;
-                min-width: 220px;
-            }
+           .ct_bx_ins_items {
+    width: auto;
+    min-width: 46%;
+}
 
 
 
@@ -6096,10 +6102,10 @@
                 padding: 13px 10px 23px 11px;
             }
 
-            .ct_bx_ins_items {
-                width: auto;
-                min-width: 266px;
-            }
+           .ct_bx_ins_items {
+    width: auto;
+    min-width: 46%;
+}
 
             .ct_x_fd_dt_itm {
                 width: 100%;
@@ -6234,7 +6240,11 @@
                 margin-left: 5px;
                 margin-top: 24px;
             }
-
+.ct_bx_price del {
+    font-size: 18px;
+    margin-top: 18px;
+    margin-left: 14px;
+}
             .ct_x_fd_dt_itm .ct_bx_download_btn {
                 margin-top: 12px;
             }
@@ -6516,9 +6526,10 @@
             }
 
             .itm_dt_body .ct_bx_qt_foods {
-                width: 140px;
+                width: 45vw;
             }
-
+.ct_bx_qt_foods div {
+    width: 8vw;}
             .for_seravh_in_nav .xclose_icon {
                 transform: translate(0px, -4px);
             }
@@ -6989,7 +7000,8 @@
             .ct_list_other_item ul li {
                 padding: 20px 10px;
             }
-
+.ct_bx_qt_foods div {
+    width: 40vw;}
             .ct_bx_ins_items .deleted_price {
                 font-size: 16px;
                 margin: 0px 9px;
@@ -9982,8 +9994,7 @@
                         <div class="ct_bx_price">
                             <p>₹</p>
                             <span></span>
-                            <pr></pr>
-
+                            <del>200</del>
                         </div>
                         <div class="ct_info_price">
                             <ion-icon name="alert-circle-outline"></ion-icon>
@@ -12669,7 +12680,7 @@ ${htmBtns}
                     }
                     let fstPurN = false
                     let otherItems = null
-
+ let mainprice=0
                     let pff = parseFloat(item.profit)
                     if (item.fdInside !== null) {
                         let matchedFd = false
@@ -12683,6 +12694,7 @@ ${htmBtns}
                                 let pr = parseFloat(cur.price);
                                 if (item.offer !== null && cur.id !== 'spices') {
                                     if (item.offer.sauce !== null) {
+                                     mainprice=pr
                                         let offX = parseFloat(item.offer.sauce)
                                         pr = pr - (pr * (offX / 100))
                                     }
@@ -12779,7 +12791,9 @@ ${htmBtns}
                             document.querySelectorAll('.ct_info_price .price_info').forEach(cu11 => {
                                 cu11.innerText = `₹ ${ffp}`
                             })
-
+  document.querySelectorAll('.ct_bx_price del').forEach(cur => {
+                                cur.innerText = `₹ ` + mainprice
+                            })
                         } else {
                             document.querySelectorAll('.ct_info_price .price_info').forEach(cu11 => {
                                 cu11.innerText = `₹ ` + maip
@@ -12795,7 +12809,9 @@ ${htmBtns}
                             document.querySelectorAll('.ct_bx_price span').forEach(cur => {
                                 cur.innerText = `₹ ` + maip
                             })
-
+  document.querySelectorAll('.ct_bx_price del').forEach(cur => {
+                                cur.innerText = `₹ ` + mainprice
+                            })
                         }
 
                         if (item.itemsOthers !== null) {
@@ -14039,9 +14055,9 @@ ${hmOTH}
                                         totAm = Math.round(totAm)
                                         totAm = totAm.toLocaleString()
                                         // (totAm)
-                                        document.querySelectorAll('.ct_bx_price span').forEach(cur => {
-                                            cur.innerText = totAm
-                                        })
+                              //          document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+                                        //    cur.innerText = totAm
+                                        //})
 
 
 
@@ -14840,9 +14856,9 @@ ${hmOTH}
                     let searchUrl = window.location.pathname.split('/')[2]
 
 
-                    document.querySelectorAll('.ct_bx_price span').forEach(cur => {
-                        cur.innerText = (tot)
-                    })
+                   // document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+                   //     cur.innerText = (tot)
+                   // })
 
                     let otherItms = 0
                     if (document.querySelectorAll('.for_otherItems')[1] !== undefined) {
@@ -15148,9 +15164,9 @@ ${hmOTH}
 
                 let searchUrl = window.location.pathname.split('/')[2]
 
-                document.querySelectorAll('.ct_bx_price span').forEach(cur => {
-                    cur.innerText = (tot)
-                })
+             //   document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+              //      cur.innerText = (tot)
+              //  })
 
                 if (allfd !== null) {
                     for (let i1 = 0; i1 < allfd.length; i1++) {
