@@ -68,6 +68,12 @@
             top: 11px;
             position: absolute;
         }
+.pricenooff{
+    font-size: 15px;
+    color: red;
+    font-family: 'Open sans';
+    margin: 4px 20px 0px 2px;
+}
 
         .ct_bx_slide_bx ul li.delivery_account_info {
             display: flex;
@@ -1297,7 +1303,9 @@
             .ct_bx_diff_group {
                 margin: -13px 0 0 -8px;
             }
-
+.pricenooff {
+    margin: 0px 20px 0px 2px;
+}
             .ct_bx_flex_msg_cart {
                 margin: 0px 0 0 10px;
             }
@@ -15842,7 +15850,7 @@
                         break
                     }
                 }
-                if (getCookie('user') !== '') {
+                    let pricemain=0
 
                     itmDb.fdInside.forEach(cur1 => {
                         if (cur1.price !== undefined) {
@@ -15850,6 +15858,8 @@
                             if (itmDb.offer !== null && cur1.id !== 'spices') {
                                 if (itmDb.offer.sauce !== null) {
                                     let offX = parseFloat(itmDb.offer.sauce)
+                                                                                    pricemain=pr.toLocaleString()
+
                                     pr = pr - (pr * (offX / 100))
                                 }
                             }
@@ -15861,24 +15871,7 @@
 
                     })
 
-                } else {
-                    itmDb.fdInside.forEach(cur1 => {
-                        if (cur1.price !== undefined) {
-                            let pr = parseFloat(cur1.price)
-                            if (itmDb.offer !== null && cur1.id !== 'spices') {
-                                if (itmDb.offer.sauce !== null) {
-                                    let offX = parseFloat(itmDb.offer.sauce)
-                                    pr = pr - (pr * (offX / 100))
-                                }
-                            }
-                            pr = String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
-                            priceN += pr
-                        }
-
-                    })
-                }
+             
                 console.log(priceN, 'ppofsjfkfnfnnkfnf')
                 if (itmDb.itemsOthers !== null) {
                     itmDb.itemsOthers.forEach(cur1 => {
@@ -15900,7 +15893,8 @@
                     priceBox = `<div class="ct_bx_priceandoff" style='margin-top:10px'  ${comSht}>
     
                             <p class="price_food for_oly_ekfd_price"><span>₹ ${priceN.toLocaleString()} </span> </p>
-                            
+<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>
+
     <div class="ct_offer_box">
     <span>${itmDb.offer.off}% off</span>
 </div>

@@ -5613,15 +5613,13 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                     }
                     let pricemain=0
                     console.log(priceN)
-                    if (getCookie('user') !== '') {
-                        if (JSON.parse(getCookie('user')).fstPurchase) {
                             item.fdInside.forEach(cur1 => {
                                 if (cur1.id !== 'spices') {
                                     if (cur1.price !== undefined) {
                                         let pr = parseFloat(cur1.price)
                                         if (item.offer !== null && cur1.id !== 'spices') {
                                             if (item.offer.sauce !== null) {
-                                                pricemain=pr
+                                                pricemain=pr.toLocaleString()
                                                 let offX = parseFloat(item.offer.sauce)
                                                 pr = pr - (pr * (offX / 100))
                                             }
@@ -5634,42 +5632,8 @@ document.querySelectorAll('.xclose_icon').forEach(cu1=>{cu1.style.display='none'
                                     }
                                 }
                             })
-                        } else {
-                            item.fdInside.forEach(cur1 => {
-                                if (cur1.price !== undefined) {
-                                    let pr = parseFloat(cur1.price)
-                                    if (item.offer !== null && cur1.id !== 'spices') {
-                                        if (item.offer.sauce !== null) {
-                                            let offX = parseFloat(item.offer.sauce)
-                                            pr = pr - (pr * (offX / 100))
-                                        }
-                                    }
-                                    pr=String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
-                                    priceN += pr
-                                }
-
-                            })
-                        }
-                    } else {
-                        item.fdInside.forEach(cur1 => {
-                            if (cur1.price !== undefined) {
-                                let pr = parseFloat(cur1.price)
-                                if (item.offer !== null && cur1.id !== 'spices') {
-                                    if (item.offer.sauce !== null) {
-                                        let offX = parseFloat(item.offer.sauce)
-                                        pr = pr - (pr * (offX / 100))
-                                    }
-                                }
-                                 pr=String(pr)
-                            pr = pr.split('.')[0]
-                            pr = parseFloat(pr)
-                                priceN += pr
-                            }
-
-                        })
-                    }
+                      
+                   
 
 
                     let priceBox = ``
