@@ -19,20 +19,22 @@
             margin-left: 8px;
             margin-top: -1px;
         }
-.ct_bx_price del {
-    font-size: 18px;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-    font-family: 'Roboto';
-    margin-top: 15px;
-    margin-left: 10px;
-}
-.pricenooff{
-font-size: 15px;
-    color: red;
-    font-family: 'Open sans';
-    margin: 2px 12px;
-}
+
+        .ct_bx_price del {
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: 500;
+            font-family: 'Roboto';
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .pricenooff {
+            font-size: 15px;
+            color: red;
+            font-family: 'Open sans';
+            margin: 2px 12px;
+        }
 
         .ct_bx_ins_items.perm .inner span .qty_info_pr {}
 
@@ -5963,10 +5965,10 @@ font-size: 15px;
                 visibility: hidden;
             }
 
-           .ct_bx_ins_items {
-    width: auto;
-    min-width: 46%;
-}
+            .ct_bx_ins_items {
+                width: auto;
+                min-width: 46%;
+            }
 
 
 
@@ -6107,10 +6109,10 @@ font-size: 15px;
                 padding: 13px 10px 23px 11px;
             }
 
-           .ct_bx_ins_items {
-    width: auto;
-    min-width: 46%;
-}
+            .ct_bx_ins_items {
+                width: auto;
+                min-width: 46%;
+            }
 
             .ct_x_fd_dt_itm {
                 width: 100%;
@@ -6138,8 +6140,11 @@ font-size: 15px;
             .ct_bx_qty {
                 margin-top: 6px;
             }
-.pricenooff {
-margin: -1px 12px;}
+
+            .pricenooff {
+                margin: -1px 12px;
+            }
+
             .itm_dt_body .ct_bx_qty {
                 padding-left: 3px;
             }
@@ -6246,11 +6251,13 @@ margin: -1px 12px;}
                 margin-left: 5px;
                 margin-top: 24px;
             }
-.ct_bx_price del {
-    font-size: 18px;
-    margin-top: 18px;
-    margin-left: 14px;
-}
+
+            .ct_bx_price del {
+                font-size: 18px;
+                margin-top: 18px;
+                margin-left: 14px;
+            }
+
             .ct_x_fd_dt_itm .ct_bx_download_btn {
                 margin-top: 12px;
             }
@@ -6534,8 +6541,11 @@ margin: -1px 12px;}
             .itm_dt_body .ct_bx_qt_foods {
                 width: 45vw;
             }
-.ct_bx_qt_foods div {
-    width: 8vw;}
+
+            .ct_bx_qt_foods div {
+                width: 8vw;
+            }
+
             .for_seravh_in_nav .xclose_icon {
                 transform: translate(0px, -4px);
             }
@@ -7006,8 +7016,11 @@ margin: -1px 12px;}
             .ct_list_other_item ul li {
                 padding: 20px 10px;
             }
-.ct_bx_qt_foods div {
-    width: 40vw;}
+
+            .ct_bx_qt_foods div {
+                width: 40vw;
+            }
+
             .ct_bx_ins_items .deleted_price {
                 font-size: 16px;
                 margin: 0px 9px;
@@ -9911,23 +9924,25 @@ margin: -1px 12px;}
         }
     </style>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '772715493811728');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '772715493811728');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 
 <body class="itm_dt_body">
@@ -12104,17 +12119,26 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 
                         document.querySelectorAll('.ct_bx_item_stock .outStk').forEach(cur => {
                             cur.style.display = 'block'
-                            cur.innerText = 'currently unavailable'
+                            cur.innerText = 'Out of stock'
                         })
 
                         document.querySelectorAll('.bx_op').forEach(cur => {
                             cur.style['pointer-events'] = 'none'
                         })
                         document.querySelector('.ct_bx_img_itm').style.filter = 'grayscale(1)'
-                        document.querySelectorAll('.ct_sbout_this_itm').forEach(cur => {
+                        document.querySelectorAll('.contianer_items_inside').forEach(cur => {
                             cur.style.filter = 'grayscale(1)'
                         })
 
+                        document.querySelectorAll('.ct_info_price').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
+                        document.querySelectorAll('.heading').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
+                        document.querySelectorAll('.heading_p').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
                         if (window.screen.width <= 920) {
                             document.querySelectorAll('.ct_bx_items_qt_actions>*:not(:nth-child(2))').forEach(cur => {
                                 cur.style.filter = 'grayscale(1)'
@@ -12216,10 +12240,19 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                                     cur.style['pointer-events'] = 'none'
                                 })
                                 document.querySelector('.ct_bx_img_itm').style.filter = 'grayscale(1)'
-                                document.querySelectorAll('.ct_sbout_this_itm').forEach(cur => {
-                                    cur.style.filter = 'grayscale(1)'
-                                })
+                                          document.querySelectorAll('.contianer_items_inside').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
 
+                        document.querySelectorAll('.ct_info_price').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
+                        document.querySelectorAll('.heading').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
+                        document.querySelectorAll('.heading_p').forEach(cur => {
+                            cur.style.filter = 'grayscale(1)'
+                        })
                                 if (window.screen.width <= 920) {
                                     document.querySelectorAll('.ct_bx_items_qt_actions>*:not(:nth-child(2))').forEach(cur => {
                                         cur.style.filter = 'grayscale(1)'
@@ -12701,7 +12734,7 @@ ${htmBtns}
                     }
                     let fstPurN = false
                     let otherItems = null
- let mainprice=0
+                    let mainprice = 0
                     let pff = parseFloat(item.profit)
                     if (item.fdInside !== null) {
                         let matchedFd = false
@@ -12715,7 +12748,7 @@ ${htmBtns}
                                 let pr = parseFloat(cur.price);
                                 if (item.offer !== null && cur.id !== 'spices') {
                                     if (item.offer.sauce !== null) {
-                                     mainprice=pr
+                                        mainprice = pr
                                         let offX = parseFloat(item.offer.sauce)
                                         pr = pr - (pr * (offX / 100))
                                     }
@@ -12812,7 +12845,7 @@ ${htmBtns}
                             document.querySelectorAll('.ct_info_price .price_info').forEach(cu11 => {
                                 cu11.innerText = `₹ ${ffp}`
                             })
-  document.querySelectorAll('.ct_bx_price del').forEach(cur => {
+                            document.querySelectorAll('.ct_bx_price del').forEach(cur => {
                                 cur.innerText = `₹ ` + mainprice
                             })
                         } else {
@@ -12830,7 +12863,7 @@ ${htmBtns}
                             document.querySelectorAll('.ct_bx_price span').forEach(cur => {
                                 cur.innerText = `₹ ` + maip
                             })
-  document.querySelectorAll('.ct_bx_price del').forEach(cur => {
+                            document.querySelectorAll('.ct_bx_price del').forEach(cur => {
                                 cur.innerText = `₹ ` + mainprice
                             })
                         }
@@ -13632,7 +13665,7 @@ ${hmOTH}
 
                                         let selU = parseFloat(cur.selU)
                                         let selU2 = parseFloat(cur.selU2)
-                                        let qty_main=cur.qt
+                                        let qty_main = cur.qt
                                         let priceB = 0
                                         if (item.unitInit !== null) {
                                             if (cur.unitInit.length !== 0) {
@@ -13698,7 +13731,7 @@ ${hmOTH}
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[3].innerText = '₹ ' + finalSelu.toLocaleString()
                                                 document.querySelectorAll('.ct_bx_qty_inner .selc .inner span')[0].innerText = '₹ ' + finalSelu.toLocaleString()
                                             }
-                                        
+
                                             if (document.querySelector('.spices') !== null) {
                                                 item.fdInside.forEach(cu => {
 
@@ -13891,25 +13924,25 @@ ${hmOTH}
                                             }
 
                                         }
-                                            let qt_info_html = `    <pr class='qty_info_pr'> x ${qty_main}</pr>`
-                                            if (document.querySelectorAll('.ct_bx_qty_inner .unit_fds')[1].innerText.split('x')[0].split(' ').join('') !== 'Pleaseclicktoselect') {
-                                                if (document.querySelectorAll('.ct_bx_qty_inner .inner .qty_info_pr')[0] !== undefined) {
-                                                    document.querySelectorAll('.ct_bx_qty_inner .inner  .qty_info_pr')[0].innerHTML = `x ${qty_main}`
-                                                    document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr').forEach(cu11 => { cu11.style.display = 'inline-block' })
-                                                } else {
-                                                    document.querySelectorAll('.ct_bx_qty_inner .inner .unit_fds')[1].insertAdjacentHTML('beforeend', qt_info_html)
-
-                                                }
-                                            }
-
-                                            if (document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0] !== undefined) {
-                                                document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0].innerHTML = `x ${qty_main}`
-                                                document.querySelectorAll('.ct_bx_qty_inner .inner  .qty_info_pr').forEach(cu11 => { cu11.style.display = 'inline-block' })
-
+                                        let qt_info_html = `    <pr class='qty_info_pr'> x ${qty_main}</pr>`
+                                        if (document.querySelectorAll('.ct_bx_qty_inner .unit_fds')[1].innerText.split('x')[0].split(' ').join('') !== 'Pleaseclicktoselect') {
+                                            if (document.querySelectorAll('.ct_bx_qty_inner .inner .qty_info_pr')[0] !== undefined) {
+                                                document.querySelectorAll('.ct_bx_qty_inner .inner  .qty_info_pr')[0].innerHTML = `x ${qty_main}`
+                                                document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr').forEach(cu11 => { cu11.style.display = 'inline-block' })
                                             } else {
-                                                document.querySelectorAll('.ct_bx_ins_items.perm .inner span')[1].insertAdjacentHTML('beforeend', qt_info_html)
+                                                document.querySelectorAll('.ct_bx_qty_inner .inner .unit_fds')[1].insertAdjacentHTML('beforeend', qt_info_html)
 
                                             }
+                                        }
+
+                                        if (document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0] !== undefined) {
+                                            document.querySelectorAll('.ct_bx_ins_items.perm .inner span .qty_info_pr')[0].innerHTML = `x ${qty_main}`
+                                            document.querySelectorAll('.ct_bx_qty_inner .inner  .qty_info_pr').forEach(cu11 => { cu11.style.display = 'inline-block' })
+
+                                        } else {
+                                            document.querySelectorAll('.ct_bx_ins_items.perm .inner span')[1].insertAdjacentHTML('beforeend', qt_info_html)
+
+                                        }
                                         //calculating the grocery price
                                         if (cur.itemsOthers !== null) {
                                             cur.itemsOthers.forEach(cur => {
@@ -14076,7 +14109,7 @@ ${hmOTH}
                                         totAm = Math.round(totAm)
                                         totAm = totAm.toLocaleString()
                                         // (totAm)
-                              //          document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+                                        //          document.querySelectorAll('.ct_bx_price span').forEach(cur => {
                                         //    cur.innerText = totAm
                                         //})
 
@@ -14877,9 +14910,9 @@ ${hmOTH}
                     let searchUrl = window.location.pathname.split('/')[2]
 
 
-                   // document.querySelectorAll('.ct_bx_price span').forEach(cur => {
-                   //     cur.innerText = (tot)
-                   // })
+                    // document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+                    //     cur.innerText = (tot)
+                    // })
 
                     let otherItms = 0
                     if (document.querySelectorAll('.for_otherItems')[1] !== undefined) {
@@ -15185,9 +15218,9 @@ ${hmOTH}
 
                 let searchUrl = window.location.pathname.split('/')[2]
 
-             //   document.querySelectorAll('.ct_bx_price span').forEach(cur => {
-              //      cur.innerText = (tot)
-              //  })
+                //   document.querySelectorAll('.ct_bx_price span').forEach(cur => {
+                //      cur.innerText = (tot)
+                //  })
 
                 if (allfd !== null) {
                     for (let i1 = 0; i1 < allfd.length; i1++) {
@@ -15580,29 +15613,29 @@ ${hmOTH}
                         break
                     }
                 }
-                                    let pricemain=0
+                let pricemain = 0
 
 
-                        itmDb.fdInside.forEach(cur1 => {
-                            if (cur1.id !== 'spices' && cur1.price !== undefined) {
-                                let pr = parseFloat(cur1.price)
-                                if (itmDb.offer !== null && cur1.id !== 'spices') {
-                                    if (itmDb.offer.sauce !== null) {
-                                        let offX = parseFloat(itmDb.offer.sauce)
-                                                                            pricemain=pr.toLocaleString()
+                itmDb.fdInside.forEach(cur1 => {
+                    if (cur1.id !== 'spices' && cur1.price !== undefined) {
+                        let pr = parseFloat(cur1.price)
+                        if (itmDb.offer !== null && cur1.id !== 'spices') {
+                            if (itmDb.offer.sauce !== null) {
+                                let offX = parseFloat(itmDb.offer.sauce)
+                                pricemain = pr.toLocaleString()
 
-                                        pr = pr - (pr * (offX / 100))
-                                        
-                                    }
-                                }
-                                pr = String(pr)
-                                pr = pr.split('.')[0]
-                                pr = parseFloat(pr)
-                                priceN += pr
+                                pr = pr - (pr * (offX / 100))
+
                             }
-                        })
+                        }
+                        pr = String(pr)
+                        pr = pr.split('.')[0]
+                        pr = parseFloat(pr)
+                        priceN += pr
+                    }
+                })
 
-                  
+
                 console.log(priceN, 'ppofsjfkfnfnnkfnf')
                 if (itmDb.itemsOthers !== null) {
                     itmDb.itemsOthers.forEach(cur1 => {
@@ -15611,7 +15644,7 @@ ${hmOTH}
                 }
                 let priceBox = ``
                 let priceOff = 0
-            
+
                 if (itmDb.offer !== null) {
                     //<del class="price_food for_oly_ekfd_price"><span>₹ ${priceN.toLocaleString()} </span> </del>
                     let off = parseFloat(itmDb.offer.off)
