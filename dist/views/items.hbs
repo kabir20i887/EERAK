@@ -10661,7 +10661,7 @@
                 if (bsPr <= 0) {
                     bsPr = 0
                     document.querySelectorAll('.unit_fds').forEach(cu => {
-                        cu.innerText = 'View items.'
+                        cu.innerText = 'Please click to select'
                     })
 
                 } else {
@@ -10704,7 +10704,7 @@
                 mPrice = parseFloat(mPrice)
                 let tPr = price + mPrice
                 let basePrice = 0
-                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
+                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
                     basePrice = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
                 }
                 basePrice = parseFloat(basePrice)
@@ -11127,11 +11127,13 @@
                 relP = parseFloat(relP)
                 let stock
                 let stockT = false
+                                     if(document.querySelector('.ct_bx_units_item')!==null){
+
                 if (window.screen.width <= 550) {
                     document.querySelectorAll('.ct_bx_units_item')[1].style.display = 'none'
                     document.querySelector('.ct_overfow_for_baseitm').style.display = 'none'
                 }
-
+                                     }
                 if (!bxA.classList.value.split(' ').includes('othUn')) {
 
                     let Mqt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
@@ -11433,7 +11435,7 @@
                                 let id = cur.id
                                 console.log(token11, 'loo2222o')
                                 if (id === token11) {
-                                    if (cur.unitInit[0].name === undefined) {
+                                    if (stks_inner[0].unit !== 'forall') {
                                         // for fish,chicken....
                                         stks_inner.forEach(cu11 => {
                                             let obj
@@ -11458,7 +11460,7 @@
                                         })
                                     } else {
                                         // for paneer,chole..
-                                        let stk = parseFloat(item.netweight)
+                                        let stk = parseFloat(stks_inner[0].unit.stock)
                                         if (stk === 0) {
                                             deliv_x = '24 hour'
                                         }
@@ -11717,7 +11719,7 @@
                                 let id = cur.id
 
                                 if (id === token11) {
-                                    if (cur.unitInit[0].name === undefined) {
+                                    if (stks_inner[0].unit !== 'forall') {
                                         // for fish,chicken....
                                         stks_inner.forEach(cu11 => {
                                             let obj
@@ -11734,7 +11736,7 @@
                                         })
                                     } else {
                                         // for paneer,chole..
-                                        let stk = parseFloat(item.netweight)
+                                        let stk = parseFloat(stks_inner[0].unit.stock)
                                         if (stk === 0) {
                                             deliv_x = '24 hour'
                                         }
@@ -11767,11 +11769,14 @@
                 }
                 return
             } else {
+                                     if(document.querySelector('.ct_bx_units_item')!==null){
+
                 if (window.screen.width <= 550) {
                     document.querySelectorAll('.ct_bx_units_item')[1].style.display = 'none'
                     document.querySelector('.ct_overfow_for_baseitm').style.display = 'none'
 
                 }
+                                     }
             }
 
             if (bx !== null) {
@@ -11837,6 +11842,7 @@
                 //bx_ct_bx_qty_inner 
                 if (bx.classList.value.split(' ').includes('not_tog_me')) { return }
                 if (bx.classList.value.split(' ').includes('nottog')) {
+                    if(document.querySelector('.ct_bx_units_item')!==null){
                     if (window.screen.width <= 550) {
                         document.querySelector('.ct_overfow_for_baseitm').style.display = 'block'
 
@@ -11845,8 +11851,9 @@
                         document.querySelectorAll('.ct_bx_units_item')[1].style.display = 'block'
 
                     } else {
-                        document.querySelectorAll('.ct_bx_units_item')[0].style.display = 'block'
+                      document.querySelectorAll('.ct_bx_units_item')[0].style.display = 'block'
 
+                    }
                     }
                     let x = bx.getBoundingClientRect().left
                     bx.classList.add('tog')
@@ -11890,11 +11897,14 @@
 
 
                 } else {
+                                         if(document.querySelector('.ct_bx_units_item')!==null){
+
                     if (window.screen.width <= 550) {
                         document.querySelectorAll('.ct_bx_units_item')[1].style.display = 'none'
                         document.querySelector('.ct_overfow_for_baseitm').style.display = 'none'
 
                     }
+                                         }
                     if (e.target.closest('.add_c_un')) {
                         return
                     }
@@ -11926,11 +11936,14 @@
                 }
 
             } else {
+                                     if(document.querySelector('.ct_bx_units_item')!==null){
+
                 if (window.screen.width <= 550) {
                     document.querySelectorAll('.ct_bx_units_item')[1].style.display = 'none'
                     document.querySelector('.ct_overfow_for_baseitm').style.display = 'none'
 
                 }
+                                     }
                 if (e.target.closest('.ct_bx_inside_base') !== null) { return }
                 if (document.querySelector('.tog') === null) {
                     return
@@ -13181,7 +13194,7 @@ ${htmBtns}
     <div class='inner'>
 
         <p>Goceries</p>
-        <span>View items.</span>
+        <span>Please click to select</span>
 
     </div>
     <div class="ct_down_nav">
@@ -13804,7 +13817,7 @@ ${hmOTH}
                                                 } else {
                                                     if (finalSelu === 0) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .unit_fds').forEach(cur => {
-                                                            cur.innerText = 'View items.';
+                                                            cur.innerText = 'Please click to select';
 
                                                         })
                                                     }
@@ -13907,7 +13920,7 @@ ${hmOTH}
                                                 } else {
                                                     if (finalSelu === 0) {
                                                         document.querySelectorAll('.ct_bx_qty_inner .unit_fds').forEach(cur => {
-                                                            cur.innerText = 'view items.';
+                                                            cur.innerText = 'Please click to select';
 
                                                         })
                                                     }
@@ -14511,7 +14524,7 @@ ${hmOTH}
                     let deliv_x = '1 hour'
                     console.log(baseU, '----------------------------')
                     let stks_inner = JSON.parse(localStorage.getItem('stocks_item'))
-                    if (unitInit[0].name === undefined) {
+                    if (stks_inner[0].unit !== 'forall') {
                         // for fish,chicken....
                         stks_inner.forEach(cu11 => {
                             let obj
@@ -14536,7 +14549,7 @@ ${hmOTH}
                         })
                     } else {
                         // for paneer,chole..
-                        let stk = parseFloat(item.netweight)
+                        let stk =parseFloat(stks_inner[0].unit.stock)
                         if (stk === 0) {
                             deliv_x = '24 hour'
                         }
@@ -14552,7 +14565,7 @@ ${hmOTH}
                         let dateFull = moment().format('LL')
                         if (unitInit.length !== 0) {
                             if (unitInit[0].name !== undefined) {
-                                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
+                                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
                                     selU2 = parseFloat(document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join(''))
 
                                 }
@@ -15144,37 +15157,37 @@ ${hmOTH}
 
                 }
                 qtekfd.parentElement.childNodes[3].value = i
-                if (document.querySelector('.ct_bx_inside_base') !== null) {
-                    if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
-                        let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
-                        bsPr = parseFloat(bsPr)
-                        bsPr = bsPr * i
-                        console.log(bsPr)
-                        document.querySelectorAll('.unit_fds').forEach(cur => cur.innerText = '₹' + bsPr)
-                    }
-                    if (document.querySelector('.curry_sauce') !== null) {
-                        document.querySelectorAll('.curry_sauce .ct_inner__inside_ths span').forEach(cur => {
-                            let prM = cur.innerText.split('₹')[1].split(',').join('')
-                            prM = (parseFloat(prM) / (i - 1)) * i
-                            cur.innerText = '₹' + prM.toLocaleString()
-                        })
-                    }
-                    if (document.querySelector('.spcies') !== null) {
-                        document.querySelectorAll('.spcies .ct_inner__inside_ths span').forEach(cur => {
-                            let prM = cur.innerText.split('₹')[1].split(',').join('')
-                            prM = (parseFloat(prM) / (i - 1)) * i
-                            cur.innerText = '₹' + prM.toLocaleString()
-                        })
-                    }
-                    document.querySelectorAll('.ct_bx_inside_base li').forEach(cur => {
-                        let price = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
-                        price = parseFloat(price)
-                        let tPr = (price / (i - 1)) * i
-                        tPr = tPr.toLocaleString()
-                        cur.childNodes[1].childNodes[3].innerText = '₹' + tPr
+               //if (document.querySelector('.ct_bx_inside_base') !== null) {
+               //    if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
+               //        let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
+               //        bsPr = parseFloat(bsPr)
+               //        bsPr = bsPr * i
+               //        console.log(bsPr)
+               //        document.querySelectorAll('.unit_fds').forEach(cur => cur.innerText = '₹' + bsPr)
+               //    }
+               //    if (document.querySelector('.curry_sauce') !== null) {
+               //        document.querySelectorAll('.curry_sauce .ct_inner__inside_ths span').forEach(cur => {
+               //            let prM = cur.innerText.split('₹')[1].split(',').join('')
+               //            prM = (parseFloat(prM) / (i - 1)) * i
+               //            cur.innerText = '₹' + prM.toLocaleString()
+               //        })
+               //    }
+               //    if (document.querySelector('.spcies') !== null) {
+               //        document.querySelectorAll('.spcies .ct_inner__inside_ths span').forEach(cur => {
+               //            let prM = cur.innerText.split('₹')[1].split(',').join('')
+               //            prM = (parseFloat(prM) / (i - 1)) * i
+               //            cur.innerText = '₹' + prM.toLocaleString()
+               //        })
+               //    }
+               //    document.querySelectorAll('.ct_bx_inside_base li').forEach(cur => {
+               //        let price = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
+               //        price = parseFloat(price)
+               //        let tPr = (price / (i - 1)) * i
+               //        tPr = tPr.toLocaleString()
+               //        cur.childNodes[1].childNodes[3].innerText = '₹' + tPr
 
-                    })
-                }
+               //    })
+               //}
                 let otherItms = 0
                 if (document.querySelectorAll('.for_otherItems')[1] !== undefined) {
                     if (window.screen.width <= 740) {
