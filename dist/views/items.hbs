@@ -10635,24 +10635,37 @@
                 })
 
             }
+                        // remove button in grocery box
+
             if (removeBsitm !== null) {
                 document.querySelectorAll('.unit_fds').forEach(cu => {
                     cu.style.fontFamily = 'Montserrat'
                     cu.style.color = 'rgb(152 16 16)'
                 })
-                let price = document.querySelector('.ct_bx_price span').innerText
-                let qt = document.querySelector('.ct_bx_qt_foods input').value
-                qt = parseFloat(qt)
+                let price = document.querySelector('.ct_bx_total_ammount span').innerText.split('₹')[1].split(',').join('')
+                 let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                    qt = parseFloat(qt)
+                    if (window.screen.width <= 470) {
+                        qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                    }
                 let off = document.querySelector('.ct_offer_box_cook2 span')
 
                 price = parseFloat(price)
-                let mPrice = removeBsitm.parentElement.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
-                mPrice = parseFloat(mPrice)
-                let tPr = price - mPrice
-                let basePrice = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
-                basePrice = parseFloat(basePrice)
 
-                document.querySelector('.ct_bx_price span').innerText = tPr
+  let mPrice = removeBsitm.parentElement.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
+                mPrice = parseFloat(mPrice)
+                let tPr = (price) -(mPrice*qt)
+                let basePrice = 0
+
+                                if(window.screen.width<=935){
+                                      if (document.querySelectorAll('.unit_fds')[1].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
+                    basePrice = document.querySelectorAll('.unit_fds')[1].innerText.split('₹')[1].split(',').join('').split('x')[0]
+                }
+                                }else{
+  if (document.querySelectorAll('.unit_fds')[0].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
+                    basePrice = document.querySelectorAll('.unit_fds')[0].innerText.split('₹')[1].split(',').join('').split('x')[0]
+                }
+                                }
 
                 removeBsitm.parentElement.classList.remove('alreadyselected')
                 removeBsitm.parentElement.childNodes[3].style.display = 'block'
@@ -10665,7 +10678,7 @@
                     })
 
                 } else {
-                    document.querySelectorAll('.unit_fds').forEach(cu => cu.innerText = '₹' + bsPr)
+                    document.querySelectorAll('.unit_fds').forEach(cu => cu.innerText = '₹' + bsPr.toLocaleString())
 
                 }
                 let name = removeBsitm.parentElement.childNodes[1].childNodes[1].innerText
@@ -10685,13 +10698,17 @@
                     }
                 })
                 localStorage.setItem('foodsAdded', JSON.stringify(fdLocal))
-                document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => cur.innerText = '₹ ' + tPr)
+                document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => cur.innerText = '₹ ' + tPr.toLocaleString())
                 removeBsitm.parentElement.childNodes[3].style.display = 'block'
             }
+            // add button in grocery box
             if (addBsitm !== null) {
-                let price = document.querySelector('.ct_bx_price span').innerText
-                let qt = document.querySelector('.ct_bx_qt_foods input').value
-                qt = parseFloat(qt)
+                let price = document.querySelector('.ct_bx_total_ammount span').innerText.split('₹')[1].split(',').join('')
+                    let qt = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                    qt = parseFloat(qt)
+                    if (window.screen.width <= 470) {
+                        qt = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                    }
                 document.querySelectorAll('.unit_fds').forEach(cu => {
                     cu.style.fontFamily = 'Montserrat'
                     cu.style.color = 'rgb(152 16 16)'
@@ -10702,14 +10719,20 @@
                 price = parseFloat(price)
                 let mPrice = addBsitm.parentElement.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
                 mPrice = parseFloat(mPrice)
-                let tPr = price + mPrice
+                let tPr = price + (mPrice*qt)
                 let basePrice = 0
-                if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
-                    basePrice = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
+              
+                                if(window.screen.width<=935){
+                                      if (document.querySelectorAll('.unit_fds')[1].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
+                    basePrice = document.querySelectorAll('.unit_fds')[1].innerText.split('₹')[1].split(',').join('').split('x')[0]
                 }
+                                }else{
+  if (document.querySelectorAll('.unit_fds')[0].innerText.split(' ').join('').toLowerCase() !== 'pleaseclicktoselect') {
+                    basePrice = document.querySelectorAll('.unit_fds')[0].innerText.split('₹')[1].split(',').join('').split('x')[0]
+                }
+                                }
                 basePrice = parseFloat(basePrice)
 
-                document.querySelector('.ct_bx_price span').innerText = tPr
 
 
                 addBsitm.parentElement.classList.add('alreadyselected')
@@ -10733,8 +10756,15 @@
                     }
                 })
                 localStorage.setItem('foodsAdded', JSON.stringify(fdLocal))
-                document.querySelectorAll('.unit_fds').forEach(cu => cu.innerText = '₹' + bsPr)
-                document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => cur.innerText = '₹ ' + tPr)
+                if(window.screen.width<=935){
+                document.querySelectorAll('.unit_fds')[1].innerHTML = '₹' + bsPr.toLocaleString() +` 
+                <pr class="qty_info_pr"> x ${qt}</pr>`
+                
+                }else{
+                     document.querySelectorAll('.unit_fds')[0].innerHTML = '₹' + bsPr.toLocaleString() +` 
+                <pr class="qty_info_pr"> x ${qt}</pr>`
+                }
+                document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => cur.innerText = '₹ ' + tPr.toLocaleString())
             }
             if (removebaseItm !== null) {
                 document.querySelectorAll('.tog .ct_bx_inside_base').forEach(cur => {
@@ -11195,13 +11225,13 @@
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
 
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                            document.querySelectorAll('.ct_bx_qty_inner .inner p').forEach(cu11 => {
                                 cu11.innerHTML = mUnit2 + ' &mdash; ' + unitNum
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + unitNum
                         } else {
 
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                            document.querySelectorAll('.ct_bx_qty_inner .inner p').forEach(cu11 => {
                                 cu11.innerHTML = mUnit2 + ' &mdash; ' + textBoxa
                             })
                             // bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = mUnit2 + ' &mdash; ' + textBoxa
@@ -11213,12 +11243,12 @@
                         }
                         if (bxA.childNodes[1].innerText.split('(')[1] !== undefined) {
                             let unitNum = bxA.childNodes[1].innerText.split('(')[1].split(')')[0]
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                            document.querySelectorAll('.ct_bx_qty_inner .inner p').forEach(cu11 => {
                                 cu11.innerHTML = unitNum
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = unitNum
                         } else {
-                            document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11 => {
+                            document.querySelectorAll('.ct_bx_qty_inner .inner p').forEach(cu11 => {
                                 cu11.innerHTML = textBoxa
                             })
                             //bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerHTML = textBoxa
@@ -11331,11 +11361,11 @@
                         })
                     }
 
-                    let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[0]
+                    let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[0]
 
                     // which unit does the user choosen ?
                     if (window.screen.width <= 935) {
-                        qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[1]
+                        qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[1]
                     }
 
                     let baseU = ''
@@ -11504,7 +11534,7 @@
 
                 } else {
                     let stockT = false
-                    //document.querySelectorAll('.ct_bx_qty_inner p').forEach(cu11=>{
+                    //document.querySelectorAll('.ct_bx_qty_inner .inner p').forEach(cu11=>{
                     //        cu11.innerText=`not selected`
                     //  })
                     bxA.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = `Please click to select`
@@ -12425,7 +12455,7 @@
                                     allItm.forEach(cu => {
                                         if (cu.id === item.id) {
                                             cu.unitInit.forEach(cuItm => {
-                                                priceM = parseFloat(cur1.price) * parseFloat(cu.qt)
+                                                priceM = parseFloat(cur1.price)
                                                 if (cuItm.name === cur1.name) {
                                                     if (cuItm.added) {
                                                         removedClass = `alreadyselected ${classStkno}`
@@ -13281,6 +13311,7 @@ ${otherItems.join('')}
                                         if (priceUnit === 'Please click to select') {
                                             priceUnit = 'Please click to select'
                                         }
+
                                         innerY = `   <div class='inner'>
                                 <p>${dt.name}</p>
                                 <span class='unit_fds'>${priceUnit}</span>
@@ -13736,7 +13767,7 @@ ${hmOTH}
                                                             tUNpr += parseFloat(cu.price.split('₹')[1].split(',').join(''))
                                                         }
                                                     })
-                                                    finalSelu = parseFloat(selU2) * parseFloat(cur.qt)
+                                                    finalSelu = parseFloat(selU2)
 
                                                 }
                                             } else {
@@ -13779,7 +13810,9 @@ ${hmOTH}
                                                                     })
                                                                     let offX = parseFloat(item.offer.sauce)
                                                                     pr = pr - (pr * (offX / 100))
-                                                                    pr = Math.round(pr)
+                                                                    pr = String(pr)
+                                                                    pr = pr.split('.')[0]
+                                                                    pr = parseFloat(pr)
                                                                     document.querySelectorAll('.curry_sauce .inner span pr').forEach(cuItm => {
                                                                         cuItm.innerText = '₹ ' + pr.toLocaleString()
                                                                     })
@@ -14043,11 +14076,11 @@ ${hmOTH}
                                         let pff = parseFloat(item.profit)
                                         //totPermP=totPermP+(totPermP*pff/100)
                                         let qtMain = parseFloat(cur.qt)
-                                        let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[0]
+                                        let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[0]
 
                                         // which unit does the user choosen ?
                                         if (window.screen.width <= 935) {
-                                            qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[1]
+                                            qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[1]
                                         }
                                         let baseU = ''
                                         if (qty_bx_unit.innerText.split('—')[1] !== undefined) {
@@ -14112,7 +14145,6 @@ ${hmOTH}
                                         totAm = totAm.split('.')[0]
                                         totAm = parseFloat(totAm)
                                         // (totAm)
-
                                         document.querySelectorAll('.ct_bx_total_ammount span').forEach(cur => {
                                             cur.innerText = "₹ " + totAm.toLocaleString()
                                         })
@@ -14440,7 +14472,20 @@ ${hmOTH}
                         //    unitInit.push({ name: name, price: price, added: added })
                         //})
                         //} else {
-                        Array.from(document.querySelectorAll('.cont1_itemskr .ct_bx_inside_base li')).forEach(cur => {
+                       
+                        if(window.screen.width<=935){
+                             Array.from(document.querySelectorAll('.cont1_itemskr2 .ct_bx_inside_base li')).forEach(cur => {
+                            let name = cur.childNodes[1].childNodes[1].innerText
+                            let price = cur.childNodes[1].childNodes[3].innerText
+                            let added = false
+
+                            if (cur.classList.value === 'alreadyselected') {
+                                added = true
+                            }
+                            unitInit.push({ name: name, price: price, added: added })
+                        })  
+                        }else{
+                             Array.from(document.querySelectorAll('.cont1_itemskr .ct_bx_inside_base li')).forEach(cur => {
                             let name = cur.childNodes[1].childNodes[1].innerText
                             let price = cur.childNodes[1].childNodes[3].innerText
                             let added = false
@@ -14450,6 +14495,7 @@ ${hmOTH}
                             }
                             unitInit.push({ name: name, price: price, added: added })
                         })
+                        }
 
                     } else {
                         Array.from(unitInU.childNodes).forEach(cur => {
@@ -14487,11 +14533,11 @@ ${hmOTH}
                             }
                         })
                     }
-                    let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[0]
+                    let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[0]
 
                     // which unit does the user choosen ?
                     if (window.screen.width <= 935) {
-                        qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[1]
+                        qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[1]
                     }
                     if (qty_bx_unit.innerText.split('—')[1] !== undefined) {
                         baseMain = qty_bx_unit.innerText.split('—')[0]
@@ -14976,36 +15022,36 @@ ${hmOTH}
                     }
 
                     qtekfd2.parentElement.childNodes[3].value = i
-                    if (document.querySelector('.ct_bx_inside_base') !== null) {
-                        if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
+                   //if (document.querySelector('.ct_bx_inside_base') !== null) {
+                   //    if (document.querySelector('.unit_fds').innerText.split(' ').join('').toLowerCase() !== 'viewitems.') {
 
-                            let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
-                            bsPr = parseFloat(bsPr)
-                            bsPr = (bsPr / (i + 1)) * i
-                            document.querySelectorAll('.unit_fds').forEach(cur => cur.innerText = '₹' + bsPr)
-                        }
-                        document.querySelectorAll('.ct_bx_inside_base li').forEach(cur => {
-                            let price = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
-                            price = parseFloat(price)
-                            let tPr = (price / (i + 1)) * i
-                            tPr = tPr.toLocaleString()
-                            cur.childNodes[1].childNodes[3].innerText = '₹' + tPr
-                        })
-                        if (document.querySelector('.curry_sauce') !== null) {
-                            document.querySelectorAll('.curry_sauce .ct_inner__inside_ths span').forEach(cur => {
-                                let prM = cur.innerText.split('₹')[1].split(',').join('')
-                                prM = (parseFloat(prM) / (i + 1)) * i
-                                cur.innerText = '₹' + prM.toLocaleString()
-                            })
-                        }
-                        if (document.querySelector('.spcies') !== null) {
-                            document.querySelectorAll('.spcies .ct_inner__inside_ths span').forEach(cur => {
-                                let prM = cur.innerText.split('₹')[1].split(',').join('')
-                                prM = (parseFloat(prM) / (i + 1)) * i
-                                cur.innerText = '₹' + prM.toLocaleString()
-                            })
-                        }
-                    }
+                   //        let bsPr = document.querySelector('.unit_fds').innerText.split('₹')[1].split(',').join('')
+                   //        bsPr = parseFloat(bsPr)
+                   //        bsPr = (bsPr / (i + 1)) * i
+                   //        document.querySelectorAll('.unit_fds').forEach(cur => cur.innerText = '₹' + bsPr)
+                   //    }
+                   //    document.querySelectorAll('.ct_bx_inside_base li').forEach(cur => {
+                   //        let price = cur.childNodes[1].childNodes[3].innerText.split('₹')[1].split(',').join('')
+                   //        price = parseFloat(price)
+                   //        let tPr = (price / (i + 1)) * i
+                   //        tPr = tPr.toLocaleString()
+                   //        cur.childNodes[1].childNodes[3].innerText = '₹' + tPr
+                   //    })
+                   //    if (document.querySelector('.curry_sauce') !== null) {
+                   //        document.querySelectorAll('.curry_sauce .ct_inner__inside_ths span').forEach(cur => {
+                   //            let prM = cur.innerText.split('₹')[1].split(',').join('')
+                   //            prM = (parseFloat(prM) / (i + 1)) * i
+                   //            cur.innerText = '₹' + prM.toLocaleString()
+                   //        })
+                   //    }
+                   //    if (document.querySelector('.spcies') !== null) {
+                   //        document.querySelectorAll('.spcies .ct_inner__inside_ths span').forEach(cur => {
+                   //            let prM = cur.innerText.split('₹')[1].split(',').join('')
+                   //            prM = (parseFloat(prM) / (i + 1)) * i
+                   //            cur.innerText = '₹' + prM.toLocaleString()
+                   //        })
+                   //    }
+                   //}
                     for (let i1 = 0; i1 < allfd.length; i1++) {
                         let cur = allfd[i1]
                         if (cur.id === token) {
@@ -15089,11 +15135,11 @@ ${hmOTH}
                 //    return
                 //}
                 // which unit does the user choosen ?
-                let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[0]
+                let qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[0]
 
                 // which unit does the user choosen ?
                 if (window.screen.width <= 935) {
-                    qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner p')[1]
+                    qty_bx_unit = document.querySelectorAll('.ct_bx_qty_inner .inner p')[1]
                 }
                 let baseU = ''
                 if (qty_bx_unit.innerText.split('—')[1] !== undefined) {
