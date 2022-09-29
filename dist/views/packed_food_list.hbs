@@ -41,26 +41,31 @@
             display: none;
         }
 
-        .ct_bx_about_mob {
-            position: fixed;
-            border-radius: 42px;
-            z-index: 99999;
-            top: 51%;
-            width: 94px;
-            margin-left: -24px;
-            height: 134px;
-            background-color: #1858c8;
-        }
-
-        .ct_bx_about_mob a {
-            display: block;
-            transform: rotate(268deg);
-            margin-top: 52px;
-            /* margin-left: 14px; */
-            width: 100%;
-            font-size: 23px;
-            color: white;
-        }
+      .ct_bx_about_mob {
+    border-radius: 0;
+    z-index: 99999;
+    top: 28%;
+    display:flex;
+    width: 100%;
+    margin-top: 166px;
+    margin-left: 0;
+    height: 43px;
+    background-color: #1858c8;
+}
+.ct_bx_about_mob ion-icon {
+    color: white;
+    margin: 15px 0 0 10px;
+}
+        .ct_bx_about_mob p {
+    display: block;
+    /* transform: rotate(268deg); */
+    margin-top: 16px;
+    /* margin-left: 14px; */
+    width: max-content;
+    font-size: 14px;
+    color: white;
+    margin-left: 50px;
+}
 
         .ct_bx_info {
             width: 26px;
@@ -1437,13 +1442,7 @@
             }
         }
 
-        @media only screen and (max-width:470px) {
-            .ct_bx_crousel {
-                margin-top: 152px
-            }
 
-
-        }
 
         @media only screen and (max-width:400px) {
             .bx_btns_crousel ion-icon {
@@ -3304,7 +3303,7 @@
             }
 
             .ct_bx_crousel {
-                margin-top: 157px;
+                margin-top: 0;
             }
 
             .bx_btns_crousel ion-icon {
@@ -3468,7 +3467,7 @@
 
         @media only screen and (max-width:470px) {
             .ct_bx_crousel {
-                margin-top: 170px;
+                margin-top: 0;
             }
 
             .erak_fd_body .upper_ct_cat_by_list {
@@ -3872,7 +3871,7 @@
             }
 
             .ct_bx_crousel {
-                margin-top: 166px
+                margin-top: 0
             }
 
             .ct_inner_nav .ct_bx_search {
@@ -4052,7 +4051,9 @@
                 margin-top: 14%;
                 left: 33%;
             }
-
+.ct_bx_about_mob p {
+    margin-left: 33px;
+}
             .ct_bx_price_fd.hasoffPrice {
                 margin-top: 8px;
             }
@@ -4657,9 +4658,9 @@
     <div class="ct_video_over">
 
     </div>
-    <div class="ct_bx_about_mob">
-        <a href="/about">About us</a>
-    </div>
+   <a href="/about"><div class="ct_bx_about_mob">
+        <p href="/about">Learn more, go to About us page </p><ion-icon name="arrow-forward-outline"></ion-icon>
+    </div></a> 
     <div class="ct_sep_bx">
         <div class="inner_seperation">
 
@@ -5405,23 +5406,7 @@
             return "";
         }
 
-        var waypoint = new Waypoint({
-            element: document.querySelector('.upper_ct_cat_by_list'),
-            handler: function (direction) {
-                if (direction === 'down') {
-                     let seenabout = getCookie('seen_about')
-        if (seenabout === '') {
-                    document.querySelector('.ct_bx_about_mob').style.display = 'none'
-        }
-                } else if (direction === 'up') {
-                    let seenabout = getCookie('seen_about')
-        if (seenabout === '') {
-                    document.querySelector('.ct_bx_about_mob').style.display = 'block'
-        }
-                }
-            }
-        })
-
+    
 
         var waypoint = new Waypoint({
             element: document.querySelector('#ek_res_ev'),
@@ -5464,7 +5449,13 @@
                     })
                     if (window.screen.width <= 360) {
                         document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '0 20px 0 3px'
+                            cur1.style.margin = '0 20px 0 13px'
+
+                        })
+                    }
+                      if (window.screen.width <= 360) {
+                        document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
+                            cur1.style.padding='6px 10px'
 
                         })
                     }
@@ -5547,7 +5538,16 @@
 
                         document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
                     }
+  if (window.screen.width <= 360) {
+                        document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
+                            cur1.style.margin = '-3px 4px 0 0'
 
+                        })
+                          document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
+                            cur1.style.padding='16px 10px'
+
+                        })
+                    }
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 1100) {
 
@@ -6021,11 +6021,11 @@
 
             }
         })
-        let seenabout = getCookie('seen_about')
-        if (seenabout !== '') {
-            document.querySelector('.ct_bx_about_mob').style.display = 'none'
+       //let seenabout = getCookie('seen_about')
+       //if (seenabout !== '') {
+       //    document.querySelector('.ct_bx_about_mob').style.display = 'none'
 
-        }
+       //}
     </script>
 </body>
 
