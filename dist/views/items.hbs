@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-11LX1H4F79"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-11LX1H4F79');
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +21,19 @@
         .ct_bx_ins_items.perm .inner span pr {
             margin: -2px 0 0 0px;
         }
+.ct_bx_video iframe{
+        width: 94vw;
+    margin: 13px;
+    height: 80vw;
+}
+.ct_bx_price samp{
+    font-size: 17px;
+    font-family: 'Open Sans';
+    color: black;
+    font-weight: 600;
+    margin: 17px 0 0 15px;
 
+}
         .ct_bx_ins_items .inner span .qty_info_pr {
             color: #064db0;
             font-size: 15px;
@@ -83,34 +104,6 @@
             padding: 23px 10px;
         }
 
-        .ct_info_price {
-            display: block;
-            width: 68%;
-            margin-top: 13px;
-            border-radius: 18px;
-            padding: 10px 15px;
-            border: 1px solid rgb(0, 110, 255);
-        }
-
-        .ct_info_price p {
-            color: rgb(12 87 187);
-            font-size: 17px;
-            line-height: 20px;
-            margin-top: -2px;
-            font-weight: 500;
-            font-family: 'Roboto';
-            /* word-break: break-word; */
-            margin-left: 30px;
-        }
-
-        .ct_info_price ion-icon {
-            font-size: 28px;
-            color: rgb(0, 110, 255);
-            position: absolute;
-            display: block;
-            margin-top: -5px;
-            margin-left: -6px;
-        }
 
         .delivery_account_info {
             background: #fef9fa;
@@ -376,7 +369,7 @@
         }
 
         .ct_bx_play {
-            display: block;
+            display: none;
             color: white;
             position: absolute;
             left: 270px;
@@ -1846,16 +1839,16 @@
             background-color: #B12704;
         }
 
-        .ct_bx_price p {
-            font-size: 21px;
-            color: rgb(0, 0, 0);
-            margin: 13px 5px 0;
-            font-family: 'Roboto';
-        }
+      .ct_bx_price p {
+    font-size: 21px;
+    color: rgb(163 2 2);
+    margin: 13px 5px 0;
+    font-family: 'Roboto';
+}
 
         .ct_bx_price span {
             font-size: 31px;
-            color: rgb(0, 0, 0);
+            color: rgb(198 16 16);
             font-weight: 500;
             font-family: 'Roboto';
             margin-top: 4px;
@@ -6002,19 +5995,7 @@
                 margin: 0 0 10px 0;
             }
 
-            .ct_info_price p {
-                margin-left: 30px;
-            }
-
-            .ct_info_price ion-icon {
-                font-size: 28px;
-            }
-
-            .ct_info_price {
-                display: block;
-                width: 97%;
-            }
-
+         
             .ct_info_price p {
                 font-size: 14px;
             }
@@ -6030,16 +6011,7 @@
                 margin-top: 25px;
             }
 
-            .ct_info_price ion-icon {
-                font-size: 27px;
-            }
-
-            .ct_info_price p {
-                color: rgb(12 87 187);
-                font-size: 20px;
-                margin-left: 34px;
-                line-height: 29px;
-            }
+         
 
             .fd_name_dt_itm {
                 font-size: 37px;
@@ -6132,7 +6104,7 @@
 
             .ct_bx_items_qt_actions .ct_bx_item_stock,
             .ct_bx_items_qt_actions .ct_sbout_this_itm {
-                display: block;
+                display: none;
             }
         }
 
@@ -6501,7 +6473,7 @@
 
             .ct_bx_items_qt_actions .ct_bx_item_stock,
             .ct_bx_items_qt_actions .ct_sbout_this_itm {
-                display: block;
+                display: none;
             }
 
             .ct_bx_fex_fd_dt_ov {
@@ -6621,7 +6593,7 @@
             }
 
             .fd_name_dt_itm {
-                width: 100%;
+                width: 92%;
                 font-size: 30px;
             }
 
@@ -7092,11 +7064,7 @@
                 margin-top: 19px;
             }
 
-            .ct_info_price p {
-                color: rgb(12 87 187);
-                font-size: 16px;
-                line-height: 24px;
-            }
+            
 
             .ct_sbout_this_itm .heading_p,
             .ct_sbout_this_Required_itm_info p {
@@ -7148,7 +7116,7 @@
             }
 
             .fd_name_dt_itm {
-                font-size: 26px;
+                font-size: 32px;
             }
 
             .ct_bx_total_ammount {
@@ -7769,11 +7737,7 @@
                 margin-top: 108px;
             }
 
-            .ct_info_price p {
-                color: rgb(12 87 187);
-                font-size: 15px;
-                line-height: 20px;
-            }
+         
 
             .ct_bx_play {
                 font-size: 35px;
@@ -9985,17 +9949,19 @@
                         data-interval="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="ct_bx_play">
-                                    <ion-icon name="logo-youtube"></ion-icon>
-                                </div>
-                                <img alt="What's inside this item?" class="for_banner" src="">
-                            </div>
-                            <div class="carousel-item">
-                                <div class="ct_offer_box_cook2">
+                                 <div class="ct_offer_box_cook2">
                                     <span></span>
                                     <p>off</p>
                                 </div>
                                 <img alt="item image" src="">
+                     
+                            </div>
+                            <div class="carousel-item">
+                                          <div class="ct_bx_play">
+                                    <ion-icon name="logo-youtube"></ion-icon>
+                                </div>
+                                
+                                <img alt="What's inside this item?" class="for_banner" src="">
                             </div>
 
                         </div>
@@ -10015,6 +9981,12 @@
                         </button>
                     </div>
                 </div>
+                <div class="ct_bx_video">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/vJX8tiYL0B0?autoplay=1&mute=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
                 <div class="ct_x_fd_dt_itm">
                     <div class="ct_bx_pf1390">
 
@@ -10030,15 +10002,10 @@
                         <div class="ct_bx_price">
                             <p>₹</p>
                             <span></span>
-                            <del>200</del>
+                            <del></del>
+                            <samp>/ for 500g chicken</samp>
                         </div>
-                        <div class="ct_info_price">
-                            <ion-icon name="alert-circle-outline"></ion-icon>
-                            <p>Krick sauce is for <pr class="price_info"></pr>
-                                <pr class="unit_info"></pr>.The price for the sauce will be adjusted
-                                accordingly.
-                            </p>
-                        </div>
+                       
                         <span class="selectedPricem hidden"> </span>
 
 
@@ -12116,8 +12083,10 @@
                             cur.style.display = 'none'
                         })
                     }
-                    document.querySelector(".ct_video_box iframe").src = item.video
+                    document.querySelectorAll("iframe").forEach(cu=>{
+cu.src = item.video +'?autoplay=1&mute=1'
 
+                    })
                     console.log(performance.now(), ' after getting item performance')
 
                     matched = true
@@ -12173,9 +12142,7 @@
                             cur.style.filter = 'grayscale(1)'
                         })
 
-                        document.querySelectorAll('.ct_info_price').forEach(cur => {
-                            cur.style.filter = 'grayscale(1)'
-                        })
+                       
                         document.querySelectorAll('.heading').forEach(cur => {
                             cur.style.filter = 'grayscale(1)'
                         })
@@ -12235,7 +12202,7 @@
                     let wi = document.querySelector('.for_banner').getBoundingClientRect().width
                     wi = (wi / 2) - 50
                     document.querySelector('.ct_bx_play').style.left = wi + 'px'
-                    document.querySelector('.ct_bx_play').style.display = 'block'
+                    document.querySelector('.ct_bx_play').style.display = 'none'
 
                     if (window.screen.width <= 470) {
                         wi += 20
@@ -12287,9 +12254,7 @@
                             cur.style.filter = 'grayscale(1)'
                         })
 
-                        document.querySelectorAll('.ct_info_price').forEach(cur => {
-                            cur.style.filter = 'grayscale(1)'
-                        })
+                     
                         document.querySelectorAll('.heading').forEach(cur => {
                             cur.style.filter = 'grayscale(1)'
                         })
@@ -12867,9 +12832,7 @@ ${htmBtns}
                         }
 
                         localStorage.setItem('stocks_item', JSON.stringify(objStocks))
-                        document.querySelectorAll('.ct_info_price .unit_info').forEach(cu11 => {
-                            cu11.innerText = item.about[0]
-                        })
+                       
                         if (offer2 !== null) {
                             offer2 = parseFloat(item.offer.off)
                             //+ maip.toLocaleString()
@@ -12885,16 +12848,12 @@ ${htmBtns}
                             document.querySelectorAll('.ct_bx_price span').forEach(cur => {
                                 cur.innerText = ffp
                             })
-                            document.querySelectorAll('.ct_info_price .price_info').forEach(cu11 => {
-                                cu11.innerText = `₹ ${ffp}`
-                            })
+                         
                             document.querySelectorAll('.ct_bx_price del').forEach(cur => {
                                 cur.innerText = `₹ ` + mainprice
                             })
                         } else {
-                            document.querySelectorAll('.ct_info_price .price_info').forEach(cu11 => {
-                                cu11.innerText = `₹ ` + maip
-                            })
+                      
                             document.querySelector('.ct_offer_box_cook2').style.display = 'none'
                             document.querySelector('.mrp_ammount').style.display = 'none'
                             price2 = maip.toLocaleString()
@@ -14364,7 +14323,11 @@ ${hmOTH}
             let addedItems = JSON.parse(localStorage.getItem('foodsAdded'))
             document.querySelector('html').addEventListener('click', (e) => {
                 let cBtn = e.target.closest('.bx_add_t_cart_btn_itm_dt')
-                let qt1 = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                  let qt1 = document.querySelectorAll('.ct_bx_qt_foods input')[1].value
+                    qt1 = parseFloat(qt1)
+                    if (window.screen.width <= 470) {
+                        qt1 = document.querySelectorAll('.ct_bx_qt_foods input')[2].value
+                    }
                 if (cBtn !== null) {
                     let arrFd = []
                     if (getCookie('user') !== '') {
@@ -16422,7 +16385,11 @@ ${hmOTH}
 
             }
         })
-
+var waypoint = new Waypoint({
+            element: document.querySelector('.ct_bx_video'),
+            handler: function (direction) {
+            }
+        })
         //video
         document.querySelector('html').addEventListener('click', (e) => {
             if (e.target.closest('.ct_video_box') && !e.target.closest('.ct_inner_video')) {
@@ -16513,7 +16480,7 @@ ${hmOTH}
             let wi = document.querySelector('.for_banner').getBoundingClientRect().width
             wi = (wi / 2) - 50
             document.querySelector('.ct_bx_play').style.left = wi + 'px'
-            document.querySelector('.ct_bx_play').style.display = 'block'
+            document.querySelector('.ct_bx_play').style.display = 'none'
 
             if (window.screen.width <= 470) {
                 wi += 20
