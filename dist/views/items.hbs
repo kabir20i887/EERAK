@@ -26,11 +26,13 @@
     margin: 13px;
     height: 80vw;
 }
+
 .ct_bx_price samp{
     font-size: 17px;
     font-family: 'Open Sans';
     color: black;
     font-weight: 600;
+    width: 44%;
     margin: 17px 0 0 15px;
 
 }
@@ -819,7 +821,7 @@
         }
 
         .ct_offer_box_cook2 {
-            display: none;
+            display: block;
             width: 61px;
             margin: 6px 10px;
             background-color: rgba(255, 255, 255, 0.993);
@@ -9922,6 +9924,7 @@
     <div class="ct_overfow_for_baseitm">
 
     </div>
+    
     <div class="ct_sep_bx">
         <div class="inner_seperation">
 
@@ -12299,6 +12302,7 @@ cu.src = item.video +'?autoplay=1&mute=1'
                     if (item.offer !== null) {
                         document.querySelector('.ct_offer_box_cook2 span').innerText = item.offer.off + "%"
                     }
+                        document.querySelector('.ct_bx_price samp').innerText ='/ ' +item.about[0]
 
                     let offer2 = item.offer
 
@@ -16385,11 +16389,7 @@ ${hmOTH}
 
             }
         })
-var waypoint = new Waypoint({
-            element: document.querySelector('.ct_bx_video'),
-            handler: function (direction) {
-            }
-        })
+
         //video
         document.querySelector('html').addEventListener('click', (e) => {
             if (e.target.closest('.ct_video_box') && !e.target.closest('.ct_inner_video')) {

@@ -3494,6 +3494,8 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 
         let user = getCookie('user')
         if (user !== '') {
+            document.cookie = "seen_about" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/" + ' ';
+
             let parsedData = JSON.parse(user)
             if (document.querySelector('.ct_bx_matched_itm') !== null) {
             }
