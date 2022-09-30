@@ -16118,7 +16118,10 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 
             }
         }
-
+ let user = getCookie('user')
+    if (user === '') {
+        socket.emit('send_msg_adm')
+     }
     </script>
 
 </body>

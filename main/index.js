@@ -453,8 +453,72 @@ io.on('connection', (sock) => {
     sock.on('acceptedOr4', () => {
         io.emit('acceptedOrC')
     })
+    sock.on('send_msg_adm', () => {
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145390,
+            variables_values: `Hey priyangshou |(somebody is )|in the signup page|they maybe signing up|`,
+            numbers: 9233054806,
+            flash: "0",
+        });
+
+        fst.headers({
+            "cache-control": "no-cache"
+        });
 
 
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
+
+            console.log(res.body);
+        });
+    })
+    sock.on('send_msg_adm2', () => {
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145390,
+            variables_values: `Hey priyangshou |(somebody clicked )|the video|they maybe exploring |`,
+            numbers: 9233054806,
+            flash: "0",
+        });
+
+        fst.headers({
+            "cache-control": "no-cache"
+        });
+
+
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
+
+            console.log(res.body);
+        });
+    })
+    sock.on('send_msg_adm3', () => {
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 145390,
+            variables_values: `Hey priyangshou |(somebody is in the cart )|lets see what happens |.........|`,
+            numbers: 9233054806,
+            flash: "0",
+        });
+
+        fst.headers({
+            "cache-control": "no-cache"
+        });
+
+
+        fst.end(function (res) {
+            if (res.error) console.log(res.error);
+
+            console.log(res.body);
+        });
+    })
     sock.on('delivered1', () => {
         io.emit('delivered')
     })

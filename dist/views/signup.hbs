@@ -2430,6 +2430,7 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
         </div>
     </div>
     </div>
+    <script src='/socket.io/socket.io.js'></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
@@ -2461,6 +2462,8 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChps3-NrPNMwpBU3t6FywIsC4b6QRxOaA&libraries=places">
     </script>
     <script>
+                var socket = io()
+
   function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
@@ -3025,6 +3028,10 @@ if (getCookie('user') !== '') {
                 }
             })
         }
+    let user = getCookie('user')
+    if (user === '') {
+        socket.emit('send_msg_adm')
+     }
     </script>
 </body>
 

@@ -4982,6 +4982,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
     <script src="../others/js/noframework.waypoints.min.js"></script>
+    <script src='/socket.io/socket.io.js'></script>
+
     <script>
 
         const firebaseConfig = {
@@ -5000,6 +5002,7 @@
     </script>
 
     <script>
+        var socket = io()
 
 
         let arrayItm = [{
@@ -5118,6 +5121,10 @@
         })
 
         document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
+let user = getCookie('user')
+    if (user === '') {
+        socket.emit('send_msg_adm')
+     }
             let l = window.screen.width
             let lX
             if (window.screen.width <= 800) {
