@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
 
     <title>Shopping Cart | KRICK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta name="keywords"
         content="shopping cart krick,shopping cart krickgrocery,krick shopping cart,cart krick,cart krickgrocery">
         <meta name="robots" content="index, follow">
@@ -20,6 +27,74 @@
         ion-icon {
             visibility: hidden;
         }
+
+           .ct_bx_slide_bx2 .ct_bx_erak_logo {
+    background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+}
+/* for bottom nav bar */
+.material-symbols-sharp {
+    color: #2b4fb6;
+    font-size: 31px;
+}
+.ct_bx_div_bottom_nav {
+    position: fixed;
+    background: white;
+    width: 100%;
+    bottom: 0%;
+    z-index: 999999;
+    box-shadow: 0 -10px 12px #0000002e;
+}
+.btn_bottom_nav .material-symbols-outlined {
+    color: #2f2f2f;
+    font-size: 30px;
+}
+.btn_bottom_nav p {
+    font-size: 12px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+.ct_bx_div_bottom_nav .ct_flex_bx {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    width: 100%;
+}
+.btn_bottom_nav {
+    padding: 7px 23px;
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+        .login_mob_a{display: none;}
+.myaccount_mob_a {
+    display: none;
+}
+.btn_bottom_nav.ct_bx_login_mobile {
+    width: 89px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: #ff002c;
+    padding-top: 10px;
+    margin-top: 26px;
+    box-shadow: 0 0 10px #0000004f;
+}
+.btn_bottom_nav.ct_bx_login_mobile p {
+    color: white;
+    display: flex;
+    font-size: 12px;
+    font-family: 'Montserrat';
+}
+.btn_bottom_nav.ct_bx_login_mobile ion-icon {
+    font-size: 17px;
+    color: white;
+}
+/*----------------------------*/
+
 
         .for_groc_full_load2 {
             position: absolute;
@@ -689,8 +764,8 @@
                 font-size: 24px;
                 padding: 7px;
                 border-radius: 40px;
-                border: 1px solid #857878;
-                color: rgb(0 0 0);
+               border: 1px solid #ffffff;
+    color: #fff;
                 transform: translate(3px, 10px);
             }
 
@@ -906,7 +981,9 @@
             .for_ek_fd_cart_load {
                 margin: -60px 0 180px 0px;
             }
-
+.ct_bx_search .search-icon {
+    color: #004ac9;
+}
             .list_itm_sub_cart span {
                 margin-top: 4px;
             }
@@ -3555,7 +3632,12 @@
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
-
+  .ct_bx_qt_foods input {
+    margin-left: 8px;
+}
+.no_req .ct_list_food {
+    margin: 10px;
+    border-radius: 7px;}
             .ct_bx_information_cart .big_info {
                 font-size: 22px;
             }
@@ -4752,7 +4834,7 @@
 
         .ct_bx_footer {
             margin-top: auto;
-            background-color: #000000;
+            background-color: #11191c;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -4832,18 +4914,17 @@
             height: auto;
         }
 
-        .ct_itm_food_cart h4 {
-            display: block;
-            width: 90%;
-            text-transform: capitalize;
-            color: rgb(0, 0, 0);
-            line-height: 18px;
-            font-size: 17px;
-            margin-left: 10px;
-            line-height: 24px;
-            font-family: 'Open Sans';
-        }
-
+       .ct_itm_food_cart h4 {
+    display: block;
+    width: 90%;
+    text-transform: capitalize;
+    color: rgb(40 40 40);
+    line-height: 18px;
+    font-size: 17px;
+    margin-left: 10px;
+    line-height: 20px;
+    font-family: Montserrat;
+}
         .img_a_cart {
             width: 280px;
             height: max-content;
@@ -5012,15 +5093,15 @@
             margin-right: 10px;
         }
 
-        .selected_field h2 {
-            display: inline-block;
-            color: rgb(33, 33, 34);
-            font-size: 22px;
-            font-family: 'Open Sans';
-            text-transform: capitalize;
-            margin: 11px 0 0 2px;
-        }
-
+      .selected_field h2 {
+    display: inline-block;
+    color: rgb(104 104 104);
+    font-size: 22px;
+    font-family: Montserrat;
+    text-transform: unset;
+    text-transform: uppercase;
+    margin: 11px 0 0 2px;
+}
         footer {
             display: inline-block;
             background-color: rgb(24, 23, 23);
@@ -5185,7 +5266,7 @@
         }
 
         .check_out_btn_order:active {
-            background: #f7cf09;
+            background: #ca1345;
         }
 
         .check_out_btn_order:active::before {
@@ -8924,11 +9005,10 @@
                 height: auto;
                 height: 39px;
             }
-
-            .ct_bx_search .search-icon {
-                color: black;
-            }
-
+.ct_bx_search .search-icon {
+    color: #004ac9;
+}
+.ct_bx_search .search-icon {border-right: 2px solid #a7a7a7;}
             .for_nav_main .ct_bx_search input {
                 transform: translate(0px, 0);
                 width: 86%;
@@ -9186,7 +9266,7 @@
             }
 
             .list_food_cart {
-                margin-top: 40px;
+                margin-top: 20px;
             }
 
             .ct_bx_required_groc h3 {
@@ -9575,7 +9655,7 @@
             .for_mobile_search.for_seravh_in_nav {
                 margin-left: 0;
                 height: auto;
-                padding-bottom: 26px;
+                padding-bottom: 12px;
             }
 
             .ct_other_nav_cart {
@@ -9923,13 +10003,127 @@
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
+            .ct_bx_erak_logo a {
+    width: 90%;
+}
+                       .ct_acc_dt_ov p {
+    color: white;
+}
+   
+            .list_itm_sub_cart p, .to_pay_cahge p {
+    width: auto;
+}
+
+            .ct_deliv_box {
+    width: 95%;
+}
+            .ct_subotatal h3, .sub_tital_order_cart h2 {
+    font-size: 14px;
+}
+            .img_a_cart {
+    width: 171px;
+}
+            .remove_fd_itm_ct {
+    margin: 0 0 10px -27px;
+    width: 69px;
+}
+            .remove_fd_itm_ct p {
+    color: rgb(205 19 19);
+}
+            .ct_itm_food_cart h4 {
+    font-size: 14px;
+}
+            .no_req .ct_bx_required_groc, .no_req .ct_subotatal {
+    width: 95%;
+    border-radius: 9px;border-top: none;
+    margin-left: 11px;    margin-bottom: 29px;
+}
+             .no_req .ct_list_food {
+    width: 95%;
+}
+            footer .logo img{
+                    width: 105px;
+            }
+            .ct_bx_copy_right p {
+    font-size: 9px;
+}
+.ct_bx_copy_right span{
+    font-size: 10px;
+}
+.ct_bx_copy_right a{
+        margin-top: 8px;
+    margin-left: 53px;
+    font-size: 10px;
+}
+            .ct_bx_foot_inner .for_ain_home_logo {
+    margin: 29px 0 0 30px;
+}
+            .ct_bx_footer {
+    margin-bottom: 52px;
+}
+              .logo img {
+    margin-top: -7px;width: 135px;
+}
+.ct_bx_about_mobile2 p {
+    font-size: 10px;
+    color: black;
+    font-family: 'Open sans';
+}
+.ct_bx_about_mobile2 {
+    display: block;
+    text-align: center;
+    width: 100px;
+}
+            .ct_bx_about_mobile2 .material-symbols-outlined{
+    color: black;
+    font-size: 27px;
+}
+.ct_bx_about_mobile2 a {
+    display: block;
+} 
+   .for_mobile_search .ct_bx_search input {
+    background: #e1e2e5;
+}
+
+.for_nav_main .for_mobile_search .ct_bx_search {
+    display: flex;
+    margin-left: auto;
+    background: #e1e2e5;
+    width: 95%;
+    box-shadow: none;
+    margin-right: auto;
+}
+            .ek_cart{background-color: whitesmoke;}
+            .body_cart .recomended_cart{display: none;}
+                        /*...............nav-bar....................*/
+             
+.for_main_nav_login1 {
+    font-size: 10px;
+    transform: translate(0px, 13px);
+}
+.for_main_nav_login1 a {
+    width: 75px;
+    border-radius: 13px;
+    color: white;
+    font-family: 'Montserrat';
+background: #f22e2e;    height: 39px;
+    padding: 14px 13px;
+    margin: -15px 0 0 0px;
+}
+
+
+
+
 .body_cart .ct_bx_qt_foods div {
     width: 27%;
     margin-top: 5px;
-    height: 31px;
+    height:22px;
 }
 .body_cart .ct_bx_qt_foods div ion-icon {
-    font-size: 23px;
+    font-size: 16px;
+}
+.body_cart .ct_bx_qt_foods {
+    height: 38px;
 }
             .btn_sign_up_cart span2 {
                 font-size: 14px;
@@ -9940,7 +10134,6 @@
             }
 
             .logo img {
-                width: auto;
                 margin-top: -9px;
             }
 
@@ -9979,16 +10172,15 @@
             }
 
             .body_cart .ct_field_small_size_bx {
-                margin: -10px 0 0 0px;
-            }
+  margin: -19px 0px 0 3px;            }
 
             .ct_bx_qty p {
                 font-size: 17px;
             }
 
-            .ct_inner_nav {
-                padding: 8px 10px 10px 10px;
-            }
+          .ct_inner_nav {
+    padding: 20px 10px 0px 10px;
+}
 
             .cart_nav a {
                 margin-top: 0;
@@ -10003,9 +10195,10 @@
             }
 
 
-            .ek_cart {
-                margin-top: 152px;
-            }
+          .ek_cart {
+    margin-top: 139px;
+}
+.cart_nav{display: none;}
 
             .ct_field_small_size_bx {
                 margin: -1px 0 0 0px;
@@ -10016,7 +10209,7 @@
             }
 
             .ct_nav_erak .mai_ul {
-                width: 71px;
+                width: auto;
             }
 
             .ct_bx_search .search-icon {
@@ -10034,7 +10227,6 @@
             .for_nav_main .for_mobile_search .ct_bx_search {
                 display: flex;
                 margin-left: auto;
-                background: white;
                 width: 95%;
                 margin-right: auto;
             }
@@ -10080,15 +10272,12 @@
                 height: 78px;
             }
 
-            .ct_acc_dt_ov p,
             .cart_nav ion-icon,
             .ct_field_small_size {
                 color: black;
             }
 
-            .for_mobile_search .ct_bx_search input {
-                background: white;
-            }
+          
 
             .for_mobile_search {
                 top: 74px;
@@ -10134,8 +10323,8 @@
                 font-size: 26px;
                 padding: 7px;
                 border-radius: 40px;
-                border: 1px solid #857878;
-                color: rgb(0, 0, 0);
+                border: 1px solid white;
+                color: white;
                 transform: translate(3px, 1px);
             }
 
@@ -10210,7 +10399,7 @@
             }
 
             .ct_field_small_size ion-icon {
-                font-size: 49px;
+                font-size: 39px;
             }
 
             .cart_nav ion-icon {
@@ -10221,10 +10410,21 @@
                 padding-top: 8px;
             }
 
-            .to_pay_cahge span c {
-                font-size: 27px;
-            }
-
+           .to_pay_cahge span c {
+    font-size: 27px;
+    color: #ca2020;
+    font-family: 'Montserrat';
+}
+.to_pay_cahge span b {
+    font-size: 21px;
+    color: rgb(213 0 62);
+    font-family: 'Montserrat';
+}
+.placeneworder, .for_cart_checkout {
+    width: 89vw;
+}
+.check_out_btn_order {
+    background: #ff1455;    color: rgb(255 255 255);border-color: #ff0077;}
             .for_nav_main .logo {
                 left: 11%;
             }
@@ -10234,7 +10434,7 @@
             }
 
             .price_am_cart_fd2 span {
-                font-size: 22px;
+                font-size: 15px;
             }
 
             .block_2_charge p,
@@ -10243,9 +10443,10 @@
             }
 
             .to_pay_cahge p {
-                font-size: 20px;
-            }
-
+    font-size: 14px;
+    font-family: 'Montserrat';
+    margin: 6px 20px 0 10px;
+}
             .ct_subotatal {
                 margin: 20px 0 0 -30px;
             }
@@ -10255,40 +10456,34 @@
             .ct_inner_nav {
                 justify-content: space-around;
             }
-
+.ct_bx_div_bottom_nav .ct_flex_bx {
+    padding: 0px;
+}
             .ct_deliv_box {
                 width: 94%;
             }
 
             .placeneworder,
             .for_cart_checkout {
-                width: 93vw;
+                width:86vw;
             }
 
             .select_delivery_t {
                 margin: 25px 0 20px 7px;
             }
 
-            .ct_deliv_box p {
-                font-size: 15px;
-            }
+          .ct_deliv_box p {
+    font-size: 14px;
+    font-family: 'Montserrat';
+    color: #333334;
+}
 
             .list_itm_sub_cart span {
                 margin-top: 9px;
             }
-
-            .to_pay_cahge span b {
-                font-size: 16px;
-            }
-
             .ct_deliv_box {
                 width: 96%;
             }
-
-            .to_pay_cahge span c {
-                font-size: 20px;
-            }
-
             .to_pay_cahge p {
                 font-size: 17px;
                 padding-top: 12px;
@@ -10313,7 +10508,7 @@
             }
 
             .ct_field_small_size {
-                margin-top: -12px;
+                margin-top: -19px;
             }
 
             .ct_nav_erak .ct_bx_search {
@@ -10342,7 +10537,7 @@
             }
 
             .ct_nav_erak .mai_ul {
-                width: 63px;
+                width: auto;
             }
 
             .mai_ul {
@@ -10395,7 +10590,7 @@
 
             .list_itm_sub_cart p,
             .to_pay_cahge p {
-                width: 156px;
+                width: auto;
             }
 
             .ct_bx_copy_right a {
@@ -10418,7 +10613,7 @@
 
             .img_a_cart {
                 min-width: 155px;
-                width: 202px;
+                width: 167px;
             }
 
             .for_nonfix_search {
@@ -10498,10 +10693,6 @@
                 width: 112px;
             }
 
-            .ct_itm_food_cart h4 {
-                font-size: 17px;
-            }
-
             .itm_food_list_ek .ct_dt_tm_food_res h4 {
                 font-size: 14px;
                 width: 100%;
@@ -10516,11 +10707,14 @@
             .body_cart .ct_nav_erak .ct_bx_search {
                 margin-left: 9px;
             }
-
+.btn_bottom_nav {
+    padding: 7px 16px;
+}
             .ct_inner_nav .mai_ul {
                 width: 50px;
             }
-
+.btn_bottom_nav p {
+    font-size: 10px;}
             .cart_nav a {
                 margin-top: 0;
             }
@@ -10579,9 +10773,6 @@
                 font-size: 14px;
             }
 
-            .body_cart .ct_bx_qt_foods div ion-icon {
-                font-size: 24px;
-            }
 
             .bx_evt_cart_item .ct_bx_qt_foods {
                 width: 41vw;
@@ -10593,10 +10784,6 @@
 
             .ct_nav_erak .ct_bx_search {
                 margin-left: 0px;
-            }
-
-            .sub_tital_order_cart h2 {
-                font-size: 18px;
             }
 
             .ct_subotatal h3 {
@@ -10741,11 +10928,10 @@
                 width: 90%;
             }
 
-            .ct_itm_food_cart h4 {
-                margin: 2px 0 0 8px;
-                width: 77%;
-                font-size: 15px;
-            }
+           .ct_itm_food_cart h4 {
+    margin: 2px 0 0 8px;
+    width: 63%;
+}
 
             .ct_bx_message_succesfully_ordered h2 {
                 font-size: 16px;
@@ -11450,7 +11636,50 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
         </div>
 
     </div>
+ <div class="ct_bx_div_bottom_nav">
+        <div class="ct_flex_bx">
+            <a href="/mycart">
 
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <p>My orders</p>
+                </div>
+            </a>
+
+            <a href="/mycart">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                    <p>My cart</p>
+
+                    </span>
+
+                </div>
+            </a>
+            <a href="/your-account" class="myaccount_mob_a">
+                <div class="btn_bottom_nav myaccount_mob">
+                    <span class="material-symbols-sharp">
+                        account_circle
+                    </span>
+                    <p>My account </p>
+                    </span>
+                </div>
+
+            </a>
+            <a href="/login" class="login_mob_a">
+
+                <div class="btn_bottom_nav ct_bx_login_mobile">
+                    <p>Log in <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
     <div class="ct_sep_bx">
         <div class="inner_seperation">
             <section class="ek_cart">
@@ -12119,6 +12348,7 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                         })
                     }
 
+
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
                     if (window.screen.width <= 740) {
                         document.querySelector('.for_nav_main').style.height = '75px'
@@ -12149,6 +12379,17 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                             }
                         }
 
+                    }
+                                        if(window.screen.width<=470){
+                         document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
+                            cur1.style.width = '60px'
+                            cur1.style.padding = '0 9px'
+
+                        })
+                         document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
+                            cur1.style.margin= '-5px 0px 0px -3px'
+
+                        })
                     }
                     document.querySelector('.for_nav_main').style.top = '0'
                     document.querySelector('.for_nav_main').style.position = 'fixed'
@@ -12187,7 +12428,12 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                             cur1.style.margin = '-4px 0px 0 3px'
 
                         })
-                        document.querySelector('.ct_inner_nav').style.padding = '8px 10px 10px 10px'
+                         document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
+                            cur1.style.width = '100px'
+                            cur1.style.padding = '0'
+
+                        })
+                        document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px'
 
                     }
                     let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
@@ -14073,7 +14319,11 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                 }
 
             }
+ if (window.screen.width <= 470) {
+                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'block')
 
+            }
 
         } else {
             document.querySelector('.ct_acount_details_cart').style.display = 'block'
@@ -14097,6 +14347,13 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
                     }
 
 
+
+                }
+                 if (window.screen.width <= 470) {
+                    document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
+                    document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
+                    document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
 
                 }
             }
@@ -16118,10 +16375,10 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 
             }
         }
- let user11 = getCookie('user')
-    if (user11 === '') {
-        socket.emit('send_msg_adm3')
-     }
+//let user11 = getCookie('user')
+//   if (user11 === '') {
+//       socket.emit('send_msg_adm3')
+//    }
     </script>
 
 </body>

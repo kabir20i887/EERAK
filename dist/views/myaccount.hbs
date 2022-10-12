@@ -7,23 +7,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your account | KRICK</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-    <meta name="robots" content="noindex">
-
+<meta name="keywords"
+        content="account krick,krickgrocery my account,krickgrocery account">
+    <meta name="description"
+        content="View your orders and your account information on krick">
     {{>favicon}}
     <style>
         /*! CSS Used from: Embedded */
         .ct_bx_slide_bx.active {
             right: 0px 
         }
+
+           .ct_bx_slide_bx2 .ct_bx_erak_logo {
+    background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+}
+        .ct_bx_food_dt_acc p{
+                font-size: 12px;
+    color: #646464;
+    font-family: 'Montserrat';
+    display: block;
+    margin:5px 0 0 20px;
+        }
+        .ct_bx_food_dt_acc p pr{
+                   font-size: 15px;
+    color: #bc1919;
+    font-family: 'Montserrat';
+    text-transform: lowercase;
+    margin: 10px 0 0 0px;
+        }
              .ct_bx_info {
             display: none;
         }
+        .ct_flex_bx_cancel_and_info{display: flex;width: 100%;margin: 20px 10px;}
+        .ct_bx_footer {
+    background-color:#11191c
+}
+.ct_info_box{
+    width:100%;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: center;
 
+}
+.ct_info_box p{
+    color: black;
+    font-size: 14px;
+    font-family: 'Open sans';
+}
+.ct_bx_div_bottom_nav {
+    position: fixed;
+    background: white;
+    width: 100%;
+    bottom: 0%;
+    z-index: 999999;
+    box-shadow: 0 -10px 12px #0000002e;
+}
+.ct_bx_div_bottom_nav .ct_flex_bx {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: center;
+    width: 100%;
+}
+.btn_bottom_nav {
+    padding: 7px 23px;
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+        .login_mob_a{display: none;}
+.myaccount_mob_a {
+    display: none;
+}
+.btn_bottom_nav.ct_bx_login_mobile {
+    width: 89px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: #ff002c;
+    padding-top: 10px;
+    margin-top: 26px;
+    box-shadow: 0 0 10px #0000004f;
+}
+.btn_bottom_nav.ct_bx_login_mobile p {
+    color: white;
+    display: flex;
+    font-size: 12px;
+    font-family: 'Montserrat';
+}
+.btn_bottom_nav.ct_bx_login_mobile ion-icon {
+    font-size: 17px;
+    color: white;
+}
+.btn_bottom_nav .material-symbols-outlined {
+    color: #2f2f2f;
+    font-size: 30px;
+}
+.btn_bottom_nav p {
+    font-size: 12px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+.material-symbols-sharp {
+    color: #2b4fb6;
+    font-size: 31px;
+}
 .ct_deliv_status_mob p {
     color: #535353;
-    font-size: 13px;
-    font-family: 'Open Sans';
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: Montserrat;
 }
 .ct_deliv_status_mob .canceled, .ct_deliv_status_mob .delivered, .ct_deliv_status_mob .out_deliv {
     color: #006000;
@@ -32,7 +136,7 @@
 }
 .ct_deliv_status_mob{
     display: none;
-    margin: 20px 0 0 14px;
+    margin: 20px 0 20px 14px;
 }
 .ct_deliv_status_mob .canceled{color: red;}
 
@@ -2575,7 +2679,7 @@
             }
 
             .ct_bx_items_order_details {
-                right: 130px;
+                right: 130px;   
             }
 
             .ct_bx_logout_btn button {
@@ -2736,7 +2840,9 @@
             .ct_inner_nav {
                 justify-content: initial
             }
-
+.ct_bx_div_bottom_nav .ct_flex_bx {
+    padding: 0px;
+}
             .for_nav_main .logo {
                 margin: 4px 0;
             }
@@ -3908,7 +4014,7 @@
         .on_edit_profile_acc {
             display: block;
             overflow: hidden;
-            margin-bottom: 50px;
+            margin-bottom: 0px;
         }
 
         .loader_cart .loader {
@@ -4569,7 +4675,7 @@
             width: 100%;
             overflow: hidden;
             margin: 30px 0 0 -0px;
-            padding-bottom: 40px;
+            padding-bottom: 20px;
         }
 
         .date_time_order pre {
@@ -4644,15 +4750,14 @@
             transform: translate(0, 5px);
         }
 
-        .ct_bx_food_dt_acc h4 {
-            font-size: 15px;
-            width: 100%;
-            margin: 3px 0 0 20px;
-            color: rgb(7, 106, 219);
-            font-weight: 500;
-            font-family: 'Open Sans';
-        }
-
+      .ct_bx_food_dt_acc h4 {
+    font-size: 15px;
+    width: 100%;
+    margin: 3px 0 0 20px;
+    color: rgb(7, 106, 219);
+    font-weight: 500;
+    font-family: 'Montserrat';
+}
         .ct_bx_info_mob_order p {
             color: rgb(49, 47, 47);
             font-size: 12px;
@@ -4728,13 +4833,14 @@
             border: none;
         }
 
-        .ct_fd_dt_full span {
-            font-size: 11px;
-            color: black;
-            font-family: 'Open Sans';
-            display: block;
-            margin: 11px 0 0 23px;
-        }
+     .ct_fd_dt_full span {
+    font-size: 11px;
+    color: #646464;
+    font-family: 'Montserrat';
+    text-transform: lowercase;
+    display: block;
+    margin: 2px 0 0 23px;
+}
 
         .ct_bx_copy_right span,
         .ct_bx_follow_social_icon,
@@ -5115,19 +5221,19 @@
             transition: .4s ease-in-out;
         }
 
-        .cancel_order_btn {
-            background: linear-gradient(to bottom, #d5e2f4, #dce0f2);
-            padding: 8px 6px;
-            border-radius: 4px;
-            border: none;
-            font-family: 'Open Sans';
-            font-size: 14px;
-            width: 89%;
-            color: black;
-            box-shadow: 0 0 1px rgb(0 0 0 / 41%);
-            margin: 20px 0 0px 40px;
-        }
-
+    .cancel_order_btn {
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+    padding: 8px 6px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    border: 1px solid red;
+    width: 89%;
+    color: #ff1165;
+    box-shadow: 0 0 1px rgb(0 0 0 / 41%);
+    margin: 20px 0 0px 40px;
+}
         .for_acc_dt .ct_bx_message_succesfully_ordered.succ_cancel p {
             width: 100%;
         }
@@ -14482,7 +14588,6 @@
 
         .ct_bx_footer {
             margin-top: auto;
-            background-color: black;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -15795,7 +15900,7 @@
             display: none;
             padding: 18px 6px;
             margin-top: -8px;
-            z-index: 999999;
+z-index: 99999999999999999;
             background-color: white;
             right: 190px;
             word-break: break-word;
@@ -17332,10 +17437,10 @@
                 height: auto;
                 height: 39px;
             }
-
-            .ct_bx_search .search-icon {
-                color: black;
-            }
+.ct_bx_search .search-icon {
+    color: #004ac9;
+}
+.ct_bx_search .search-icon {border-right: 2px solid #a7a7a7;}
 
             .for_nav_main .ct_bx_search input {
                 transform: translate(0px, 0);
@@ -18097,6 +18202,158 @@
                 padding: 0;
                 width: 37%;
             }
+                        .ct_bx_erak_logo a {
+    width: 90%;
+}
+                       .ct_acc_dt_ov p {
+    color: white;
+}
+   
+            .ct_bx_food_dt_acc h4 {
+    font-size: 17px;
+}
+.ct_fd_dt_full span {
+    font-size: 12px;
+    margin: 4px 0 0 20px;
+}
+            .bx_inner .title_order{
+                        color: #535353;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    margin-left: 17px;
+    margin-bottom: 0px;
+            }
+            .bx_inner {
+    margin: 0;
+    border-top: 1px solid #e0e1e2;
+}
+
+      .cancel_order_btn {
+    background: #e52750;
+    padding: 8px 6px;
+    border-radius: -2px;
+    border: none;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    width: 89%;
+    color: #ffffff;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 26%);
+    margin: 20px 0 0px 40px;
+}
+.ct_info_box {
+    width: 141px;
+    padding: 8px 15px;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid #9d9d9d; */
+    height: 40px;
+    border-radius: 8px;
+    margin: 0px 20px;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 26%);
+}
+.ct_info_box p {
+    color: #141414;
+    font-size: 13px;
+    margin-top: 4px;
+    font-family: 'Open sans';
+}
+.ct_flex_bx_cancel_and_info {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    /* margin: 20px 10px; */
+    border-top: 1px solid #e0e1e2;
+    padding: 20px 10px;
+}
+    .cancel_order_btn {
+    width: 36%;
+    margin: 0px 0 0px 4px;
+}
+
+            .ct_bx_nav_order_itm .ct_bx_info_mob_order {
+    transform: translate(-20px, 20px);
+    width: 62px;
+    background: #c6dbff;
+    padding: 7px 10px;
+    display: none;
+    height: 28px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #00000096;
+}
+            .ct_bx_copy_right {
+    margin: 0px 0 0;
+}
+            .mai_ul .cart_nav {
+    display: none;
+}
+footer .logo img{
+                width: 105px;
+            }
+            .ct_bx_copy_right p {
+    font-size: 9px;
+}
+.ct_bx_copy_right span{
+    font-size: 10px;
+}
+.ct_bx_copy_right a{
+        margin-top: 8px;
+    margin-left: 53px;
+    font-size: 10px;
+}
+            .ct_bx_foot_inner .for_ain_home_logo {
+    margin: 29px 0 0 30px;
+}
+            .ct_bx_footer {
+    margin-bottom: 52px;
+}
+.ct_field_small_size {
+    margin: 0px 0px 0 3px;
+}
+.cart_nav{display: none;}
+.ct_field_small_size ion-icon {
+    font-size: 39px;
+}
+  .logo img {
+    width: 135px;
+    margin-top: -7px;  
+}
+.ct_bx_about_mobile2 p {
+    font-size: 10px;
+    color: black;
+    font-family: 'Open sans';
+}
+.ct_bx_about_mobile2 {
+    display: block;
+    text-align: center;
+    width: auto;
+    padding: 4px 10px 10px 0px;
+}
+            .ct_bx_about_mobile2 .material-symbols-outlined{
+    color: black;
+    font-size: 27px;
+}
+.ct_bx_about_mobile2 a {
+    display: block;
+} 
+   .for_mobile_search .ct_bx_search input {
+    background: #e1e2e5;
+}
+
+.for_nav_main .for_mobile_search .ct_bx_search {
+    display: flex;
+    margin-left: auto;
+    background: #e1e2e5;
+    width: 95%;
+    box-shadow: none;
+    margin-right: auto;
+}
+
+            .for_mobile_search.for_seravh_in_nav {
+                padding-bottom: 12px;
+            }
+.ct_inner_nav {
+    padding: 20px 10px 0px 10px;
+}
 
             .ct_inner_nav .ct_bx_search {
                 height: 93%;
@@ -18168,13 +18425,6 @@
                 width: 100%;
             }
 
-            .for_nav_main .for_mobile_search .ct_bx_search {
-                display: flex;
-                margin-left: auto;
-                background: white;
-                width: 95%;
-                margin-right: auto;
-            }
 
             .for_mobile_search .ct_bx_matched_itm {
                 z-index: 99999999999999;
@@ -18220,14 +18470,9 @@
                 height: 94px;
             }
 
-            .ct_acc_dt_ov p,
             .cart_nav ion-icon,
             .ct_field_small_size {
                 color: black;
-            }
-
-            .for_mobile_search .ct_bx_search input {
-                background: white;
             }
 
             .for_mobile_search {
@@ -18260,8 +18505,8 @@
                 font-size: 26px;
                 padding: 7px;
                 border-radius: 40px;
-                border: 1px solid #857878;
-                color: rgb(0, 0, 0);
+      border: 1px solid white;
+    color: white;
                 transform: translate(3px, 1px);
             }
 
@@ -18377,9 +18622,7 @@
                 font-size: 16px;
             }
 
-            .ct_field_small_size ion-icon {
-                font-size: 49px;
-            }
+     
 
             .cart_nav ion-icon {
                 margin-left: 4px;
@@ -18583,7 +18826,22 @@
             .cart_nav a {
                 margin-top: 0;
             }
-
+            .btn_bottom_nav p {
+    font-size: 10px;}
+.btn_bottom_nav {
+    padding: 7px 16px;
+}
+.ct_info_box p {
+    font-size: 11px;}
+    .ct_info_box {
+    width: 122px;}
+    .cancel_order_btn {
+    background: #e52750;
+    padding: 8px 6px;
+    border-radius: -2px;
+    border: none;
+    font-family: 'Open Sans';
+    font-size: 9px;}
             .ct_nav_erak .mai_ul {
                 width: 28%;
             }
@@ -20189,6 +20447,50 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 
         </div>
     </div>
+    <div class="ct_bx_div_bottom_nav">
+        <div class="ct_flex_bx">
+            <a href="/mycart">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <p>My orders</p>
+                </div>
+            </a>
+
+            <a href="/mycart">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                    <p>My cart</p>
+
+                    </span>
+
+                </div>
+            </a>
+            <a href="/your-account" class="myaccount_mob_a">
+                <div class="btn_bottom_nav myaccount_mob">
+                    <span class="material-symbols-sharp">
+                        account_circle
+                    </span>
+                    <p>My account </p>
+                    </span>
+                </div>
+
+            </a>
+            <a href="/login" class="login_mob_a">
+
+                <div class="btn_bottom_nav ct_bx_login_mobile">
+                    <p>Log in <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
     <div class="ct_sep_bx">
         <div class="inner_seperation">
 
@@ -21763,7 +22065,7 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
 
                           <div class="ct_all_over_fd_dt">
 
-                              <a class="for_img_order_user" href="/recipes/${id}">
+                              <a class="for_img_order_user" rel="nofollow"">
                                   <img class="main_img" src="${img}" alt="img">
 
                               </a>
@@ -21772,13 +22074,7 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                                   <div class="ct_bx_food_dt_acc">
                                       <h4>${name}</h4>
                                       <span>QUANTITY :  ${qt}</span>
-                                      <a  href="/recipes/${id}" class="btn_by_again">
-                                          <ion-icon name="refresh-circle" role="img" class="md hydrated" aria-label="refresh circle"></ion-icon> Buy it
-                                          Again
-                                      </a>
-
-
-
+                                      <p>Total:- <pr>${item.price}</pr></p>
                                   </div>
 
                               </div>
@@ -21839,11 +22135,8 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                                                     <h4>${name}</h4>
                                                     <p class="unit_itm_ord">${unit}</p>
                                                         <span>QUANTITY : ${qt}</span>
+                                      <p>Total:- <pr>${item.price}</pr></p>
 
-                                                        <a href="/grocery?q=${id}&cid=${item.catId}&typ=groc&itm=${token}" class="btn_by_again">
-                                                            <ion-icon name="refresh-circle" role="img" class="md hydrated" aria-label="refresh circle"></ion-icon> Buy it
-                                                            Again
-                                                        </a>
 
 
                                                     </div>
@@ -21869,11 +22162,8 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                                                     <h4>${name}</h4>
                                                     <p class="unit_itm_ord">${unit}</p>
                                                         <span>QUANTITY : ${qt}</span>
+                                      <p>Total:- <pr>${item.price}</pr></p>
 
-                                                        <a href="/grocery?q=${id}&cid=${item.catId}&typ=groc&&itm=${token}" class="btn_by_again">
-                                                            <ion-icon name="refresh-circle" role="img" class="md hydrated" aria-label="refresh circle"></ion-icon> Buy it
-                                                            Again
-                                                        </a>
 
 
                                                     </div>
@@ -22014,7 +22304,15 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                         } else {
                             htmlT = ``
                         }
-                        let cancelBtn = `<button class="cancel_order_btn">Cancel Order</button>
+                        let cancelBtn = `
+                        <div class="ct_flex_bx_cancel_and_info">
+                            <button class="cancel_order_btn">Cancel order now</button>
+    <div class="ct_info_box">
+        <p>View others info</p>
+    </div>
+</div>
+                        
+                        
                     `
                         if (cur1.canceled) {
                             htmlP = `<p class="pending">canceled by You</p>`
@@ -22143,12 +22441,11 @@ ${htmlD2}
 
                                             </div>
                                         </div>
-                                        ${cancelBtn}
 
                                         ${html_for_deliv_status}
                                         <span class="hidden">${cur1.id}</span>
                     <div class="bx_inner">
-                     
+                     <span class='title_order'>Items</span>
                         <ul>
                 ${arrFd.join('')}
 
@@ -22156,14 +22453,14 @@ ${htmlD2}
 
 
                     </div>
+                                                            ${cancelBtn}
+
                 </div>`
                         addedOrder++
                         document.querySelector('.ct_bx_orders').insertAdjacentHTML('afterbegin', html)
 
                         if (window.screen.width < 400) {
-                            document.querySelectorAll('.ct_bx_food_dt_acc h4').forEach(cur => {
-                                cur.style.fontSize = '13px'
-                            })
+
 
                             document.querySelectorAll('.ct_bx_food_dt_acc a').forEach(cur => {
                                 cur.style.fontSize = '10px'
@@ -22370,7 +22667,11 @@ ${htmlD2}
                 }
 
             }
+ if (window.screen.width <= 470) {
+                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'block')
 
+            }
 
         } else {
             document.querySelector('.ct_acount_details_cart').style.display = 'block'
@@ -22391,6 +22692,13 @@ ${htmlD2}
                     }
 
 
+
+                }
+                 if (window.screen.width <= 470) {
+                    document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
+                    document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
+                    document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
 
                 }
             }

@@ -128,7 +128,8 @@ app.get('/verify', (req, res) => {
     res.render('verif')
 })
 app.get('/', (req, res) => {
-    res.render('packed_food_list')
+   // res.render('packed_food_list')
+   res.render('under_construction')
 
 })
 app.get('/mail', (req, res) => {
@@ -311,12 +312,8 @@ if(resp.body.return){
 
 
 app.get('/mycart', (req, res) => {
-
-    res.render('ekcart')
-
-
-
-
+    //res.render('ekcart')
+    res.render('under_construction')
 })
 app.get('/events', (req, res) => {
 
@@ -351,13 +348,16 @@ app.get('/grocery_plan', (req, res) => {
 })
 
 let number11 = number1
+app.get('/construction', (req, res) => {
+    res.render('under_construction')
 
+})
 app.get('/your-account', (req, res) => {
 
                 if (req.query.n !== undefined) {            
                     var token = jwt.sign({ a: req.query, id: number11 }, 'shhhhh');
 
-                    res.redirect(`/your-account/editAccount?authuser=${token}`)
+                    //res.redirect(`/your-account/editAccount?authuser=${token}`)
                     return
 
                     // let user = {
@@ -379,7 +379,10 @@ app.get('/your-account', (req, res) => {
                     // return
                 }
 
-                res.render('myaccount')
+                //res.render('myaccount')
+
+                res.render('under_construction')
+
 })
 app.get('/your-account/editAccount', (req, res) => {
     if (Object.keys(req.query).length !== 0) {

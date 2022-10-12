@@ -8,8 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducing krickgrocery: The painkiller of cooking</title>
     <meta name="robots" content="index, follow">
-    <!-- Google tag (gtag.js) - Google Analytics -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta name="keywords"
         content="order krickgrocery,krick agartala,krickgrocery agartala,buy krickgrocery,krickgrocery,krick agartala,order food online from krickgrocery,krickgroceries,buy food online from krickgrocery,order food online in agartala">
     <meta name="description"
@@ -18,9 +23,433 @@
 
     {{>favicon}}
     <style>
+        
         /*! CSS Used from: Embedded */
+        .ct_bx_item_details_hide{display: none;}
+        .ct_bx_slide_bx2 .ct_bx_erak_logo {
+    background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+}
+
+        .login_mob_a{display: none;}
         .ct_bx_slide_bx.active {
             right: 0;
+        }
+.ct_bx_for_ingredients h4 {
+    color: #3c3a3a;
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    margin: 0px 16px;
+    /* text-transform: uppercase; */
+}
+.ct_bx_for_ingredients{
+border-top: 4px solid #c7d5e0;
+    padding: 16px 0;}
+.ct_bx_for_ingredients p {
+    color: black;
+    margin: 10px 18px;
+    font-size: 14px;
+    font-family: 'Open sans';
+}
+        .myaccount_mob_a {
+            display: none;
+        }
+
+        .ct_bx_about_mob {
+            display: none;
+        }
+
+        .btn_bottom_nav.ct_bx_login_mobile {
+            width: 89px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            padding: 5px 8px;
+            border-radius: 20px;
+            background-color: #ff002c;
+            padding-top: 10px;
+            margin-top: 26px;
+            box-shadow: 0 0 10px #0000004f;
+        }
+
+        .btn_bottom_nav.ct_bx_login_mobile p {
+            color: white;
+            display: flex;
+            font-size: 12px;
+            font-family: 'Montserrat';
+        }
+
+        .btn_bottom_nav.ct_bx_login_mobile ion-icon {
+            font-size: 17px;
+            color: white;
+        }
+
+        .material-symbols-sharp {
+            font-variation-settings:
+                'FILL' 1,
+                'wght' 600,
+                'GRAD' 0,
+                'opsz' 48
+        }
+
+     .material-symbols-sharp {
+    color: #2b4fb6;
+    font-size: 31px;
+}
+
+
+        .ct_bx_Time2 ion-icon {
+            margin-left: 0;
+            background: #f0f0f0;
+            border-radius: 50%;
+            color: #3b3a3a;
+            padding: 15px;
+            width: 38px;
+            font-size: 32px;
+        }
+
+        .ct_bx_Time {
+            display: flex;
+            width: 87%;
+            padding-bottom: 20px;
+        }
+
+        .ct_bx_Time p {
+            color: #1885c8;
+            margin-left: 17px;
+            font-size: 16px;
+            width: 89%;
+            margin-right: 20px;
+
+            font-family: 'Montserrat';
+            margin-top: 30px;
+        }
+
+        .ct_popup_inner::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        .ct_popup_inner::-webkit-scrollbar-track {
+            box-shadow: 0;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .ct_popup_inner::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .ct_bx_time_cookanddeliv2 {
+            display: flex;
+            justify-content: center;
+            border-top: 4px solid #c7d5e0;
+        }
+
+        .btn_bottom_nav ion-icon {
+            color: black;
+            font-size: 29px;
+        }
+
+        .ct_account_bx_mobile span {
+            font-size: 11px;
+            color: black;
+            margin: 0 -5px;
+            font-family: 'Open sans';
+        }
+.ct_bx_btn_place_order{display: flex;}
+        .for_unit_itm {
+            font-size: 17px;
+            margin-top: 6px;
+            color: #565656;
+            font-family: 'Inter Tight';
+            font-weight: 600;
+        }
+        .ct_bx_btn_place_order .place_order_btn,
+        .ct_bx_btn_place_order .go_to_cart_btn,
+        .ct_bx_btn_place_order .view_items_btn {
+            width: 108px;
+            border: none;
+            outline: none;
+            font-family: 'Montserrat';
+            /* text-transform: uppercase; */
+            padding: 4px 1px 6px 0px;
+            color: rgb(255 255 255);
+            cursor: pointer;
+            font-size: 14px;
+            margin: 14px 0 22px 0px;
+            box-shadow: 0 4px 6px #00000047;
+            border-radius: 6px;
+            text-align: center;
+            text-align: center;
+            display: flex;
+            padding: 10px 19px;
+            background-image: linear-gradient(to right, #ffde20, rgb(255 197 24));        }
+.ct_bx_btn_place_order .place_order_btn {
+    width: 162px;
+    margin-left: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    background-image: linear-gradient(to right, #c81834, #ff4343);
+}
+
+.ct_bx_btn_place_order .view_items_btn {
+    color: black;
+    width: 121px;
+    font-size: 15px;
+}
+.ct_bx_btn_place_order .go_to_cart_btn{
+        background-image: linear-gradient(to right, #eeeeee, #eeeeee);
+            color: rgb(0 0 0);
+            display: none;
+}
+ .ct_bx_flex  .ct_bx_btn_place_order .view_items_btn ion-icon ,
+ .ct_bx_flex  .ct_bx_btn_place_order .go_to_cart_btn ion-icon {
+    color: black;}
+        .ct_bx_flex .ct_bx_btn_place_order ion-icon {
+            color: white;
+            font-size: 15px;
+            transform: translate(0px);
+            margin: 2px 10px;
+        }
+
+        .ct_bx_layer {
+            background-color: rgb(0 0 0 / 59%);
+            width: 100%;
+            height: 100vh;
+            z-index: 99999999999;
+            position: fixed;
+        }
+
+        .ct_remove_bx_pop_p {
+            position: absolute;
+            right: 5%;
+            top: -10%;
+            z-index: 99999999999999;
+        }
+
+        .ct_offer_box_cook2 {
+            display: block;
+            width: 61px;
+            margin: 6px 10px;
+            padding: 7px 10px 11px 6px;
+            position: absolute;
+            height: auto;
+            z-index: 999;
+            border-radius: 50%;
+            transform: translate(10px, 16px);
+            background-color: #d51616;
+        }
+
+        .ct_offer_box_cook2 span {
+            margin: 5px 0 0 6px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Open Sans';
+            color: rgb(255, 255, 255);
+        }
+
+
+        .ct_offer_box_cook2 span {
+            font-size: 13px;
+            margin: 10px;
+            font-family: 'Montserrat';
+        }
+
+        .ct_offer_box_cook2 p {
+            margin: 1px 0 0 11px;
+            width: 100%;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: 'Montserrat';
+            color: rgb(255, 255, 255);
+        }
+
+        .ct_remove_bx_pop_p ion-icon {
+            color: white;
+            font-size: 25px;
+        }
+
+        .ct_bx_video iframe {
+            width: 100vw;
+            height: 230px;
+        }
+
+        .ct_bx_div_bottom_nav .ct_flex_bx {
+            display: flex;
+            padding: 0px 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .ct_pop_up_items_order {
+            border-radius: 20px;
+            background-color: white;
+            position: fixed;
+            bottom: -3%;
+            width: 100%;
+            padding-bottom: 27px;
+            z-index: 99999999999999;
+        }
+
+        .ct_popup_inner {
+            overflow: hidden;
+            border-radius: 20px;
+            height: 550px;
+            overflow-y: scroll;
+        }
+
+        .ct_pop_up_items_order .name_of_itm {
+            color: black;
+            font-family: 'Inter Tight';
+            font-weight: 600;
+            font-size: 18px;
+            margin: 10px 14px;
+        }
+
+        .ct_bx_total_amount_to_pay {
+            margin: 19px 0 0 0;
+            margin: 26px 0 0 0;
+            border-top: 4px solid #cdd6df;
+        }
+
+        .ct_bx_qt_foods {
+            width: 91%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ct_bx_qt_foods div {
+            margin-top: 0px;
+            padding: 0;
+            cursor: pointer;
+            display: flex;
+            width: 40vw;
+            box-shadow: 3px 2px 8px #56688475;
+            justify-content: center;
+            background: #f2f6ff;
+        }
+
+        .ct_bx_qt_foods input {
+            font-size: 18px;
+            width: 100%;
+            padding-left: 0px;
+            border: none;
+            width: 56%;
+            font-size: 13px;
+            color: black;
+            text-align: center;
+            outline: none;
+            margin: 4px;
+        }
+
+       .ct_bx_qt_foods div ion-icon {
+    margin-top: 4px;
+    font-size: 25px;
+    color: rgb(0 0 0);
+}
+
+        .ct_bx_qt_foods {
+            border: 1px solid #e2dede;
+            3 padding: 4px;
+            height: 39px;
+            margin: 20px 0 0 17px;
+        }
+
+        .bx_add_t_cart_btn_itm_dt {
+            font-size: 13px;
+        }
+
+        .bx_add_t_cart_btn_itm_dt p {
+            display: block;
+            font-family: 'Roboto';
+            font-weight: 500;
+            margin-top: 6px;
+        }
+
+        .bx_add_t_cart_btn_itm_dt {
+            width: 92%;
+            border: none;
+            outline: none;
+            font-family: 'Open Sans';
+            text-transform: uppercase;
+            padding: 4px 1px 6px 0px;
+            color: rgb(255 255 255);
+            cursor: pointer;
+            font-size: 12px;
+            margin: 17px 0 42px 18px;
+            box-shadow: 0 4px 6px #000000a8;
+            border-radius: 20px;
+            text-align: center;
+            padding: 6px 1px 8px 0px;
+            background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+        }
+
+      .ct_bx_total_amount_to_pay p {
+    color: #3c3a3a;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 15px;
+    margin: 20px 0 5px 14px;
+}
+
+        .ct_bx_total_amount_to_pay h3 {
+            color: #950e0e;
+            margin: 0px 10px 20px 15px;
+            font-weight: 600;
+            font-family: Montserrat;
+        }
+
+        .btn_bottom_nav {
+            padding: 7px 23px;
+            display: block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .btn_bottom_nav p {
+            font-size: 12px;
+            font-family: 'Inter Tight', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            color: black;
+        }
+
+        .btn_bottom_nav .material-symbols-outlined {
+            color: #2f2f2f;
+            font-size: 30px;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 200,
+                'opsz' 40
+        }
+
+        .btn_bottom_nav.btn_about p {
+            font-size: 15px;
+        }
+
+        .btn_bottom_nav.btn_about {
+            margin: 24px 0 0 18px;
+            padding: 15px 10px;
+            height: 45px;
+            width: 91px;
+            background-color: #eeeeee;
+            border-radius: 21px;
+        }
+
+        .ct_bx_div_bottom_nav {
+            position: fixed;
+            background: white;
+            width: 100%;
+            bottom: 0%;
+            z-index: 999999;
+            box-shadow: 0 -10px 12px #0000002e;
         }
 
         .ct_bx_slide_bx ul li.delivery_account_info a {
@@ -41,31 +470,33 @@
             display: none;
         }
 
-      .ct_bx_about_mob {
-    border-radius: 0;
-    z-index: 99999;
-    top: 28%;
-    display:flex;
-    width: 100%;
-    margin-top: 166px;
-    margin-left: 0;
-    height: 43px;
-    background-color: #1858c8;
-}
-.ct_bx_about_mob ion-icon {
-    color: white;
-    margin: 15px 0 0 10px;
-}
+        .ct_bx_about_mob {
+            border-radius: 0;
+            z-index: 99999;
+            top: 28%;
+            display: flex;
+            width: 100%;
+            margin-top: 166px;
+            margin-left: 0;
+            height: 43px;
+            background-color: #1858c8;
+        }
+
+        .ct_bx_about_mob ion-icon {
+            color: white;
+            margin: 15px 0 0 10px;
+        }
+
         .ct_bx_about_mob p {
-    display: block;
-    /* transform: rotate(268deg); */
-    margin-top: 16px;
-    /* margin-left: 14px; */
-    width: max-content;
-    font-size: 14px;
-    color: white;
-    margin-left: 50px;
-}
+            display: block;
+            /* transform: rotate(268deg); */
+            margin-top: 16px;
+            /* margin-left: 14px; */
+            width: max-content;
+            font-size: 14px;
+            color: white;
+            margin-left: 50px;
+        }
 
         .ct_bx_info {
             width: 26px;
@@ -219,13 +650,6 @@
             padding-bottom: 10px;
         }
 
-        .ct_list_food_res_ek h1 {
-            color: black;
-            margin-left: 27px;
-            font-size: 31px;
-            margin-bottom: 8px;
-            font-family: 'Open Sans';
-        }
 
         .ct_bx_copy_right a {
             color: white;
@@ -581,7 +1005,7 @@
 
         .ct_bx_footer {
             margin-top: auto;
-            background-color: #000000;
+            background-color: #11191c;
             display: flex;
             justify-content: center;
             z-index: 999;
@@ -855,11 +1279,11 @@
             font-size: 26px;
             display: block;
             margin: 3px 5px;
-            border-right: 2px solid #e9e7e7;
+            border-right: 1px solid #aca3a3;
             border-radius: 0;
             color: #000000;
             margin-top: 8px;
-            padding: 3px 10px 5px 12px
+            padding: 3px 10px 5px 12px;
         }
 
         ul {
@@ -1354,7 +1778,8 @@
         .ct_bx_crousel {
             border-radius: 0;
             margin-top: 79px;
-            overflow: hidden
+            overflow: hidden;
+            height: 280px;
         }
 
         .ct_slide_bx_crousel {
@@ -1459,6 +1884,23 @@
                 padding: 8px 9px 5px 10px;
             }
 
+            /* ----------------nav_bar----------------*/
+
+            .nav_main_ek_li_big ion-icon {
+                height: 13px;
+                width: 15px;
+            }
+
+            .nav_main_ek_li_big ion-icon {
+                display: block;
+                margin-top: 1px;
+            }
+
+            .mai_ul li.acc_set_main_nav {
+                padding: 8px 0 0 25px;
+            }
+
+            /* ----------------nav_bar----------------*/
             .bx_btns_crousel ion-icon {
                 font-size: 18px;
             }
@@ -1604,9 +2046,7 @@
                 font-size: 25px;
             }
 
-            .ct_list_food_res_ek h1 {
-                margin-left: 19px;
-            }
+
 
             .erak_fd_body .ct_offer_box {
                 margin: -2px 0 13px
@@ -2591,7 +3031,7 @@
             }
 
             .ct_bx_search .search-icon {
-                color: #000
+                color: #004ac9
             }
 
             .for_nav_main .ct_bx_search input {
@@ -2702,11 +3142,6 @@
                 font-size: 61px;
             }
 
-            .ct_list_food_res_ek h1 {
-                margin-left: 14px;
-                font-size: 32px;
-            }
-
             .groc_list .ct_cat_by_list {
                 margin-left: 0vw;
             }
@@ -2808,6 +3243,10 @@
                 display: none;
             }
 
+            .ct_popup_inner .ct_slide_bx_crousel .bannerX {
+                display: block;
+            }
+
             .ct_slide_bx_crousel .banner2X {
                 display: block;
             }
@@ -2845,9 +3284,6 @@
                 margin-left: 11px;
             }
 
-            .ct_list_food_res_ek h1 {
-                margin-left: 18px;
-            }
 
             .for_seravh_in_nav .xclose_icon {
                 margin: 17px 14px 0 0
@@ -3428,11 +3864,6 @@
             }
 
 
-
-            .ct_list_food_res_ek h1 {
-                font-size: 21px;
-            }
-
             .ct_bx_fooditm .main_im {
                 width: 42%
             }
@@ -3466,8 +3897,95 @@
         }
 
         @media only screen and (max-width:470px) {
-            .ct_bx_crousel {
-                margin-top: 0;
+            .crousel1x {
+                margin-top: 143px;
+            }
+                        .ct_bx_erak_logo a {
+    width: 90%;
+}
+            .ct_acc_dt_ov p {
+    color: white;=
+}
+            .ct_popup_inner .ct_bx_crousel{
+                height: auto;
+            }
+            .ct_slide_bx_crousel img{
+                height: 266px;
+            }
+            .ct_bx_about_mobile2 a{display: block;}
+            .crousel1x{height: auto;}
+            .mai_ul .cart_nav {display: none;}
+.bx_btns_crousel {
+    width: 45px;
+    top: 39%;
+    position: absolute;background: white;
+    color: black;
+}
+
+.ct_bx_next {
+    right: 0;
+}
+   footer .logo img{
+                width: 105px;
+            }
+            .ct_bx_copy_right p {
+    font-size: 9px;
+}
+.ct_bx_copy_right span{
+    font-size: 10px;
+}
+.ct_bx_copy_right a{
+        margin-top: 8px;
+    margin-left: 53px;
+    font-size: 10px;
+}
+            .ct_bx_foot_inner .for_ain_home_logo {
+    margin: 29px 0 0 30px;
+}
+            .ct_bx_footer {
+    margin-bottom: 52px;
+}
+            .ct_bx_foot_inner .for_ain_home_logo {
+    margin: 29px 0 0 30px;
+}
+            /*...............nav-bar....................*/
+            .ct_bx_about_mobile2 {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+.ct_nav_erak .for_seravh_in_nav {
+    width: 66%;
+    margin: 0;
+}
+.ct_nav_erak .for_mobile_search {width: 100%;}
+            .ct_bx_about_mobile2 .material-symbols-outlined{
+                color: black;
+                font-size: 27px;
+            }
+
+            .ct_bx_about_mobile2 p {
+                font-size: 10px;
+                color: black;
+                font-family: 'Open sans';
+            }
+
+            .for_main_nav_login1 {
+                font-size: 10px;
+                transform: translate(0px, 13px);
+                width: auto;
+                padding: 0px 0 0 28px;
+            }
+
+            .for_main_nav_login1 a {
+                width: 75px;
+                border-radius: 13px;
+                color: white;
+                font-family: 'Montserrat';
+                background: #f22e2e;
+                height: 39px;
+                padding: 14px 13px;
+                margin: -15px 0 0 auto;
             }
 
             .erak_fd_body .upper_ct_cat_by_list {
@@ -3522,9 +4040,6 @@
                 padding: 0
             }
 
-            .ct_list_food_res_ek h1 {
-                width: 85%;
-            }
 
             .bx_btns_crousel ion-icon {
                 font-size: 21px;
@@ -3533,6 +4048,16 @@
             .ct_x_flex_btns {
                 margin-top: -53px;
                 right: 29px;
+                top: 228px;
+            }
+
+            .ct_slide_bx_crousel {
+                position: relative;
+                left: 0;
+                width: 100%;
+                height: 280px;
+                height: 227px;
+                display: flex;
             }
 
             .groc_list.for_erak_list {
@@ -3553,16 +4078,21 @@
 
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 9px;
-                margin-top: 5px
+                margin-top: -1px
             }
 
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
-                margin: 20px 0;
+                margin: 6px 0;
 
             }
 
+            .mai_ul li.acc_set_main_nav {
+                padding: 8px 0 0 54px;
+            }
+
             .ct_nav_erak .mai_ul {
-                transform: translate(0px, 0)
+                transform: translate(0px, 0);
+                width: 100%;
             }
 
 
@@ -3587,16 +4117,14 @@
                 transform: translate(0px, 9px)
             }
 
-            .ct_nav_erak .for_seravh_in_nav {
-                width: 100%
-            }
 
             .for_nav_main .for_mobile_search .ct_bx_search {
                 display: flex;
                 margin-left: auto;
-                background: #fff;
+                background: #e1e2e5;
                 width: 95%;
-                margin-right: auto
+                box-shadow: none;
+                margin-right: auto;
             }
 
             .for_mobile_search .ct_bx_matched_itm {
@@ -3628,17 +4156,32 @@
             }
 
             .for_nav_main {
-                height: 95px
+                height: 84px
             }
 
-            .ct_acc_dt_ov p,
+            .for_mobile_search .ct_bx_search {
+                height: 44px;
+            }
+
+            .for_mobile_search.for_seravh_in_nav {
+                padding-bottom: 14px;
+            }
+
             .cart_nav ion-icon,
             .ct_field_small_size {
                 color: #000
             }
 
             .for_mobile_search .ct_bx_search input {
-                background: #fff
+                background: #e1e2e5;
+            }
+
+            .logo img {
+                width: 135px;
+            }
+
+            .logo img {
+                margin-top: -7px;
             }
 
             .for_mobile_search {
@@ -3663,8 +4206,8 @@
                 font-size: 26px;
                 padding: 7px;
                 border-radius: 40px;
-                border: 1px solid #857878;
-                color: #000;
+         border: 1px solid #ffffff;
+    color: #fff;
                 transform: translate(3px, 1px)
             }
 
@@ -3734,8 +4277,9 @@
                 font-size: 16px
             }
 
+
             .ct_field_small_size ion-icon {
-                font-size: 49px
+                font-size: 39px;
             }
 
             .cart_nav ion-icon {
@@ -3782,9 +4326,13 @@
             }
 
             .ct_bx_fooditm .ct_bx_price_fd p {
-                font-size: 19px;
+                font-size: 24px;
                 margin-left: 1px;
                 color: #fb0000;
+            }
+
+            .ct_bx_fooditm .ct_bx_price_fd del {
+                margin-top: 6px;
             }
 
             .ct_offer_box span {
@@ -3812,21 +4360,14 @@
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 5px;
-                margin-top: 78px;
-                margin-bottom: 33px;
-
+                margin-top: 40px;
+                margin-bottom: 19px;
+                font-size: 18px;
             }
 
             .list_food_at_ov h3 {
                 font-size: 22px;
-                color: #891e1e;
-            }
-
-            .ct_list_food_res_ek h1 {
-                font-size: 28px;
-                font-family: 'Open Sans';
-                margin-top: 17px;
-                margin-bottom: -24px;
+                color: #555050;
             }
 
             .ct_bx_fooditm a {
@@ -3839,8 +4380,12 @@
                 justify-content: initial
             }
 
+            .ct_bx_div_bottom_nav .ct_flex_bx {
+                padding: 0px;
+            }
+
             .ct_nav_erak .mai_ul {
-                width: 36%;
+                width: auto
             }
 
             .for_nav_main .logo {
@@ -3870,8 +4415,8 @@
                 margin-top: 7px
             }
 
-            .ct_bx_crousel {
-                margin-top: 0
+            .crousel1x {
+                margin-top: 148px
             }
 
             .ct_inner_nav .ct_bx_search {
@@ -3945,6 +4490,7 @@
             }
 
             .ct_nav_erak .mai_ul {
+                width: 100%;
                 transform: translate(4px, 0)
             }
 
@@ -4038,7 +4584,7 @@
             }
 
             .ct_bx_fooditm .ct_bx_price_fd p {
-                font-size: 19px;
+                font-size: 23px;
                 margin-top: 0
             }
 
@@ -4051,11 +4597,27 @@
                 margin-top: 14%;
                 left: 33%;
             }
-.ct_bx_about_mob p {
-    margin-left: 33px;
+            .ct_bx_btn_place_order .view_items_btn {
+    color: black;
+    font-size: 13px;width: 108px;
 }
+            .ct_bx_btn_place_order .place_order_btn {
+    width: 135px;
+    margin-left: 10px;
+    font-size: 12px;}
+.ct_bx_flex .ct_bx_btn_place_order ion-icon {
+    margin: 0px 5px;
+}
+            .btn_bottom_nav {
+                padding: 7px 16px;
+            }
+
+            .ct_bx_about_mob p {
+                margin-left: 33px;
+            }
+
             .ct_bx_price_fd.hasoffPrice {
-                margin-top: 8px;
+                margin-top: 16px;
             }
 
             .ct_bx_price_fd .price:nth-child(2) {
@@ -4145,10 +4707,6 @@
             }
 
 
-            .ct_list_food_res_ek h1 {
-                font-size: 24px;
-                width: 90%;
-            }
 
             .ct_nav_erak .ct_bx_search {
                 transform: translate(0, 0)
@@ -4260,10 +4818,9 @@
                 margin-top: 5px
             }
 
-            .logo img {
-                width: 165px;
+            .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
+                margin: 16px 0;
             }
-
 
             .ct_bx_fooditm {
                 height: auto;
@@ -4288,7 +4845,7 @@
 
             .ct_nav_erak .mai_ul {
                 transform: translate(0, 2px);
-                padding-top: 5px
+                padding-top: 0px
             }
 
             .ct_nav_erak ul .nav_main_ek_li {
@@ -4628,7 +5185,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -4658,9 +5215,141 @@
     <div class="ct_video_over">
 
     </div>
-   <a href="/about"><div class="ct_bx_about_mob">
-        <p href="/about">Learn more, go to About us page </p><ion-icon name="arrow-forward-outline"></ion-icon>
-    </div></a> 
+    {{!-- <a href="/about">
+        <div class="ct_bx_about_mob">
+            <p href="/about">Learn more, go to About us page </p>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+    </a> --}}
+    <div class="ct_bx_div_bottom_nav">
+        <div class="ct_flex_bx">
+            <a href="/mycart">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <p>My orders</p>
+                </div>
+            </a>
+
+            <a href="/mycart">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span>
+                    <p>My cart</p>
+
+                    </span>
+
+                </div>
+            </a>
+            <a href="/your-account" class="myaccount_mob_a">
+                <div class="btn_bottom_nav myaccount_mob">
+                    <span class="material-symbols-sharp">
+                        account_circle
+                    </span>
+                    <p>My account </p>
+                    </span>
+                </div>
+
+            </a>
+            <a href="/login" class="login_mob_a">
+
+                <div class="btn_bottom_nav ct_bx_login_mobile">
+                    <p>Log in <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div class="ct_bx_layer">
+
+    </div>
+
+    <div class="ct_pop_up_items_order">
+        <div class="ct_remove_bx_pop_p">
+            <ion-icon name="close-outline"></ion-icon>
+        </div>
+        <div class="ct_popup_inner">
+            <div class="ct_bx_crousel">
+
+
+                <div class="ct_slide_bx_crousel ct_slide_bx_crousel2x">
+
+
+
+                    <div class="ct_bx_video box_cr_itm">
+                        <iframe width="1280" height="720"
+                            src="https://www.youtube.com/embed/vJX8tiYL0B0?autoplay=1&mute=1"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    {{!-- <img class='box_cr_itm ' alt="Introducing krickgrocery: The painkiller of cooking banner"
+                        src="../img/masalafishing_pos.png" alt="img"> --}}
+                    <div class="ct_bx_video_banner">
+                    </div>
+                </div>
+   {{!-- <div class="ct_bx_prev bx_btns_crousel">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </div>
+                    <div class="ct_bx_next bx_btns_crousel">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+
+                </div> --}}
+            </div>
+            {{!-- <div class="ct_bx_video">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/vJX8tiYL0B0?autoplay=1&mute=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div> --}}
+            <h4 class="name_of_itm">Watch a video to cook Masala chicken curry</h4>
+            <div class="ct_bx_total_amount_to_pay">
+                <p>Total</p>
+                <h3>₹ 500</h3>
+            </div>
+            <div class="ct_bx_qt_foods">
+                <div class="ct_bx_item_rem">
+                    <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline">
+                    </ion-icon>
+                </div>
+                <input type="text" value="1" readonly="">
+                <div class="ct_bx_item_add">
+                    <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                </div>
+
+            </div>
+            <div class="bx_add_t_cart_btn_itm_dt">
+                <p style="display: block;">Add to Cart</p>
+
+            </div>
+            <div class="ct_bx_time_cookanddeliv2">
+
+                <div class="ct_bx_Time ct_bx_Time2 ct_bx_download_btn_x" style="margin-top: 17px;">
+                    <ion-icon name="download-outline" role="img" class="icon_bx_2 md hydrated"
+                        aria-label="download outline"></ion-icon>
+
+                    <a>
+                        <p>Click to download cooking steps</p>
+                    </a>
+                </div>
+            </div>
+            <div class="ct_bx_for_ingredients">
+                <h4>Ingredients</h4>
+                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water</p>
+            </div>
+             {{!-- <div class="ct_bx_for_ingredients">
+                <h4>To cook, just follow the cooking steps</h4>
+                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water</p>
+            </div> --}}
+        </div>
+
+    </div>
+
     <div class="ct_sep_bx">
         <div class="inner_seperation">
 
@@ -4675,7 +5364,7 @@
                         allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="ct_bx_crousel">
+            <div class="ct_bx_crousel crousel1x">
 
 
                 <div class="ct_slide_bx_crousel">
@@ -4688,18 +5377,18 @@
                     <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/mob_banner1.PNG" alt="img">
                     <div class="ct_bx_video_banner">
-                        <div class="ct_bx_btn_play">
+                        {{!-- <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
-                        </div>
-                        <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                            src="../img/mob_banner21.PNG" alt="img">
+                        </div> --}}
+                        {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
+                            src="../img/mob_banner21.PNG" alt="img"> --}}
 
                     </div>
-                    <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
+                    {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         style="margin-top: 29px;width: 96%;margin-left: 7px;" src="../img/banner_poster2x1.PNG"
                         alt="img">
                     <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        style="width: 96%;margin-left: 7px;" src="../img/banner_poster21x1.PNG" alt="img">
+                        style="width: 96%;margin-left: 7px;" src="../img/banner_poster21x1.PNG" alt="img"> --}}
 
                 </div>
                 {{!-- <div class="ct_x_flex_btns">
@@ -4723,7 +5412,6 @@
 
 
                         </div>
-                        <h1>Welcome to the future of cooking</h1>
                         <div class="ct_add_and_foods_list">
                             <div class="ct_all_list_food">
 
@@ -5084,6 +5772,14 @@
 
         }
         document.querySelector('html').addEventListener('click', (e) => {
+            let itmPopuclose = e.target.closest('.ct_bx_layer')
+            let itmPopup = e.target.closest('.ct_pop_up_items_order')
+            if (itmPopuclose && !itmPopup) {
+                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
+                document.querySelector('.ct_bx_layer').style.display = 'none'
+                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
+            }
+
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
                 document.querySelector('.ct_video_box').style.display = 'none'
                 document.querySelector('.ct_video_over').style.display = 'none'
@@ -5120,51 +5816,51 @@
 
         })
 
-        document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
-let user11 = getCookie('user')
-    if (user11 === '') {
-        socket.emit('send_msg_adm2')
-     }
-            let l = window.screen.width
-            let lX
-            if (window.screen.width <= 800) {
-                lX = 10 / 100 * l
-                l = l - lX
-            } else {
-                lX = 20 / 100 * l
-                l = l - lX
-            }
-            let height = window.screen.height
-            let heightX
-            let checkSize = (height * 2) + 200
-            if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
-                heightX = 30 / 100 * height
-                height = height - heightX
+       //document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
+       //    let user11 = getCookie('user')
+       //    if (user11 === '') {
+       //        socket.emit('send_msg_adm2')
+       //    }
+       //    let l = window.screen.width
+       //    let lX
+       //    if (window.screen.width <= 800) {
+       //        lX = 10 / 100 * l
+       //        l = l - lX
+       //    } else {
+       //        lX = 20 / 100 * l
+       //        l = l - lX
+       //    }
+       //    let height = window.screen.height
+       //    let heightX
+       //    let checkSize = (height * 2) + 200
+       //    if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
+       //        heightX = 30 / 100 * height
+       //        height = height - heightX
 
-            }
-            if (window.screen.height >= window.screen.width) {
-                heightX = height * 1 / 2
-                height = height - heightX
-                document.querySelector('.ct_inner_video').style.top = 28 + '%'
+       //    }
+       //    if (window.screen.height >= window.screen.width) {
+       //        heightX = height * 1 / 2
+       //        height = height - heightX
+       //        document.querySelector('.ct_inner_video').style.top = 28 + '%'
 
-            }
-            if (window.screen.height > 740 && window.screen.height < window.screen.width) {
-                if (window.screen.height > 1550) {
-                    heightX = 30 / 100 * height
+       //    }
+       //    if (window.screen.height > 740 && window.screen.height < window.screen.width) {
+       //        if (window.screen.height > 1550) {
+       //            heightX = 30 / 100 * height
 
-                } else {
-                    heightX = 40 / 100 * height
+       //        } else {
+       //            heightX = 40 / 100 * height
 
-                }
-                height = height - heightX
-            }
-            document.querySelector('.ct_video_over').style.display = 'block'
-            document.querySelector('.ct_video_box').style.display = 'flex'
-            document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
-            document.querySelector('.ct_video_box iframe').style.height = height + 'px'
-            document.querySelector('.ct_inner_video').style.width = l + 'px'
+       //        }
+       //        height = height - heightX
+       //    }
+       //    document.querySelector('.ct_video_over').style.display = 'block'
+       //    document.querySelector('.ct_video_box').style.display = 'flex'
+       //    document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
+       //    document.querySelector('.ct_video_box iframe').style.height = height + 'px'
+       //    document.querySelector('.ct_inner_video').style.width = l + 'px'
 
-        })
+       //})
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
@@ -5365,6 +6061,8 @@ let user11 = getCookie('user')
                         document.querySelector('.ct_nav_erak .ct_inner_nav .for_big_scr_only .ct_bx_search').style.boxShadow = 'none'
 
                     }, 200);
+
+                    document.querySelector('.ct_bx_about_mobile2').style.display = 'none'
                     document.querySelector('.for_big_scr_only').classList.remove('active2')
                     document.querySelector('.for_big_scr_only ').classList.add('active')
                 })
@@ -5372,6 +6070,7 @@ let user11 = getCookie('user')
                     document.querySelector('.ct_bx_matched_itm').style.display = 'none'
                     document.querySelector('.ct_field_small_size_bx').style.display = 'block'
                     document.querySelector('.ct_nav_erak .for_seravh_in_nav').style.margin = '4px 0 0 0'
+                    document.querySelector('.ct_bx_about_mobile2').style.display = 'flex'
 
                     document.querySelector('.mai_ul').style.display = 'flex'
                     if (window.screen.width <= 360) {
@@ -5413,7 +6112,7 @@ let user11 = getCookie('user')
             return "";
         }
 
-    
+
 
         var waypoint = new Waypoint({
             element: document.querySelector('#ek_res_ev'),
@@ -5439,7 +6138,11 @@ let user11 = getCookie('user')
                             cur1.style.padding = '13px 0px 10px 0px'
 
                         })
+                        document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
+                            cur1.style.width = 'auto'
+                            cur1.style.padding = '0 9px'
 
+                        })
                         document.querySelector('.ct_inner_nav').style.overflow = 'visible'
 
                     } else if (window.screen.width <= 550) {
@@ -5451,18 +6154,18 @@ let user11 = getCookie('user')
                     }
 
                     document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                        cur1.style.margin = '0 0px 0 3px'
+                        cur1.style.margin = '-10px 0px 0px 7px'
 
                     })
                     if (window.screen.width <= 360) {
                         document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '0 20px 0 13px'
+                            cur1.style.margin = '-10px 20px 0 13px'
 
                         })
                     }
-                      if (window.screen.width <= 360) {
+                    if (window.screen.width <= 360) {
                         document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
-                            cur1.style.padding='6px 10px'
+                            cur1.style.padding = '6px 10px'
 
                         })
                     }
@@ -5497,6 +6200,7 @@ let user11 = getCookie('user')
                             if (window.screen.width <= 470) {
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
                                 document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
+
                             }
                             let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
 
@@ -5538,20 +6242,29 @@ let user11 = getCookie('user')
 
                     }
                     if (window.screen.width <= 470) {
-                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '36%'
+                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '100%'
 
                         document.querySelector('.ct_inner_nav').style.overflow = 'hidden'
                         document.querySelector('.ct_field_small_size_bx').style.display = 'block'
 
-                        document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
-                    }
-  if (window.screen.width <= 360) {
                         document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '-3px 4px 0 0'
+                            cur1.style.margin = '0px 0px 0px 7px'
 
                         })
-                          document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
-                            cur1.style.padding='16px 10px'
+                        document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
+                            cur1.style.width = '100%'
+                            cur1.style.padding = '0'
+
+                        })
+                        document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
+                    }
+                    if (window.screen.width <= 360) {
+                        document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
+                            cur1.style.margin = '0px 4px 0 0'
+
+                        })
+                        document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
+                            cur1.style.padding = '16px 10px'
 
                         })
                     }
@@ -5641,7 +6354,7 @@ let user11 = getCookie('user')
                 }
                 if (window.screen.width <= 1200) {
                     if (window.screen.width <= 740) {
-                        document.querySelector('.acc_set_main_nav').style.display = 'none'
+                        document.querySelector('.cart_nav ').style.display = 'none'
 
                     }
                 }
@@ -5653,6 +6366,7 @@ let user11 = getCookie('user')
 
                 document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
             }
+
             if (parsedData.admin === true) {
 
                 document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
@@ -5684,6 +6398,11 @@ let user11 = getCookie('user')
                 }
 
             }
+            if (window.screen.width <= 470) {
+                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'block')
+
+            }
 
 
         } else {
@@ -5704,6 +6423,13 @@ let user11 = getCookie('user')
                     }
 
 
+
+                }
+                if (window.screen.width <= 470) {
+                    document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
+                    document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
+                    document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
+                document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
 
                 }
             }
@@ -5765,7 +6491,8 @@ let user11 = getCookie('user')
 
 
 
-
+                    let btn_place_order = ''
+                    let unit_itm = ''
                     let priceBox = ``
                     if (item.offer !== null) {
                         let priceOffer = 0
@@ -5774,9 +6501,7 @@ let user11 = getCookie('user')
 
                         priceBox = ` <div class="ct_bx_price_fd hasoffPrice">
                         <p class="price">₹ ${priceN.toLocaleString()}</p>
-<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>            <div class="ct_offer_box">
-            <span>${off}% off</span>
-        </div>
+<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>   
                     </div>`
                     } else {
                         priceBox = ` <div class="ct_bx_price_fd hasPrice">
@@ -5784,6 +6509,15 @@ let user11 = getCookie('user')
                     </div>`
 
                     }
+                
+                    let offer_box = ''
+                    if (item.offer !== null) {
+                        offer_box = `   <div class="ct_offer_box_cook2">
+                                    <span>${item.offer.sauce}%</span>
+                                    <p>off</p>
+                                </div>`
+                    }
+
                     let commSoonHtml = ``
                     let commSoonHtml2 = ``
                     if (item.commSoon) {
@@ -5794,17 +6528,49 @@ let user11 = getCookie('user')
                     if (!item.commSoon) {
                         srcM = `href="/recipes/${item.id}"`
                     } else {
+                        offer_box = ''
+                        unit_itm = ''
+                        btn_place_order = ''
                         srcM = `rel="nofollow"`
                     }
-                    console.log(item.commSoon, srcM)
+                        if (window.screen.width <= 470) {
+                            srcM = `rel="nofollow"`
+                        unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
+                        btn_place_order = `<div class="ct_bx_btn_place_order">
+    <button class='view_items_btn'>View <ion-icon name="arrow-forward-outline"></ion-icon> </button>
+        <button class='place_order_btn'>Place Order <ion-icon name="caret-forward"></ion-icon></button>
+
+        <button class='go_to_cart_btn'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>
+
+</div>`
+
+                    }
+                    console.log(item.fdInside)
                     let html = ` <div class="ct_bx_fooditm">
             <a ${srcM}>
             <div class="ct_bx_flex">
+              ${offer_box}
                 <img class="main_im" alt="${item.name}" src="${item.img}" ${commSoonHtml}>
             <div class="ct_bx_inner_food_groc">
+                
             <h4 ${commSoonHtml}>${item.name}</h4>
-                   ${priceBox}
-            </div>
+${unit_itm}
+                ${priceBox}
+                <div class="ct_bx_item_details_hide">
+    <p class="name">${item.name}</p>
+    <p class="stock">${item.netweight}</p>
+    <p class="price_pr">${priceN.toLocaleString()}</p>
+    <p class="price_off">${pricemain.toLocaleString()}</p>
+    <p class="offer">${item.offer.off}</p>
+    <p class="ing_list">${item.fdInside[2].about.ing.join(',')}</p>
+    <p class="cook_steps">${item.cook[0].name}</p>
+    <p class="cook_video">${item.video}</p>
+    <p class="cook_banner">${item.imgBanner}</p>
+
+
+</div>
+                 ${btn_place_order}
+                 </div>
         </div>
         </a>
     </div> `
@@ -5814,59 +6580,57 @@ let user11 = getCookie('user')
             })
         }
         loadFoodItems()
-        let imgForSize = document.querySelectorAll(".ct_slide_bx_crousel img")[0]
+        let imgForSize = document.querySelectorAll(".ct_slide_bx_crousel img")[1]
         if (window.screen.width <= 800) {
             imgForSize = document.querySelectorAll(".ct_slide_bx_crousel img")[1]
         }
         // code for crousel/slider
-        //let btn1 = document.querySelector(".ct_bx_next")
-        //let btn2 = document.querySelector(".ct_bx_prev")
-        //let crousel = document.querySelector(".ct_bx_crousel")
-        //let size = imgForSize.getBoundingClientRect()
-
-        //let slideCrousel = document.querySelector(".ct_slide_bx_crousel");
-        //if (window.screen.width) {
-        //    size = window.screen.width
-        //}
-        //let count = 0;
-        //btn1.addEventListener("click", () => {
-        //    slideCrousel.style.transition = "transform .4s ease-in-out"
-        //    count++
-        //    if (window.screen.width <= 800) {
-        //        slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel img")[1].getBoundingClientRect().width}px)`
-
-        //    } else {
-        //        slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel img")[0].getBoundingClientRect().width}px)`
-
-        //    }
-        //    document.querySelector(".ct_bx_prev")
-        //        .style.opacity = "1"
-        //    document.querySelector(".ct_bx_prev")
-        //        .style["pointer-events"] = "auto"
-        //    document.querySelector(".ct_bx_next")
-        //        .style.opacity = ".5"
-        //    document.querySelector(".ct_bx_next")
-        //        .style["pointer-events"] = "none"
-        //})
-        //btn2.addEventListener("click", () => {
-        //    document.querySelector(".ct_bx_next")
-        //        .style.opacity = "1"
-        //    document.querySelector(".ct_bx_next")
-        //        .style["pointer-events"] = "auto"
-        //    document.querySelector(".ct_bx_prev")
-        //        .style.opacity = ".5"
-        //    document.querySelector(".ct_bx_prev")
-        //        .style["pointer-events"] = "none"
-        //    slideCrousel.style.transition = "transform .4s ease-in-out"
-        //    count--
-        //    if (window.screen.width <= 800) {
-        //        slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel img")[1].getBoundingClientRect().width}px)`
-
-        //    } else {
-        //        slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel img")[0].getBoundingClientRect().width}px)`
-
-        //    }
-        //});
+        let btn1 = document.querySelector(".ct_bx_next")
+        let btn2 = document.querySelector(".ct_bx_prev")
+        let crousel = document.querySelector(".ct_bx_crousel")
+        let size = imgForSize.getBoundingClientRect()
+        let slideCrousel = document.querySelector(".ct_slide_bx_crousel2x");
+        if (window.screen.width) {
+            size = window.screen.width
+        }
+        let count = 0;
+        // crousel or scroller code
+      //  btn1.addEventListener("click", () => {
+      //      slideCrousel.style.transition = "transform .4s ease-in-out"
+      //      count++
+      //      console.log(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width, 'hahahaha')
+      //      if (window.screen.width <= 800) {
+      //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width)}px)`
+      //          console.log(`translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width)}px)`)
+      //      } else {
+      //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width)}px)`
+      //      }
+      //      document.querySelector(".ct_bx_prev")
+      //          .style.opacity = "1"
+      //      document.querySelector(".ct_bx_prev")
+      //          .style["pointer-events"] = "auto"
+      //      document.querySelector(".ct_bx_next")
+      //          .style.opacity = ".5"
+      //      document.querySelector(".ct_bx_next")
+      //          .style["pointer-events"] = "none"
+      //  })
+      //  btn2.addEventListener("click", () => {
+      //      document.querySelector(".ct_bx_next")
+      //          .style.opacity = "1"
+      //      document.querySelector(".ct_bx_next")
+      //          .style["pointer-events"] = "auto"
+      //      document.querySelector(".ct_bx_prev")
+      //          .style.opacity = ".5"
+      //      document.querySelector(".ct_bx_prev")
+      //          .style["pointer-events"] = "none"
+      //      slideCrousel.style.transition = "transform .4s ease-in-out"
+      //      count--
+      //      if (window.screen.width <= 800) {
+      //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width}px)`
+      //      } else {
+      //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width}px)`
+      //      }
+      //  });
 
 
 
@@ -6002,10 +6766,33 @@ let user11 = getCookie('user')
 
         }
         //setAllItems()
+
         document.querySelector('html').addEventListener('click', (e) => {
             let bx2 = e.target.closest('.ct_slide_menu_acc')
-
+            let view_itm=e.target.closest('.view_items_btn')
             let slide = e.target.closest('.ct_field_small_size')
+
+            if(view_itm!==null){
+                console.log(view_itm.parentElement.parentElement.childNodes[7].childNodes)
+                let stk_limit=view_itm.parentElement.parentElement.childNodes[7].childNodes[3].innerText
+                let itm_name=view_itm.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('(')[0]
+                let item_video_src=view_itm.parentElement.parentElement.childNodes[7].childNodes[15].innerText
+                let itm_pr=view_itm.parentElement.parentElement.childNodes[7].childNodes[5].innerText
+                let itm_pr_off=view_itm.parentElement.parentElement.childNodes[7].childNodes[7].innerText
+                let cook_banner=view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText
+                let ing_itm=view_itm.parentElement.parentElement.childNodes[7].childNodes[11].innerText
+                let cooksteps_src=view_itm.parentElement.parentElement.childNodes[7].childNodes[13].innerText
+document.querySelector('.ct_popup_inner .name_of_itm').innerText=`watch a video to cook ${itm_name}`
+document.querySelector('.ct_popup_inner .ct_bx_for_ingredients p').innerText=ing_itm
+document.querySelector('.ct_popup_inner .ct_bx_video iframe').src=item_video_src
+
+                // itm amount changes in -> #1 after adding to cart #2 from start
+                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
+                document.querySelector('.ct_bx_layer').style.display = 'block'
+                document.querySelector('.ct_remove_bx_pop_p').style.display = 'block'
+
+            }
+
             if (slide !== null) {
                 if (slide !== null) {
                     if (!document.querySelector('.ct_bx_slide_bx').classList.value.split(' ').includes('active'))
