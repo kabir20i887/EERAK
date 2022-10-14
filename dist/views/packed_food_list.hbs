@@ -23,34 +23,68 @@
 
     {{>favicon}}
     <style>
-        
         /*! CSS Used from: Embedded */
-        .ct_bx_item_details_hide{display: none;}
-        .ct_bx_slide_bx2 .ct_bx_erak_logo {
-    background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
-}
 
-        .login_mob_a{display: none;}
+        .ct_bx_item_details_hide {
+            display: none;
+        }
+
+        .ct_bx_stock h4 {
+            color: #bc1515;
+            font-size: 19px;
+            font-family: 'Montserrat';
+        }
+
+        .ct_bx_stock {
+            padding: 20px;
+            border-top: 4px solid #c7d5e0;
+            display: none;
+        }
+
+        .ct_bx_stock p {
+            margin-top: 5px;
+            font-size: 15px;
+            color: black;
+            font-family: 'Open sans';
+        }
+
+        .ct_bx_slide_bx2 .ct_bx_erak_logo {
+            background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+        }
+
+        .login_mob_a {
+            display: none;
+        }
+
         .ct_bx_slide_bx.active {
             right: 0;
         }
-.ct_bx_for_ingredients h4 {
-    color: #3c3a3a;
-    display: block;
-    font-family: 'Montserrat';
-    font-size: 18px;
-    margin: 0px 16px;
-    /* text-transform: uppercase; */
-}
-.ct_bx_for_ingredients{
-border-top: 4px solid #c7d5e0;
-    padding: 16px 0;}
-.ct_bx_for_ingredients p {
-    color: black;
-    margin: 10px 18px;
-    font-size: 14px;
-    font-family: 'Open sans';
-}
+
+        .bx_add_t_cart_btn_itm_dt p ion-icon {
+            transform: translate(4px, 3px);
+        }
+
+        .ct_bx_for_ingredients h4 {
+            color: #3c3a3a;
+            display: block;
+            font-family: 'Montserrat';
+            font-size: 18px;
+            margin: 0px 16px;
+            /* text-transform: uppercase; */
+        }
+
+        .ct_bx_for_ingredients {
+            border-top: 4px solid #c7d5e0;
+            padding: 16px 0;
+        }
+
+        .ct_bx_for_ingredients p {
+            color: black;
+            margin: 10px 18px;
+            font-size: 14px;
+            font-family: 'Open sans';
+        }
+
         .myaccount_mob_a {
             display: none;
         }
@@ -92,10 +126,10 @@ border-top: 4px solid #c7d5e0;
                 'opsz' 48
         }
 
-     .material-symbols-sharp {
-    color: #2b4fb6;
-    font-size: 31px;
-}
+        .material-symbols-sharp {
+            color: #2b4fb6;
+            font-size: 31px;
+        }
 
 
         .ct_bx_Time2 ion-icon {
@@ -147,10 +181,6 @@ border-top: 4px solid #c7d5e0;
             border-top: 4px solid #c7d5e0;
         }
 
-        .btn_bottom_nav ion-icon {
-            color: black;
-            font-size: 29px;
-        }
 
         .ct_account_bx_mobile span {
             font-size: 11px;
@@ -158,7 +188,11 @@ border-top: 4px solid #c7d5e0;
             margin: 0 -5px;
             font-family: 'Open sans';
         }
-.ct_bx_btn_place_order{display: flex;}
+
+        .ct_bx_btn_place_order {
+            display: flex;
+        }
+
         .for_unit_itm {
             font-size: 17px;
             margin-top: 6px;
@@ -166,6 +200,7 @@ border-top: 4px solid #c7d5e0;
             font-family: 'Inter Tight';
             font-weight: 600;
         }
+
         .ct_bx_btn_place_order .place_order_btn,
         .ct_bx_btn_place_order .go_to_cart_btn,
         .ct_bx_btn_place_order .view_items_btn {
@@ -185,28 +220,36 @@ border-top: 4px solid #c7d5e0;
             text-align: center;
             display: flex;
             padding: 10px 19px;
-            background-image: linear-gradient(to right, #ffde20, rgb(255 197 24));        }
-.ct_bx_btn_place_order .place_order_btn {
-    width: 162px;
-    margin-left: 10px;
-    padding: 10px 14px;
-    font-size: 15px;
-    background-image: linear-gradient(to right, #c81834, #ff4343);
+            background-image: linear-gradient(to right, #ffde20, rgb(255 197 24));
+        }
+
+        .ct_bx_btn_place_order .place_order_btn {
+            width: 162px;
+            margin-left: 10px;
+            padding: 10px 14px;
+            font-size: 15px;
+            background-image: linear-gradient(to right, #c81834, #ff4343);
+        }
+
+        .ct_bx_btn_place_order .view_items_btn {
+            color: black;
+            width: 121px;
+            font-size: 15px;
+        }
+
+        .ct_bx_btn_place_order .go_to_cart_btn {
+    color: rgb(0 0 0);
+    display: none;
+    background:whitesmoke;
+    margin-left: 16px;
+    width: 151px;
 }
 
-.ct_bx_btn_place_order .view_items_btn {
-    color: black;
-    width: 121px;
-    font-size: 15px;
-}
-.ct_bx_btn_place_order .go_to_cart_btn{
-        background-image: linear-gradient(to right, #eeeeee, #eeeeee);
-            color: rgb(0 0 0);
-            display: none;
-}
- .ct_bx_flex  .ct_bx_btn_place_order .view_items_btn ion-icon ,
- .ct_bx_flex  .ct_bx_btn_place_order .go_to_cart_btn ion-icon {
-    color: black;}
+        .ct_bx_flex .ct_bx_btn_place_order .view_items_btn ion-icon,
+        .ct_bx_flex .ct_bx_btn_place_order .go_to_cart_btn ion-icon {
+            color: black;
+        }
+
         .ct_bx_flex .ct_bx_btn_place_order ion-icon {
             color: white;
             font-size: 15px;
@@ -214,10 +257,15 @@ border-top: 4px solid #c7d5e0;
             margin: 2px 10px;
         }
 
+        .ct_bx_flex .ct_bx_btn_place_order .go_to_cart_btn ion-icon {
+            transform: translate(0px, 4px);
+        }
+
         .ct_bx_layer {
             background-color: rgb(0 0 0 / 59%);
             width: 100%;
             height: 100vh;
+            display: none;
             z-index: 99999999999;
             position: fixed;
         }
@@ -291,6 +339,7 @@ border-top: 4px solid #c7d5e0;
             bottom: -3%;
             width: 100%;
             padding-bottom: 27px;
+            display: none;
             z-index: 99999999999999;
         }
 
@@ -345,11 +394,11 @@ border-top: 4px solid #c7d5e0;
             margin: 4px;
         }
 
-       .ct_bx_qt_foods div ion-icon {
-    margin-top: 4px;
-    font-size: 25px;
-    color: rgb(0 0 0);
-}
+        .ct_bx_qt_foods div ion-icon {
+            margin-top: 4px;
+            font-size: 25px;
+            color: rgb(0 0 0);
+        }
 
         .ct_bx_qt_foods {
             border: 1px solid #e2dede;
@@ -364,9 +413,10 @@ border-top: 4px solid #c7d5e0;
 
         .bx_add_t_cart_btn_itm_dt p {
             display: block;
-            font-family: 'Roboto';
+            font-family: 'Montserrat';
             font-weight: 500;
             margin-top: 6px;
+            font-size: 16px;
         }
 
         .bx_add_t_cart_btn_itm_dt {
@@ -374,7 +424,6 @@ border-top: 4px solid #c7d5e0;
             border: none;
             outline: none;
             font-family: 'Open Sans';
-            text-transform: uppercase;
             padding: 4px 1px 6px 0px;
             color: rgb(255 255 255);
             cursor: pointer;
@@ -384,22 +433,30 @@ border-top: 4px solid #c7d5e0;
             border-radius: 20px;
             text-align: center;
             padding: 6px 1px 8px 0px;
-            background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
+            background-image: linear-gradient(to right, #c81834, #ff4343);
+            /* background-image: linear-gradient(to right, #185bc8, rgb(0 109 255)); */
         }
 
-      .ct_bx_total_amount_to_pay p {
-    color: #3c3a3a;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    font-size: 15px;
-    margin: 20px 0 5px 14px;
-}
+        .bx_add_t_cart_btn_itm_dt.added_to_cart {
+            color: black;
+            display: none;
+            box-shadow: 0 4px 6px #00000070;
+            background-image: linear-gradient(to right, #f9e8eb, #f9e8e8);
+        }
+
+        .ct_bx_total_amount_to_pay p {
+            color: #3c3a3a;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 15px;
+            margin: 20px 0 5px 14px;
+        }
 
         .ct_bx_total_amount_to_pay h3 {
             color: #950e0e;
             margin: 0px 10px 20px 15px;
             font-weight: 600;
-            font-family: Montserrat;
+            font-family: 'Montserrat';
         }
 
         .btn_bottom_nav {
@@ -3900,66 +3957,100 @@ border-top: 4px solid #c7d5e0;
             .crousel1x {
                 margin-top: 143px;
             }
-                        .ct_bx_erak_logo a {
-    width: 90%;
-}
+.ct_nav_erak .for_mobile_search.for_seravh_in_nav{display: none;}
+
+            .ct_bx_erak_logo a {
+                width: 90%;
+            }
+
             .ct_acc_dt_ov p {
-    color: white;=
-}
-            .ct_popup_inner .ct_bx_crousel{
+                color: white;
+                =
+            }
+
+            .ct_bx_total_amount_to_pay h3 {
+                font-size: 30px;
+            }
+
+            .ct_popup_inner .ct_bx_crousel {
                 height: auto;
             }
-            .ct_slide_bx_crousel img{
+
+            .ct_slide_bx_crousel img {
                 height: 266px;
             }
-            .ct_bx_about_mobile2 a{display: block;}
-            .crousel1x{height: auto;}
-            .mai_ul .cart_nav {display: none;}
-.bx_btns_crousel {
-    width: 45px;
-    top: 39%;
-    position: absolute;background: white;
-    color: black;
-}
 
-.ct_bx_next {
-    right: 0;
-}
-   footer .logo img{
+            .ct_bx_about_mobile2 a {
+                display: block;
+            }
+
+            .crousel1x {
+                height: auto;
+            }
+
+            .mai_ul .cart_nav {
+                display: none;
+            }
+
+            .bx_btns_crousel {
+                width: 45px;
+                top: 39%;
+                position: absolute;
+                background: white;
+                color: black;
+            }
+
+            .ct_bx_next {
+                right: 0;
+            }
+
+            footer .logo img {
                 width: 105px;
             }
+
             .ct_bx_copy_right p {
-    font-size: 9px;
-}
-.ct_bx_copy_right span{
-    font-size: 10px;
-}
-.ct_bx_copy_right a{
-        margin-top: 8px;
-    margin-left: 53px;
-    font-size: 10px;
-}
+                font-size: 9px;
+            }
+
+            .ct_bx_copy_right span {
+                font-size: 10px;
+            }
+
+            .ct_bx_copy_right a {
+                margin-top: 8px;
+                margin-left: 53px;
+                font-size: 10px;
+            }
+
             .ct_bx_foot_inner .for_ain_home_logo {
-    margin: 29px 0 0 30px;
-}
+                margin: 29px 0 0 30px;
+            }
+
             .ct_bx_footer {
-    margin-bottom: 52px;
-}
+                margin-bottom: 52px;
+            }
+
             .ct_bx_foot_inner .for_ain_home_logo {
-    margin: 29px 0 0 30px;
-}
+                margin: 29px 0 0 30px;
+            }
+
             /*...............nav-bar....................*/
             .ct_bx_about_mobile2 {
                 display: block;
                 text-align: center;
                 width: 100%;
             }
-.ct_nav_erak .for_seravh_in_nav {
-    width: 66%;
-    margin: 0;
-}
-.ct_nav_erak .for_mobile_search {width: 100%;}
-            .ct_bx_about_mobile2 .material-symbols-outlined{
+
+            .ct_nav_erak .for_seravh_in_nav {
+                width: 66%;
+                margin: 0;
+            }
+
+            .ct_nav_erak .for_mobile_search {
+                width: 100%;
+            }
+
+            .ct_bx_about_mobile2 .material-symbols-outlined {
                 color: black;
                 font-size: 27px;
             }
@@ -4206,8 +4297,8 @@ border-top: 4px solid #c7d5e0;
                 font-size: 26px;
                 padding: 7px;
                 border-radius: 40px;
-         border: 1px solid #ffffff;
-    color: #fff;
+                border: 1px solid #ffffff;
+                color: #fff;
                 transform: translate(3px, 1px)
             }
 
@@ -4597,17 +4688,44 @@ border-top: 4px solid #c7d5e0;
                 margin-top: 14%;
                 left: 33%;
             }
+
+            .ct_bx_btn_place_order .go_to_cart_btn {
+                width: 136px;
+                font-size: 13px;
+                /* padding: 9px 10px; */
+            }
+
+            .ct_bx_stock p {
+                font-size: 14px;
+            }
+
+            .ct_bx_Time p {
+                font-size: 14px;
+                margin-top: 15px;
+            }
+
+            .ct_bx_Time2 ion-icon {
+                padding: 13px;
+                width: 37px;
+                font-size: 28px;
+            }
+
             .ct_bx_btn_place_order .view_items_btn {
-    color: black;
-    font-size: 13px;width: 108px;
-}
+                color: black;
+                font-size: 13px;
+                width: 108px;
+            }
+
             .ct_bx_btn_place_order .place_order_btn {
-    width: 135px;
-    margin-left: 10px;
-    font-size: 12px;}
-.ct_bx_flex .ct_bx_btn_place_order ion-icon {
-    margin: 0px 5px;
-}
+                width: 135px;
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .ct_bx_flex .ct_bx_btn_place_order ion-icon {
+                margin: 0px 5px;
+            }
+
             .btn_bottom_nav {
                 padding: 7px 16px;
             }
@@ -5223,9 +5341,12 @@ border-top: 4px solid #c7d5e0;
     </a> --}}
     <div class="ct_bx_div_bottom_nav">
         <div class="ct_flex_bx">
-            <a href="/mycart">
-
-                <div class="btn_bottom_nav">
+            <a href="/your-account#orders">
+                <div class="btn_bottom_nav myOrders_btn">
+                                        <div class="ct_bx_info">
+                        <ion-icon name="alert-outline" role="img" class="md hydrated" aria-label="alert outline">
+                        </ion-icon>
+                    </div>
                     <span class="material-symbols-outlined">
                         list_alt
                     </span>
@@ -5293,11 +5414,11 @@ border-top: 4px solid #c7d5e0;
                     <div class="ct_bx_video_banner">
                     </div>
                 </div>
-   {{!-- <div class="ct_bx_prev bx_btns_crousel">
-                        <ion-icon name="chevron-back-outline"></ion-icon>
-                    </div>
-                    <div class="ct_bx_next bx_btns_crousel">
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                {{!-- <div class="ct_bx_prev bx_btns_crousel">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
+                <div class="ct_bx_next bx_btns_crousel">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
 
                 </div> --}}
             </div>
@@ -5323,9 +5444,21 @@ border-top: 4px solid #c7d5e0;
                 </div>
 
             </div>
-            <div class="bx_add_t_cart_btn_itm_dt">
-                <p style="display: block;">Add to Cart</p>
+            <div class="bx_add_t_cart_btn_itm_dt place_order_btn_popup">
+                <p>Add to cart<ion-icon name="caret-forward"></ion-icon>
+                </p>
 
+            </div>
+            <a href="/mycart">
+                <div class="bx_add_t_cart_btn_itm_dt added_to_cart">
+                    <p>Go to cart<ion-icon name="caret-forward"></ion-icon>
+                    </p>
+                </div>
+            </a>
+
+            <div class="ct_bx_stock">
+                <h4>Currently out of stock</h4>
+                <p>This item will be delivered within 24 hour</p>
             </div>
             <div class="ct_bx_time_cookanddeliv2">
 
@@ -5340,11 +5473,13 @@ border-top: 4px solid #c7d5e0;
             </div>
             <div class="ct_bx_for_ingredients">
                 <h4>Ingredients</h4>
-                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water</p>
+                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered
+                    spices, Filtered water</p>
             </div>
-             {{!-- <div class="ct_bx_for_ingredients">
+            {{!-- <div class="ct_bx_for_ingredients">
                 <h4>To cook, just follow the cooking steps</h4>
-                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water</p>
+                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered
+                    spices, Filtered water</p>
             </div> --}}
         </div>
 
@@ -5749,13 +5884,22 @@ border-top: 4px solid #c7d5e0;
             localStorage.setItem('foodsAdded', '[]')
         }
         if (getCookie('info_delivery_user') !== '') {
-            if (window.screen.width <= 1200) {
+            
+            if (window.screen.width <= 1200&&window.screen.width>470) {
                 document.querySelector('.my_orders').classList.add('delivery_account_info')
                 document.querySelector('.ct_field_small_size').classList.add('delivery_account_info')
 
                 document.querySelector('.delivery_account_info .ct_bx_info').style.display = 'block'
                 document.querySelector('.ct_field_small_size_bx .ct_bx_info').style.display = 'block'
-            }
+            
+            }else     if(window.screen.width<=470){
+                                    document.querySelector('.my_orders').classList.add('delivery_account_info')
+                document.querySelector('.myOrders_btn').classList.add('delivery_account_info')
+
+                document.querySelector('.delivery_account_info .material-symbols-outlined').style.color='red'
+                document.querySelector('.myOrders_btn .ct_bx_info').style.display = 'block'
+                }
+            
         }
         if (getCookie('user') !== '') {
             let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
@@ -5771,10 +5915,196 @@ border-top: 4px solid #c7d5e0;
             }
 
         }
+        // global variables//
+        let itemstocks = 0
+        let priceItem = 0
+        let dTime = ''
+        let qtItm = 1
+        let selU = 0
+        let idItm = ''
+        //------------------------------------------//
+
         document.querySelector('html').addEventListener('click', (e) => {
             let itmPopuclose = e.target.closest('.ct_bx_layer')
             let itmPopup = e.target.closest('.ct_pop_up_items_order')
-            if (itmPopuclose && !itmPopup) {
+            let itmqtinc = e.target.closest('.ct_bx_item_add')
+            let itmqtdec = e.target.closest('.ct_bx_item_rem')
+            let view_itm = e.target.closest('.view_items_btn')
+            let placeOrderItm = e.target.closest('.place_order_btn_popup')
+            let dr_addtocartBtn= e.target.closest('.place_order_btn')
+            let gCart = e.target.closest('.go_to_cart_btn')
+            if (gCart !== null) {
+                window.location.replace('/mycart')
+            }
+            if (dr_addtocartBtn !== null) {
+                let stk_limit = dr_addtocartBtn.parentElement.parentElement.childNodes[7].childNodes[3].innerText
+                let itm_pr = dr_addtocartBtn.parentElement.parentElement.childNodes[7].childNodes[5].innerText
+                let id_itm = dr_addtocartBtn.parentElement.parentElement.childNodes[7].childNodes[17].innerText.split('(')[0]
+                let arrFd = []
+                document.querySelector('.added_to_cart').style.display = 'block'
+                document.querySelector('.place_order_btn_popup').style.display = 'none'
+dTime='1 hour'
+                if (JSON.parse(localStorage.getItem("foodsAdded")) !== null) {
+                    arrFd = JSON.parse(localStorage.getItem("foodsAdded"))
+                }
+                     if (parseFloat(stk_limit) <= 0) {
+                    dTime = '24 hour'
+                    document.querySelector('.ct_bx_stock').style.display = 'block'
+                }
+                let qty = parseFloat(document.querySelector('.ct_bx_qt_foods input').value)
+                arrFd.push({ img: '', dTime: dTime, permGroup: [], itemsOthers: [], baseMain: '', baseU: '', date: '', selU: '₹' + itm_pr, selU2: 0, initU: '', offer: '', id: id_itm, name: '', price: '₹' + itm_pr, unitInit: '', qt: 1 })
+                let idSrcBtn = id_itm.split('-').join('')
+                idSrcBtn = idSrcBtn + '_btn_gcart'
+                let idSrcaddBtn = id_itm.split('-').join('')
+                idSrcaddBtn = idSrcaddBtn + '_btn_addBtn'
+                document.querySelector(`.${idSrcBtn}`).style.display = 'block'
+                document.querySelector(`.${idSrcaddBtn}`).style.display = 'none'
+                localStorage.setItem('foodsAdded', JSON.stringify(arrFd))
+
+           }
+            if (view_itm !== null) {
+                let stk_limit = view_itm.parentElement.parentElement.childNodes[7].childNodes[3].innerText
+                let itm_name = view_itm.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('(')[0]
+                let item_video_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[15].innerText
+                let itm_pr = view_itm.parentElement.parentElement.childNodes[7].childNodes[5].innerText
+                let itm_pr_off = view_itm.parentElement.parentElement.childNodes[7].childNodes[7].innerText
+                let cook_banner = view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText
+                let ing_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[11].innerText
+                let cooksteps_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[13].innerText
+                let id_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText.split('(')[0]
+
+                dTime = '1 hour'
+                priceItem = '₹' + itm_pr
+                selU = itm_pr
+                idItm = id_itm
+                let qtyItm = 1
+                document.querySelector('.ct_popup_inner .name_of_itm').innerText = `watch a video to cook ${itm_name}`
+                document.querySelector('.added_to_cart').style.display = 'none'
+                document.querySelector('.place_order_btn_popup').style.display = 'block'
+                let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
+                localItems.forEach(cu => {
+                    if (cu.id === id_itm) {
+                        itm_pr = cu.price.split('₹')[1].split(',').join('')
+                        qtyItm = cu.qt
+                        document.querySelector('.added_to_cart').style.display = 'block'
+                        document.querySelector('.place_order_btn_popup').style.display = 'none'
+                    }
+                })
+
+                document.querySelector('.ct_bx_stock').style.display = 'none'
+                itemstocks = parseFloat(stk_limit)
+                if (parseFloat(stk_limit) <= 0) {
+                    dTime = '24 hour'
+                    document.querySelector('.ct_bx_stock').style.display = 'block'
+                }
+                document.querySelector('.ct_popup_inner .ct_bx_for_ingredients p').innerText = ing_itm
+                document.querySelector('.ct_popup_inner .ct_bx_video iframe').src = item_video_src
+                document.querySelector('.ct_popup_inner .ct_bx_total_amount_to_pay h3').innerText = '₹' + itm_pr.toLocaleString()
+                document.querySelector('.ct_bx_qt_foods input').value = parseFloat(qtyItm)
+                // itm amount changes in -> #1 after adding to cart #2 from start
+                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
+                document.querySelector('.ct_bx_layer').style.display = 'block'
+                document.querySelector('.ct_remove_bx_pop_p').style.display = 'block'
+
+            }
+            if (placeOrderItm !== null) {
+                let arrFd = []
+                document.querySelector('.added_to_cart').style.display = 'block'
+                document.querySelector('.place_order_btn_popup').style.display = 'none'
+
+                if (JSON.parse(localStorage.getItem("foodsAdded")) !== null) {
+                    arrFd = JSON.parse(localStorage.getItem("foodsAdded"))
+                }
+                let qty = parseFloat(document.querySelector('.ct_bx_qt_foods input').value)
+                arrFd.push({ img: '', dTime: dTime, permGroup: [], itemsOthers: [], baseMain: '', baseU: '', date: '', selU: selU, selU2: 0, initU: '', offer: '', id: idItm, name: '', price: priceItem, unitInit: '', qt: qty })
+                let idSrcBtn = idItm.split('-').join('')
+                idSrcBtn = idSrcBtn + '_btn_gcart'
+                let idSrcaddBtn = idItm.split('-').join('')
+                idSrcaddBtn = idSrcaddBtn + '_btn_addBtn'
+                document.querySelector(`.${idSrcBtn}`).style.display = 'block'
+                document.querySelector(`.${idSrcaddBtn}`).style.display = 'none'
+                localStorage.setItem('foodsAdded', JSON.stringify(arrFd))
+            }
+
+            if (itmqtinc !== null) {
+                let input = document.querySelector('.ct_bx_qt_foods input').value
+                let amount = document.querySelector('.ct_bx_total_amount_to_pay h3').innerText.split('₹')[1].split(',').join('')
+                amount = parseFloat(amount)
+                let i = parseFloat(input)
+                i++
+                if (itemstocks === 0) {
+                    itemstocks = 4
+                }
+                if (i <= itemstocks) {
+                    document.querySelector('.ct_bx_qt_foods input').value = i
+                    amount = amount / (i - 1)
+                    amount = amount * i
+                    document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹' + amount.toLocaleString()
+                    let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
+
+                    if (allfd !== null) {
+                        for (let i1 = 0; i1 < allfd.length; i1++) {
+                            let cur = allfd[i1]
+                            if (cur.id === idItm) {
+                                cur.qt = i
+                                cur.price = '₹' + amount.toLocaleString()
+                                allfd.splice(i1, 1)
+                                allfd.push(cur)
+                                localStorage.setItem('foodsAdded', JSON.stringify(allfd))
+                                break
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            if (itmqtdec !== null) {
+                let input = document.querySelector('.ct_bx_qt_foods input').value
+                let amount = document.querySelector('.ct_bx_total_amount_to_pay h3').innerText.split('₹')[1].split(',').join('')
+                amount = parseFloat(amount)
+                let i = parseFloat(input)
+                i--
+                if (i > 0) {
+                    document.querySelector('.ct_bx_qt_foods input').value = i
+                    amount = amount / (i + 1)
+                    amount = amount * i
+                    document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹' + amount.toLocaleString()
+                    let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
+
+                    if (allfd !== null) {
+                        for (let i1 = 0; i1 < allfd.length; i1++) {
+                            let cur = allfd[i1]
+                            if (cur.id === idItm) {
+                                cur.qt = i
+                                cur.price = '₹' + amount.toLocaleString()
+                                allfd.splice(i1, 1)
+                                allfd.push(cur)
+                                localStorage.setItem('foodsAdded', JSON.stringify(allfd))
+                                break
+
+                            }
+                        }
+                    }
+                } 
+               // else {
+               //     document.querySelector('.added_to_cart').style.display = 'none'
+               //     document.querySelector('.place_order_btn_popup').style.display = 'block'
+               //     if (allfd !== null) {
+               //         for (let i1 = 0; i1 < allfd.length; i1++) {
+               //             let cur = allfd[i1]
+               //             if (cur.id === idItm) {
+               //                 allfd.splice(i1, 1)
+               //                 localStorage.setItem('foodsAdded', JSON.stringify(allfd))
+               //                 break
+//
+               //             }
+               //         }
+               //     }
+               // }
+
+            }
+            if (itmPopuclose !== null && itmPopup === null) {
                 document.querySelector('.ct_pop_up_items_order').style.display = 'none'
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
@@ -5816,51 +6146,51 @@ border-top: 4px solid #c7d5e0;
 
         })
 
-       //document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
-       //    let user11 = getCookie('user')
-       //    if (user11 === '') {
-       //        socket.emit('send_msg_adm2')
-       //    }
-       //    let l = window.screen.width
-       //    let lX
-       //    if (window.screen.width <= 800) {
-       //        lX = 10 / 100 * l
-       //        l = l - lX
-       //    } else {
-       //        lX = 20 / 100 * l
-       //        l = l - lX
-       //    }
-       //    let height = window.screen.height
-       //    let heightX
-       //    let checkSize = (height * 2) + 200
-       //    if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
-       //        heightX = 30 / 100 * height
-       //        height = height - heightX
+        //document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
+        //    let user11 = getCookie('user')
+        //    if (user11 === '') {
+        //        socket.emit('send_msg_adm2')
+        //    }
+        //    let l = window.screen.width
+        //    let lX
+        //    if (window.screen.width <= 800) {
+        //        lX = 10 / 100 * l
+        //        l = l - lX
+        //    } else {
+        //        lX = 20 / 100 * l
+        //        l = l - lX
+        //    }
+        //    let height = window.screen.height
+        //    let heightX
+        //    let checkSize = (height * 2) + 200
+        //    if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
+        //        heightX = 30 / 100 * height
+        //        height = height - heightX
 
-       //    }
-       //    if (window.screen.height >= window.screen.width) {
-       //        heightX = height * 1 / 2
-       //        height = height - heightX
-       //        document.querySelector('.ct_inner_video').style.top = 28 + '%'
+        //    }
+        //    if (window.screen.height >= window.screen.width) {
+        //        heightX = height * 1 / 2
+        //        height = height - heightX
+        //        document.querySelector('.ct_inner_video').style.top = 28 + '%'
 
-       //    }
-       //    if (window.screen.height > 740 && window.screen.height < window.screen.width) {
-       //        if (window.screen.height > 1550) {
-       //            heightX = 30 / 100 * height
+        //    }
+        //    if (window.screen.height > 740 && window.screen.height < window.screen.width) {
+        //        if (window.screen.height > 1550) {
+        //            heightX = 30 / 100 * height
 
-       //        } else {
-       //            heightX = 40 / 100 * height
+        //        } else {
+        //            heightX = 40 / 100 * height
 
-       //        }
-       //        height = height - heightX
-       //    }
-       //    document.querySelector('.ct_video_over').style.display = 'block'
-       //    document.querySelector('.ct_video_box').style.display = 'flex'
-       //    document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
-       //    document.querySelector('.ct_video_box iframe').style.height = height + 'px'
-       //    document.querySelector('.ct_inner_video').style.width = l + 'px'
+        //        }
+        //        height = height - heightX
+        //    }
+        //    document.querySelector('.ct_video_over').style.display = 'block'
+        //    document.querySelector('.ct_video_box').style.display = 'flex'
+        //    document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
+        //    document.querySelector('.ct_video_box iframe').style.height = height + 'px'
+        //    document.querySelector('.ct_inner_video').style.width = l + 'px'
 
-       //})
+        //})
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
@@ -6119,206 +6449,13 @@ border-top: 4px solid #c7d5e0;
             handler: function (direction) {
                 let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
                 if (direction === 'down') {
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '0'
-                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
-                            cur1.style.padding = '13px 20px 10px 10px'
 
-                        })
-                        document.querySelector('.for_seravh_in_nav.for_nav_search').style.display = 'block'
-                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '130px'
-                        document.querySelector('.ct_inner_nav').style.justifyContent = 'space-around'
-                        if (window.screen.width <= 470) {
-
-                            document.querySelector('.ct_nav_erak .mai_ul').style.width = 'auto'
-                        }
-                    }
-                    if (window.screen.width <= 470) {
-                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
-                            cur1.style.padding = '13px 0px 10px 0px'
-
-                        })
-                        document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
-                            cur1.style.width = 'auto'
-                            cur1.style.padding = '0 9px'
-
-                        })
-                        document.querySelector('.ct_inner_nav').style.overflow = 'visible'
-
-                    } else if (window.screen.width <= 550) {
-
-                        document.querySelectorAll('.ct_inner_nav').forEach(cur1 => {
-                            cur1.style.padding = '13px 10px 10px 10px'
-
-                        })
-                    }
-
-                    document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                        cur1.style.margin = '-10px 0px 0px 7px'
-
-                    })
-                    if (window.screen.width <= 360) {
-                        document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '-10px 20px 0 13px'
-
-                        })
-                    }
-                    if (window.screen.width <= 360) {
-                        document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
-                            cur1.style.padding = '6px 10px'
-
-                        })
-                    }
-                    let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.for_nav_main').style.height = '75px'
-                        heightNav = 63
-                    }
-                    if (window.screen.width <= 1100) {
-                        document.querySelector('.for_mobile_search').style.display = 'none'
-
-                        // if (window.screen.width <= 400) {
-                        //     if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + `px` }
-
-                        // }
-                        // if (window.screen.width <= 470) {
-                        //     if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + `px` }
-                        // }
-                        // if (window.screen.width <= 360) {
-
-                        //     if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + `px` }
-
-                        // }
-                        if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.position = 'fixed' }
-                        if (window.screen.width <= 740) {
-                            document.querySelector('.ct_nav_erak .ct_bx_search').style.display = 'block'
-                            document.querySelector('.ct_nav_erak .ct_bx_search').style.display = 'flex'
-                            document.querySelector('.for_ain_home_logo').style.display = 'none'
-                            document.querySelector('.ct_bx_matched_itm').style.marginLeft = '0'
-                            document.querySelector('.ct_nav_erak .ct_bx_matched_itm').style.paddingBottom = '0px'
-
-                            if (window.screen.width <= 470) {
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginTop = '-6px'
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.marginLeft = '0'
-
-                            }
-                            let searchLi = document.querySelectorAll('.ct_nav_erak  .ct_bx_matched_itm li').length
-
-                            if (searchLi !== 0) {
-                                let wh = document.querySelector('.ct_nav_erak .ct_bx_search').getBoundingClientRect().width
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.width = wh + 'px'
-                                document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'block'
-
-                            }
-                        }
-
-                    }
                     document.querySelector('.for_nav_main').style.top = '0'
                     document.querySelector('.for_nav_main').style.position = 'fixed'
                     document.querySelector('.for_mobile_search').style.position = 'fixed'
-                    if (document.querySelector('.for_seravh_in_nav.active') !== null) {
-                        document.querySelector('.ct_field_small_size_bx').style.display = 'none'
-                        document.querySelector('.mai_ul').style.display = 'none'
-                        document.querySelector('.ct_inner_nav').style.padding = '13px 0px 10px 0px'
-                    }
+
                 } else if (direction === 'up') {
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
-                        document.querySelector('.for_seravh_in_nav.for_nav_search').style.display = 'none'
-                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '63%'
-
-                        document.querySelector('.ct_inner_nav').style.justifyContent = 'initial'
-                    }
-                    document.querySelector('.ct_nav_erak .mai_ul').style.display = 'flex'
-
-                    if (window.screen.width <= 550) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-18px'
-
-                    }
-                    if (window.screen.width <= 470) {
-                        document.querySelector('.ct_field_small_size_bx').style.marginTop = '-7px'
-                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '42%'
-
-                    }
-                    if (window.screen.width <= 470) {
-                        document.querySelector('.ct_nav_erak .mai_ul').style.width = '100%'
-
-                        document.querySelector('.ct_inner_nav').style.overflow = 'hidden'
-                        document.querySelector('.ct_field_small_size_bx').style.display = 'block'
-
-                        document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '0px 0px 0px 7px'
-
-                        })
-                        document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
-                            cur1.style.width = '100%'
-                            cur1.style.padding = '0'
-
-                        })
-                        document.querySelector('.ct_inner_nav').style.padding = '20px 10px 10px 10px'
-                    }
-                    if (window.screen.width <= 360) {
-                        document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                            cur1.style.margin = '0px 4px 0 0'
-
-                        })
-                        document.querySelectorAll('.ct_nav_erak ul .nav_main_ek_li').forEach(cur1 => {
-                            cur1.style.padding = '16px 10px'
-
-                        })
-                    }
-                    let heightNav = document.querySelector('.for_nav_main').getBoundingClientRect().height - 8
-                    if (window.screen.width <= 1100) {
-
-                        if (window.screen.width <= 1100 && window.screen.width > 470) {
-                            if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
-                        }
-                        if (window.screen.width <= 740) {
-                            if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
-
-                        }
-
-                        if (window.screen.width <= 470 && window.screen.width > 400) {
-                            if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
-
-
-
-                        } else if (window.screen.width > 1200) {
-                            if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.top = heightNav + 'px' }
-
-                        }
-
-
-                        if (document.querySelector('.yt-loader') !== null) { document.querySelector('.yt-loader').style.position = 'absolute' }
-
-                        if (window.screen.width <= 740) {
-
-                            document.querySelector('.for_mobile_search').style.display = 'block'
-                            document.querySelector('.ct_inner_nav .ct_bx_search').style.display = 'none'
-
-                            document.querySelector('.for_ain_home_logo').style.display = 'block'
-                            if (document.querySelector('.for_nav_main .ct_bx_search input').value !== '') {
-                                if (document.querySelectorAll('.for_mobile_search  .ct_bx_matched_itm li').length > 0) {
-                                    document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.display = 'block'
-
-                                }
-                            }
-
-                            document.querySelector('.ct_nav_erak  .ct_bx_matched_itm').style.display = 'none'
-
-                            let xW = document.querySelector('.for_mobile_search .ct_bx_search').getBoundingClientRect().width
-                            document.querySelector('.for_mobile_search  .ct_bx_matched_itm').style.width = `${xW}px`
-                        }
-                    }
-                    if (window.screen.width >= 1200) {
-                        // document.querySelector('.ct_bx_categories_essen').style.position= 'absolute'
-
-                    }
-                    if (window.screen.width <= 740) {
-
-                        document.querySelector('.for_nav_main').style.height = '96px'
-                    }
+                
                     document.querySelector('.for_nav_main').style.position = 'absolute'
                     document.querySelector('.for_nav_main').style.top = '0'
                     document.querySelector('.for_mobile_search').style.position = 'absolute'
@@ -6429,7 +6566,7 @@ border-top: 4px solid #c7d5e0;
                     document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
                     document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
                     document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
-                document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
+                    document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
 
                 }
             }
@@ -6509,7 +6646,7 @@ border-top: 4px solid #c7d5e0;
                     </div>`
 
                     }
-                
+
                     let offer_box = ''
                     if (item.offer !== null) {
                         offer_box = `   <div class="ct_offer_box_cook2">
@@ -6524,25 +6661,60 @@ border-top: 4px solid #c7d5e0;
                         commSoonHtml = `style="filter:grayscale(1)"`
                         priceBox = `<div class="ct_bx_price_fd hasPrice"> <p class="commingSoonp">Coming soon</p> </div>`
                     }
+                    let idSrcgBtn = item.id.split('-').join('')
+                    idSrcgBtn = idSrcgBtn + '_btn_gcart'
+                    let idSrcaddBtn = item.id.split('-').join('')
+                    idSrcaddBtn = idSrcaddBtn + '_btn_addBtn'
                     let srcM
+                    let html_hide = ''
+                    let add_to_cart_btn_direct = `        <button class='place_order_btn ${idSrcaddBtn} '>Add to cart <ion-icon name="caret-forward"></ion-icon></button>
+`
+                    let gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
+
+
+                    let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
+                    localItems.forEach(cu => {
+                        if (cu.id === item.id) {
+                            add_to_cart_btn_direct = ''
+                            gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}' style='display:block'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
+                        }
+                    })
+
                     if (!item.commSoon) {
                         srcM = `href="/recipes/${item.id}"`
+                        if (window.screen.width <= 470) {
+                            btn_place_order = `<div class="ct_bx_btn_place_order">
+    <button class='view_items_btn'>View <ion-icon name="arrow-forward-outline"></ion-icon> </button>
+${add_to_cart_btn_direct}
+${gtocart}
+</div>`
+
+                            html_hide = `       <div class="ct_bx_item_details_hide">
+    <p class="name">${item.name}</p>
+    <p class="stock">${item.netweight}</p>
+    <p class="price_pr">${priceN.toLocaleString()}</p>
+    <p class="price_off">${pricemain.toLocaleString()}</p>
+    <p class="offer">${item.offer.off}</p>
+    <p class="ing_list">${item.fdInside[2].about.ing.join(', ')}</p>
+    <p class="cook_steps">${item.cook[0].name}</p>
+    <p class="cook_video">${item.video}</p>
+    <p class="itm_id">${item.id}</p>
+
+
+</div>`
+                        }
+
                     } else {
                         offer_box = ''
                         unit_itm = ''
                         btn_place_order = ''
                         srcM = `rel="nofollow"`
+                        html_hide = ''
+                        btn_place_order = ''
                     }
-                        if (window.screen.width <= 470) {
-                            srcM = `rel="nofollow"`
+                    if (window.screen.width <= 470) {
+                        srcM = `rel="nofollow"`
                         unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
-                        btn_place_order = `<div class="ct_bx_btn_place_order">
-    <button class='view_items_btn'>View <ion-icon name="arrow-forward-outline"></ion-icon> </button>
-        <button class='place_order_btn'>Place Order <ion-icon name="caret-forward"></ion-icon></button>
-
-        <button class='go_to_cart_btn'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>
-
-</div>`
 
                     }
                     console.log(item.fdInside)
@@ -6556,19 +6728,7 @@ border-top: 4px solid #c7d5e0;
             <h4 ${commSoonHtml}>${item.name}</h4>
 ${unit_itm}
                 ${priceBox}
-                <div class="ct_bx_item_details_hide">
-    <p class="name">${item.name}</p>
-    <p class="stock">${item.netweight}</p>
-    <p class="price_pr">${priceN.toLocaleString()}</p>
-    <p class="price_off">${pricemain.toLocaleString()}</p>
-    <p class="offer">${item.offer.off}</p>
-    <p class="ing_list">${item.fdInside[2].about.ing.join(',')}</p>
-    <p class="cook_steps">${item.cook[0].name}</p>
-    <p class="cook_video">${item.video}</p>
-    <p class="cook_banner">${item.imgBanner}</p>
-
-
-</div>
+         ${html_hide}
                  ${btn_place_order}
                  </div>
         </div>
@@ -6595,42 +6755,42 @@ ${unit_itm}
         }
         let count = 0;
         // crousel or scroller code
-      //  btn1.addEventListener("click", () => {
-      //      slideCrousel.style.transition = "transform .4s ease-in-out"
-      //      count++
-      //      console.log(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width, 'hahahaha')
-      //      if (window.screen.width <= 800) {
-      //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width)}px)`
-      //          console.log(`translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width)}px)`)
-      //      } else {
-      //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width)}px)`
-      //      }
-      //      document.querySelector(".ct_bx_prev")
-      //          .style.opacity = "1"
-      //      document.querySelector(".ct_bx_prev")
-      //          .style["pointer-events"] = "auto"
-      //      document.querySelector(".ct_bx_next")
-      //          .style.opacity = ".5"
-      //      document.querySelector(".ct_bx_next")
-      //          .style["pointer-events"] = "none"
-      //  })
-      //  btn2.addEventListener("click", () => {
-      //      document.querySelector(".ct_bx_next")
-      //          .style.opacity = "1"
-      //      document.querySelector(".ct_bx_next")
-      //          .style["pointer-events"] = "auto"
-      //      document.querySelector(".ct_bx_prev")
-      //          .style.opacity = ".5"
-      //      document.querySelector(".ct_bx_prev")
-      //          .style["pointer-events"] = "none"
-      //      slideCrousel.style.transition = "transform .4s ease-in-out"
-      //      count--
-      //      if (window.screen.width <= 800) {
-      //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width}px)`
-      //      } else {
-      //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width}px)`
-      //      }
-      //  });
+        //  btn1.addEventListener("click", () => {
+        //      slideCrousel.style.transition = "transform .4s ease-in-out"
+        //      count++
+        //      console.log(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width, 'hahahaha')
+        //      if (window.screen.width <= 800) {
+        //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width)}px)`
+        //          console.log(`translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x img")[0].getBoundingClientRect().width)}px)`)
+        //      } else {
+        //          slideCrousel.style.transform = `translate(${(-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width)}px)`
+        //      }
+        //      document.querySelector(".ct_bx_prev")
+        //          .style.opacity = "1"
+        //      document.querySelector(".ct_bx_prev")
+        //          .style["pointer-events"] = "auto"
+        //      document.querySelector(".ct_bx_next")
+        //          .style.opacity = ".5"
+        //      document.querySelector(".ct_bx_next")
+        //          .style["pointer-events"] = "none"
+        //  })
+        //  btn2.addEventListener("click", () => {
+        //      document.querySelector(".ct_bx_next")
+        //          .style.opacity = "1"
+        //      document.querySelector(".ct_bx_next")
+        //          .style["pointer-events"] = "auto"
+        //      document.querySelector(".ct_bx_prev")
+        //          .style.opacity = ".5"
+        //      document.querySelector(".ct_bx_prev")
+        //          .style["pointer-events"] = "none"
+        //      slideCrousel.style.transition = "transform .4s ease-in-out"
+        //      count--
+        //      if (window.screen.width <= 800) {
+        //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[0].getBoundingClientRect().width}px)`
+        //      } else {
+        //          slideCrousel.style.transform = `translate(${-count * document.querySelectorAll(".ct_slide_bx_crousel2x .box_cr_itm")[1].getBoundingClientRect().width}px)`
+        //      }
+        //  });
 
 
 
@@ -6769,29 +6929,8 @@ ${unit_itm}
 
         document.querySelector('html').addEventListener('click', (e) => {
             let bx2 = e.target.closest('.ct_slide_menu_acc')
-            let view_itm=e.target.closest('.view_items_btn')
             let slide = e.target.closest('.ct_field_small_size')
 
-            if(view_itm!==null){
-                console.log(view_itm.parentElement.parentElement.childNodes[7].childNodes)
-                let stk_limit=view_itm.parentElement.parentElement.childNodes[7].childNodes[3].innerText
-                let itm_name=view_itm.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('(')[0]
-                let item_video_src=view_itm.parentElement.parentElement.childNodes[7].childNodes[15].innerText
-                let itm_pr=view_itm.parentElement.parentElement.childNodes[7].childNodes[5].innerText
-                let itm_pr_off=view_itm.parentElement.parentElement.childNodes[7].childNodes[7].innerText
-                let cook_banner=view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText
-                let ing_itm=view_itm.parentElement.parentElement.childNodes[7].childNodes[11].innerText
-                let cooksteps_src=view_itm.parentElement.parentElement.childNodes[7].childNodes[13].innerText
-document.querySelector('.ct_popup_inner .name_of_itm').innerText=`watch a video to cook ${itm_name}`
-document.querySelector('.ct_popup_inner .ct_bx_for_ingredients p').innerText=ing_itm
-document.querySelector('.ct_popup_inner .ct_bx_video iframe').src=item_video_src
-
-                // itm amount changes in -> #1 after adding to cart #2 from start
-                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
-                document.querySelector('.ct_bx_layer').style.display = 'block'
-                document.querySelector('.ct_remove_bx_pop_p').style.display = 'block'
-
-            }
 
             if (slide !== null) {
                 if (slide !== null) {
