@@ -486,7 +486,13 @@
                 'GRAD' 200,
                 'opsz' 40
         }
-
+.ct_bx_about_mobile2 .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 1,
+                  'wght' 400,
+                'GRAD' 200,
+                'opsz' 40
+        }  
         .btn_bottom_nav.btn_about p {
             font-size: 15px;
         }
@@ -3957,7 +3963,14 @@
             .crousel1x {
                 margin-top: 143px;
             }
-.ct_nav_erak .for_mobile_search.for_seravh_in_nav{display: none;}
+            .crousel1x {
+    margin-top: 95px;
+    width: 96%;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+            .for_nav_main {box-shadow: 0 0 4px rgb(0 0 0 / 18%);}
+            .ct_nav_erak .for_mobile_search.for_seravh_in_nav{display: none;}
 
             .ct_bx_erak_logo a {
                 width: 90%;
@@ -4051,7 +4064,7 @@
             }
 
             .ct_bx_about_mobile2 .material-symbols-outlined {
-                color: black;
+                color: #ff4300;
                 font-size: 27px;
             }
 
@@ -4451,9 +4464,9 @@
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 5px;
-                margin-top: 40px;
+                margin-top: 20px;
                 margin-bottom: 19px;
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .list_food_at_ov h3 {
@@ -4504,10 +4517,6 @@
 
             .cart_nav a {
                 margin-top: 7px
-            }
-
-            .crousel1x {
-                margin-top: 148px
             }
 
             .ct_inner_nav .ct_bx_search {
@@ -4821,7 +4830,6 @@
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 2px;
-                font-size: 20px;
             }
 
 
@@ -5506,11 +5514,11 @@
 
 
                     <img class="bannerX" alt="Introducing krickgrocery: The painkiller of cooking banner"
-                        src="../img/imgBanner.webp" alt="img">
+                        src="../img/krick_sauce_banner.jpg" alt="img">
                     {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/imgBanner2.webp" alt="img"> --}}
                     <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        src="../img/mob_banner1.PNG" alt="img">
+                        src="../img/imgBanner2.webp" alt="img">
                     <div class="ct_bx_video_banner">
                         {{!-- <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
@@ -5923,7 +5931,7 @@
         let selU = 0
         let idItm = ''
         //------------------------------------------//
-
+let cookSteps_img=''
         document.querySelector('html').addEventListener('click', (e) => {
             let itmPopuclose = e.target.closest('.ct_bx_layer')
             let itmPopup = e.target.closest('.ct_pop_up_items_order')
@@ -5972,7 +5980,7 @@ dTime='1 hour'
                 let ing_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[11].innerText
                 let cooksteps_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[13].innerText
                 let id_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText.split('(')[0]
-
+cookSteps_img=cooksteps_src
                 dTime = '1 hour'
                 priceItem = '₹' + itm_pr
                 selU = itm_pr
@@ -6954,11 +6962,30 @@ ${unit_itm}
 
             }
         })
-       //let seenabout = getCookie('seen_about')
-       //if (seenabout !== '') {
-       //    document.querySelector('.ct_bx_about_mob').style.display = 'none'
+       
+        function download(img) {
+            let nameimg = img.split('/')[2]
+            var link = document.createElement("a");
+            link.href = img;
+            link.download = `${nameimg}`;
+            link.style.display = "none";
+            var evt = new MouseEvent("click", {
+                "view": window,
+                "bubbles": true,
+                "cancelable": true
+            });
 
-       //}
+            document.body.appendChild(link);
+            link.dispatchEvent(evt);
+            document.body.removeChild(link);
+        }
+        
+        document.querySelector('html').addEventListener("click", (e) => {
+            if (e.target.closest('.ct_bx_download_btn_x') !== null) {
+                e.preventDefault()
+                download(cookSteps_img)
+            }
+        });
     </script>
 </body>
 
