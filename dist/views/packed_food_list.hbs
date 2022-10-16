@@ -102,7 +102,7 @@
             border-radius: 20px;
             background-color: #ff002c;
             padding-top: 10px;
-            margin-top: 26px;
+            margin-top: 17px;
             box-shadow: 0 0 10px #0000004f;
         }
 
@@ -118,17 +118,11 @@
             color: white;
         }
 
-        .material-symbols-sharp {
-            font-variation-settings:
-                'FILL' 1,
-                'wght' 600,
-                'GRAD' 0,
-                'opsz' 48
-        }
+       
 
         .material-symbols-sharp {
-            color: #2b4fb6;
-            font-size: 31px;
+            color: #000000;
+            font-size:25px;
         }
 
 
@@ -215,21 +209,20 @@
             font-size: 14px;
             margin: 14px 0 22px 0px;
             box-shadow: 0 4px 6px #00000047;
-            border-radius: 6px;
-            text-align: center;
+border-radius: 20px;            text-align: center;
             text-align: center;
             display: flex;
             padding: 10px 19px;
             background-image: linear-gradient(to right, #ffde20, rgb(255 197 24));
         }
 
-        .ct_bx_btn_place_order .place_order_btn {
-            width: 162px;
-            margin-left: 10px;
-            padding: 10px 14px;
-            font-size: 15px;
-            background-image: linear-gradient(to right, #c81834, #ff4343);
-        }
+      .ct_bx_btn_place_order .place_order_btn {
+    width: 134px;
+    margin-left: 10px;
+    padding: 13px 14px 0 21px;
+    font-size: 12px;
+    background-image: linear-gradient(to right, #c81834, #d81212);
+}
 
         .ct_bx_btn_place_order .view_items_btn {
             color: black;
@@ -237,12 +230,13 @@
             font-size: 15px;
         }
 
-        .ct_bx_btn_place_order .go_to_cart_btn {
+.ct_bx_btn_place_order .go_to_cart_btn {
     color: rgb(0 0 0);
     display: none;
-    background:whitesmoke;
+    font-size: 12px;
+    background: whitesmoke;
     margin-left: 16px;
-    width: 151px;
+    width: 133px;
 }
 
         .ct_bx_flex .ct_bx_btn_place_order .view_items_btn ion-icon,
@@ -250,12 +244,16 @@
             color: black;
         }
 
-        .ct_bx_flex .ct_bx_btn_place_order ion-icon {
-            color: white;
-            font-size: 15px;
-            transform: translate(0px);
-            margin: 2px 10px;
-        }
+      .ct_bx_flex .ct_bx_btn_place_order ion-icon {
+    color: white;
+    font-size: 15px;
+    transform: translate(0px);
+    margin: 2px 0 0 10px;
+}
+
+      .ct_bx_flex .ct_bx_btn_place_order .place_order_btn ion-icon {
+    transform: translate(0,-2px);
+}
 
         .ct_bx_flex .ct_bx_btn_place_order .go_to_cart_btn ion-icon {
             transform: translate(0px, 4px);
@@ -329,7 +327,7 @@
             display: flex;
             padding: 0px 10px;
             justify-content: center;
-            width: 100%;
+            width: 100%;    height: 65px;
         }
 
         .ct_pop_up_items_order {
@@ -433,8 +431,7 @@
             border-radius: 20px;
             text-align: center;
             padding: 6px 1px 8px 0px;
-            background-image: linear-gradient(to right, #c81834, #ff4343);
-            /* background-image: linear-gradient(to right, #185bc8, rgb(0 109 255)); */
+    background-image: linear-gradient(to right, #c81834, #c81834);        
         }
 
         .bx_add_t_cart_btn_itm_dt.added_to_cart {
@@ -462,7 +459,7 @@
         .btn_bottom_nav {
             padding: 7px 23px;
             display: block;
-            margin: 10px;
+            margin: 3px 10px;
             text-align: center;
         }
 
@@ -476,7 +473,7 @@
 
         .btn_bottom_nav .material-symbols-outlined {
             color: #2f2f2f;
-            font-size: 30px;
+            font-size:25px;
         }
 
         .material-symbols-outlined {
@@ -560,19 +557,18 @@
             color: white;
             margin-left: 50px;
         }
-
-        .ct_bx_info {
-            width: 26px;
-            height: 24px;
-            z-index: 999999;
-            border-radius: 50%;
-            background-color: #ee2747;
-            padding: 2px;
-            color: white;
-            top: 11px;
-            position: absolute;
-        }
-
+.ct_bx_info {
+    width: 21px;
+    height: 20px;
+    font-size: 15px;
+    z-index: 999999;
+    border-radius: 50%;
+    background-color: #ee2747;
+    padding: 2px;
+    color: white;
+    top: 11px;
+    position: absolute;
+}
         .ct_bx_slide_bx ul li.delivery_account_info {
             display: flex;
         }
@@ -1990,6 +1986,9 @@
         }
 
         .ct_bx_slide_bx {
+            transition: .4s ease-in-out
+        }
+        .ct_popup_inner{
             transition: .4s ease-in-out
         }
 
@@ -3963,12 +3962,19 @@
             .crousel1x {
                 margin-top: 143px;
             }
-            .crousel1x {
-    margin-top: 95px;
-    width: 96%;
-    margin-left: 10px;
-    border-radius: 10px;
+            .ct_bx_fooditm h4 {
+    font-family: 'Montserrat';
+    font-size: 18px;
 }
+            .crousel1x {
+    margin-top: 85px;
+}
+.ct_bx_btn_place_order .view_items_btn {
+    width: 109px;
+    font-size: 14px;
+}
+        .for_unit_itm {
+            font-size: 17px;}
             .for_nav_main {box-shadow: 0 0 4px rgb(0 0 0 / 18%);}
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav{display: none;}
 
@@ -3990,7 +3996,7 @@
             }
 
             .ct_slide_bx_crousel img {
-                height: 266px;
+                height: auto;
             }
 
             .ct_bx_about_mobile2 a {
@@ -4064,7 +4070,7 @@
             }
 
             .ct_bx_about_mobile2 .material-symbols-outlined {
-                color: #ff4300;
+                color: #000000;
                 font-size: 27px;
             }
 
@@ -4159,8 +4165,7 @@
                 position: relative;
                 left: 0;
                 width: 100%;
-                height: 280px;
-                height: 227px;
+                height: auto;
                 display: flex;
             }
 
@@ -4182,7 +4187,9 @@
 
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 9px;
-                margin-top: -1px
+                display: block;
+                margin-top: -1px;
+    
             }
 
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
@@ -4422,7 +4429,7 @@
             }
 
             .ct_bx_fooditm h4 {
-                font-size: 21px
+                font-size: 18px
             }
 
             .list_food_at_ov h3 {
@@ -4471,7 +4478,7 @@
 
             .list_food_at_ov h3 {
                 font-size: 22px;
-                color: #555050;
+                color: #0f0f0f;
             }
 
             .ct_bx_fooditm a {
@@ -4697,7 +4704,9 @@
                 margin-top: 14%;
                 left: 33%;
             }
-
+.btn_bottom_nav p {
+    font-size: 10px;
+}
             .ct_bx_btn_place_order .go_to_cart_btn {
                 width: 136px;
                 font-size: 13px;
@@ -4729,10 +4738,6 @@
                 width: 135px;
                 margin-left: 10px;
                 font-size: 12px;
-            }
-
-            .ct_bx_flex .ct_bx_btn_place_order ion-icon {
-                margin: 0px 5px;
             }
 
             .btn_bottom_nav {
@@ -4878,16 +4883,11 @@
             .erak_fd_body .ct_bx_ratings {
                 margin: 3px 0 0
             }
-
-            .ct_bx_fooditm h4 {
-                font-size: 19px;
-                width: 98%;
-                margin-left: 3px
-            }
-
-
-
-
+.ct_bx_fooditm h4 {
+    font-size: 17px;
+    width: 92%;
+    margin-left: 3px;
+}
             .ct_bx_price_fd {
                 margin-top: 4px
             }
@@ -5518,7 +5518,7 @@
                     {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/imgBanner2.webp" alt="img"> --}}
                     <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        src="../img/imgBanner2.webp" alt="img">
+                        src="../img/krick_sauce_banner122.png" alt="img">
                     <div class="ct_bx_video_banner">
                         {{!-- <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
@@ -5934,7 +5934,9 @@
 let cookSteps_img=''
         document.querySelector('html').addEventListener('click', (e) => {
             let itmPopuclose = e.target.closest('.ct_bx_layer')
-            let itmPopup = e.target.closest('.ct_pop_up_items_order')
+            let itmPopucloseIcon = e.target.closest('.ct_remove_bx_pop_p')
+
+            let itmPopup = e.target.closest('.ct_popup_inner')
             let itmqtinc = e.target.closest('.ct_bx_item_add')
             let itmqtdec = e.target.closest('.ct_bx_item_rem')
             let view_itm = e.target.closest('.view_items_btn')
@@ -6112,12 +6114,16 @@ cookSteps_img=cooksteps_src
                // }
 
             }
-            if (itmPopuclose !== null && itmPopup === null) {
+            if (itmPopuclose !== null&& itmPopup === null) {
                 document.querySelector('.ct_pop_up_items_order').style.display = 'none'
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
             }
-
+     if (itmPopucloseIcon !== null) {
+                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
+                document.querySelector('.ct_bx_layer').style.display = 'none'
+                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
+            }
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
                 document.querySelector('.ct_video_box').style.display = 'none'
                 document.querySelector('.ct_video_over').style.display = 'none'

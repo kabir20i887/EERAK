@@ -36,8 +36,8 @@
 
         /* for bottom nav bar */
         .material-symbols-sharp {
-            color: #2b4fb6;
-            font-size: 31px;
+            color: #000000;
+            font-size: 25px;
         }
 
         .ct_bx_div_bottom_nav {
@@ -51,7 +51,7 @@
 
         .btn_bottom_nav .material-symbols-outlined {
             color: #2f2f2f;
-            font-size: 30px;
+            font-size: 25px;
         }
 .ct_bx_about_mobile2 .material-symbols-outlined {
             font-variation-settings:
@@ -68,17 +68,16 @@
             color: black;
         }
 
-        .ct_bx_div_bottom_nav .ct_flex_bx {
+       .ct_bx_div_bottom_nav .ct_flex_bx {
             display: flex;
             padding: 0px 10px;
             justify-content: center;
-            width: 100%;
+            width: 100%;    height: 65px;
         }
-
         .btn_bottom_nav {
             padding: 7px 23px;
             display: block;
-            margin: 10px;
+            margin: 3px 10px;
             text-align: center;
         }
 
@@ -147,19 +146,18 @@
         .delivery_account_info .ct_bx_info {
             display: none;
         }
-
-        .ct_bx_info {
-            width: 23px;
-            height: 22px;
-            z-index: 999999;
-            border-radius: 50%;
-            background-color: #ee2747;
-            padding: 2px;
-            color: white;
-            top: 11px;
-            font-size: 16px;
-            position: absolute;
-        }
+.ct_bx_info {
+    width: 21px;
+    height: 20px;
+    font-size: 15px;
+    z-index: 999999;
+    border-radius: 50%;
+    background-color: #ee2747;
+    padding: 2px;
+    color: white;
+    top: 11px;
+    position: absolute;
+}
 
         .pricenooff {
             font-size: 15px;
@@ -10170,7 +10168,7 @@
             }
 
          .ct_bx_about_mobile2 .material-symbols-outlined {
-                color: #ff4300;
+                color: #000000;
                 font-size: 27px;
             }
             .ct_bx_about_mobile2 a {
@@ -10321,7 +10319,7 @@
             }
 
             .ct_nav_erak .mai_ul {
-                width: auto;
+                width: 64%;
             }
 
             .ct_bx_search .search-icon {
@@ -10333,7 +10331,7 @@
             }
 
             .ct_nav_erak .for_seravh_in_nav {
-                width: 100%;
+                width: auto;
             }
 
             .for_nav_main .for_mobile_search .ct_bx_search {
@@ -10539,11 +10537,11 @@
                 width: 89vw;
             }
 
-            .check_out_btn_order {
-                background: #ff1455;
-                color: rgb(255 255 255);
-                border-color: #ff0077;
-            }
+       .check_out_btn_order {
+    background: #e21515;
+    color: rgb(255 255 255);
+    border-color: #ff2200;
+}
 
             .for_nav_main .logo {
                 left: 11%;
@@ -14814,6 +14812,10 @@ font-size: 27px;            }
             let html2 = null
             let html
             let timeD = elem.dTime
+          
+            document.querySelector('.ek_cart').style.height = 'auto'
+            document.querySelector('.bx_evt_cart_item').style.height = 'auto'
+            document.querySelector('.bx_evt_cart_item').style.display = 'block'
 
             document.querySelector('.for_ek_fd_cart_load').style.display = 'flex'
             let dbCollection = db.collection(`items`)
@@ -15315,28 +15317,29 @@ font-size: 27px;            }
                                     matchedU = true
                                     console.log(elem.unitInit)
                                     //elem.selU2 = elem.unitInit[0].price
+                                    //parseFloat(elem.unitInit[0].stock)
                                     mainQt = parseFloat(mainQt)
-                                    let stk = parseFloat(elem.unitInit[0].stock)
+                                    let stk = parseFloat(elem.netweight)
 
                                     //elem.selU = parseFloat(itm.restPrice)
-                                    if (elem.unitInit[0].name === undefined) {
-                                        if (elem.unitInit[0].price !== null) {
-                                            if (elem.unitInit[0].unitNum !== null) {
-                                                elem.baseU = `${elem.unitInit[0].unitNum} ${elem.unitInit[0].unitU}`
+                                  // if (elem.unitInit[0].name === undefined) {
+                                  //     if (elem.unitInit[0].price !== null) {
+                                  //         if (elem.unitInit[0].unitNum !== null) {
+                                  //             elem.baseU = `${elem.unitInit[0].unitNum} ${elem.unitInit[0].unitU}`
 
-                                            } else {
-                                                elem.baseU = elem.unitInit[0].unitU
+                                  //         } else {
+                                  //             elem.baseU = elem.unitInit[0].unitU
 
-                                            }
-                                        } else {
-                                            elem.baseU = `${elem.unitInit[0].unit}`
+                                  //         }
+                                  //     } else {
+                                  //         elem.baseU = `${elem.unitInit[0].unit}`
 
-                                        }
-                                    } else {
-                                        elem.baseU = `${elem.unitInit[0].name}`
+                                  //     }
+                                  // } else {
+                                  //     elem.baseU = `${elem.unitInit[0].name}`
 
 
-                                    }
+                                  // }
 
                                 }
                             }
@@ -15568,7 +15571,9 @@ font-size: 27px;            }
                                 if (itm.offer.sauce !== null) {
                                     let offX = parseFloat(itm.offer.sauce)
                                     price_mob = price_mob - (price_mob * (offX / 100))
-
+   price_mob = String(price_mob)
+                                price_mob = price_mob.split('.')[0]
+                                price_mob = parseFloat(price_mob)
                                 }
                                 elem.price = "₹" + (price_mob * Qty_units)
                             } else {
@@ -15789,9 +15794,9 @@ font-size: 27px;            }
 
                                 let htmUNITS = ``
                                 let baseUx = elem.baseU
-                                if (elem.unitInit[0].unitNum === null) {
-                                    baseUx = elem.baseU.split(' ')[0]
-                                }
+                              //  if (elem.unitInit[0].unitNum === null) {
+                              //      baseUx = elem.baseU.split(' ')[0]
+                              //  }
                                 if (elem.baseU.toLowerCase().split(' ').join('') === 'pleaseclicktoselect') {
                                     htmUNITS = `     <span>${elem.baseMain}</span>
                                 <ar>${elem.baseU}</ar>`
