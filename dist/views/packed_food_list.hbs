@@ -3962,6 +3962,13 @@ border-radius: 20px;            text-align: center;
             .crousel1x {
                 margin-top: 143px;
             }
+    .ct_bx_btn_play {
+    margin-top: 38%;
+    left: 13%;
+}
+.ct_bx_btn_play {
+    background-color: #ffffffde;
+}
             .ct_bx_fooditm h4 {
     font-family: 'Montserrat';
     font-size: 18px;
@@ -4103,7 +4110,7 @@ border-radius: 20px;            text-align: center;
             }
 
             .ct_bx_btn_play ion-icon {
-                font-size: 56px;
+                font-size: 33px;
             }
 
             .ct_loading_bx .ct_for_p_load {
@@ -5520,18 +5527,13 @@ border-radius: 20px;            text-align: center;
                     <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/krick_sauce_banner122.png" alt="img">
                     <div class="ct_bx_video_banner">
-                        {{!-- <div class="ct_bx_btn_play">
+                        <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
-                        </div> --}}
+                        </div>
                         {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                             src="../img/mob_banner21.PNG" alt="img"> --}}
 
                     </div>
-                    {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        style="margin-top: 29px;width: 96%;margin-left: 7px;" src="../img/banner_poster2x1.PNG"
-                        alt="img">
-                    <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        style="width: 96%;margin-left: 7px;" src="../img/banner_poster21x1.PNG" alt="img"> --}}
 
                 </div>
                 {{!-- <div class="ct_x_flex_btns">
@@ -6160,51 +6162,46 @@ cookSteps_img=cooksteps_src
 
         })
 
-        //document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
-        //    let user11 = getCookie('user')
-        //    if (user11 === '') {
-        //        socket.emit('send_msg_adm2')
-        //    }
-        //    let l = window.screen.width
-        //    let lX
-        //    if (window.screen.width <= 800) {
-        //        lX = 10 / 100 * l
-        //        l = l - lX
-        //    } else {
-        //        lX = 20 / 100 * l
-        //        l = l - lX
-        //    }
-        //    let height = window.screen.height
-        //    let heightX
-        //    let checkSize = (height * 2) + 200
-        //    if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
-        //        heightX = 30 / 100 * height
-        //        height = height - heightX
-
-        //    }
-        //    if (window.screen.height >= window.screen.width) {
-        //        heightX = height * 1 / 2
-        //        height = height - heightX
-        //        document.querySelector('.ct_inner_video').style.top = 28 + '%'
-
-        //    }
-        //    if (window.screen.height > 740 && window.screen.height < window.screen.width) {
-        //        if (window.screen.height > 1550) {
-        //            heightX = 30 / 100 * height
-
-        //        } else {
-        //            heightX = 40 / 100 * height
-
-        //        }
-        //        height = height - heightX
-        //    }
-        //    document.querySelector('.ct_video_over').style.display = 'block'
-        //    document.querySelector('.ct_video_box').style.display = 'flex'
-        //    document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
-        //    document.querySelector('.ct_video_box iframe').style.height = height + 'px'
-        //    document.querySelector('.ct_inner_video').style.width = l + 'px'
-
-        //})
+        document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
+            let user11 = getCookie('user')
+            if (user11 === '') {
+                socket.emit('send_msg_adm2')
+            }
+            let l = window.screen.width
+            let lX
+            if (window.screen.width <= 800) {
+                lX = 10 / 100 * l
+                l = l - lX
+            } else {
+                lX = 20 / 100 * l
+                l = l - lX
+            }
+            let height = window.screen.height
+            let heightX
+            let checkSize = (height * 2) + 200
+            if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
+                heightX = 30 / 100 * height
+                height = height - height
+            }
+            if (window.screen.height >= window.screen.width) {
+                heightX = height * 1 / 2
+                height = height - heightX
+                document.querySelector('.ct_inner_video').style.top = 28 + '%'
+            }
+            if (window.screen.height > 740 && window.screen.height < window.screen.width) {
+                if (window.screen.height > 1550) {
+                    heightX = 30 / 100 * heigh
+                } else {
+                    heightX = 40 / 100 * heigh
+                }
+                height = height - heightX
+            }
+            document.querySelector('.ct_video_over').style.display = 'block'
+            document.querySelector('.ct_video_box').style.display = 'flex'
+            document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
+            document.querySelector('.ct_video_box iframe').style.height = height + 'px'
+            document.querySelector('.ct_inner_video').style.width = l + 'px'
+        })
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
@@ -6693,7 +6690,10 @@ cookSteps_img=cooksteps_src
                             gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}' style='display:block'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
                         }
                     })
+   if (window.screen.width <= 470) {
+                        unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
 
+                    }
                     if (!item.commSoon) {
                         srcM = `href="/recipes/${item.id}"`
                         if (window.screen.width <= 470) {
@@ -6728,7 +6728,6 @@ ${gtocart}
                     }
                     if (window.screen.width <= 470) {
                         srcM = `rel="nofollow"`
-                        unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
 
                     }
                     console.log(item.fdInside)
