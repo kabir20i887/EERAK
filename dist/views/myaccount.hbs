@@ -21111,78 +21111,86 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                 mH2 = 0
             }
             document.querySelector('html').style.overflowY = 'hidden'
-            let tH = (mH2 + mH1) - 6
+            let tH = (mH2 + mH1) + 20
             document.querySelector('.yt-loader').style.position = 'fixed'
             document.querySelectorAll('.yt-loader').forEach(cur => {
                 cur.style.position = 'absolute'
                 if (window.screen.width <= 740) {
                     cur.style.top = tH + 'px'
+                   if(window.screen.width<=470){
+                 cur.style.top ='95px'
+                    }
                 }
             })
-            window.scrollTo(0, 0);
-
-            let user = getCookie('user')
-
-            if (user !== '') {
-                user = JSON.parse(user)
-            } else { user = null }
 
             document.querySelector('.yt-loader').style.display = 'block'
-            document.querySelector('.ct_overfow_for_load').style.display = 'block'
-            let dbCollection = db.collection("users")
-            let likes = JSON.parse(localStorage.getItem('likes'))
-            let dislikes = JSON.parse(localStorage.getItem('dislikes'))
-            let myr = JSON.parse(getCookie('myRatings'))
-            let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
-            dbCollection.get().then(res => {
-                res.docs.forEach(async cur => {
-                    let myorders = cur.data().myOrders
-                    let dataM = cur.data()
-                    if (cur.data().rootAutyh === user.rootAutyh) {
+             window.scrollTo(0, 0);
 
-                        await dbCollection.doc(cur.id).set({
-                            authUser: cur.data().authUser,
-                            rootAutyh: cur.data().rootAutyh,
+        //   
+        //   window.scrollTo(0, 0);
 
-                            data: [user.n, user.ln, user.ad, user.pass, user.service, user.city],
-                            cartItem: allfd,
-                            admin: dataM.admin,
-                            deliv: dataM.deliv,
-                            cartGroc: allgroc,
-                            myOrders: myorders,
-                            myratings: myr,
-                            likes: likes,
-                            fstPurchase: dataM.fstPurchase,
-                            dislikes: dislikes
-                        })
-                        let userDt = getCookie('user')
-                        userDt = JSON.parse(userDt)
-                        localStorage.setItem('foodsAdded', '[]')
-                        document.cookie = "myRatings" + "=" + '[]' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-                        document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-                       // document.cookie = "seen_about" + "=" + 'false' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+        //   let user = getCookie('user')
 
-                        localStorage.setItem('dislikes', '[]')
-                        localStorage.setItem('likes', '[]')
-                        localStorage.removeItem('orders')
-                        localStorage.setItem('grocFoodListCart', '[]')
-                        let auth = userDt.authUser
-                        document.cookie = "user" + "=" + '' + ";expires=Thu, 01 Jan 1970 00:00:00 UTC" + ";path=/";
+        //   if (user !== '') {
+        //       user = JSON.parse(user)
+        //   } else { user = null }
+
+        //   
+        //   document.querySelector('.ct_overfow_for_load').style.display = 'block'
+        //   let dbCollection = db.collection("users")
+        //   let likes = JSON.parse(localStorage.getItem('likes'))
+        //   let dislikes = JSON.parse(localStorage.getItem('dislikes'))
+        //   let myr = JSON.parse(getCookie('myRatings'))
+        //   let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
+        //   dbCollection.get().then(res => {
+        //       res.docs.forEach(async cur => {
+        //           let myorders = cur.data().myOrders
+        //           let dataM = cur.data()
+        //           if (cur.data().rootAutyh === user.rootAutyh) {
+
+        //               await dbCollection.doc(cur.id).set({
+        //                   authUser: cur.data().authUser,
+        //                   rootAutyh: cur.data().rootAutyh,
+
+        //                   data: [user.n, user.ln, user.ad, user.pass, user.service, user.city],
+        //                   cartItem: allfd,
+        //                   admin: dataM.admin,
+        //                   deliv: dataM.deliv,
+        //                   cartGroc: allgroc,
+        //                   myOrders: myorders,
+        //                   myratings: myr,
+        //                   likes: likes,
+        //                   fstPurchase: dataM.fstPurchase,
+        //                   dislikes: dislikes
+        //               })
+        //               let userDt = getCookie('user')
+        //               userDt = JSON.parse(userDt)
+        //               localStorage.setItem('foodsAdded', '[]')
+        //               document.cookie = "myRatings" + "=" + '[]' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+        //               document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+        //              // document.cookie = "seen_about" + "=" + 'false' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+
+        //               localStorage.setItem('dislikes', '[]')
+        //               localStorage.setItem('likes', '[]')
+        //               localStorage.removeItem('orders')
+        //               localStorage.setItem('grocFoodListCart', '[]')
+        //               let auth = userDt.authUser
+        //               document.cookie = "user" + "=" + '' + ";expires=Thu, 01 Jan 1970 00:00:00 UTC" + ";path=/";
 
 
-                        document.querySelectorAll('.yt-loader').forEach(cu => {
-                            cu.style.display = 'none'
-                        })
-                        document.querySelector('.ct_overfow_for_load').style.display = 'none'
+        //               document.querySelectorAll('.yt-loader').forEach(cu => {
+        //                   cu.style.display = 'none'
+        //               })
+        //               document.querySelector('.ct_overfow_for_load').style.display = 'none'
 
-                        document.querySelector('.ct_bx_logout_btn').style['pointer-events'] = 'none'
-                        document.querySelector('.ct_bx_logout_btn').style.opacity = 1
-                        window.location.replace('/')
-                    }
+        //               document.querySelector('.ct_bx_logout_btn').style['pointer-events'] = 'none'
+        //               document.querySelector('.ct_bx_logout_btn').style.opacity = 1
+        //               window.location.replace('/')
+        //           }
 
-                })
+        //       })
 
-            })
+        //   })
         }
         if (document.querySelector('.logout_btn') !== null) {
             document.querySelectorAll('.logout_btn').forEach(cur => {
