@@ -59,7 +59,10 @@
         .ct_bx_slide_bx.active {
             right: 0;
         }
-
+  .ct_pop_up_items_order.active {
+            bottom: -30px;
+        }
+    
         .bx_add_t_cart_btn_itm_dt p ion-icon {
             transform: translate(4px, 3px);
         }
@@ -334,10 +337,11 @@ border-radius: 20px;            text-align: center;
             border-radius: 20px;
             background-color: white;
             position: fixed;
-            bottom: -3%;
             width: 100%;
             padding-bottom: 27px;
-            display: none;
+            display: block;
+            bottom:-800px;            
+            transition: 0.8s ease-in-out;
             z-index: 99999999999999;
         }
 
@@ -3962,6 +3966,7 @@ border-radius: 20px;            text-align: center;
             .crousel1x {
                 margin-top: 143px;
             }
+
     .ct_bx_btn_play {
     margin-top: 38%;
     left: 13%;
@@ -4295,7 +4300,7 @@ border-radius: 20px;            text-align: center;
             }
 
             .logo img {
-                width: 135px;
+                width: 108px;
             }
 
             .logo img {
@@ -5508,10 +5513,7 @@ border-radius: 20px;            text-align: center;
                     <div class="ct_close_video">
                         <ion-icon name="close-outline"></ion-icon>
                     </div>
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/UvrxwU-KFWc"
-                        title="Introducing Krick grocery -  The painkiller of cooking" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                 <iframe width="1280" height="720" src="https://www.youtube.com/embed/XSOe0t7CBSI" title="World's first cooking sauce - krick sauce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="ct_bx_crousel crousel1x">
@@ -5836,8 +5838,9 @@ border-radius: 20px;            text-align: center;
 
     <script>
         var socket = io()
-
-
+if(window.screen.width>470){
+    window.location.replace('/unavailable')
+}
         let arrayItm = [{
             g: 'a',
             about: ["Curry sauce, Taste makers, Chicken, Ginger garlic paste, Butter"
@@ -5994,6 +5997,9 @@ cookSteps_img=cooksteps_src
                 document.querySelector('.added_to_cart').style.display = 'none'
                 document.querySelector('.place_order_btn_popup').style.display = 'block'
                 let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
+                  if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')){
+                        document.querySelector('.ct_pop_up_items_order').classList.add('active')
+                }
                 localItems.forEach(cu => {
                     if (cu.id === id_itm) {
                         itm_pr = cu.price.split('₹')[1].split(',').join('')
@@ -6117,14 +6123,17 @@ cookSteps_img=cooksteps_src
 
             }
             if (itmPopuclose !== null&& itmPopup === null) {
-                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+                
             }
      if (itmPopucloseIcon !== null) {
                 document.querySelector('.ct_pop_up_items_order').style.display = 'none'
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+
             }
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
                 document.querySelector('.ct_video_box').style.display = 'none'

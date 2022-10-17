@@ -2587,6 +2587,9 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script src="../js/jQery.js"></script> --}}
 
     <script>
+        if(window.screen.width>470){
+    window.location.replace('/unavailable')
+}
           function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);

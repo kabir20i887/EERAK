@@ -10152,7 +10152,7 @@
 
             .logo img {
                 margin-top: -7px;
-                width: 135px;
+                width: 108px;
             }
 
             .ct_bx_about_mobile2 p {
@@ -12213,7 +12213,9 @@ font-size: 27px;            }
 
     <script>
         var socket = io()
-
+if(window.screen.width>470){
+    window.location.replace('/unavailable')
+}
         const deliv_price = async () => {
             let dbCollection_deliv_pr = db.collection("delivery_price")
             let res_deliv_pr = await dbCollection_deliv_pr.get()
@@ -13816,7 +13818,9 @@ font-size: 27px;            }
                                             numUnit = parseFloat(numUnit)
                                             ntwe -= (qt * numUnit)
                                         }
-
+                                        if(ntwe<=0){
+                                            ntwe=0
+                                        }
 
                                         let totBuy = 0
 
@@ -14780,7 +14784,7 @@ font-size: 27px;            }
                                     allfd.splice(i1, 1)
                                     localStorage.setItem('foodsAdded', JSON.stringify(allfd))
 
-                                    if (allfd.length === 0 && JSON.parse(localStorage.getItem('grocFoodListCart')).length === 0) {
+                                    if (allfd.length === 0) {
                                         document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
                                         document.querySelector('.for_ek_food_cart').style.display = 'flex'
                                         document.querySelector('.ct_subotatal').style.display = 'none'
@@ -15106,8 +15110,11 @@ font-size: 27px;            }
                             })
                         }
                         //checkingstkcart
+                        if(Numstock===0){
+                            Numstock=itm.unitInit[0].no_stk_limit
+                        }
                         console.log(Numstock, Numstock, numUnit, noReqStock, '--ffiffu9fjfjfff')
-                        if (Numstock !== 0 && Numstock >= numUnit || !noReqStock) {
+                        if (Numstock !== null && Numstock >= numUnit || !noReqStock) {
                             console.log(groc, 'cur22')
 
                             if (groc !== null && groc !== undefined) {
@@ -15831,7 +15838,11 @@ font-size: 27px;            }
                                     htmUNITS = `  <span>${elem.baseMain}</span>
                                 ${prBox}`
                                 }
-
+                                
+                                  if(stock===0){
+                            netweight=itm.unitInit[0].no_stk_limit
+                            stock=itm.unitInit[0].no_stk_limit
+                        }
                                 let contBxqt = ' <div class="ct_bx_qty_inner nottog"></div>'
                                 //                              contBxqt = `   <div class="ct_bx_qty_inner nottog">
                                 //  <div class="ct_bx_weight_qt">
@@ -15890,12 +15901,15 @@ font-size: 27px;            }
                                 //  </ul>
                                 //  </div>
                                 //  </div>`
-
+                                let srcImg=`href="/recipes/${elem.id}"`
+                                    if(window.screen.width<=470){
+                                        srcImg=`rel="nofollow"`
+                                    }
                                 html2 = `<li class="main_li_cart_fd_lis">
         
                                     <div class="ct_itm_food_cart">
                              
-                                    <a class="img_a_cart" href="/recipes/${elem.id}">
+                                    <a class="img_a_cart" ${srcImg}">
         
                                     <img class="main_cart_img" src='${itm.img}' alt='img'>
                                         </a>
@@ -15959,6 +15973,7 @@ font-size: 27px;            }
                                     if (ifd.length !== 0) {
                                         elem.price = "₹" + price
                                         ifd.splice(index, 1)
+                                        alert('pagal21222')
                                         ifd.push(elem)
                                         localStorage.setItem('foodsAdded', JSON.stringify(ifd))
                                     }
@@ -15976,7 +15991,7 @@ font-size: 27px;            }
         
                                     <div class="ct_itm_food_cart">
                              
-                                    <a class="img_a_cart" rel="nofollow">
+                                    <a class="img_a_cart" ${srcImg}>
         
                                     <img class="main_cart_img" src='${itm.img}' alt='img'>
                                         </a>
@@ -16041,6 +16056,7 @@ font-size: 27px;            }
                             stockFin = null
                             let arr = JSON.parse(localStorage.getItem('foodsAdded'))
                             arr.splice(index, 1)
+                                        alert('pagal2122')
                             localStorage.setItem('foodsAdded', JSON.stringify(arr))
                             addBill()
 
@@ -16059,6 +16075,7 @@ font-size: 27px;            }
                                 })
                                 fds.forEach((cur, indx) => {
                                     if (cur.id === itemDb.id) {
+                                        alert('pagal212')
                                         fds.splice(indx, 1)
                                         localStorage.setItem('foodsAdded', JSON.stringify(fds))
 
@@ -16426,13 +16443,15 @@ font-size: 27px;            }
                             addToCart(elem, '.bx_evt_cart_item ul', price, i, cheated)
 
                         } else {
-
+if(allfd.length !== 0){
                             document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
                             document.querySelector('.for_ek_food_cart').style.display = 'flex'
                             document.querySelector('.ct_subotatal').style.display = 'none'
                             document.querySelector('.ct_list_food').style.borderBottom = 'none'
                             document.querySelector('.no_req .ct_list_food').style.width = '97%'
                             document.querySelector('.ct_bin_ts_nav_ck ').style.display = 'none'
+}
+
                         }
                     })
                 }

@@ -56,73 +56,72 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/Login', (req, res) => {
-    res.render('under_construction')
 
-//  let phone = parseFloat(req.query.sv)
-//  let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-//  console.log(Object.keys(req.query).length !== 0,(req.query.forgotpass===undefined),(req.query.updated===undefined),req.query.forgotpass,'hellloooo')
-//  console.log(req.query)
-//
-//  if (req.query.rd === 'true') {
-//      jwt.verify(req.query.forgotpass, 'shhhhh', function (err, decoded) {
-//          console.log(decoded.user)
-//          phone = parseFloat(decoded.user.pn)
-//      })
-//      var token2 = jwt.sign({ n: numberUn }, 'shhhhh');
-//
-//      fst.query({
-//          authorization: authfst,
-//          route: 'dlt',
-//          sender_id: 'krickG',
-//          message: 145384,
-//          variables_values: numberUn,
-//          numbers: phone,
-//          flash: "0",
-//      });
-//
-//      fst.headers({
-//          "cache-control": "no-cache"
-//      });
-//
-//      fst.end(function (res) {
-//          if (res.error) console.log(res.error);
-//
-//          console.log(res.body);
-//      });
-//      res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
-//
-//
-//
-//
-//  }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
-//      var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
-//      phone = parseFloat(req.query.pn)
-//      fst.query({
-//          authorization: authfst,
-//          route: 'dlt',
-//          sender_id: 'krickG',
-//          message: 145384,
-//          variables_values: numberUn,
-//          numbers: phone,
-//          flash: "0",
-//      });
-//
-//      fst.headers({
-//          "cache-control": "no-cache"
-//      });
-//
-//      fst.end(function (res) {
-//          if (res.error) console.log(res.error);
-//
-//          console.log(res.body);
-//      });
-//      res.redirect(`/login?forgotpass=${token}`)
-//      
-//
-//  }else{
-//      res.render('login')
-//
-//  }
+  let phone = parseFloat(req.query.sv)
+  let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
+  console.log(Object.keys(req.query).length !== 0,(req.query.forgotpass===undefined),(req.query.updated===undefined),req.query.forgotpass,'hellloooo')
+  console.log(req.query)
+
+  if (req.query.rd === 'true') {
+      jwt.verify(req.query.forgotpass, 'shhhhh', function (err, decoded) {
+          console.log(decoded.user)
+          phone = parseFloat(decoded.user.pn)
+      })
+      var token2 = jwt.sign({ n: numberUn }, 'shhhhh');
+
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 145384,
+          variables_values: numberUn,
+          numbers: phone,
+          flash: "0",
+      });
+
+      fst.headers({
+          "cache-control": "no-cache"
+      });
+
+      fst.end(function (res) {
+          if (res.error) console.log(res.error);
+
+          console.log(res.body);
+      });
+      res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
+
+
+
+
+  }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
+      var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
+      phone = parseFloat(req.query.pn)
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 145384,
+          variables_values: numberUn,
+          numbers: phone,
+          flash: "0",
+      });
+
+      fst.headers({
+          "cache-control": "no-cache"
+      });
+
+      fst.end(function (res) {
+          if (res.error) console.log(res.error);
+
+          console.log(res.body);
+      });
+      res.redirect(`/login?forgotpass=${token}`)
+      
+
+  }else{
+      res.render('login')
+
+  }
 
 })
 
@@ -130,8 +129,7 @@ app.get('/verify', (req, res) => {
     res.render('verif')
 })
 app.get('/', (req, res) => {
-   //res.render('packed_food_list')
-   res.render('under_construction')
+   res.render('packed_food_list')
 
 })
 app.get('/mail', (req, res) => {
@@ -147,181 +145,175 @@ let all_midellare = {
 }
 
 app.get('/signup', [all_midellare.data], (req, res) => {
-    res.render('under_construction')
 
-//    var cookies2 = new Cookies(req, res)
-//    let inavlid = false
-//    var cookies = cookie.parse('user');
-//    console.log(cookies)
-//    if (Object.keys(req.query).length !== 0) {
-//
-//        if (req.query.authUser) {
-//
-//
-//            let decoded = secret(req.query.authUser)
-//
-//            let phone = decoded.user.phone
-//            let name = `${decoded.user.name_user} ${decoded.user.lastname}`
-//            let offer = decoded.offer
-//            console.log(decoded, offer)
-//
-//            let ph1 = parseFloat(phone.split('')[0])
-//            if (ph1 === 0) {
-//                phone = phone.split('')
-//                phone.splice(0, 1)
-//                phone = phone.join('')
-//            }
-//            console.log(req.query)
-//            if (req.query.checked !== undefined) {
-//                let pass = req.query.checked
-//                if (decoded.id.trim() === pass.trim()) {
-//                    fst.query({
-//                        authorization: authfst,
-//                        route: 'dlt',
-//                        sender_id: 'krickG',
-//                        message: 145385,
-//                        variables_values: `${name}`,
-//                        numbers: phone,
-//                        flash: "0",
-//                    });
-//
-//                    fst.headers({
-//                        "cache-control": "no-cache"
-//                    });
-//
-//
-//                    fst.end(function (res) {
-//                        if (res.error) console.log(res.error);
-//
-//                        console.log(res.body);
-//                    });
-//                    res.redirect('/login')
-//                }
-//            }
-//            var cookies2 = new Cookies(req, res)
-//
-//            var checkSign = cookies2.get('checkSign');
-//            var processSign = cookies2.get('processSign');
-//
-//            //checkSign:  not send otp again if loaded the page , checkSign view if loaded
-//            console.log(checkSign, '#########12###################22####')
-//            if(checkSign===undefined){
-//                var sign = cookies2.get('processSign');
-//                console.log(sign)
-//                if(sign===undefined){
-//                    fst.query({
-//                        authorization: authfst,
-//                        route: 'dlt',
-//                        sender_id: 'krickG',
-//                        message: 145384,
-//                        variables_values: decoded.id,
-//                        numbers: phone,
-//                        flash: "0",
-//                    });
-//
-//                    fst.headers({
-//                        "cache-control": "no-cache"
-//                    });
-//
-//
-//                    fst.end(function (resp) {
-//                        if (resp.error) console.log(resp.error);
-//                        console.log(resp.body);
-//                if(resp.body.return){
-//                }
-//                    });
-//                }
-//            }
-//            var token2 = jwt.sign({ n: number }, 'shhhhh');
-//
-//
-//            if (req.query.rd !== undefined) {
-//                var token2 = jwt.sign({ n: number }, 'shhhhh');
-//                fst.query({
-//                    authorization: authfst,
-//                    route: 'dlt',
-//                    sender_id: 'krickG',
-//                    message: 145384,
-//                    variables_values: decoded.id,
-//                    numbers: phone,
-//                    flash: "0",
-//                });
-//
-//                fst.headers({
-//                    "cache-control": "no-cache"
-//                });
-//
-//
-//                fst.end(function (res) {
-//                    if (res.error) console.log(res.error);
-//
-//                });
-//                res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
-//                return
-//            }
-//
-//
-//
-//        }
-//    }
-//    let tok = {
-//
-//        com: "fortune",
-//        fdInside: null,
-//        group: "veg",
-//        img: "../img/methiEv.jpg",
-//        name: "Everest kasuri Methi 25g",
-//        offer: null,
-//        price: "89",
-//        stock: "14",
-//        unit: null,
-//        unitInside: [{
-//            selectedPrice: "89",
-//            selectedUnit: "25g"
-//        }, {
-//            selectedPrice: "168",
-//            selectedUnit: "50g"
-//        }]
-//    }
-//
-//
-//
-//    bcrypt.hash(number, 4, function (err, hash) {
-//
-//        if (req.query.providedOTP) {
-//
-//            bcrypt.compare(req.query.providedOTP, hash, function (err, result) {
-//                if (result === true) {
-//                    console.log(result)
-//                    res.redirect(`/login?name_user=&last_user=&gmail_user=sss&password=msdhoni7&continue_verify=continue&service=for_whatsapp`)
-//                } else if (result === false) {
-//                    res.render('signup')
-//
-//                }
-//            })
-//        } else {
-//            if (!inavlid) {
-//                res.render('signup')
-//
-//            }
-//
-//        }
-//
-//
-//    });
-//
-//
+    var cookies2 = new Cookies(req, res)
+    let inavlid = false
+    var cookies = cookie.parse('user');
+    console.log(cookies)
+    if (Object.keys(req.query).length !== 0) {
+
+        if (req.query.authUser) {
+
+
+            let decoded = secret(req.query.authUser)
+
+            let phone = decoded.user.phone
+            let name = `${decoded.user.name_user} ${decoded.user.lastname}`
+            let offer = decoded.offer
+            console.log(decoded, offer)
+
+            let ph1 = parseFloat(phone.split('')[0])
+            if (ph1 === 0) {
+                phone = phone.split('')
+                phone.splice(0, 1)
+                phone = phone.join('')
+            }
+            console.log(req.query)
+            if (req.query.checked !== undefined) {
+                let pass = req.query.checked
+                if (decoded.id.trim() === pass.trim()) {
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145385,
+                        variables_values: `${name}`,
+                        numbers: phone,
+                        flash: "0",
+                    });
+
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
+
+
+                    fst.end(function (res) {
+                        if (res.error) console.log(res.error);
+
+                        console.log(res.body);
+                    });
+                    res.redirect('/login')
+                }
+            }
+            var cookies2 = new Cookies(req, res)
+
+            var checkSign = cookies2.get('checkSign');
+            var processSign = cookies2.get('processSign');
+
+            //checkSign:  not send otp again if loaded the page , checkSign view if loaded
+            console.log(checkSign, '#########12###################22####')
+            if(checkSign===undefined){
+                var sign = cookies2.get('processSign');
+                console.log(sign)
+                if(sign===undefined){
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145384,
+                        variables_values: decoded.id,
+                        numbers: phone,
+                        flash: "0",
+                    });
+
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
+
+
+                    fst.end(function (resp) {
+                        if (resp.error) console.log(resp.error);
+                        console.log(resp.body);
+                if(resp.body.return){
+                }
+                    });
+                }
+            }
+            var token2 = jwt.sign({ n: number }, 'shhhhh');
+
+
+            if (req.query.rd !== undefined) {
+                var token2 = jwt.sign({ n: number }, 'shhhhh');
+                fst.query({
+                    authorization: authfst,
+                    route: 'dlt',
+                    sender_id: 'krickG',
+                    message: 145384,
+                    variables_values: decoded.id,
+                    numbers: phone,
+                    flash: "0",
+                });
+
+                fst.headers({
+                    "cache-control": "no-cache"
+                });
+
+
+                fst.end(function (res) {
+                    if (res.error) console.log(res.error);
+
+                });
+                res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
+                return
+            }
+
+
+
+        }
+    }
+    let tok = {
+
+        com: "fortune",
+        fdInside: null,
+        group: "veg",
+        img: "../img/methiEv.jpg",
+        name: "Everest kasuri Methi 25g",
+        offer: null,
+        price: "89",
+        stock: "14",
+        unit: null,
+        unitInside: [{
+            selectedPrice: "89",
+            selectedUnit: "25g"
+        }, {
+            selectedPrice: "168",
+            selectedUnit: "50g"
+        }]
+    }
+
+
+
+    bcrypt.hash(number, 4, function (err, hash) {
+
+        if (req.query.providedOTP) {
+
+            bcrypt.compare(req.query.providedOTP, hash, function (err, result) {
+                if (result === true) {
+                    console.log(result)
+                    res.redirect(`/login?name_user=&last_user=&gmail_user=sss&password=msdhoni7&continue_verify=continue&service=for_whatsapp`)
+                } else if (result === false) {
+                    res.render('signup')
+
+                }
+            })
+        } else {
+            if (!inavlid) {
+                res.render('signup')
+
+            }
+
+        }
+
+
+    });
+
+
 
 })
 
 
 app.get('/mycart', (req, res) => {
-
-   // res.render('ekcart')
-   res.render('under_construction')
-
-
-
+   res.render('ekcart')
 
 })
 app.get('/events', (req, res) => {
@@ -345,9 +337,8 @@ app.get('/admin', (req, res) => {
 })
 app.get('/recipes/:id', (req, res) => {
     console.log(req.params)
-res.render('under_construction')
     if (req.params !== undefined) {
-      //  res.render('items')
+       res.render('items')
 
     }
 })
@@ -359,6 +350,10 @@ app.get('/grocery_plan', (req, res) => {
 let number11 = number1
 app.get('/construction', (req, res) => {
     res.render('under_construction')
+
+})
+app.get('/unavailable', (req, res) => {
+    res.render('unable_website')
 
 })
 app.get('/your-account', (req, res) => {

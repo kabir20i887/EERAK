@@ -18351,7 +18351,7 @@ footer .logo img{
     font-size: 39px;
 }
   .logo img {
-    width: 135px;
+    width: 108px;
     margin-top: -7px;  
 }
 .ct_bx_about_mobile2 p {
@@ -20993,6 +20993,9 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script>let socket = io()
     </script>
     <script>
+        if(window.screen.width>470){
+    window.location.replace('/unavailable')
+}
         var waypoint = new Waypoint({
             element: document.querySelector('.ct_bx_orders'),
             handler: function (direction) {
@@ -22206,7 +22209,7 @@ let cancelBtn = `
                         <div class="ct_flex_bx_cancel_and_info">
                             ${cancel_btn_order}
     <div class="ct_info_box">
-        <p>View others info</p>
+        <p>View other info</p>
     </div>
 </div>
                     `
@@ -22219,7 +22222,10 @@ let cancelBtn = `
                     <span>Order placed</span>
                     <p> ${date}, ${time1}:${time2} ${em}</p>
                 </div>
-
+<div class="ct_bxamount">
+                    <span>Total amount</span>
+                    <p>₹ ${mainPriceFdT.toLocaleString()}</p>
+                </div>
                 <ul>
                     <span>Delivery to</span>
                   
