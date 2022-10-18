@@ -10059,8 +10059,16 @@
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
+            .list_itm_sub_cart span {
+    margin-top: 8px;
+    margin-left: 12px;
+    display: block;
+}
+.list_itm_sub_cart {
+    display: block;
+}
             .no_req .ct_list_food {
-    margin-bottom: 72px;
+    margin-bottom: 25px;
 }
             .for_nav_main {box-shadow: 0 0 4px rgb(0 0 0 / 18%);}
 
@@ -12230,9 +12238,25 @@ font-size: 27px;            }
 
     <script>
         var socket = io()
+        // remove if desktop version is ready
+                var previousOrientation = window.orientation;
+var checkOrientation = function(){
+    if(window.orientation !== previousOrientation){
+        previousOrientation = window.orientation;
+        // orientation changed, do your magic here
+      
+        if(window.screen.width>470){
+            window.location.replace('/unavailable')
+        }
+    }
+};
+
+window.addEventListener("resize", checkOrientation, false);
+window.addEventListener("orientationchange", checkOrientation, false);
 if(window.screen.width>470){
     window.location.replace('/unavailable')
 }
+///---------//
         const deliv_price = async () => {
             let dbCollection_deliv_pr = db.collection("delivery_price")
             let res_deliv_pr = await dbCollection_deliv_pr.get()

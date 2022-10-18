@@ -5860,10 +5860,28 @@ padding: 14px 16px;
     </script>
 
     <script>
-        var socket = io()
+        // remove if desktop version is ready
+
+                var previousOrientation = window.orientation;
+var checkOrientation = function(){
+    if(window.orientation !== previousOrientation){
+        previousOrientation = window.orientation;
+        // orientation changed, do your magic here
+      
+        if(window.screen.width>470){
+            window.location.replace('/unavailable')
+        }
+    }
+};
+
+window.addEventListener("resize", checkOrientation, false);
+window.addEventListener("orientationchange", checkOrientation, false);
 if(window.screen.width>470){
     window.location.replace('/unavailable')
 }
+//--------------------------//
+        var socket = io()
+
         let arrayItm = [{
             g: 'a',
             about: ["Curry sauce, Taste makers, Chicken, Ginger garlic paste, Butter"
