@@ -27,6 +27,13 @@
         ion-icon {
             visibility: hidden;
         }
+     .title_h1 {
+    color: #000000;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    margin: 100px 0 20px 20px;
+}
         .nOp,
 .orderId{display:none}
 
@@ -10052,10 +10059,13 @@
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
+            .no_req .ct_list_food {
+    margin-bottom: 72px;
+}
             .for_nav_main {box-shadow: 0 0 4px rgb(0 0 0 / 18%);}
 
             .ek_cart {
-    height: 100vw;
+    height: auto;
 }
 .bx_evt_cart_item {
     height: 71vw;
@@ -10064,8 +10074,9 @@
     justify-content: center;
 }
             .ct_bx_footer{margin-top: auto;}
-            .body_cart .ct_bx_message_succesfully_ordered.for_erak_cart {
-    margin-bottom: 28px;
+ .body_cart .ct_bx_message_succesfully_ordered.for_erak_cart {
+    margin-bottom: -60px;
+    z-index: 999;
 }
 .ct_nav_erak .for_mobile_search.for_seravh_in_nav{display: none;}
             .ct_bx_flex_msg_cart {
@@ -10536,11 +10547,13 @@
             .for_cart_checkout {
                 width: 89vw;
             }
-
-       .check_out_btn_order {
-    background: #e21515;
+.check_out_btn_order {
     color: rgb(255 255 255);
-    border-color: #ff2200;
+    border-color: #2673d0;
+    background-image: linear-gradient(to right, #1859c8, #3e79dd);
+}
+.ct_deliv_box p {
+    font-family: 'Montserrat';
 }
 
             .for_nav_main .logo {
@@ -10575,7 +10588,9 @@
             .ct_inner_nav {
                 justify-content: space-around;
             }
-
+.title_h1 {
+    margin: 120px 0 20px 20px;
+}
             .ct_bx_div_bottom_nav .ct_flex_bx {
                 padding: 0px;
             }
@@ -11832,14 +11847,14 @@ font-size: 27px;            }
                         </div>
                     </div>
                 </div> --}}
-                <div class="ct_shopping_cart">
-                    <div class="ct_l">
+                               <div class="ct_bx_required_groc Required1">
+                        <h3>Required Grocery</h3>
+                        <div class="ct_bx_inner_requried">
+
+                        </div>
 
                     </div>
-                    {{!-- <h1>Erak's Shopping Cart</h1> --}}
-                </div>
-
-                <div class="ct_bx_message_succesfully_ordered for_erak_cart">
+                                  <div class="ct_bx_message_succesfully_ordered for_erak_cart">
                     <rs class="hidden"></rs>
                     <div class="ct_flex_bx_msg">
                         <ion-icon name="checkmark-circle"></ion-icon>
@@ -11850,142 +11865,7 @@ font-size: 27px;            }
                     <reO>Donot recive any otp <t>resend</t>
                     </reO>
                 </div>
-                <div class="ct_bx_flex_sub_list">
-
-                    <div class="ct_list_food">
-
-
-
-                        <div class="ct_acount_details_cart">
-                            <div class="ct_no_accc_full_bx">
-                                <h2>
-                                    <ion-icon name="person-remove-outline"></ion-icon>
-                                </h2>
-                                <div class="ct_ct_text_about_acc">
-                                    <h3>Opps! you donot have any account.</h3>
-                                    <p>Please sign up or login to place order.</p>
-                                    <a href="/login" class="btn_sign_up_cart for_login_only_cart">
-                                        <span2> Have an account ?</span2> <span>Log In</span>
-                                    </a>
-                                    <a href="/signup" class="btn_sign_up_cart for_signup_only_cart">
-                                        <span2>New to KRICK ?</span2> <span>Sign up</span>
-                                    </a>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="ct_full_cart_fd_ov">
-
-
-
-                            <div class="list_food_cart">
-
-
-                                <div class="sub_tital_order_cart">
-                                    <div class="ct_other_nav_cart">
-
-                                        <div class="ct_bx_diff_group">
-                                            <a href='#order' class="cart_itm_ov  cbtn_cart selected_field">
-                                                <h2>Shopping Cart</h2>
-                                            </a>
-                                            <a href='#orderbussiness' class="cart_itm_ov_b cbtn_cart selected_field">
-                                                <h2>My orders ( Business )</h2>
-                                            </a>
-                                            <div title="Remove all" class='ct_bin_ts_nav_ck itm_cart_nav'>
-                                                <ion-icon class="trash_all" name="trash-outline"></ion-icon>
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="carterr ">
-                                            <ion-icon name="alert-outline"></ion-icon>
-                                            <p></p>
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="bx_kr_business_cart_item">
-                                        <ul>
-
-                                        </ul>
-                                        <div class="loader_cart for_ek_fd_cart_load2">
-
-                                            <div class="loader sm_load">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="bx_evt_cart_item">
-                                        <ul>
-
-                                        </ul>
-
-                                        <div class="loader_cart for_ek_fd_cart_load">
-
-                                            <div class="loader sm_load">
-
-                                            </div>
-                                        </div>
-
-                                        <div class="empty_cart for_ek_food_cart">
-
-
-                                            <div class="ct_bx_flex_msg_cart">
-                                                <h3>Your Krick cart is empty</h3>
-                                                <a href="/">View krick sauce</a>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <div class="ct_bx_grocery_required">
-                                {{!-- <div class="ct_bx_view_all_food2">
-                                    <ion-icon name="arrow-back-outline"></ion-icon>
-                                    <a class="view_all_pack_recom" href="/foods">View all</a>
-
-                                </div> --}}
-                                <h3>You may also need </h3>
-                                <div class="ct_bx_all_groc_required">
-                                    <div class="loader_cart for_grocery">
-                                        <div class="loader sm_load">
-
-                                        </div>
-                                    </div>
-                                    <div class="ct_bx_foods_req">
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-
-                    </div>
-
-                    <div class="ct_bx_required_groc Required1">
-                        <h3>Required Grocery</h3>
-                        <div class="ct_bx_inner_requried">
-
-                        </div>
-
-                    </div>
-
+                    <h1 class="title_h1">Shopping cart</h1>
                     <div class="ct_subotatal" id='ek_cart_sub'>
 
 
@@ -12109,6 +11989,143 @@ font-size: 27px;            }
                         </div>
 
                     </div>
+                <div class="ct_shopping_cart">
+                    <div class="ct_l">
+
+                    </div>
+                    {{!-- <h1>Erak's Shopping Cart</h1> --}}
+                </div>
+
+
+                <div class="ct_bx_flex_sub_list">
+
+                    <div class="ct_list_food">
+
+
+
+                        <div class="ct_acount_details_cart">
+                            <div class="ct_no_accc_full_bx">
+                                <h2>
+                                    <ion-icon name="person-remove-outline"></ion-icon>
+                                </h2>
+                                <div class="ct_ct_text_about_acc">
+                                    <h3>Opps! you donot have any account.</h3>
+                                    <p>Please sign up or login to place order.</p>
+                                    <a href="/login" class="btn_sign_up_cart for_login_only_cart">
+                                        <span2> Have an account ?</span2> <span>Log In</span>
+                                    </a>
+                                    <a href="/signup" class="btn_sign_up_cart for_signup_only_cart">
+                                        <span2>New to KRICK ?</span2> <span>Sign up</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="ct_full_cart_fd_ov">
+
+
+
+                            <div class="list_food_cart">
+
+
+                                <div class="sub_tital_order_cart">
+                                    <div class="ct_other_nav_cart">
+
+                                        <div class="ct_bx_diff_group">
+                                            <a href='#order' class="cart_itm_ov  cbtn_cart selected_field">
+                                                <h2>Your items </h2>
+                                            </a>
+                                            <a href='#orderbussiness' class="cart_itm_ov_b cbtn_cart selected_field">
+                                                <h2>My orders ( Business )</h2>
+                                            </a>
+                                            <div title="Remove all" class='ct_bin_ts_nav_ck itm_cart_nav'>
+                                                <ion-icon class="trash_all" name="trash-outline"></ion-icon>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="carterr ">
+                                            <ion-icon name="alert-outline"></ion-icon>
+                                            <p></p>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="bx_kr_business_cart_item">
+                                        <ul>
+
+                                        </ul>
+                                        <div class="loader_cart for_ek_fd_cart_load2">
+
+                                            <div class="loader sm_load">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bx_evt_cart_item">
+                                        <ul>
+
+                                        </ul>
+
+                                        <div class="loader_cart for_ek_fd_cart_load">
+
+                                            <div class="loader sm_load">
+
+                                            </div>
+                                        </div>
+
+                                        <div class="empty_cart for_ek_food_cart">
+
+
+                                            <div class="ct_bx_flex_msg_cart">
+                                                <h3>Your Krick cart is empty</h3>
+                                                <a href="/">View krick sauce</a>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="ct_bx_grocery_required">
+                                {{!-- <div class="ct_bx_view_all_food2">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>
+                                    <a class="view_all_pack_recom" href="/foods">View all</a>
+
+                                </div> --}}
+                                <h3>You may also need </h3>
+                                <div class="ct_bx_all_groc_required">
+                                    <div class="loader_cart for_grocery">
+                                        <div class="loader sm_load">
+
+                                        </div>
+                                    </div>
+                                    <div class="ct_bx_foods_req">
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+     
 
                 </div>
                 <div class="ct_bx_required_groc Required2">
@@ -13649,8 +13666,8 @@ if(window.screen.width>470){
                         tot += cu
                     })
                     tot = tot.toLocaleString()
-                    socket.emit('sendAdmmessage', namefull, phonec, tot)
-                    socket.emit('newOrderClient', phonec, namefull, tot)
+                    //socket.emit('sendAdmmessage', namefull, phonec, tot)
+                   socket.emit('newOrderClient', phonec, namefull, tot)
                     socket.on('newOrderClient2', async (unique) => {
                         let dbCollection_deliv_pr = db.collection("delivery_price")
                         let res_deliv_pr = await dbCollection_deliv_pr.get()
@@ -13882,7 +13899,7 @@ if(window.screen.width>470){
                                         dbCollection.doc(cur1.id).set({
                                             group: cur1.data().group,
                                             item: obj,
-                                            maxqt: maxqt
+                                            maxqt: []
 
                                         })
 
@@ -14001,10 +14018,7 @@ if(window.screen.width>470){
                                             }
                                         })
                                     }
-                                    //isfree is used for checking which item is free and hasFst is used for checking if the user has free purchase set to true.
-                                    if (hasFst & isfree) {
-                                        freePur = true
-                                    }
+             
                                     if (price.split('₹')[1] !== undefined) {
                                         price = parseFloat(price.split('₹')[1].split(',').join(''))
 
@@ -14020,6 +14034,7 @@ if(window.screen.width>470){
                                     if (cur.baseU2 === undefined) { cur.baseU2 = null }
 
                                     let itmOthers = []
+                                    if(cur.unitInit.length!==0){
                                     if (cur.unitInit[0].name !== undefined) {
                                         cur.unitInit.forEach(curItm => {
                                             if (curItm.added) {
@@ -14031,6 +14046,8 @@ if(window.screen.width>470){
                                     } else {
                                         itmOthers = null
                                     }
+                                    }
+
                                     let obj = {
                                         img: img,
                                         name: name,
@@ -14048,34 +14065,9 @@ if(window.screen.width>470){
                                     console.log(obj, '2391')
 
                                     arrOrders.push(obj)
-
                                 })
-                                localStorage.setItem('foodsAdded', JSON.stringify(allfd))
+                            
                             }
-                            let dTime = JSON.parse(localStorage.getItem('foodsAdded'))[0].dTime
-
-                            foodsarr.forEach(cur => {
-                                console.log(cur, '900qasdhisd')
-                                if (cur.unit === undefined) {
-                                    cur.unit = ``
-                                }
-                                if (cur.forbusiness) {
-                                    let obj = {
-                                        name: cur.name,
-                                        qt: cur.qt,
-                                        typ: 'fd',
-                                        id: cur.id,
-                                        itemsOther: null,
-                                        baseU: cur.unit,
-                                        baseU2: null,
-                                        fstpurchase: false,
-                                        price: "₹ " + String(cur.price),
-                                        forbusiness: true,
-                                    }
-                                    arrOrders.push(obj)
-                                }
-
-                            })
 
                             let priceDeliv = 0
                             if (document.querySelector('.ct_deliv_box.active .main_deliv .prc') !== null) {
@@ -14817,7 +14809,6 @@ if(window.screen.width>470){
             let html
             let timeD = elem.dTime
           
-            document.querySelector('.ek_cart').style.height = 'auto'
             document.querySelector('.bx_evt_cart_item').style.height = 'auto'
             document.querySelector('.bx_evt_cart_item').style.display = 'block'
 
@@ -16440,10 +16431,13 @@ if(window.screen.width>470){
 
                         if (allfd.length !== 0) {
                             let price = parseFloat(elem.price.split('₹')[1].split(',').join(''))
+                            
                             addToCart(elem, '.bx_evt_cart_item ul', price, i, cheated)
 
                         } else {
 if(allfd.length !== 0){
+                document.querySelector('.ek_cart').style.height = '100vh'
+
                             document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
                             document.querySelector('.for_ek_food_cart').style.display = 'flex'
                             document.querySelector('.ct_subotatal').style.display = 'none'

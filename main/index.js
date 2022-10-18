@@ -591,28 +591,28 @@ io.on('connection', (sock) => {
 
     })
     sock.on('newOrderClient', (phone, namefull, amount, address) => {
-        console.log(phone, amount, namefull)
+       // console.log(phone, amount, namefull)
         let unique = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 145386,
-            variables_values: `${namefull}|${amount}|${unique}|`,
-            numbers: phone,
-            flash: "0",
-        });
-
-        fst.headers({
-            "cache-control": "no-cache"
-        });
-
-
-        fst.end(function (res) {
-            if (res.error) console.log(res.error);
-
-            console.log(res.body);
-        });
+       // fst.query({
+       //     authorization: authfst,
+       //     route: 'dlt',
+       //     sender_id: 'krickG',
+       //     message: 145386,
+       //     variables_values: `${namefull}|${amount}|${unique}|`,
+       //     numbers: phone,
+       //     flash: "0",
+       // });
+//
+       // fst.headers({
+       //     "cache-control": "no-cache"
+       // });
+//
+//
+       // fst.end(function (res) {
+       //     if (res.error) console.log(res.error);
+//
+       //     console.log(res.body);
+       // });
 
         io.emit('newOrderClient2', unique)
     })
