@@ -27,6 +27,8 @@
         ion-icon {
             visibility: hidden;
         }
+             .signup_mob_a,
+        .login_mob_a{display: none;}
     .unavailable { padding: 0; margin: 0; width: 100%; height: 100%; }
   .unavailable { text-align: center; padding: 0; background: #d6433b; color: #fff; font-family: Open Sans; }
   .ct_bx_under_maintenance h1 { font-size: 50px; font-weight: 100; text-align: center;}
@@ -108,6 +110,7 @@
             display: none;
         }
 
+   .btn_bottom_nav.ct_bx_signup_mobile,
         .btn_bottom_nav.ct_bx_login_mobile {
             width: 89px;
             height: 35px;
@@ -115,14 +118,19 @@
             justify-content: center;
             padding: 5px 8px;
             border-radius: 20px;
-            background-color: #ff002c;
+            background-color: white;
             padding-top: 10px;
-            margin-top: 26px;
+            margin-top: 17px;
             box-shadow: 0 0 10px #0000004f;
         }
+        .btn_bottom_nav.ct_bx_signup_mobile{
+            width: 126px;background-color: #1f60e2;
+        }
+    
 
+.btn_bottom_nav.ct_bx_signup_mobile p ,
         .btn_bottom_nav.ct_bx_login_mobile p {
-            color: white;
+            color: rgb(0, 0, 0);
             display: flex;
             font-size: 12px;
             font-family: 'Montserrat';
@@ -130,9 +138,19 @@
 
         .btn_bottom_nav.ct_bx_login_mobile ion-icon {
             font-size: 17px;
-            color: white;
+            color: rgb(17, 17, 17);
         }
+.btn_bottom_nav.ct_bx_signup_mobile p {
+    font-size: 10px;
+    margin: 1px 0 0 7px;            color: white;
 
+    }
+     .btn_bottom_nav.ct_bx_signup_mobile ion-icon {
+            font-size: 14px;
+    margin-left: 3px;            color: white;
+
+        }
+       
         /*----------------------------*/
 
 
@@ -4218,6 +4236,25 @@
             .ct_bx_information_cart h3 {
                 font-size: 13px;
             }
+
+.btn_bottom_nav.ct_bx_signup_mobile, .btn_bottom_nav.ct_bx_login_mobile {
+    width: 79px;}
+    .btn_bottom_nav.ct_bx_signup_mobile p{
+    font-size: 9px;
+    }
+    .btn_bottom_nav.ct_bx_login_mobile p {font-size:10px;}
+    .btn_bottom_nav.ct_bx_signup_mobile {
+    width: 120px;
+    background-color: #1f60e2;
+    padding: 10px 0;
+}
+    .btn_bottom_nav.ct_bx_login_mobile ion-icon {
+    font-size: 14px;
+    margin-left: 3px;
+}
+.btn_bottom_nav.ct_bx_signup_mobile {
+    width: 110px;}
+
 
             .body_cart .ct_nav_erak .ct_bx_search {
                 margin-left: 9px;
@@ -10611,6 +10648,23 @@
 .title_h1 {
     margin: 120px 0 20px 20px;
 }
+
+
+         .btn_bottom_nav.ct_bx_signup_mobile, .btn_bottom_nav.ct_bx_login_mobile {
+    width: 79px;}
+.btn_bottom_nav.ct_bx_signup_mobile {
+    width: 120px;
+    background-color: #1f60e2;
+    padding: 10px 0;
+}
+
+    .btn_bottom_nav p {
+    font-size: 11px;
+    }
+    .btn_bottom_nav.ct_bx_login_mobile ion-icon {
+    font-size: 15px;}
+
+
             .ct_bx_div_bottom_nav .ct_flex_bx {
                 padding: 0px;
             }
@@ -10875,7 +10929,7 @@
     margin: 30px 0 0 45px;
 }
             .btn_bottom_nav {
-                padding: 7px 16px;
+                padding: 7px 10px;
             }
 
             .btn_bottom_nav p {
@@ -11816,10 +11870,9 @@ font-size: 27px;            }
     </div>
     <div class="ct_bx_div_bottom_nav">
         <div class="ct_flex_bx">
-            <a href="/your-account#orders">
-
+       <a href="/your-account#orders" class="myOrders_btn_a">
                 <div class="btn_bottom_nav myOrders_btn">
-                    <div class="ct_bx_info">
+                                        <div class="ct_bx_info">
                         <ion-icon name="alert-outline" role="img" class="md hydrated" aria-label="alert outline">
                         </ion-icon>
                     </div>
@@ -11832,7 +11885,7 @@ font-size: 27px;            }
 
             <a href="/mycart">
 
-                <div class="btn_bottom_nav myCart_btn">
+                <div class="btn_bottom_nav">
                     <span class="material-symbols-outlined">
                         shopping_cart
                     </span>
@@ -11851,6 +11904,13 @@ font-size: 27px;            }
                     </span>
                 </div>
 
+            </a>
+             <a href="/signup" class="signup_mob_a">
+
+                <div class="btn_bottom_nav ct_bx_signup_mobile">
+                    <p>Create account <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </p>
+                </div>
             </a>
             <a href="/login" class="login_mob_a">
 
@@ -14449,12 +14509,13 @@ window.addEventListener("orientationchange", checkOrientation, false);
 
 
                 }
-                if (window.screen.width <= 470) {
+                 if (window.screen.width <= 470) {
                     document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
                     document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
                     document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
                     document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
-
+                    document.querySelectorAll('.signup_mob_a').forEach(cur => cur.style.display = 'block')
+                    document.querySelectorAll('.myOrders_btn_a').forEach(cur => cur.style.display = 'none')
                 }
             }
 
