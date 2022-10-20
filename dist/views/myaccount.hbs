@@ -22,6 +22,18 @@
     {{>favicon}}
     <style>
         /*! CSS Used from: Embedded */
+                .unavailable { padding: 0; margin: 0; width: 100%; height: 100%; }
+  .unavailable { text-align: center; padding: 0; background: #d6433b; color: #fff; font-family: Open Sans; }
+  .ct_bx_under_maintenance h1 { font-size: 50px; font-weight: 100; text-align: center;}
+  .unavailable { font-family: 'Open Sans'; font-weight: 100; font-size: 20px; color: #fff; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center;}
+  .ct_bx_under_maintenance article { display: block; width: auto; padding: 50px; margin: 0 auto; }
+  .ct_bx_under_maintenance a { color: #fff; font-weight: bold;}
+  .ct_bx_under_maintenance svg { width: 75px; margin-top: 1em; }
+.ct_bx_under_maintenance p{
+    font-family: 'Open sans';
+}
+.ct_bx_under_maintenance{display: none;}
+
         .ct_bx_slide_bx.active {
             right: 0px 
         }
@@ -20475,6 +20487,17 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
 <body class="for_acc_dt">
 
     {{>nav}}
+    
+    <div class="ct_bx_under_maintenance">
+        <article>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24"><defs><style>.cls-1{fill:#fff;}</style></defs><title>Asset 3</title><g id="Layer_2" data-name="Layer 2"><g id="Capa_1" data-name="Capa 1"><path class="cls-1" d="M101.12,0A101.12,101.12,0,1,0,202.24,101.12,101.12,101.12,0,0,0,101.12,0ZM159,148.76H43.28a11.57,11.57,0,0,1-10-17.34L91.09,31.16a11.57,11.57,0,0,1,20.06,0L169,131.43a11.57,11.57,0,0,1-10,17.34Z"/><path class="cls-1" d="M101.12,36.93h0L43.27,137.21H159L101.13,36.94Zm0,88.7a7.71,7.71,0,1,1,7.71-7.71A7.71,7.71,0,0,1,101.12,125.63Zm7.71-50.13a7.56,7.56,0,0,1-.11,1.3l-3.8,22.49a3.86,3.86,0,0,1-7.61,0l-3.8-22.49a8,8,0,0,1-.11-1.3,7.71,7.71,0,1,1,15.43,0Z"/></g></g></svg>
+    <h1>Under maintenance</h1>
+    <div>
+        <p>Our website is not not compatible for this size. Please use mobile phone to visit krickgrocery.in.</p>
+        <p>&mdash;The Krick team</p>
+    </div>
+</article>
+    </div>
     <div class="animated yt-loader"></div>
     <div class="ct_overfow_for_load">
 
@@ -20993,7 +21016,7 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script>let socket = io()
     </script>
     <script>
-           // remove if desktop version is ready
+    // remove if desktop version is ready
 
                 var previousOrientation = window.orientation;
 var checkOrientation = function(){
@@ -21001,17 +21024,38 @@ var checkOrientation = function(){
         previousOrientation = window.orientation;
         // orientation changed, do your magic here
       
-        if(window.screen.width>470){
-            window.location.replace('/unavailable')
+          if(window.screen.width>470){
+            document.querySelector('.ct_bx_under_maintenance').style.display='block'
+            document.querySelector('.ct_sep_bx').style.display='none'
+            document.querySelector('.for_nav_main').style.display='none'
+            document.querySelector('body').classList.add('unavailable')
+            document.querySelector('.ct_bx_div_bottom_nav').style.display='none'
+            document.querySelector('footer').style.display='none'
+
+        }else{
+                    document.querySelector('.ct_bx_under_maintenance').style.display='none'
+            document.querySelector('.ct_sep_bx').style.display='block'
+            document.querySelector('.for_nav_main').style.display='block'
+            document.querySelector('.ct_bx_div_bottom_nav').style.display='block'
+            document.querySelector('footer').style.display='block'
+            document.querySelector('body').classList.remove('unavailable')
+
         }
     }
 };
 
 window.addEventListener("resize", checkOrientation, false);
 window.addEventListener("orientationchange", checkOrientation, false);
-if(window.screen.width>470){
-    window.location.replace('/unavailable')
-}
+          if(window.screen.width>470){
+                        document.querySelector('.ct_bx_under_maintenance').style.display='block'
+
+            document.querySelector('.ct_sep_bx').style.display='none'
+            document.querySelector('.for_nav_main').style.display='none'
+            document.querySelector('body').classList.add('unavailable')
+            document.querySelector('.ct_bx_div_bottom_nav').style.display='none'
+            document.querySelector('footer').style.display='none'
+
+        }
 //--------------------------//
 
         var waypoint = new Waypoint({
@@ -21144,71 +21188,68 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
             document.querySelector('.yt-loader').style.display = 'block'
              window.scrollTo(0, 0);
 
-        //   
-        //   window.scrollTo(0, 0);
+          let user = getCookie('user')
 
-        //   let user = getCookie('user')
+          if (user !== '') {
+              user = JSON.parse(user)
+          } else { user = null }
 
-        //   if (user !== '') {
-        //       user = JSON.parse(user)
-        //   } else { user = null }
+          
+          document.querySelector('.ct_overfow_for_load').style.display = 'block'
+          let dbCollection = db.collection("users")
+          let likes = JSON.parse(localStorage.getItem('likes'))
+          let dislikes = JSON.parse(localStorage.getItem('dislikes'))
+          let myr = JSON.parse(getCookie('myRatings'))
+          let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
+          dbCollection.get().then(res => {
+              res.docs.forEach(async cur => {
+                  let myorders = cur.data().myOrders
+                  let dataM = cur.data()
+                  if (cur.data().rootAutyh === user.rootAutyh) {
 
-        //   
-        //   document.querySelector('.ct_overfow_for_load').style.display = 'block'
-        //   let dbCollection = db.collection("users")
-        //   let likes = JSON.parse(localStorage.getItem('likes'))
-        //   let dislikes = JSON.parse(localStorage.getItem('dislikes'))
-        //   let myr = JSON.parse(getCookie('myRatings'))
-        //   let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
-        //   dbCollection.get().then(res => {
-        //       res.docs.forEach(async cur => {
-        //           let myorders = cur.data().myOrders
-        //           let dataM = cur.data()
-        //           if (cur.data().rootAutyh === user.rootAutyh) {
+                      await dbCollection.doc(cur.id).set({
+                          authUser: cur.data().authUser,
+                          rootAutyh: cur.data().rootAutyh,
 
-        //               await dbCollection.doc(cur.id).set({
-        //                   authUser: cur.data().authUser,
-        //                   rootAutyh: cur.data().rootAutyh,
+                          data: [user.n, user.ln, user.ad, user.pass, user.service, user.city],
+                          cartItem: allfd,
+                          admin: dataM.admin,
+                          deliv: dataM.deliv,
+                          cartGroc: allgroc,
+                          myOrders: myorders,
+                          myratings: myr,
+                          likes: likes,
+                          fstPurchase: dataM.fstPurchase,
+                          dislikes: dislikes
+                      })
+                      let userDt = getCookie('user')
+                      userDt = JSON.parse(userDt)
+                      localStorage.setItem('foodsAdded', '[]')
+                      document.cookie = "myRatings" + "=" + '[]' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+                      document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+                     // document.cookie = "seen_about" + "=" + 'false' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
 
-        //                   data: [user.n, user.ln, user.ad, user.pass, user.service, user.city],
-        //                   cartItem: allfd,
-        //                   admin: dataM.admin,
-        //                   deliv: dataM.deliv,
-        //                   cartGroc: allgroc,
-        //                   myOrders: myorders,
-        //                   myratings: myr,
-        //                   likes: likes,
-        //                   fstPurchase: dataM.fstPurchase,
-        //                   dislikes: dislikes
-        //               })
-        //               let userDt = getCookie('user')
-        //               userDt = JSON.parse(userDt)
-        //               localStorage.setItem('foodsAdded', '[]')
-        //               document.cookie = "myRatings" + "=" + '[]' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-        //               document.cookie = "firstpurchase" + "=" + '' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-        //              // document.cookie = "seen_about" + "=" + 'false' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-
-        //               localStorage.setItem('dislikes', '[]')
-        //               localStorage.setItem('likes', '[]')
-        //               localStorage.removeItem('orders')
-        //               localStorage.setItem('grocFoodListCart', '[]')
-        //               let auth = userDt.authUser
-        //               document.cookie = "user" + "=" + '' + ";expires=Thu, 01 Jan 1970 00:00:00 UTC" + ";path=/";
+                      localStorage.setItem('dislikes', '[]')
+                      localStorage.setItem('likes', '[]')
+                      localStorage.removeItem('orders')
+                      localStorage.setItem('grocFoodListCart', '[]')
+                      let auth = userDt.authUser
+                      document.cookie = "user" + "=" + '' + ";expires=Thu, 01 Jan 1970 00:00:00 UTC" + ";path=/";
 
 
-        //               document.querySelectorAll('.yt-loader').forEach(cu => {
-        //                   cu.style.display = 'none'
-        //               })
-        //               document.querySelector('.ct_overfow_for_load').style.display = 'none'
+                      document.querySelectorAll('.yt-loader').forEach(cu => {
+                          cu.style.display = 'none'
+                      })
+                      document.querySelector('.ct_overfow_for_load').style.display = 'none'
 
-        //               document.querySelector('.ct_bx_logout_btn').style['pointer-events'] = 'none'
-        //               document.querySelector('.ct_bx_logout_btn').style.opacity = 1
-        //               window.location.replace('/')
-        //           }
+                      document.querySelector('.ct_bx_logout_btn').style['pointer-events'] = 'none'
+                      document.querySelector('.ct_bx_logout_btn').style.opacity = 1
+                      window.location.replace('/')
+                  }
 
-        //       })
+              })
 
-        //   })
+          })
         }
         if (document.querySelector('.logout_btn') !== null) {
             document.querySelectorAll('.logout_btn').forEach(cur => {
