@@ -1,14 +1,14 @@
 <div class="ct_nav_erak for_nav_main for_all_other_nav">
     {{!-- for_member --}}
     <div class="ct_inner_nav">
-        <div class="ct_field_small_size_bx">
+        {{!-- <div class="ct_field_small_size_bx">
             <div class="ct_bx_info">
                 <ion-icon name="alert-outline"></ion-icon>
             </div>
             <div class="ct_field_small_size">
                 <ion-icon name="menu-sharp"></ion-icon>
             </div>
-        </div>
+        </div> --}}
         <div class="logo for_ain_home_logo">
 
             <a href="/">
@@ -89,9 +89,9 @@
                 <a href="/your-account">
 
                     <ion-icon name="person"></ion-icon>
-                <div class="ct_account_bx_mobile">
-<span>Account</span>
-                </div>
+                    <div class="ct_account_bx_mobile">
+                        <span>Account</span>
+                    </div>
                     <div class="ct_acc_dt_ov">
                         <p></p>
                         <h3> </h3>
@@ -100,13 +100,23 @@
 
             </li>
         </ul>
+         <div class="ct_bx_about_mobile2 cart_btn">
+            <a href="/">
+                <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+
+                <p>My Cart</p>
+            </a>
+
+        </div>
         <div class="ct_bx_about_mobile2">
             <a href="/">
-            <span class="material-symbols-outlined">
-home
-</span>
+                <span class="material-symbols-outlined">
+                    home
+                </span>
 
-            <p>Home</p>
+                <p>Home</p>
             </a>
 
         </div>
@@ -200,8 +210,8 @@ home
 
             <li class="my_orders">
                 <div class="ct_bx_info">
-                <ion-icon name="alert-outline"></ion-icon>
-            </div>
+                    <ion-icon name="alert-outline"></ion-icon>
+                </div>
                 <a class='account_nav' href="/your-account#orders">
                     My Orders
                 </a>
