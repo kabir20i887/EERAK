@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krick </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,900;1,700&display=swap"
+    rel="stylesheet">
+</head>
+<style>
+  html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+
+  body {
+    color: #555;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    padding: 0;
+  }
+
+  @font-face {
+    src: url(../others/fonts/MASQUE__.ttf);
+    font-family: masq;
+  }
+
+  @font-face {
+    src: url(../others/fonts/Tahu.ttf);
+    font-family: tahu;
+  }
+@font-face {
+    src: url(../others/fonts/Creamy.ttf);
+    font-family: creamy;
+  }
+  @font-face {
+    src: url(../others/fonts/BebasNeue-Regular.ttf);
+    font-family: bebas;
+  }
+
+  .ct_front_slide {
+    background-image: linear-gradient(to bottom, rgb(0 0 0 / 48%), rgb(0 0 0 / 93%)), url(../img/univ_img_back.jpeg);
+    /* background-color: rgba(0, 0, 0, 0.247); */
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+  }
+
+  .flex_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ct_logo {
+    width: 13%;
+  }
+
+  .ct_logo img {
+
+    width: 100%;
+  }
+
+  .ct_bx_texts h1 {
+    font-family: 'font_x';
+
+    color: white;
+  }
+
+  .ct_bx_texts h2 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+
+  }
+
+  .ct_text_cont {
+    width: max-content;
+    margin-left: 27%;
+    margin-top: 9%;
+  }
+
+  .ct_2nd_slide {
+    width: 100vw;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .ct_2nd_slide h2,
+  .ct_2nd_slide h1,
+  .ct_2nd_slide h3 {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    margin: 0;
+  }
+
+  .ct_2nd_slide h2 {
+    font-size: 66px;
+    margin: 0;
+    margin-top: -6px;
+    margin-bottom: 10px;
+  }
+
+  .ct_2nd_slide .h1_11 {
+    font-size: 165px;
+    margin: 0;
+    margin-top: -46px;
+    letter-spacing: 1px;
+    transition: 0.4s linear;
+    color: rgb(14, 13, 13);
+    padding: 0 0;
+    /*
+        clip-path: polygon(0 0, 0% 0, 0% 0%, 0% 0%);    background-color: black;
+
+*/
+  }
+
+  .ct_2nd_slide .h1_11:nth-child(2) {
+    font-size: 81px;
+    margin: 43px 0 0 19px;
+  }
+
+  .ct_2nd_slide .h1_22 {
+    font-size: 165px;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+    margin-top: -52px;
+    letter-spacing: 1px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(325deg, #2b8bf3, #0cb6f5 24%, #08ddfc 45%, #1bece4 76%, #21a9f7);
+    will-change: transform;
+  }
+
+  .ct_flex {
+    display: flex;
+  }
+
+  .ct_2nd_slide h3 {
+    font-size: 53px;
+    margin: 9px 14px;
+  }
+
+  .ct_3rd_slide {
+    width: 100vw;
+    /* overflow: hidden; */
+    height: 70vw;
+    background-color: black;
+    box-sizing: border-box;
+    position: relative;
+    transition: 1s linear;
+
+  }
+
+.ct_3rd_slide .waves {
+    display: block;
+    width: 180vw;
+    height: 61vh;
+    position: absolute;
+    transition: 1s linear;
+    /* transform: skew(6deg, 1deg); */
+    top: -194px;
+    z-index: -9;
+    margin-top: 0;
+    margin-left: -8%;
+    background: black;
+    clip-path: ellipse(49% 37% at 50% 52%);
+}
+  .ct_3rd_slide .wave2 {
+    z-index: 1000;
+    width: 100vw;
+    opacity: 0.5;
+    margin-top: 11px;
+  }
+
+  .ct_3rd_slide h3 {
+    font-size: 43px;
+    transition: 0.6s;
+    opacity: 0;
+    color: #e5e5e5;
+    transition: 0.6s;
+
+    margin: 64px 20px 0 28px;
+  }
+
+  .ct_3rd_slide h3 {
+    font-size: 34px;
+    color: #e5e5e5;
+    margin: 75px 20px 0 28px;
+  }
+
+  .ct_3rd_slide .ct_text_cont {
+    width: max-content;
+    margin-left: 15%;
+    margin-top: 15%;
+    transition: 0.6s;
+    transform: translate(0px, 410px);
+  }
+
+  .ct_3rd_slide .h1_11_22,
+  .ct_3rd_slide .h1_11 {
+    color: #e5e5e5;
+    font-size: 180px;
+    transition: 0.6s;
+    opacity: 0;
+    margin: 0;
+    margin-top: -17px;
+    position: absolute;
+    margin-left: -38px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /*
+    background-image: linear-gradient(325deg, #4df01c, #0cf543 24%, #08fc91 45%, #1bec8f 76%, #21a9f7);
+    */
+    will-change: transform;
+  }
+
+  .ct_3rd_slide .h1_11_22 {
+    background-image: linear-gradient(325deg, #4df01c, #0cf543 24%, #08fc91 45%, #1bec8f 76%, #3cff04);
+  }
+
+  @keyframes fillW {
+    5% {
+      clip-path: polygon(0 90%, 15% 91%, 36% 94%, 54% 96%, 72% 94%, 86% 94%, 100% 95%, 100% 100%, 1% 100%);
+
+    }
+
+    10% {
+      clip-path: polygon(0 75%, 14% 74%, 25% 78%, 44% 88%, 70% 88%, 87% 82%, 99% 75%, 100% 100%, 0% 99%);
+
+    }
+
+    30% {
+      clip-path: polygon(0 65%, 12% 66%, 25% 70%, 40% 78%, 59% 82%, 81% 82%, 100% 76%, 100% 100%, 0% 99%);
+
+    }
+
+    50% {
+      clip-path: polygon(0 33%, 14% 32%, 32% 38%, 52% 50%, 71% 46%, 80% 48%, 100% 56%, 100% 99%, 0% 99%);
+
+    }
+
+    70% {
+      clip-path: polygon(0 15%, 12% 13%, 30% 16%, 56% 32%, 74% 36%, 88% 25%, 100% 20%, 100% 100%, 0% 99%);
+
+    }
+
+    100% {
+      clip-path: polygon(0 0, 12% 0, 32% 0, 51% 0, 73% 0, 90% 0, 100% 0, 100% 100%, 0% 99%);
+
+    }
+  }
+
+  .ct_animte_h1 {
+    height: 194px;
+  }
+
+  .ct_3rd_slide h2 {
+    color: #e5e5e5;
+    font-size: 61px;
+    transition: 0.6s;
+    opacity: 0;
+  }
+
+  .ct_3rd_slide .h1_22 {
+    color: #e5e5e5;
+    transition: 0.6s;
+    opacity: 0;
+    font-size: 74px;
+    margin: 31px 0 0 14%;
+  }
+
+  .ct_3rd_slide .h1_33 {
+    font-size: 177px;
+    color: #e5e5e5;
+    transition: 0.6s;
+    opacity: 0;
+    margin: 0;
+    margin-top: -9px;
+    margin-left: -4%;
+
+  }
+  .ct_inner_box2 .ct_text_cont{
+    transform: translate(0px, 0px);    margin-top: 0;
+  }
+</style>
+
+<body>
+  {{!-- <div class="ct_front_slide">
+    <div class="flex_box">
+
+      <div class="ct_logo">
+        <img src="../img/krick_logo.png" alt="">
+      </div>
+    </div>
+    <div class="flex_box">
+      <div class="ct_bx_texts">
+        <h1>X</h1>
+        <h2>The Inovation of 2023</h2>
+      </div>
+    </div>
+  </div> --}}
+  <section>
+    <div class="ct_2nd_slide">
+      <div class="ct_text_cont">
+        <div class="ct_flex">
+          <h3>Now,</h3>
+          <h2>NO Oil. No Onion.</h2>
+        </div>
+
+
+        <div class="ct_flex">
+          <h1 class="h1_11">Nothing</h1>
+          <h1 class="h1_11">is</h1>
+
+        </div>
+        <h1 class="h1_22"> Required.</h1>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="ct_3rd_slide">
+    <div class="waves wave1"></div>
+
+
+    <div class="ct_inner_box">
+      <div class="ct_text_cont">
+        <div class="ct_flex">
+          <h3>No, No.</h3>
+          <h2>Nothing Is Suspicious </h2>
+        </div>
+
+        <div class="ct_animte_h1">
+          <h1 class="h1_11">All Natural</h1>
+          <h1 class="h1_11_22">All Natural</h1>
+        </div>
+
+
+        <h1 class="h1_22">Yes, That's an </h1>
+
+        <h1 class="h1_33"> Innovation.</h1>
+      </div>
+    </div>
+
+    
+    <div class="ct_inner_box2">
+      <div class="ct_text_cont">
+          <h3>To Bring a shift </h2>
+
+          <h2 class="h2_forbx2">From Uncomfortable Cooking</h1>
+
+
+        <h1 class="h1_forbx2">To</h1>
+
+        <h1 class="h1_forbx2_2"> Efforless Cooking</h1>
+                <h1 class="h1_forbx2_3">Expeirence</h1>
+
+      </div>
+    </div>
+  </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../others/imakewebthings-waypoints-34d9f6d/lib/jquery.waypoints.min.js"></script>
+
+
+<script>
+
+  $(document).ready(function () {
+    $(window).on('load', function () {
+      console.log($(".h1_11"))
+      //$(".h1_11").css({'clip-path':"polygon(0px 0px, 100% 0px, 100% 97%, 0% 85%)"});
+
+
+    });
+
+
+
+
+
+    $(window).scroll(function () {
+      var waypoints = $('.ct_3rd_slide').waypoint({
+        handler: function (dir) {
+          if (dir === 'down') {
+            document.querySelector('.ct_3rd_slide .waves').style.width = `${115}vw`
+            $(".ct_3rd_slide h3").animate({ opacity: '1' })
+            $(".ct_3rd_slide h2").animate({ opacity: '1' })
+            $(".ct_3rd_slide h2").animate({ opacity: '1' })
+            $(".ct_3rd_slide .h1_11_22").css({ animation: 'fillW 2.6s ease-in', opacity: '1' })
+
+            $(".ct_3rd_slide .h1_11").delay(400).animate({ opacity: '1' })
+            $(".ct_3rd_slide .h1_22").delay(500).animate({ opacity: '1' })
+            $(".ct_3rd_slide .h1_33").delay(600).animate({ opacity: '1' })
+            $(".ct_3rd_slide .ct_text_cont").css({ transform: 'translate(0px, 110px)' })
+
+
+          } else {
+            document.querySelector('.ct_3rd_slide .waves').style.width = `${180}vw`
+
+          }
+
+        },
+        offset: '60%'
+      })
+
+    })
+  })
+
+  const buttons = document.getElementsByTagName("button");
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      var id = button.getAttribute("id");
+
+      var layerClass = "." + id + "-layer";
+      var layers = document.querySelectorAll(layerClass);
+      for (const layer of layers) {
+        layer.classList.toggle("active");
+      }
+    });
+  }
+  // Options
+
+  var slide_time = 1200; // The time it takes to complete an entire transition
+  var change_point = slide_time / 2; // Calculates when the slide should change
+  var right_arrow = $('.easytransitions_navigation__right'); // Element that trigger move right
+  var left_arrow = $('.easytransitions_navigation__left'); // Element that trigger move left
+  var slide_amount = $('.easytransitions section').length; // How many slides
+  var current_slide = 1; // Starting slide
+  var on = 1;
+
+  right_arrow.click(function () {
+    if (on == 1) {
+      on = 0;
+      if (current_slide < slide_amount) {
+        current_slide++;
+        var active_slide = $('.active_slide').next()
+        set_transition(active_slide);
+        setTimeout(function () {
+          $('.active_slide').hide().removeClass('active_slide').next().addClass('active_slide').show();
+        }, change_point);
+        setTimeout(function () {
+          on = 1;
+        }, slide_time);
+      } else {
+        // End
+      }
+    }
+  });
+
+  left_arrow.click(function () {
+    if (on == 1) {
+      on = 0;
+      if (current_slide > 1) {
+        current_slide--;
+        var active_slide = $('.active_slide').prev()
+        set_transition(active_slide);
+        setTimeout(function () {
+          $('.active_slide').hide().removeClass('active_slide').prev().addClass('active_slide').show();
+        }, change_point);
+        setTimeout(function () {
+          on = 1;
+        }, slide_time);
+      } else {
+        // Start
+      }
+    }
+  });
+
+  // Set transition type
+
+  function set_transition(tran) {
+    var transition_type = tran.data('transition')
+    $('.easytransitions_transition div').each(function () {
+      $(this).removeClass(this.className.split(' ').pop());
+      setTimeout(function () {
+        $('.easytransitions_transition div').addClass(transition_type)
+      }, 100)
+
+    })
+  }
+
+</script>
+
+</html>

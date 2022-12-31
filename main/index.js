@@ -128,10 +128,14 @@ app.get('/Login', (req, res) => {
 app.get('/verify', (req, res) => {
     res.render('verif')
 })
-app.get('/', (req, res) => {
+app.get('/sauce', (req, res) => {
    res.render('packed_food_list')
 
 })
+app.get('/', (req, res) => {
+    res.render('portfolio')
+ 
+ })
 app.get('/mail', (req, res) => {
     res.render('mail')
 })
