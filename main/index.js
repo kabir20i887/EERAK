@@ -133,6 +133,10 @@ app.get('/sauce', (req, res) => {
 
 })
 app.get('/', (req, res) => {
+    res.render('main_page')
+ 
+ })
+ app.get('/aboutus', (req, res) => {
     res.render('portfolio')
  
  })

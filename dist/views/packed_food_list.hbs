@@ -26,13 +26,233 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    {{>favicon}}
+    {{!-- {{>favicon}} --}}
 
     <style>
+        /*-----------crousel----------------*/
+
+
+        .crousel {
+            width: 90%;
+            height: auto;
+            position: relative;
+            margin-top: 0px;
+        }
+
+        .ct_bx_flex {
+            display: flex;
+
+        }
+
+        .ct_bx_buttons_actions.active {
+            background: #1873ff;
+
+        }
+
+        .ct_crousel_btn {
+            margin-top: 11px;
+            margin-left: 83%;
+        }
+
+        .inner_slide {
+            width: 100vw;
+            height: auto;
+            margin: -10px auto;
+            display: flex;
+            padding-right: 40px;
+            justify-content: left;
+            overflow-x: overlay;
+            transition: all 1.5s ease;
+            padding: 23px;
+        }
+
+        .ct_bx_buttons_actions {
+            background: transparent;
+            border: 1px solid #1873ff;
+            padding: 10px 11px;
+            border-radius: 50%;
+        }
+
+        .ct_bx_buttons_actions ion-icon {
+            color: #1873ff;
+            font-size: 17px;
+        }
+
+        .ct_bx_buttons_actions.active ion-icon {
+            color: white;
+        }
+
+
+        .ct_dt_tm_food_res h4 {
+            color: #5d5d5d;
+            font-size: 15px;
+            font-family: 'Montserrat';
+
+        }
+
+
+        /* for essentials */
+
+        .ct_img_res_main img {
+            width: 55%;
+            /*filter: drop-shadow(0px 21px 15px #00000024);*/
+        }
+
+        .fd_ek_cell_car_recom {
+            width: 220px;
+            height: auto;
+            margin: 10px 5px 0 5px;
+            position: relative;
+            left: 0;
+            box-shadow: 0 0 2px #00000038;
+            padding: 7px;
+            border-radius: 12px;
+            transition: all 1s ease;
+        }
+
+        . .itm_food_list_ek {
+            margin: 14px 0 0px 10px;
+            width: auto;
+            cursor: pointer;
+            /* border: 1px solid; */
+            padding-bottom: 20px;
+            box-shadow: 0 0 2px #0000005c;
+            padding: 10px 10px;
+            border-radius: 13px;
+            padding-bottom: 31px;
+        }
+
+        .ct_addbtns {
+            padding: 8px 10px;
+            width: max-content;
+            background-color: black;
+            border-radius: 10px;
+            margin: 9px 3px;
+        }
+
+        .ct_addbtns p {
+            color: white;
+            font-size: 10px;
+            font-family: 'Montserrat';
+        }
+
+
+        .ct_img_res_main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ct_unit_box_selector {
+            display: flex;
+            border: 1px solid #a7a7a7;
+            height: 26px;
+        }
+
+        .ct_pr_bx_unit span,
+        .ct_pr_bx_unit p {
+            font-size: 12px;
+            color: black;
+            margin: 4px;
+            margin-right: 5px;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .ct_popup_unit_btn {
+            border-left: 1px solid #919090;
+            color: #282a29;
+            padding-top: 2px;
+        }
+
+        .ct_bx_priceandoff {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .ct_bx_priceandoff p {
+            color: #000000e3;
+            font-size: 16px;
+            /* font-family: 'poppins'; */
+            font-family: Montserrat;
+            margin: -2px 9px;
+        }
+
+        .ct_bx_priceandoff del {
+            color: #5b5b5be3;
+            font-size: 11px;
+            font-family: 'poppins';
+            margin: 1px 0 0 8px;
+        }
+
+        .ct_pr_bx_unit {
+            width: 97%;
+            display: flex;
+            margin-left: 9px;
+        }
+
+        .recomended_cart .ct_dt_tm_food_res h4 {
+            font-size: 16px;
+            font-family: 'roboto';
+            font-weight: 500;
+            margin: 11px 0 8px 3px;
+            color: #282828;
+        }
+
+
+
+        /*---------------------------------*/
+
+
+
+
         .ct_qty_box {
             display: flex;
             margin: 19px 20px;
         }
+
+        .recomended_cart {
+            border-top: 1px solid black;
+            border-top: 1px solid #b6b6b6;
+            padding: 16px 0;
+        }
+
+        .recomended_cart h4 {
+            color: #1a1a1a99;
+            display: block;
+            font-family: 'Montserrat';
+            font-size: 16px;
+            /* text-transform: uppercase; */
+            margin: 0px 16px;
+            word-spacing: 3px;
+        }
+
+
+        .ct_bx_go_back {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #0000009e;
+            width: 100%;
+            padding: 17px;
+        }
+
+        .ct_bx_go_back ion-icon {
+            color: black;
+        }
+
+        .ct_bx_go_back ion-icon {
+            color: white;
+            margin-right: 11px;
+        }
+
+        .ct_bx_go_back p {
+            color: white;
+            font-family: 'Montserrat';
+            font-size: 17px;
+        }
+
 
         .material-symbols-outlined {
             font-variation-settings:
@@ -43,10 +263,10 @@
         }
 
         .btn_qtys {
-                background: #dcdcdc;
-            border-radius: 20px 0 0px 20px;
+            background: #ffffff;
+            border-radius: 5px 0 0px 5px;
             padding: 1px 7px;
-
+            box-shadow: 0 0 4px #0000006b;
         }
 
         .ct_qty_box input {
@@ -54,13 +274,16 @@
             font-size: 14px;
             padding: 7px;
             text-align: center;
-            color: black;border: 1px solid #cdcdcd;
+            color: black;
+            border: 1px solid #cdcdcd;
         }
-        .ct_qty_box p{
+
+        .ct_qty_box p {
             font-size: 14px;
-    font-family: 'open sans';
-    margin: 10px 15px 0 4px;
+            font-family: 'open sans';
+            margin: 10px 15px 0 4px;
         }
+
         .btn_qtys .material-symbols-outlined {
             color: #4b4b4b;
             margin-top: 7px;
@@ -68,7 +291,7 @@
         }
 
         .btn_qtys.inc_btn {
-            border-radius: 0px 20px 20px 0px;
+            border-radius: 0px 5px 5px 0px;
         }
 
         .btn_qtys ion-icon {
@@ -117,66 +340,6 @@
             margin: 3px 8px;
             font-family: 'open sans';
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* the crousel */
-        .crousel {
-            width: 90%;
-            height: auto;
-            position: relative;
-            margin-top: 0px;
-        }
-
-        .ct_bx_flex {
-            display: flex;
-
-        }
-
-        .inner_slide {
-            width: 100vw;
-            height: auto;
-            margin: -10px auto;
-            display: flex;
-            padding-right: 40px;
-            justify-content: left;
-            overflow-x: overlay;
-            transition: all 1.5s ease;
-        }
-
-        .fd_ek_cell_car_recom {
-            min-width: 217px;
-            height: auto;
-            margin: 10px 5px 0 5px;
-            position: relative;
-            left: 0;
-            transition: all 1s ease;
-        }
-
-        .itm_food_list_ek {
-            margin: 14px 0 0px 10px;
-            width: 20%;
-            cursor: pointer;
-            padding-bottom: 20px;
-        }
-
-        /*--------------------------------------------------------------------------------*/
 
         .ct_bx_info_sauce {
             border: 1.5px dotted black;
@@ -266,26 +429,53 @@
         }
 
         .ct_bx_fooditm .item_intro {
-            font-size: 14px;
+            font-size: 11px;
             border-radius: 5px;
-            font-family: 'roboto';
-            width: 92%;
+            color: #5e5e5e;
+            font-family: 'open sans';
+            width: 100%;
+            line-height: 13px;
             font-weight: 500;
             margin: 3px 0 6px 3px;
         }
 
         /*---------footer------------*/
-        .ct_logox img {
-            width: 64%;
+        .ct_logox {
+            width: 14%;
+            margin-top: -1px;
         }
 
-        .ct_logox {
-            width: 19%;
-            margin-top: -9px;
+        .follow_us ion-icon {
+            color: black;
+            font-size: 22px;
+        }
+
+        .ct_logox img {
+            width: 27%;
         }
 
         .coppy_right {
-            margin: 20px 7px 0 10px;
+            margin: 37px 7px 0 10px;
+        }
+
+        .about_us_link {
+            width: 13%;
+            margin: 35px 0 0px 8px;
+        }
+
+        .about_us_link a {
+            font-size: 13px;
+            color: #424242;
+            font-family: 'open sans';
+        }
+
+        .flex_box_fotter {
+            padding-top: 16px;
+        }
+
+        .follow_us {
+            width: auto;
+            margin-top: 32px;
         }
 
         .coppy_right p {
@@ -295,61 +485,22 @@
             font-weight: 600;
         }
 
-        .about_us_link a {
-            font-size: 13px;
-            color: #424242;
-            font-family: 'open sans';
-        }
-
-        .about_us_link {
-            width: 24%;
-            margin: 19px 0 0px 8px;
-        }
-
-        .follow_us {
-            width: 20%;
-            margin-top: 17px;
-        }
-
-        .follow_us ion-icon {
-            color: black;
-            font-size: 22px;
-        }
-
-        /*----------------------------------*/
-
-
         .flex_box_fotter {
             display: flex;
             width: 100vw;
             justify-content: center;
         }
 
-        .ct_go_back p {
-            font-size: 15px;
-            font-family: 'Montserrat';
-        }
+        /*----------------------------------*/
 
-        .ct_go_back {
-            display: flex;
-            margin: 26px 0 0 10px;
-            /* display: inline-block; */
-            width: max-content;
-            padding: 7px 15px;
-            /* box-shadow: 0 1px 2px #cdcdcd; */
-            border-radius: 7px;
-        }
 
-        .ct_go_back:active {
-            background: whitesmoke;
 
-        }
 
         .ct_select_qty_bx h3 {
-            font-size: 15px;
-            font-weight: 600;
-            font-family: 'open sans';
-            color: #000000;
+            color: #1a1a1a99;
+            display: block;
+            font-family: 'Montserrat';
+            font-size: 16px;
             margin-left: 0;
             padding-bottom: 7px;
             padding-left: 15px;
@@ -403,7 +554,7 @@
 
         .buy_now,
         .add_cart_btn {
-            background-color: #e81626;
+            background-color: #1660e8;
             color: white;
             text-transform: uppercase;
             text-align: center;
@@ -545,13 +696,13 @@
         }
 
         .ct_pop_up_items_order.active {
-            bottom: 0px;
+            bottom: -44px;
         }
 
 
         .ct_bx_img img {
             width: 100%;
-            margin: 38px 0 0 2px;
+            margin: 0 0 0 2px;
         }
 
         .bx_add_t_cart_btn_itm_dt p ion-icon {
@@ -559,13 +710,15 @@
         }
 
         .ct_bx_for_ingredients h4 {
-            color: #000000;
+            color: #1a1a1a99;
             display: block;
             font-family: 'Montserrat';
-            font-size: 15px;
-            text-transform: uppercase;
+            font-size: 16px;
+            text-transform: capitalize;
             margin: 0px 16px;
-            word-spacing: 3px;
+            word-spacing: 1px;
+
+
             /* text-transform: uppercase; */
         }
 
@@ -706,7 +859,8 @@
         }
 
         .for_unit_itm {
-            font-size: 14px;
+            font-size: 11px;
+            margin-left: 3px;
             margin-top: 6px;
             color: #0c0c0c;
             font-family: 'Inter Tight';
@@ -783,18 +937,19 @@
         }
 
         .ct_bx_layer {
-            background-color: rgb(0 0 0 / 59%);
+            background-color: rgb(0 0 0 / 26%);
             width: 100%;
             height: 100vh;
-            display: none;
-            z-index: 99999999999;
+            display: block;
+            z-index: 99999999;
             position: fixed;
         }
 
         .ct_remove_bx_pop_p {
             position: absolute;
             right: 5%;
-            top: -10%;
+            top: -7%;
+            display: none;
             z-index: 99999999999999;
         }
 
@@ -808,7 +963,7 @@
             z-index: 999;
             border-radius: 50%;
             transform: translate(2px, -2px);
-            background-color: #086bff;
+            background-color: #2b3bff;
         }
 
         .ct_offer_box_cook2 span {
@@ -862,18 +1017,29 @@
             padding-bottom: 27px;
             display: block;
             bottom: -800px;
-            height: 100vh;
+            height: 92vh;
             transition: 0.8s ease-in-out;
             z-index: 99999999999999;
+            border-radius: 31px;
+        }
+
+        .ct_pop_up_items_order {
+            display: none;
+            width: 40vw;
+            position: fixed;
+            box-shadow: 0 0 10px #0000005e;
             border-radius: 0;
+            right: 0;
+            top: 0;
+            height: 100vh;
         }
 
         .ct_popup_inner {
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: 31px;
             height: inherit;
             overflow-y: scroll;
-            border-radius: 0;
+            padding-bottom: 60px;
         }
 
         .ct_pop_up_items_order .name_of_itm {
@@ -1345,7 +1511,7 @@
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
-            overflow-x: hidden
+            overflow-x: hidden;
         }
 
         body {
@@ -1766,9 +1932,9 @@
         }
 
         .ct_bx_price_fd del {
-            font-size: 15px;
+            font-size: 12px;
             color: #000;
-            margin-top: 2px;
+            margin-top: 7px;
         }
 
         .cart_nav a {
@@ -1944,8 +2110,8 @@
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
-            margin-top: 4px;
-            font-size: 23px
+            margin-top: 0px;
+            font-size: 19px;
         }
 
         .ct_bx_price_fd.hasoffPrice {
@@ -2039,22 +2205,28 @@
             font-size: 22px
         }
 
-        .ct_bx_fooditm .main_im {
-            width: 21.2%;
-            border-radius: 5px;
-            position: absolute;
-            transform: translate(4px, -198px);
-            height: 197px
-        }
+            .ct_bx_fooditm .main_im {
+                width: 54%;
+                height: auto;
+                position: revert;
+                margin-left: 48px;
+                transform: translate(0px, 0px);
+            }
 
         .ct_bx_inner_food_groc {
-            margin-top: 184px;
+            margin-top: 0;
             padding: 8px
         }
 
         .ct_bx_fooditm {
             margin-right: 20px;
-            margin: 20px 8px 20px 20px
+            /* width: 25%; */
+            margin: 20px 8px 20px 20px;
+            /* border: 1px solid; */
+            /* color: black; */
+            box-shadow: 0 0 2px #0000005c;
+            border-radius: 7px;
+            padding: 14px 0px;
         }
 
         .ct_bx_fooditm a .ct_bx_flex {
@@ -2073,11 +2245,11 @@
         .ct_bx_fooditm h4 {
             font-size: 19px;
             text-transform: capitalize;
-            font-weight: 700;
-            font-family: 'Poppins';
             width: 100%;
             line-height: 1.3;
-            color: #4d4d4d;
+            color: #252525;
+            font-weight: 500;
+            font-family: 'roboto';
         }
 
         * {
@@ -2289,19 +2461,19 @@
 
         .ct_bx_fooditm .ct_bx_price_fd p {
             font-size: 18px;
-            color: #b00f0f;
-            font-family: Montserrat
+            color: #e30c0c;
+            font-family: Montserrat;
         }
 
         .ct_all_list_food h2 {
-            font-size: 23px;
-            color: #646464;
+            font-size: 20px;
+            color: #696969;
             text-transform: capitalize;
             padding: 0 40px 10px 10px;
             margin-left: 8px;
-            margin-top: 33px;
-            margin-bottom: 27px;
-            font-weight: 600;
+            margin-top: 12px;
+            margin-bottom: 0;
+            font-weight: 700;
             font-family: 'poppins';
         }
 
@@ -2344,7 +2516,7 @@
             border-radius: 0;
             margin-top: 79px;
             overflow: hidden;
-            height: 280px;
+            height: auto;
         }
 
         .ct_slide_bx_crousel {
@@ -2382,11 +2554,9 @@
             z-index: 999999
         }
 
-
-
         .ct_slide_bx_crousel img {
             width: 100%;
-            height: auto
+            height: 25vw;
         }
 
         @media only screen and (max-width:1200px) {
@@ -2541,7 +2711,11 @@
             }
 
             .ct_bx_fooditm .main_im {
-                width: 22.2%
+                width: 54%;
+                height: auto;
+                position: revert;
+                margin-left: 48px;
+                transform: translate(0px, 0px);
             }
 
             .ct_bx_search {
@@ -2577,11 +2751,13 @@
             }
 
             .ct_bx_fooditm h4 {
-                font-size: 18px
+                font-size: 18px;
+                margin-left: 4px;
+                color: #181818;
             }
 
             .ct_bx_fooditm a {
-                width: 338px
+                width: 262px
             }
 
             .ct_bx_ads {
@@ -2607,8 +2783,10 @@
         }
 
         @media only screen and (max-width:1300px) {
-            .ct_bx_price_fd .price:nth-child(2) {
-                margin-top: 8px
+
+
+            .ct_pop_up_items_order {
+                width: 797px;
             }
 
             .bx_btns_crousel ion-icon {
@@ -2664,7 +2842,7 @@
 
             .ct_bx_fooditm {
                 width: 23vw;
-                margin: 0 8px
+                margin: 13px 8px
             }
 
             .groc_list {
@@ -2672,12 +2850,10 @@
             }
 
             .ct_bx_inner_food_groc {
-                margin-top: 215px
+                margin-top: 0
             }
 
-            .ct_bx_fooditm .main_im {
-                width: 23.5%
-            }
+   
 
             .ct_bx_ads {
                 top: 568px;
@@ -2735,6 +2911,11 @@
         @media only screen and (max-width:1200px) {
             .ct_bx_ratings span .not_filed_rating_itm {
                 font-size: 20px
+            }
+
+
+            .ct_pop_up_items_order {
+                width: 697px;
             }
 
             .list_food_at_ov h3 {
@@ -2990,14 +3171,10 @@
                 margin-bottom: 10px
             }
 
-            .ct_bx_fooditm .main_im {
-                width: 31.2%;
-                transform: translate(4px, -185px);
-                height: 187px;
-            }
+        
 
             .ct_bx_inner_food_groc {
-                margin-top: 201px
+                margin-top: 0
             }
 
             .ct_bx_inner_food_groc {
@@ -3414,7 +3591,7 @@
             }
 
             .ct_bx_fooditm {
-                width: 31vw
+                width:23vw
             }
 
             .ct_bx_matched_itm {
@@ -3524,7 +3701,7 @@
 
             .groc_list .ct_cat_by_list {
                 margin-left: .5vw;
-                width: 100vw
+                width: 100vw;padding-bottom: 20px;
             }
 
             .ct_bx_ratings span .filed_rating_itm {
@@ -3681,6 +3858,12 @@
         @media all and (max-width: 900px) {
             .bx_btns_crousel ion-icon {
                 font-size: 20px;
+            }
+.ct_bx_fooditm {
+    width: 31vw;
+}
+            .ct_pop_up_items_order {
+                width: 597px;
             }
 
             .ct_x_flex_btns {
@@ -3868,12 +4051,15 @@
             }
 
             .groc_list .ct_cat_by_list {
-                margin-left: 8px;
+                margin-left: 18px;
             }
 
-            .groc_list .ct_cat_by_list {
-                display: block
-            }
+.ct_bx_fooditm {
+    width: 29vw;
+}
+.erak_fd_body .groc_list .ct_cat_by_list {
+    margin-top: 11px;
+}
 
             .ct_all_list_food {
                 margin-top: 46px
@@ -3974,35 +4160,6 @@
                 top: 394px
             }
 
-            .ct_bx_fooditm {
-                width: 100%
-            }
-
-            .ct_bx_inner_food_groc {
-                margin-left: 32vw;
-                margin-top: 0
-            }
-
-            .ct_bx_fooditm .main_im {
-                height: 193px;
-                width: 42%;
-                transform: translate(0, 0);
-            }
-
-            .ct_bx_inner_food_groc {
-                margin-left: 43vw;
-                width: 53%;
-            }
-
-            .ct_bx_fooditm {
-                height: 209px;
-            }
-
-            .ct_bx_fooditm a {
-                width: 100%;
-                height: 158px;
-                margin-top: 0
-            }
         }
 
         @media only screen and (max-width:520px) {
@@ -4014,6 +4171,17 @@
         @media only screen and (max-width:740px) {
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
+            }
+.ct_bx_fooditm {
+    width: 38vw;
+}
+.groc_list .ct_cat_by_list {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+}
+            .ct_pop_up_items_order {
+                width: 497px;
             }
 
             .cart_nav span {
@@ -4255,9 +4423,7 @@
                 width: 100%
             }
 
-            .groc_list .ct_cat_by_list {
-                display: block
-            }
+
 
             .for_nav_main .ct_bx_search input {
                 width: 97%;
@@ -4271,6 +4437,15 @@
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
+.ct_pop_up_items_order {
+    width: 100vw;
+}
+
+.ct_pop_up_items_order {
+    right: 0;
+    top: unset;
+    bottom: 0;
+}
 
             .ct_bx_btn_play ion-icon {
                 font-size: 77px;
@@ -4292,9 +4467,6 @@
                 margin-top: -61px;
             }
 
-            .ct_bx_fooditm {
-                height: 145px;
-            }
 
             .ct_bx_fooditm h4 {
                 font-size: 18px;
@@ -4370,12 +4542,9 @@
             .ct_bx_footer {
                 display: block
             }
-
-
-
-            .ct_bx_fooditm .main_im {
-                height: 133px
-            }
+.ct_bx_fooditm {
+    width: 44vw;
+}
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 13px
@@ -4391,24 +4560,6 @@
 
             .ct_loading_bx .ct_for_img_load {
                 height: 144px
-            }
-
-            .ct_bx_fooditm a .ct_bx_flex {
-                display: flex;
-                width: 100%;
-            }
-
-            .ct_bx_fooditm .main_im {
-                width: 31%;
-                height: auto;
-                position: relative;
-                transform: translate(0, 0);
-                margin-left: 26px;
-            }
-
-            .ct_bx_fooditm a {
-                width: 100%;
-                height: 132px
             }
 
             .for_nav_main .ct_bx_search input {
@@ -4437,6 +4588,68 @@
         @media only screen and (max-width:470px) {
             .ct_all_list_food h2 {
                 font-size: 19px;
+            }
+
+.ct_offer_box_cook2 {
+    width: 47px;
+    padding: 3px 10px 10px 3px;
+        transform: translate(2px, 6px);
+    }
+
+.ct_bx_fooditm a .ct_bx_flex {
+    display: flex;
+    width: 100%;
+}
+.ct_bx_fooditm .main_im {
+    width: 108px;    margin-left: 26px;}
+        
+        .ct_bx_fooditm .item_intro {
+    font-size: 11px;
+    line-height: 15px;
+    width: 80%;
+}
+
+            .ct_logox img {
+                width: 64%;
+            }
+
+            .ct_logox {
+                width: 19%;
+                margin-top: -9px;
+            }
+
+            .coppy_right {
+                margin: 20px 7px 0 10px;
+            }
+
+
+
+
+            .about_us_link {
+                width: 24%;
+                margin: 19px 0 0px 8px;
+            }
+
+            .follow_us {
+                width: 20%;
+                margin-top: 17px;
+            }
+
+
+
+            .ct_bx_price_fd .price:nth-child(2) {
+                margin-top: 4px;
+                font-size: 23px
+            }
+
+            .ct_bx_price_fd del {
+                font-size: 15px;
+                color: #000;
+                margin-top: 2px;
+            }
+
+            .for_unit_itm {
+                font-size: 14px;
             }
 
             .ct_all_list_food h2 {
@@ -4631,7 +4844,6 @@
                 padding-top: 20px;
                 margin-bottom: 6px;
                 margin-left: 0;
-                border: 1px solid #eaeaea;
                 border-radius: 13px;
             }
 
@@ -4918,7 +5130,7 @@
 
             .ct_bx_fooditm h4 {
                 font-size: 18px;
-                color: #474747;
+                color:#000000;
             }
 
             .list_food_at_ov h3 {
@@ -5011,13 +5223,12 @@
             .for_nav_main .logo {
                 margin: 4px 0
             }
-
-            .ct_bx_fooditm {
-                width: 93%;
-                margin-bottom: 26px;
-                margin-left: 5px;
-            }
-
+.ct_bx_fooditm {
+    width: 93%;
+    margin-bottom: 9px;
+    margin-left: 0;
+    padding: 13px 0;
+}
             .ct_nav_erak .ct_bx_search {
                 width: 100%
             }
@@ -5181,10 +5392,9 @@
                 padding: 5px;
             }
 
-            .ct_bx_price_fd .price:nth-child(2) {
-                margin-top: 4px;
-                font-size: 10px
-            }
+       .ct_bx_price_fd .price:nth-child(2) {
+    font-size: 21px;
+}
 
             .ct_bx_fooditm .ct_bx_price_fd p {
                 font-size: 23px;
@@ -5871,7 +6081,7 @@
 </head>
 
 <body class="erak_fd_body">
-    {{>nav}}
+    {{!-- //{{>nav}} --}}
 
     <div class="ct_bx_under_maintenance">
         <article>
@@ -5972,9 +6182,10 @@
         <div class="ct_remove_bx_pop_p">
             <ion-icon name="close-outline"></ion-icon>
         </div>
+
         <div class="ct_popup_inner">
-            <div class="ct_go_back">
-                <ion-icon name="arrow-back-sharp"></ion-icon>
+            <div class="ct_bx_go_back">
+                <ion-icon name="arrow-back-outline"></ion-icon>
                 <p>Go Back</p>
             </div>
             <div class="ct_bx_img">
@@ -6076,135 +6287,7 @@
 
                 <div class="add_cart_btn">Add to cart</div>
             </div>
-            {{!-- <div class="recomended_cart for_items_recm">
 
-                <div class="ct_box_innside_reccom">
-                    <h4>Reccomended Essentials </h4>
-                    <div class="ct_ek_fod_cart_recom">
-                        <div class="ct_remcombx_pf_ct">
-                            <div class="ct_bx_recc_cart_load_full">
-                                <div class="loader_cart for_ek_fd_cart_load_rec_load loader sm_load">
-
-                                </div>
-                            </div>
-                            <div class="crousel">
-                                <div class="inner_slide">
-                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
-                                        <div class="itm_food_list_ek added_itm_ek_fd">
-                                            <a <a="" href="/recipes/amritsari-chole">
-
-                                            </a>
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/sample_img1.jpeg">
-
-                                                    </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
-
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Amritsari chole sauce</h4>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <div class="ct_offer_box">
-                                                                <span>50% off</span>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
-                                        <div class="itm_food_list_ek added_itm_ek_fd">
-                                            <a <a="" href="/recipes/amritsari-chole">
-
-                                            </a>
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/sample_img1.jpeg">
-
-                                                    </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
-
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Amritsari chole sauce</h4>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <div class="ct_offer_box">
-                                                                <span>50% off</span>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
-                                        <div class="itm_food_list_ek added_itm_ek_fd">
-                                            <a <a="" href="/recipes/amritsari-chole">
-
-                                            </a>
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/sample_img1.jpeg">
-
-                                                    </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
-
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Amritsari chole sauce</h4>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <div class="ct_offer_box">
-                                                                <span>50% off</span>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <button id="prev_crousel" class="back_acc ct_bx_buttons_actions">
-                                <ion-icon name="chevron-back-outline"></ion-icon>
-                            </button>
-                            <button id="forw" class="forward_acc ct_bx_buttons_actions">
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                            </button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-            </div> --}}
             <div class="ct_bx_qt_foods">
                 <div class="ct_bx_item_rem">
                     <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline">
@@ -6270,11 +6353,183 @@
                 <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered
                     spices, Filtered water</p>
             </div>
-            {{!-- <div class="ct_bx_for_ingredients">
-                <h4>To cook, just follow the cooking steps</h4>
-                <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered
-                    spices, Filtered water</p>
-            </div> --}}
+            <div class="recomended_cart for_items_recm">
+
+                <div class="ct_box_innside_reccom">
+                    <h4>Reccomended Essentials</h4>
+                    <div class="ct_ek_fod_cart_recom">
+                        <div class="ct_remcombx_pf_ct">
+                            <div class="ct_bx_recc_cart_load_full">
+                                <div class="loader_cart for_ek_fd_cart_load_rec_load loader sm_load">
+
+                                </div>
+                            </div>
+                            <div class="crousel">
+                                <div class="inner_slide">
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <div class="ct_img_res_main">
+                                                        <img alt="Amritsari chole sauce image"
+                                                            src="../img/onions_fresh.png">
+
+                                                    </div>
+                                                    <div class="ct_inner_fd1_dt_grid">
+
+                                                        <div class="ct_dt_tm_food_res">
+                                                            <h4>Fresh onions</h4>
+                                                        </div>
+                                                        <div class="ct_unit_box_selector">
+                                                            <div class="ct_pr_bx_unit">
+                                                                <p>500g</p>
+                                                                <span>₹ 25</span>
+                                                            </div>
+
+                                                            <div class="ct_popup_unit_btn">
+                                                                <ion-icon name="caret-forward-outline" role="img"
+                                                                    class="md hydrated"
+                                                                    aria-label="caret forward outline"></ion-icon>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                            <del class="pricenooff">₹ 118</del>
+                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                            </p>
+
+
+                                                        </div>
+                                                        <div class="ct_addbtns">
+                                                            <p>Add to cart</p>
+                                                        </div>
+
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <div class="ct_img_res_main">
+                                                        <img alt="Amritsari chole sauce image"
+                                                            src="../img/tomato_img.png">
+
+                                                    </div>
+                                                    <div class="ct_inner_fd1_dt_grid">
+
+                                                        <div class="ct_dt_tm_food_res">
+                                                            <h4>Fresh onions</h4>
+                                                        </div>
+                                                        <div class="ct_unit_box_selector">
+                                                            <div class="ct_pr_bx_unit">
+                                                                <p>500g</p>
+                                                                <span>₹ 25</span>
+                                                            </div>
+
+                                                            <div class="ct_popup_unit_btn">
+                                                                <ion-icon name="caret-forward-outline" role="img"
+                                                                    class="md hydrated"
+                                                                    aria-label="caret forward outline"></ion-icon>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                            <del class="pricenooff">₹ 118</del>
+                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                            </p>
+
+
+                                                        </div>
+                                                        <div class="ct_addbtns">
+                                                            <p>Add to cart</p>
+                                                        </div>
+
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <div class="ct_img_res_main">
+                                                        <img alt="Amritsari chole sauce image"
+                                                            src="../img/mutton_rm.jpg" style="
+    width: 74%;
+">
+
+                                                    </div>
+                                                    <div class="ct_inner_fd1_dt_grid">
+
+                                                        <div class="ct_dt_tm_food_res">
+                                                            <h4>Fresh onions</h4>
+                                                        </div>
+                                                        <div class="ct_unit_box_selector">
+                                                            <div class="ct_pr_bx_unit">
+                                                                <p>500g</p>
+                                                                <span>₹ 25</span>
+                                                            </div>
+
+                                                            <div class="ct_popup_unit_btn">
+                                                                <ion-icon name="caret-forward-outline" role="img"
+                                                                    class="md hydrated"
+                                                                    aria-label="caret forward outline"></ion-icon>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                            <del class="pricenooff">₹ 118</del>
+                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                            </p>
+
+
+                                                        </div>
+                                                        <div class="ct_addbtns">
+                                                            <p>Add to cart</p>
+                                                        </div>
+
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="ct_crousel_btn">
+                                <button id="prev_crousel" class="back_acc ct_bx_buttons_actions">
+                                    <ion-icon name="chevron-back-outline"></ion-icon>
+                                </button>
+                                <button id="forw" class="forward_acc ct_bx_buttons_actions active">
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
         </div>
 
     </div>
@@ -6299,12 +6554,10 @@
                 <div class="ct_slide_bx_crousel">
 
 
-                    <img class="bannerX" alt="Introducing krickgrocery: The painkiller of cooking banner"
-                        src="../img/krick_sauce_banner.jpg" alt="img">
+                    <img class="bannerX" src="../img/banner_sample2.jpg" alt="img">
                     {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/imgBanner2.webp" alt="img"> --}}
-                    <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
-                        src="../img/banner_test.jpeg" alt="img">
+                    <img class="banner2X" src="../img/banner_test.jpeg" alt="img">
                     <div class="ct_bx_video_banner">
                         <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
@@ -6341,10 +6594,6 @@
                                 <h2>Enjoy hassle free cooking</h2>
 
                                 <div class="list_food_at_ov groc_list for_erak_list" id="${idN}">
-
-
-
-
                                     <div class="ct_cat_by_list">
                                         <div class="ct_bx_fooditm">
                                             <a rel="nofollow">
@@ -6384,28 +6633,222 @@
 
 
                                                         </div>
-                                                        {{!-- <div class="ct_bx_btn_place_order">
-                                                            <button class="view_items_btn">View <ion-icon
-                                                                    name="arrow-forward-outline" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="arrow forward outline"></ion-icon>
-                                                            </button>
-                                                            <button
-                                                                class="place_order_btn masalachickencurry_btn_addBtn ">Add
-                                                                to cart</button>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="Masala Chicken Curry sauce"
+                                                        src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
+                                                    <div class="ct_bx_inner_food_groc">
 
-                                                            <button
-                                                                class="go_to_cart_btn masalachickencurry_btn_gcart">Go
-                                                                to cart <ion-icon name="arrow-forward-outline"
-                                                                    role="img" class="md hydrated"
-                                                                    aria-label="arrow forward outline"></ion-icon>
-                                                            </button>
-                                                        </div> --}}
+                                                        <h4>Masala Meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
+                                                            with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 100gm</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ 118</del>
+
+                                                            <p class="price">₹ 59</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Chicken Curry sauce</p>
+                                                            <p class="stock">0</p>
+                                                            <p class="price_pr">59</p>
+                                                            <p class="price_off">118</p>
+                                                            <p class="offer">20</p>
+                                                            <p class="ing_list">Pure mustard oil, Tomato, Onion, Ginger,
+                                                                Garlic, Salt, Green chilies, Mineral water, Turmeric
+                                                                powder, Cloves, Coriander seeds, Cardamom, Cinnamon</p>
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="Masala Chicken Curry sauce"
+                                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkhssw5ULXml_rOLNfQ9LSHgqQfWftnkQYOZl8e_I9-c37UKitaxWUQnwp7_B2SOAg1-Q&amp;usqp=CAU">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Masala Meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
+                                                            with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 100gm</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ 118</del>
+
+                                                            <p class="price">₹ 59</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Chicken Curry sauce</p>
+                                                            <p class="stock">0</p>
+                                                            <p class="price_pr">59</p>
+                                                            <p class="price_off">118</p>
+                                                            <p class="offer">20</p>
+                                                            <p class="ing_list">Pure mustard oil, Tomato, Onion, Ginger,
+                                                                Garlic, Salt, Green chilies, Mineral water, Turmeric
+                                                                powder, Cloves, Coriander seeds, Cardamom, Cinnamon</p>
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="Masala Chicken Curry sauce"
+                                                        src="../img/sample_img2.jpeg">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Masala Meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
+                                                            with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 100gm</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ 118</del>
+
+                                                            <p class="price">₹ 59</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Chicken Curry sauce</p>
+                                                            <p class="stock">0</p>
+                                                            <p class="price_pr">59</p>
+                                                            <p class="price_off">118</p>
+                                                            <p class="offer">20</p>
+                                                            <p class="ing_list">Pure mustard oil, Tomato, Onion, Ginger,
+                                                                Garlic, Salt, Green chilies, Mineral water, Turmeric
+                                                                powder, Cloves, Coriander seeds, Cardamom, Cinnamon</p>
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="Masala Chicken Curry sauce"
+                                                        src="../img/sample_img2.jpeg">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Masala Meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
+                                                            with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 100gm</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ 118</del>
+
+                                                            <p class="price">₹ 59</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Chicken Curry sauce</p>
+                                                            <p class="stock">0</p>
+                                                            <p class="price_pr">59</p>
+                                                            <p class="price_off">118</p>
+                                                            <p class="offer">20</p>
+                                                            <p class="ing_list">Pure mustard oil, Tomato, Onion, Ginger,
+                                                                Garlic, Salt, Green chilies, Mineral water, Turmeric
+                                                                powder, Cloves, Coriander seeds, Cardamom, Cinnamon</p>
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>20%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="Masala Chicken Curry sauce"
+                                                        src="../img/sample_img2.jpeg">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Masala Meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
+                                                            with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 100gm</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ 118</del>
+
+                                                            <p class="price">₹ 59</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Chicken Curry sauce</p>
+                                                            <p class="stock">0</p>
+                                                            <p class="price_pr">59</p>
+                                                            <p class="price_off">118</p>
+                                                            <p class="offer">20</p>
+                                                            <p class="ing_list">Pure mustard oil, Tomato, Onion, Ginger,
+                                                                Garlic, Salt, Green chilies, Mineral water, Turmeric
+                                                                powder, Cloves, Coriander seeds, Cardamom, Cinnamon</p>
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
+
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

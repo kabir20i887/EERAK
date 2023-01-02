@@ -20,7 +20,16 @@
     <meta name="description"
         content="The price and availability of items at krickgrocery.in are subject to change. The shopping cart of krickgrocery is a temporary place to store a list of your items and reflects each item's most recent price.">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">    {{>favicon}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    {{>favicon}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <style>
         /*! CSS Used from: Embedded */
 
@@ -30,26 +39,97 @@
             font-family: 'Montserrat';
             font-size: 18px;
         }
-.ct_items_bx {
-    display: flex;
-}
-.ct_imgbx{
-    width:31%;
-}
-.ct_imgbx{width: 100%;}
-.ct_info_items h4 {
-    color: #000;
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Lato', sans-serif;
-}
-.ct_pr del,
-.ct_pr p{
-   font-family: 'Montserrat';
-   color: black;
 
-}
-.ct_items_bx .ct_pr{display:flex;}
+        .ct_bx_logo {
+            width: 54%;
+            text-align: end;
+        }
+
+        .ct_bx_logo img {
+            width: 16%;
+        }
+
+        .selected_field h2 {
+            display: inline-block;
+            color: rgb(38 36 36);
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+
+            text-transform: unset;
+            margin: 11px 0 0 32px;
+        }
+
+
+
+        .ct_info_items {
+            margin: 18px 0 5px 24px;
+        }
+
+        .ct_info_items del {
+            font-size: 11px;
+            color: #757575;
+            margin: 7px 5px 0 6px;
+        }
+
+        .ct_info_items .ct_pr p {
+            font-size: 16px;
+            margin: 3px;
+            color: #e22323;
+        }
+
+        .title_cart h2 {
+            font-size: 14px;
+            margin: 10px 0 1px 28px;
+            color: black;
+            font-family: 'poppins';
+            text-transform: uppercase;
+        }
+
+        .ct_info_items span {
+            font-size: 12px;
+            display: block;
+            font-family: 'open sans';
+            margin: 1px 0 6px 2px;
+        }
+
+        .ct_items_bx {
+            display: flex;
+        }
+
+        .ct_imgbx {
+            width: 20%;
+        }
+
+        .ct_imgbx img {
+            width: 100%;
+        }
+
+        .ct_info_items h4 {
+            color: #353535;
+            font-size: 17px;
+            font-weight: 700;
+            font-family: 'poppins';
+        }
+
+        .bx_evt_cart_item li {
+            background: white;
+            width: 100%;
+            border-radius: 8px;
+            padding: 10px 17px 0 17px;
+            box-shadow: 0 0 14px #0000000f;
+            margin-bottom: 4px;
+        }
+
+        .ct_pr del,
+        .ct_pr p {
+            font-family: 'Montserrat';
+            color: black;
+            color: #757575;
+        }
+
+        .ct_items_bx .ct_pr {
+            display: flex;
+        }
 
 
         .ct_results {
@@ -482,7 +562,7 @@
         .title_h1_box ion-icon {
             color: black;
             font-size: 24px;
-            margin: 4px 10px;
+            margin: 9px 8px;
         }
 
         .ct_bx_info_cash_on_delvery {
@@ -577,12 +657,13 @@
             display: none;
         }
 
-     .title_h1 {
-    color: #3e3b3b;
-    font-size: 14px;
-    font-family: 'Montserrat';
-    margin: 100px 0 20px 20px;
-}
+        .title_h1 {
+            color: #3e3b3b;
+            font-size: 14px;
+            font-family: 'Montserrat';
+            text-transform: uppercase;
+            margin: 100px 0 20px 20px;
+        }
 
         .nOp,
         .orderId {
@@ -1802,7 +1883,7 @@
             .no_req .ct_subotatal,
             .no_req .ct_list_food {
                 width: 100%;
-                box-shadow: 0 0 14px #0000001f;
+
             }
 
             .ct_list_food {
@@ -1983,7 +2064,7 @@
         }
 
         @media all and (max-width: 850px) {
-            .ct_bx_diff_group {
+            .title_cart {
                 margin: -13px 0 0 -8px;
             }
 
@@ -2345,7 +2426,7 @@
                 position: static;
                 margin: -150px 10px 0 0px;
                 width: 100%;
-                display: block;
+                display: none;
                 box-shadow: none;
             }
 
@@ -2396,7 +2477,7 @@
                 width: 100%;
             }
 
-            .ct_bx_diff_group {
+            .title_cart {
                 width: 100%;
                 display: flex;
                 margin: 11px 0 4px -8px;
@@ -3668,7 +3749,7 @@
                 margin-top: -14px;
             }
 
-            .ct_bx_diff_group {
+            .title_cart {
                 margin-bottom: 14px;
             }
 
@@ -5202,7 +5283,7 @@
         }
 
         body {
-            background: whitesmoke;
+            background: #f7f7f7;
             color: #555;
             font-family: 'Lato', 'Arial', sans-serif;
             font-weight: 300;
@@ -5593,7 +5674,6 @@
             display: flex;
         }
 
-        .bx_kr_business_cart_item,
         .bx_evt_cart_item {
             margin: -90px 0 60px 0px;
         }
@@ -5648,7 +5728,7 @@
             border-radius: 7px;
             border: 1px solid #dcd2d2;
             margin: 20px 0 40px 10px;
-            background-color: rgb(255, 255, 255);
+            background-color: transparent
         }
 
         .no_req .ct_list_food {
@@ -5721,7 +5801,7 @@
         }
 
         .ek_cart {
-            background-color: rgb(245 243 243);
+            background-color: #f9f9f9;
             padding: 0;
             margin-top: 78px;
         }
@@ -6320,7 +6400,7 @@
             flex-flow: row wrap;
         }
 
-        .ct_bx_diff_group {
+        .title_cart {
             display: flex;
         }
 
@@ -7208,9 +7288,6 @@
             margin-bottom: 10px;
         }
 
-        .bx_kr_business_cart_item {
-            display: none;
-        }
 
         .crousel .ct_offer_box {
             margin-top: -0;
@@ -8005,7 +8082,6 @@
                 margin-left: 12px;
             }
 
-            .bx_kr_business_cart_item,
             .bx_evt_cart_item {
                 margin: -50px 0 60px 0px;
             }
@@ -8298,7 +8374,7 @@
         }
 
         @media all and (max-width: 850px) {
-            .ct_bx_diff_group {
+            .title_cart {
                 margin: -13px 0 0 -8px;
             }
 
@@ -8663,6 +8739,7 @@
 
             .ct_order_confirm {
                 margin-top: 3px;
+                    padding: 12px 0 10px 0px;
             }
 
             .for_cart_checkout p {
@@ -8701,7 +8778,7 @@
                 width: 100%;
             }
 
-            .ct_bx_diff_group {
+            .title_cart {
                 width: 100%;
                 display: flex;
                 margin: -13px 0 0 -8px;
@@ -8776,7 +8853,7 @@
             }
 
             .bx_evt_cart_item {
-                margin: -50px 0 0px 0px;
+                margin: 0px 0 0px 0px;
             }
 
             .ct_other_nav_cart {
@@ -9306,7 +9383,7 @@
             }
 
             .ek_cart {
-                background-color: #ffffff;
+                background-color: #f9f9f9;
                 padding: 0px;
             }
 
@@ -9918,7 +9995,7 @@
             }
 
             .list_food_cart {
-                margin-top: 20px;
+                margin-top: 0px;
             }
 
             .ct_bx_required_groc h3 {
@@ -10232,8 +10309,12 @@
             }
 
             .ct_bx_qt_foods input {
-                font-size: 13px;
-                width: 30%;
+                font-size: 11px;
+                border: 1px solid #e4e4e4;
+                width: 32%;
+                height: 26px;
+                margin: 0;
+                margin-top: 0px;
             }
 
             .body_cart .ct_bx_qt_foods div {
@@ -10660,7 +10741,7 @@
 
             .ct_bx_flex_sub_list {
                 flex-flow: row wrap;
-                margin-bottom: 92px;
+                margin-bottom: 9px;
             }
 
             .ct_other_nav_cart {
@@ -10668,15 +10749,15 @@
                 padding: 5px 1px 10px 10px;
             }
 
-          .title_h1_box {
-    margin: 0px 0 20px 0px;
-    display: flex;
-    background: white;
-    padding: 12px 0 17px 5px;
-}
+            .title_h1_box {
+                margin: 0px 0 20px 0px;
+                display: flex;
+                background: white;
+                padding: 12px 0 17px 5px;
+            }
 
             .title_h1 {
-                margin: 8px 0 0px 6px;
+                margin: 13px 0 0px 6px;
             }
 
             .ct_deliv_box p {
@@ -10702,13 +10783,14 @@
             .ct_btns_group_check_ek {
                 display: none;
             }
-
-            .list_itm_sub_cart span {
-                margin-top: 12px;
-                margin-left: 12px;
-                display: block;
-            }
-
+          .list_itm_sub_cart span {
+    margin-top: 0;
+    margin-left: 10px;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
             .no_req .ct_list_food {
                 margin-bottom: 25px;
             }
@@ -10722,10 +10804,10 @@
             }
 
             .bx_evt_cart_item {
-                height: 71vw;
-                display: flex;
+                height: auto;
+                display: block;
                 align-items: center;
-                justify-content: center;
+                padding: 0;
             }
 
             .ct_bx_footer {
@@ -10768,12 +10850,14 @@
             }
 
             .remove_fd_itm_ct {
-                margin: 0 0 10px -27px;
+                margin: 10px 0 10px 7px;
                 width: 69px;
             }
 
             .remove_fd_itm_ct p {
-                color: rgb(205 19 19);
+                color: rgb(79 79 79);
+                font-size: 9px;
+                font-family: 'Montserrat';
             }
 
             .ct_itm_food_cart h4 {
@@ -10787,6 +10871,8 @@
                 border-top: none;
                 margin-left: 11px;
                 margin-bottom: 12px;
+                margin-top: 16px;
+                box-shadow: 0 0 14px #0000000f;
             }
 
             .no_req .ct_list_food {
@@ -10858,9 +10944,7 @@
                 margin-right: auto;
             }
 
-            .ek_cart {
-                background-color: whitesmoke;
-            }
+
 
             .body_cart .recomended_cart {
                 display: none;
@@ -10884,21 +10968,30 @@
                 margin: -15px 0 0 0px;
             }
 
-
-
-
             .body_cart .ct_bx_qt_foods div {
-                width: 27%;
-                margin-top: 5px;
-                height: 22px;
+                width: 18%;
+                margin-top: 0;
+                height: 26px;
+                padding-top: 1px;
+                border: 1px solid #b2b2b2;
+                margin: 0;
+                background: #ffffff;
+                border-radius: 8px 0 0px 8px;
+            }
+
+            .body_cart .ct_bx_qt_foods .ct_bx_item_add {
+                border-radius: 0px 8px 8px 0px;
             }
 
             .body_cart .ct_bx_qt_foods div ion-icon {
-                font-size: 16px;
+                font-size: 13px;
+                color: black;
             }
 
             .body_cart .ct_bx_qt_foods {
                 height: 38px;
+                border: none;
+                margin-left: -5px;
             }
 
             .btn_sign_up_cart span2 {
@@ -10937,11 +11030,9 @@
             .check_out_btn_order {
                 margin-left: 11px;
             }
-
-            .list_itm_sub_cart {
-                margin-left: 9px;
-            }
-
+.list_itm_sub_cart {
+    margin: 0 0 6px 16px;
+}
             .no_req .ct_bx_required_groc,
             .no_req .ct_subotatal {
                 padding: 0;
@@ -11196,12 +11287,13 @@
                 font-family: 'Montserrat';
             }
 
-            .to_pay_cahge span b {
-                font-size: 21px;
-                color: rgb(213 0 62);
-                font-family: 'Montserrat';
-            }
-
+         .to_pay_cahge span b {
+    font-size: 17px;
+    color: rgb(0 0 0);
+    display: block;
+    font-family: 'Montserrat';
+    margin: 12px 0 3px 0px;
+}
             .placeneworder,
             .for_cart_checkout {
                 width: 89vw;
@@ -11226,16 +11318,17 @@
                 font-size: 20px;
             }
 
-            .block_2_charge p,
-            .block_1_charge p {
-                font-size: 12px;
-            }
-
-            .to_pay_cahge p {
-                font-size: 14px;
-                font-family: 'Montserrat';
-                margin: 6px 20px 0 10px;
-            }
+         .block_2_charge p, .block_1_charge p {
+    font-size: 10px;
+    /* margin-bottom: 4px; */
+    color: black;
+    font-family: 'open sans';
+}
+        .to_pay_cahge p {
+    font-size: 13px;
+    font-family: 'Montserrat';
+    margin: 6px 20px 0 0px;
+}
 
             .ct_subotatal {
                 margin: 20px 0 0 -30px;
@@ -11803,9 +11896,14 @@
                 width: 100%;
             }
 
-            .list_itm_sub_cart span {
-                margin-top: 4px;
-            }
+          .list_itm_sub_cart span {
+    margin-top: 0;
+    margin-left: 10px;
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
 
             .to_pay_cahge p {
                 padding-top: 6px;
@@ -12758,7 +12856,9 @@
                 <div class="title_h1_box">
                     <ion-icon name="arrow-back-outline"></ion-icon>
                     <h1 class="title_h1">Shopping cart</h1>
-
+                    <div class="ct_bx_logo">
+                        <img src="../img/logo_black_tr.png" alt="">
+                    </div>
                 </div>
 
                 <div class="ct_shopping_cart">
@@ -12768,16 +12868,14 @@
                     {{!-- <h1>Erak's Shopping Cart</h1> --}}
                 </div>
 
-                <div class="ct_bx_diff_group">
-                    <a href='#order' class="cart_itm_ov  cbtn_cart selected_field">
-                        <h2>Your items </h2>
-                    </a>
-
-                    {{!-- <div title="Remove all" class='ct_bin_ts_nav_ck itm_cart_nav'>
-                        <ion-icon class="trash_all" name="trash-outline"></ion-icon>
-
-                    </div> --}}
+                <div class="title_cart">
+                    <h2>Your items </h2>
                 </div>
+                {{!-- <div title="Remove all" class='ct_bin_ts_nav_ck itm_cart_nav'>
+                    <ion-icon class="trash_all" name="trash-outline"></ion-icon>
+
+                </div> --}}
+
                 <div class="ct_bx_flex_sub_list">
 
                     <div class="ct_list_food">
@@ -12809,61 +12907,102 @@
                             <div class="list_food_cart">
 
 
-                                <div class="sub_tital_order_cart">
 
-                                    <div class="bx_kr_business_cart_item">
-                                        <ul>
 
-                                        </ul>
-                                        {{!-- <div class="loader_cart for_ek_fd_cart_load2">
+                                <div class="bx_evt_cart_item">
+                                    <ul>
+                                        <li>
+                                            <div class="ct_items_bx">
+                                                <div class="ct_imgbx">
+                                                    <img src="../img/sample_img1.jpeg" alt="">
+                                                </div>
+                                                <div class="ct_info_items">
+                                                    <h4>Masala meat</h4>
+                                                    <span>net weight: 150g</span>
+                                                    <div class="ct_bx_qt_foods">
+                                                        <div class="ct_bx_item_rem">
+                                                            <ion-icon name="remove-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="remove outline"></ion-icon>
+                                                        </div>
+                                                        <input type="text" value="1" readonly>
+                                                        <div class="ct_bx_item_add">
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated"
+                                                                aria-label="add outline"></ion-icon>
+                                                        </div>
 
-                                            <div class="loader sm_load">
+                                                    </div>
+                                                    <div class="ct_pr">
+                                                        <del>₹ 59</del>
+                                                        <p>₹ 49</p>
 
+                                                    </div>
+
+                                                    <div class="remove_fd_itm_ct">
+                                                        <p>Delete</p>
+                                                    </div>
+
+
+                                                </div>
                                             </div>
-                                        </div> --}}
-                                    </div>
-                                    <div class="bx_evt_cart_item">
-                                        <ul>
-<li>
-    <div class="ct_items_bx">
-        <div class="ct_imgbx">
-            <img src="../img/sample_img1.jpeg" alt="">
-        </div>
-        <div class="ct_info_items">
-            <h4>Masala meat</h4>
-            <div class="ct_pr">
-                <del>₹ 59</del>
-<p>₹ 49</p>
+                                        </li>
+                                        <li>
+                                            <div class="ct_items_bx">
+                                                <div class="ct_imgbx">
+                                                    <img src="../img/sample_img2.jpeg" alt="">
+                                                </div>
+                                                <div class="ct_info_items">
+                                                    <h4>Masala meat</h4>
+                                                    <span>net weight: 150g</span>
+                                                    <div class="ct_bx_qt_foods">
+                                                        <div class="ct_bx_item_rem">
+                                                            <ion-icon name="remove-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="remove outline"></ion-icon>
+                                                        </div>
+                                                        <input type="text" value="1" readonly>
+                                                        <div class="ct_bx_item_add">
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated"
+                                                                aria-label="add outline"></ion-icon>
+                                                        </div>
 
-            </div>
-            <span>net weight: 150g</span>
-            
-        </div>
-    </div>
-</li>
-                                        </ul>
+                                                    </div>
+                                                    <div class="ct_pr">
+                                                        <del>₹ 59</del>
+                                                        <p>₹ 49</p>
 
-                                        {{!-- <div class="loader_cart for_ek_fd_cart_load">
+                                                    </div>
 
-                                            <div class="loader sm_load">
+                                                    <div class="remove_fd_itm_ct">
+                                                        <p>Delete</p>
+                                                    </div>
 
+
+                                                </div>
                                             </div>
-                                        </div> --}}
+                                        </li>
+                                    </ul>
 
-                                        <div class="empty_cart for_ek_food_cart">
+                                    {{!-- <div class="loader_cart for_ek_fd_cart_load">
 
-
-                                            <div class="ct_bx_flex_msg_cart">
-                                                <h3>Your Krick cart is empty</h3>
-                                                <a href="/">View krick sauce</a>
-
-                                            </div>
+                                        <div class="loader sm_load">
 
                                         </div>
+                                    </div> --}}
+
+                                    <div class="empty_cart for_ek_food_cart">
+
+
+                                        <div class="ct_bx_flex_msg_cart">
+                                            <h3>Your Krick cart is empty</h3>
+                                            <a href="/">View krick sauce</a>
+
+                                        </div>
+
                                     </div>
-
-
                                 </div>
+
+
                             </div>
 
                             <div class="ct_bx_grocery_required">
@@ -12902,7 +13041,9 @@
 
 
                 </div>
-
+                <div class="title_cart">
+                    <h2>Billing Information</h2>
+                </div>
                 <div class="ct_subotatal" id='ek_cart_sub'>
 
 
@@ -12964,13 +13105,6 @@
 
                     </div> --}}
                     <div class="ct_order_confirm">
-                        <div class="list_itm_sub_cart to_pay_cahge to_pay_cahge1">
-                            <p>Total amount:</p>
-                            <span> <b>₹ 99</b>
-                                <c></c>
-                            </span>
-
-                        </div>
 
 
 
@@ -12982,6 +13116,12 @@
                         <div class="list_itm_sub_cart block_1_charge">
                             <p>Total items charge:</p>
                             <span>₹ 75</span>
+
+                        </div>
+                        <div class="list_itm_sub_cart to_pay_cahge to_pay_cahge1">
+                            <p>Total amount:</p>
+                            <span> <b>₹ 99</b>
+                            </span>
 
                         </div>
 
