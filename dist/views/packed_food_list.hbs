@@ -29,87 +29,118 @@
     {{!-- {{>favicon}} --}}
 
     <style>
- @font-face {
-    src: url(../others/fonts/Gagalin.otf);
-    font-family: gagalin;
-  }
+        @font-face {
+            src: url(../others/fonts/Gagalin.otf);
+            font-family: gagalin;
+        }
 
-/*------nav_bar_main----------------*/
-.ct_bx_about_mobile2 a{display: flex;}
-.active_nav p{
-        transform: scale(1.3);
-    border-bottom: 2px solid #ffbe00;
-    margin-right: 4px;
-}
-.for_ain_home_logo span {
-    color: #797979;
-    font-size: 13px;
-    /* margin: 10px; */
-    display: block;
-    font-family: 'roboto';
-    font-weight: 500;
-    transform: translate(8px, 0px);
-}
-.for_ain_home_logo h4 {
-    color: #000000;
-    font-family: 'gagalin';
-    letter-spacing: 1px;
-    font-size: 30px;
-    margin-left: 6px;
-    margin-top: -6px;
-}
- .for_ain_home_logo a {
-    display: flex;
-    justify-content: end;
-}
-.logo img {
-    width:54px;
-    margin-top: -6px;
-}
+        /*------nav_bar_main----------------*/
+        .ct_bx_about_mobile2 a {
+            display: flex;
+        }
+
+        .for_ain_home_logo span {
+            color: #797979;
+            font-size: 13px;
+            /* margin: 10px; */
+            display: block;
+            font-family: 'roboto';
+            font-weight: 500;
+            transform: translate(8px, 0px);
+        }
+
+        .ct_acc_dt_ov p {
+            color: white;
+            font-size: 15px;
+        }
+
+        .ct_acc_dt_ov h4 {
+            color: white;
+            font-family: 'Poppins';
+            font-size: 31px;
+            margin-left: 9px;
+        }
+
+        .ct_bx_slide_bx2 .ct_bx_erak_logo {
+            background-image: linear-gradient(to left, #144291, rgb(13 31 101));
+        }
+
+        .for_ain_home_logo h4 {
+            color: #000000;
+            font-family: 'gagalin';
+            letter-spacing: 1px;
+            font-size: 30px;
+            margin-left: 6px;
+            margin-top: -6px;
+        }
+
+        .for_ain_home_logo a {
+            display: flex;
+            justify-content: end;
+        }
+
+        .logo img {
+            width: 54px;
+            margin-top: -6px;
+        }
+
         .ct_bx_about_mobile2 {
-    display: block;
-    text-align: center;
-    width: auto;
-    margin: 15px;
-}
+            display: block;
+            text-align: center;
+            width: auto;
+            margin: 15px;
+        }
 
-            .ct_nav_erak .for_seravh_in_nav {
-                width: 66%;
-                margin: 0;
-            }
+        .ct_nav_erak .for_seravh_in_nav {
+            width: 66%;
+            margin: 0;
+        }
 
-            .ct_nav_erak .for_mobile_search {
-                width: 100%;
-            }
+        .ct_nav_erak .for_mobile_search {
+            width: 100%;
+        }
 
-            .ct_bx_about_mobile2 .material-symbols-outlined {
-    color: #000000;
-    font-size: 29px;
-    margin: -9px 5px;
-}
-.ct_bx_about_mobile2 p {
-    font-size: 13px;
-    color: black;
-    font-family: 'roboto';
-    font-weight: 500;
-}
-.ct_inner_box_nav {
-    width: 77%;
-    margin-top: 9px;
-    display: flex;
-    justify-content: end;
-}
-/*----------------------------------*/
+        .ct_bx_about_mobile2 .material-symbols-outlined {
+            color: #000000;
+            font-size: 29px;
+            margin: -9px 5px;
+        }
+
+        .ct_bx_about_mobile2 p {
+            font-size: 13px;
+            color: black;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .ct_inner_box_nav {
+            width: 90%;
+            margin-top: 9px;
+            display: flex;
+            justify-content: end;
+        }
+
+        .for_ain_home_logo {
+            margin: 0 0 0 1px;
+            width: 148px;
+        }
+
+        /*----------------------------------*/
 
 
         /*-----------crousel----------------*/
 
-.for_nav_main .for_seravh_in_nav{display: none;}
+        .for_nav_main .for_seravh_in_nav {
+            display: none;
+        }
+
         .crousel {
-            width: 90%;
+            width: 98%;
             height: auto;
             position: relative;
-            margin-top: 0px;
+            margin-top: 30px;
+            margin-left: 10px;
+            /* padding-bottom: 40px; */
         }
 
         .ct_bx_flex {
@@ -136,7 +167,7 @@
             justify-content: left;
             overflow-x: overlay;
             transition: all 1.5s ease;
-            padding: 23px;
+            padding-bottom: 23px;
         }
 
         .ct_bx_buttons_actions {
@@ -172,7 +203,7 @@
         }
 
         .fd_ek_cell_car_recom {
-            width: 220px;
+            width: 213px;
             height: auto;
             margin: 10px 5px 0 5px;
             position: relative;
@@ -384,6 +415,7 @@
             height: auto;
             background-color: white;
             box-shadow: 0 0 10px black;
+            display: none;
         }
 
         .ct_bx_flex .ct_x_info ion-icon {
@@ -524,7 +556,7 @@
         }
 
         .ct_logox img {
-            width: 27%;
+            width:62px;
         }
 
         .coppy_right {
@@ -614,7 +646,9 @@
         }
 
         .ct_flexbx .ct_for_bx1.active {
-            border: 1.6px solid #000
+            border: 1.6px solid #000;
+            transition: all 1s ease;
+
         }
 
         .ct_for_bx1 {
@@ -681,6 +715,7 @@
 
         .ct_for_bx1.active .ct_pr_bx p {
             color: black;
+
         }
 
         .ct_bx_under_maintenance h1 {
@@ -759,9 +794,6 @@
             font-family: 'Open sans';
         }
 
-        .ct_bx_slide_bx2 .ct_bx_erak_logo {
-            background-image: linear-gradient(to right, #185bc8, rgb(0 109 255));
-        }
 
 
         .ct_bx_slide_bx.active {
@@ -772,6 +804,9 @@
             bottom: -44px;
         }
 
+        .ct_pop_up_items_order.active2 {
+            right: 0;
+        }
 
         .ct_bx_img img {
             width: 100%;
@@ -1016,6 +1051,7 @@
             display: none;
             z-index: 99999999;
             position: fixed;
+            transition: all 1s ease;
         }
 
         .ct_remove_bx_pop_p {
@@ -1086,30 +1122,23 @@
             border-radius: 20px;
             background-color: white;
             position: fixed;
-            width: 100%;
+            width: 600px;
             padding-bottom: 27px;
             display: block;
-            bottom: -800px;
-            height: 92vh;
-            transition: 0.8s ease-in-out;
-            z-index: 99999999999999;
-            border-radius: 31px;
-        }
-
-        .ct_pop_up_items_order {
-            display: none;
-            width: 40vw;
-            position: fixed;
-            box-shadow: 0 0 10px #0000005e;
-            border-radius: 0;
-            right: 0;
+            right: -900px;
             top: 0;
             height: 100vh;
+            transition: 0.8s ease-in-out;
+            z-index: 99999999999999;
+            border-radius: 0;
+            box-shadow: 0 0 10px #0000005e;
+            transition: right .7s ease;
+
         }
 
         .ct_popup_inner {
             overflow: hidden;
-            border-radius: 31px;
+            border-radius: 0;
             height: inherit;
             overflow-y: scroll;
             padding-bottom: 60px;
@@ -1614,7 +1643,7 @@
         }
 
         .for_ain_home_logo {
-            margin: 0 0 0 1px;width: 17%;
+            margin: 0 0 0 1px;
         }
 
         .for_seravh_in_nav {
@@ -1790,9 +1819,19 @@
         .ct_for_p_load2,
         .ct_for_price_load,
         .ct_loading_bx .ct_for_img_load {
-            background: linear-gradient(110deg, #f6f2f2 8%, #f6f3f3 18%, #f8f5f5 26%);
+            background: linear-gradient(225deg, #f6f2f2 8%, #f6f3f3 18%, #f8f5f5 26%);
             background-size: 200% 100%;
-            animation: .8s shine linear infinite
+            animation: .8s shine linear infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: -100%;
+            }
+
+            100% {
+                background-position: 100%;
+            }
         }
 
         .ct_loading_bx {
@@ -1893,7 +1932,8 @@
 
         .ct_inner_nav {
             display: flex;
-            width: 100%
+            width: 100%;
+            justify-content: center;
         }
 
         .acc_set_main_nav {
@@ -2233,7 +2273,7 @@
             justify-content: space-between;
             position: absolute;
             top: 0;
-                background-color: white;
+            background-color: white;
             z-index: 99999999999;
             text-align: center;
             box-shadow: 0 0 4px rgba(0, 0, 0, .383)
@@ -2278,13 +2318,13 @@
             font-size: 22px
         }
 
-            .ct_bx_fooditm .main_im {
-                width: 54%;
-                height: auto;
-                position: revert;
-                margin-left: 48px;
-                transform: translate(0px, 0px);
-            }
+        .ct_bx_fooditm .main_im {
+            width: 54%;
+            height: auto;
+            position: revert;
+            margin-left: 48px;
+            transform: translate(0px, 0px);
+        }
 
         .ct_bx_inner_food_groc {
             margin-top: 0;
@@ -2555,8 +2595,11 @@
             font-family: 'Montserrat';
         }
 
-  
-.mai_ul{width: 100%;}
+
+        .mai_ul {
+            width: 100%;
+        }
+
         .ct_bx_go_back_nav ion-icon {
             font-size: 28px;
             color: #0089ff
@@ -2641,9 +2684,14 @@
                 width: 100%;
                 height: 34vw
             }
+
             .ct_inner_box_nav {
-    width: 87%;}
-.for_ain_home_logo a {justify-content: flex-start;}
+                width: 87%;
+            }
+
+            .for_ain_home_logo a {
+                justify-content: flex-start;
+            }
 
 
             .ct_bx_next,
@@ -2654,7 +2702,7 @@
 
         @media only screen and (max-width:740px) {
             .ct_bx_crousel {
-                margin-top: 139px
+                margin-top: 78px
             }
 
 
@@ -2691,6 +2739,17 @@
         @media only screen and (max-width:360px) {
             .bx_btns_crousel {
                 padding: 8px 9px 5px 10px;
+            }
+
+            .erak_fd_body .for_nav_main .logo {
+                margin-top: 4px;
+                margin-left: 2px;
+            }
+
+            .ct_bx_slide_bx ul li a {
+                font-size: 13px;
+                ;
+                padding: 16px 6px 20px 4px;
             }
 
             /* ----------------nav_bar----------------*/
@@ -2755,6 +2814,26 @@
                 margin-left: 32px
             }
 
+            .ct_pop_up_items_order {
+                width: 700px;
+            }
+
+            .fd_ek_cell_car_recom {
+                width: 218px;
+            }
+
+            .for_ain_home_logo {
+                width: auto;
+            }
+
+            .ct_inner_box_nav {
+                width: 77%;
+            }
+
+            .ct_inner_box_nav {
+                width: 1358px;
+            }
+
             .ct_bx_erak_logo a {
                 padding-bottom: 0
             }
@@ -2801,7 +2880,7 @@
             }
 
             .for_ek_fd_full_load .only_for_specific_bx {
-                width: 23%
+                width: 18%;
             }
 
             .for_ek_fd_full_load {
@@ -2856,7 +2935,7 @@
 
 
             .ct_pop_up_items_order {
-                width: 797px;
+                width: 867px;
             }
 
             .bx_btns_crousel ion-icon {
@@ -2923,7 +3002,7 @@
                 margin-top: 0
             }
 
-   
+
 
             .ct_bx_ads {
                 top: 568px;
@@ -3082,16 +3161,6 @@
                 margin: 2px 0 0 14px
             }
 
-            .ct_field_small_size {
-                margin: -6px 4px 0 0;
-                transform: translate(0px, 0);
-                display: block
-            }
-
-
-            .ct_field_small_size {
-                font-size: 50px
-            }
 
             .mai_ul {
                 width: auto
@@ -3193,7 +3262,7 @@
             }
 
             .for_ek_fd_full_load .only_for_specific_bx {
-                width: 31%
+                width: 22.5vw
             }
 
             .ct_bx_ads2 {
@@ -3239,7 +3308,7 @@
                 margin-bottom: 10px
             }
 
-        
+
 
             .ct_bx_inner_food_groc {
                 margin-top: 0
@@ -3592,6 +3661,41 @@
             .cart_nav ion-icon {
                 font-size: 36px
             }
+#ek_res_ev {
+    margin-bottom: 0;}
+            .mobile_only {
+                display: none;
+            }
+
+            .for_ain_home_logo {
+                margin: 0;
+                margin-top: 10px;
+            }
+
+            .for_ain_home_logo h4 {
+                font-size: 25px;
+            }
+
+            .for_ain_home_logo span {
+                font-size: 11px;
+            }
+
+            .logo img {
+                width: 43px;
+            }
+
+            .ct_field_small_size {
+                margin: -4px 10px 0 0;
+                transform: translate(0px, 0);
+                display: block;
+            }
+
+            .ct_field_small_size span {
+                font-size: 32px;
+                margin-top: 5px;
+                margin-right: 5px;
+            }
+
 
             .ct_bx_btn_play ion-icon {
                 font-size: 72px;
@@ -3659,7 +3763,7 @@
             }
 
             .ct_bx_fooditm {
-                width:23vw
+                width: 23vw
             }
 
             .ct_bx_matched_itm {
@@ -3756,7 +3860,8 @@
 
             .ct_acc_dt_ov p {
                 margin: 10px 0 0 11px;
-                font-size: 24px
+                font-size: 15px;
+                color: #fff;
             }
 
             .for_main_nav_login1 {
@@ -3769,7 +3874,8 @@
 
             .groc_list .ct_cat_by_list {
                 margin-left: .5vw;
-                width: 100vw;padding-bottom: 20px;
+                width: 100vw;
+                padding-bottom: 20px;
             }
 
             .ct_bx_ratings span .filed_rating_itm {
@@ -3927,9 +4033,11 @@
             .bx_btns_crousel ion-icon {
                 font-size: 20px;
             }
-.ct_bx_fooditm {
-    width: 31vw;
-}
+
+            .ct_bx_fooditm {
+                width: 31vw;
+            }
+
             .ct_pop_up_items_order {
                 width: 597px;
             }
@@ -4122,12 +4230,13 @@
                 margin-left: 18px;
             }
 
-.ct_bx_fooditm {
-    width: 29vw;
-}
-.erak_fd_body .groc_list .ct_cat_by_list {
-    margin-top: 11px;
-}
+            .ct_bx_fooditm {
+                width: 29vw;
+            }
+
+            .erak_fd_body .groc_list .ct_cat_by_list {
+                margin-top: 11px;
+            }
 
             .ct_all_list_food {
                 margin-top: 46px
@@ -4173,26 +4282,6 @@
                 width: 100%
             }
 
-            .ct_loading_bx .ct_for_img_load {
-                width: 36%
-            }
-
-            .for_ek_fd_full_load .only_for_specific_bx {
-                width: 100%;
-                margin-bottom: 0
-            }
-
-            .ct_loading_bx .ct_inner_bx {
-                width: 57%
-            }
-
-            .only_for_specific_bx {
-                height: 188px
-            }
-
-            .for_load_bx_grid {
-                display: flex
-            }
 
             .for_ek_foods_load {
                 padding-bottom: 1px;
@@ -4240,14 +4329,30 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
-.ct_bx_fooditm {
-    width: 38vw;
-}
-.groc_list .ct_cat_by_list {
-    margin-left: 0;
-    display: flex;
-    justify-content: center;
-}
+
+.about_us_link {
+    width: 25%;}
+    .ct_logox {
+    width: 30%;}
+
+            .for_ek_fd_full_load .only_for_specific_bx {
+                width: 39%;
+            }
+
+            .for_ek_fd_full_load {
+                margin-left: 58px;
+            }
+
+            .ct_bx_fooditm {
+                width: 38vw;
+            }
+
+            .groc_list .ct_cat_by_list {
+                margin-left: 0;
+                display: flex;
+                justify-content: center;
+            }
+
             .ct_pop_up_items_order {
                 width: 497px;
             }
@@ -4276,17 +4381,16 @@
             }
 
             .logo img {
-                margin-top: -14px;
+                width: 40px;
+                height: 40px;
             }
 
-
-            .erak_fd_body .ct_bx_footer {
-                padding-left: 33vw;
+            .for_ain_home_logo h4 {
+                font-size: 26px;
+                margin-left: 11px;
+                margin-top: -11px;
             }
 
-            .logo img {
-                width: auto;
-            }
 
             .ct_icons_logs {
                 margin-left: 32px;
@@ -4415,13 +4519,25 @@
             }
 
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
-                position: absolute;
-                transform: translate(0, 0);
-                box-shadow: 0 2px 3px #00000030
+                display: none;
+            }
+
+            .ct_field_small_size span {
+                font-size: 37px;
+                margin-top: 1px;
+            }
+
+            .ct_bx_about_mobile2 .material-symbols-outlined {
+                font-size: 34px;
+                margin: -15px 5px;
             }
 
             .ct_inner_nav {
-                padding: 16px 20px 10px 20px;
+                padding: 21px 20px 10px 20px;
+            }
+
+            .ct_inner_box_nav {
+                margin-top: 3px;
             }
 
             .ct_field_small_size {
@@ -4458,7 +4574,7 @@
             }
 
             .for_nav_main {
-                height: 93px;
+                height: 77px;
             }
 
             .for_mobile_search {
@@ -4505,26 +4621,57 @@
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
-.ct_pop_up_items_order {
-    width: 100vw;
-}
+.follow_us {
+    width: 15%;}
+    .about_us_link {
+    width: 26%;}
+    .ct_logox {
+    width: 24%;}
+            .ct_bx_go_back {
+                display: none;
+            }
 
-.ct_pop_up_items_order {
-    right: 0;
-    top: unset;
-    bottom: 0;
-}
+            .ct_popup_inner,
+            .ct_pop_up_items_order {
+                border-radius: 20px;
+            }
+
+            .ct_pop_up_items_order.active {
+                bottom: -124px;
+            }
+
+            .ct_bx_layer {
+                background-color: rgb(0 0 0 / 42%);
+                z-index: 999999999999999999;
+            }
+
+            .for_ek_fd_full_load {
+                margin-left: 21px;
+            }
+
+            .ct_pop_up_items_order {
+                width: 100vw;
+            }
+
+            .ct_pop_up_items_order {
+                right: unset;
+                top: unset;
+                bottom: -900px;
+                transition: all .7s ease;
+            }
 
             .ct_bx_btn_play ion-icon {
                 font-size: 77px;
             }
 
             .ct_inner_nav {
-                padding: 20px 10px 10px 10px;
+                padding: 25px 10px 10px 10px;
             }
 
-            .ct_bx_crousel {
+            .ct_all_list_food h2 {
+                font-size: 16px;
                 margin-top: 0;
+
             }
 
             .bx_btns_crousel ion-icon {
@@ -4610,9 +4757,10 @@
             .ct_bx_footer {
                 display: block
             }
-.ct_bx_fooditm {
-    width: 44vw;
-}
+
+            .ct_bx_fooditm {
+                width: 44vw;
+            }
 
             .erak_fd_body .list_food_at_ov h3 {
                 margin-left: 13px
@@ -4622,13 +4770,16 @@
                 width: 78%
             }
 
-            .only_for_specific_bx {
-                height: 153px
+            .ct_for_price_load,
+            .ct_loading_bx .ct_for_p_load,
+            .ct_loading_bx .ct_for_p_load2 {
+                background-color: #ededed;
             }
 
-            .ct_loading_bx .ct_for_img_load {
-                height: 144px
+            .for_ek_fd_full_load .only_for_specific_bx {
+                width: 44%;
             }
+
 
             .for_nav_main .ct_bx_search input {
                 width: 95%;
@@ -4655,30 +4806,56 @@
 
         @media only screen and (max-width:470px) {
             .ct_all_list_food h2 {
-                font-size: 19px;
+                font-size: 15px;
             }
-            .ct_offer_box_cook2 span {
-    font-size: 10px;}
-.ct_offer_box_cook2 p {
-    font-size: 8px;}
-.ct_offer_box_cook2 {
-    width: 47px;
-    padding: 3px 10px 10px 3px;
-        transform: translate(2px, 6px);
-    }
+.coppy_right p {
+    font-size: 14px;
+    margin: 2px 7px 0 10px;}
+    .ct_logox img {
+    width: 59px;
+}
+            .home_btn {
+                display: none;
+            }
 
-.ct_bx_fooditm a .ct_bx_flex {
-    display: flex;
-    width: 100%;
-}
-.ct_bx_fooditm .main_im {
-    width: 108px;    margin-left: 26px;}
-        
-        .ct_bx_fooditm .item_intro {
-    font-size: 11px;
-    line-height: 15px;
-    width: 80%;
-}
+            .ct_bx_about_mobile2 p {
+                margin-top: -4px;
+            }
+
+            .ct_bx_about_mobile2 .material-symbols-outlined {
+                font-size: 27px;
+                margin: -15px 5px;
+            }
+
+            .ct_offer_box_cook2 span {
+                font-size: 10px;
+            }
+
+            .ct_offer_box_cook2 p {
+                font-size: 8px;
+            }
+
+            .ct_offer_box_cook2 {
+                width: 47px;
+                padding: 3px 10px 10px 3px;
+                transform: translate(2px, 6px);
+            }
+
+            .ct_bx_fooditm a .ct_bx_flex {
+                display: flex;
+                width: 100%;
+            }
+
+            .ct_bx_fooditm .main_im {
+                width: 108px;
+                margin-left: 26px;
+            }
+
+            .ct_bx_fooditm .item_intro {
+                font-size: 11px;
+                line-height: 15px;
+                width: 80%;
+            }
 
             .ct_logox img {
                 width: 64%;
@@ -4705,10 +4882,12 @@
                 width: 20%;
                 margin-top: 17px;
             }
-        .ct_bx_price_fd .price:nth-child(2) {
-    margin-top: 4px;
-    font-size: 19px;
-}
+
+            .ct_bx_price_fd .price:nth-child(2) {
+                margin-top: 4px;
+                font-size: 19px;
+            }
+
             .ct_bx_price_fd del {
                 font-size: 15px;
                 color: #000;
@@ -4737,13 +4916,6 @@
                 font-size: 18px;
             }
 
-            .crousel1x {
-                width: 95%;
-                margin-left: 8px;
-                border-radius: 17px;
-                margin-top: 98px;
-                box-shadow: 0 9px 6px #00000033;
-            }
 
             .ct_bx_btn_place_order .view_items_btn {
                 width: 74px;
@@ -4775,7 +4947,7 @@
 
             .ct_acc_dt_ov p {
                 color: white;
-                =
+
             }
 
             .ct_bx_total_amount_to_pay h3 {
@@ -4868,7 +5040,7 @@
                 width: 101%;
                 height: max-content;
                 margin-left: -12px;
-                margin-bottom: 38px;
+                margin-bottom: 14px;
             }
 
             .ct_nav_erak .mai_ul {
@@ -4923,12 +5095,13 @@
             }
 
             .erak_fd_body .for_nav_main .logo {
-                margin-top: 4px
+                margin-top: 4px;
+                margin-left: 9px;
             }
 
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 9px;
-                display: block;
+                display: none;
                 margin-top: -1px;
 
             }
@@ -5028,12 +5201,6 @@
                 background: #e1e2e5;
             }
 
-            .logo img {
-                margin-top: -11px;
-                margin-left: 33%;
-                width: 54px;
-            }
-
             .for_mobile_search {
                 top: 74px
             }
@@ -5128,8 +5295,8 @@
             }
 
 
-            .ct_field_small_size ion-icon {
-                font-size: 39px;
+            .ct_field_small_size span {
+                font-size: 30px;
             }
 
             .cart_nav ion-icon {
@@ -5156,21 +5323,21 @@
             }
 
             .ct_loading_bx .ct_for_img_load {
-                width: 103%;
+                width: 67%;
                 position: relative;
             }
 
             .ct_loading_bx .ct_for_img_load {
-                height: 258px;
+                height: 124px;
             }
 
             .for_load_bx_grid {
-                display: block;
+                display: flex;
             }
 
             .ct_bx_fooditm h4 {
                 font-size: 18px;
-                color:#000000;
+                color: #000000;
             }
 
             .list_food_at_ov h3 {
@@ -5263,12 +5430,14 @@
             .for_nav_main .logo {
                 margin: 4px 0
             }
-.ct_bx_fooditm {
-    width: 93%;
-    margin-bottom: 9px;
-    margin-left: 0;
-    padding: 13px 0;
-}
+
+            .ct_bx_fooditm {
+                width: 93%;
+                margin-bottom: 9px;
+                margin-left: 0;
+                padding: 13px 0;
+            }
+
             .ct_nav_erak .ct_bx_search {
                 width: 100%
             }
@@ -5277,10 +5446,6 @@
                 padding: 6px 10px
             }
 
-            .ct_nav_erak .for_seravh_in_nav {
-                margin-left: 0;
-                margin-right: 0
-            }
 
             .cart_nav a {
                 margin-top: 7px
@@ -5290,9 +5455,6 @@
                 height: 90%
             }
 
-            .ct_nav_erak .for_seravh_in_nav {
-                width: 200px
-            }
 
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
                 width: 100%;
@@ -5432,9 +5594,9 @@
                 padding: 5px;
             }
 
-       .ct_bx_price_fd .price:nth-child(2) {
-    font-size: 21px;
-}
+            .ct_bx_price_fd .price:nth-child(2) {
+                font-size: 21px;
+            }
 
             .ct_bx_fooditm .ct_bx_price_fd p {
                 font-size: 23px;
@@ -5450,20 +5612,36 @@
             .btn_bottom_nav p {
                 font-size: 10px;
             }
+.coppy_right p {
+    font-size: 11px;
+    margin: 2px 6px 0 18px;
+}
+.about_us_link a {
+    font-size: 11px;
+    display: block;
+    margin-top: 3px;}
+            .erak_fd_body .for_nav_main .logo {
+                margin-left: 2px;
+            }
+
             .ct_offer_box_cook2 {
-    transform: translate(-4px, 0px);
-}
-     .ct_bx_fooditm .main_im {
-    width: 25vw;
-    height: 40vw;
-    margin-left: 15px;
-}
-.ct_bx_fooditm {
-    padding: 7px 0;
-}
-    .ct_bx_fooditm .item_intro {
-    font-size: 10px;
-    line-height: 11px;}
+                transform: translate(-4px, 0px);
+            }
+
+            .ct_bx_fooditm .main_im {
+                width: 25vw;
+                height: 40vw;
+                margin-left: 15px;
+            }
+
+            .ct_bx_fooditm {
+                padding: 7px 0;
+            }
+
+            .ct_bx_fooditm .item_intro {
+                font-size: 10px;
+                line-height: 11px;
+            }
 
             .btn_bottom_nav.ct_bx_signup_mobile,
             .btn_bottom_nav.ct_bx_login_mobile {
@@ -5547,29 +5725,33 @@
                 margin-top: 16px;
             }
 
-        .ct_bx_price_fd .price:nth-child(2) {
-    margin-top: -2px;
-    font-size: 14px;
-    margin-left: 0px;
-}
+            .ct_bx_price_fd .price:nth-child(2) {
+                margin-top: -2px;
+                font-size: 14px;
+                margin-left: 0px;
+            }
 
 
-.ct_offer_box_cook2 span {
-    font-size: 10px;
-}
-.erak_fd_body .groc_list .ct_cat_by_list {
-    margin-left: -7px;
-}
-.ct_bx_inner_food_groc {
-    margin-top: 12px;
-}
-.ct_offer_box_cook2 p {
-    font-size: 8px;
-}
-.ct_bx_fooditm .ct_bx_price_fd del {
-    margin-top: 0;
-    font-size: 11px;
-}
+            .ct_offer_box_cook2 span {
+                font-size: 10px;
+            }
+
+            .erak_fd_body .groc_list .ct_cat_by_list {
+                margin-left: -7px;
+            }
+
+            .ct_bx_inner_food_groc {
+                margin-top: 12px;
+            }
+
+            .ct_offer_box_cook2 p {
+                font-size: 8px;
+            }
+
+            .ct_bx_fooditm .ct_bx_price_fd del {
+                margin-top: 0;
+                font-size: 11px;
+            }
 
             .ct_bx_fooditm .ct_bx_price_fd p {
                 font-size: 22px;
@@ -5600,12 +5782,6 @@
 
             .ct_acc_dt_ov p {
                 font-size: 20px
-            }
-
-            .ct_nav_erak .for_seravh_in_nav {
-                width: 179px;
-                margin-left: 0;
-                margin-right: 0
             }
 
             .acc_erak_mobile ion-icon {
@@ -6153,7 +6329,7 @@
 </head>
 
 <body class="erak_fd_body">
-   {{>nav}}
+    {{>nav}}
 
     <div class="ct_bx_under_maintenance">
         <article>
@@ -6275,68 +6451,13 @@
             </div>
 
             <div class="ct_bx_info_sauce">
-                <div class="inner_bxs">
-                    <span>*</span>
 
-                    <p>150g pack is sutable for 450gm chicken,mutton and 250gm soyabean</p>
-                </div>
-                <div class="inner_bxs">
-                    <span>*</span>
-
-                    <p>150g pack is sutable for 450gm chicken,mutton and 250gm soyabean</p>
-                </div>
-                <div class="inner_bxs">
-                    <span>*</span>
-
-                    <p>150g pack is sutable for 450gm chicken,mutton and 250gm soyabean</p>
-                </div>
 
             </div>
-            <div class="ct_select_qty_bx">
+            <div class="ct_select_qty_bx ">
                 <h3>Please select a quantity</h3>
                 <div class="ct_flexbx">
-                    <div class="ct_for_bx1 active">
-                        <h4>150g pack</h4>
-                        <span class="info_package">Pouch pack</span>
 
-                        <div class="ct_pr_bx">
-                            <del>₹ 95/-</del>
-                            <p>₹ 58/-</p>
-
-                        </div>
-
-                    </div>
-                    <div class="ct_for_bx1">
-                        <h4>200g pack</h4>
-                        <span class="info_package">Pouch pack</span>
-                        <div class="ct_pr_bx">
-                            <del>₹ 95/-</del>
-                            <p>₹ 58/-</p>
-
-                        </div>
-
-                    </div>
-                    <div class="ct_for_bx1">
-                        {{!-- <div class="ct_pop_info">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus itaque sit ab
-                                labore, nemo quae blanditiis fuga, nesciunt recusandae eum mollitia iure in ipsum. Ab
-                                omnis minima quam voluptatum vitae?</p>
-                        </div> --}}
-                        <div class="ct_bx_flex">
-                            <h4>300g</h4>
-                            <div class="ct_x_info">
-                                <ion-icon name="help-circle-outline"></ion-icon>
-                            </div>
-                        </div>
-                        <span class="info_package">container pack</span>
-
-                        <div class="ct_pr_bx">
-                            <del>₹ 55/-</del>
-                            <p>₹ 38/-</p>
-
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
@@ -6441,46 +6562,46 @@
                                     <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
                                         <div class="itm_food_list_ek added_itm_ek_fd">
 
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-                                                    <div class="ct_offer_box_cook2">
-                                                        <span>20%</span>
-                                                        <p>off</p>
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image"
+                                                        src="../img/onions_fresh.png">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
                                                     </div>
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/onions_fresh.png">
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
 
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
                                                     </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
 
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Fresh onions</h4>
-                                                        </div>
-                                                        <div class="ct_unit_box_selector">
-                                                            <div class="ct_pr_bx_unit">
-                                                                <p>500g</p>
-                                                                <span>₹ 25</span>
-                                                            </div>
-
-                                                            <div class="ct_popup_unit_btn">
-                                                                <ion-icon name="caret-forward-outline" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="caret forward outline"></ion-icon>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-
-
-                                                        </div>
-                                                        <div class="ct_addbtns">
-                                                            <p>Add to cart</p>
-                                                        </div>
 
                                                     </div>
-                                                </a>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
+
 
                                             </div>
                                         </div>
@@ -6490,46 +6611,44 @@
                                     <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
                                         <div class="itm_food_list_ek added_itm_ek_fd">
 
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-                                                    <div class="ct_offer_box_cook2">
-                                                        <span>20%</span>
-                                                        <p>off</p>
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/tomato_img.png">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
                                                     </div>
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/tomato_img.png">
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
 
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
                                                     </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
 
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Fresh onions</h4>
-                                                        </div>
-                                                        <div class="ct_unit_box_selector">
-                                                            <div class="ct_pr_bx_unit">
-                                                                <p>500g</p>
-                                                                <span>₹ 25</span>
-                                                            </div>
-
-                                                            <div class="ct_popup_unit_btn">
-                                                                <ion-icon name="caret-forward-outline" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="caret forward outline"></ion-icon>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-
-
-                                                        </div>
-                                                        <div class="ct_addbtns">
-                                                            <p>Add to cart</p>
-                                                        </div>
 
                                                     </div>
-                                                </a>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -6537,48 +6656,230 @@
                                     <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
                                         <div class="itm_food_list_ek added_itm_ek_fd">
 
-                                            <div class="ct_inner_fd_dt_grid"><a <a="" href="/recipes/amritsari-chole">
-                                                    <div class="ct_offer_box_cook2">
-                                                        <span>20%</span>
-                                                        <p>off</p>
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg"
+                                                        style="width: 74%;">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
                                                     </div>
-                                                    <div class="ct_img_res_main">
-                                                        <img alt="Amritsari chole sauce image"
-                                                            src="../img/mutton_rm.jpg" style="
-    width: 74%;
-">
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
 
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
                                                     </div>
-                                                    <div class="ct_inner_fd1_dt_grid">
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
 
-                                                        <div class="ct_dt_tm_food_res">
-                                                            <h4>Fresh onions</h4>
-                                                        </div>
-                                                        <div class="ct_unit_box_selector">
-                                                            <div class="ct_pr_bx_unit">
-                                                                <p>500g</p>
-                                                                <span>₹ 25</span>
-                                                            </div>
-
-                                                            <div class="ct_popup_unit_btn">
-                                                                <ion-icon name="caret-forward-outline" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="caret forward outline"></ion-icon>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                                            <del class="pricenooff">₹ 118</del>
-                                                            <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
-                                                            </p>
-
-
-                                                        </div>
-                                                        <div class="ct_addbtns">
-                                                            <p>Add to cart</p>
-                                                        </div>
 
                                                     </div>
-                                                </a>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg"
+                                                        style="width: 74%;">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
+                                                    </div>
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
+
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
+
+
+                                                    </div>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg"
+                                                        style="width: 74%;">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
+                                                    </div>
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
+
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
+
+
+                                                    </div>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg"
+                                                        style="width: 74%;">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
+                                                    </div>
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
+
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
+
+
+                                                    </div>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-cell fd_ek_cell_car_recom " style="left: 0vw;">
+                                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                            <div class="ct_inner_fd_dt_grid">
+                                                <div class="ct_offer_box_cook2">
+                                                    <span>20%</span>
+                                                    <p>off</p>
+                                                </div>
+                                                <div class="ct_img_res_main">
+                                                    <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg"
+                                                        style="width: 74%;">
+
+                                                </div>
+                                                <div class="ct_inner_fd1_dt_grid">
+
+                                                    <div class="ct_dt_tm_food_res">
+                                                        <h4>Fresh onions</h4>
+                                                    </div>
+                                                    <div class="ct_unit_box_selector">
+                                                        <div class="ct_pr_bx_unit">
+                                                            <p>500g</p>
+                                                            <span>₹ 25</span>
+                                                        </div>
+
+                                                        <div class="ct_popup_unit_btn">
+                                                            <ion-icon name="caret-forward-outline" role="img"
+                                                                class="md hydrated"
+                                                                aria-label="caret forward outline"></ion-icon>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                                        <del class="pricenooff">₹ 118</del>
+                                                        <p class="price_food for_oly_ekfd_price"><span>₹ 59 </span>
+                                                        </p>
+
+
+                                                    </div>
+                                                    <div class="ct_addbtns">
+                                                        <p>Add to cart</p>
+                                                    </div>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -6629,7 +6930,7 @@
                     <img class="bannerX" src="../img/banner_sample2.jpg" alt="img">
                     {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                         src="../img/imgBanner2.webp" alt="img"> --}}
-                    <img class="banner2X" src="../img/banner_test.jpeg" alt="img">
+                    <img class="banner2X" src="../img/banner_sample2.jpg" alt="img">
                     <div class="ct_bx_video_banner">
                         <div class="ct_bx_btn_play">
                             <ion-icon name="play"></ion-icon>
@@ -7202,57 +7503,49 @@
         var socket = io()
 
         let arrayItm = [{
-            g: 'a',
-            about: ["Curry sauce, Taste makers, Chicken, Ginger garlic paste, Butter"
-                , "Please select your required item from those below options.Curry sauce and taste makers are already added."],
-            cook: null,
-            commSoon: false,
-            cookingTime: "15 minutes",
-            deliveryTime: "1 hour",
-            fdInside: [{
-                name: "Potatoes",
-                s: true,
-                selUn: true
+
+            about: ['Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"'],
+            descrip: ["150g pack is sutable for 450gm chicken,mutton and 250gm soyabean", "150g pack is sutable for 450gm chicken,mutton and 250gm soyabean"],
+            name: "masala meat",
+            offer: "20%",
+            img: ['https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg', '../img/mutton_sample.jpg'],
+            price_real: "45",
+            tagline: 'Enjoy delicous chicken, mutton curry made with all natural ingredients.',
+            weight_sh: '150gm',
+            qty: [{
+                name: "150gm",
+                pack: "pouch pack",
+                price: "45",
             }, {
-                about: "A combination of Indian spices enhances the taste with numerous health benefits.",
-                name: "Taste makers",
-                price: 0
+                name: "300gm",
+                pack: "pouch pack",
+                price: "75",
             }, {
-                about: {
-                    ing: ['Butter', 'Indian whole spices', 'Tomato', 'Onion', 'Ginger', 'Garlic', 'Salt', 'Chillies', 'Indian powdered spices', 'kaju badam'],
-                    text: "It is a mix of vegetables and spices, cooked in pure mustard oil, with no chemicals and preservatives.",
-                },
-                name: "Chicken sauce",
-                price: "80",
+                info: "it is a affortable pack",
+                name: "400",
+                pack: "container pack",
+                price: "125",
             }],
-            id: "bengali_chicken_curry",
-            img: "../img/bengali_chicken_curry.jpg",
-            imgBanner: null,
-            initUnit: "500",
-            itemsOthers: null,
-            name: "Bengali chicken curry",
-            netweight: 100,
-            offer: 40,
-            profit: "20",
-            ratings: [{ star: 5, ratings: 0 }, { star: 4, ratings: 0 }, { star: 3, ratings: 0 }, { star: 2, ratings: 0 }, { star: 1, ratings: 0 }],
-            restPrice: "0",
-            review: [],
-            unitInit: [{ count: 1, price: 60, sm: true, stock: 100, unitNum: '500g', unitUni: 'chicken' }, { count: 1, price: null, sm: true, stock: 100, unitNum: '0', unitUni: ' no chicken' }],
-            unitUni: "g",
-            video: null,
+            stock: "4",
         }]
-        // arrayItm.forEach(cur => {
-        //     db.collection("items").doc(cur.name.split(' ').join('')).set({
-        //         group: cur.g,
-        //         item: cur,
-        //         maxqt: [],
-        //     }).then(() => {
-        //         console.log("Document successfully written!");
-        //     })
-        //         .catch((error) => {
-        //             console.error("Error writing document: ", error);
-        //         })
-        // })
+
+        //arrayItm.forEach(cur => {
+        //    db.collection("sauce").add({
+        //    item:cur
+        //      
+        //    }).then(() => {
+        //        console.log("Document successfully written!");
+        //    })
+        //        .catch((error) => {
+        //            console.error("Error writing document: ", error);
+        //        })
+        //})
+
+
+
+        if (window.screen.width <= 1650) {
+
+        }
         if (localStorage.getItem('foodsAdded') === null) {
             localStorage.setItem('foodsAdded', '[]')
         }
@@ -7295,6 +7588,10 @@
         let qtItm = 1
         let selU = 0
         let idItm = ''
+        let count_qty = 1
+        console.log(count_qty)
+
+        let stock_itm_global = 0
         //------------------------------------------//
         let cookSteps_img = ''
         document.querySelector('html').addEventListener('click', (e) => {
@@ -7305,9 +7602,61 @@
             let itmqtinc = e.target.closest('.ct_bx_item_add')
             let itmqtdec = e.target.closest('.ct_bx_item_rem')
             let view_itm = e.target.closest('.ct_bx_fooditm')
+
+            let qty_bx_itm = e.target.closest('.ct_for_bx1')
             let placeOrderItm = e.target.closest('.place_order_btn_popup')
             let dr_addtocartBtn = e.target.closest('.place_order_btn')
             let gCart = e.target.closest('.go_to_cart_btn')
+
+            let dec_btn_qt = e.target.closest('.dec_btn')
+            let inc_btn_qt = e.target.closest('.inc_btn')
+            if (inc_btn_qt !== null) {
+                console.log(count_qty)
+
+                count_qty += 1
+                console.log(count_qty)
+
+                stock_itm_global = parseFloat(stock_itm_global)
+
+                if (count_qty <= stock_itm_global) {
+                    document.querySelector('.ct_qty_box input').value = count_qty
+                }
+            } else if(dec_btn_qt!==null){
+                    count_qty -= 1
+
+                if (count_qty > 0) {
+                    document.querySelector('.ct_qty_box input').value = count_qty
+
+                }else{
+                    count_qty=1
+                }
+
+            }
+
+            if (qty_bx_itm !== null) {
+                let del
+                let pr
+                if(qty_bx_itm.childNodes[7]!==undefined){
+ del=qty_bx_itm.childNodes[7].childNodes[1].innerText
+                 pr=qty_bx_itm.childNodes[7].childNodes[3].innerText
+                }else{
+ del=qty_bx_itm.childNodes[5].childNodes[1].innerText
+                 pr=qty_bx_itm.childNodes[5].childNodes[3].innerText
+                }
+                
+document.querySelector('.ct_bx_total_amount_to_pay h3').innerText=pr
+document.querySelector('.ct_bx_total_amount_to_pay del').innerText=del
+
+                if (!qty_bx_itm.classList.value.split(' ').includes('active')) {
+                    document.querySelector('.ct_for_bx1.active').classList.remove('active')
+                    qty_bx_itm.classList.add('active')
+
+                } else {
+                    document.querySelector('.ct_for_bx1.active').classList.add('active')
+                    qty_bx_itm.classList.remove('active')
+
+                }
+            }
             if (gCart !== null) {
                 window.location.replace('/mycart')
             }
@@ -7338,6 +7687,89 @@
 
             }
             if (view_itm !== null) {
+                console.log(view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes)
+                let name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
+                stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
+                let price = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[5].innerHTML
+                let price_off = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[7].innerHTML
+                let offer = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[9].innerHTML
+                let about = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[11].innerHTML
+                let qtys = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[13].innerHTML
+                let desc = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[15].innerHTML
+                let essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[17].innerHTML
+
+                document.querySelector('.name_of_itm').innerText = name
+                document.querySelector('.offer_item p').innerText = offer + '% off'
+                document.querySelector('.name_of_itm').innerText = name
+                console.log(desc)
+                                document.querySelector('.ct_bx_info_sauce').innerHTML=''
+                    document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML=''
+
+                let desc_obj = JSON.parse(desc)
+                desc_obj.forEach(cur11 => {
+                    let html = `<div class="inner_bxs">
+                    <span>*</span>
+
+                    <p>${cur11}</p>
+                </div>`
+                    document.querySelector('.ct_bx_info_sauce').insertAdjacentHTML('beforeend', html)
+                })
+                console.log(qtys)
+                let qty_obj = JSON.parse(qtys)
+                qty_obj.forEach((cur11, ind) => {
+                    let price = cur11.price
+                    let pack = cur11.pack
+                    let name = cur11.name
+
+                    let price_off = parseFloat(price) * 100 / (100 - offer)
+                    price_off = price_off.toLocaleString()
+                    if (price_off.split('.')[1] !== undefined) {
+                        price_off = price_off.split('.')[0]
+                    }
+                    price = price.toLocaleString()
+                    let active_btn = 'active'
+
+                    if (ind > 0) {
+                        active_btn = 'unactive'
+                    }
+                    let html = `<div class="ct_for_bx1 ${active_btn}">
+                        <h4>${name}</h4>
+                        <span class="info_package">${pack}</span>
+                        <div class="ct_pr_bx">
+                            <del>₹ ${price_off}</del>
+                            <p>₹ ${price}</p>
+
+                        </div>
+
+                    </div>`
+
+                    if (cur11.info !== undefined) {
+                        html = `<div class="ct_for_bx1">
+            <div class="ct_pop_info">
+                            <p></p>
+                        </div>
+                            <div class="ct_bx_flex">
+                           <h4>${name}</h4>
+                            <div class="ct_x_info">
+                                <ion-icon name="help-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+                        <span class="info_package">${pack}</span>
+                        <div class="ct_pr_bx">
+                            <del>₹ ${price_off}</del>
+                            <p>₹ ${price}</p>
+
+                        </div>
+
+                    </div>`
+                    }
+
+                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                })
+
+
+
+
                 //  let stk_limit = view_itm.parentElement.parentElement.childNodes[7].childNodes[3].innerText
                 //  let itm_name = view_itm.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('(')[0]
                 //  let item_video_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[15].innerText
@@ -7356,10 +7788,16 @@
                 document.querySelector('.added_to_cart').style.display = 'none'
                 //document.querySelector('.place_order_btn_popup').style.display = 'block'
                 let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
-                if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
-                    document.querySelector('.ct_pop_up_items_order').classList.add('active')
-                }
 
+                if (window.screen.width > 550) {
+                    if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active2')) {
+                        document.querySelector('.ct_pop_up_items_order').classList.add('active2')
+                    }
+                } else {
+                    if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
+                        document.querySelector('.ct_pop_up_items_order').classList.add('active')
+                    }
+                }
                 // localItems.forEach(cu => {
                 //     if (cu.id === id_itm) {
                 //         itm_pr = cu.price.split('₹')[1].split(',').join('')
@@ -7486,13 +7924,20 @@
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
 
             }
-            if (itmPopucloseIcon !== null) {
-                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
+            if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
+            }
+            if (itmPopucloseIcon !== null) {
+                document.querySelector('.ct_bx_layer').style.display = 'none'
+                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+                document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
 
             }
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
@@ -7827,7 +8272,6 @@
         var waypoint = new Waypoint({
             element: document.querySelector('#ek_res_ev'),
             handler: function (direction) {
-                let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
                 if (direction === 'down') {
 
                     document.querySelector('.for_nav_main').style.top = '0'
@@ -7956,170 +8400,237 @@
 
         }
         const loadFoodItems = async () => {
-            let dbColl = db.collection(`items`)
-            let res = await dbColl.orderBy('group').get()
+            let dbColl = db.collection(`sauce`)
+            // dbColl.orderBy('group').get()
+            let res = await dbColl.get()
             let grouped = ``
             res.docs.forEach(cur => {
                 let item = cur.data().item
-                if (grouped !== cur.data().group) {
-                    let idN = cur.data().group.split(' ').join('')
-                    let htmlG = `<div class="list_food_at_ov groc_list for_erak_list" id="${idN}">
+                //             if (grouped !== cur.data().group) {
+                //                 let idN = cur.data().group.split(' ').join('')
+                //                 let htmlG = `<div class="list_food_at_ov groc_list for_erak_list" id='sauce'>
 
 
 
 
-<div class="ct_cat_by_list">
+                //v class="ct_cat_by_list">
 
-</div>
-</div>`
-                    grouped = cur.data().group
-                    document.querySelector('.ct_all_list_food').insertAdjacentHTML('beforeend', htmlG)
+                //iv>
+                //iv>`
+                //                 grouped = cur.data().group
+                //                 document.querySelector('.ct_all_list_food').insertAdjacentHTML('beforeend', htmlG)
+                //             }
+                // if (document.querySelector(`#${cur.data().group.split(' ').join('')}`) !== null) {
+                //     let priceN = 0
+                //     let pff = parseFloat(item.profit)
+                //     for (let i = 0; i < item.unitInit.length; i++) {
+                //         let cur1 = item.unitInit[i]
+                //         if (parseFloat(cur1.stock) !== 0 && cur1.price !== null) {
+                //             //priceN += parseFloat(cur1.price)
+                //             break
+                //         }
+                //     }
+                //     let pricemain = 0
+                //     console.log(priceN)
+                //     item.fdInside.forEach(cur1 => {
+                //         if (cur1.id !== 'spices') {
+                //             if (cur1.price !== undefined) {
+                //                 let pr = parseFloat(cur1.price)
+                //                 if (item.offer !== null && cur1.id !== 'spices') {
+                //                     if (item.offer.sauce !== null) {
+                //                         pricemain = pr.toLocaleString()
+                //                         let offX = parseFloat(item.offer.sauce)
+                //                         pr = pr - (pr * (offX / 100))
+                //                     }
+                //                 }
+                //                 pr = String(pr)
+                //                 pr = pr.split('.')[0]
+                //                 pr = parseFloat(pr)
+                //                 priceN += pr
+                //                 console.log(priceN, 'priceN2')
+                //             }
+                //         }
+                //     })
+
+
+
+                //     let btn_place_order = ''
+                //     let unit_itm = ''
+                //     let priceBox = ``
+                //     if (item.offer !== null) {
+                //         let priceOffer = 0
+                //         //<del class="price">₹ ${priceN.toLocaleString()}</del>  
+                //         let off = parseFloat(item.offer.off)
+
+                //         priceBox = ` <div class="ct_bx_price_fd hasoffPrice">
+                //         <p class="price">₹ ${priceN.toLocaleString()}</p>
+                // <del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>   
+                //     </div>`
+                //     } else {
+                //         priceBox = ` <div class="ct_bx_price_fd hasPrice">
+                //     <p class="price">₹ ${priceN.toLocaleString()}</p>  <del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>
+                //     </div>`
+
+                //     }
+
+                //     let offer_box = ''
+                //     if (item.offer !== null) {
+                //         offer_box = `   <div class="ct_offer_box_cook2">
+                //                     <span>${item.offer.sauce}%</span>
+                //                     <p>off</p>
+                //                 </div>`
+                //     }
+
+                //     let commSoonHtml = ``
+                //     let commSoonHtml2 = ``
+                //     if (item.commSoon) {
+                //         commSoonHtml = `style="filter:grayscale(1)"`
+                //         priceBox = `<div class="ct_bx_price_fd hasPrice"> <p class="commingSoonp">Coming soon</p> </div>`
+                //     }
+                //     let idSrcgBtn = item.id.split('-').join('')
+                //     idSrcgBtn = idSrcgBtn + '_btn_gcart'
+                //     let idSrcaddBtn = item.id.split('-').join('')
+                //     idSrcaddBtn = idSrcaddBtn + '_btn_addBtn'
+                //     let srcM
+                //     let html_hide = ''
+                //     let add_to_cart_btn_direct = `        <button class='place_order_btn ${idSrcaddBtn} '>Add to cart</button>
+                //      `
+                //     let gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
+
+
+                //     let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
+                //     localItems.forEach(cu => {
+                //         if (cu.id === item.id) {
+                //             add_to_cart_btn_direct = ''
+                //             gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}' style='display:block'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
+                //         }
+                //     })
+                //     if (window.screen.width <= 470) {
+                //         unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
+
+                //     }
+                //                 if (!item.commSoon) {
+                //                     srcM = `href="/recipes/${item.id}"`
+                //                     if (window.screen.width <= 470) {
+                //                         btn_place_order = `<div class="ct_bx_btn_place_order">
+                // <button class='view_items_btn'>View <ion-icon name="arrow-forward-outline"></ion-icon> </button>
+                //  ${add_to_cart_btn_direct}
+                // ${gtocart}
+                // </div>`
+
+                //                         html_hide = `       <div class="ct_bx_item_details_hide">
+                // <p class="name">${item.name}</p>
+                // <p class="stock">${item.netweight}</p>
+                // <p class="price_pr">${priceN.toLocaleString()}</p>
+                // <p class="price_off">${pricemain.toLocaleString()}</p>
+                // <p class="offer">${item.offer.off}</p>
+                // <p class="ing_list">${item.fdInside[2].about.ing.join(', ')}</p>
+                // <p class="cook_steps">${item.cook[0].name}</p>
+                // <p class="cook_video">${item.video}</p>
+                // <p class="itm_id">${item.id}</p>
+
+
+                // </div>`
+                //                     }
+
+                //                 } else {
+                //                     offer_box = ''
+                //                     unit_itm = ''
+                //                     btn_place_order = ''
+                //                     srcM = `rel="nofollow"`
+                //                     html_hide = ''
+                //                     btn_place_order = ''
+                //                 }
+                //                 if (window.screen.width <= 470) {
+                //                     srcM = `rel="nofollow"`
+
+                //                 }
+                //                console.log(item.fdInside)
+                //                let html = ` <div class="ct_bx_fooditm">
+                //        <a ${srcM}>
+                //        <div class="ct_bx_flex">
+                //          ${offer_box}
+                //            <img class="main_im" alt="${item.name}" src="${item.img}" ${commSoonHtml}>
+                //        <div class="ct_bx_inner_food_groc">
+                //            
+                //        <h4 ${commSoonHtml}>${item.name}</h4>
+                //            ${unit_itm}
+                //            ${priceBox}
+                //     ${html_hide}
+                //             ${btn_place_order}
+                //             </div>
+                //    </div>
+                //    </a>
+                //</div> `
+                let name = item.name
+                let offer = parseFloat(item.offer)
+                let tagline = item.tagline
+                let weight_sh = item.weight_sh
+                let stock = item.stock
+                let qtys = item.qty
+                let price_real = item.price_real
+                let img = item.img
+                let about = item.about
+                let desc = item.descrip
+                desc = JSON.stringify(desc)
+                let essential_ids = item.essen_ids
+                let qty_items = JSON.stringify(qtys);
+
+
+
+                let price_off = parseFloat(price_real) * 100 / (100 - offer)
+                price_off = price_off.toLocaleString()
+                if (price_off.split('.')[1] !== undefined) {
+                    price_off = price_off.split('.')[0]
                 }
-                if (document.querySelector(`#${cur.data().group.split(' ').join('')}`) !== null) {
-                    let priceN = 0
-                    let pff = parseFloat(item.profit)
-                    for (let i = 0; i < item.unitInit.length; i++) {
-                        let cur1 = item.unitInit[i]
-                        if (parseFloat(cur1.stock) !== 0 && cur1.price !== null) {
-                            //priceN += parseFloat(cur1.price)
-                            break
-                        }
-                    }
-                    let pricemain = 0
-                    console.log(priceN)
-                    item.fdInside.forEach(cur1 => {
-                        if (cur1.id !== 'spices') {
-                            if (cur1.price !== undefined) {
-                                let pr = parseFloat(cur1.price)
-                                if (item.offer !== null && cur1.id !== 'spices') {
-                                    if (item.offer.sauce !== null) {
-                                        pricemain = pr.toLocaleString()
-                                        let offX = parseFloat(item.offer.sauce)
-                                        pr = pr - (pr * (offX / 100))
-                                    }
-                                }
-                                pr = String(pr)
-                                pr = pr.split('.')[0]
-                                pr = parseFloat(pr)
-                                priceN += pr
-                                console.log(priceN, 'priceN2')
-                            }
-                        }
-                    })
+                price_real = price_real.toLocaleString()
+
+                let html = `<div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    <div class="ct_offer_box_cook2">
+                                                        <span>${offer}%</span>
+                                                        <p>off</p>
+                                                    </div>
+                                                    <img class="main_im" alt="${name}" src="${img[0]}">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>${name}</h4>
+                                                        <p class="item_intro">${tagline}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${weight_sh}</p>
+
+                                                        <div class="ct_bx_price_fd hasoffPrice">
+                                                            <del class="pricenooff">₹ ${price_off}</del>
+
+                                                            <p class="price">₹ ${price_real}</p>
+                                                        </div>
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">${name}</p>
+                                                            <p class="stock">${stock}</p>
+                                                            <p class="price_pr">${price_real}</p>
+                                                            <p class="price_off">${price_off}</p>
+                                                            <p class="offer">${offer}</p>
+                                                            <p class="about_list">${about}</p>
+                                                            <p class="qty">${qty_items}</p>
+                                                            <p class="desc">${desc}</p>
+                                                            <p class="essentials">${essential_ids}</p>
+
+                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="cook_video">
+                                                                https://www.youtube.com/embed/vJX8tiYL0B0</p>
+                                                            <p class="itm_id">masala-chicken-curry</p>
 
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>`
+                //#${cur.data().group.split(' ').join('')}
+                document.querySelector(`.ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
+                document.querySelector('.ct_full_loading_box').style.display = 'none'
 
-                    let btn_place_order = ''
-                    let unit_itm = ''
-                    let priceBox = ``
-                    if (item.offer !== null) {
-                        let priceOffer = 0
-                        //<del class="price">₹ ${priceN.toLocaleString()}</del>  
-                        let off = parseFloat(item.offer.off)
-
-                        priceBox = ` <div class="ct_bx_price_fd hasoffPrice">
-                        <p class="price">₹ ${priceN.toLocaleString()}</p>
-<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>   
-                    </div>`
-                    } else {
-                        priceBox = ` <div class="ct_bx_price_fd hasPrice">
-<p class="price">₹ ${priceN.toLocaleString()}</p>  <del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>
-                    </div>`
-
-                    }
-
-                    let offer_box = ''
-                    if (item.offer !== null) {
-                        offer_box = `   <div class="ct_offer_box_cook2">
-                                    <span>${item.offer.sauce}%</span>
-                                    <p>off</p>
-                                </div>`
-                    }
-
-                    let commSoonHtml = ``
-                    let commSoonHtml2 = ``
-                    if (item.commSoon) {
-                        commSoonHtml = `style="filter:grayscale(1)"`
-                        priceBox = `<div class="ct_bx_price_fd hasPrice"> <p class="commingSoonp">Coming soon</p> </div>`
-                    }
-                    let idSrcgBtn = item.id.split('-').join('')
-                    idSrcgBtn = idSrcgBtn + '_btn_gcart'
-                    let idSrcaddBtn = item.id.split('-').join('')
-                    idSrcaddBtn = idSrcaddBtn + '_btn_addBtn'
-                    let srcM
-                    let html_hide = ''
-                    let add_to_cart_btn_direct = `        <button class='place_order_btn ${idSrcaddBtn} '>Add to cart</button>
-`
-                    let gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
-
-
-                    let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
-                    localItems.forEach(cu => {
-                        if (cu.id === item.id) {
-                            add_to_cart_btn_direct = ''
-                            gtocart = `<button class='go_to_cart_btn ${idSrcgBtn}' style='display:block'>Go to cart <ion-icon name="arrow-forward-outline"></ion-icon> </button>`
-                        }
-                    })
-                    if (window.screen.width <= 470) {
-                        unit_itm = ` <p class="for_unit_itm">/ ${item.about[0]}</p>`
-
-                    }
-                    if (!item.commSoon) {
-                        srcM = `href="/recipes/${item.id}"`
-                        if (window.screen.width <= 470) {
-                            btn_place_order = `<div class="ct_bx_btn_place_order">
-    <button class='view_items_btn'>View <ion-icon name="arrow-forward-outline"></ion-icon> </button>
-${add_to_cart_btn_direct}
-${gtocart}
-</div>`
-
-                            html_hide = `       <div class="ct_bx_item_details_hide">
-    <p class="name">${item.name}</p>
-    <p class="stock">${item.netweight}</p>
-    <p class="price_pr">${priceN.toLocaleString()}</p>
-    <p class="price_off">${pricemain.toLocaleString()}</p>
-    <p class="offer">${item.offer.off}</p>
-    <p class="ing_list">${item.fdInside[2].about.ing.join(', ')}</p>
-    <p class="cook_steps">${item.cook[0].name}</p>
-    <p class="cook_video">${item.video}</p>
-    <p class="itm_id">${item.id}</p>
-
-
-</div>`
-                        }
-
-                    } else {
-                        offer_box = ''
-                        unit_itm = ''
-                        btn_place_order = ''
-                        srcM = `rel="nofollow"`
-                        html_hide = ''
-                        btn_place_order = ''
-                    }
-                    if (window.screen.width <= 470) {
-                        srcM = `rel="nofollow"`
-
-                    }
-                    console.log(item.fdInside)
-                    let html = ` <div class="ct_bx_fooditm">
-            <a ${srcM}>
-            <div class="ct_bx_flex">
-              ${offer_box}
-                <img class="main_im" alt="${item.name}" src="${item.img}" ${commSoonHtml}>
-            <div class="ct_bx_inner_food_groc">
-                
-            <h4 ${commSoonHtml}>${item.name}</h4>
-${unit_itm}
-                ${priceBox}
-         ${html_hide}
-                 ${btn_place_order}
-                 </div>
-        </div>
-        </a>
-    </div> `
-                    //document.querySelector(`#${cur.data().group.split(' ').join('')} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
-                    document.querySelector('.ct_full_loading_box').style.display = 'none'
-                }
             })
         }
         loadFoodItems()
@@ -8361,6 +8872,101 @@ ${unit_itm}
                 download(cookSteps_img)
             }
         });
+        let iG = 0
+
+        let btns = document.querySelectorAll('.ct_bx_buttons_actions')
+
+
+        document.querySelector('html').addEventListener('click', (e) => {
+            let bx2 = e.target.closest('.ct_slide_menu_acc')
+
+            let slide = e.target.closest('.ct_field_small_size')
+            if (slide !== null) {
+                if (slide !== null) {
+                    if (!document.querySelector('.ct_bx_slide_bx').classList.value.split(' ').includes('active'))
+                        document.querySelector('.ct_bx_slide_bx').classList.add('active')
+                    document.querySelector('.ct_bx_ov_lay').style.display = 'block'
+                } else {
+                    document.querySelector('.ct_bx_ov_lay').style.display = 'none'
+                    document.querySelector('.ct_bx_slide_bx').classList.remove('active')
+
+                }
+            } else {
+                if (e.target.closest('.essentials') !== null) {
+                    return
+                }
+                if (document.querySelector('.ct_bx_slide_bx.active') !== null) {
+                    document.querySelector('.ct_bx_slide_bx.active').classList.remove('active')
+                    document.querySelector('.ct_bx_ov_lay').style.display = 'none'
+
+                }
+
+            }
+        })
+        let togo = Math.round(document.querySelectorAll('.fd_ek_cell_car_recom').length / 3)
+
+
+        btns.forEach(cur => {
+            cur.addEventListener('click', (e) => {
+                if (e.target.id === 'prev_crousel') {
+                    iG--
+                    document.querySelector('#forw').style['pointer-events'] = 'auto'
+                    document.querySelector('#forw').style.opacity = '1'
+
+                    if (iG !== 0) {
+                        let calcT = document.querySelector('.crousel').getBoundingClientRect().width
+                        calcT = iG * calcT
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            row1.style.left = `-${calcT}px`
+                            if (iG < 0) { iG = 0 }
+
+
+                        })
+                    } else {
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+
+                            row1.style.left = `-0vw`
+                        })
+                        document.querySelector('#prev_crousel').style['pointer-events'] = 'none'
+                        document.querySelector('#prev_crousel').style.opacity = '.5'
+                        document.querySelector('#forw').style['pointer-events'] = 'auto'
+                        document.querySelector('#forw').style.opacity = '1'
+                    }
+                } else {
+                    iG++
+                    document.querySelector('#prev_crousel').style['pointer-events'] = 'auto'
+                    document.querySelector('#prev_crousel').style.opacity = '1'
+                    if (document.querySelector('#forw') !== null) {
+                        document.querySelector('#forw').style['pointer-events'] = 'auto'
+                        document.querySelector('#forw').style.opacity = '1'
+                    }
+                    if (iG === togo || togo === 0) {
+                        document.querySelector('#forw').style['pointer-events'] = 'none'
+                        document.querySelector('#forw').style.opacity = '.5'
+
+                    }
+                    if (togo === 0) { togo = 1 }
+                    if (iG <= togo) {
+                        let calcT = document.querySelector('.crousel').getBoundingClientRect().width
+                        calcT = iG * calcT
+
+                        document.querySelectorAll('.inner_slide .fd_ek_cell_car_recom').forEach(row1 => {
+                            row1.style.left = `-${calcT}px`
+
+                            if (iG === 0) { row1.style.left = `-0vw` }
+
+
+
+                        })
+                    }
+                }
+
+            })
+        })
+
+
+
     </script>
 </body>
 

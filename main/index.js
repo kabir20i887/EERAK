@@ -343,6 +343,10 @@ app.get('/admin', (req, res) => {
 
     res.redirect('/')
 })
+app.get('/essentials', (req, res) => {
+
+    res.redirect('essentials')
+})
 app.get('/recipes/:id', (req, res) => {
     console.log(req.params)
     if (req.params !== undefined) {
