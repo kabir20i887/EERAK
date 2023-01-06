@@ -4852,7 +4852,8 @@
             .ct_pop_up_items_order {
                 right: unset;
                 top: unset;
-                bottom: -900px;
+                bottom: -90px;
+                display: none;
                 transition: all .7s ease;
             }
 
@@ -8012,7 +8013,6 @@
 
             }
             if (view_itm !== null) {
-                alert('clicked')
                                 document.querySelector('.ct_pop_up_items_order').style.display = 'block'
 
                 let imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[3].src
@@ -8112,15 +8112,16 @@
                 //document.querySelector('.place_order_btn_popup').style.display = 'block'
                 let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
 
-                if (window.screen.width > 550) {
-                    if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active2')) {
-                        document.querySelector('.ct_pop_up_items_order').classList.add('active2')
-                    }
-                } else {
-                    if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
-                        document.querySelector('.ct_pop_up_items_order').classList.add('active')
-                    }
+            if (window.screen.width > 550) {
+                if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active2')) {
+                    document.querySelector('.ct_pop_up_items_order').classList.add('active2')
+                
                 }
+            } else {
+                if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
+                    document.querySelector('.ct_pop_up_items_order').classList.add('active')
+                }
+            }
 
 
                 document.querySelector('.ct_bx_stock').style.display = 'none'
@@ -8233,10 +8234,14 @@
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
                 document.querySelector('.buy_now').style.display = 'block'
                 document.querySelector('.add_cart_btn').style.display = 'block'
+                                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
+
                 document.querySelector('.ct_addded').style.display = 'none'
             }
             if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
+                                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
+
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
