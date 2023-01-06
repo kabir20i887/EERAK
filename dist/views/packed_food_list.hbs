@@ -7784,7 +7784,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
     <script src="../others/js/noframework.waypoints.min.js"></script>
-    <script src='/socket.io/socket.io.js'></script>
+   {{!--  <script src='/socket.io/socket.io.js'></script> --}}
 
     <script>
 
@@ -7806,196 +7806,8 @@
     <script>
         // remove if desktop version is read
         //--------------------------//
-        var socket = io()
+      //  var socket = io()
 
-        let arrayItm = [{
-
-            about: ['Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"'],
-            descrip: ["150g pack is sutable for 450gm chicken,mutton and 250gm soyabean", "150g pack is sutable for 450gm chicken,mutton and 250gm soyabean"],
-            name: "Masala Fish",
-            offer: "20%",
-            img: ['../img/msala_Fish_img.png', '../img/msala_Fish_img.png'],
-            price_real: "45",
-            tagline: 'Enjoy delicous chicken, mutton curry made with all natural ingredients.',
-            weight_sh: '150gm',
-            qty: [{
-                name: "150gm",
-                pack: "pouch pack",
-                price: "45",
-            }, {
-                name: "300gm",
-                pack: "pouch pack",
-                price: "75",
-            }, {
-                info: "it is a affortable pack",
-                name: "400g",
-                pack: "container pack",
-                price: "125",
-            }],
-            stock: "4",
-        }, {
-
-            about: ['Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"'],
-            descrip: ["150g pack is sutable for 450gm chicken,mutton and 250gm soyabean", "150g pack is sutable for 450gm chicken,mutton and 250gm soyabean"],
-            name: "Malai Mix",
-            offer: "20%",
-            img: ['../img/malai_mix11.png', '../img/malai_mix11.png'],
-            price_real: "45",
-            tagline: 'Enjoy delicous chicken, mutton curry made with all natural ingredients.',
-            weight_sh: '150gm',
-            qty: [{
-                name: "150gm",
-                pack: "pouch pack",
-                price: "45",
-            }, {
-                name: "300gm",
-                pack: "pouch pack",
-                price: "75",
-            }, {
-                info: "it is a affortable pack",
-                name: "400g",
-                pack: "container pack",
-                price: "125",
-            }],
-            stock: "4",
-        },
-
-        {
-
-            about: ['Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"'],
-            descrip: ["150g pack is sutable for 450gm chicken,mutton and 250gm soyabean", "150g pack is sutable for 450gm chicken,mutton and 250gm soyabean"],
-            name: "Veg Delight",
-            offer: "20%",
-            img: ['../img/malai_mix11.png', '../img/malai_mix11.png'],
-            price_real: "35",
-            tagline: 'Enjoy delicous chicken, mutton curry made with all natural ingredients.',
-            weight_sh: '150gm',
-            qty: [{
-                name: "150gm",
-                pack: "pouch pack",
-                price: "45",
-            }, {
-                name: "300gm",
-                pack: "pouch pack",
-                price: "75",
-            }, {
-                info: "it is a affortable pack",
-                name: "400",
-                pack: "container pack",
-                price: "125",
-            }],
-            stock: "4",
-        }
-
-        ]
-        let arrayItm2 = [{
-            img: '../img/garlic.webp',
-            name: 'Fresh garlic',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-
-        {
-            img: '../img/ginger.jpg',
-            name: 'Fresh ginger',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-        {
-            img: '../img/chicken_meat.png',
-            name: 'Fresh chicken',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-
-        {
-            img: '../img/chillies.jpg',
-            name: 'Fresh green chillies',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-        {
-            img: '../img/jeera_powder.webp',
-            name: 'Jeera powder',
-            offer: null,
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-
-        {
-            img: '../img/jhania.webp',
-            name: 'Corriander powder',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-
-
-        {
-            img: '../img/engine_oil.jpg',
-            name: 'Kachi Ghani Mustard Oil, Engine',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-        {
-            img: '../img/fortune_oil.jpg',
-            name: 'Kachi Ghani Mustard Oil, Fortune',
-            offer: null,
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-        {
-            img: '../img/onions_fresh.png',
-            name: 'Fresh onions',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        },
-        {
-            img: '../img/mutton_rm.jpg',
-            name: 'Fresh Mutton',
-            offer: '20',
-            units: [{ name: '500g', price: '445' }, { name: '1kg', price: '1237' }, { name: '2kg', price: '2467' }],
-            price: '445',
-        },
-        {
-            img: '../img/tomato_img.png',
-            name: 'Fresh tomatoes',
-            offer: '20',
-            units: [{ name: '500g', price: '45' }, { name: '5kg', price: '237' }, { name: '10kg', price: '467' }],
-            price: '45',
-        }
-
-        ]
-        // arrayItm2.forEach(cur => {
-        //     db.collection("essentials").add({
-        //     item:cur
-        //       
-        //     }).then(() => {
-        //         console.log("Document successfully written!");
-        //     })
-        //         .catch((error) => {
-        //             console.error("Error writing document: ", error);
-        //         })
-        // })
-
-
-        //  arrayItm.forEach(cur => {
-        //      db.collection("sauce").add({
-        //      item:cur
-        //        
-        //      }).then(() => {
-        //          console.log("Document successfully written!");
-        //      })
-        //          .catch((error) => {
-        //              console.error("Error writing document: ", error);
-        //          })
-        //  })
 
 
 
@@ -8048,6 +7860,8 @@
         let l = 0;
         let count_bx = 0
         let stock_itm_global = 0
+                    let movePer=0
+
         //------------------------------------------//
         let cookSteps_img = ''
         document.querySelector('html').addEventListener('click', (e) => {
@@ -8198,6 +8012,9 @@
 
             }
             if (view_itm !== null) {
+                alert('clicked')
+                                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
+
                 let imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[3].src
                 let name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
                 stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
@@ -8291,22 +8108,6 @@
 
 
 
-
-                //  let stk_limit = view_itm.parentElement.parentElement.childNodes[7].childNodes[3].innerText
-                //  let itm_name = view_itm.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('(')[0]
-                //  let item_video_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[15].innerText
-                //  let itm_pr = view_itm.parentElement.parentElement.childNodes[7].childNodes[5].innerText
-                //  let itm_pr_off = view_itm.parentElement.parentElement.childNodes[7].childNodes[7].innerText
-                //  let cook_banner = view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText
-                //  let ing_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[11].innerText
-                //  let cooksteps_src = view_itm.parentElement.parentElement.childNodes[7].childNodes[13].innerText
-                //  let id_itm = view_itm.parentElement.parentElement.childNodes[7].childNodes[17].innerText.split('(')[0]
-                //  cookSteps_img = cooksteps_src
-                //  dTime = '1 hour'
-                //  priceItem = '₹' + itm_pr
-                //  selU = itm_pr
-                //  idItm = id_itm
-                //  let qtyItm = 1
                 document.querySelector('.added_to_cart').style.display = 'none'
                 //document.querySelector('.place_order_btn_popup').style.display = 'block'
                 let localItems = JSON.parse(localStorage.getItem('foodsAdded'))
@@ -8320,27 +8121,10 @@
                         document.querySelector('.ct_pop_up_items_order').classList.add('active')
                     }
                 }
-                // localItems.forEach(cu => {
-                //     if (cu.id === id_itm) {
-                //         itm_pr = cu.price.split('₹')[1].split(',').join('')
-                //         qtyItm = cu.qt
-                //         document.querySelector('.added_to_cart').style.display = 'block'
-                //         document.querySelector('.place_order_btn_popup').style.display = 'none'
-                //     }
-                // })
+
 
                 document.querySelector('.ct_bx_stock').style.display = 'none'
-                //   itemstocks = parseFloat(stk_limit)
-                //   if (parseFloat(stk_limit) <= 0) {
-                //       dTime = '24 hour'
-                //       document.querySelector('.ct_bx_stock').style.display = 'block'
-                //   }
-                //   document.querySelector('.ct_popup_inner .ct_bx_for_ingredients p').innerText = ing_itm
-                //   //   document.querySelector('.ct_popup_inner .ct_bx_video iframe').src = item_video_src
-                //   document.querySelector('.ct_popup_inner .ct_bx_total_amount_to_pay h3').innerText = '₹' + itm_pr.toLocaleString()
-                //   document.querySelector('.ct_bx_qt_foods input').value = parseFloat(qtyItm)
-                // itm amount changes in -> #1 after adding to cart #2 from start
-                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
+
                 document.querySelector('.ct_bx_layer').style.display = 'block'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'block'
 
@@ -9219,138 +9003,6 @@
 
 
 
-        const setAllItems = async () => {
-
-            let dbCollection = db.collection(`items`)
-            let res = await dbCollection.get()
-            dbCollection.doc('mutton-curry').set({
-                group: 'a',
-                item: {
-                    about: ['Curry sauce, Seasoning Mix, Chicken, Ginger garlic paste, Butter', 'Please select your required item from those below options.Curry sauce is already added.'],
-                    cook: [{ name: '../img/cookAuthenticChickenCurry.jpg' }],
-                    cookingTime: `10 minutes`,
-                    deliveryTime: '1 hour',
-                    fdInside: [{
-                        name: "Mutton",
-                        s: true,
-                        selUn: true
-                    }, {
-                        about: "A combination of Indian spices to enhances the taste with numerous health benefits.",
-                        id: "spices",
-                        ing: [
-                            "Coriander",
-                            "Cumin",
-                            "Red chilies"],
-                        ing2: [
-                            "Clove",
-                            "cardamom",
-                            "Fenugreek",
-                            "Star anise",
-                            "Long pepper",
-                            "Cinnamon",
-                            "Cumin",
-                            "Nutmeg",
-                            "Black pepper"],
-                        name: "Seasoning Mix",
-                        nameX: "seasoning mix",
-                        nameX2: "Seasoningmix",
-                        price: "0"
-                    }, {
-                        about: {
-                            ing: ["Pure mustard oil"
-                                ,
-                                "Tomato"
-                                ,
-                                "Onion"
-                                ,
-                                "Ginger"
-                                ,
-                                "Garlic"
-                                ,
-                                "Salt"
-                                ,
-                                "Green chilies"
-                                ,
-                                "Mineral water"
-                                ,
-                                "Turmeric powder"
-                                ,
-                                "Cloves"
-                                ,
-                                "Coriander seeds"
-                                ,
-                                "Cardamom"
-                                ,
-                                "Cinnamon"], text: 'It is a mix of vegetables and spices, cooked in pure mustard oil, with no chemicals and preservatives.'
-                        },
-                        id: 'curry sauce', name: 'Curry sauce', price: 62
-                    }],
-                    commSoon: false,
-                    id: 'mutton-curry',
-                    img: '../img/mutton_curry.jpg',
-                    name: 'Masala Mutton Curry',
-                    imgBanner: '../img/masalaMuttonBanner.png',
-                    initUnit: null,
-                    itemsOthers: [{ name: 'Amul butter 10g', price: 0 }, { name: 'Ginger garlic paste', price: 0 }],
-                    netweight: 20,
-                    g: 'a',
-                    profit: 50,
-                    ratings: [{
-                        ratings: 0,
-                        star: 5
-                    },
-                    {
-                        ratings: 0,
-                        star: 4
-                    }, {
-                        ratings: 0,
-                        star: 3
-                    }, {
-                        ratings: 0,
-                        star: 2
-                    }, {
-                        ratings: 0,
-                        star: 1
-                    }],
-                    restPrice: 0,
-                    offer: {
-                        off: "20",
-                        sauce: '20',
-                    },
-                    review: [],
-                    unitInit: [{
-                        count: 1,
-                        price: 8,
-                        sm: true,
-                        stock: 100,
-                        unitNum: "500",
-                        unitU: "g"
-                    },
-                    {
-                        count: 1,
-                        price: 260,
-                        sm: true,
-                        stock: 4,
-                        unitNum: "1",
-                        unitU: "kg"
-                    }, {
-                        unitU: '',
-                        count: 1,
-                        price: null,
-                        sm: true,
-                        stock: 100,
-                        unit: "no mutton",
-                        unitNum: "0"
-                    }],
-                    video: 'https://www.youtube.com/embed/S41QFqNtDN4',
-                    unitUni: 'g',
-                },
-                maxqt: [],
-
-            })
-
-        }
-        //setAllItems()
 
         document.querySelector('html').addEventListener('click', (e) => {
             let slide = e.target.closest('.ct_field_small_size')
@@ -9529,29 +9181,5 @@
         })
     </script>
 </body>
-
-{{!-- <div class="ct_bx_ratings">
-    <span>
-        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star"></ion-icon>
-    </span>
-
-    <span>
-        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star"></ion-icon>
-    </span>
-
-    <span>
-        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star"></ion-icon>
-    </span>
-
-
-    <span>
-        <ion-icon class="filed_rating_itm md hydrated" name="star" role="img" aria-label="star"></ion-icon>
-    </span>
-
-    <span>
-        <ion-icon class="filed_rating_itm md hydrated" name="star-half" role="img" aria-label="star half"></ion-icon>
-    </span>
-
-</div> --}}
 
 </html>

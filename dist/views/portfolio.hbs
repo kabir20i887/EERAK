@@ -4239,12 +4239,42 @@ ion-icon{pointer-events:none;}
 
 <script>
 
+
+
   $(document).ready(function () {
     $(window).on('load', function () {
       console.log($(".h1_11"))
       //$(".h1_11").css({'clip-path':"polygon(0px 0px, 100% 0px, 100% 97%, 0% 85%)"});
 
+          $('.ct_front_slide h2').animate({opacity:'1'}).delay(100)
+            document.querySelector('.ct_front_slide h2').classList.add('gelatine')
+            $('.ct_front_slide h1').animate({opacity:'1'}).delay(300)
+                        document.querySelector('.ct_front_slide h1').classList.add('gelatine')
 
+            $('.ct_front_slide h3').animate({opacity:'1'}).delay(500)
+            document.querySelector('.ct_front_slide h3').classList.add('gelatine')
+            $('.ct_4_slide_mn h2').css('display', 'block').delay(500)
+            $('.ct_4_slide_mn h1').css('display', 'block').delay(800)
+            $(".ct_3rd_slide2 .h1_22").delay(500).animate({ opacity: '1' })
+            $(".ct_3rd_slide2 .h1_33").delay(600).animate({ opacity: '1' })
+            $(".ct_5_slide h3").animate({ opacity: '1' }).delay(100)
+            $(".ct_5_slide h2").animate({ opacity: '1' }).delay(300)
+            $(".ct_5_slide h1").animate({ opacity: '1' }).delay(500)
+         $(".ct_3rd_slide_mn h3").animate({ opacity: '1' })
+            $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
+            $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
+            $(".ct_3rd_slide_mn .h1_11_22").css({ animation: 'fillW 2.6s ease-in', opacity: '1' })
+
+            $(".ct_3rd_slide_mn .h1_11").delay(400).animate({ opacity: '1' })
+            $(".ct_3rd_slide_mn .h1_22").delay(500).animate({ opacity: '1' })
+            $(".ct_3rd_slide_mn .h1_33").delay(600).animate({ opacity: '1' })
+
+            document.querySelector('.ct_2nd_slide h3').classList.add('fade-in-down')
+            document.querySelector('.ct_2nd_slide h2').classList.add('fade-in-down')
+            document.querySelector('.ct_2nd_slide h1').classList.add('fade-in-down')
+            document.querySelector('.ct_2nd_slide .h1_22').classList.add('fade-in-down')
+
+ document.querySelector('.ct_2nd_slide .h1_11:nth-child(2)').classList.add('fade-in-down')
 
       $(window).scroll(function () {
         console.log('scroo')
@@ -4268,38 +4298,38 @@ ion-icon{pointer-events:none;}
 
 
       })
-     var waypoints = $('.ct_front_slide').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-            
-            $('.ct_front_slide h2').animate({opacity:'1'}).delay(100)
-            document.querySelector('.ct_front_slide h2').classList.add('gelatine')
-            $('.ct_front_slide h1').animate({opacity:'1'}).delay(300)
-                        document.querySelector('.ct_front_slide h1').classList.add('gelatine')
-
-            $('.ct_front_slide h3').animate({opacity:'1'}).delay(500)
-            document.querySelector('.ct_front_slide h3').classList.add('gelatine')
-
-          }
-        },
-        offset:'60%'
-        })
-    
-   var waypoints = $('.ct_2nd_slide').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-
-            document.querySelector('.ct_2nd_slide h3').classList.add('fade-in-down')
-            document.querySelector('.ct_2nd_slide h2').classList.add('fade-in-down')
-            document.querySelector('.ct_2nd_slide h1').classList.add('fade-in-down')
-            document.querySelector('.ct_2nd_slide .h1_22').classList.add('fade-in-down')
-
- document.querySelector('.ct_2nd_slide .h1_11:nth-child(2)').classList.add('fade-in-down')
-
-          }
-        },
-        offset:'40%'
-   })
+  //   var waypoints = $('.ct_front_slide').waypoint({
+//    handler: function (dir) {
+//      if (dir === 'down') {
+//        
+//        $('.ct_front_slide h2').animate({opacity:'1'}).delay(100)
+//        document.querySelector('.ct_front_slide h2').classList.add('gelatine')
+//        $('.ct_front_slide h1').animate({opacity:'1'}).delay(300)
+//                    document.querySelector('.ct_front_slide h1').classList.add('gelatine')
+//
+//        $('.ct_front_slide h3').animate({opacity:'1'}).delay(500)
+//        document.querySelector('.ct_front_slide h3').classList.add('gelatine')
+//
+//      }
+//    },
+//    offset:'60%'
+//    })
+//
+//  var waypoints = $('.ct_2nd_slide').waypoint({
+//       handler: function (dir) {
+//         if (dir === 'down') {
+//
+//           document.querySelector('.ct_2nd_slide h3').classList.add('fade-in-down')
+//           document.querySelector('.ct_2nd_slide h2').classList.add('fade-in-down')
+//           document.querySelector('.ct_2nd_slide h1').classList.add('fade-in-down')
+//           document.querySelector('.ct_2nd_slide .h1_22').classList.add('fade-in-down')
+//
+//document.querySelector('.ct_2nd_slide .h1_11:nth-child(2)').classList.add('fade-in-down')
+//
+//         }
+//       },
+//       offset:'40%'
+//  })
          var waypoints = $('.ct_4_slide2').waypoint({
         handler: function (dir) {
           if (dir === 'down') {
@@ -4321,71 +4351,71 @@ if(window.screen.width>=1300){
         },
         offset:'50%'
       })
-      var waypoints = $('.ct_4_slide_mn').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-            document.querySelector('.ct_4_slide_mn h3').style.display = 'block'
-            $('.ct_4_slide_mn h2').css('display', 'block').delay(500)
-            $('.ct_4_slide_mn h1').css('display', 'block').delay(800)
+  //    var waypoints = $('.ct_4_slide_mn').waypoint({
+  //      handler: function (dir) {
+  //        if (dir === 'down') {
+  //          document.querySelector('.ct_4_slide_mn h3').style.display = 'block'
+  //          $('.ct_4_slide_mn h2').css('display', 'block').delay(500)
+  //          $('.ct_4_slide_mn h1').css('display', 'block').delay(800)
+//
+  //        }
+  //      },
+  //      offset: '40%'
+//
+  //    })
+//
+  //  });
 
-          }
-        },
-        offset: '40%'
-
-      })
-
-    });
-
-$(window).scroll(function () {
-      var waypoints = $('.ct_3rd_slide2 ').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-
-            $(".ct_3rd_slide2 .h1_22").delay(500).animate({ opacity: '1' })
-            $(".ct_3rd_slide2 .h1_33").delay(600).animate({ opacity: '1' })
-
-
-          }
-        },
-        offset: '50%'
-      })
-})
-$(window).scroll(function () {
-      var waypoints = $('.ct_5_slide ').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-
-            document.querySelector(".ct_bx_imges .img2").classList.add('bounce-in')
-            $(".ct_5_slide h3").animate({ opacity: '1' }).delay(100)
-            $(".ct_5_slide h2").animate({ opacity: '1' }).delay(300)
-            $(".ct_5_slide h1").animate({ opacity: '1' }).delay(500)
-
-          }
-        },
-        offset: '40%'
-      })
-})
+//$(window).scroll(function () {
+//      var waypoints = $('.ct_3rd_slide2 ').waypoint({
+//        handler: function (dir) {
+//          if (dir === 'down') {
+//
+//            $(".ct_3rd_slide2 .h1_22").delay(500).animate({ opacity: '1' })
+//            $(".ct_3rd_slide2 .h1_33").delay(600).animate({ opacity: '1' })
+//
+//
+//          }
+//        },
+//        offset: '50%'
+//      })
+//})
+//$(window).scroll(function () {
+//      var waypoints = $('.ct_5_slide ').waypoint({
+//        handler: function (dir) {
+//          if (dir === 'down') {
+//
+//            document.querySelector(".ct_bx_imges .img2").classList.add('bounce-in')
+//            $(".ct_5_slide h3").animate({ opacity: '1' }).delay(100)
+//            $(".ct_5_slide h2").animate({ opacity: '1' }).delay(300)
+//            $(".ct_5_slide h1").animate({ opacity: '1' }).delay(500)
+//
+//          }
+//        },
+//        offset: '40%'
+//      })
+//})
  
-    $(window).scroll(function () {
-      var waypoints = $('.ct_3rd_slide').waypoint({
-        handler: function (dir) {
-          if (dir === 'down') {
-            $(".ct_3rd_slide_mn h3").animate({ opacity: '1' })
-            $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
-            $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
-            $(".ct_3rd_slide_mn .h1_11_22").css({ animation: 'fillW 2.6s ease-in', opacity: '1' })
-
-            $(".ct_3rd_slide_mn .h1_11").delay(400).animate({ opacity: '1' })
-            $(".ct_3rd_slide_mn .h1_22").delay(500).animate({ opacity: '1' })
-            $(".ct_3rd_slide_mn .h1_33").delay(600).animate({ opacity: '1' })
-
-
-          }
-        },
-        offset: '90%'
-      })
-
-    })
+  //  $(window).scroll(function () {
+  //    var waypoints = $('.ct_3rd_slide').waypoint({
+  //      handler: function (dir) {
+  //        if (dir === 'down') {
+  //          $(".ct_3rd_slide_mn h3").animate({ opacity: '1' })
+  //          $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
+  //          $(".ct_3rd_slide_mn h2").animate({ opacity: '1' })
+  //          $(".ct_3rd_slide_mn .h1_11_22").css({ animation: 'fillW 2.6s ease-in', opacity: '1' })
+//
+  //          $(".ct_3rd_slide_mn .h1_11").delay(400).animate({ opacity: '1' })
+  //          $(".ct_3rd_slide_mn .h1_22").delay(500).animate({ opacity: '1' })
+  //          $(".ct_3rd_slide_mn .h1_33").delay(600).animate({ opacity: '1' })
+//
+//
+  //        }
+  //      },
+  //      offset: '90%'
+  //    })
+//
+  })
   });
      var waypoint = new Waypoint({
             element: document.querySelector('.ct_2nd_slide'),
