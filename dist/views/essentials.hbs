@@ -54,6 +54,44 @@
     background: url(../img/sample_groc.png);
     background-size: 105% 104%;
 }
+.ct_bx_info_web {
+    display: none;
+    padding: 23px 0 9px 0;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    /* padding-left: 341px; */
+    top: 73px;
+    background-color: #f3f3ff;
+}
+.ct_bx_info_web p {
+    color: black;
+    font-size: 13px;
+    font-family: 'open sans';
+}
+.ct_bx_info_web .ct_inner{
+    margin-left: 20px;
+}
+.ct_bx_info_web h4 {
+    color: rgb(13, 35, 228);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'poppins';
+}
+.ct_bx_info_web button {
+    background-color: rgb(13, 35, 228);
+    border-radius: 6px;
+    border: none;
+    margin-left: 50px;
+    color: white;
+    padding: 5px 20px;
+    box-shadow: 0 0 4px #00000047;
+}
+.ct_bx_info_web ion-icon{
+    color: black;
+    font-size: 28px;
+    margin: 6px 0 0 10px;
+}
     .ct_bx_ov_lay {
         width: 100%;
         background-color: rgba(0, 0, 0, .424);
@@ -4889,7 +4927,7 @@
     margin-top: 27px;
 }
 
-
+.added_to_cart,
     .ct_addbtns {
         padding: 8px 10px;
         width: max-content;
@@ -4897,13 +4935,16 @@
         border-radius: 10px;
         margin: 9px 3px;
     }
-
+    .added_to_cart{background-color: #d7ffe8;display: none;}
+.added_to_cart p,
     .ct_addbtns p {
         color: white;
         font-size: 10px;
         font-family: 'Montserrat';
     }
-
+.added_to_cart p{
+    color: black;
+}
     .ct_img_res_main {
         width: 100%;
         display: flex;
@@ -6025,7 +6066,28 @@
             width: 19%;
             margin-top: -9px;
         }
-
+.ct_bx_info_web ion-icon {
+    color: black;
+    font-size: 21px;
+    margin: 6px 0 0 10px;
+}
+.ct_bx_info_web p {
+    color: black;
+    font-size: 11px;
+    font-family: 'open sans';
+}
+.ct_bx_info_web h4 {
+    color: rgb(13, 35, 228);
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'poppins';
+}
+.ct_bx_info_web ion-icon {
+    color: black;
+    font-size: 21px;
+}
+.ct_bx_info_web button {
+    margin-left: 25px;}
         .coppy_right {
             margin: 20px 7px 0 10px;
         }
@@ -6528,12 +6590,44 @@ p{margin-bottom:auto;}
     var db = firebase.firestore()
 </script>
 <script>
+            function getCookie(e) {
+            for (var n = e + "=", t = decodeURIComponent(document.cookie)
+                .split(";"), o = 0; o < t.length; o++) {
+                for (var c = t[o];
+                    " " == c.charAt(0);) c = c.substring(1);
+                if (0 == c.indexOf(n)) return c.substring(n.length, c.length);
+            }
+            return "";
+        }
     document.querySelector('html').addEventListener('click', (e) => {
         let slide = e.target.closest('.ct_field_small_size')
         let unit_select = e.target.closest('.ct_unit_box_selector')
         let unit_li = e.target.closest('.ct_other_units li')
+            let addTocartbtn = e.target.closest('.ct_addbtns')
+       //    if (addTocartbtn !== null) {
+       //        addTocartbtn.style.display = 'none'
+       //        document.querySelector('.add_cart_btn').style.display = 'none'
+       //        document.querySelector('.ct_addded').style.display = 'block'
+       //        let qty = document.querySelector('.ct_qty_box input').value
+       //        let name = document.querySelector('.name_of_itm').innerText
+       //        let obj = {
+       //            name: name,
+       //        }
+       //        if (localStorage.getItem('foodsAdded') === '[]') {
+       //            localStorage.setItem('sauce', JSON.stringify([obj]))
+       //        } else {
+       //            let allfd = JSON.parse(localStorage.getItem('sauce'))
+       //            allfd.push(obj)
+       //            localStorage.setItem('sauce', JSON.stringify(allfd))
 
-        if (unit_select !== null) {
+       //        }
+
+
+       //        document.cookie = "ite" + "=" + JSON.stringify(obj) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+
+       //    }    
+            
+                if (unit_select !== null) {
             document.querySelectorAll('.ct_other_units .active').forEach(cu11 => {
                 cu11.classList.remove('active')
             })
@@ -6575,6 +6669,8 @@ p{margin-bottom:auto;}
             //   }
 
         }
+        
+
         if (slide !== null) {
             if (slide !== null) {
                 if (!document.querySelector('.ct_bx_slide_bx').classList.value.split(' ').includes('active'))
@@ -6680,7 +6776,9 @@ ${price_box}
                                         <div class="ct_addbtns">
                                             <p>Add to cart</p>
                                         </div>
-
+                    <div class="added_to_cart">
+                     <p>Added to cart</p>
+                   </div>
                                     </div>
 
 
@@ -6693,15 +6791,15 @@ ${price_box}
         })
     }
     loadFoodItems()
-       document.querySelector('.ct_bx_layer2').style.display='block'
+   if (getCookie('popup_clicked') === '') {
+document.querySelector('.ct_bx_info_web').style.display='flex'
 
-document.querySelector('.ct_flex_bx_popup').style.display='flex'
-document.querySelector('.ct_visit').addEventListener('click',()=>{
-document.querySelector('.ct_bx_layer2').style.display='none'
+        }
+    document.querySelector('.ct_bx_info_web button').addEventListener('click',()=>{
+        document.querySelector('.ct_bx_info_web').style.display='none'
+        document.cookie = "popup_clicked" + "=" + 'yess' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
 
-document.querySelector('.ct_flex_bx_popup').style.display='none'
-})
-
+    })
 </script>
 
 </html>

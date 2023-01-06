@@ -347,13 +347,7 @@ app.get('/essentials', (req, res) => {
 
     res.render('essentials')
 })
-app.get('/recipes/:id', (req, res) => {
-    console.log(req.params)
-    if (req.params !== undefined) {
-       res.render('items')
 
-    }
-})
 app.get('/grocery_plan', (req, res) => {
     let plan = req.query.planconsole.log(plan)
     res.render('plans', { plan: plan })
