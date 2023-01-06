@@ -132,11 +132,11 @@ app.get('/sauce', (req, res) => {
    res.render('packed_food_list')
 
 })
-app.get('/', (req, res) => {
+app.get('/offers', (req, res) => {
     res.render('main_page')
  
  })
- app.get('/aboutus', (req, res) => {
+ app.get('/', (req, res) => {
     res.render('portfolio')
  
  })
@@ -345,7 +345,7 @@ app.get('/admin', (req, res) => {
 })
 app.get('/essentials', (req, res) => {
 
-    res.redirect('essentials')
+    res.render('essentials')
 })
 app.get('/recipes/:id', (req, res) => {
     console.log(req.params)
