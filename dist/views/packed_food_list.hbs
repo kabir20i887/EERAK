@@ -668,7 +668,7 @@
             color: black;
             display: block;
             font-size: 31px;
-            margin-right: 8px;
+            margin-right: 8px;margin-top: -4px;
         }
 
         .ct_bx_info_sauce p {
@@ -1303,7 +1303,7 @@
             z-index: 99999999999999;
             border-radius: 0;
             box-shadow: 0 0 10px #0000005e;
-            transition: right .7s ease;
+            transition: all 1s ease;
 
         }
 
@@ -8031,6 +8031,8 @@
                 let essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[17].innerHTML
                 document.querySelector('.ct_bx_img img').src = imgsrc
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
+                                        if (allfd !== null) {
+
                     allfd.forEach(cu11=>{
                         let nameD=cu11.name.split(' ').join('')
                         let nameM=name.split(' ').join('')
@@ -8041,6 +8043,7 @@
                 document.querySelector('.ct_qty_box input').value=cu11.qty
                         }
                     })
+                                        }
                 document.querySelector('.name_of_itm').innerText = name
                 document.querySelector('.offer_item p').innerText = offer + '% off'
                 document.querySelector('.name_of_itm').innerText = name
