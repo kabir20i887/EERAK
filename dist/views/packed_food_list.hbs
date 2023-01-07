@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+
+    
     <!-- Google tag (gtag.js) -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World's first cooking sauce - Krick sauce</title>
+    <title>Cook different with cooking sauce | KRICK</title>
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +30,7 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@700;800&display=swap"
         rel="stylesheet">
+{{>favicon}}
 
     {{!-- {{>favicon}} --}}
 
@@ -4852,8 +4855,7 @@
             .ct_pop_up_items_order {
                 right: unset;
                 top: unset;
-                bottom: -90px;
-                display: none;
+                bottom: -900px;
                 transition: all .7s ease;
             }
 
@@ -6959,6 +6961,7 @@
 
         gtag('config', 'G-11LX1H4F79');
     </script>
+
 </head>
 
 <body class="erak_fd_body">
@@ -8013,8 +8016,9 @@
 
             }
             if (view_itm !== null) {
-                                document.querySelector('.ct_pop_up_items_order').style.display = 'block'
-
+ if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
+                    document.querySelector('.ct_pop_up_items_order').classList.add('active')
+                }
                 let imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[3].src
                 let name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
                 stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
@@ -8115,13 +8119,10 @@
             if (window.screen.width > 550) {
                 if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active2')) {
                     document.querySelector('.ct_pop_up_items_order').classList.add('active2')
-                
+                                    document.querySelector('.ct_pop_up_items_order').classList.remove('active')
+
                 }
-            } else {
-                if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
-                    document.querySelector('.ct_pop_up_items_order').classList.add('active')
-                }
-            }
+            } 
 
 
                 document.querySelector('.ct_bx_stock').style.display = 'none'
@@ -8234,13 +8235,11 @@
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
                 document.querySelector('.buy_now').style.display = 'block'
                 document.querySelector('.add_cart_btn').style.display = 'block'
-                                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
 
                 document.querySelector('.ct_addded').style.display = 'none'
             }
             if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
-                                document.querySelector('.ct_pop_up_items_order').style.display = 'none'
 
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
