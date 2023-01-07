@@ -132,10 +132,10 @@ app.get('/sauce', (req, res) => {
    res.render('packed_food_list')
 
 })
-// app.get('/offers', (req, res) => {
-//     res.render('main_page')
+app.get('/offers', (req, res) => {
+    res.render('main_page')
  
-//  })
+ })
  app.get('/', (req, res) => {
     res.render('portfolio')
  

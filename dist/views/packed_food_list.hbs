@@ -819,8 +819,18 @@
             padding: 9px 15px;
             width: 91%;
             margin: 10px 0 20px 20px;
-        }
 
+
+        }
+    @keyframes shine {
+            0% {
+                background-position: -100%;
+            }
+
+            100% {
+                background-position: 100%;
+            }
+        }
         .ct_addded {
             background-color: #d7ffe8;
             color: black;
@@ -1994,15 +2004,7 @@
             animation: .8s shine linear infinite;
         }
 
-        @keyframes shine {
-            0% {
-                background-position: -100%;
-            }
-
-            100% {
-                background-position: 100%;
-            }
-        }
+    
 
         .ct_loading_bx {
             display: flex;
@@ -7925,7 +7927,6 @@
                 let product_width = document.getElementsByClassName('product')[0].getBoundingClientRect().width + 8
                 let movePer = product_width;
                 l = l - movePer;
-                console.log(l + '-----' + product_width)
                 if (l <= 0) { l = 0; }
                 if (count_bx > 0) {
 
