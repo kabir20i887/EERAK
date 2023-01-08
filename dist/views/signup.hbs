@@ -2535,39 +2535,11 @@
 
     </script>
     <script src='/socket.io/socket.io.js'></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChps3-NrPNMwpBU3t6FywIsC4b6QRxOaA&libraries=places">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChps3-NrPNMwpBU3t6FywIsC4b6QRxOaA&libraries=places"> </script>
     <script>
         // remove if desktop version is ready
 
-        var previousOrientation = window.orientation;
-        var checkOrientation = function () {
-            if (window.orientation !== previousOrientation) {
-                previousOrientation = window.orientation;
-                // orientation changed, do your magic here
 
-                if (window.screen.width > 470) {
-                    document.querySelector('.ct_bx_under_maintenance').style.display = 'block'
-                    document.querySelector('body').classList.add('unavailable')
-                    document.querySelector('.inner_bx_main').style.display = 'none'
-
-                } else {
-                    document.querySelector('.ct_bx_under_maintenance').style.display = 'none'
-                    document.querySelector('.inner_bx_main').style.display = 'block'
-                    document.querySelector('body').classList.remove('unavailable')
-
-                }
-            }
-        };
-
-        window.addEventListener("resize", checkOrientation, false);
-        window.addEventListener("orientationchange", checkOrientation, false);
-        if (window.screen.width > 470) {
-            document.querySelector('.ct_bx_under_maintenance').style.display = 'block'
-            document.querySelector('.inner_bx_main').style.display = 'none'
-            document.querySelector('body').classList.add('unavailable')
-
-        }
         //--------------------------//
         var socket = io()
 
@@ -2613,6 +2585,7 @@
 
         // });
         inputX.addEventListener('keyup', () => {
+            
             console.log(autocomplete.gm_accessors_.place)
             let obj = autocomplete.gm_accessors_.place
             let palcesFound = []
@@ -2621,7 +2594,8 @@
                     palcesFound = obj[cur].h
                 }
             })
-            if (palcesFound.length > 0) {
+            console.log(palcesFound)
+            if (palcesFound) {
                 document.querySelector('.ct_results').style.display = 'block'
                 let htmlX = document.querySelector('.pac-container').innerHTML
                 document.querySelector('.ct_results').innerHTML = htmlX
@@ -2942,7 +2916,7 @@
                         let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
                         let unitKM = unitMiles * 1.60934
                         // EVERY LOCATION IS WORKING FINE
-                        // checking the location by killometer distance from badharghat
+                        //unitKM  checking the location by killometer distance from badharghat
                         if (unitKM <= 10) {
 
 
@@ -3062,6 +3036,8 @@
                                                     var encodedData = base64url(stringifiedData);
                                                     var token = encodedHeader + "." + encodedData;;
                                                     console.log(token, 'token');
+
+
                                                     window.location.replace(`/signup?authUser=${token}`)
                                                 } else {
                                                     document.querySelector('.phone_invalid').style.display = 'flex'

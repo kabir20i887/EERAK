@@ -50,7 +50,10 @@ let authfst='hRjIFun3b4KAMciGS1e086yOD5afQEXrNxd7lqVmzokwLCvJYUWAOacku9ITfDv280s
 fast2sms.init(options)
 var unirest = require("unirest");
 var fst = unirest("GET", "https://www.fast2sms.com/dev/bulkV2");
-let number1 = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
+let number1 = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+
+
+console.log(number1)
 // app.get('/about', (req, res) => {
 //     res.render('about')
 // })
@@ -150,172 +153,172 @@ let all_midellare = {
 
 }
 
-// app.get('/signup', [all_midellare.data], (req, res) => {
+app.get('/signup', [all_midellare.data], (req, res) => {
 
-//     var cookies2 = new Cookies(req, res)
-//     let inavlid = false
-//     var cookies = cookie.parse('user');
-//     console.log(cookies)
-//     if (Object.keys(req.query).length !== 0) {
+    var cookies2 = new Cookies(req, res)
+    let inavlid = false
+    var cookies = cookie.parse('user');
+    console.log(cookies)
+    if (Object.keys(req.query).length !== 0) {
 
-//         if (req.query.authUser) {
-
-
-//             let decoded = secret(req.query.authUser)
-
-//             let phone = decoded.user.phone
-//             let name = `${decoded.user.name_user} ${decoded.user.lastname}`
-//             let offer = decoded.offer
-//             console.log(decoded, offer)
-
-//             let ph1 = parseFloat(phone.split('')[0])
-//             if (ph1 === 0) {
-//                 phone = phone.split('')
-//                 phone.splice(0, 1)
-//                 phone = phone.join('')
-//             }
-//             console.log(req.query)
-//             if (req.query.checked !== undefined) {
-//                 let pass = req.query.checked
-//                 if (decoded.id.trim() === pass.trim()) {
-//                     fst.query({
-//                         authorization: authfst,
-//                         route: 'dlt',
-//                         sender_id: 'krickG',
-//                         message: 145385,
-//                         variables_values: `${name}`,
-//                         numbers: phone,
-//                         flash: "0",
-//                     });
-
-//                     fst.headers({
-//                         "cache-control": "no-cache"
-//                     });
+        if (req.query.authUser) {
 
 
-//                     fst.end(function (res) {
-//                         if (res.error) console.log(res.error);
+            let decoded = secret(req.query.authUser)
 
-//                         console.log(res.body);
-//                     });
-//                     res.redirect('/login')
-//                 }
-//             }
-//             var cookies2 = new Cookies(req, res)
+            let phone = decoded.user.phone
+            let name = `${decoded.user.name_user} ${decoded.user.lastname}`
+            let offer = decoded.offer
+            console.log(decoded, offer)
 
-//             var checkSign = cookies2.get('checkSign');
-//             var processSign = cookies2.get('processSign');
+            let ph1 = parseFloat(phone.split('')[0])
+            if (ph1 === 0) {
+                phone = phone.split('')
+                phone.splice(0, 1)
+                phone = phone.join('')
+            }
+            console.log(req.query)
+            if (req.query.checked !== undefined) {
+                let pass = req.query.checked
+                if (decoded.id.trim() === pass.trim()) {
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145385,
+                        variables_values: `${name}`,
+                        numbers: phone,
+                        flash: "0",
+                    });
 
-//             //checkSign:  not send otp again if loaded the page , checkSign view if loaded
-//             console.log(checkSign, '#########12###################22####')
-//             if(checkSign===undefined){
-//                 var sign = cookies2.get('processSign');
-//                 console.log(sign)
-//                 if(sign===undefined){
-//                     fst.query({
-//                         authorization: authfst,
-//                         route: 'dlt',
-//                         sender_id: 'krickG',
-//                         message: 145384,
-//                         variables_values: decoded.id,
-//                         numbers: phone,
-//                         flash: "0",
-//                     });
-
-//                     fst.headers({
-//                         "cache-control": "no-cache"
-//                     });
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
 
 
-//                     fst.end(function (resp) {
-//                         if (resp.error) console.log(resp.error);
-//                         console.log(resp.body);
-//                 if(resp.body.return){
-//                 }
-//                     });
-//                 }
-//             }
-//             var token2 = jwt.sign({ n: number }, 'shhhhh');
+                    fst.end(function (res) {
+                        if (res.error) console.log(res.error);
+
+                        console.log(res.body);
+                    });
+                    res.redirect('/login')
+                }
+            }
+            var cookies2 = new Cookies(req, res)
+
+            var checkSign = cookies2.get('checkSign');
+            var processSign = cookies2.get('processSign');
+
+            //checkSign:  not send otp again if loaded the page , checkSign view if loaded
+            console.log(checkSign, '#########12###################22####')
+            if(checkSign===undefined){
+                var sign = cookies2.get('processSign');
+                console.log(sign)
+                if(sign===undefined){
+                    fst.query({
+                        authorization: authfst,
+                        route: 'dlt',
+                        sender_id: 'krickG',
+                        message: 145384,
+                        variables_values: decoded.id,
+                        numbers: phone,
+                        flash: "0",
+                    });
+
+                    fst.headers({
+                        "cache-control": "no-cache"
+                    });
 
 
-//             if (req.query.rd !== undefined) {
-//                 var token2 = jwt.sign({ n: number }, 'shhhhh');
-//                 fst.query({
-//                     authorization: authfst,
-//                     route: 'dlt',
-//                     sender_id: 'krickG',
-//                     message: 145384,
-//                     variables_values: decoded.id,
-//                     numbers: phone,
-//                     flash: "0",
-//                 });
-
-//                 fst.headers({
-//                     "cache-control": "no-cache"
-//                 });
+                    fst.end(function (resp) {
+                        if (resp.error) console.log(resp.error);
+                        console.log(resp.body);
+                if(resp.body.return){
+                }
+                    });
+                }
+            }
+            var token2 = jwt.sign({ n: number }, 'shhhhh');
 
 
-//                 fst.end(function (res) {
-//                     if (res.error) console.log(res.error);
+            if (req.query.rd !== undefined) {
+                var token2 = jwt.sign({ n: number }, 'shhhhh');
+                fst.query({
+                    authorization: authfst,
+                    route: 'dlt',
+                    sender_id: 'krickG',
+                    message: 145384,
+                    variables_values: decoded.id,
+                    numbers: phone,
+                    flash: "0",
+                });
 
-//                 });
-//                 res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
-//                 return
-//             }
+                fst.headers({
+                    "cache-control": "no-cache"
+                });
 
 
+                fst.end(function (res) {
+                    if (res.error) console.log(res.error);
 
-//         }
-//     }
-//     let tok = {
-
-//         com: "fortune",
-//         fdInside: null,
-//         group: "veg",
-//         img: "../img/methiEv.jpg",
-//         name: "Everest kasuri Methi 25g",
-//         offer: null,
-//         price: "89",
-//         stock: "14",
-//         unit: null,
-//         unitInside: [{
-//             selectedPrice: "89",
-//             selectedUnit: "25g"
-//         }, {
-//             selectedPrice: "168",
-//             selectedUnit: "50g"
-//         }]
-//     }
+                });
+                res.redirect(`/signup?authUser=${req.query.authUser}&rdN=${token2}`)
+                return
+            }
 
 
 
-//     bcrypt.hash(number, 4, function (err, hash) {
+        }
+    }
+    let tok = {
 
-//         if (req.query.providedOTP) {
-
-//             bcrypt.compare(req.query.providedOTP, hash, function (err, result) {
-//                 if (result === true) {
-//                     console.log(result)
-//                     res.redirect(`/login?name_user=&last_user=&gmail_user=sss&password=msdhoni7&continue_verify=continue&service=for_whatsapp`)
-//                 } else if (result === false) {
-//                     res.render('signup')
-
-//                 }
-//             })
-//         } else {
-//             if (!inavlid) {
-//                 res.render('signup')
-
-//             }
-
-//         }
-
-
-//     });
+        com: "fortune",
+        fdInside: null,
+        group: "veg",
+        img: "../img/methiEv.jpg",
+        name: "Everest kasuri Methi 25g",
+        offer: null,
+        price: "89",
+        stock: "14",
+        unit: null,
+        unitInside: [{
+            selectedPrice: "89",
+            selectedUnit: "25g"
+        }, {
+            selectedPrice: "168",
+            selectedUnit: "50g"
+        }]
+    }
 
 
 
-// })
+    bcrypt.hash(number, 4, function (err, hash) {
+
+        if (req.query.providedOTP) {
+
+            bcrypt.compare(req.query.providedOTP, hash, function (err, result) {
+                if (result === true) {
+                    console.log(result)
+                    res.redirect(`/login?name_user=&last_user=&gmail_user=sss&password=msdhoni7&continue_verify=continue&service=for_whatsapp`)
+                } else if (result === false) {
+                    res.render('signup')
+
+                }
+            })
+        } else {
+            if (!inavlid) {
+                res.render('signup')
+
+            }
+
+        }
+
+
+    });
+
+
+
+})
 
 
 app.get('/mycart', (req, res) => {
@@ -449,8 +452,8 @@ io.on('connection', (sock) => {
     console.log('connected')
     var a = 1
     sock.on('getCode', () => {
-
-        io.emit('sendCode', number,authfst)
+        var token = jwt.sign({ n: number1 }, 'shhhhh');
+        io.emit('sendCode',token,number1,authfst)
     })
     sock.on('setId', () => {
         const { v4: uuidv4 } = require('uuid');
