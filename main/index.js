@@ -58,75 +58,75 @@ console.log(number1)
 //     res.render('about')
 // })
 
-// app.get('/Login', (req, res) => {
+app.get('/Login', (req, res) => {
 
-//   let phone = parseFloat(req.query.sv)
-//   let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
-//   console.log(Object.keys(req.query).length !== 0,(req.query.forgotpass===undefined),(req.query.updated===undefined),req.query.forgotpass,'hellloooo')
-//   console.log(req.query)
+  let phone = parseFloat(req.query.sv)
+  let numberUn = otpGenerator.generate(6, { upperCase: false, specialChars: false, digits: true, alphabets: false });
+  console.log(Object.keys(req.query).length !== 0,(req.query.forgotpass===undefined),(req.query.updated===undefined),req.query.forgotpass,'hellloooo')
+  console.log(req.query)
 
-//   if (req.query.rd === 'true') {
-//       jwt.verify(req.query.forgotpass, 'shhhhh', function (err, decoded) {
-//           console.log(decoded.user)
-//           phone = parseFloat(decoded.user.pn)
-//       })
-//       var token2 = jwt.sign({ n: numberUn }, 'shhhhh');
+  if (req.query.rd === 'true') {
+      jwt.verify(req.query.forgotpass, 'shhhhh', function (err, decoded) {
+          console.log(decoded.user)
+          phone = parseFloat(decoded.user.pn)
+      })
+      var token2 = jwt.sign({ n: numberUn }, 'shhhhh');
 
-//       fst.query({
-//           authorization: authfst,
-//           route: 'dlt',
-//           sender_id: 'krickG',
-//           message: 145384,
-//           variables_values: numberUn,
-//           numbers: phone,
-//           flash: "0",
-//       });
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 145384,
+          variables_values: numberUn,
+          numbers: phone,
+          flash: "0",
+      });
 
-//       fst.headers({
-//           "cache-control": "no-cache"
-//       });
+      fst.headers({
+          "cache-control": "no-cache"
+      });
 
-//       fst.end(function (res) {
-//           if (res.error) console.log(res.error);
+      fst.end(function (res) {
+          if (res.error) console.log(res.error);
 
-//           console.log(res.body);
-//       });
-//       res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
-
-
+          console.log(res.body);
+      });
+      res.redirect(`/login?forgotpass=${req.query.forgotpass}&rdM=${token2}`)
 
 
-//   }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
-//       var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
-//       phone = parseFloat(req.query.pn)
-//       fst.query({
-//           authorization: authfst,
-//           route: 'dlt',
-//           sender_id: 'krickG',
-//           message: 145384,
-//           variables_values: numberUn,
-//           numbers: phone,
-//           flash: "0",
-//       });
 
-//       fst.headers({
-//           "cache-control": "no-cache"
-//       });
 
-//       fst.end(function (res) {
-//           if (res.error) console.log(res.error);
+  }else if (Object.keys(req.query).length !== 0&&(req.query.forgotpass===undefined)&&(req.query.updated===undefined)) {
+      var token = jwt.sign({ n: numberUn,user:req.query }, 'shhhhh');
+      phone = parseFloat(req.query.pn)
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 145384,
+          variables_values: numberUn,
+          numbers: phone,
+          flash: "0",
+      });
 
-//           console.log(res.body);
-//       });
-//       res.redirect(`/login?forgotpass=${token}`)
+      fst.headers({
+          "cache-control": "no-cache"
+      });
+
+      fst.end(function (res) {
+          if (res.error) console.log(res.error);
+
+          console.log(res.body);
+      });
+      res.redirect(`/login?forgotpass=${token}`)
       
 
-//   }else{
-//       res.render('login')
+  }else{
+      res.render('login')
 
-//   }
+  }
 
-// })
+})
 
 // app.get('/verify', (req, res) => {
 //     res.render('verif')
@@ -448,12 +448,16 @@ app.get('/notavailable', (req, res) => {
 
 //     res.render('myaccount')
 // })
+
 io.on('connection', (sock) => {
     console.log('connected')
     var a = 1
+
     sock.on('getCode', () => {
-        var token = jwt.sign({ n: number1 }, 'shhhhh');
-        io.emit('sendCode',token,number1,authfst)
+        let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+        let uniqueId= otpGenerator.generate(12, { digits:true,lowerCaseAlphabets:true,upperCaseAlphabets:true,specialChars:false});
+        var token = jwt.sign({ n: unique_num }, 'shhhhh');
+        io.emit('sendCode',uniqueId,token,unique_num,authfst)
     })
     sock.on('setId', () => {
         const { v4: uuidv4 } = require('uuid');

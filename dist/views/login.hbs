@@ -2614,34 +2614,7 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script>
         // remove if desktop version is ready
 
-        var previousOrientation = window.orientation;
-        var checkOrientation = function () {
-            if (window.orientation !== previousOrientation) {
-                previousOrientation = window.orientation;
-                // orientation changed, do your magic here
 
-                if (window.screen.width > 470) {
-                    document.querySelector('.ct_bx_under_maintenance').style.display = 'block'
-                    document.querySelector('body').classList.add('unavailable')
-                    document.querySelector('.inner_bx_main').style.display = 'none'
-
-                } else {
-                    document.querySelector('.ct_bx_under_maintenance').style.display = 'none'
-                    document.querySelector('.inner_bx_main').style.display = 'block'
-                    document.querySelector('body').classList.remove('unavailable')
-
-                }
-            }
-        };
-
-        window.addEventListener("resize", checkOrientation, false);
-        window.addEventListener("orientationchange", checkOrientation, false);
-        if (window.screen.width > 470) {
-            document.querySelector('.ct_bx_under_maintenance').style.display = 'block'
-            document.querySelector('.inner_bx_main').style.display = 'none'
-            document.querySelector('body').classList.add('unavailable')
-
-        }
         //--------------------------//
           function getCookie(cname) {
             var name = cname + "=";
