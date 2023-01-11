@@ -48,21 +48,90 @@
             z-index: 1000;
         }
 
+        .ct_info_reffer_offer h4 {
+            color: #ffffff;
+            font-family: 'Montserrat';
+            font-size: 18px;
+        }
+
+        .ct_info_reffer_offer {
+            position: absolute;
+            top: 78px;
+            width: 100vw;
+            z-index: 99999999999999;
+            display: block;
+            padding: 15px 20px;
+            background: linear-gradient(20deg, #c478ff, #ff008dad);
+        }
+
+        .ct_bx_about_mobile2.account_btn {
+            display: none;
+        }
+
+        .container_coupons_Refer_outer {
+            position: absolute;
+            z-index: 99999999999999;
+            display: none;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .container_coupons_Refer h3 {
+            font-family: 'poppins';
+            font-weight: 700;
+            color: black;
+            font-size: 17px;
+            margin: 20px 20px;
+        }
+
+        .container_coupons_Refer {
+            background: white;
+            box-shadow: 0 0 10px #0000002e;
+            padding: 20px 0px;
+            margin-top: 190px;
+            height: 70vh;
+            width: 690px;
+            overflow: hidden;
+        }
+
+        .ct_coupons_all {
+            overflow: hidden;
+            border-radius: 20px;
+            overflow-y: scroll;
+            height: 63vh;
+            padding-bottom: 70px;
+        }
+
+        .ct_coupons_all::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        /* Track */
+        .ct_coupons_all::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        .ct_coupons_all::-webkit-scrollbar-thumb {
+            background: rgb(78, 78, 78);
+        }
+
         .ct_coupons img {
             width: auto;
             height: 82px;
         }
 
-.ct_coupons {
-    margin: 20px 35px;
-    display: flex;
-    padding: 14px 20px;
-    box-shadow: 0 0 14px #0000000f;
-    height: auto;
-    width: 72%;
-    border-radius: 12px;
-    background: linear-gradient(127deg, #fffefe 59%, #ffefe2ad, #ffe8d3ad);
-}
+        .ct_coupons {
+            margin: 20px 35px;
+            display: flex;
+            padding: 14px 20px;
+            box-shadow: 0 0 6px #00000029;
+            height: auto;
+            width: 82%;
+            border-radius: 12px;
+            background: linear-gradient(127deg, #fcf7ff0f 59%, #dfe0ff5c, #fef3ff);
+        }
 
         .ct_coupons h4 {
             font-size: 15px;
@@ -82,21 +151,24 @@
             margin-left: 1px;
         }
 
-.ct_coupons button {
-    border: none;
-    font-size: 13px;
-    width: max-content;
-    border-color: #ffd400;
-    color: black;
-    padding: 6px 12px;
-    font-family: 'roboto';
-    box-shadow: 0 0 3px #0000004f;
-    border-radius: 20px;
-    margin: 11px 0px;
-    border-color: #ffd400;
-    background: #FFD814;
-    box-shadow: 0 4px 5px #0000002e;
-}
+        .ct_coupons button {
+            border: none;
+            width: max-content;
+            color: white;
+            padding: 6px 12px;
+            font-family: 'roboto';
+            box-shadow: 0 0 3px #0000004f;
+            border-radius: 20px;
+            margin: 11px 0px;
+            background: #8414ff;
+            box-shadow: 0 4px 5px #0000002e;
+        }
+
+        .ct_coupons.notavailable {
+            filter: grayscale(1) contrast(.5) brightness(1.5);
+            pointer-events: none;
+        }
+
         .ct_coupons .ct_inner {
             margin-left: 26px;
         }
@@ -309,7 +381,7 @@
             background: #f9f9f9b0;
             display: none;
             height: 100vh;
-            z-index: 99999999999999;
+            z-index: 999999999;
             justify-content: center;
         }
 
@@ -525,6 +597,7 @@
         .ct_apply_coupons .ct_bx1 {
             display: flex;
             width: 87%;
+            cursor: pointer;
             padding: 14px 0 8px 10px;
             background-color: white;
             border-radius: 29px;
@@ -2260,7 +2333,7 @@
             position: absolute;
             top: 0;
             background-color: white;
-            z-index: 99999999999;
+            z-index: 9999999;
             text-align: center;
             box-shadow: 0 0 4px rgba(0, 0, 0, .383);
         }
@@ -4116,13 +4189,19 @@
 
         .box_pop_up_accounts {
             display: block;
-            width: 800px;
+            width: 700px;
             position: relative;
             /* z-index: 9999999999999999999; */
             overflow: hidden;
             height: 750px;
             top: 120px;
+            background-color: white;
+            border-radius: 20px;
             box-shadow: 0 0 10px #00000042;
+        }
+
+        .box_pop_up_accounts.for_signup {
+            top: 160px;
         }
 
         .box_pop_up_accounts.forlogin {
@@ -4443,12 +4522,14 @@
             border-radius: 20px;
             overflow-y: scroll;
             height: 90vh;
+            padding-bottom: 50px;
         }
 
         .box_pop_up_accounts.active {
             bottom: -30px;
         }
 
+        /*
         .box_pop_up_accounts {
             border-radius: 20px;
             background-color: white;
@@ -4461,6 +4542,8 @@
             z-index: 99999999999999;
         }
 
+
+*/
         .cont_btn_acc {
             font-family: 'Open Sans';
             text-decoration: none;
@@ -16022,6 +16105,9 @@
 
     </div>
 
+    <div class="ct_info_reffer_offer">
+        <h4>Hurrah! Create an account and login to receive a reward of ₹ 50.</h4>
+    </div>
     <div class="ct_bx_customize_product">
         <p class="hidden id_g"></p>
         <div class="ct_bx_remove_custom close_cusproduct">
@@ -16076,6 +16162,60 @@
             </a>
         </div>
     </div>
+    <div class="container_coupons_Refer_outer">
+        <div class="container_coupons_Refer">
+
+            <h3>Claim Coupons and Enjoy offers.</h3>
+
+            {{!-- <div class="ct_efferal">
+                <h4>Enter Refferal code</h4>
+                <input type="text" placeholder="Code">
+                <button>Claim</button>
+            </div> --}}
+            {{!-- <div class="ct_bx_coupons">
+                <h4>Coupons </h4>
+            </div> --}}
+            <div class="ct_coupons_all">
+                <div class="ct_coupons">
+                    <img src="../img/couponsIcon.png" alt="coupon">
+                    <div class="ct_inner">
+                        <h4>Coupon: KRICKUSER</h4>
+
+                        <p>Save 40% on above ₹ 100 on your first order.</p>
+                        <button>Claim</button>
+                    </div>
+                </div>
+                <div class="ct_coupons notavailable">
+                    <img src="../img/couponsIcon.png" alt="coupon">
+                    <div class="ct_inner">
+                        <h4>Coupon: KRICKUSER</h4>
+
+                        <p>Save 40% on above ₹ 100 on your first order.</p>
+                        <button>Claim</button>
+                    </div>
+                </div>
+                <div class="ct_coupons notavailable">
+                    <img src="../img/couponsIcon.png" alt="coupon">
+                    <div class="ct_inner">
+                        <h4>Coupon: KRICKUSER</h4>
+
+                        <p>Save 40% on above ₹ 100 on your first order.</p>
+                        <button>Claim</button>
+                    </div>
+                </div>
+                <div class="ct_coupons notavailable">
+                    <img src="../img/couponsIcon.png" alt="coupon">
+                    <div class="ct_inner">
+                        <h4>Coupon: KRICKUSER</h4>
+
+                        <p>Save 40% on above ₹ 100 on your first order.</p>
+                        <button>Claim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="ct_bx_layer">
 
     </div>
@@ -16097,7 +16237,8 @@
                     <div class="ct_bx_account">
                         <div class="ct_bx_otp_box fr_sign_otp">
                             <h4>Verify our phone number </h4>
-                            <p>An OTP has been sent to you successfully.Please wait for a while if you donot recived the
+                            <p>An OTP has been sent to you successfully.Please wait for a while if you donot
+                                recived the
                                 otp
                                 yet.
                             </p>
@@ -16150,7 +16291,8 @@
                                 <h4>Contact details</h4>
                                 <div class="gt_first_nam_second_name">
                                     <div class="nick_name name_un bx_acc">
-                                        {{!-- <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon> --}}
+                                        {{!-- <ion-icon class="main_icon_acc_log" name="person-outline"></ion-icon>
+                                        --}}
                                         <label for="name_inp"> Full name</label>
 
                                         <input name='name_user' class="name_of_user ac_setup" id="name_inp"
@@ -16239,7 +16381,8 @@
                         </div>
                         <div class="ct_bx_otp_box fr_loign_otp">
                             <h4>Verify our phone number </h4>
-                            <p>An OTP has been sent to you successfully.Please wait for a while if you donot recived the
+                            <p>An OTP has been sent to you successfully.Please wait for a while if you donot
+                                recived the
                                 otp
                                 yet.
                             </p>
@@ -16594,33 +16737,16 @@
 
                     <div class="ct_billing_info">
                         <div class="ct_apply_coupons">
-                            <h3>Claim and enjoy offers</h3>
+                            <h3>Enjoy offers</h3>
                             <div class="ct_bx1">
                                 <img src="../img/coupons_icon_m.png" alt="coupon">
                                 <div class="ct_inner">
-                                    <h4>Apply Coupons & refferal code</h4>
+                                    <h4>Claim Coupons</h4>
                                 </div>
                                 <ion-icon name="chevron-forward-outline"></ion-icon>
                             </div>
-                            <div class="ct_bx2">
-                                {{!-- <div class="ct_efferal">
-                                    <h4>Enter Refferal code</h4>
-                                    <input type="text" placeholder="Code">
-                                    <button>Claim</button>
-                                </div> --}}
-                                {{!-- <div class="ct_bx_coupons">
-                                    <h4>Coupons </h4>
-                                </div> --}}
-                                <div class="ct_coupons">
-                                    <img src="../img/couponsIcon.png" alt="coupon">
-                                    <div class="ct_inner">
-                                        <h4>Coupon: KRICKUSER</h4>
 
-                                        <p>Save 40% on above ₹ 100 on your first order.</p>
-                                        <button>APPLY</button>
-                                    </div>
-                                </div>
-                            </div>
+
 
                         </div>
 
@@ -17790,6 +17916,8 @@
             let objUser = JSON.parse(getCookie('one_tm_dt'))
             console.log(objUser)
 
+
+
             db.collection("users")
                 .add({
                     admin: false,
@@ -17850,29 +17978,29 @@
                     document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
                 }, 400)
 
-                if (num_22 !== null) {
-                    // session saved. No need to login
+                // if (num_22 !== null) {
+                // session saved. No need to login
 
-                    document.querySelectorAll('.ct_bx_inputs_otp input')[0].value = check_otp[0]
-                    document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
-                    setTimeout(function () {
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[1].value = check_otp[1]
-                    }, 200)
+                //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].value = check_otp[0]
+                //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
+                //     setTimeout(function () {
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].value = check_otp[1]
+                //     }, 200)
 
-                    setTimeout(function () {
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[2].value = check_otp[2]
-                    }, 300)
-                    setTimeout(function () {
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[3].value = check_otp[3]
-                    }, 400)
-                    createAccount()
-                } else {
+                //     setTimeout(function () {
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].value = check_otp[2]
+                //     }, 300)
+                //     setTimeout(function () {
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
+                //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].value = check_otp[3]
+                //     }, 400)
+                //     createAccount()
+                // } else {
 
-                    document.querySelector('.ct_bx_otp_box span').style.display = 'block'
-                }
+                document.querySelector('.ct_bx_otp_box span').style.display = 'block'
+                //}
             }
         }
         verifyPh()
@@ -17912,6 +18040,31 @@
                 }, 500)
             }
         }
+
+        if (getCookie('userData') !== '') {
+            // let obj=JSON.parse(getCookie('userData'))
+            document.querySelector('.account_btn').style.display = 'block'
+
+        } else {
+            // if reffered
+            window.scrollTo(0, 0)
+            document.querySelector('body').style.overflowY = 'hidden'
+            document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
+            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
+
+        }
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+            console.log('phone')
+        } else {
+            a = false;
+        }
+
         document.querySelector('html').addEventListener('click', (e) => {
             let itemG = e.target.closest('.pac-item')
             let inpX = e.target.closest('.nick_name.area input')
@@ -17921,6 +18074,11 @@
             let loginBtn = e.target.closest('.login_verify')
             let login_main_btn = e.target.closest('.login_account')
             let goback_login = e.target.closest('.ct_go_back_account')
+            let coupons_box = e.target.closest('.ct_apply_coupons .ct_bx1')
+
+            if (coupons_box !== null) {
+                //container_coupons_Refer_outer
+            }
             if (resend_otp !== null) {
                 let user_dt = JSON.parse(getCookie('one_tm_dt'))
 
@@ -18002,6 +18160,7 @@
                         phone: objUser.phone
                     }
                     document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                    document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                     document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
@@ -18118,8 +18277,81 @@
                 console.log(num_22, check_otp, nm_otp)
 
                 if (check_otp === nm_otp) {
+                    if (window.location.search.split('?')[1] !== undefined) {
+                        if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                            let id = window.location.search.split('?')[1].split('=')[1].split('&')[0]
+                            async function getUser() {
+                                let dbCollection2 = db.collection("users")
+                                let res = await dbCollection2.get()
+                                res.docs.forEach(cu => {
+                                    let data = cu.data()
+                                    if (id === data.id) {
+                                        // anyone can trigger the function createAccount
 
-                    createAccount()
+                                        document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
+                                        document.querySelector('.create_account').style.opacity = '.5'
+                                        document.querySelector('.create_account').style.pointerEvents = 'none'
+                                        document.querySelector('.resend_otp').style.color = '#005ace'
+                                        document.querySelector('.resend_otp').style.pointerEvents = 'auto'
+
+                                        let objUser = JSON.parse(getCookie('one_tm_dt'))
+                                        console.log(objUser)
+                                        //confetti
+
+                                        let objU = {
+                                            admin: false,
+                                            id: objUser.id,
+                                            name: objUser.name,
+                                            phone: objUser.phone,
+                                            address: objUser.address,
+                                            location: objUser.location,
+                                            cartItems: objUser.cartItems,
+                                            refferd: [id],
+                                            reffer: false,
+                                        }
+
+                                        db.collection("users")
+                                            .add({
+                                                admin: false,
+                                                id: objUser.id,
+                                                name: objUser.name,
+                                                phone: objUser.phone,
+                                                address: objUser.address,
+                                                location: objUser.location,
+                                                cartItems: objUser.cartItems,
+                                                refferd: id,
+                                                reffer: false,
+                                            }).then(res => {
+                                                alert('heyyy')
+                                                sessionStorage.clear()
+                                                document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
+
+                                                document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                                document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                                document.cookie = "userData" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                                                document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                                                setTimeout(function () {
+                                                    document.querySelector('.popup_info.sucess_account').style.display = 'none'
+
+
+                                                }, 20000)
+                                                //socket.emit('signedUp', n, phone)
+                                                document.querySelector('.confetti').style.display = 'block'
+                                                document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50'
+                                                document.querySelector('.ct_outer_saved').style.display = 'flex'
+                                                document.querySelector('.ct_info_reffer_offer').style.display='none'
+                                            })
+                                    }
+
+                                })
+                            }
+                            getUser()
+                        }
+                    } else {
+                        createAccount()
+                    }
+
                 } else {
                     document.querySelector('.error_otp').style.display = 'block'
                     document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
@@ -18211,9 +18443,14 @@
                                             qty: 1
 
                                         }]
-                                    }
 
-                                    window.location.replace('/mycart#dataRecived')
+                                    }
+                                    if (window.location.search !== '') {
+                                        let searchM = window.location.search
+                                        window.location.replace(`/mycart${searchM}#dataRecived`)
+                                    } else {
+                                        window.location.replace('/mycart#dataRecived')
+                                    }
                                     setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
                                     document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                     document.querySelector('.ct_inner_bottom_box').style.height = '500px'
@@ -18393,6 +18630,7 @@
                 if (!isNaN(Number(data))) {
                     data.split('').forEach((cu11, index) => {
                         if (index <= lengthInp) {
+                            console.log(document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`), index)
                             document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].value = cu11
                             document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].removeAttribute('disabled')
                         }
@@ -18404,7 +18642,7 @@
             });
         }
         inputType(inputs_login, '.forlogin')
-        inputType(inputs_sign, 'fr_sign_otp')
+        inputType(inputs_sign, '.for_signup')
 
         document.querySelector('html').addEventListener('click', (e) => {
             let bx = e.target.closest('.ct_bx_qty_inner')

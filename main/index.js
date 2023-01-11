@@ -359,6 +359,9 @@ app.get('/notavailable', (req, res) => {
     res.render('under_construction')
 
 })
+ app.get('/account', (req, res) => {
+    res.render('account_page')
+})
 // app.get('/unavailable', (req, res) => {
 //     res.render('unable_website')
 
