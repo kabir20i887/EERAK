@@ -39,21 +39,42 @@
             src: url(../others/fonts/Gagalin.otf);
             font-family: gagalin;
         }
-.popup_info {
-    display: none;
-    background-color: #280ade;
-    margin-left: 12px;
-    border-radius: 20px;
-    padding: 10px 15px;
-    position: fixed;
-    z-index: 999999999999999;
-    bottom: 10px;
-    width: max-content;
-    height: 45px;
-    transition: 0.8s ease-in-out;
-    top: 20px;
-    right: 20px;
-}
+        .ct_load_items{
+            display: flex;
+            justify-content: center;
+        }
+        .buttons_loading {
+            display: none;
+            content: '';
+            background: linear-gradient(110deg, #f6f2f2 8%, #f6f3f3 18%, #f8f5f5 26%);
+            background-size: 200% 100%;
+            animation: .8s shine linear infinite;
+            width: 91%;
+            height: 48px;
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .popup_info {
+            display: flex;
+            background-color: #1da036;
+            margin-left: 12px;
+            border-radius: 20px;
+            padding: 10px 15px;
+            position: fixed;
+            z-index: 999999999999999;
+            bottom: 10px;
+            width: max-content;
+            height: 45px;
+            transition: 0.8s ease-in-out;
+            bottom: 20px;
+            right: -500px;
+        }
+
+        .popup_info.active {
+            right: 20px;
+        }
+
         .ct_bx_selection {
             display: flex;
             width: 100%;
@@ -906,6 +927,60 @@
             text-align: center;
         }
 
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            margin: 8px;
+            border: 2px solid rgb(34, 34, 34);
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: rgb(87, 87, 87) transparent transparent transparent;
+        }
+        .ct_load_items .lds-ring{
+                position: relative;
+        }
+.ct_load_items {
+    padding: 55px 0 66px 0;
+}
+        
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .popup_info p {
+            font-size: 12px;
+            color: white;
+            font-family: 'Montserrat';
+            margin: 6px 9px;
+        }
+
+        .popup_info.sucess_account ion-icon {
+            color: white;
+            font-size: 24px;
+        }
+
         .unavailable {
             font-family: 'Open Sans';
             font-weight: 100;
@@ -1327,7 +1402,7 @@
             top: 0;
             height: 100vh;
             transition: 0.8s ease-in-out;
-            z-index: 99999999999999;
+            z-index: 99999999;
             border-radius: 0;
             box-shadow: 0 0 10px #0000005e;
             transition: all 1s ease;
@@ -2463,7 +2538,7 @@
             position: absolute;
             top: 0;
             background-color: white;
-            z-index: 99999999999;
+            z-index: 9999999;
             text-align: center;
             box-shadow: 0 0 4px rgba(0, 0, 0, .383)
         }
@@ -2507,15 +2582,15 @@
             font-size: 22px
         }
 
-.ct_bx_fooditm .main_im {
-    width: 54%;
-    height: auto;
-    /* background: #00000033; */
-    position: revert;
-    filter: drop-shadow(1px 4px 7px #00000033);
-    margin-left: 48px;
-    transform: translate(0px, 0px);
-}
+        .ct_bx_fooditm .main_im {
+            width: 54%;
+            height: auto;
+            /* background: #00000033; */
+            position: revert;
+            filter: drop-shadow(1px 4px 7px #00000033);
+            margin-left: 48px;
+            transform: translate(0px, 0px);
+        }
 
         .ct_bx_inner_food_groc {
             margin-top: 0;
@@ -7085,28 +7160,30 @@
 
     </div>
     <div class="ctbx_info_popups">
-            <div class="popup_info create_account_popup">
-                <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <p>Creating an account and logging in</p>
+        <div class="popup_info create_account_popup">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            <div class="popup_info error_info_popup">
-                <ion-icon name="alert-circle-sharp" role="img" class="md hydrated" aria-label="alert circle sharp"></ion-icon>
-                <div>
-                    <p>Something went wrong</p>
-                    <span>Please try again later.</span>
-                </div>
-
-            </div>
-            <div class="popup_info sucess_account">
-                <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated" aria-label="checkmark circle sharp"></ion-icon>
-                <p>Your account has been successfully created </p>
-            </div>
+            <p>Creating an account and logging in</p>
         </div>
+        <div class="popup_info error_info_popup">
+            <ion-icon name="alert-circle-sharp" role="img" class="md hydrated"
+                aria-label="alert circle sharp"></ion-icon>
+            <div>
+                <p>Something went wrong</p>
+                <span>Please try again later.</span>
+            </div>
+
+        </div>
+        <div class="popup_info sucess_account">
+            <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated"
+                aria-label="checkmark circle sharp"></ion-icon>
+            <p>Masala Meat sucessfully added to cart </p>
+        </div>
+    </div>
     <div class="ct_pop_up_items_order">
         <div class="ct_remove_bx_pop_p">
             <ion-icon name="close-outline"></ion-icon>
@@ -7156,6 +7233,10 @@
                             add
                         </span>
                     </div>
+                </div>
+                <div class="buttons_loading">
+                </div>
+                <div class="buttons_loading">
                 </div>
                 <div class="buy_now">Buy now</div>
 
@@ -7234,7 +7315,14 @@
 
                 <div class="ct_box_innside_reccom">
                     <h4>Reccomended Essentials</h4>
-
+<div class="ct_load_items">
+                <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+</div>
                     <div class="crousel_items">
                         <div class="product" style="left: 0px;">
                             <div class="itm_food_list_ek added_itm_ek_fd">
@@ -8007,6 +8095,9 @@
             if (qty_bx_itm !== null) {
                 let del
                 let pr
+                let name11=qty_bx_itm.childNodes[1].innerText
+                let info=qty_bx_itm.childNodes[3].innerText
+                
                 if (qty_bx_itm.childNodes[7] !== undefined) {
                     del = qty_bx_itm.childNodes[7].childNodes[1].innerText
                     pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
@@ -8026,6 +8117,84 @@
                     document.querySelector('.ct_for_bx1.active').classList.add('active')
                     qty_bx_itm.classList.remove('active')
 
+                }
+                if(document.querySelector('.ct_addded').style.display==='block'){
+                let allfd = JSON.parse(localStorage.getItem('sauce'))
+                if (getCookie('userData') === '') {
+                    document.querySelector('.buy_now').style.display = 'block'
+                    document.querySelector('.add_cart_btn').style.display = 'block'
+                    document.querySelector('.ct_addded').style.display = 'none'
+                    if (allfd !== null) {
+
+                        allfd.forEach(cu11 => {
+                            let nameD = cu11.name.split(' ').join('')
+                            let nameM = name.split(' ').join('')
+                            if (nameD === nameM) {
+                                cu11.cartItems.forEach(cu11 => {
+                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                                    let nameM = name.split(' ').join('').toLowerCase()
+                                    if (nameD === nameM) {
+                                        cu11.slt_nm=name11
+                                        cu11.slt_p=info
+
+                                    }
+                                })
+                                document.querySelector('.buy_now').style.display = 'none'
+                                document.querySelector('.add_cart_btn').style.display = 'none'
+                                document.querySelector('.ct_addded').style.display = 'block'
+                                document.querySelector('.ct_qty_box input').value = cu11.qty
+                            }
+                        })
+                        localStorage.setItem('sauce',JSON.stringify(allfd))
+                    }
+                } else {
+                    document.querySelector('.buy_now').style.display = 'none'
+                    document.querySelector('.add_cart_btn').style.display = 'none'
+                    document.querySelector('.ct_addded').style.display = 'none'
+                    let userDt = JSON.parse(getCookie('userData'))
+                    document.querySelectorAll('.buttons_loading').forEach(cu => {
+                        cu.style.display = 'block'
+                    })
+
+                    async function getItm() {
+                        let dbCollection2 = db.collection("users")
+                        let res = await dbCollection2.get()
+                        document.querySelectorAll('.buttons_loading').forEach(cu => {
+                            cu.style.display = 'none'
+                        })
+                        res.docs.forEach(async cu => {
+                            let data = cu.data()
+                            let matched = false
+                            if (userDt.id === data.id) {
+
+                                data.cartItems.forEach(cu11 => {
+                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                                    let nameM = name.split(' ').join('').toLowerCase()
+                                    if (nameD === nameM) {
+                                        cu11.slt_nm=name11
+                                        cu11.slt_p=info
+                                        console.log(cu11.slt_p,cu11.slt_nm,' -----------------')
+
+                                    }
+                                })
+                                        await dbCollection2.doc(cu.id).set({
+                                            admin: data.admin,
+                                            id: data.id,
+                                            name: data.name,
+                                            phone: data.phone,
+                                            address: data.address,
+                                            location: data.location,
+                                            cartItems: data.cartItems,
+                                            refferedBy: data.refferedBy,
+                                            reffer:data.reffer,
+                                        })
+                            }
+
+                        })
+
+                    }
+                    getItm()
+                }
                 }
             }
             if (gCart !== null) {
@@ -8073,18 +8242,66 @@
                 let essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[17].innerHTML
                 document.querySelector('.ct_bx_img img').src = imgsrc
                 let allfd = JSON.parse(localStorage.getItem('sauce'))
-                if (allfd !== null) {
+                if (getCookie('userData') === '') {
+                    document.querySelector('.buy_now').style.display = 'block'
+                    document.querySelector('.add_cart_btn').style.display = 'block'
+                    document.querySelector('.ct_addded').style.display = 'none'
+                    if (allfd !== null) {
 
-                    allfd.forEach(cu11 => {
-                        let nameD = cu11.name.split(' ').join('')
-                        let nameM = name.split(' ').join('')
-                        if (nameD === nameM) {
-                            document.querySelector('.buy_now').style.display = 'none'
-                            document.querySelector('.add_cart_btn').style.display = 'none'
-                            document.querySelector('.ct_addded').style.display = 'block'
-                            document.querySelector('.ct_qty_box input').value = cu11.qty
-                        }
+                        allfd.forEach(cu11 => {
+                            let nameD = cu11.name.split(' ').join('')
+                            let nameM = name.split(' ').join('')
+                            if (nameD === nameM) {
+
+                                document.querySelector('.buy_now').style.display = 'none'
+                                document.querySelector('.add_cart_btn').style.display = 'none'
+                                document.querySelector('.ct_addded').style.display = 'block'
+                                document.querySelector('.ct_qty_box input').value = cu11.qty
+                            }
+                        })
+                    }
+                } else {
+                    document.querySelector('.buy_now').style.display = 'none'
+                    document.querySelector('.add_cart_btn').style.display = 'none'
+                    document.querySelector('.ct_addded').style.display = 'none'
+                    let userDt = JSON.parse(getCookie('userData'))
+                    document.querySelectorAll('.buttons_loading').forEach(cu => {
+                        cu.style.display = 'block'
                     })
+
+                    async function getItm() {
+                        let dbCollection2 = db.collection("users")
+                        let res = await dbCollection2.get()
+                        document.querySelectorAll('.buttons_loading').forEach(cu => {
+                            cu.style.display = 'none'
+                        })
+                        res.docs.forEach(async cu => {
+                            let data = cu.data()
+                            let matched = false
+                            if (userDt.id === data.id) {
+
+                                data.cartItems.forEach(cu11 => {
+                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                                    let nameM = name.split(' ').join('').toLowerCase()
+                                    if (nameD === nameM) {
+                                        matched = true
+                                        document.querySelector('.buy_now').style.display = 'none'
+                                        document.querySelector('.add_cart_btn').style.display = 'none'
+                                        document.querySelector('.ct_addded').style.display = 'block'
+                                        document.querySelector('.ct_qty_box input').value = cu11.qty
+
+                                    }
+                                })
+                                if (!matched) {
+                                    document.querySelector('.buy_now').style.display = 'block'
+                                    document.querySelector('.add_cart_btn').style.display = 'block'
+                                }
+                            }
+
+                        })
+
+                    }
+                    getItm()
                 }
                 document.querySelector('.name_of_itm').innerText = name
                 document.querySelector('.offer_item p').innerText = offer + '% off'
@@ -8278,10 +8495,8 @@
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
-                document.querySelector('.buy_now').style.display = 'block'
-                document.querySelector('.add_cart_btn').style.display = 'block'
+               document.querySelector('.popup_info.sucess_account').classList.remove('active')
 
-                document.querySelector('.ct_addded').style.display = 'none'
             }
             if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
@@ -8289,18 +8504,16 @@
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
-                document.querySelector('.buy_now').style.display = 'block'
-                document.querySelector('.add_cart_btn').style.display = 'block'
-                document.querySelector('.ct_addded').style.display = 'none'
+               document.querySelector('.popup_info.sucess_account').classList.remove('active')
+
             }
             if (itmPopucloseIcon !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
-                document.querySelector('.buy_now').style.display = 'block'
-                document.querySelector('.add_cart_btn').style.display = 'block'
-                document.querySelector('.ct_addded').style.display = 'none'
+               document.querySelector('.popup_info.sucess_account').classList.remove('active')
+
 
             }
             if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
@@ -9134,7 +9347,7 @@
                     buyNow_btn.style.display = 'none'
                     document.querySelector('.add_cart_btn').style.display = 'none'
                     document.querySelector('.ct_addded').style.display = 'block'
-                    if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce')!==null) {
+                    if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
                         localStorage.setItem('sauce', JSON.stringify([obj]))
                     } else {
                         let allfd = JSON.parse(localStorage.getItem('sauce'))
@@ -9142,26 +9355,30 @@
                         localStorage.setItem('sauce', JSON.stringify(allfd))
 
                     }
-                buyNow_btn.style.opacity = '1'
-                document.querySelector('.add_cart_btn').style.opacity = '1'
+                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                     setTimeout(function () {
+                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                     }, 10000)
+                    buyNow_btn.style.opacity = '1'
+                    document.querySelector('.add_cart_btn').style.opacity = '1'
                 } else if (getCookie('userData') !== '') {
                     console.log('user!!!!!!!!!!!!!!!')
                     let userDt = JSON.parse(getCookie('userData'))
 
-                  //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
-                  //      localStorage.setItem('items_added', JSON.stringify([name]))
-                  //  } else {
-                  //      let allfd = JSON.parse(localStorage.getItem('items_added'))
-                  //      allfd.push(name)
-                  //      localStorage.setItem('items_added', JSON.stringify(allfd))
-//
-                  //  }
-                    
-                buyNow_btn.style.opacity = '1'
-                
-                document.querySelector('.add_cart_btn').style.opacity = '1'
-                                    buyNow_btn.style.display = 'none'
-                                                        document.querySelector('.ct_addded').style.display = 'block'
+                    //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
+                    //      localStorage.setItem('items_added', JSON.stringify([name]))
+                    //  } else {
+                    //      let allfd = JSON.parse(localStorage.getItem('items_added'))
+                    //      allfd.push(name)
+                    //      localStorage.setItem('items_added', JSON.stringify(allfd))
+                    //
+                    //  }
+
+                    buyNow_btn.style.opacity = '1'
+                    document.querySelector('.add_cart_btn').style.opacity = '1'
+                    buyNow_btn.style.display = 'none'
+                    document.querySelector('.ct_addded').style.display = 'block'
 
                     document.querySelector('.add_cart_btn').style.display = 'none'
                     async function getUser() {
@@ -9173,17 +9390,23 @@
                                     userDt_db.cartItems.push(obj)
                                     console.log(userDt_db.cartItems)
                                     async function pushData() {
-                                            dbCollection.doc(cur.id).set({
-                                                address:userDt_db.address,
-                                                admin:userDt_db.admin,
-                                                cartItems:userDt_db.cartItems,
-                                                id:userDt_db.id,
-                                                location:userDt_db.location,
-                                                name:userDt_db.name,
-                                                phone:userDt_db.phone,
-                                            })
-                                            console.log('data pushed')
-                                        
+                                        dbCollection.doc(cur.id).set({
+                                            address: userDt_db.address,
+                                            admin: userDt_db.admin,
+                                            cartItems: userDt_db.cartItems,
+                                            id: userDt_db.id,
+                                            location: userDt_db.location,
+                                            name: userDt_db.name,
+                                            phone: userDt_db.phone,
+                                            refferedBy: userDt_db.refferedBy,
+                                            reffer:userDt_db.reffer,
+                                        })
+                                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+                                        setTimeout(function () {
+                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                                        }, 10000)
+
                                     }
                                     pushData()
                                 }

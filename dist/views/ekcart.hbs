@@ -48,20 +48,26 @@
             z-index: 1000;
         }
 
+        .error_account h4,
         .ct_info_reffer_offer h4 {
             color: #ffffff;
             font-family: 'Montserrat';
             font-size: 18px;
         }
 
+        .error_account,
         .ct_info_reffer_offer {
             position: absolute;
             top: 78px;
             width: 100vw;
             z-index: 99999999999999;
-            display: block;
+            display: none;
             padding: 15px 20px;
             background: linear-gradient(20deg, #c478ff, #ff008dad);
+        }
+
+        .error_account {
+            background: linear-gradient(20deg, #f76161, #ff365fed);
         }
 
         .ct_bx_about_mobile2.account_btn {
@@ -173,6 +179,30 @@
             margin-left: 26px;
         }
 
+        .ct_apply_coupons .ct_inner {
+            width: 72%;
+        }
+
+        .ct_apply_btn P {
+            font-size: 13px;
+            color: orange;
+            font-family: 'roboto';
+            font-weight: 700;
+        }
+
+        .ct_apply_btn {
+            background: #fff8e8;
+            padding: 10px;
+        }
+
+        .ct_apply_coupons .ct_inner p {
+            color: #939493;
+            font-family: 'roboto';
+            font-size: 11px;
+            margin-top: 5px;
+            font-weight: 700;
+            margin-left: 17px;
+        }
 
         .ct_outer_saved {
             position: absolute;
@@ -385,16 +415,25 @@
             justify-content: center;
         }
 
+
         .ct_info_offfer_saved {
             background: linear-gradient(20deg, #fff0f4, #ff008dad);
             padding: 17px 20px;
             width: 98%;
+            display: none;
         }
 
         .ct_info_offfer_saved h4 {
             font-family: 'roboto';
             color: #970d8d;
             font-size: 19px;
+        }
+
+        .ct_info_offfer_saved P {
+            font-family: 'roboto';
+            color: #970d8d;
+            margin-top: 5px;
+            font-size: 14px;
         }
 
         .ct_offer_info {
@@ -664,12 +703,11 @@
         }
 
         .ct_apply_coupons .ct_bx1 h4 {
-            color: #747474;
-            font-family: 'roboto';
-            font-size: 14px;
-            margin-top: 5px;
-            font-weight: 700;
             margin-left: 17px;
+            color: #333232;
+            font-family: 'roboto';
+            font-size: 15px;
+            margin-top: 0;
         }
 
         .ct_apply_coupons .ct_bx1 ion-icon {
@@ -4187,6 +4225,14 @@
             display: none;
         }
 
+        .ct_outer_account_bx.signup_bx {
+            display: flex;
+        }
+
+        .box_pop_up_accounts.for_signup {
+            display: block;
+        }
+
         .box_pop_up_accounts {
             display: block;
             width: 700px;
@@ -4208,6 +4254,7 @@
             width: 540px;
             display: block;
             height: 440px;
+            top: 165px;
         }
 
         .forlogin .ct_box_form {
@@ -4380,6 +4427,10 @@
             display: none;
             opacity: 0;
             transition: all .7s ease-in-out;
+        }
+
+        .ct_bx_otp_box.fr_sign_otp {
+            margin-top: 50px;
         }
 
         .ct_bx_otp_box p {
@@ -9499,6 +9550,7 @@
 
         .list_itm_sub_cart p {
             font-weight: 400;
+            font-family: 'roboto';
             text-transform: capitalize;
             width: 184px;
             word-spacing: 3px;
@@ -9519,12 +9571,10 @@
             width: 80%;
         }
 
-
-
         .block_2_charge p,
         .block_1_charge p {
-            font-size: 13px;
-            color: rgb(39, 37, 37);
+            font-size: 11px;
+            color: rgb(117 109 109);
         }
 
         .to_pay_cahge p {
@@ -9549,7 +9599,8 @@
         .block_2_charge,
         .block_1_charge span {
             font-size: 13px;
-            color: rgb(39, 37, 37);
+            font-weight: 700;
+            color: rgb(112 111 111);
         }
 
         .placeneworder p ion-icon,
@@ -16104,7 +16155,9 @@
     <div class="ct_overflow_customize">
 
     </div>
-
+    <div class="error_account">
+        <h4>Opps! Account aleady exist.</h4>
+    </div>
     <div class="ct_info_reffer_offer">
         <h4>Hurrah! Create an account and login to receive a reward of ₹ 50.</h4>
     </div>
@@ -16518,6 +16571,7 @@
 
                 <div class="ct_info_offfer_saved">
                     <h4>Hurrah! You saved ₹ 49 on this order.</h4>
+                    <p>With COUPON: TRYNOW</p>
                 </div>
 
 
@@ -16646,18 +16700,63 @@
                                         <li>
                                             <div class="ct_items_bx">
                                                 <div class="ct_imgbx">
-                                                    <img src="../img/sample_img2.jpeg" alt="">
+                                                    <img src="../img/fortune_oil.jpg" alt="">
                                                 </div>
                                                 <div class="ct_info_items">
-                                                    <h4>Masala meat</h4>
-                                                    <span>net weight: 150g</span>
+                                                    <h4>Mustard oil, Fortune</h4>
+                                                    {{!-- <span>net weight: 150g</span> --}}
+                                                    <div class="ct_flexbx">
+                                                        <div class="ct_for_bx1 active">
+                                                            <h4>1 litre</h4>
+                                                            <span class="info_package" style="display: none;">pouch
+                                                                pack</span>
+                                                            <div class="ct_pr_bx">
+                                                                <del>₹ 56</del>
+                                                                <p>₹ 45</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="ct_for_bx1 unactive">
+                                                            <h4>3 litre</h4>
+                                                            <span class="info_package" style="display: none;">pouch
+                                                                pack</span>
+                                                            <div class="ct_pr_bx">
+                                                                <del>₹ 93</del>
+                                                                <p>₹ 75</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="ct_for_bx1">
+                                                            <div class="ct_pop_info">
+                                                                <p></p>
+                                                            </div>
+                                                            <div class="ct_bx_flex">
+                                                                <h4>5 litre</h4>
+                                                                <div class="ct_x_info">
+                                                                    <ion-icon name="help-circle-outline" role="img"
+                                                                        class="md hydrated"
+                                                                        aria-label="help circle outline"></ion-icon>
+                                                                </div>
+                                                            </div>
+                                                            <span class="info_package" style="display: none;">pouch
+                                                                pack</span>
+                                                            <div class="ct_pr_bx">
+                                                                <del>₹ 156</del>
+                                                                <p>₹ 125</p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                     <div class="ct_bx_qt_foods">
                                                         <div class="ct_bx_item_rem">
                                                             <ion-icon name="remove-outline" role="img"
                                                                 class="md hydrated"
                                                                 aria-label="remove outline"></ion-icon>
                                                         </div>
-                                                        <input type="text" value="1" readonly>
+                                                        <input type="text" value="1" readonly="">
                                                         <div class="ct_bx_item_add">
                                                             <ion-icon name="add-outline" role="img" class="md hydrated"
                                                                 aria-label="add outline"></ion-icon>
@@ -16673,7 +16772,9 @@
                                                     <div class="remove_fd_itm_ct">
                                                         <p>Delete</p>
                                                     </div>
-
+                                                    <div class="ct_offer_info">
+                                                        <p>Coupon:SAVE20 applied , 20% off.</p>
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -16741,7 +16842,11 @@
                             <div class="ct_bx1">
                                 <img src="../img/coupons_icon_m.png" alt="coupon">
                                 <div class="ct_inner">
-                                    <h4>Claim Coupons</h4>
+                                    <h4>Coupons</h4>
+                                    <p>COUPON:KRICKUSER applied</p>
+                                </div>
+                                <div class="ct_apply_btn">
+                                    <p>APPLY</p>
                                 </div>
                                 <ion-icon name="chevron-forward-outline"></ion-icon>
                             </div>
@@ -16848,6 +16953,12 @@
                                 <div class="list_itm_sub_cart block_1_charge">
                                     <p>Total items charge:</p>
                                     <span>₹ 75</span>
+
+                                </div>
+                                <div class="list_itm_sub_cart disocunted block_1_charge">
+                                    <p>Discounted amount</p>
+                                    <span style="color: #1eb970;font-size: 14px">—
+                                        ₹ 75</span>
 
                                 </div>
                                 <div class="list_itm_sub_cart to_pay_cahge to_pay_cahge1">
@@ -17917,7 +18028,6 @@
             console.log(objUser)
 
 
-
             db.collection("users")
                 .add({
                     admin: false,
@@ -17926,14 +18036,16 @@
                     phone: objUser.phone,
                     address: objUser.address,
                     location: objUser.location,
-                    cartItems: objUser.cartItems
+                    cartItems: objUser.cartItems,
+                    refferedBy: false,
+                    reffer: false,
                 }).then(res => {
                     sessionStorage.clear()
                     document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
 
                     document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                    document.cookie = "userData" + "=" + JSON.stringify(objUser) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                    // document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objUser) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                     document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                     setTimeout(function () {
@@ -17941,9 +18053,16 @@
 
 
                     }, 20000)
+                    if (window.location.search !== '') {
+                        let searchM = window.location.search
+                        window.location.replace(`/mycart${searchM}#login`)
+                    } else {
+                        window.location.replace('/mycart#login')
+                    }
                     //socket.emit('signedUp', n, phone)
 
                 })
+
 
 
 
@@ -17954,6 +18073,42 @@
         })
 
         function verifyPh() {
+             if (window.location.hash === '#login') {
+                if (window.location.search.split('?')[1] !== undefined) {
+                    if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                        async function getRefer() {
+                            let dbCollection21 = db.collection("reffer")
+                            let resREF = await dbCollection21.get()
+                            let dataRef = resREF.docs[0].data()
+                            console.log(dataRef.text, ' --------------------------------hahahaha----------------------------')
+                            window.scrollTo(0, 0)
+                            document.querySelector('body').style.overflowY = 'hidden'
+                            document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
+                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
+                            if (window.location.search.split('?')[1] !== undefined) {
+                                if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                                }
+                            }
+                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                            if (dataRef.earn.split('%')[1] !== undefined) {
+                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to get ${dataRef.earn} on you first order. `
+
+                            } else {
+                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to receive a reward of ${dataRef.earn}.`
+
+                            }
+                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'none'
+                            document.querySelector('.ct_outer_account_bx.login_bx').style.display = 'flex'
+                        }
+                        getRefer()
+                    }
+                } else {
+                    document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'none'
+                    document.querySelector('.ct_outer_account_bx.login_bx').style.display = 'flex'
+                }
+             }
+        if (getCookie('one_tm_dt') !== '') {
+        if (getCookie('ct_901_12') !== '') {
             if (window.location.hash === '#dataRecived') {
                 let nm = []
                 document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
@@ -18001,7 +18156,12 @@
 
                 document.querySelector('.ct_bx_otp_box span').style.display = 'block'
                 //}
-            }
+            } 
+
+
+            
+        }
+        }
         }
         verifyPh()
         window.addEventListener('hashchange', () => {
@@ -18013,8 +18173,8 @@
                 // user already given account data. Login required
                 window.location.replace('/mycart#dataRecived')
 
-                document.querySelector('.ct_inner_bottom_box').style.height = '600px'
-
+                document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
+                document.querySelector('.box_pop_up_accounts.for_signup').style.height = '540px'
 
                 document.querySelector('.ct_btn_acc').style.opacity = '0'
                 setTimeout(function () {
@@ -18047,23 +18207,35 @@
 
         } else {
             // if reffered
-            window.scrollTo(0, 0)
-            document.querySelector('body').style.overflowY = 'hidden'
-            document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
-            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
+            if (window.location.hash !== '#login') {
+                if (window.location.search.split('?')[1] !== undefined) {
+                    if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                        async function getRefer() {
+                            let dbCollection21 = db.collection("reffer")
+                            let resREF = await dbCollection21.get()
+                            let dataRef = resREF.docs[0].data()
+                            window.scrollTo(0, 0)
+                            document.querySelector('body').style.overflowY = 'hidden'
+                            document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
+                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
+                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                            if (dataRef.earn.split('%')[1] !== undefined) {
+                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to get ${dataRef.earn} on you first order. `
+
+                            } else {
+                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to receive a reward of ${dataRef.earn}.`
+
+                            }
+                        }
+                        getRefer()
+
+                    }
+                }
+            }
+
 
         }
-        if (navigator.userAgent.match(/Android/i)
-            || navigator.userAgent.match(/webOS/i)
-            || navigator.userAgent.match(/iPhone/i)
-            || navigator.userAgent.match(/iPad/i)
-            || navigator.userAgent.match(/iPod/i)
-            || navigator.userAgent.match(/BlackBerry/i)
-            || navigator.userAgent.match(/Windows Phone/i)) {
-            console.log('phone')
-        } else {
-            a = false;
-        }
+
 
         document.querySelector('html').addEventListener('click', (e) => {
             let itemG = e.target.closest('.pac-item')
@@ -18159,18 +18331,59 @@
                         location: objUser.location,
                         phone: objUser.phone
                     }
-                    document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                    document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                    document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                    document.querySelector('.popup_info.sucess_account').style.display = 'flex'
-                    document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
-                    document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+                    if (window.location.search.split('?')[1] !== undefined) {
+                        if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                            async function getUser() {
+                                let dbCollection2 = db.collection("users")
+                                let res = await dbCollection2.get()
+                                res.docs.forEach(async cu => {
+                                    let data = cu.data()
+                                    console.log(objUser.id, data.id, data.refferedBy, '--------------')
+                                    if (objUser.id === data.id && data.refferedBy) {
+                                        // cross-checking if reffered to this user
+                                        let dbCollection21 = db.collection("reffer")
+                                        let resREF = await dbCollection21.get()
+                                        console.log(resREF.docs[0].data().text, ' --------------------------------hahahaha----------------------------')
 
-                    setTimeout(function () {
-                        document.querySelector('.popup_info.sucess_account').style.display = 'none'
+                                        document.querySelector('.confetti').style.display = 'block'
+                                        document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50'
+                                        document.querySelector('.ct_outer_saved').style.display = 'flex'
+                                        document.querySelector('.ct_info_reffer_offer').style.display = 'none'
+                                        document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                        document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                        document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                                        document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                                        document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+
+                                        setTimeout(function () {
+                                            document.querySelector('.popup_info.sucess_account').style.display = 'none'
 
 
-                    }, 20000)
+                                        }, 20000)
+                                    }
+                                })
+                            }
+                            getUser()
+
+                        }
+                    } else {
+                        document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                        document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                        document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                        document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                        document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+
+                        setTimeout(function () {
+                            document.querySelector('.popup_info.sucess_account').style.display = 'none'
+
+
+                        }, 20000)
+                    }
+
+
+
                 } else {
                     document.querySelector('.forlogin .error_otp').style.display = 'block'
                     document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
@@ -18202,7 +18415,33 @@
                                     socket.on('sendCode', (id, token, number, key) => {
 
                                         console.log(itmDb.phone, 'phone no!!!')
+                                        console.log('sent!!!')
+                                        document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                        setCookie('one_tm_dt2', JSON.stringify(itmDb), 2)
+                                        document.querySelector('.ct_go_back_account h3').style.display = 'block'
+                                        setCookie('one_tm_dt2', JSON.stringify(itmDb), 2)
+                                        document.querySelector('.login_verify').style.opacity = '1'
+                                        document.querySelector('.login_verify').style.pointerEvents = 'auto'
+                                        document.querySelector('.box_pop_up_accounts.forlogin').style.height = '600px'
 
+                                        document.querySelector('.forlogin .ct_inner_bottom_box').style.height = '74vh'
+                                        document.querySelector('.forlogin .ct_field_first_acc').style.display = 'none'
+
+                                        document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'block'
+                                        document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '1'
+
+                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[0].style.opacity = '1'
+                                        setTimeout(function () {
+                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[1].style.opacity = '1'
+                                        }, 200)
+
+                                        setTimeout(function () {
+                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[2].style.opacity = '1'
+                                        }, 300)
+                                        setTimeout(function () {
+                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[3].style.opacity = '1'
+                                        }, 400)
+                                        return
                                         var settings = {
                                             "async": true,
                                             "crossDomain": true,
@@ -18213,9 +18452,6 @@
                                             console.log(itmDb.phone, 'sent!!!')
 
                                             if (response.return) {
-                                                console.log('sent!!!')
-                                                document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                                setCookie('one_tm_dt2', JSON.stringify(itmDb), 2)
 
                                             } else {
                                                 document.querySelector('.phone_error p').innerText = 'Invalid phone number'
@@ -18225,29 +18461,7 @@
                                     })
 
 
-                                    document.querySelector('.ct_go_back_account h3').style.display = 'block'
-                                    setCookie('one_tm_dt2', JSON.stringify(itmDb), 2)
-                                    document.querySelector('.login_verify').style.opacity = '1'
-                                    document.querySelector('.login_verify').style.pointerEvents = 'auto'
-                                    document.querySelector('.box_pop_up_accounts.forlogin').style.height = '600px'
 
-                                    document.querySelector('.forlogin .ct_inner_bottom_box').style.height = '74vh'
-                                    document.querySelector('.forlogin .ct_field_first_acc').style.display = 'none'
-
-                                    document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'block'
-                                    document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '1'
-
-                                    document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[0].style.opacity = '1'
-                                    setTimeout(function () {
-                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[1].style.opacity = '1'
-                                    }, 200)
-
-                                    setTimeout(function () {
-                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[2].style.opacity = '1'
-                                    }, 300)
-                                    setTimeout(function () {
-                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[3].style.opacity = '1'
-                                    }, 400)
 
                                 }
 
@@ -18283,11 +18497,21 @@
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
                                 let res = await dbCollection2.get()
-                                res.docs.forEach(cu => {
+                                res.docs.forEach(async cu => {
                                     let data = cu.data()
-                                    if (id === data.id) {
+                                    if (id === data.id && !data.reffer) {
                                         // anyone can trigger the function createAccount
-
+                                        await dbCollection2.doc(cu.id).set({
+                                            admin: data.admin,
+                                            id: data.id,
+                                            name: data.name,
+                                            phone: data.phone,
+                                            address: data.address,
+                                            location: data.location,
+                                            cartItems: data.cartItems,
+                                            refferedBy: data.refferedBy,
+                                            reffer: { id: id, used: false },
+                                        })
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
                                         document.querySelector('.create_account').style.opacity = '.5'
                                         document.querySelector('.create_account').style.pointerEvents = 'none'
@@ -18306,29 +18530,20 @@
                                             address: objUser.address,
                                             location: objUser.location,
                                             cartItems: objUser.cartItems,
-                                            refferd: [id],
+                                            refferedBy: { id: id, used: false },
                                             reffer: false,
                                         }
 
                                         db.collection("users")
-                                            .add({
-                                                admin: false,
-                                                id: objUser.id,
-                                                name: objUser.name,
-                                                phone: objUser.phone,
-                                                address: objUser.address,
-                                                location: objUser.location,
-                                                cartItems: objUser.cartItems,
-                                                refferd: id,
-                                                reffer: false,
-                                            }).then(res => {
-                                                alert('heyyy')
+                                            .add(
+                                                objU
+                                            ).then(res => {
                                                 sessionStorage.clear()
                                                 document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
 
                                                 document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                                 document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                                                document.cookie = "userData" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                //  document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                                 document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                                                 document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                                                 setTimeout(function () {
@@ -18336,12 +18551,17 @@
 
 
                                                 }, 20000)
+
+                                                if (window.location.search !== '') {
+                                                    let searchM = window.location.search
+                                                    window.location.replace(`/mycart${searchM}#login`)
+                                                } else {
+                                                    window.location.replace('/mycart#login')
+                                                }
                                                 //socket.emit('signedUp', n, phone)
-                                                document.querySelector('.confetti').style.display = 'block'
-                                                document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50'
-                                                document.querySelector('.ct_outer_saved').style.display = 'flex'
-                                                document.querySelector('.ct_info_reffer_offer').style.display='none'
                                             })
+                                    } else {
+                                        createAccount()
                                     }
 
                                 })
@@ -18424,106 +18644,141 @@
                             //unitKM  checking the location by killometer distance from badharghat
                             console.log(unitKM)
                             if (unitKM <= 10) {
-                                socket.emit('getCode');
+                                document.querySelector('.account_cont').style.opacity = '0.5'
+                                document.querySelector('.account_cont').style.pointerEvents = 'none'
 
-                                socket.on('sendCode', (id, token, number, key) => {
-                                    sessionStorage.setItem("ct_901_12", token);
-
-                                    let objUserData = {
-                                        id: id,
-                                        name: name,
-                                        phone: ph_num,
-                                        address: address,
-                                        location: location,
-                                        cartItems: [{
-                                            name: 'masala meat',
-                                            price: '85',
-                                            type: 'sauce',
-                                            unitSelect: [{ name: '150g' }],
-                                            qty: 1
-
-                                        }]
-
-                                    }
-                                    if (window.location.search !== '') {
-                                        let searchM = window.location.search
-                                        window.location.replace(`/mycart${searchM}#dataRecived`)
-                                    } else {
-                                        window.location.replace('/mycart#dataRecived')
-                                    }
-                                    setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
-                                    document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                    document.querySelector('.ct_inner_bottom_box').style.height = '500px'
+                                async function phoneExist() {
 
 
-                                    document.querySelector('.ct_btn_acc').style.opacity = '0'
-                                    setTimeout(function () {
-                                        document.querySelector('.ct_bxsecured_info').style.opacity = '0'
+                                    let checked_ph = false
 
-                                    }, 100)
-                                    setTimeout(function () {
-                                        document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
-
-                                    }, 200)
-                                    setTimeout(function () {
-                                        document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
-
-                                    }, 300)
-                                    setTimeout(function () {
-                                        document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
-
-                                    }, 400)
-                                    setTimeout(function () {
-                                        document.querySelector('.ct_field_first_acc').style.display = 'none'
-                                        document.querySelector('.ct_bx_otp_box').style.display = 'block'
-                                        document.querySelector('.ct_bx_otp_box').style.opacity = '1'
-
-                                    }, 500)
-                                    return
-
-                                    var settings = {
-                                        "async": true,
-                                        "crossDomain": true,
-                                        "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
-                                        "method": "GET"
-                                    }
-
-                                    $.ajax(settings).done(function (response) {
-                                        console.log(response, 'sent!!!')
-
-                                        if (response.return) {
-                                            console.log('sent!!!')
-                                            //  let user = {
-                                            //      address_user: address_inp,
-                                            //      continue_verify: "",
-                                            //      last_user: "",
-                                            //      lastname: lastname_inp,
-                                            //      name_user: name_inp,
-                                            //      password_login: pass_inp,
-                                            //      phone: phonenumber_inp,
-                                            //      city: city,
-                                            //  };
-                                            //  var header = {
-                                            //      "alg": "HS256",
-                                            //      "typ": "JWT"
-                                            //  }
-                                            //  var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
-                                            //  var encodedHeader = base64url(stringifiedHeader)
-                                            //  var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
-                                            //  var encodedData = base64url(stringifiedData);
-                                            //  var token = encodedHeader + "." + encodedData;;
-                                            //  console.log(token, 'token');
-                                            // window.location.replace(`/signup?authUser=${token}`)
-                                            document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                            window.location.replace('/mycart#dataRecived')
-
-
-                                        } else {
-                                            document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                            document.querySelector('.phone_error').style.display = 'block'
+                                    let dbCollection22 = db.collection("users")
+                                    let res22 = await dbCollection22.get()
+                                    document.querySelector('.account_cont').style.opacity = '1'
+                                    document.querySelector('.account_cont').style.pointerEvents = 'auto'
+                                    res22.docs.forEach(cur11 => {
+                                        let itmDb = cur11.data()
+                                        if (ph_num === itmDb.phone) {
+                                            checked_ph = true
+                                            console.log('checking.......')
                                         }
-                                    });
-                                })
+                                    })
+                                    if (!checked_ph) {
+                                        // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                                        // document.querySelector('.error_account').style.display = 'none'
+                                        socket.emit('getCode');
+                                        socket.on('sendCode', (id, token, number, key) => {
+                                            //sessionStorage.setItem("ct_901_12", token);
+
+                                            let objUserData = {
+                                                id: id,
+                                                name: name,
+                                                phone: ph_num,
+                                                address: address,
+                                                location: location,
+                                                cartItems: [{
+                                                    name: 'masala meat',
+                                                    price: '85',
+                                                    type: 'sauce',
+                                                    unitSelect: [{ name: '150g' }],
+                                                    qty: 1
+
+                                                }]
+
+                                            }
+                                            if (window.location.search !== '') {
+                                                let searchM = window.location.search
+                                                window.location.replace(`/mycart${searchM}#dataRecived`)
+                                            } else {
+                                                window.location.replace('/mycart#dataRecived')
+                                            }
+                                            setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
+                                            document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
+
+                                            document.querySelector('.box_pop_up_accounts.for_signup').style.height = '540px'
+
+                                            document.querySelector('.ct_btn_acc').style.opacity = '0'
+                                            setTimeout(function () {
+                                                document.querySelector('.ct_bxsecured_info').style.opacity = '0'
+
+                                            }, 100)
+                                            setTimeout(function () {
+                                                document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
+
+                                            }, 150)
+                                            setTimeout(function () {
+                                                document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
+
+                                            }, 200)
+                                            setTimeout(function () {
+                                                document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
+
+                                            }, 250)
+                                            setTimeout(function () {
+                                                document.querySelector('.ct_field_first_acc').style.display = 'none'
+                                                document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                                                document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+
+                                            }, 300)
+                                            return
+
+                                            var settings = {
+                                                "async": true,
+                                                "crossDomain": true,
+                                                "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                                "method": "GET"
+                                            }
+
+                                            $.ajax(settings).done(function (response) {
+                                                console.log(response, 'sent!!!')
+
+                                                if (response.return) {
+                                                    console.log('sent!!!')
+                                                    //  let user = {
+                                                    //      address_user: address_inp,
+                                                    //      continue_verify: "",
+                                                    //      last_user: "",
+                                                    //      lastname: lastname_inp,
+                                                    //      name_user: name_inp,
+                                                    //      password_login: pass_inp,
+                                                    //      phone: phonenumber_inp,
+                                                    //      city: city,
+                                                    //  };
+                                                    //  var header = {
+                                                    //      "alg": "HS256",
+                                                    //      "typ": "JWT"
+                                                    //  }
+                                                    //  var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
+                                                    //  var encodedHeader = base64url(stringifiedHeader)
+                                                    //  var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
+                                                    //  var encodedData = base64url(stringifiedData);
+                                                    //  var token = encodedHeader + "." + encodedData;;
+                                                    //  console.log(token, 'token');
+                                                    // window.location.replace(`/signup?authUser=${token}`)
+                                                    document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                    window.location.replace('/mycart#dataRecived')
+
+
+                                                } else {
+                                                    document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+                                                    document.querySelector('.phone_error').style.display = 'block'
+                                                }
+                                            });
+
+                                        })
+                                    } else {
+                                        // account exist already
+
+                                        document.querySelector('.ct_info_reffer_offer').style.display = 'none'
+                                        document.querySelector('.error_account').style.display = 'block'
+                                        setTimeout(function () {
+                                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                                            document.querySelector('.error_account').style.display = 'none'
+                                        }, 8000)
+                                    }
+                                }
+                                phoneExist()
 
 
                             } else {
@@ -18573,6 +18828,7 @@
         let inputs_sign = document.querySelectorAll('.fr_sign_otp .ct_bx_inputs_otp input')
         let inputs_login = document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')
         function inputType(inputBx, parentM) {
+            console.log(parentM, 'kkk')
             inputBx.forEach((inp, index) => {
                 inp.addEventListener('keyup', (e) => {
                     let currentInp = inp
