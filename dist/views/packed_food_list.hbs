@@ -30,6 +30,17 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     {{>favicon}}
 
     {{!-- {{>favicon}} --}}
@@ -40,9 +51,57 @@
             font-family: gagalin;
         }
 
+        .carousel-control-prev-icon.material-symbols-outlined,
+        .carousel-control-next-icon.material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 200, 'opsz' 40;
+        }
+
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            background-image: none;
+            font-size: 50px;
+            background: white;
+            padding: 17px;
+            /* background: white; */
+            position: relative;
+            border-radius: 54px;
+            width: 83px;
+            height: auto;
+            color: black;
+            margin-left: 0px;
+        }
+
+        .carousel-control-prev-icon {
+            padding-left: 20px;
+        }
+
         .ct_load_items {
             display: flex;
             justify-content: center;
+        }
+
+        .itm_img_prod .w-100 {
+            width: 36% !important;
+            transform: translate(223px, 46px);
+            filter: contrast(1.1) drop-shadow(1px 6px 6px #00000033);
+        }
+
+        .carousel-item {
+            height: 472px;
+            background: whitesmoke;
+        }
+
+        .carousel-indicators .active {
+            background-color: #050505;
+        }
+
+        .carousel-indicators li {
+            background-color: rgb(103 103 103 / 50%);
+        }
+
+        .carousel-indicators {
+            transform: translate(10px, 40px);
+
         }
 
         .buttons_loading {
@@ -515,28 +574,29 @@
             word-spacing: 3px;
         }
 
-
         .ct_bx_go_back {
             display: flex;
             position: absolute;
             top: 0;
             right: 0;
-            background: #0000009e;
+            background: #ffffff;
             width: 100%;
             padding: 17px;
+            z-index: 999999;
+            box-shadow: 0 0 10px #0000002b;
+        }
+
+        .carousel {
+            margin-top: 59px;
         }
 
         .ct_bx_go_back ion-icon {
             color: black;
-        }
-
-        .ct_bx_go_back ion-icon {
-            color: white;
             margin-right: 11px;
         }
 
         .ct_bx_go_back p {
-            color: white;
+            color: #4c4949;
             font-family: 'Montserrat';
             font-size: 17px;
         }
@@ -844,7 +904,7 @@
             margin-right: 11px;
             /* background: #1c1d1e; */
         }
-        
+
         .remove_itm,
         .ct_addded,
         .buy_now,
@@ -872,17 +932,20 @@
                 background-position: 100%;
             }
         }
+
         .remove_itm,
         .ct_addded {
             background-color: #d7ffe8;
             color: black;
             display: none;
-        
+
         }
-.remove_itm {
-    background-color: #ffe9ea;
-    color: #7b2c2c;
-}
+
+        .remove_itm {
+            background-color: #eaeaea;
+            color: #585858;
+            margin-top: -10px;
+        }
 
         .add_cart_btn {
             background-color: black;
@@ -1077,16 +1140,6 @@
             right: 0;
         }
 
-        .ct_bx_img {
-            display: flex;
-            justify-content: center;
-            margin-top: 64px;
-        }
-
-        .ct_bx_img img {
-            width: 33%;
-            margin: 0 0 0 2px;
-        }
 
         .bx_add_t_cart_btn_itm_dt p ion-icon {
             transform: translate(4px, 3px);
@@ -1347,18 +1400,6 @@
             z-index: 99999999999999;
         }
 
-        .ct_offer_box_cook2 {
-            display: block;
-            width: 55px;
-            margin: 6px 10px;
-            padding: 6px 10px 10px 5px;
-            position: absolute;
-            height: auto;
-            z-index: 999;
-            border-radius: 50%;
-            transform: translate(2px, -2px);
-            background-color: #2b3bff;
-        }
 
         .ct_offer_box_cook2 span {
             margin: 5px 0 0 6px;
@@ -1379,7 +1420,7 @@
         .ct_offer_box_cook2 p {
             margin: 1px 0 0 11px;
             width: 100%;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 500;
             font-family: 'Montserrat';
             color: rgb(255, 255, 255);
@@ -6447,7 +6488,7 @@
             display: block;
             width: 55px;
             margin: 6px 10px;
-            padding: 6px 10px 10px 5px;
+            padding: 1px 10px 9px 5px;
             position: absolute;
             height: auto;
             z-index: 999;
@@ -7206,9 +7247,28 @@
                 <ion-icon name="arrow-back-outline"></ion-icon>
                 <p>Go Back</p>
             </div>
-            <div class="ct_bx_img">
-                <img src="../img/mutton_sample.jpg" alt="">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon material-symbols-outlined"
+                        aria-hidden="true">arrow_back_ios</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon material-symbols-outlined">arrow_forward_ios</span>
+
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
+
             <div class="ct_texts">
                 <h4 class="name_of_itm">Masala Meat</h4>
             </div>
@@ -8085,7 +8145,7 @@
 
 
             if (inc_btn_qt !== null) {
-                let nameItm=document.querySelector('.name_of_itm').innerText
+                let nameItm = document.querySelector('.name_of_itm').innerText
                 count_qty = parseFloat(document.querySelector('.ct_qty_box input').value)
                 count_qty += 1
                 console.log(count_qty)
@@ -8094,21 +8154,21 @@
 
                 if (count_qty <= stock_itm_global) {
                     document.querySelector('.ct_qty_box input').value = count_qty
-                                    let userDt = JSON.parse(getCookie('userData'))
-                                    async function getUser() {
+                    let userDt = JSON.parse(getCookie('userData'))
+                    async function getUser() {
                         let dbCollection = db.collection("users")
                         dbCollection.get().then(res => {
                             res.docs.forEach(async cur => {
                                 let userDt_db = cur.data()
                                 if (userDt_db.id === userDt.id) {
-                                    
+
                                     userDt_db.cartItems.forEach(cu11 => {
                                         let nameD = cu11.name.split(' ').join('').toLowerCase()
                                         let nameM = nameItm.split(' ').join('').toLowerCase()
                                         console.log(nameD, nameM, ' -----------------')
 
                                         if (nameD === nameM) {
-                                            cu11.qty=count_qty
+                                            cu11.qty = count_qty
 
                                         }
                                     })
@@ -8141,27 +8201,27 @@
                 }
 
             } else if (dec_btn_qt !== null) {
-                let nameItm=document.querySelector('.name_of_itm').innerText
+                let nameItm = document.querySelector('.name_of_itm').innerText
                 count_qty = parseFloat(document.querySelector('.ct_qty_box input').value)
                 count_qty -= 1
 
                 if (count_qty > 0) {
                     document.querySelector('.ct_qty_box input').value = count_qty
-                let userDt = JSON.parse(getCookie('userData'))
-                                    async function getUser() {
+                    let userDt = JSON.parse(getCookie('userData'))
+                    async function getUser() {
                         let dbCollection = db.collection("users")
                         dbCollection.get().then(res => {
                             res.docs.forEach(async cur => {
                                 let userDt_db = cur.data()
                                 if (userDt_db.id === userDt.id) {
-                                    
+
                                     userDt_db.cartItems.forEach(cu11 => {
                                         let nameD = cu11.name.split(' ').join('').toLowerCase()
                                         let nameM = nameItm.split(' ').join('').toLowerCase()
                                         console.log(nameD, nameM, ' -----------------')
 
                                         if (nameD === nameM) {
-                                            cu11.qty=count_qty
+                                            cu11.qty = count_qty
 
                                         }
                                     })
@@ -8203,25 +8263,25 @@
                 let nameItm = document.querySelector('.name_of_itm').innerText
                 let name11 = qty_bx_itm.childNodes[1].innerText
                 let info = qty_bx_itm.childNodes[3].innerText
-                console.log( qty_bx_itm.childNodes)
+                console.log(qty_bx_itm.childNodes)
                 if (qty_bx_itm.childNodes[7] !== undefined) {
                     name11 = qty_bx_itm.childNodes[3].innerText
                     info = qty_bx_itm.childNodes[5].innerText
-                    if(qty_bx_itm.childNodes[7]!==undefined){
-                    del = qty_bx_itm.childNodes[7].childNodes[1].innerText
-                    pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
-                    }else{
-                    del = 0
-                    pr = qty_bx_itm.childNodes[5].childNodes[1].innerText
+                    if (qty_bx_itm.childNodes[7] !== undefined) {
+                        del = qty_bx_itm.childNodes[7].childNodes[1].innerText
+                        pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
+                    } else {
+                        del = 0
+                        pr = qty_bx_itm.childNodes[5].childNodes[1].innerText
                     }
 
                 } else {
-                    if(qty_bx_itm.childNodes[7]!==undefined){
-                    del = qty_bx_itm.childNodes[7].childNodes[1].innerText
-                    pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
-                    }else{
-                    del = 0
-                    pr = qty_bx_itm.childNodes[5].childNodes[1].innerText
+                    if (qty_bx_itm.childNodes[7] !== undefined) {
+                        del = qty_bx_itm.childNodes[7].childNodes[1].innerText
+                        pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
+                    } else {
+                        del = 0
+                        pr = qty_bx_itm.childNodes[5].childNodes[1].innerText
                     }
                 }
 
@@ -8346,63 +8406,211 @@
                 if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
                     document.querySelector('.ct_pop_up_items_order').classList.add('active')
                 }
-                console.log(view_itm.childNodes[1].childNodes[1].childNodes)
+                console.log(view_itm.childNodes[1].childNodes[1].childNodes[1].src)
                 let imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[3].src
                 let name = ''
-                stock_itm_global= ''
+                stock_itm_global = ''
                 let price = ''
                 let price_off = ''
                 let offer = ''
                 let about = ''
                 let qtys = ''
                 let desc = ''
+                let images_itm = ``
                 let essen_ids = ``
-                if(view_itm.childNodes[1].childNodes[1].childNodes[5]===undefined){
-                 name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[1].innerHTML
-                stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[3].innerHTML
-                price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[5].innerHTML
-                price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[7].innerHTML
-                offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[9].innerHTML
-                about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[11].innerHTML
-                qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[13].innerHTML
-                desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[15].innerHTML
-                essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[17].innerHTML
-                }else{
-                 name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
-                stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
-                price = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[5].innerHTML
-                price_off = 0
-                offer = null
-                about = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[11].innerHTML
-                qtys = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[13].innerHTML
-                desc = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[15].innerHTML
-                essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[17].innerHTML
-                }
+                if (view_itm.childNodes[1].childNodes[1].childNodes[5] === undefined) {
+                    imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[1].src
+                    name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[1].innerHTML
+                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[3].innerHTML
+                    price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[5].innerHTML
+                    price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[7].innerHTML
+                    offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[9].innerHTML
+                    about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[11].innerHTML
+                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[13].innerHTML
+                    desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[15].innerHTML
+                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[17].innerHTML
+                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[19].innerHTML
+                } else {
+                    name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
+                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
+                    price = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[5].innerHTML
+                    price_off = 0
+                    offer = null
+                    about = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[11].innerHTML
+                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[13].innerHTML
+                    desc = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[15].innerHTML
+                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[17].innerHTML
+                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[19].innerHTML
 
-                document.querySelector('.ct_bx_img img').src = imgsrc
-                document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML=''
+                }
+                document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
+                document.querySelector('.ct_load_items').style.display = 'flex'
+
+                async function getItm_groc() {
+                    let dbCollection2 = db.collection("essentials")
+                    let res = await dbCollection2.get()
+                    document.querySelector('.ct_load_items').style.display = 'none'
+
+                    res.docs.forEach(async cu => {
+                        let data = cu.data()
+                        JSON.parse(essen_ids).forEach(cu11 => {
+                            let item = cu.data().item
+                            let nm = cu11.split(' ').join('').toLowerCase()
+                            let nm2 = item.name.split(' ').join('').toLowerCase()
+                            console.log(nm2 === nm, ' -----------------------------------------')
+
+
+
+                            if (nm === nm2) {
+                                let name = item.name
+                                let offer = parseFloat(item.offer)
+                                let units = item.units
+                                let price = item.price
+                                let img = item.img
+
+                                offer = parseFloat(offer)
+                                price = parseFloat(price)
+                                let pricemain = price - (price * (offer / 100))
+                                pricemain = Math.round(pricemain)
+                                let emptyArr = units.map(cur11 => {
+                                    let html = `<li>
+                <p>${cur11.name}</p>
+                <span>₹ ${cur11.price.toLocaleString()}</span>
+            </li>`
+                                    return html
+                                })
+                                let price_box = `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
+                                let offer_html = `<div class="ct_offer_box_cook2">
+                                <span>${offer}%</span>
+                                <p>off</p>
+                            </div>`
+                                if (item.offer === null) {
+                                    offer_html = `<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+
+                                    </div>
+                                `
+                                    price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
+
+                                }
+
+                                let html = `    <div class="product">
+                        <div class="itm_food_list_ek added_itm_ek_fd">
+
+                            <div class="ct_inner_fd_dt_grid">
+                                ${offer_html}
+                                <div class="ct_img_res_main">
+                                    <img alt="Amritsari chole sauce image" src="${img}">
+
+                                </div>
+                                <div class="ct_inner_fd1_dt_grid">
+
+                                    <div class="ct_dt_tm_food_res">
+                                        <h4>${name}</h4>
+                                    </div>
+                                    <div class="ct_unit_box_selector">
+                                        <div class="ct_bx_selection">
+                                            <div class="ct_pr_bx_unit">
+                                                <p>${units[0].name}</p>
+                                                <span>₹ ${units[0].price.toLocaleString()}</span>
+                                            </div>
+
+                                            <div class="ct_popup_unit_btn">
+                                                <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
+                                                    aria-label="caret forward outline"></ion-icon>
+                                            </div>
+
+                                        </div>
+                                        <div class="ct_other_units active">
+                                            <ul>
+                                                ${emptyArr.join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                        ${price_box}
+
+
+                                    </div>
+                                    <div class="ct_addbtns">
+                                        <p>Add to cart</p>
+                                    </div>
+                                    <div class="added_to_cart">
+                                        <p>Added to cart</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>`
+                                //#${cur.data().group.split(' ').join('')}
+                                document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
+                            }
+
+                        })
+
+                    })
+
+                }
+                getItm_groc()
+
+                document.querySelector('.carousel-inner').innerHTML = ''
+                let images = JSON.parse(images_itm)
+                images.forEach((cu, ind) => {
+                    let crousel_html = `    <div class="carousel-item itm_img_prod active">
+                                      <img class="d-block w-100" src="${cu}" alt="Second slide">
+                                    </div>`
+                    if (ind > 0) {
+                        crousel_html = `    <div class="carousel-item">
+                                      <img class="d-block w-100" src="${cu}" alt="Second slide">
+                                    </div>
+                                    `
+                    }
+
+                    document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
+                })
+
+                console.log(JSON.parse(images_itm), ' -------------')
+
+                // document.querySelector('.ct_bx_img img').src = imgsrc
+                document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                 let allfd = JSON.parse(localStorage.getItem('sauce'))
-                
-                        let qty_obj = JSON.parse(qtys)
-                                qty_obj.forEach((cur11, ind) => {
+
+                let qty_obj = JSON.parse(qtys)
+                qty_obj.forEach((cur11, ind) => {
                                     let price = cur11.price
                                     let pack = cur11.pack
                                     let name = cur11.name
-                                    let price_off = parseFloat(price) * 100 / (100 - offer)
-                                    price_off = price_off.toLocaleString()
-                                    if (price_off.split('.')[1] !== undefined) {
-                                        price_off = price_off.split('.')[0]
+
+                                    let price_off = 0
+                                    let offer_del = ''
+                                    if (!isNaN(offer)) {
+                                        price_off = parseFloat(price) * 100 / (100 - offer)
+                                        price_off = price_off
+                                        price_off = price_off.toLocaleString()
+                                        if (price_off.split('.')[1] !== undefined) {
+                                            price_off = price_off.split('.')[0]
+                                        }
+
+                                        price = price.toLocaleString()
+                                        offer_del = ` <del>₹ ${price_off}</del>`
+                                    } else {
+                                        price = price.toLocaleString()
                                     }
-                                    price = price.toLocaleString()
+
                                     let active_btn = 'active'
-                                    if (ind>0) {
+                                    if (ind > 0) {
                                         active_btn = 'unactive'
+                                        // price of active qty
+                                        document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
                                     }
-                                            let html = `<div class="ct_for_bx1 ${active_btn}">
+
+                                    let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
                         <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
-                            <del>₹ ${price_off}</del>
+                           ${offer_del}
                             <p>₹ ${price}</p>
 
                         </div>
@@ -8410,16 +8618,17 @@
                     </div>`
 
 
-                                            document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
-                                        })
-                            
-                                        if(!isNaN(offer)){
-                   document.querySelector('.offer_item p').innerText = offer + '% off'
 
-                }else{
-                 document.querySelector('.ct_bx_total_amount_to_pay del').style.display='none'
-                 document.querySelector('.offer_item').style.display='none'
-            }
+                                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                })
+
+                if (!isNaN(offer)) {
+                    document.querySelector('.offer_item p').innerText = offer + '% off'
+
+                } else {
+                    document.querySelector('.ct_bx_total_amount_to_pay del').style.display = 'none'
+                    document.querySelector('.offer_item').style.display = 'none'
+                }
                 if (getCookie('userData') === '') {
                     document.querySelector('.buy_now').style.display = 'block'
                     document.querySelector('.add_cart_btn').style.display = 'block'
@@ -8438,63 +8647,56 @@
                                 document.querySelector('.remove_itm').style.display = 'block'
 
                                 document.querySelector('.ct_qty_box input').value = cu11.qty
-                    let qty_obj = JSON.parse(qtys)
-                    qty_obj.forEach((cur11, ind) => {
-                        let price = cur11.price
-                        let pack = cur11.slt_p
-                        let name = cur11.name
-                        
-                        let price_off = parseFloat(price) * 100 / (100 - offer)
-                        price_off = price_off.toLocaleString()
-                        if (price_off.split('.')[1] !== undefined) {
-                            price_off = price_off.split('.')[0]
-                        }
-                        price = price.toLocaleString()
-                        let active_btn = 'active'
+                                let qty_obj = JSON.parse(qtys)
+                                qty_obj.forEach((cur11, ind) => {
+                                    let price = cur11.price
+                                    let pack = cur11.pack
+                                    let name = cur11.name
 
-                        if (ind > 0) {
-                            active_btn = 'unactive'
-                        }
-                        let html = `<div class="ct_for_bx1 ${active_btn}">
+                                    let price_off = 0
+                                    let offer_del = ''
+                                    if (!isNaN(offer)) {
+                                        price_off = parseFloat(price) * 100 / (100 - offer)
+                                        price_off = price_off
+                                        price_off = price_off.toLocaleString()
+                                        if (price_off.split('.')[1] !== undefined) {
+                                            price_off = price_off.split('.')[0]
+                                        }
+
+                                        price = price.toLocaleString()
+                                        offer_del = ` <del>₹ ${price_off}</del>`
+                                    } else {
+                                        price = price.toLocaleString()
+                                    }
+
+                                    let active_btn = 'active'
+                                    if (ind > 0) {
+                                        active_btn = 'unactive'
+                                        // price of active qty
+                                        document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
+                                    }
+
+                                    let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
                         <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
-                            <del>₹ ${price_off}</del>
+                           ${offer_del}
                             <p>₹ ${price}</p>
 
                         </div>
 
                     </div>`
 
-                        if (cur11.info !== undefined) {
-                            html = `<div class="ct_for_bx1">
-            <div class="ct_pop_info">
-                            <p></p>
-                        </div>
-                            <div class="ct_bx_flex">
-                           <h4>${name}</h4>
-                            <div class="ct_x_info">
-                                <ion-icon name="help-circle-outline"></ion-icon>
-                            </div>
-                        </div>
-                        <span class="info_package">${pack}</span>
-                        <div class="ct_pr_bx">
-                            <del>₹ ${price_off}</del>
-                            <p>₹ ${price}</p>
 
-                        </div>
 
-                    </div>`
-                        }
-
-                        document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
-                    })
+                                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                                })
                             }
                         })
                     }
-                   
+
                 } else {
-                    
+
                     document.querySelector('.buy_now').style.display = 'none'
                     document.querySelector('.add_cart_btn').style.display = 'none'
                     document.querySelector('.ct_addded').style.display = 'none'
@@ -8519,7 +8721,7 @@
                                 data.cartItems.forEach(cu11 => {
                                     let nameD = cu11.name.split(' ').join('').toLowerCase()
                                     let nameM = name.split(' ').join('').toLowerCase()
-                                    console.log(nameD===nameM,' ----------------fhaha')
+                                    console.log(nameD === nameM, ' ----------------fhaha')
                                     if (nameD === nameM) {
                                         matched = true
                                         document.querySelector('.buy_now').style.display = 'none'
@@ -8529,33 +8731,33 @@
 
                                         document.querySelector('.ct_qty_box input').value = cu11.qty
                                         let qty_obj = JSON.parse(qtys)
-                                         document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML=''
+                                        document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                                         qty_obj.forEach((cur11, ind) => {
                                             let price = cur11.price
                                             let pack = cur11.pack
                                             let name = cur11.name
                                             let price_off = 0
-                                            let offer_del=''
-                                        if(!isNaN(offer)){
-                                             price_off = parseFloat(price) * 100 / (100 - offer)
-                                            price_off=price_off
-                                            price_off = price_off.toLocaleString()
-                                            if (price_off.split('.')[1] !== undefined) {
-                                                price_off = price_off.split('.')[0]
-                                            }
+                                            let offer_del = ''
+                                            if (!isNaN(offer)) {
+                                                price_off = parseFloat(price) * 100 / (100 - offer)
+                                                price_off = price_off
+                                                price_off = price_off.toLocaleString()
+                                                if (price_off.split('.')[1] !== undefined) {
+                                                    price_off = price_off.split('.')[0]
+                                                }
 
-                                            price = price.toLocaleString()
-                                            offer_del=` <del>₹ ${price_off}</del>`
-                                            }else{
+                                                price = price.toLocaleString()
+                                                offer_del = ` <del>₹ ${price_off}</del>`
+                                            } else {
                                                 price = price.toLocaleString()
                                             }
 
                                             let active_btn = 'unactive'
-                                            console.log(pack , cu11.pack,' hahaha')
+                                            console.log(pack, cu11.pack, ' hahaha')
                                             if (name === cu11.slt_nm) {
                                                 active_btn = 'active'
                                                 // price of active qty
-                                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText='₹ '+price
+                                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
                                             }
 
                                             let html = `<div class="ct_for_bx1 ${active_btn}">
@@ -8569,26 +8771,26 @@
 
                     </div>`
 
-         //                                  if (cur11.info !== undefined) {
-         //                                      html = `<div class="ct_for_bx1 ${active_btn}">
-         //  <div class="ct_pop_info">
-         //                  <p></p>
-         //              </div>
-         //                  <div class="ct_bx_flex">
-         //                 <h4>${name}</h4>
-         //                  <div class="ct_x_info">
-         //                      <ion-icon name="help-circle-outline"></ion-icon>
-         //                  </div>
-         //              </div>
-         //              <span class="info_package">${pack}</span>
-         //              <div class="ct_pr_bx">
-         //                  <del>₹ ${price_off}</del>
-         //                  <p>₹ ${price}</p>
+                                            //                                  if (cur11.info !== undefined) {
+                                            //                                      html = `<div class="ct_for_bx1 ${active_btn}">
+                                            //  <div class="ct_pop_info">
+                                            //                  <p></p>
+                                            //              </div>
+                                            //                  <div class="ct_bx_flex">
+                                            //                 <h4>${name}</h4>
+                                            //                  <div class="ct_x_info">
+                                            //                      <ion-icon name="help-circle-outline"></ion-icon>
+                                            //                  </div>
+                                            //              </div>
+                                            //              <span class="info_package">${pack}</span>
+                                            //              <div class="ct_pr_bx">
+                                            //                  <del>₹ ${price_off}</del>
+                                            //                  <p>₹ ${price}</p>
 
-         //              </div>
+                                            //              </div>
 
-         //          </div>`
-         //                                  }
+                                            //          </div>`
+                                            //                                  }
 
                                             document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
                                         })
@@ -9398,34 +9600,36 @@
                 let about = item.about
                 let desc = item.descrip
                 desc = JSON.stringify(desc)
-                let essential_ids = item.essen_ids
+                let images_itm = item.images
+                images_itm = JSON.stringify(images_itm)
+                let essential_ids = item.groc
                 let qty_items = JSON.stringify(qtys);
-                                let price_off = parseFloat(price_real) * 100 / (100 - offer)
+                let price_off = parseFloat(price_real) * 100 / (100 - offer)
                 price_off = price_off.toLocaleString()
                 if (price_off.split('.')[1] !== undefined) {
                     price_off = price_off.split('.')[0]
                 }
                 price_real = price_real.toLocaleString()
-                let priceBX=`
+                let priceBX = `
               <div class="ct_bx_price_fd hasoffPrice">
              <del class="pricenooff" style='display:none'></del>
              <p class="price">₹ ${price_real}</p>
          </div>
      `
-let offHtml=``
-if(item.offer!==null){
-    offHtml=`<div class="ct_offer_box_cook2">
+                let offHtml = ``
+                if (item.offer !== null) {
+                    offHtml = `<div class="ct_offer_box_cook2">
          <span>${offer}%</span>
          <p>off</p>
      </div>`
-     priceBX=`
+                    priceBX = `
               <div class="ct_bx_price_fd hasoffPrice">
              <del class="pricenooff">₹ ${price_off}</del>
              <p class="price">₹ ${price_real}</p>
          </div>
      `
-     
-}
+
+                }
 
 
 
@@ -9452,12 +9656,9 @@ if(item.offer!==null){
                                                             <p class="about_list">${about}</p>
                                                             <p class="qty">${qty_items}</p>
                                                             <p class="desc">${desc}</p>
-                                                            <p class="essentials">${essential_ids}</p>
-
-                                                            <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
+                                                            <p class="essentials">${JSON.stringify(essential_ids)}</p>
+                                                            <p class="images_item">${images_itm}</p>
    
-
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9584,10 +9785,10 @@ if(item.offer!==null){
             let bx2 = e.target.closest('.ct_slide_menu_acc')
             let buyNow_btn = e.target.closest('.buy_now')
             let slide = e.target.closest('.ct_field_small_size')
-            let removeItm= e.target.closest('.remove_itm')
+            let removeItm = e.target.closest('.remove_itm')
 
-            if(removeItm!==null){
-                    let userDt = JSON.parse(getCookie('userData'))
+            if (removeItm !== null) {
+                let userDt = JSON.parse(getCookie('userData'))
 
                 let name = document.querySelector('.name_of_itm').innerText
                 async function getUser() {
@@ -9596,30 +9797,30 @@ if(item.offer!==null){
                         res.docs.forEach(async cur => {
                             let userDt_db = cur.data()
                             if (userDt_db.id === userDt.id) {
-                                    
-                                    userDt_db.cartItems.forEach((cu11,index) => {
-                                        let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                        let nameM = name.split(' ').join('').toLowerCase()
-                                        if (nameD === nameM) {
-                                            userDt_db.cartItems.splice(index,1)
+
+                                userDt_db.cartItems.forEach((cu11, index) => {
+                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                                    let nameM = name.split(' ').join('').toLowerCase()
+                                    if (nameD === nameM) {
+                                        userDt_db.cartItems.splice(index, 1)
                                         document.querySelector('.buy_now').style.display = 'block'
                                         document.querySelector('.add_cart_btn').style.display = 'block'
                                         document.querySelector('.ct_addded').style.display = 'none'
                                         document.querySelector('.remove_itm').style.display = 'none'
-                                      }
-                                    })
-                                    dbCollection.doc(cur.id).set({
-                                        address: userDt_db.address,
-                                        admin: userDt_db.admin,
-                                        cartItems: userDt_db.cartItems,
-                                        id: userDt_db.id,
-                                        location: userDt_db.location,
-                                        name: userDt_db.name,
-                                        phone: userDt_db.phone,
-                                        refferedBy: userDt_db.refferedBy,
-                                        reffer: userDt_db.reffer,
-                                    })
-                                }
+                                    }
+                                })
+                                dbCollection.doc(cur.id).set({
+                                    address: userDt_db.address,
+                                    admin: userDt_db.admin,
+                                    cartItems: userDt_db.cartItems,
+                                    id: userDt_db.id,
+                                    location: userDt_db.location,
+                                    name: userDt_db.name,
+                                    phone: userDt_db.phone,
+                                    refferedBy: userDt_db.refferedBy,
+                                    reffer: userDt_db.reffer,
+                                })
+                            }
 
                         })
                     })

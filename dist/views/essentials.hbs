@@ -48,6 +48,34 @@
     position: fixed;
     transition: all 1s ease;
 }
+.ct_qty_box {
+    display: none;
+    margin: 17px 0 22px 4px;
+    height: 28px;
+}
+.btn_qtys .material-symbols-outlined {
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.btn_qtys.inc_btn {
+    border-radius: 0px 5px 5px 0px;
+}
+.ct_qty_box input {
+    width: 41px;
+    font-size: 14px;
+    padding: 7px;
+    text-align: center;
+    color: black;
+    /* height: 23px; */
+    border: 1px solid #cdcdcd;
+}
+.btn_qtys {
+    background: #19b02a;
+    border-radius: 5px 0 0px 5px;
+    padding: 1px 7px;
+    box-shadow: 0 0 1px #0000006b;
+}
 .bannerX {
     display: block;
     width: 100vw;
@@ -5171,13 +5199,34 @@
         height: 26px;
     }
 
-    .ct_other_units {
-        background: white;
-        box-shadow: 0 0 4px #000000a3;
-        position: relative;
-        display: none;
-        transition: all .3s ease-in;
-    }
+.ct_other_units {
+    background: white;
+    box-shadow: 0 0 4px #000000a3;
+    position: relative;
+    display: none;
+    height: 65px;
+    overflow-y: scroll;
+}
+
+
+        .ct_other_units::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        /* Track */
+        .ct_other_units::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        .ct_other_units::-webkit-scrollbar-thumb {
+            background: rgb(78, 78, 78);
+        }
+
+        /* Handle on hover */
+        .ct_other_units::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
 
     .ct_other_units li {
         display: flex;
@@ -6605,33 +6654,84 @@ p{margin-bottom:auto;}
         let slide = e.target.closest('.ct_field_small_size')
         let unit_select = e.target.closest('.ct_unit_box_selector')
         let unit_li = e.target.closest('.ct_other_units li')
+                    document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+                cu11.classList.remove('active')
+                cu11.style.display='none'
+            })
             let addTocartbtn = e.target.closest('.ct_addbtns')
-       //    if (addTocartbtn !== null) {
-       //        addTocartbtn.style.display = 'none'
-       //        document.querySelector('.add_cart_btn').style.display = 'none'
-       //        document.querySelector('.ct_addded').style.display = 'block'
-       //        let qty = document.querySelector('.ct_qty_box input').value
-       //        let name = document.querySelector('.name_of_itm').innerText
-       //        let obj = {
-       //            name: name,
-       //        }
-       //        if (localStorage.getItem('foodsAdded') === '[]') {
-       //            localStorage.setItem('sauce', JSON.stringify([obj]))
-       //        } else {
-       //            let allfd = JSON.parse(localStorage.getItem('sauce'))
-       //            allfd.push(obj)
-       //            localStorage.setItem('sauce', JSON.stringify(allfd))
+      if (addTocartbtn !== null) {
+       
 
-       //        }
+                let unit_name=addTocartbtn.parentElement.childNodes[3].childNodes[1].childNodes[1].childNodes[1].innerText
+                // decided not to add on database...no need as less data
+                let name=addTocartbtn.parentElement.childNodes[1].childNodes[1].innerText
+             let userDt = JSON.parse(getCookie('userData'))
+
+             let obj={
+                unit:unit_name,
+                name:name
+             }
 
 
-       //        document.cookie = "ite" + "=" + JSON.stringify(obj) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+                    addTocartbtn.parentElement.childNodes[9].style.display='flex'
+                    addTocartbtn.style.display = 'none'
+                    if (localStorage.getItem('essentials') === '[]' || localStorage.getItem('essentials') === null) {
+                        localStorage.setItem('essentials', JSON.stringify([obj]))
+                    } else {
+                        let allfd = JSON.parse(localStorage.getItem('essentials'))
+                        allfd.push(obj)
+                        localStorage.setItem('essentials', JSON.stringify(allfd))
 
-       //    }    
+                    }
+            
+                return
+              // let qty =1
+              // let name = document.querySelector('.name_of_itm').innerText
+              // let slt_nm = document.querySelector('.ct_for_bx1.active h4').innerText
+              // let slt_p = document.querySelector('.ct_for_bx1.active .info_package').innerText
+              // let obj = {
+              //     name: name,
+              //     qty: qty,
+              //     slt_nm: slt_nm,
+              //     slt_p: slt_p,
+              //     type: 'sauce'
+              // }
+              // if (getCookie('userData') === '') {
+              //     // if user has no account then, add to localstorge
+              //     document.querySelector('.account_btn').style.display = 'block'
+
+              //     buyNow_btn.style.display = 'none'
+              //     document.querySelector('.add_cart_btn').style.display = 'none'
+              //     document.querySelector('.ct_addded').style.display = 'block'
+              //     document.querySelector('.remove_itm').style.display = 'block'
+
+              //     if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
+              //         localStorage.setItem('sauce', JSON.stringify([obj]))
+              //     } else {
+              //         let allfd = JSON.parse(localStorage.getItem('sauce'))
+              //         allfd.push(obj)
+              //         localStorage.setItem('sauce', JSON.stringify(allfd))
+
+              //     }
+              //     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+              //     document.querySelector('.popup_info.sucess_account').classList.add('active')
+              //     setTimeout(function () {
+              //         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+              //     }, 10000)
+              //     buyNow_btn.style.opacity = '1'
+              //     document.querySelector('.add_cart_btn').style.opacity = '1'
+              // } else if (getCookie('userData') !== '') {
+              //     console.log('user!!!!!!!!!!!!!!!')
+
+
+
+              // }
+      }    
             
                 if (unit_select !== null) {
-            document.querySelectorAll('.ct_other_units .active').forEach(cu11 => {
+            document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                 cu11.classList.remove('active')
+                cu11.style.display='none'
             })
             if (!unit_select.childNodes[3].classList.value.includes('active')) {
                 unit_select.childNodes[3].classList.add('active')
@@ -6640,35 +6740,49 @@ p{margin-bottom:auto;}
                 unit_select.childNodes[3].classList.remove('active')
                 unit_select.childNodes[3].style.display = 'none'
             }
+            
 
         }
         if (unit_li !== null) {
-            console.log()
+            console.log(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes)
             let name = unit_li.childNodes[1].innerText
             let pr = unit_li.childNodes[3].innerText
-            let offer = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].innerText = pr
-
-            let pr_mn = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3]
+            let offer= null
+            let pricemain=0
+            pr = pr.split('₹')[1]
+            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1]===undefined){
+            pricemain = parseFloat(pr) 
+            pricemain = pricemain.toLocaleString()  
+            }else{
+            offer = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
             offer = offer.split('%')[0]
             offer = parseFloat(offer)
-            pr = pr.split('₹')[1]
-
-            let pricemain = pr - (pr * (offer / 100))
+            
+            pricemain = pr - (pr * (offer / 100))
             pricemain = Math.round(pricemain)
             pricemain = pricemain.toLocaleString()
+            }
+
+            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3]!==undefined){
             unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3].childNodes[0].innerText = '₹' + pricemain
+            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].innerText = pr
+
+            }else{
+            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes[0].innerText = '₹' + pricemain
+
+            }
 
             unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText = name
             unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pr
 
-            //   if(!unit_select.childNodes[3].classList.includes('active')){
-            //           unit_select.childNodes[3].classList.add('active')
-            //           unit_select.childNodes[3].style.opacity='1'
-            //   }else{
-            //                unit_select.childNodes[3].classList.remove('active')
-            //           unit_select.childNodes[3].style.opacity='0'  
-            //   }
+            console.log(unit_li.parentElement.parentElement)
+              if(!unit_li.parentElement.parentElement.classList.value.includes('active')){
+                      unit_li.parentElement.parentElement.classList.add('active')
+                      unit_li.parentElement.parentElement.style.display='none'
+              }else{
+                    unit_li.parentElement.parentElement.classList.remove('active')
+                    unit_li.parentElement.parentElement.style.display='none'
+              }
 
         }
         
@@ -6734,17 +6848,46 @@ p{margin-bottom:auto;}
                                 price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
                                 
                             }
-                            
-       
-
-
+                            let qty_bx=`<div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly>
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>`
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+            grocs.forEach(cu11=>{
+                if(cu11.name===name){
+                    qty_bx=`
+                    <div class="ct_qty_box" style:"display:block">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly>
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+                    `
+                }
+            })
             let html = `   <div class="product">
                             <div class="itm_food_list_ek added_itm_ek_fd">
 
                                 <div class="ct_inner_fd_dt_grid">
-${offer_html}
+                                ${offer_html}
                                     <div class="ct_img_res_main">
-                                        <img alt="Amritsari chole sauce image" src="${img}">
+                                        <img alt="${name} image" src="${img}">
 
                                     </div>
                                     <div class="ct_inner_fd1_dt_grid">
@@ -6771,16 +6914,13 @@ ${offer_html}
                                             </div>
                                         </div>
                                         <div class="ct_bx_priceandoff" style="margin-top:10px">
-${price_box}
-
-
+                                            ${price_box}
                                         </div>
                                         <div class="ct_addbtns">
                                             <p>Add to cart</p>
                                         </div>
-                    <div class="added_to_cart">
-                     <p>Added to cart</p>
-                   </div>
+                                        ${qty_bx}
+
                                     </div>
 
 
