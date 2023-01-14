@@ -54,8 +54,8 @@
     height: 28px;
 }
 .btn_qtys .material-symbols-outlined {
-    color: #ffffff;
-    margin-top: 5px;
+    color: #000000;
+    margin-top: 4px;
     font-size: 14px;
 }
 .btn_qtys.inc_btn {
@@ -71,10 +71,14 @@
     border: 1px solid #cdcdcd;
 }
 .btn_qtys {
-    background: #19b02a;
+    cursor: pointer;
+    background: #e6e6e6;
     border-radius: 5px 0 0px 5px;
-    padding: 1px 7px;
-    box-shadow: 0 0 1px #0000006b;
+    padding: 1px 6px;
+    box-shadow: 0 0 3px #0000008a;
+}
+.btn_qtys:active{
+    background: #a8a8a8;
 }
 .bannerX {
     display: block;
@@ -5197,6 +5201,7 @@
         display: block;
         border: 1px solid #a7a7a7;
         height: 26px;
+        cursor: pointer;
     }
 
 .ct_other_units {
@@ -6654,11 +6659,52 @@ p{margin-bottom:auto;}
         let slide = e.target.closest('.ct_field_small_size')
         let unit_select = e.target.closest('.ct_unit_box_selector')
         let unit_li = e.target.closest('.ct_other_units li')
-                    document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+        document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                 cu11.classList.remove('active')
                 cu11.style.display='none'
             })
-            let addTocartbtn = e.target.closest('.ct_addbtns')
+
+        let addTocartbtn = e.target.closest('.ct_addbtns')
+        let inc_btn=e.target.closest('.inc_btn')
+        let dec_btn=e.target.closest('.dec_btn')
+        
+        if(inc_btn!==null){
+            let val=parseFloat(inc_btn.parentElement.childNodes[3].value)
+            let nm=inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            nm=nm.split(' ').join('')
+            val+=1
+            inc_btn.parentElement.childNodes[3].value=val
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm){
+                               cu11.qt=val
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
+            
+        }
+        if(dec_btn!==null){
+            let val=parseFloat(dec_btn.parentElement.childNodes[3].value)
+            let nm=dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            nm=nm.split(' ').join('')
+            val-=1
+            if(val>0){
+            dec_btn.parentElement.childNodes[3].value=val
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm){
+                               cu11.qt=val
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
+            }
+
+            
+        }
       if (addTocartbtn !== null) {
        
 
@@ -6669,7 +6715,8 @@ p{margin-bottom:auto;}
 
              let obj={
                 unit:unit_name,
-                name:name
+                name:name,
+                qt:1,
              }
 
 
@@ -6744,7 +6791,7 @@ p{margin-bottom:auto;}
 
         }
         if (unit_li !== null) {
-            console.log(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes)
+            let nm_itm=unit_li.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
             let name = unit_li.childNodes[1].innerText
             let pr = unit_li.childNodes[3].innerText
             let offer= null
@@ -6783,6 +6830,15 @@ p{margin-bottom:auto;}
                     unit_li.parentElement.parentElement.classList.remove('active')
                     unit_li.parentElement.parentElement.style.display='none'
               }
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm_itm.split(' ').join('')){
+                                cu11.unit=name
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
 
         }
         
@@ -6848,7 +6904,22 @@ p{margin-bottom:auto;}
                                 price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
                                 
                             }
-                            let qty_bx=`<div class="ct_qty_box">
+                            let selected_unit=`                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p>${units[0].name}</p>
+                                                <span>₹ ${units[0].price.toLocaleString()}</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>`
+                            let action_bx=`
+                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
                                             <div class="btn_qtys dec_btn">
                                                 <span class="material-symbols-outlined">
                                                     remove
@@ -6862,25 +6933,59 @@ p{margin-bottom:auto;}
                                             </div>
                                         </div>`
             let grocs= JSON.parse(localStorage.getItem('essentials'))
-            grocs.forEach(cu11=>{
-                if(cu11.name===name){
-                    qty_bx=`
-                    <div class="ct_qty_box" style:"display:block">
-                                            <div class="btn_qtys dec_btn">
-                                                <span class="material-symbols-outlined">
-                                                    remove
-                                                </span>
-                                            </div>
-                                            <input type="text" value="1" readonly>
-                                            <div class="btn_qtys inc_btn">
-                                                <span class="material-symbols-outlined">
-                                                    add
-                                                </span>
-                                            </div>
-                                        </div>
-                    `
-                }
-            })
+            if(grocs!==null){
+                         grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===name.split(' ').join('')){
+                                 action_bx=`
+                                                                         <div class="ct_addbtns" style='display:none'>
+                                                         <p>Add to cart</p>
+                                                     </div>
+                                 <div class="ct_qty_box" style="display:flex">
+                                                         <div class="btn_qtys dec_btn">
+                                                             <span class="material-symbols-outlined">
+                                                                 remove
+                                                             </span>
+                                                         </div>
+                                                         <input type="text" value="${cu11.qt}" readonly>
+                                                         <div class="btn_qtys inc_btn">
+                                                             <span class="material-symbols-outlined">
+                                                                 add
+                                                             </span>
+                                                         </div>
+                                                     </div>
+                                 `
+                                 units.forEach(cur11=>{
+                                     if(cur11.name===cu11.unit){
+                                  selected_unit=`                                            <div class="ct_bx_selection">
+                                                             <div class="ct_pr_bx_unit">
+                                                             <p>${cu11.unit}</p>
+                                                             <span>₹ ${cur11.price.toLocaleString()}</span>
+                                                             </div>
+
+                                                             <div class="ct_popup_unit_btn">
+                                                                 <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                             </div>
+
+                                                         </div>`
+                                                         pricemain = cur11.price - (cur11.price * (offer / 100))
+                                                        pricemain = Math.round(pricemain)
+                                                          price_box= `<del class="pricenooff">₹ ${cur11.price.toLocaleString()}</del>
+                                 <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
+
+                            if(item.offer===null){
+                                offer_html=`<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+
+                                    </div>
+                                `
+                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${cur11.price.toLocaleString()} </span> </p>`
+                                
+                            }
+                                     }
+                                 })
+
+                             }
+                         })
+            }
             let html = `   <div class="product">
                             <div class="itm_food_list_ek added_itm_ek_fd">
 
@@ -6896,17 +7001,7 @@ p{margin-bottom:auto;}
                                             <h4>${name}</h4>
                                         </div>
                                         <div class="ct_unit_box_selector">
-                                            <div class="ct_bx_selection">
-                                                <div class="ct_pr_bx_unit">
-                                                <p>${units[0].name}</p>
-                                                <span>₹ ${units[0].price.toLocaleString()}</span>
-                                                </div>
-
-                                                <div class="ct_popup_unit_btn">
-                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
-                                                </div>
-
-                                            </div>
+                                            ${selected_unit}
                                             <div class="ct_other_units active">
                                                 <ul>
                                                    ${emptyArr.join('')}
@@ -6916,10 +7011,8 @@ p{margin-bottom:auto;}
                                         <div class="ct_bx_priceandoff" style="margin-top:10px">
                                             ${price_box}
                                         </div>
-                                        <div class="ct_addbtns">
-                                            <p>Add to cart</p>
-                                        </div>
-                                        ${qty_bx}
+
+                                        ${action_bx}
 
                                     </div>
 

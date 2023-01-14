@@ -138,7 +138,6 @@
 
         .ct_bx_selection {
             display: flex;
-            width: 100%;
         }
 
         .ct_bx_info_web {
@@ -195,7 +194,7 @@
         }
 
         .crousel_items .product {
-            min-width: 32.9%;
+            min-width: 26.9%;
             height: 90%;
             margin: 0 10px 0 0;
             border-radius: 20px;
@@ -477,19 +476,59 @@
             justify-content: center;
         }
 
-        .ct_unit_box_selector {
-            display: flex;
-            border: 1px solid #a7a7a7;
-            height: 26px;
+    .ct_unit_box_selector {
+        display: block;
+        border: 1px solid #a7a7a7;
+        height: 26px;
+        cursor: pointer;
+    }
+.ct_other_units span, .ct_other_units p, .ct_pr_bx_unit span, .ct_pr_bx_unit p {
+    font-size: 12px;
+    color: black;
+    margin: 4px;
+    margin-right: 5px;
+    font-family: 'roboto';
+    font-weight: 500;
+}
+.ct_other_units {
+    background: white;
+    box-shadow: 0 0 4px #000000a3;
+    position: relative;
+    display: none;
+    height: 65px;
+    overflow-y: scroll;
+}
+.ct_other_units ul{
+    margin-bottom: 0;
+}
+        .ct_other_units::-webkit-scrollbar {
+            width: 2px;
         }
 
-        .ct_other_units {
-            background: white;
-            box-shadow: 0 0 4px #000000a3;
-            position: relative;
-            display: none;
-            transition: all .3s ease-in;
+        /* Track */
+        .ct_other_units::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
+
+        /* Handle */
+        .ct_other_units::-webkit-scrollbar-thumb {
+            background: rgb(78, 78, 78);
+        }
+
+        /* Handle on hover */
+        .ct_other_units::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+
+    .ct_other_units li:hover {
+        background-color: whitesmoke;
+    }
+
+    .ct_other_units li:active {
+        background-color: whitesmoke;
+    }
+
 
         .ct_other_units li {
             display: flex;
@@ -506,11 +545,12 @@
             font-weight: 500;
         }
 
-        .ct_popup_unit_btn {
-            border-left: 1px solid #919090;
-            color: #282a29;
-            padding-top: 2px;
-        }
+.ct_popup_unit_btn {
+    border-left: 1px solid #919090;
+    color: #282a29;
+    padding-top: 2px;
+    font-size: 14px;
+}
 
         .ct_bx_priceandoff {
             margin-top: 10px;
@@ -539,7 +579,7 @@
         }
 
         .recomended_cart .ct_dt_tm_food_res h4 {
-            font-size: 16px;
+            font-size: 13px;
             font-family: 'roboto';
             font-weight: 500;
             margin: 11px 0 8px 3px;
@@ -557,6 +597,11 @@
             display: flex;
             margin: 19px 20px;
         }
+        .itm_food_list_ek .ct_qty_box {
+    display: none;
+    margin: 17px 0 22px 4px;
+    height: 26px;
+}
 
         .recomended_cart {
             border-top: 1px solid black;
@@ -616,6 +661,14 @@
             padding: 1px 7px;
             box-shadow: 0 0 4px #0000006b;
         }
+        .itm_food_list_ek  .btn_qtys {
+    cursor: pointer;
+    background: #e6e6e6;
+    border-radius: 5px 0 0px 5px;
+    padding: 1px 6px;
+    box-shadow: 0 0 3px #0000008a;
+}
+
 
         .ct_qty_box input {
             width: 47px;
@@ -625,7 +678,15 @@
             color: black;
             border: 1px solid #cdcdcd;
         }
-
+.itm_food_list_ek .ct_qty_box input{
+    width: 40px;
+    font-size: 11px; 
+}
+.itm_food_list_ek .btn_qtys .material-symbols-outlined {
+    color: #000000;
+    margin-top: 0;
+    font-size: 17px;
+}
         .ct_qty_box p {
             font-size: 14px;
             font-family: 'open sans';
@@ -6397,7 +6458,7 @@
         }
 
         .ct_img_res_main img {
-            width: 55%;
+            width: 100%;
         }
 
         .ct_addbtns {
@@ -6419,13 +6480,6 @@
             display: flex;
             justify-content: center;
         }
-
-        .ct_unit_box_selector {
-            display: flex;
-            border: 1px solid #a7a7a7;
-            height: 26px;
-        }
-
         .ct_pr_bx_unit span,
         .ct_pr_bx_unit p {
             font-size: 12px;
@@ -6519,6 +6573,10 @@
             font-weight: 500;
             font-family: 'Montserrat';
             color: rgb(255, 255, 255);
+        }
+        .itm_food_list_ek  .ct_offer_box_cook2 p{
+            margin: -2px 0 0 11px;
+            font-size: 9px;
         }
 
         ion-icon {
@@ -7237,6 +7295,7 @@
             <p>Masala Meat sucessfully added to cart </p>
         </div>
     </div>
+    
     <div class="ct_pop_up_items_order">
         <div class="ct_remove_bx_pop_p">
             <ion-icon name="close-outline"></ion-icon>
@@ -8019,7 +8078,37 @@
         //  var socket = io()
 
 
+                let arrayItm2 = [{
+                conditions:["Applicable up to 3 orders"],
+        data:"Get 30% off on your order up to Rs. 100",
+        for:"sauce",
+        hidden:false,
+        name:"KRICKUSER",
+        off:"40%",
+        secret:'#avby6',
+        grp:'b',
+                }]
+            arrayItm2.forEach(cur => {
+                db.collection("coupons").add(cur).then(() => {
+                    console.log("Document successfully written!");
+                })
+                    .catch((error) => {
+                        console.error("Error writing document: ", error);
+                    })
+            })
 
+
+        //  arrayItm.forEach(cur => {
+        //      db.collection("sauce").add({
+        //      item:cur
+        //        
+        //      }).then(() => {
+        //          console.log("Document successfully written!");
+        //      })
+        //          .catch((error) => {
+        //              console.error("Error writing document: ", error);
+        //          })
+        //  })
 
         if (window.screen.width <= 1650) {
 
@@ -8077,7 +8166,12 @@
         document.querySelector('html').addEventListener('click', (e) => {
             let itmPopuclose = e.target.closest('.ct_bx_layer')
             let itmPopucloseIcon = e.target.closest('.ct_remove_bx_pop_p')
-
+            let unit_select = e.target.closest('.ct_unit_box_selector')
+            let unit_li = e.target.closest('.ct_other_units li')
+        document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+                cu11.classList.remove('active')
+                cu11.style.display='none'
+            })
             let itmPopup = e.target.closest('.ct_popup_inner')
             let itmqtinc = e.target.closest('.ct_bx_item_add')
             let itmqtdec = e.target.closest('.ct_bx_item_rem')
@@ -8088,8 +8182,8 @@
             let dr_addtocartBtn = e.target.closest('.place_order_btn')
             let gCart = e.target.closest('.go_to_cart_btn')
 
-            let dec_btn_qt = e.target.closest('.dec_btn')
-            let inc_btn_qt = e.target.closest('.inc_btn')
+            let dec_btn_qt = e.target.closest('.ct_pop_up_items_order  .dec_btn')
+            let inc_btn_qt = e.target.closest('.ct_pop_up_items_order  .inc_btn')
 
             let bacck_btn = e.target.closest('.ct_back_btn');
             let forward_btn = e.target.closest('.ct_forward_btn');
@@ -8098,7 +8192,113 @@
             let product_page = Math.ceil(product.length) - 1;
             let maxMove = 99203;
             // mobile_view	
+
+                    let inc_btn=e.target.closest('.inc_btn')
+        let dec_btn=e.target.closest('.dec_btn')
+        
+        if(inc_btn!==null){
+            let val=parseFloat(inc_btn.parentElement.childNodes[3].value)
+            let nm=inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            nm=nm.split(' ').join('')
+            val+=1
+            inc_btn.parentElement.childNodes[3].value=val
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm){
+                               cu11.qt=val
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
+            
+        }
+        if(dec_btn!==null){
+            let val=parseFloat(dec_btn.parentElement.childNodes[3].value)
+            let nm=dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            nm=nm.split(' ').join('')
+            val-=1
+            if(val>0){
+            dec_btn.parentElement.childNodes[3].value=val
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm){
+                               cu11.qt=val
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
+            }
+
+            
+        }
             let mob_view = window.matchMedia("(max-width: 768px)");
+
+                    if (unit_li !== null) {
+            let nm_itm=unit_li.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            let name = unit_li.childNodes[1].innerText
+            let pr = unit_li.childNodes[3].innerText
+            let offer= null
+            let pricemain=0
+            pr = pr.split('₹')[1]
+            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1]===undefined){
+            pricemain = parseFloat(pr) 
+            pricemain = pricemain.toLocaleString()  
+            }else{
+            offer = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            offer = offer.split('%')[0]
+            offer = parseFloat(offer)
+            
+            pricemain = pr - (pr * (offer / 100))
+            pricemain = Math.round(pricemain)
+            pricemain = pricemain.toLocaleString()
+            }
+
+            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3]!==undefined){
+            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3].childNodes[0].innerText = '₹' + pricemain
+            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].innerText = pr
+
+            }else{
+            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes[0].innerText = '₹' + pricemain
+
+            }
+
+            unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText = name
+            unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pr
+
+            console.log(unit_li.parentElement.parentElement)
+              if(!unit_li.parentElement.parentElement.classList.value.includes('active')){
+                      unit_li.parentElement.parentElement.classList.add('active')
+                      unit_li.parentElement.parentElement.style.display='none'
+              }else{
+                    unit_li.parentElement.parentElement.classList.remove('active')
+                    unit_li.parentElement.parentElement.style.display='none'
+              }
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+                if(grocs!==null){
+                        grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===nm_itm.split(' ').join('')){
+                                cu11.unit=name
+                             }
+                        })
+                }
+            localStorage.setItem('essentials',JSON.stringify(grocs))
+
+        }
+            if (unit_select !== null) {
+            document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+                cu11.classList.remove('active')
+                cu11.style.display='none'
+            })
+            if (!unit_select.childNodes[3].classList.value.includes('active')) {
+                unit_select.childNodes[3].classList.add('active')
+                unit_select.childNodes[3].style.display = 'block'
+            } else {
+                unit_select.childNodes[3].classList.remove('active')
+                unit_select.childNodes[3].style.display = 'none'
+            }
+            }
             if (mob_view.matches) {
                 movePer = 50.36;
                 maxMove = 504;
@@ -8155,49 +8355,58 @@
                 if (count_qty <= stock_itm_global) {
                     document.querySelector('.ct_qty_box input').value = count_qty
                     let userDt = JSON.parse(getCookie('userData'))
-                    async function getUser() {
-                        let dbCollection = db.collection("users")
-                        dbCollection.get().then(res => {
-                            res.docs.forEach(async cur => {
-                                let userDt_db = cur.data()
-                                if (userDt_db.id === userDt.id) {
+                 // async function getUser() {
+                 //     let dbCollection = db.collection("users")
+                 //     dbCollection.get().then(res => {
+                 //         res.docs.forEach(async cur => {
+                 //             let userDt_db = cur.data()
+                 //             if (userDt_db.id === userDt.id) {
 
-                                    userDt_db.cartItems.forEach(cu11 => {
-                                        let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                        let nameM = nameItm.split(' ').join('').toLowerCase()
-                                        console.log(nameD, nameM, ' -----------------')
+                 //                 userDt_db.cartItems.forEach(cu11 => {
+                 //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+                 //                     let nameM = nameItm.split(' ').join('').toLowerCase()
+                 //                     console.log(nameD, nameM, ' -----------------')
 
-                                        if (nameD === nameM) {
-                                            cu11.qty = count_qty
+                 //                     if (nameD === nameM) {
+                 //                         cu11.qty = count_qty
 
-                                        }
-                                    })
+                 //                     }
+                 //                 })
 
-                                    async function pushData() {
-                                        dbCollection.doc(cur.id).set({
-                                            address: userDt_db.address,
-                                            admin: userDt_db.admin,
-                                            cartItems: userDt_db.cartItems,
-                                            id: userDt_db.id,
-                                            location: userDt_db.location,
-                                            name: userDt_db.name,
-                                            phone: userDt_db.phone,
-                                            refferedBy: userDt_db.refferedBy,
-                                            reffer: userDt_db.reffer,
-                                        })
-                                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
-                                        setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                                        }, 10000)
+                 //                 async function pushData() {
+                 //                     dbCollection.doc(cur.id).set({
+                 //                         address: userDt_db.address,
+                 //                         admin: userDt_db.admin,
+                 //                         cartItems: userDt_db.cartItems,
+                 //                         id: userDt_db.id,
+                 //                         location: userDt_db.location,
+                 //                         name: userDt_db.name,
+                 //                         phone: userDt_db.phone,
+                 //                         refferedBy: userDt_db.refferedBy,
+                 //                         reffer: userDt_db.reffer,
+                 //                     })
+                 //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                 //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                 //                     setTimeout(function () {
+                 //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                 //                     }, 10000)
 
-                                    }
-                                    pushData()
-                                }
-                            })
-                        })
+                 //                 }
+                 //                 pushData()
+                 //             }
+                 //         })
+                 //     })
+                 // }
+                 // getUser()
+                let allfd = JSON.parse(localStorage.getItem('sauce'))
+                 let nameM = nameItm.split(' ').join('').toLowerCase()
+                 allfd.forEach((cu11,ind)=>{
+                    if(cu11.name.split(' ').join('').toLowerCase()===nameM){
+                        cu11.qty=count_qty
                     }
-                    getUser()
+                 })
+                 localStorage.setItem('sauce', JSON.stringify(allfd))
+
                 }
 
             } else if (dec_btn_qt !== null) {
@@ -8208,49 +8417,59 @@
                 if (count_qty > 0) {
                     document.querySelector('.ct_qty_box input').value = count_qty
                     let userDt = JSON.parse(getCookie('userData'))
-                    async function getUser() {
-                        let dbCollection = db.collection("users")
-                        dbCollection.get().then(res => {
-                            res.docs.forEach(async cur => {
-                                let userDt_db = cur.data()
-                                if (userDt_db.id === userDt.id) {
-
-                                    userDt_db.cartItems.forEach(cu11 => {
-                                        let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                        let nameM = nameItm.split(' ').join('').toLowerCase()
-                                        console.log(nameD, nameM, ' -----------------')
-
-                                        if (nameD === nameM) {
-                                            cu11.qty = count_qty
-
-                                        }
-                                    })
-
-                                    async function pushData() {
-                                        dbCollection.doc(cur.id).set({
-                                            address: userDt_db.address,
-                                            admin: userDt_db.admin,
-                                            cartItems: userDt_db.cartItems,
-                                            id: userDt_db.id,
-                                            location: userDt_db.location,
-                                            name: userDt_db.name,
-                                            phone: userDt_db.phone,
-                                            refferedBy: userDt_db.refferedBy,
-                                            reffer: userDt_db.reffer,
-                                        })
-                                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
-                                        setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                                        }, 10000)
-
-                                    }
-                                    pushData()
-                                }
-                            })
-                        })
+                   // async function getUser() {
+                   //     let dbCollection = db.collection("users")
+                   //     dbCollection.get().then(res => {
+                   //         res.docs.forEach(async cur => {
+                   //             let userDt_db = cur.data()
+                   //             if (userDt_db.id === userDt.id) {
+//
+                   //                 userDt_db.cartItems.forEach(cu11 => {
+                   //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+                   //                     let nameM = nameItm.split(' ').join('').toLowerCase()
+                   //                     console.log(nameD, nameM, ' -----------------')
+//
+                   //                     if (nameD === nameM) {
+                   //                         cu11.qty = count_qty
+//
+                   //                     }
+                   //                 })
+//
+                   //                 async function pushData() {
+                   //                     dbCollection.doc(cur.id).set({
+                   //                         address: userDt_db.address,
+                   //                         admin: userDt_db.admin,
+                   //                         cartItems: userDt_db.cartItems,
+                   //                         id: userDt_db.id,
+                   //                         location: userDt_db.location,
+                   //                         name: userDt_db.name,
+                   //                         phone: userDt_db.phone,
+                   //                         refferedBy: userDt_db.refferedBy,
+                   //                         reffer: userDt_db.reffer,
+                   //                     })
+                   //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                   //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                   //                     setTimeout(function () {
+                   //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                   //                     }, 10000)
+//
+                   //                 }
+                   //                 pushData()
+                   //             }
+                   //         })
+                   //     })
+                   // }
+                   // getUser()
+                                   let allfd = JSON.parse(localStorage.getItem('sauce'))
+                 let nameM = nameItm.split(' ').join('').toLowerCase()
+                 allfd.forEach((cu11,ind)=>{
+                    if(cu11.name.split(' ').join('').toLowerCase()===nameM){
+                        cu11.qty=count_qty
                     }
-                    getUser()
+                 })
+                 localStorage.setItem('sauce', JSON.stringify(allfd))
+
+                
                 } else {
                     count_qty = 1
                 }
@@ -8299,24 +8518,21 @@
                 }
                 if (document.querySelector('.ct_addded').style.display === 'block') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
-                    if (getCookie('userData') === '') {
+                   // if (getCookie('userData') === '') {
                         if (allfd !== null) {
 
                             allfd.forEach(cu11 => {
                                 let nameD = cu11.name.split(' ').join('')
-                                let nameM = name.split(' ').join('')
+                                let nameM = nameItm.split(' ').join('')
+                                    console.log(nameD,nameM, ' -----------------')
+
                                 if (nameD === nameM) {
-                                    cu11.cartItems.forEach(cu11 => {
-                                        let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                        let nameM = nameItm.split(' ').join('').toLowerCase()
 
-                                        if (nameD === nameM) {
-                                            cu11.slt_nm = name11
-                                            cu11.slt_p = info
-                                            console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
+                                    cu11.slt_nm = name11
+                                    cu11.slt_p = info
+                                    console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
 
-                                        }
-                                    })
+                                        
                                     document.querySelector('.buy_now').style.display = 'none'
                                     document.querySelector('.add_cart_btn').style.display = 'none'
                                     document.querySelector('.ct_addded').style.display = 'block'
@@ -8327,50 +8543,50 @@
                             })
                             localStorage.setItem('sauce', JSON.stringify(allfd))
                         }
-                    } else {
+                   //} else {
 
-                        let userDt = JSON.parse(getCookie('userData'))
-                        async function getItm() {
-                            let dbCollection2 = db.collection("users")
-                            let res = await dbCollection2.get()
+                   //    let userDt = JSON.parse(getCookie('userData'))
+                   //    async function getItm() {
+                   //        let dbCollection2 = db.collection("users")
+                   //        let res = await dbCollection2.get()
 
-                            res.docs.forEach(async cu => {
-                                let data = cu.data()
-                                let matched = false
-                                console.log(userDt.id, data.id, ' -----------------')
+                   //        res.docs.forEach(async cu => {
+                   //            let data = cu.data()
+                   //            let matched = false
+                   //            console.log(userDt.id, data.id, ' -----------------')
 
-                                if (userDt.id === data.id) {
+                   //            if (userDt.id === data.id) {
 
-                                    data.cartItems.forEach(cu11 => {
-                                        let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                        let nameM = nameItm.split(' ').join('').toLowerCase()
-                                        console.log(nameD, nameM, ' -----------------')
+                   //                data.cartItems.forEach(cu11 => {
+                   //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                   //                    let nameM = nameItm.split(' ').join('').toLowerCase()
+                   //                    console.log(nameD, nameM, ' -----------------')
 
-                                        if (nameD === nameM) {
-                                            cu11.slt_nm = name11
-                                            cu11.slt_p = info
-                                            console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
+                   //                    if (nameD === nameM) {
+                   //                        cu11.slt_nm = name11
+                   //                        cu11.slt_p = info
+                   //                        console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
 
-                                        }
-                                    })
-                                    await dbCollection2.doc(cu.id).set({
-                                        admin: data.admin,
-                                        id: data.id,
-                                        name: data.name,
-                                        phone: data.phone,
-                                        address: data.address,
-                                        location: data.location,
-                                        cartItems: data.cartItems,
-                                        refferedBy: data.refferedBy,
-                                        reffer: data.reffer,
-                                    })
-                                }
+                   //                    }
+                   //                })
+                   //                await dbCollection2.doc(cu.id).set({
+                   //                    admin: data.admin,
+                   //                    id: data.id,
+                   //                    name: data.name,
+                   //                    phone: data.phone,
+                   //                    address: data.address,
+                   //                    location: data.location,
+                   //                    cartItems: data.cartItems,
+                   //                    refferedBy: data.refferedBy,
+                   //                    reffer: data.reffer,
+                   //                })
+                   //            }
 
-                            })
+                   //        })
 
-                        }
-                        getItm()
-                    }
+                   //    }
+                   //    getItm()
+                   //}
                 }
             }
             if (gCart !== null) {
@@ -8462,89 +8678,154 @@
 
 
                             if (nm === nm2) {
-                                let name = item.name
-                                let offer = parseFloat(item.offer)
-                                let units = item.units
-                                let price = item.price
-                                let img = item.img
+            let name = item.name
+            let offer = parseFloat(item.offer)
+            let units = item.units
+            let price = item.price
+            let img = item.img
 
-                                offer = parseFloat(offer)
-                                price = parseFloat(price)
-                                let pricemain = price - (price * (offer / 100))
-                                pricemain = Math.round(pricemain)
-                                let emptyArr = units.map(cur11 => {
-                                    let html = `<li>
+            offer = parseFloat(offer)
+            price = parseFloat(price)
+            let pricemain = price - (price * (offer / 100))
+            pricemain = Math.round(pricemain)
+            let emptyArr = units.map(cur11 => {
+                let html = `<li>
                 <p>${cur11.name}</p>
                 <span>₹ ${cur11.price.toLocaleString()}</span>
             </li>`
-                                    return html
-                                })
-                                let price_box = `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
+                return html
+            })
+            let price_box= `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
                         <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
-                                let offer_html = `<div class="ct_offer_box_cook2">
+            let offer_html=`<div class="ct_offer_box_cook2">
                                 <span>${offer}%</span>
                                 <p>off</p>
                             </div>`
-                                if (item.offer === null) {
-                                    offer_html = `<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+                            if(item.offer===null){
+                                offer_html=`<div class="ct_offer_box_cook2 no_offer" style='display:none'>
 
                                     </div>
                                 `
-                                    price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
-
-                                }
-
-                                let html = `    <div class="product">
-                        <div class="itm_food_list_ek added_itm_ek_fd">
-
-                            <div class="ct_inner_fd_dt_grid">
-                                ${offer_html}
-                                <div class="ct_img_res_main">
-                                    <img alt="Amritsari chole sauce image" src="${img}">
-
-                                </div>
-                                <div class="ct_inner_fd1_dt_grid">
-
-                                    <div class="ct_dt_tm_food_res">
-                                        <h4>${name}</h4>
-                                    </div>
-                                    <div class="ct_unit_box_selector">
-                                        <div class="ct_bx_selection">
-                                            <div class="ct_pr_bx_unit">
+                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
+                                
+                            }
+                            let selected_unit=`                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
                                                 <p>${units[0].name}</p>
                                                 <span>₹ ${units[0].price.toLocaleString()}</span>
-                                            </div>
+                                                </div>
 
-                                            <div class="ct_popup_unit_btn">
-                                                <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                    aria-label="caret forward outline"></ion-icon>
-                                            </div>
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
 
-                                        </div>
-                                        <div class="ct_other_units active">
-                                            <ul>
-                                                ${emptyArr.join('')}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                        ${price_box}
-
-
-                                    </div>
-                                    <div class="ct_addbtns">
-                                        <p>Add to cart</p>
-                                    </div>
-                                    <div class="added_to_cart">
-                                        <p>Added to cart</p>
-                                    </div>
-                                </div>
-
-
+                                            </div>`
+                            let action_bx=`
+                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
                             </div>
-                        </div>
-                    </div>`
-                                //#${cur.data().group.split(' ').join('')}
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly>
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>`
+            let grocs= JSON.parse(localStorage.getItem('essentials'))
+            if(grocs!==null){
+                         grocs.forEach(cu11=>{
+                             if(cu11.name.split(' ').join('')===name.split(' ').join('')){
+                                 action_bx=`
+                                                                         <div class="ct_addbtns" style='display:none'>
+                                                         <p>Add to cart</p>
+                                                     </div>
+                                 <div class="ct_qty_box" style="display:flex">
+                                                         <div class="btn_qtys dec_btn">
+                                                             <span class="material-symbols-outlined">
+                                                                 remove
+                                                             </span>
+                                                         </div>
+                                                         <input type="text" value="${cu11.qt}" readonly>
+                                                         <div class="btn_qtys inc_btn">
+                                                             <span class="material-symbols-outlined">
+                                                                 add
+                                                             </span>
+                                                         </div>
+                                                     </div>
+                                 `
+                                 units.forEach(cur11=>{
+                                     if(cur11.name===cu11.unit){
+                                  selected_unit=`                                            <div class="ct_bx_selection">
+                                                             <div class="ct_pr_bx_unit">
+                                                             <p>${cu11.unit}</p>
+                                                             <span>₹ ${cur11.price.toLocaleString()}</span>
+                                                             </div>
+
+                                                             <div class="ct_popup_unit_btn">
+                                                                 <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                             </div>
+
+                                                         </div>`
+                                                         pricemain = cur11.price - (cur11.price * (offer / 100))
+                                                        pricemain = Math.round(pricemain)
+                                                          price_box= `<del class="pricenooff">₹ ${cur11.price.toLocaleString()}</del>
+                                 <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
+
+                            if(item.offer===null){
+                                offer_html=`<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+
+                                    </div>
+                                `
+                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${cur11.price.toLocaleString()} </span> </p>`
+                                
+                            }
+                                     }
+                                 })
+
+                             }
+                         })
+            }
+            let html = `   <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                ${offer_html}
+                                    <div class="ct_img_res_main">
+                                        <img alt="${name} image" src="${img}">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>${name}</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            ${selected_unit}
+                                            <div class="ct_other_units active">
+                                                <ul>
+                                                   ${emptyArr.join('')}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            ${price_box}
+                                        </div>
+
+                                        ${action_bx}
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>`
+            //#${cur.data().group.split(' ').join('')}
                                 document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
                             }
 
@@ -8576,6 +8857,7 @@
                 // document.querySelector('.ct_bx_img img').src = imgsrc
                 document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                 let allfd = JSON.parse(localStorage.getItem('sauce'))
+                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
 
                 let qty_obj = JSON.parse(qtys)
                 qty_obj.forEach((cur11, ind) => {
@@ -8603,7 +8885,6 @@
                                     if (ind > 0) {
                                         active_btn = 'unactive'
                                         // price of active qty
-                                        document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
                                     }
 
                                     let html = `<div class="ct_for_bx1 ${active_btn}">
@@ -8629,7 +8910,7 @@
                     document.querySelector('.ct_bx_total_amount_to_pay del').style.display = 'none'
                     document.querySelector('.offer_item').style.display = 'none'
                 }
-                if (getCookie('userData') === '') {
+              //  if (getCookie('userData') === '') {
                     document.querySelector('.buy_now').style.display = 'block'
                     document.querySelector('.add_cart_btn').style.display = 'block'
                     document.querySelector('.ct_addded').style.display = 'none'
@@ -8643,11 +8924,13 @@
 
                                 document.querySelector('.buy_now').style.display = 'none'
                                 document.querySelector('.add_cart_btn').style.display = 'none'
-                                document.querySelector('.ct_addded').style.display = 'block'
                                 document.querySelector('.remove_itm').style.display = 'block'
+
+                                document.querySelector('.ct_addded').style.display = 'block'
 
                                 document.querySelector('.ct_qty_box input').value = cu11.qty
                                 let qty_obj = JSON.parse(qtys)
+                                 document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                                 qty_obj.forEach((cur11, ind) => {
                                     let price = cur11.price
                                     let pack = cur11.pack
@@ -8669,9 +8952,9 @@
                                         price = price.toLocaleString()
                                     }
 
-                                    let active_btn = 'active'
-                                    if (ind > 0) {
-                                        active_btn = 'unactive'
+                                    let active_btn = 'unactive'
+                                    if (name === cu11.slt_nm) {
+                                        active_btn = 'active'
                                         // price of active qty
                                         document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
                                     }
@@ -8695,118 +8978,118 @@
                         })
                     }
 
-                } else {
+              //} else {
 
-                    document.querySelector('.buy_now').style.display = 'none'
-                    document.querySelector('.add_cart_btn').style.display = 'none'
-                    document.querySelector('.ct_addded').style.display = 'none'
-                    document.querySelector('.remove_itm').style.display = 'none'
+              //    document.querySelector('.buy_now').style.display = 'none'
+              //    document.querySelector('.add_cart_btn').style.display = 'none'
+              //    document.querySelector('.ct_addded').style.display = 'none'
+              //    document.querySelector('.remove_itm').style.display = 'none'
 
-                    let userDt = JSON.parse(getCookie('userData'))
-                    document.querySelectorAll('.buttons_loading').forEach(cu => {
-                        cu.style.display = 'block'
-                    })
+              //    let userDt = JSON.parse(getCookie('userData'))
+              //    document.querySelectorAll('.buttons_loading').forEach(cu => {
+              //        cu.style.display = 'block'
+              //    })
 
-                    async function getItm() {
-                        let dbCollection2 = db.collection("users")
-                        let res = await dbCollection2.get()
-                        document.querySelectorAll('.buttons_loading').forEach(cu => {
-                            cu.style.display = 'none'
-                        })
-                        res.docs.forEach(async cu => {
-                            let data = cu.data()
-                            let matched = false
-                            if (userDt.id === data.id) {
+              //    async function getItm() {
+              //        let dbCollection2 = db.collection("users")
+              //        let res = await dbCollection2.get()
+              //        document.querySelectorAll('.buttons_loading').forEach(cu => {
+              //            cu.style.display = 'none'
+              //        })
+              //        res.docs.forEach(async cu => {
+              //            let data = cu.data()
+              //            let matched = false
+              //            if (userDt.id === data.id) {
 
-                                data.cartItems.forEach(cu11 => {
-                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                    let nameM = name.split(' ').join('').toLowerCase()
-                                    console.log(nameD === nameM, ' ----------------fhaha')
-                                    if (nameD === nameM) {
-                                        matched = true
-                                        document.querySelector('.buy_now').style.display = 'none'
-                                        document.querySelector('.add_cart_btn').style.display = 'none'
-                                        document.querySelector('.ct_addded').style.display = 'block'
-                                        document.querySelector('.remove_itm').style.display = 'block'
+              //                data.cartItems.forEach(cu11 => {
+              //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+              //                    let nameM = name.split(' ').join('').toLowerCase()
+              //                    console.log(nameD === nameM, ' ----------------fhaha')
+              //                    if (nameD === nameM) {
+              //                        matched = true
+              //                        document.querySelector('.buy_now').style.display = 'none'
+              //                        document.querySelector('.add_cart_btn').style.display = 'none'
+              //                        document.querySelector('.ct_addded').style.display = 'block'
+              //                        document.querySelector('.remove_itm').style.display = 'block'
 
-                                        document.querySelector('.ct_qty_box input').value = cu11.qty
-                                        let qty_obj = JSON.parse(qtys)
-                                        document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
-                                        qty_obj.forEach((cur11, ind) => {
-                                            let price = cur11.price
-                                            let pack = cur11.pack
-                                            let name = cur11.name
-                                            let price_off = 0
-                                            let offer_del = ''
-                                            if (!isNaN(offer)) {
-                                                price_off = parseFloat(price) * 100 / (100 - offer)
-                                                price_off = price_off
-                                                price_off = price_off.toLocaleString()
-                                                if (price_off.split('.')[1] !== undefined) {
-                                                    price_off = price_off.split('.')[0]
-                                                }
+              //                        document.querySelector('.ct_qty_box input').value = cu11.qty
+              //                        let qty_obj = JSON.parse(qtys)
+              //                        document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
+              //                        qty_obj.forEach((cur11, ind) => {
+              //                            let price = cur11.price
+              //                            let pack = cur11.pack
+              //                            let name = cur11.name
+              //                            let price_off = 0
+              //                            let offer_del = ''
+              //                            if (!isNaN(offer)) {
+              //                                price_off = parseFloat(price) * 100 / (100 - offer)
+              //                                price_off = price_off
+              //                                price_off = price_off.toLocaleString()
+              //                                if (price_off.split('.')[1] !== undefined) {
+              //                                    price_off = price_off.split('.')[0]
+              //                                }
 
-                                                price = price.toLocaleString()
-                                                offer_del = ` <del>₹ ${price_off}</del>`
-                                            } else {
-                                                price = price.toLocaleString()
-                                            }
+              //                                price = price.toLocaleString()
+              //                                offer_del = ` <del>₹ ${price_off}</del>`
+              //                            } else {
+              //                                price = price.toLocaleString()
+              //                            }
 
-                                            let active_btn = 'unactive'
-                                            console.log(pack, cu11.pack, ' hahaha')
-                                            if (name === cu11.slt_nm) {
-                                                active_btn = 'active'
-                                                // price of active qty
-                                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
-                                            }
+              //                            let active_btn = 'unactive'
+              //                            console.log(pack, cu11.pack, ' hahaha')
+              //                            if (name === cu11.slt_nm) {
+              //                                active_btn = 'active'
+              //                                // price of active qty
+              //                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
+              //                            }
 
-                                            let html = `<div class="ct_for_bx1 ${active_btn}">
-                        <h4>${name}</h4>
-                        <span class="info_package">${pack}</span>
-                        <div class="ct_pr_bx">
-                           ${offer_del}
-                            <p>₹ ${price}</p>
+              //                            let html = `<div class="ct_for_bx1 ${active_btn}">
+              //        <h4>${name}</h4>
+              //        <span class="info_package">${pack}</span>
+              //        <div class="ct_pr_bx">
+              //           ${offer_del}
+              //            <p>₹ ${price}</p>
 
-                        </div>
+              //        </div>
 
-                    </div>`
+              //    </div>`
 
-                                            //                                  if (cur11.info !== undefined) {
-                                            //                                      html = `<div class="ct_for_bx1 ${active_btn}">
-                                            //  <div class="ct_pop_info">
-                                            //                  <p></p>
-                                            //              </div>
-                                            //                  <div class="ct_bx_flex">
-                                            //                 <h4>${name}</h4>
-                                            //                  <div class="ct_x_info">
-                                            //                      <ion-icon name="help-circle-outline"></ion-icon>
-                                            //                  </div>
-                                            //              </div>
-                                            //              <span class="info_package">${pack}</span>
-                                            //              <div class="ct_pr_bx">
-                                            //                  <del>₹ ${price_off}</del>
-                                            //                  <p>₹ ${price}</p>
+              //                            //                                  if (cur11.info !== undefined) {
+              //                            //                                      html = `<div class="ct_for_bx1 ${active_btn}">
+              //                            //  <div class="ct_pop_info">
+              //                            //                  <p></p>
+              //                            //              </div>
+              //                            //                  <div class="ct_bx_flex">
+              //                            //                 <h4>${name}</h4>
+              //                            //                  <div class="ct_x_info">
+              //                            //                      <ion-icon name="help-circle-outline"></ion-icon>
+              //                            //                  </div>
+              //                            //              </div>
+              //                            //              <span class="info_package">${pack}</span>
+              //                            //              <div class="ct_pr_bx">
+              //                            //                  <del>₹ ${price_off}</del>
+              //                            //                  <p>₹ ${price}</p>
 
-                                            //              </div>
+              //                            //              </div>
 
-                                            //          </div>`
-                                            //                                  }
+              //                            //          </div>`
+              //                            //                                  }
 
-                                            document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
-                                        })
-                                    }
-                                })
-                                if (!matched) {
-                                    document.querySelector('.buy_now').style.display = 'block'
-                                    document.querySelector('.add_cart_btn').style.display = 'block'
-                                }
-                            }
+              //                            document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+              //                        })
+              //                    }
+              //                })
+              //                if (!matched) {
+              //                    document.querySelector('.buy_now').style.display = 'block'
+              //                    document.querySelector('.add_cart_btn').style.display = 'block'
+              //                }
+              //            }
 
-                        })
+              //        })
 
-                    }
-                    getItm()
-                }
+              //    }
+              //    getItm()
+              //}
                 document.querySelector('.name_of_itm').innerText = name
                 document.querySelector('.name_of_itm').innerText = name
                 console.log(desc)
@@ -9791,41 +10074,57 @@
                 let userDt = JSON.parse(getCookie('userData'))
 
                 let name = document.querySelector('.name_of_itm').innerText
-                async function getUser() {
-                    let dbCollection = db.collection("users")
-                    dbCollection.get().then(res => {
-                        res.docs.forEach(async cur => {
-                            let userDt_db = cur.data()
-                            if (userDt_db.id === userDt.id) {
-
-                                userDt_db.cartItems.forEach((cu11, index) => {
-                                    let nameD = cu11.name.split(' ').join('').toLowerCase()
-                                    let nameM = name.split(' ').join('').toLowerCase()
-                                    if (nameD === nameM) {
-                                        userDt_db.cartItems.splice(index, 1)
-                                        document.querySelector('.buy_now').style.display = 'block'
-                                        document.querySelector('.add_cart_btn').style.display = 'block'
-                                        document.querySelector('.ct_addded').style.display = 'none'
-                                        document.querySelector('.remove_itm').style.display = 'none'
-                                    }
-                                })
-                                dbCollection.doc(cur.id).set({
-                                    address: userDt_db.address,
-                                    admin: userDt_db.admin,
-                                    cartItems: userDt_db.cartItems,
-                                    id: userDt_db.id,
-                                    location: userDt_db.location,
-                                    name: userDt_db.name,
-                                    phone: userDt_db.phone,
-                                    refferedBy: userDt_db.refferedBy,
-                                    reffer: userDt_db.reffer,
-                                })
-                            }
-
-                        })
-                    })
+                
+                 let allfd = JSON.parse(localStorage.getItem('sauce'))
+                if (allfd!== null) {
+                      let nameM = name.split(' ').join('').toLowerCase()
+                      allfd.forEach((cu11,ind)=>{
+                         console.log(cu11.name.split(' ').join('').toLowerCase(),nameM)
+                         if(cu11.name.split(' ').join('').toLowerCase()===nameM){
+                             allfd.splice(ind,1)
+                         }
+                      })
+                      localStorage.setItem('sauce', JSON.stringify(allfd))
+                     document.querySelector('.buy_now').style.display = 'block'
+                     document.querySelector('.add_cart_btn').style.display = 'block'
+                     document.querySelector('.ct_addded').style.display = 'none'
+                     document.querySelector('.remove_itm').style.display = 'none'
                 }
-                getUser()
+               // async function getUser() {
+               //     let dbCollection = db.collection("users")
+               //     dbCollection.get().then(res => {
+               //         res.docs.forEach(async cur => {
+               //             let userDt_db = cur.data()
+               //             if (userDt_db.id === userDt.id) {
+//
+               //                 userDt_db.cartItems.forEach((cu11, index) => {
+               //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+               //                     let nameM = name.split(' ').join('').toLowerCase()
+               //                     if (nameD === nameM) {
+               //                         userDt_db.cartItems.splice(index, 1)
+               //                         document.querySelector('.buy_now').style.display = 'block'
+               //                         document.querySelector('.add_cart_btn').style.display = 'block'
+               //                         document.querySelector('.ct_addded').style.display = 'none'
+               //                         document.querySelector('.remove_itm').style.display = 'none'
+               //                     }
+               //                 })
+               //                 dbCollection.doc(cur.id).set({
+               //                     address: userDt_db.address,
+               //                     admin: userDt_db.admin,
+               //                     cartItems: userDt_db.cartItems,
+               //                     id: userDt_db.id,
+               //                     location: userDt_db.location,
+               //                     name: userDt_db.name,
+               //                     phone: userDt_db.phone,
+               //                     refferedBy: userDt_db.refferedBy,
+               //                     reffer: userDt_db.reffer,
+               //                 })
+               //             }
+//
+               //         })
+               //     })
+               // }
+               // getUser()
             }
             if (buyNow_btn !== null) {
                 buyNow_btn.style.opacity = '.5'
@@ -9842,7 +10141,7 @@
                     slt_p: slt_p,
                     type: 'sauce'
                 }
-                if (getCookie('userData') === '') {
+              //  if (getCookie('userData') === '') {
                     // if user has no account then, add to localstorge
                     document.querySelector('.account_btn').style.display = 'block'
 
@@ -9866,62 +10165,62 @@
                     }, 10000)
                     buyNow_btn.style.opacity = '1'
                     document.querySelector('.add_cart_btn').style.opacity = '1'
-                } else if (getCookie('userData') !== '') {
-                    console.log('user!!!!!!!!!!!!!!!')
-                    let userDt = JSON.parse(getCookie('userData'))
+              //} else if (getCookie('userData') !== '') {
+              //    console.log('user!!!!!!!!!!!!!!!')
+              //    let userDt = JSON.parse(getCookie('userData'))
 
-                    //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
-                    //      localStorage.setItem('items_added', JSON.stringify([name]))
-                    //  } else {
-                    //      let allfd = JSON.parse(localStorage.getItem('items_added'))
-                    //      allfd.push(name)
-                    //      localStorage.setItem('items_added', JSON.stringify(allfd))
-                    //
-                    //  }
+              //    //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
+              //    //      localStorage.setItem('items_added', JSON.stringify([name]))
+              //    //  } else {
+              //    //      let allfd = JSON.parse(localStorage.getItem('items_added'))
+              //    //      allfd.push(name)
+              //    //      localStorage.setItem('items_added', JSON.stringify(allfd))
+              //    //
+              //    //  }
 
-                    buyNow_btn.style.opacity = '1'
-                    document.querySelector('.add_cart_btn').style.opacity = '1'
-                    buyNow_btn.style.display = 'none'
-                    document.querySelector('.ct_addded').style.display = 'block'
-                    document.querySelector('.remove_itm').style.display = 'block'
+              //    buyNow_btn.style.opacity = '1'
+              //    document.querySelector('.add_cart_btn').style.opacity = '1'
+              //    buyNow_btn.style.display = 'none'
+              //    document.querySelector('.ct_addded').style.display = 'block'
+              //    document.querySelector('.remove_itm').style.display = 'block'
 
-                    document.querySelector('.add_cart_btn').style.display = 'none'
-                    async function getUser() {
-                        let dbCollection = db.collection("users")
-                        dbCollection.get().then(res => {
-                            res.docs.forEach(async cur => {
-                                let userDt_db = cur.data()
-                                if (userDt_db.id === userDt.id) {
-                                    userDt_db.cartItems.push(obj)
-                                    console.log(userDt_db.cartItems)
-                                    async function pushData() {
-                                        dbCollection.doc(cur.id).set({
-                                            address: userDt_db.address,
-                                            admin: userDt_db.admin,
-                                            cartItems: userDt_db.cartItems,
-                                            id: userDt_db.id,
-                                            location: userDt_db.location,
-                                            name: userDt_db.name,
-                                            phone: userDt_db.phone,
-                                            refferedBy: userDt_db.refferedBy,
-                                            reffer: userDt_db.reffer,
-                                        })
-                                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
-                                        setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                                        }, 10000)
+              //    document.querySelector('.add_cart_btn').style.display = 'none'
+              //    async function getUser() {
+              //        let dbCollection = db.collection("users")
+              //        dbCollection.get().then(res => {
+              //            res.docs.forEach(async cur => {
+              //                let userDt_db = cur.data()
+              //                if (userDt_db.id === userDt.id) {
+              //                    userDt_db.cartItems.push(obj)
+              //                    console.log(userDt_db.cartItems)
+              //                    async function pushData() {
+              //                        dbCollection.doc(cur.id).set({
+              //                            address: userDt_db.address,
+              //                            admin: userDt_db.admin,
+              //                            cartItems: userDt_db.cartItems,
+              //                            id: userDt_db.id,
+              //                            location: userDt_db.location,
+              //                            name: userDt_db.name,
+              //                            phone: userDt_db.phone,
+              //                            refferedBy: userDt_db.refferedBy,
+              //                            reffer: userDt_db.reffer,
+              //                        })
+              //                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+              //                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+              //                        setTimeout(function () {
+              //                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+              //                        }, 10000)
 
-                                    }
-                                    pushData()
-                                }
-                            })
-                        })
-                    }
-                    getUser()
+              //                    }
+              //                    pushData()
+              //                }
+              //            })
+              //        })
+              //    }
+              //    getUser()
 
 
-                }
+              //}
 
 
 
