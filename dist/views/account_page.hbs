@@ -2664,13 +2664,15 @@
         display: flex;
     }
 
-    .ct_order {
-        display: flex;
+    .ct_order_outer {
         width: 80%;
         border: 1px solid gainsboro;
         border-radius: 9px;
-        padding: 14px 28px;
         margin-bottom: 6px;
+    }
+    .ct_order{display: flex;
+            padding: 14px 28px;
+
     }
 
     .ct_order img {
@@ -2680,13 +2682,55 @@
     .ct_order_all {
         margin: 32px 0 0 38px;
     }
-
-    .ct_order h4 {
-        color: #525252;
-        font-family: 'Montserrat';
-        margin-bottom: 6px;
-        font-size: 19px;
-    }
+.ct_botton_actn {
+    display: flex;
+    width: 100%;
+    background: whitesmoke;
+    padding: 10px 15px;
+}
+.ct_botton_actn button{
+    background: #ffffff;
+    padding: 12px 19px;
+    color: black;
+    font-size: 14px;
+    border-radius: 5px;
+    width: 199px;
+    border: 1px solid #000000;
+}
+.ct_botton_actn .ct_pr_bx{
+    margin-top: 8px;
+    width: 100%;
+}
+.ct_botton_actn .ct_pr_bx span,
+.ct_botton_actn .ct_pr_bx p{
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #242222;
+    font-family: 'roboto';
+}
+.ct_btns span{
+    font-size: 11px;
+    color: #8b8b8b;
+    font-family: 'roboto';
+    display: flex;
+    margin:6px;
+}
+.ct_btns span p{
+    color: rgb(53, 102, 238);
+    margin-left: 5px;
+    cursor: pointer;
+}
+.ct_botton_actn .ct_pr_bx span{
+    text-transform: uppercase;
+    color: #8b8b8b;
+}
+.ct_order h4 {
+    color: #2a2a2a;
+    font-family: 'roboto';
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 19px;
+}
 
     .ct_order .inner_ct {
         margin: 13px 0 0 20px;
@@ -2745,17 +2789,30 @@
                     <div class="ct_order_box">
                         <h2>My orders </h2>
                         <div class="ct_order_all">
-                            <div class="ct_order">
-                                <img src="../img/masala_fish.png">
-                                <div class="inner_ct">
-                                    <h4>Masala fish</h4>
-                                    <p>net weight: 150gm</p>
-                                    <p>qty: 4</p>
-                                    <span>Total amount: ₹ 49 </span>
-                                    <span>Payment mode: Online</span>
-                                </div>
+                            <div class="ct_order_outer">
+                                
+                                <div class="ct_order">
+                                    <img src="../img/masala_fish.png">
+                                    <div class="inner_ct">
+                                        <h4>Masala fish</h4>
+                                        <p>net weight: 150gm</p>
+                                        <p>qty: 4</p>
 
+                                    </div>
+
+                                </div>
+                                <div class="ct_botton_actn">
+                                    <div class="ct_pr_bx">
+                                        <p>Total amount: ₹ 49 </p>
+                                        <span>Payment mode: online </span>
+                                    </div>
+                                    <div class="ct_btns">
+                                    <button>Return</button>
+                                    <span>T&C apply* <p>Learn more</p></span>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     <div class="edit_account">
@@ -2771,15 +2828,15 @@
         </div>
     </div>
     {{>footer}}
-<script>
-    document.querySelector('.ct_share').addEventListener('click',()=>{
-        if(navigator.share){
-            navigator.share({
-                title:
+    <script>
+        document.querySelector('.ct_share').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title:
             })
-        }
-    })
-</script>
+            }
+        })
+    </script>
 </body>
 
 </html>
