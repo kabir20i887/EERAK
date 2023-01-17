@@ -18306,6 +18306,12 @@
                                         </li>`
                             document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
                         }else{
+                                            let priceBX = `
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style='display:none'></del>
+             <p class="price">₹ ${price_real}</p>
+         </div>
+     `
                                  let html = `<div class="ct_bx_fooditm">
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
@@ -18315,14 +18321,14 @@
 
                                                         <h4>${itm.name}</h4>
                                                         <p class="item_intro">${itm.tagline}</p>
-                                                        <p class="for_unit_itm">Net.weight: ${itm.weight}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
 
                                                         ${priceBX}
 
                                                         <div class="ct_bx_item_details_hide">
-                                                            <p class="name">${name}</p>
-                                                            <p class="stock">${stock}</p>
-                                                            <p class="price_pr">${price_real}</p>
+                                                            <p class="name">${tm.name}</p>
+                                                            <p class="stock">${15}</p>
+                                                            <p class="price_pr">${priceX}</p>
                                                             <p class="price_off">${price_off}</p>
                                                             <p class="offer">${offer}</p>
                                                             <p class="about_list">${about}</p>
