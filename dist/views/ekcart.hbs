@@ -42,6 +42,75 @@
             font-weight: 700;
         }
 
+        .error_account,
+        .ct_infor_reff {
+            width: 94%;
+            margin: 74px 0 0 19px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: none;
+            background-color: #f4ebff;
+        }
+
+        .inf0_fyu {
+            display: flex;
+            color: black;
+            font-size: 13px;
+            font-family: 'open sans';
+            margin: 8px 0 0 21px;
+        }
+
+        .inf0_fyu a {
+            color: #2144da;
+            font-family: 'Montserrat';
+            margin-left: 7px;
+            font-size: 14px;
+            margin-top: 0px;
+        }
+
+        .ct_infor_reff img {
+            width: 42px;
+        }
+
+        .error_account h4,
+        .ct_infor_reff h3 {
+            color: #8416bd;
+            font-size: 16px;
+            font-family: 'poppins';
+            font-weight: 600;
+            margin: 13px 0 0 15px;
+        }
+
+        .error_account h4 {
+            color: #ffffff;
+            margin: 6px 0 3px 15px;
+        }
+
+        .error_account ion-icon {
+            font-size: 30px;
+            color: #ffffff;
+
+        }
+
+        .error_account {
+            background: rgb(255, 0, 106);
+        }
+
+        .ct_addbtns {
+            padding: 11px 12px;
+            width: max-content;
+            background-color: black;
+            border-radius: 15px;
+            margin: 4px 14px;
+        }
+
+        .ct_addbtns p {
+            color: white;
+            font-size: 8px;
+            font-family: 'Montserrat';
+            font-weight: 700;
+        }
+
         .empty_cart img {
             width: 135px;
             margin-left: 77px;
@@ -53,45 +122,47 @@
         }
 
 
-.ct_bx_deliv {
-    background: #ffffff38;
-    width: 87%;
-    display: flex;
-    /* border-radius: 8px; */
-    padding: 8px 17px 8px 17px;
-    /* box-shadow: 0 0 14px #0000000f; */
-    margin-bottom: 4px;
-    height: 63px;
-    border-top: 2px dotted #b8b8b8;
-}
+        .ct_bx_deliv {
+            background: #ffffff38;
+            width: 87%;
+            display: flex;
+            /* border-radius: 8px; */
+            padding: 8px 17px 8px 17px;
+            /* box-shadow: 0 0 14px #0000000f; */
+            margin-bottom: 4px;
+            height: 63px;
+            border-top: 2px dotted #b8b8b8;
+        }
 
-  .ct_bx_deliv p,
-.ct_bx_deliv h4 {
-    color: rgb(23 23 23);
-    font-size: 15px;
-    font-family: 'roboto';
-    font-weight: 500;
-    line-height: 21px;
-    margin: 18px 0 0 16px;
-}
-.ct_bx_deliv p {
-    color: rgb(135 134 134);
-    font-size: 11px;
-    width: 80%;
-    margin: 2px 18px;
-    line-height: 14px;
-}
+        .ct_bx_deliv p,
+        .ct_bx_deliv h4 {
+            color: rgb(23 23 23);
+            font-size: 15px;
+            font-family: 'roboto';
+            font-weight: 500;
+            line-height: 21px;
+            margin: 18px 0 0 16px;
+        }
+
+        .ct_bx_deliv p {
+            color: rgb(135 134 134);
+            font-size: 11px;
+            width: 80%;
+            margin: 2px 18px;
+            line-height: 14px;
+        }
+
         .ct_bx_deliv.unactive h4 {
             margin: 8px 0 0 16px;
             color: rgb(131, 130, 130);
 
         }
 
-.ct_bx_deliv img {
-    width: 47px;
-    height: 47px;
-    margin-top: 13px;
-}
+        .ct_bx_deliv img {
+            width: 47px;
+            height: 47px;
+            margin-top: 13px;
+        }
 
         .ct_bx_go_back ion-icon {
             color: black;
@@ -175,6 +246,7 @@
             position: absolute;
             top: 0;
             right: 0;
+            cursor: pointer;
             background: #ffffff;
             width: 100%;
             padding: 17px;
@@ -323,23 +395,6 @@
             font-family: 'roboto';
         }
 
-        .error_account h4,
-        .ct_info_reffer_offer h4 {
-            color: #ffffff;
-            font-family: 'Montserrat';
-            font-size: 18px;
-        }
-
-        .error_account,
-        .ct_info_reffer_offer {
-            position: absolute;
-            top: 78px;
-            width: 100vw;
-            z-index: 99999999999999;
-            display: none;
-            padding: 15px 20px;
-            background: linear-gradient(20deg, #c478ff, #ff008dad);
-        }
 
         .ct_coupons.notavailable .claim {
             display: none;
@@ -363,9 +418,6 @@
             display: none;
         }
 
-        .error_account {
-            background: linear-gradient(20deg, #f76161, #ff365fed);
-        }
 
         .ct_bx_about_mobile2.account_btn {
             display: none;
@@ -721,15 +773,7 @@
         }
 
 
-        .ct_outer_account_bx {
-            width: 100%;
-            position: fixed;
-            background: #f9f9f9b0;
-            display: none;
-            height: 100vh;
-            z-index: 999999999;
-            justify-content: center;
-        }
+
 
         .sucess_order,
         .ct_info_offfer_saved {
@@ -1055,7 +1099,7 @@
         .ct_go_back_account h3 {
             color: #6c6c6c;
             font-size: 18px;
-            margin: 10px 0 39px 15px;
+            margin: 70px 0 39px 15px;
             display: none;
             font-family: 'Open sans';
         }
@@ -1489,7 +1533,7 @@
         }
 
         .crousel_items .product {
-            min-width: 212px;
+            max-width: 197px;
             height: 90%;
             margin: 0 10px 0 0;
             border-radius: 20px;
@@ -1523,12 +1567,12 @@
         }
 
         .ct_bx_fooditm .item_intro {
-            font-size: 11px;
+            font-size: 10px;
             border-radius: 5px;
             color: #5e5e5e;
             font-family: 'open sans';
             width: 100%;
-            line-height: 13px;
+            line-height: 10px;
             font-weight: 500;
             margin: 3px 0 6px 3px;
         }
@@ -1627,12 +1671,12 @@
         .ct_bx_price_fd del {
             font-size: 12px;
             color: #000;
-            margin-top: 7px;
+            margin-top: 5px;
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
             margin-top: 0px;
-            font-size: 19px;
+            font-size: 15px;
         }
 
         .ct_bx_price_fd.hasoffPrice {
@@ -1705,6 +1749,7 @@
         .ct_bx_fooditm .ct_bx_price_fd del {
             color: #686868;
             font-family: 'Montserrat';
+            font-size: 10px;
         }
 
         @media only screen and (min-width:1550px) {
@@ -4559,58 +4604,65 @@
             display: none;
         }
 
-        .ct_outer_account_bx.signup_bx {
-            display: none;
-        }
+
 
         .box_pop_up_accounts.for_signup {
             display: block;
+        }
+
+        .box_pop_up_accounts.active {
+            right: 0;
         }
 
         .box_pop_up_accounts {
             display: block;
             width: 700px;
-            position: relative;
-            /* z-index: 9999999999999999999; */
+            position: fixed;
+            z-index: 9999999999999999999;
             overflow: hidden;
             height: 750px;
             top: 120px;
+            right: -800px;
+            transition: all .7s ease-in-out;
+            top: 0;
+            height: 100vh;
             background-color: white;
-            border-radius: 20px;
+            overflow-y: scroll;
+            /* border-radius: 20px; */
             box-shadow: 0 0 10px #00000042;
         }
 
         .box_pop_up_accounts.for_signup {
-            top: 160px;
+            top: 0;
         }
 
         .box_pop_up_accounts.forlogin {
-            width: 540px;
+            width: 640px;
             display: block;
-            height: 440px;
-            top: 165px;
+            /* height: 440px; */
+            /* top: 165px; */
         }
 
         .forlogin .ct_box_form {
-            margin-top: 33px;
+            margin-top: 0;
         }
 
-        .ct_inner_bottom_box::-webkit-scrollbar {
+        .box_pop_up_accounts::-webkit-scrollbar {
             width: 2px;
         }
 
         /* Track */
-        .ct_inner_bottom_box::-webkit-scrollbar-track {
+        .box_pop_up_accounts::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
 
         /* Handle */
-        .ct_inner_bottom_box::-webkit-scrollbar-thumb {
+        .box_pop_up_accounts::-webkit-scrollbar-thumb {
             background: rgb(78, 78, 78);
         }
 
         /* Handle on hover */
-        .ct_inner_bottom_box::-webkit-scrollbar-thumb:hover {
+        .box_pop_up_accounts::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
 
@@ -4742,12 +4794,9 @@
             border: none;
             box-shadow: 0 4px 5px #0000002e;
             text-align: center;
-            background-image: linear-gradient(to right, #143bec, #143aec);
+            background: linear-gradient(20deg, #ff008d, #a200ffad);
         }
 
-        .login_verify {
-            background-image: linear-gradient(to right, #ec1451, #ec1450);
-        }
 
         .ct_bx_otp_box h4 {
             color: #080808;
@@ -4818,8 +4867,9 @@
         .ct_bx_title_accounts {
             padding: 27px 0 9px 15px;
             display: flex;
-            background-color: #f4f4f4;
+            /* background-color: #f4f4f4; */
             margin-bottom: 0px;
+            margin-top: 70px;
         }
 
         .ct_section_box_accounts h4 {
@@ -4860,14 +4910,6 @@
             font-size: 12px;
         }
 
-        .ct_remove_bx_pop_p {
-            /* position: absolute; */
-            z-index: 9999999999;
-            color: rgb(0, 0, 0);
-            font-size: 30px;
-            top: 0;
-            margin: -10px 20px 10px 10px;
-        }
 
         .nick_name.password_box input {
             padding-left: 44px;
@@ -4916,17 +4958,6 @@
             font-family: 'Open sans';
         }
 
-        .ct_inner_bottom_box {
-            transition: .4s ease-in-out;
-        }
-
-        .ct_inner_bottom_box {
-            overflow: hidden;
-            border-radius: 20px;
-            overflow-y: scroll;
-            height: 90vh;
-            padding-bottom: 50px;
-        }
 
         .box_pop_up_accounts.active {
             bottom: -30px;
@@ -4962,10 +4993,10 @@
             height: 38px;
             width: 98%;
             margin: 10px 0px;
-            border: 1px solid #ec1450;
             box-shadow: 0 4px 5px #0000002e;
+            border: none;
             text-align: center;
-            background-image: linear-gradient(to right, #ec1450, #ec145b);
+            background: linear-gradient(20deg, #ff008d, #a200ffad);
         }
 
         .ct_nhide_pass,
@@ -4993,12 +5024,8 @@
         }
 
         .forlogin .ct_field_first_acc {
-            margin-top: 25px;
+            margin-top: 0;
 
-        }
-
-        .forlogin .ct_inner_bottom_box {
-            height: 60vh;
         }
 
         .forlogin .ct_bx_otp_box {
@@ -5175,7 +5202,7 @@
             font-family: 'Montserrat';
             text-transform: uppercase;
             padding-top: 43px;
-            margin:30px 0 20px 20px;
+            margin: 30px 0 20px 20px;
         }
 
         .nOp,
@@ -9990,26 +10017,27 @@
         .ct_bx_qt_foods .ct_bx_item_add {
             border-radius: 0 5px 5px 0px;
         }
-.check_out_btn_order {
-    display: block;
-    font-family: 'Open Sans';
-    text-decoration: none;
-    justify-content: center;
-    outline: none;
-    background: #5b27e0;
-    cursor: pointer;
-    color: rgb(255 255 255);
-    border-radius: 33px;
-    margin: 0 0 0 6px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid;
-    border-color: #5b27e0;
-    height: 38px;
-    box-shadow: 0 4px 5px #0000002e;
-    text-align: center;
-    text-decoration: none;
-}
+
+        .check_out_btn_order {
+            display: block;
+            font-family: 'Open Sans';
+            text-decoration: none;
+            justify-content: center;
+            outline: none;
+            background: #5b27e0;
+            cursor: pointer;
+            color: rgb(255 255 255);
+            border-radius: 33px;
+            margin: 0 0 0 6px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid;
+            border-color: #5b27e0;
+            height: 38px;
+            box-shadow: 0 4px 5px #0000002e;
+            text-align: center;
+            text-decoration: none;
+        }
 
         .check_out_btn_order::before {
             content: '';
@@ -16526,9 +16554,7 @@
     <div class="ct_overflow_customize">
 
     </div>
-    <div class="error_account">
-        <h4>Opps! Account aleady exist.</h4>
-    </div>
+
     <div class="ct_info_reffer_offer">
         <h4>Hurrah! Create an account and login to receive a reward of ₹ 50.</h4>
     </div>
@@ -16638,13 +16664,24 @@
 
 
             <div class="ct_inner_bottom_box">
+                <div class="ct_bx_go_back">
+                    <ion-icon name="arrow-back-outline" role="img" class="md hydrated"
+                        aria-label="arrow back outline"></ion-icon>
+                    <p>Go Back</p>
+                </div>
+                <div class="ct_infor_reff">
+                    <img src="../img/reward_icon_mn.png">
+                    <h3>Create an account and login to get Rs. 50 Discount now. </h3>
+                </div>
+                <div class="error_account">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    <h4>Sorry! Account aleady exist.</h4>
+                </div>
                 <div class="ct_bx_title_accounts">
                     <h4>Please create an account</h4>
-                    <div class="ct_remove_bx_pop_p" style="display: block;">
-                        <ion-icon name="close-outline" role="img" class="md hydrated"
-                            aria-label="close outline"></ion-icon>
-                    </div>
+
                 </div>
+                <span class="inf0_fyu">Already have an account, <a href="#login">Login now</a> </span>
 
                 <div class="ct_box_form">
                     <div class="ct_bx_account">
@@ -16780,13 +16817,20 @@
         <div class="box_pop_up_accounts forlogin">
 
             <div class="ct_inner_bottom_box">
+                <div class="ct_bx_go_back">
+                    <ion-icon name="arrow-back-outline" role="img" class="md hydrated"
+                        aria-label="arrow back outline"></ion-icon>
+                    <p>Go Back</p>
+                </div>
+                <div class="ct_infor_reff">
+                    <img src="../img/reward_icon_mn.png">
+                    <h3>Create an account and login to get Rs. 50 Discount now. </h3>
+                </div>
                 <div class="ct_bx_title_accounts">
                     <h4>Login to place order</h4>
-                    <div class="ct_remove_bx_pop_p" style="display: block;">
-                        <ion-icon name="close-outline" role="img" class="md hydrated"
-                            aria-label="close outline"></ion-icon>
-                    </div>
+
                 </div>
+                <span class="inf0_fyu">Do not have an account, <a href="#signup">Create now</a> </span>
                 <div class="ct_box_form">
                     <div class="ct_bx_account">
                         <div class="ct_go_back_account">
@@ -17351,7 +17395,8 @@
 
                                 <div class="ct_inner">
                                     <h4>Delivery with in 24hr.</h4>
-                                    <p>Sorry for your inconvenience, And we will try to make it soon as possible, delivery with in 1 hr comming soon.</p>
+                                    <p>Sorry for your inconvenience, And we will try to make it soon as possible,
+                                        delivery with in 1 hr comming soon.</p>
                                 </div>
                             </div>
 
@@ -17403,506 +17448,26 @@
 
             <section class="recomended_cart for_items_recm">
                 <div class="ct_main_crousel_box">
-                    <h4>Reccomended</h4>
-                    <div class="crousel_items">
+                    <div class="ct_inner_m_crou">
+                        <h4>Check your other items</h4>
                         <div class="ct_back_btn crousel_btns">
                             <span class="material-symbols-outlined">
                                 arrow_back_ios
                             </span>
                         </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
-                                        <div class="ct_bx_inner_food_groc">
 
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
 
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://cdn.shopify.com/s/files/1/0553/6337/1198/products/kohinoor-kolhapuri-masala-375g-lemonsalt_512x745.jpg?v=1653929797">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvLyiw9eicC9JdCxaW6tNfp25wWaWZm9HDKDp40MNTIFBnVTk9dDSAuLKSwwQ43xhagtc&amp;usqp=CAU">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat"
-                                            src="https://www.kohinoor-joy.com/wp-content/uploads/2018/02/madras-3-300x436.jpg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"name":"150gm","pack":"pouch
-                                                    pack","price":"45"},{"pack":"pouch
-                                                    pack","price":"75","name":"300gm"},{"info":"it is a affortable
-                                                    pack","name":"400gm","pack":"container pack","price":"125"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat" src="../img/sample_img2.jpeg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"pack":"pouch
-                                                    pack","price":"45","name":"150gm"},{"pack":"pouch
-                                                    pack","name":"300gm","price":"75"},{"info":"it is a affortable
-                                                    pack","pack":"container
-                                                    pack","price":"125","name":"400gm"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                        <div class="product">
-                            <div class="ct_bx_fooditm">
-                                <a href="/sauce#chicken_curry">
-
-                                    <div class="ct_bx_flex">
-                                        <div class="ct_offer_box_cook2">
-                                            <span>20%</span>
-                                            <p>off</p>
-                                        </div>
-                                        <img class="main_im" alt="masala meat" src="../img/sample_img2.jpeg">
-                                        <div class="ct_bx_inner_food_groc">
-
-                                            <h4>masala meat</h4>
-                                            <p class="item_intro">Enjoy delicous chicken, mutton curry made with all
-                                                natural ingredients.</p>
-                                            <p class="for_unit_itm">Net.weight: 150gm</p>
-
-                                            <div class="ct_bx_price_fd hasoffPrice">
-                                                <del class="pricenooff">₹ 56</del>
-
-                                                <p class="price">₹ 45</p>
-                                            </div>
-
-                                            <div class="ct_bx_item_details_hide">
-                                                <p class="name">masala meat</p>
-                                                <p class="stock">4</p>
-                                                <p class="price_pr">45</p>
-                                                <p class="price_off">56</p>
-                                                <p class="offer">20</p>
-                                                <p class="about_list">Pure mustard oil, Indian whole spices, Tomato,
-                                                    Onion, Ginger, Garlic,
-                                                    Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                                <p class="qty">[{"pack":"pouch
-                                                    pack","price":"45","name":"150gm"},{"pack":"pouch
-                                                    pack","name":"300gm","price":"75"},{"info":"it is a affortable
-                                                    pack","pack":"container
-                                                    pack","price":"125","name":"400gm"}]</p>
-                                                <p class="desc">["150g pack is sutable for 450gm chicken,mutton and
-                                                    250gm soyabean","150g pack is
-                                                    sutable for 450gm chicken,mutton and 250gm soyabean"]</p>
-                                                <p class="essentials"></p>
-
-                                                <p class="cook_steps">../img/cookMasalaChickencurry.png</p>
-                                                <p class="cook_video">
-                                                    https://www.youtube.com/embed/vJX8tiYL0B0</p>
-                                                <p class="itm_id">masala-chicken-curry</p>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                         <div class="ct_forward_btn crousel_btns">
                             <span class="material-symbols-outlined">
                                 arrow_forward_ios
                             </span>
                         </div>
+                        <div class="crousel_items">
 
+
+                        </div>
                     </div>
+
                 </div>
 
                 {{!-- <h2>You might like</h2>
@@ -18110,6 +17675,7 @@
 
         let tot_pr_itm = 0
         let tot_pr_itm2 = 0
+        let itm_added = 0
 
         // add items in to the shopping cart
 
@@ -18180,74 +17746,116 @@
                 document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
                 res.docs.forEach(async cur => {
                     let data = cur.data()
-                    sauce.forEach(elem => {
-                        let nm = elem.name.split(' ').join('')
-                        let itm = data.item
-                        let nm2 = itm.name.split(' ').join('')
-                        console.log(nm, nm2)
-                        if (nm === nm2) {
-                            let offer = itm.offer
-                            let price = itm.price_real
-                            let qty_unit = itm.qty
-                            let itm_img = itm.img[0]
-                            //<div class="ct_offer_info">
-                            //                    <p>Coupon:SAVE20 applied , 20% off.</p>
-                            //                  </div>
-                            let coupon_html = ` `
-                            //<del>₹ 59</del>
-                            let off_hm = ``
-                            if (offer !== null) {
-                                off_hm = `<div class="ct_off_info">
-                                            <h4>${offer} off</h4>
-                                        </div>`
+                    let itm = data.item
+                    let nm2 = itm.name.split(' ').join('')
+                    let offer = itm.offer
+                    let price = itm.price_real
+                    let qty_unit = itm.qty
+                    let itm_img = itm.img[0]
+                    //<div class="ct_offer_info">
+                    //                    <p>Coupon:SAVE20 applied , 20% off.</p>
+                    //                  </div>
+                    let coupon_html = ` `
+                    //<del>₹ 59</del>
+                    let off_hm = ``
+                    if (offer !== null) {
+                        off_hm = `<div class="ct_off_info">
+                                     <h4>${offer} off</h4>
+                                 </div>`
+                    }
+                    //                             if(cpns){
+
+                    //                                 if(cpns.for==='groc'&&cpns.off.split('%')[1]!==undefined){
+                    //                                     offer=cpns.off.split('%')[0]
+                    //     coupon_html=`<div class="ct_offer_info">
+                    //                                             <p>Coupon:${cpns.name} applied , 20% off.</p>
+                    //                                             </div>`
+                    //                                 }
+                    //                             }
+                    let itm_qt = 1
+
+                    let price_bx = `<div class="ct_pr">
+                                 <p>₹ ${price.toLocaleString()}</p>
+                                 ${off_hm}
+
+                             </div>`
+                    let priceBX = `
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style='display:none'></del>
+             <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
+         </div>
+     `
+                    if (offer !== null) {
+                        let priceX = parseFloat(itm.price_real)
+                        let price_off = 0
+                        let offer_del = ''
+
+                        price_off = priceX * 100 / (100 - offer)
+                        price_off = Math.round(price_off)
+                        priceBX = ` <div class="ct_bx_price_fd hasoffPrice">
+                             <del class="pricenooff" >₹ ${price_off}</del>
+                             <p class="price">₹ ${(priceX).toLocaleString()}</p>
+                         </div>
+                     `
+                    }
+
+                    let qty_obj = qty_unit.map((cur11, ind) => {
+                        let priceX = parseFloat(cur11.price)
+                        let pack = cur11.pack
+                        let name = cur11.name
+
+                        let price_off = 0
+                        let offer_del = ''
+
+                        if (offer !== null) {
+                            price_off = priceX * 100 / (100 - offer)
+                            price_off = Math.round(price_off)
+                            tot_pr_itm += price_off
+                            price_off = price_off.toLocaleString()
+                            if (price_off.split('.')[1] !== undefined) {
+                                price_off = price_off.split('.')[0]
                             }
-                            //                             if(cpns){
-
-                            //                                 if(cpns.for==='groc'&&cpns.off.split('%')[1]!==undefined){
-                            //                                     offer=cpns.off.split('%')[0]
-                            //     coupon_html=`<div class="ct_offer_info">
-                            //                                             <p>Coupon:${cpns.name} applied , 20% off.</p>
-                            //                                             </div>`
-                            //                                 }
-                            //                             }
-                            let itm_qt = parseFloat(elem.qty)
-
-                            let price_bx = `<div class="ct_pr">
-                                        <p>₹ ${price.toLocaleString()}</p>
-                                        ${off_hm}
-                                        
-                                    </div>`
-                            let qty_obj = qty_unit.map((cur11, ind) => {
-                                let priceX = parseFloat(cur11.price)
-                                let pack = cur11.pack
-                                let name = cur11.name
-
-                                let price_off = 0
-                                let offer_del = ''
-                                if (offer !== null) {
-                                    price_off = priceX * 100 / (100 - offer)
-                                    price_off = Math.round(price_off)
-                                    tot_pr_itm += price_off
-                                    price_off = price_off.toLocaleString()
-                                    if (price_off.split('.')[1] !== undefined) {
-                                        price_off = price_off.split('.')[0]
-                                    }
 
 
-                                    price = price.toLocaleString()
-                                    offer_del = ` <del>₹ ${price_off}</del>`
-                                }
+                            price = price.toLocaleString()
+                            offer_del = ` <del>₹ ${price_off}</del>`
+                        }
 
-                                let active_btn = 'unactive'
+                        let active_btn = 'unactive'
+
+
+
+
+                        let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
+                        <h4>${name}</h4>
+                        <span class="info_package">${pack}</span>
+                        <div class="ct_pr_bx">
+                           ${offer_del}
+                            <p>₹ ${priceX}</p>
+
+                        </div>
+
+                    </div>`
+                        return htmlXX
+                    })
+
+                    if (sauce.length !== 0) {
+
+
+                        sauce.forEach(elem => {
+                            let nm = elem.name.split(' ').join('')
+                            itm_qt = parseFloat(elem.qty)
+
+                            if (nm === nm2) {
                                 if (name === elem.slt_nm) {
                                     active_btn = 'active'
                                     let del_x = ``
 
-                                    let pr_x = `<p>₹ ${(priceX*itm_qt).toLocaleString()}</p>`
+                                    let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
                                     if (offer !== null) {
                                         del_x = `<p>₹ ${price_off.toLocaleString()}</p>`
                                     }
-                                    tot_pr_itm +=(priceX*itm_qt)
+                                    tot_pr_itm += (priceX * itm_qt)
 
 
 
@@ -18260,21 +17868,7 @@
                                 }
 
 
-                                let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
-                        <h4>${name}</h4>
-                        <span class="info_package">${pack}</span>
-                        <div class="ct_pr_bx">
-                           ${offer_del}
-                            <p>₹ ${priceX}</p>
-
-                        </div>
-
-                    </div>`
-                                return htmlXX
-                            })
-
-
-                            let html = `<li>
+                                let html = `<li>
                                             <div class="ct_items_bx sauce_itm">
                                                 <div class="ct_imgbx">
                                                     <img src="${itm_img}" alt="${nm} img">
@@ -18304,15 +17898,19 @@
                                                 </div>
                                             </div>
                                         </li>`
-                            document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
-                        }else{
-                                            let priceBX = `
-              <div class="ct_bx_price_fd hasoffPrice">
-             <del class="pricenooff" style='display:none'></del>
-             <p class="price">₹ ${price_real}</p>
-         </div>
-     `
-                                 let html = `<div class="ct_bx_fooditm">
+                                document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
+                            } else {
+                                let offHtml = ``
+                                if (itm.offer !== null) {
+                                    offHtml = `<div class="ct_offer_box_cook2">
+         <span>${offer}%</span>
+         <p>off</p>
+     </div>`
+
+                                }
+                                itm_added += 1
+
+                                let html1 = `<div class="ct_bx_fooditm">
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
@@ -18326,26 +17924,92 @@
                                                         ${priceBX}
 
                                                         <div class="ct_bx_item_details_hide">
-                                                            <p class="name">${tm.name}</p>
+                                                            <p class="name">${itm.name}</p>
                                                             <p class="stock">${15}</p>
-                                                            <p class="price_pr">${priceX}</p>
-                                                            <p class="price_off">${price_off}</p>
-                                                            <p class="offer">${offer}</p>
-                                                            <p class="about_list">${about}</p>
-                                                            <p class="qty">${qty_items}</p>
-                                                            <p class="desc">${desc}</p>
-                                                            <p class="essentials">${JSON.stringify(essential_ids)}</p>
-                                                            <p class="images_item">${images_itm}</p>
+                                                            <p class="price_pr">${itm.price_real}</p>
+                                                            <p class="offer">${itm.offer}</p>
+                                                            <p class="qty">${itm.weight_sh}</p>
+                                                            <p class="desc">${JSON.stringify(qty_unit)}</p>
    
                                                         </div>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>`
+                                document.querySelector('.ct_inner_itms').insertAdjacentHTML('beforeend', html1)
+                            }
+                        })
+                    } else {
+                        let offHtml = ``
+                        if (itm.offer !== null) {
+                            offHtml = `<div class="ct_offer_box_cook2">
+         <span>${offer}%</span>
+         <p>off</p>
+     </div>`
+
                         }
-                    })
+                        itm_added += 1
+
+                        let html1 = `
+                                                     
+                                                     <div class="product">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    ${offHtml}
+                                                    <img class="main_im" alt="${itm.name}" src="${itm_img}">
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>${itm.name}</h4>
+                                                        <p class="item_intro">${itm.tagline}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+
+                                                        ${priceBX}
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">${itm.name}</p>
+                                                            <p class="stock">${15}</p>
+                                                            <p class="price_pr">${itm.price_real}</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">${itm.offer}</p>
+                                                            <p class="about_list">${itm.about}</p>
+                                                            <p class="qty">${itm.weight_sh}</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>`
+
+                        document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+                    }
 
                 })
+            }
+            let widthItm = 0
+            if (window.screen.width >= 1500) {
+                let widthm = document.querySelectorAll('.ct_bx_fooditm')[0].getBoundingClientRect().width
+                widthItm = widthm * itm_added
+                if (widthItm <= 1500) {
+
+                    document.querySelectorAll('.crousel_btns').forEach(cu11 => {
+                        cu11.style.display = 'none'
+                    })
+                    document.querySelectorAll('.crousel_items').forEach(cu11 => {
+                        cu11.style.width = 'auto'
+                        cu11.style.margin = '0'
+                        cu11.style.width = 'auto'
+                        cu11.style.width = 'auto'
+
+                    })
+                }
             }
 
 
@@ -18418,11 +18082,11 @@
                                     active_btn = 'active'
                                     let del_x = ``
 
-                                    let pr_x = `<p>₹ ${(priceX*itm_qt).toLocaleString()}</p>`
+                                    let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
                                     if (offer !== null) {
                                         del_x = offer_del
                                     }
-                                    tot_pr_itm2 += (priceX*itm_qt)
+                                    tot_pr_itm2 += (priceX * itm_qt)
                                     console.log(tot_pr_itm, ' ------------------')
 
 
@@ -18707,7 +18371,7 @@
 
 
                         document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
-                    } else if(!used){
+                    } else if (!used) {
                         let html = `<div class="outer_cpns">
                                 <div class="ct_coupons notavailable">
                         <div class="ct_off_info_cpns">
@@ -19061,6 +18725,7 @@
                     allow_cpns: [{ name: 'KRICKUSER' }],
                     cpns_used: [],
                     refferedBy: false,
+                    cash_balance:0,
                     reffer: false,
                 }).then(res => {
                     sessionStorage.clear()
@@ -19094,9 +18759,31 @@
             document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
             document.querySelectorAll('.ct_bx_inputs_otp input')[0].focus()
         })
+        function login_toggle() {
+            document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
+            document.querySelector('.login_bx .box_pop_up_accounts').classList.add('active')
+            document.querySelector('.ct_overflow_customize').style.display = 'flex'
+        }
+        function signup_toggle() {
+            document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
+            document.querySelector('.login_bx .box_pop_up_accounts').classList.remove('active')
+            document.querySelector('.ct_overflow_customize').style.display = 'flex'
 
+        }
+        if (window.location.hash === '#login') {
+            login_toggle()
+        }
+        if (window.location.hash === '#signup') {
+            signup_toggle()
+        }
         function verifyPh() {
+            if (window.location.hash === '#signup') {
+                signup_toggle()
+            }
+            
             if (window.location.hash === '#login') {
+            login_toggle()
+
                 if (window.location.search.split('?')[1] !== undefined) {
                     if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
                         async function getRefer() {
@@ -19107,27 +18794,27 @@
                             window.scrollTo(0, 0)
                             document.querySelector('body').style.overflowY = 'hidden'
                             document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
-                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
+                            document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
                             if (window.location.search.split('?')[1] !== undefined) {
                                 if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
                                 }
                             }
-                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
-                            if (dataRef.earn.split('%')[1] !== undefined) {
-                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to get ${dataRef.earn} on you first order. `
+                            document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                cu11.style.display = 'flex'
+                            })
+                            document.querySelector('.ct_infor_reff h3').innerText = `Hurrah! Create an account and login to get discount of ${dataRef.earn} now. `
 
-                            } else {
-                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to receive a reward of ${dataRef.earn}.`
-
-                            }
-                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'none'
+                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                                cu11.style.marginTop = '18px'
+                                            })
+                            document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
                             document.querySelector('.ct_outer_account_bx.login_bx').style.display = 'flex'
                         }
                         getRefer()
                     }
                 } else {
-                    document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'none'
-                    document.querySelector('.ct_outer_account_bx.login_bx').style.display = 'flex'
+
+                    login_toggle()
                 }
             }
             if (getCookie('one_tm_dt') !== '') {
@@ -19240,15 +18927,14 @@
                             window.scrollTo(0, 0)
                             document.querySelector('body').style.overflowY = 'hidden'
                             document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
-                            document.querySelector('.ct_outer_account_bx.signup_bx').style.display = 'flex'
-                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
-                            if (dataRef.earn.split('%')[1] !== undefined) {
-                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to get ${dataRef.earn} on you first order. `
-
-                            } else {
-                                document.querySelector('.ct_info_reffer_offer h4').innerText = `Hurrah! Create an account and login to receive a reward of ${dataRef.earn}.`
-
-                            }
+                            document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
+                            document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                cu11.style.display = 'flex'
+                            })
+                            document.querySelector('.ct_infor_reff h3').innerText = `Hurrah! Create an account and login to get discount of ${dataRef.earn} now. `
+                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                                cu11.style.marginTop = '18px'
+                                            })
                         }
                         getRefer()
 
@@ -19344,7 +19030,7 @@
                             document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
                             document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                             document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                            document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
 
                             document.querySelector('.disocunted.block_1_charge span').innerText = 0
                         }
@@ -19355,7 +19041,7 @@
                     document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
                     document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                     document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                    document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
 
                     document.querySelector('.disocunted.block_1_charge span').innerText = 0
                 }
@@ -19376,7 +19062,7 @@
             let goback_login = e.target.closest('.ct_go_back_account')
             let coupons_box = e.target.closest('.ct_apply_coupons .ct_bx1')
             let close_popup_cpns = e.target.closest('.for_cpns.ct_bx_layer')
-            let close_popup_cpns2 = e.target.closest('.ct_bx_go_back')
+            let close_popup_cpns2 = e.target.closest('.container_coupons_Refer .ct_bx_go_back')
             let apply_cpns = e.target.closest('.ct_coupons .claim')
             let remove_cpns = e.target.closest('.ct_coupons .remove')
             let select_unit = e.target.closest('.ct_items_bx .ct_for_bx1')
@@ -19385,11 +19071,58 @@
             let remove_item = e.target.closest('.remove_fd_itm_ct')
             let select_pay = e.target.closest('.ct_option_pay')
             let order_btn = e.target.closest('.check_out_btn_order')
+            let goback_signup_pn = e.target.closest('.for_signup  .ct_bx_go_back')
+            let goback_login_pn = e.target.closest('.login_bx .ct_bx_go_back')
+            let overflow_div = e.target.closest('.ct_overflow_customize')
+            if (overflow_div !== null) {
+                document.querySelector('.ct_overflow_customize').style.display = 'none'
+                document.querySelector('.login_bx .box_pop_up_accounts ').classList.remove('active')
+                document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
 
+            }
+            if (goback_login_pn !== null) {
+                document.querySelector('.login_bx .box_pop_up_accounts ').classList.remove('active')
+                document.querySelector('.ct_overflow_customize').style.display = 'none'
+                function remove_hash_from_url() {
+                    var uri = window.location.toString();
 
+                    if (uri.indexOf("#") > 0) {
+                        var clean_uri = uri.substring(0,
+                            uri.indexOf("#"));
+
+                        window.history.replaceState({}, document.title, clean_uri);
+                    }
+                }
+                remove_hash_from_url()
+            }
+            if (goback_signup_pn !== null) {
+                document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
+                document.querySelector('.ct_overflow_customize').style.display = 'none'
+                function remove_hash_from_url() {
+                    var uri = window.location.toString();
+
+                    if (uri.indexOf("#") > 0) {
+                        var clean_uri = uri.substring(0,
+                            uri.indexOf("#"));
+
+                        window.history.replaceState({}, document.title, clean_uri);
+                    }
+                }
+                remove_hash_from_url()
+
+            }
             if (order_btn !== null) {
                 // # check for valid total amount
                 // # get coupon if exist
+                if (getCookie('userData') === '') {
+                    document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
+                    document.querySelector('.ct_overflow_customize').style.display = 'flex'
+
+                    return
+
+                }
+
+
                 order_btn.style.opacity = '.5'
                 order_btn.style.pointerEvents = 'none'
                 document.querySelector('.sucess_order').style.display = 'none'
@@ -19414,7 +19147,7 @@
                     let res = await dbCollection.get()
                     sauce.forEach(cu11 => {
                         let nm = cu11.name
-                        let qt=parseFloat(cu11.qty)
+                        let qt = parseFloat(cu11.qty)
                         res.docs.forEach(cur => {
                             let dt = cur.data()
                             let itm = dt.item
@@ -19423,7 +19156,7 @@
                                 let nm_un = cu11.slt_nm
                                 itm.qty.forEach(elem => {
                                     if (elem.name === nm_un) {
-                                        let pr = parseFloat(elem.price)*qt
+                                        let pr = parseFloat(elem.price) * qt
                                         tot_am += pr
                                         tot_am_sauce += pr
 
@@ -19447,7 +19180,7 @@
                     let res2 = await dbCollection2.get()
                     essen.forEach(cu11 => {
                         let nm = cu11.name
-                        let qt=parseFloat(cu11.qt)
+                        let qt = parseFloat(cu11.qt)
                         res2.docs.forEach(cur => {
                             let dt = cur.data()
                             let itm = dt.item
@@ -19455,7 +19188,7 @@
                                 let nm_un = cu11.unit
                                 itm.units.forEach(elem => {
                                     if (elem.name === nm_un) {
-                                        let pr = parseFloat(elem.price)*qt
+                                        let pr = parseFloat(elem.price) * qt
                                         tot_am += pr
                                         tot_am_grc += pr
                                     }
@@ -19509,31 +19242,31 @@
                     }
                     objItms.total_amount = tot_am
 
-                        let userDt = JSON.parse(getCookie('userData'))
+                    let userDt = JSON.parse(getCookie('userData'))
                     // valid price found
                     let coupon_obj = ''
                     function check_coupon(em_n) {
-                        if(em_n){
-                        // coupons validity
-                        if (coupon_dt.off.split('%')[1] !== undefined) {
-                            let offer_x = parseFloat(coupon_dt.off.split('%')[0])
-                            dicounted_pr = (offer_x) / 100 * tot_am_sauce
-                            dicounted_pr = Math.round(dicounted_pr)
-                            dicounted_pr = dicounted_pr.toLocaleString()
-                            document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
-                            document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
-                            if (coupon_dt.for === 'groc') {
-                                dicounted_pr = (offerMn.am) / 100 * tot_am_grc
+                        if (em_n) {
+                            // coupons validity
+                            if (coupon_dt.off.split('%')[1] !== undefined) {
+                                let offer_x = parseFloat(coupon_dt.off.split('%')[0])
+                                dicounted_pr = (offer_x) / 100 * tot_am_sauce
                                 dicounted_pr = Math.round(dicounted_pr)
+                                dicounted_pr = dicounted_pr.toLocaleString()
                                 document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
                                 document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
+                                if (coupon_dt.for === 'groc') {
+                                    dicounted_pr = (offerMn.am) / 100 * tot_am_grc
+                                    dicounted_pr = Math.round(dicounted_pr)
+                                    document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
+                                    document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
+                                }
+                            } else {
+                                let offer_x = parseFloat(coupon_dt.off)
+                                dicounted_pr = offer_x
+                                document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + offer_x.toLocaleString()
                             }
-                        } else {
-                            let offer_x = parseFloat(coupon_dt.off)
-                            dicounted_pr = offer_x
-                            document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + offer_x.toLocaleString()
-                        }
-                        tot_am -= dicounted_pr
+                            tot_am -= dicounted_pr
 
                         }
                         objItms.total_amount = tot_am
@@ -19551,34 +19284,34 @@
                                 data.cpns_used.forEach(em => {
                                     console.log(em.name, coupons_used.name)
                                     if (em.name === coupons_used.name) {
-                                        console.log(em.use >= parseFloat(coupons_used.max),' -------------------')
+                                        console.log(em.use >= parseFloat(coupons_used.max), ' -------------------')
                                         em.use = parseFloat(em.use)
                                         em.use += 1
                                         if (em.use <= parseFloat(coupons_used.max)) {
                                             check_coupon(true)
-                                        userDt.cpns_used=data.cpns_used
-                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                        if(em.use === parseFloat(coupons_used.max)){
-                                         em.use = coupons_used.max
-                                        document.querySelector('.ct_apply_coupons .ct_inner p').style.display='none'
-                                        document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                                        document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                        userDt.cpns_used=data.cpns_used
-                                         objItms.total_amount = tot_am
+                                            userDt.cpns_used = data.cpns_used
+                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            if (em.use === parseFloat(coupons_used.max)) {
+                                                em.use = coupons_used.max
+                                                document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                                                document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                                                document.querySelector('.disocunted.block_1_charge span').innerText = 0
+                                                userDt.cpns_used = data.cpns_used
+                                                objItms.total_amount = tot_am
+                                                check_coupon(false)
+
+                                                document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            }
+                                        } else if (em.use > parseFloat(coupons_used.max)) {
+                                            document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                                            document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                                            document.querySelector('.disocunted.block_1_charge span').innerText = 0
                                             check_coupon(false)
 
-                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                        }
-                                        } else  if (em.use > parseFloat(coupons_used.max)) {
-                                            document.querySelector('.ct_apply_coupons .ct_inner p').style.display='none'
-                                        document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                                        document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                            check_coupon(false)
-
-                                        document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
-                                         em.use = coupons_used.max
-                                        userDt.cpns_used=data.cpns_used
-                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                                            em.use = coupons_used.max
+                                            userDt.cpns_used = data.cpns_used
+                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                         }
                                     }
@@ -19589,7 +19322,7 @@
                                 coupon_obj = { name: coupons_used.name, use: 1 }
                                 data.cpns_used.push(coupon_obj)
                                 check_coupon(1)
-                                userDt.cpns_used=data.cpns_used
+                                userDt.cpns_used = data.cpns_used
                                 document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                             }
@@ -19609,6 +19342,7 @@
                                 location: data.location,
                                 cartItems: data.cartItems,
                                 refferedBy: data.refferedBy,
+                                cash_balance:data.cash_balance,
                                 allow_cpns: data.allow_cpns,
                                 cpns_used: data.cpns_used,
                                 orders: all_order,
@@ -19773,13 +19507,13 @@
                         tot2 += pr
 
                     })
-                                    let sauce = JSON.parse(localStorage.getItem('sauce'))
-                                    let groc = JSON.parse(localStorage.getItem('essentials'))
-                document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText='₹ ' + pr.toLocaleString()
+                    let sauce = JSON.parse(localStorage.getItem('sauce'))
+                    let groc = JSON.parse(localStorage.getItem('essentials'))
+                    document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + pr.toLocaleString()
 
-                if(qty_inc.parentElement.parentElement.parentElement.classList.value.includes('sauce_itm')){
-                            let nm=qty_inc.parentElement.parentElement.childNodes[1].innerText
-                                            sauce.forEach(cu11 => {
+                    if (qty_inc.parentElement.parentElement.parentElement.classList.value.includes('sauce_itm')) {
+                        let nm = qty_inc.parentElement.parentElement.childNodes[1].innerText
+                        sauce.forEach(cu11 => {
                             nm = nm.split(' ').join('')
                             let nm2 = cu11.name.split(' ').join('')
                             if (nm === nm2) {
@@ -19788,22 +19522,22 @@
 
                             }
                         })
-               localStorage.setItem('sauce', JSON.stringify(sauce))
+                        localStorage.setItem('sauce', JSON.stringify(sauce))
 
-                }else{
-                        let nm=qty_inc.parentElement.parentElement.childNodes[1].innerText
-                                        groc.forEach(cu11 => {
-                        nm = nm.split(' ').join('')
-                        let nm2 = cu11.name.split(' ').join('')
-                        if (nm === nm2) {
-                            cu11.qt = val
+                    } else {
+                        let nm = qty_inc.parentElement.parentElement.childNodes[1].innerText
+                        groc.forEach(cu11 => {
+                            nm = nm.split(' ').join('')
+                            let nm2 = cu11.name.split(' ').join('')
+                            if (nm === nm2) {
+                                cu11.qt = val
 
 
-                        }
-                    })
-              localStorage.setItem('essentials', JSON.stringify(groc))
+                            }
+                        })
+                        localStorage.setItem('essentials', JSON.stringify(groc))
 
-                 }
+                    }
                     console.log(tot2, '-------------')
                     addAmount()
                     console.log(cls_li, tot2)
@@ -19938,7 +19672,7 @@
                                 }
                             })
                             if (cpn_used_max) { return }
-                document.querySelector('.sucess_order').style.display = 'none'
+                            document.querySelector('.sucess_order').style.display = 'none'
 
                             let offerMn = ''
                             apply_cpns.parentElement.childNodes[1].style.display = 'none'
@@ -20115,7 +19849,9 @@
                                         document.querySelector('.confetti').style.display = 'block'
                                         document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50'
                                         document.querySelector('.ct_outer_saved').style.display = 'flex'
-                                        document.querySelector('.ct_info_reffer_offer').style.display = 'none'
+                                        document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                            cu11.style.display = 'none'
+                                        })
                                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
@@ -20189,11 +19925,11 @@
                                         setCookie('one_tm_dt2', JSON.stringify(itmDb), 2)
                                         document.querySelector('.login_verify').style.opacity = '1'
                                         document.querySelector('.login_verify').style.pointerEvents = 'auto'
-                                        document.querySelector('.box_pop_up_accounts.forlogin').style.height = '600px'
 
                                         document.querySelector('.forlogin .ct_inner_bottom_box').style.height = '74vh'
                                         document.querySelector('.forlogin .ct_field_first_acc').style.display = 'none'
 
+                                        document.querySelector('.forlogin .ct_bx_title_accounts').style.display = 'none'
                                         document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'block'
                                         document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '1'
 
@@ -20246,6 +19982,7 @@
                 }
 
             }
+            // anyone can call the function createAccount
             if (create_acc !== null) {
                 let nm = []
                 document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
@@ -20267,7 +20004,9 @@
                                 res.docs.forEach(async cu => {
                                     let data = cu.data()
                                     if (id === data.id && !data.reffer) {
-                                        // anyone can trigger the function createAccount
+                                        let csh_m=50
+                                        socket.emit('cash_oth4',csh_m)
+                                        // setting the user who has refered
                                         await dbCollection2.doc(cu.id).set({
                                             admin: data.admin,
                                             id: data.id,
@@ -20279,6 +20018,7 @@
                                             refferedBy: data.refferedBy,
                                             allow_cpns: data.allow_cpns,
                                             cpns_used: data.cpns_used,
+                                            cash_balance:parseFloat(data.cash_balance)+csh_m,
                                             reffer: { id: id, used: false },
                                         })
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
@@ -20289,7 +20029,8 @@
 
                                         let objUser = JSON.parse(getCookie('one_tm_dt'))
                                         console.log(objUser)
-                                        //confetti
+
+                                        // adding the user with cash
 
                                         let objU = {
                                             admin: false,
@@ -20303,6 +20044,8 @@
                                             cpns_used: [],
                                             refferedBy: { id: id, used: false },
                                             reffer: false,
+                                            cash_balance:csh_m,
+
                                         }
 
                                         db.collection("users")
@@ -20468,7 +20211,6 @@
                                             document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                             document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
 
-                                            document.querySelector('.box_pop_up_accounts.for_signup').style.height = '540px'
 
                                             document.querySelector('.ct_btn_acc').style.opacity = '0'
                                             setTimeout(function () {
@@ -20491,6 +20233,8 @@
                                                 document.querySelector('.ct_field_first_acc').style.display = 'none'
                                                 document.querySelector('.ct_bx_otp_box').style.display = 'block'
                                                 document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                                                document.querySelector('.signup_bx .ct_bx_title_accounts').style.display = 'none'
+
 
                                             }, 300)
                                             return
@@ -20542,11 +20286,19 @@
                                     } else {
                                         // account exist already
 
-                                        document.querySelector('.ct_info_reffer_offer').style.display = 'none'
+                                        document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                            cu11.style.display = 'none'
+                                        })
                                         document.querySelector('.error_account').style.display = 'block'
                                         setTimeout(function () {
-                                            document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                                            document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                                cu11.style.display = 'flex'
+                                            })
+                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                                cu11.style.marginTop = '18px'
+                                            })
                                             document.querySelector('.error_account').style.display = 'none'
+
                                         }, 8000)
                                     }
                                 }
@@ -20597,6 +20349,16 @@
         let numnext = 1
         let qtsuper = document.querySelector('.ct_bx_qty_inner')
         let pasteEv = false
+        let inputs_login2 = document.querySelectorAll('.ct_field_first_acc input')
+        inputs_login2.forEach((inp, index) => {
+            inp.addEventListener('keyup', (e) => {
+                document.querySelectorAll('.error_signup').forEach(cu11 => {
+                    cu11.style.display = 'none'
+                })
+            })
+        })
+
+
         let inputs_sign = document.querySelectorAll('.fr_sign_otp .ct_bx_inputs_otp input')
         let inputs_login = document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')
         function inputType(inputBx, parentM) {
