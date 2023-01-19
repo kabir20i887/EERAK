@@ -443,10 +443,10 @@ app.get('/notavailable', (req, res) => {
 //     }
 //     res.render('myaccount')
 // })
-// app.get('/delivery', (req, res) => {
-
-//     res.render('deliv')
-// })
+ app.get('/acc', (req, res) => {
+    res.render('myaccount')
+    //res.render('deliv')
+})
 // app.get('/account/editAccount', (req, res) => {
 
 //     res.render('myaccount')
@@ -468,8 +468,8 @@ io.on('connection', (sock) => {
         io.emit('getId', uuidv4())
 
     })
-    sock.on('cash_oth4', (csh) => {
-        io.emit('get_csh',csh)  
+    sock.on('cash_oth4', (csh,id) => {
+        io.emit('get_csh',csh,id)  
     })
     sock.on('acceptedOr4', () => {
         io.emit('acceptedOrC')

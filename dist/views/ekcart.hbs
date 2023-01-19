@@ -377,9 +377,9 @@
             align-items: center;
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             overflow: hidden;
-            z-index: 1000;
+            z-index: 999999999999;
         }
 
         .ct_off_info {
@@ -572,14 +572,15 @@
             display: none;
         }
 
-        .ct_outer_saved {
-            position: absolute;
-            height: 100vh;
-            display: none;
-            width: 100vw;
-            background: #ffffff33;
-            justify-content: center;
-        }
+.ct_outer_saved {
+    position: absolute;
+    height: 100vh;
+    display: none;
+    z-index: 9999999;
+    width: 100vw;
+    background: #ffffffb3;
+    justify-content: center;
+}
 
         .ct_offer_saved_popup {
             border-radius: 20px;
@@ -17546,7 +17547,6 @@
     <script>
 
         var socket = io()
-        // remove if desktop version is ready
         function getCookie(cname) {
             var name = cname + "=";
             var decodedCookie = decodeURIComponent(document.cookie);
@@ -17686,13 +17686,47 @@
             document.querySelector('.bx_evt_cart_item ul').innerHTML = ''
             let essenX = JSON.parse(localStorage.getItem('essentials'))
             let sauceX = JSON.parse(localStorage.getItem('sauce'))
-            if (sauceX.length === 0 && essenX.length === 0) {
+            if (sauceX === null && essenX === null) {
+
                 document.querySelector('.empty_cart').style.display = 'flex'
                 document.querySelector('.title_h1').style.display = 'none'
 
                 document.querySelector('.ct_bx_flex_sub_list').style.display = 'none'
-            }
 
+                document.querySelector('.body_cart .ct_overfow_for_load').style.opacity = '0'
+                setTimeout(function () {
+                    document.querySelector('.body_cart .ct_overfow_for_load').style.display = 'none'
+                    document.querySelector('.body_cart .yt-loader').style.display = 'none'
+                    document.querySelectorAll('.ct_btns_group_check_ek').forEach(cur => {
+                        cur.style['pointer-events'] = 'auto'
+                        cur.style.opacity = '1'
+                    })
+                }, 670)
+                return
+
+            }
+            if (sauceX !== null && essenX !== null) {
+                if (sauceX.length === 0 && essenX.length === 0) {
+                    document.querySelector('.empty_cart').style.display = 'flex'
+                    document.querySelector('.title_h1').style.display = 'none'
+
+                    document.querySelector('.ct_bx_flex_sub_list').style.display = 'none'
+
+                    document.querySelector('.body_cart .ct_overfow_for_load').style.opacity = '0'
+                    setTimeout(function () {
+                        document.querySelector('.body_cart .ct_overfow_for_load').style.display = 'none'
+                        document.querySelector('.body_cart .yt-loader').style.display = 'none'
+                        document.querySelectorAll('.ct_btns_group_check_ek').forEach(cur => {
+                            cur.style['pointer-events'] = 'auto'
+                            cur.style.opacity = '1'
+                        })
+                    }, 170)
+
+                    return
+
+                }
+
+            }
             let dbCollection2 = db.collection("paymentMode")
             let res2 = await dbCollection2.get()
             console.log(res2.docs)
@@ -18722,11 +18756,11 @@
                     address: objUser.address,
                     location: objUser.location,
                     cartItems: objUser.cartItems,
-                    allow_cpns: [{ name: 'KRICKUSER' }],
+                    allow_cpns: [{ name: 'KRICKUSER' },{name:'SUPER40'},{name:'FLAT20'}],
                     cpns_used: [],
                     refferedBy: false,
-                    cash_balance:0,
                     reffer: false,
+                    orders: [],
                 }).then(res => {
                     sessionStorage.clear()
                     document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
@@ -18755,36 +18789,53 @@
 
 
         }
+
+
+
         window.addEventListener('load', () => {
             document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
             document.querySelectorAll('.ct_bx_inputs_otp input')[0].focus()
         })
         function login_toggle() {
+            if (getCookie('userData') === '') {
+
             document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
             document.querySelector('.login_bx .box_pop_up_accounts').classList.add('active')
             document.querySelector('.ct_overflow_customize').style.display = 'flex'
+            }
         }
         function signup_toggle() {
+                    if (getCookie('userData') === '') {
             document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
             document.querySelector('.login_bx .box_pop_up_accounts').classList.remove('active')
             document.querySelector('.ct_overflow_customize').style.display = 'flex'
-
+            if (window.location.hash === '#signup') {
+                if (window.location.search.split('?')[1] !== undefined) {
+                    if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                        let searchM = window.location.search
+                        window.location.replace(`/mycart${searchM}`)
+                    }
+                }
+            }
+                    }
         }
         if (window.location.hash === '#login') {
             login_toggle()
         }
         if (window.location.hash === '#signup') {
+
             signup_toggle()
         }
         function verifyPh() {
             if (window.location.hash === '#signup') {
                 signup_toggle()
             }
-            
-            if (window.location.hash === '#login') {
-            login_toggle()
 
-                if (window.location.search.split('?')[1] !== undefined) {
+            if (window.location.hash === '#login') {
+                login_toggle()
+
+
+                if (window.location.search.split('?')[1] !== undefined && getCookie('signup_3sy13') !== '') {
                     if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
                         async function getRefer() {
                             let dbCollection21 = db.collection("reffer")
@@ -18802,11 +18853,12 @@
                             document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                 cu11.style.display = 'flex'
                             })
+                            document.querySelector('.ct_overflow_customize').style.display = 'flex'
                             document.querySelector('.ct_infor_reff h3').innerText = `Hurrah! Create an account and login to get discount of ${dataRef.earn} now. `
 
-                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
-                                                cu11.style.marginTop = '18px'
-                                            })
+                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                cu11.style.marginTop = '18px'
+                            })
                             document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
                             document.querySelector('.ct_outer_account_bx.login_bx').style.display = 'flex'
                         }
@@ -18819,53 +18871,56 @@
             }
             if (getCookie('one_tm_dt') !== '') {
                 if (getCookie('ct_901_12') !== '') {
-                    if (window.location.hash === '#dataRecived') {
-                        let nm = []
-                        document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
-                            nm.push(cu11.value)
-                        })
-                        let nm_otp = nm.join('')
-                        nm_otp = parseFloat(nm_otp)
-                        let tk = getCookie('ct_901_12')
-                        let check_otp = secret(tk).n
-                        let num_22 = sessionStorage.getItem("ct_901_12");
-                        check_otp = check_otp.split('')
-                        console.log(check_otp)
-                        document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
-                        setTimeout(function () {
-                            document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
-                        }, 200)
+                    if (getCookie('userData') === '') {
 
-                        setTimeout(function () {
-                            document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
-                        }, 300)
-                        setTimeout(function () {
-                            document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
-                        }, 400)
+                        if (window.location.hash === '#dataRecived') {
+                            let nm = []
+                            document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                                nm.push(cu11.value)
+                            })
+                            let nm_otp = nm.join('')
+                            nm_otp = parseFloat(nm_otp)
+                            let tk = getCookie('ct_901_12')
+                            let check_otp = secret(tk).n
+                            let num_22 = sessionStorage.getItem("ct_901_12");
+                            check_otp = check_otp.split('')
+                            console.log(check_otp)
+                            document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
+                            setTimeout(function () {
+                                document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
+                            }, 200)
 
-                        // if (num_22 !== null) {
-                        // session saved. No need to login
+                            setTimeout(function () {
+                                document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
+                            }, 300)
+                            setTimeout(function () {
+                                document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
+                            }, 400)
 
-                        //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].value = check_otp[0]
-                        //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
-                        //     setTimeout(function () {
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].value = check_otp[1]
-                        //     }, 200)
+                            // if (num_22 !== null) {
+                            // session saved. No need to login
 
-                        //     setTimeout(function () {
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].value = check_otp[2]
-                        //     }, 300)
-                        //     setTimeout(function () {
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
-                        //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].value = check_otp[3]
-                        //     }, 400)
-                        //     createAccount()
-                        // } else {
+                            //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].value = check_otp[0]
+                            //     document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
+                            //     setTimeout(function () {
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[1].value = check_otp[1]
+                            //     }, 200)
 
-                        document.querySelector('.ct_bx_otp_box span').style.display = 'block'
-                        //}
+                            //     setTimeout(function () {
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[2].value = check_otp[2]
+                            //     }, 300)
+                            //     setTimeout(function () {
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
+                            //         document.querySelectorAll('.ct_bx_inputs_otp input')[3].value = check_otp[3]
+                            //     }, 400)
+                            //     createAccount()
+                            // } else {
+
+                            document.querySelector('.ct_bx_otp_box span').style.display = 'block'
+                            //}
+                        }
                     }
 
 
@@ -18880,34 +18935,37 @@
 
         if (getCookie('one_tm_dt') !== '') {
             if (getCookie('ct_901_12') !== '') {
-                // user already given account data. Login required
-                window.location.replace('/mycart#dataRecived')
+                if (getCookie('userData') === '') {
+                    // user already given account data. Login required
+                    let searchM = window.location.search
+                    window.location.replace(`/mycart${searchM}#dataRecived`)
+                    signup_toggle()
 
-                document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
-                document.querySelector('.box_pop_up_accounts.for_signup').style.height = '540px'
 
-                document.querySelector('.ct_btn_acc').style.opacity = '0'
-                setTimeout(function () {
-                    document.querySelector('.ct_bxsecured_info').style.opacity = '0'
+                    document.querySelector('.ct_btn_acc').style.opacity = '0'
+                    setTimeout(function () {
+                        document.querySelector('.ct_bxsecured_info').style.opacity = '0'
 
-                }, 100)
-                setTimeout(function () {
-                    document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
+                    }, 100)
+                    setTimeout(function () {
+                        document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
 
-                }, 200)
-                setTimeout(function () {
-                    document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
+                    }, 200)
+                    setTimeout(function () {
+                        document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
 
-                }, 300)
-                setTimeout(function () {
-                    document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
+                    }, 300)
+                    setTimeout(function () {
+                        document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
 
-                }, 400)
-                setTimeout(function () {
-                    document.querySelector('.ct_field_first_acc').style.display = 'none'
-                    document.querySelector('.ct_bx_otp_box').style.display = 'block'
-                    document.querySelector('.ct_bx_otp_box').style.opacity = '1'
-                }, 500)
+                    }, 400)
+                    setTimeout(function () {
+                        document.querySelector('.ct_field_first_acc').style.display = 'none'
+                        document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                        document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                    }, 500)
+                }
+
             }
         }
 
@@ -18932,9 +18990,11 @@
                                 cu11.style.display = 'flex'
                             })
                             document.querySelector('.ct_infor_reff h3').innerText = `Hurrah! Create an account and login to get discount of ${dataRef.earn} now. `
-                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
-                                                cu11.style.marginTop = '18px'
-                                            })
+                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                cu11.style.marginTop = '18px'
+                            })
+                            document.querySelector('.ct_overflow_customize').style.display = 'flex'
+
                         }
                         getRefer()
 
@@ -19074,40 +19134,25 @@
             let goback_signup_pn = e.target.closest('.for_signup  .ct_bx_go_back')
             let goback_login_pn = e.target.closest('.login_bx .ct_bx_go_back')
             let overflow_div = e.target.closest('.ct_overflow_customize')
+
+
             if (overflow_div !== null) {
                 document.querySelector('.ct_overflow_customize').style.display = 'none'
                 document.querySelector('.login_bx .box_pop_up_accounts ').classList.remove('active')
                 document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
 
+                remove_hash_from_url()
+
             }
             if (goback_login_pn !== null) {
                 document.querySelector('.login_bx .box_pop_up_accounts ').classList.remove('active')
                 document.querySelector('.ct_overflow_customize').style.display = 'none'
-                function remove_hash_from_url() {
-                    var uri = window.location.toString();
 
-                    if (uri.indexOf("#") > 0) {
-                        var clean_uri = uri.substring(0,
-                            uri.indexOf("#"));
-
-                        window.history.replaceState({}, document.title, clean_uri);
-                    }
-                }
                 remove_hash_from_url()
             }
             if (goback_signup_pn !== null) {
                 document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
                 document.querySelector('.ct_overflow_customize').style.display = 'none'
-                function remove_hash_from_url() {
-                    var uri = window.location.toString();
-
-                    if (uri.indexOf("#") > 0) {
-                        var clean_uri = uri.substring(0,
-                            uri.indexOf("#"));
-
-                        window.history.replaceState({}, document.title, clean_uri);
-                    }
-                }
                 remove_hash_from_url()
 
             }
@@ -19132,10 +19177,10 @@
                 let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.split(' ').join('').toLowerCase()
                 let objItms = {
                     total_amount: 0,
-                    date: moment().format('LL'),
-                    returned: false,
+                    date: moment().format('LLL'),
                     arr: [],
                     payMode: '',
+                    delivered:false,
                 }
                 let tot_am_grc = 0
                 let tot_am_sauce = 0
@@ -19166,8 +19211,9 @@
                                     img: itm.images[0],
                                     name: itm.name,
                                     unit: cu11.slt_nm,
-                                    qty: cu11.qty,
+                                    qt: cu11.qty,
                                     am: tot_am_sauce,
+                                    return:true,
 
                                 }
                                 objItms.arr.push(obj)
@@ -19196,9 +19242,10 @@
                                 let obj = {
                                     img: itm.img,
                                     name: itm.name,
-                                    qty: cu11.qt,
+                                    qt: cu11.qt,
                                     unit: cu11.unit,
                                     am: tot_am_grc,
+                                    return:true,
 
                                 }
                                 objItms.arr.push(obj)
@@ -19248,6 +19295,7 @@
                     function check_coupon(em_n) {
                         if (em_n) {
                             // coupons validity
+                            if(coupon_dt!==''){
                             if (coupon_dt.off.split('%')[1] !== undefined) {
                                 let offer_x = parseFloat(coupon_dt.off.split('%')[0])
                                 dicounted_pr = (offer_x) / 100 * tot_am_sauce
@@ -19267,6 +19315,7 @@
                                 document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + offer_x.toLocaleString()
                             }
                             tot_am -= dicounted_pr
+                            }
 
                         }
                         objItms.total_amount = tot_am
@@ -19319,8 +19368,12 @@
 
                                 })
                             } else {
+                                if(coupons_used!==''){
                                 coupon_obj = { name: coupons_used.name, use: 1 }
                                 data.cpns_used.push(coupon_obj)
+
+                                }
+
                                 check_coupon(1)
                                 userDt.cpns_used = data.cpns_used
                                 document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
@@ -19333,6 +19386,7 @@
                                 all_order.push(objItms)
                             }
 
+
                             await dbCollection3.doc(cur.id).set({
                                 admin: data.admin,
                                 id: data.id,
@@ -19342,7 +19396,6 @@
                                 location: data.location,
                                 cartItems: data.cartItems,
                                 refferedBy: data.refferedBy,
-                                cash_balance:data.cash_balance,
                                 allow_cpns: data.allow_cpns,
                                 cpns_used: data.cpns_used,
                                 orders: all_order,
@@ -19832,13 +19885,18 @@
                         cpns_used: objUser.cpns_used,
 
                     }
+
                     if (window.location.search.split('?')[1] !== undefined) {
-                        if (window.location.search.split('?')[1].split('=')[0] === 'reffer') {
+                        if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
                                 let res = await dbCollection2.get()
+
                                 res.docs.forEach(async cu => {
                                     let data = cu.data()
+                                    let csh_m = 50
+                                    let idX = window.location.search.split('?')[1].split('=')[1].split('&')[0]
+
                                     console.log(objUser.id, data.id, data.refferedBy, '--------------')
                                     if (objUser.id === data.id && data.refferedBy) {
                                         // cross-checking if reffered to this user
@@ -19847,7 +19905,7 @@
                                         console.log(resREF.docs[0].data().text, ' --------------------------------hahahaha----------------------------')
 
                                         document.querySelector('.confetti').style.display = 'block'
-                                        document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50'
+                document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50 by refering'
                                         document.querySelector('.ct_outer_saved').style.display = 'flex'
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                             cu11.style.display = 'none'
@@ -19858,6 +19916,10 @@
                                         document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+                                        document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                        socket.emit('cash_oth4', parseFloat(data.cash_balance) + csh_m, idX)
 
                                         setTimeout(function () {
                                             document.querySelector('.popup_info.sucess_account').style.display = 'none'
@@ -20003,9 +20065,9 @@
                                 let res = await dbCollection2.get()
                                 res.docs.forEach(async cu => {
                                     let data = cu.data()
+                                    let csh_m = 50
+                                    console.log(id === data.id, !data.reffer)
                                     if (id === data.id && !data.reffer) {
-                                        let csh_m=50
-                                        socket.emit('cash_oth4',csh_m)
                                         // setting the user who has refered
                                         await dbCollection2.doc(cu.id).set({
                                             admin: data.admin,
@@ -20018,7 +20080,7 @@
                                             refferedBy: data.refferedBy,
                                             allow_cpns: data.allow_cpns,
                                             cpns_used: data.cpns_used,
-                                            cash_balance:parseFloat(data.cash_balance)+csh_m,
+                                            orders: [],
                                             reffer: { id: id, used: false },
                                         })
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
@@ -20040,24 +20102,25 @@
                                             address: objUser.address,
                                             location: objUser.location,
                                             cartItems: objUser.cartItems,
-                                            allow_cpns: [{ name: 'KRICKUSER' }],
+                                            allow_cpns: [{ name: 'KRICKUSER' },{name:'SUPER40'}],
                                             cpns_used: [],
                                             refferedBy: { id: id, used: false },
                                             reffer: false,
-                                            cash_balance:csh_m,
-
+                                            orders: []
                                         }
-
+                                        console.log(objU, '000000')
                                         db.collection("users")
                                             .add(
                                                 objU
                                             ).then(res => {
                                                 sessionStorage.clear()
                                                 document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
+                                                // if signuped with refer link... verify with this cookie
+                                                document.cookie = "signup_3sy13" + "=" + 'yesss' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                                 document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                                 document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                                                //  document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                                 document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                                                 document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                                                 setTimeout(function () {
@@ -20075,6 +20138,8 @@
                                                 //socket.emit('signedUp', n, phone)
                                             })
                                     } else {
+                                        alert('huuu')
+                                        return
                                         createAccount()
                                     }
 
@@ -20083,6 +20148,7 @@
                             getUser()
                         }
                     } else {
+                        alert('fuck')
                         createAccount()
                     }
 
@@ -20172,6 +20238,7 @@
                                     document.querySelector('.account_cont').style.pointerEvents = 'auto'
                                     res22.docs.forEach(cur11 => {
                                         let itmDb = cur11.data()
+                                        console.log(ph_num, itmDb.phone)
                                         if (ph_num === itmDb.phone) {
                                             checked_ph = true
                                             console.log('checking.......')
@@ -20180,6 +20247,7 @@
                                     if (!checked_ph) {
                                         // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
                                         // document.querySelector('.error_account').style.display = 'none'
+                                        console.log('yo yo.......')
                                         socket.emit('getCode');
                                         socket.on('sendCode', (id, token, number, key) => {
                                             //sessionStorage.setItem("ct_901_12", token);
@@ -20289,7 +20357,7 @@
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                             cu11.style.display = 'none'
                                         })
-                                        document.querySelector('.error_account').style.display = 'block'
+                                        document.querySelector('.error_account').style.display = 'flex'
                                         setTimeout(function () {
                                             document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                                 cu11.style.display = 'flex'
@@ -23376,369 +23444,6 @@
 
 
         }
-
-
-        const addReccom = async () => {
-            let html
-            let allfd = JSON.parse(localStorage.getItem('foodsAdded'))
-            let dbCollection = db.collection(`items`)
-            let res = await dbCollection.get()
-            if (document.querySelector('.ct_bx_overlay_cart') !== null) {
-                document.querySelector('.ct_bx_overlay_cart').style.display = 'none'
-            }
-            let lengthMainfd = 0
-            res.docs.forEach(cur => {
-                let itmDb = cur.data().item
-                let lengthX = 0
-                if (!itmDb.commSoon) {
-                    lengthMainfd++
-                }
-            })
-            lengthMainfd = lengthMainfd - allfd.length
-            let slidesx = String(lengthMainfd / 5).split('.')[0]
-            console.log(slidesx, lengthMainfd, 'nuggudgdgdd')
-            if (parseFloat(slidesx) === 0) {
-                document.querySelector('.recomended_cart ').style.display = 'none'
-                return
-            }
-            res.docs.forEach(cur => {
-                let itmDb = cur.data().item
-                let matchedItm = false
-                allfd.forEach(cur1 => {
-                    if (cur1.id === itmDb.id) {
-                        matchedItm = true
-                    }
-                })
-                if (matchedItm) {
-                    return
-                }
-                let html1
-
-
-                let aHtml = `<a href="/recipes/${itmDb.id}">`
-                itmDb.price = parseFloat(itmDb.price)
-                let comSht = ``
-                if (itmDb.commSoon) {
-                    return
-                }
-                let priceN = 0
-                let pff = parseFloat(itmDb.profit)
-                for (let i = 0; i < itmDb.unitInit.length; i++) {
-                    let cur1 = itmDb.unitInit[i]
-                    if (parseFloat(cur1.stock) !== 0 && cur1.price !== null) {
-                        //priceN += parseFloat(cur1.price)
-                        break
-                    }
-                }
-                let pricemain = 0
-
-                itmDb.fdInside.forEach(cur1 => {
-                    if (cur1.price !== undefined) {
-                        let pr = parseFloat(cur1.price)
-                        if (itmDb.offer !== null && cur1.id !== 'spices') {
-                            if (itmDb.offer.sauce !== null) {
-                                let offX = parseFloat(itmDb.offer.sauce)
-                                pricemain = pr.toLocaleString()
-
-                                pr = pr - (pr * (offX / 100))
-                            }
-                        }
-                        pr = String(pr)
-                        pr = pr.split('.')[0]
-                        pr = parseFloat(pr)
-                        priceN += pr
-                    }
-
-                })
-
-
-                console.log(priceN, 'ppofsjfkfnfnnkfnf')
-                if (itmDb.itemsOthers !== null) {
-                    itmDb.itemsOthers.forEach(cur1 => {
-                        //priceN += parseFloat(cur1.price)
-                    })
-                }
-                let priceBox = ``
-                let priceOff = 0
-                let fdAll = JSON.parse(localStorage.getItem('foodsAdded'))
-                fdAll.forEach(cu => {
-                    if (cu.id === itmDb.id) {
-                        priceN = cu.price.split('₹')[1]
-                        priceN = parseFloat(priceN)
-                    }
-                })
-                if (itmDb.offer !== null) {
-                    //<del class="price_food for_oly_ekfd_price"><span>₹ ${priceN.toLocaleString()} </span> </del>
-                    let off = parseFloat(itmDb.offer.off)
-                    priceBox = `<div class="ct_bx_priceandoff" style='margin-top:10px'  ${comSht}>
-    
-                            <p class="price_food for_oly_ekfd_price"><span>₹ ${priceN.toLocaleString()} </span> </p>
-<del class="pricenooff">₹ ${pricemain.toLocaleString()}</del>
-
-    <div class="ct_offer_box">
-    <span>${itmDb.offer.off}% off</span>
-</div>
-</div>`
-
-                } else {
-
-                    priceBox = `<div class="ct_bx_priceandoff">
-
-                            <p class="price_food for_oly_ekfd_price"><span>₹ ${priceN.toLocaleString()} </span> </p>
-
-                          </div>`
-                }
-                if (itmDb.commSoon) {
-                    priceBox = `<div class="ct_bx_price_fd hasPrice">
-                            <p class="price commingSoonp">Comming soon.</p>
-                            </div>`
-                }
-                html = `
-                        <div class="ct_col">
-                                <div class="carousel-cell fd_ek_cell_car_recom ">
-                        <div class="itm_food_list_ek added_itm_ek_fd">
-                        <a
-                        ${aHtml}
-                        
-                            <div class="ct_inner_fd_dt_grid">
-                        
-                            <div class="ct_img_res_main"  ${comSht}>
-                            <img alt='${itmDb.name} image' src='${itmDb.img}'>
-                        
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-                        
-                            <div class="ct_dt_tm_food_res"  ${comSht}>
-                            <h4>${itmDb.name}</h4>
-                            </div>
-                            ${priceBox}
-                     
-                            </div>
-                        </a>
-                        
-                        </div>
-                        </div>
-                        </div>`
-
-
-                if (document.querySelector('.ct_bx_recc_cart_load_full') !== null) {
-                    document.querySelector('.ct_bx_recc_cart_load_full').style.display = 'none'
-                    document.querySelector('.crousel').style.display = 'block'
-                    function is_touch_enabled() {
-                        return ('ontouchstart' in window) ||
-                            (navigator.maxTouchPoints > 0) ||
-                            (navigator.msMaxTouchPoints > 0);
-                    }
-                    if (window.screen.width > 920 && !is_touch_enabled()) {
-                        document.querySelectorAll('.ct_bx_buttons_actions').forEach(cur => cur.style.display = 'block')
-
-                    }
-                }
-                if (window.screen.width > 1550) {
-
-                    if (document.querySelector('.forward_acc') !== null) {
-                        let x = document.querySelector('.inner_slide').getBoundingClientRect().right + 50
-
-                        document.querySelector('.forward_acc').style.left = x + 'px'
-                    }
-                }
-                //  document.querySelector('.inner_slide').insertAdjacentHTML('beforeend', html)
-            })
-            let togo = document.querySelectorAll('.fd_ek_cell_car_recom').length - 5
-            if (togo === 0) {
-                document.querySelector('#forw').style['pointer-events'] = 'none'
-                document.querySelector('#forw').style.opacity = '.5'
-
-            }
-        }
-        let count_bx = 0
-        let l = 0;
-        let movePer = 0
-
-        document.querySelector('html').addEventListener('click', (e) => {
-            let deliv_set = e.target.closest('.ct_deliv_box ')
-
-            let bacck_btn = e.target.closest('.ct_back_btn');
-            let forward_btn = e.target.closest('.ct_forward_btn');
-
-            let product = document.getElementsByClassName('product')
-            let product_page = Math.ceil(product.length) - 1;
-            let maxMove = 99203;
-            // mobile_view	
-            let mob_view = window.matchMedia("(max-width: 768px)");
-            if (mob_view.matches) {
-                movePer = 50.36;
-                maxMove = 504;
-            }
-            if (forward_btn !== null) {
-                let product_width = document.getElementsByClassName('product')[0].getBoundingClientRect().width
-                let movePer = product_width;
-                count_bx++
-
-                if (product_page >= count_bx) {
-                    l = l + movePer;
-
-
-
-                    if (product == 1) { l = 0; }
-                    for (const i of product) {
-
-
-                        // l = l - movePer; 
-                        i.style.left = '-' + l + 'px';
-
-                    }
-                } else {
-                    count_bx = product_page
-                }
-
-
-            }
-            if (bacck_btn !== null) {
-                let product_width = document.getElementsByClassName('product')[0].getBoundingClientRect().width + 8
-                let movePer = product_width;
-                l = l - movePer;
-                if (l <= 0) { l = 0; }
-                if (count_bx > 0) {
-
-                    count_bx--
-                    for (const i of product) {
-                        i.style.left = '-' + l + 'px';
-
-                    }
-                }
-
-            }
-            if (deliv_set !== null) {
-
-                document.querySelector('.cl_xmma').remove()
-                deliv_set.childNodes[1].innerHTML = '<div class="cl_xmma"></div>'
-                document.querySelectorAll('.ct_deliv_box').forEach(cur => {
-                    cur.classList.remove('active')
-                })
-                deliv_set.classList.remove('unactive')
-
-                deliv_set.classList.add('active')
-                addBill()
-            }
-        })
-
-
-
-
-        if (user !== '') {
-            user = JSON.parse(user)
-        } else {
-            user = ''
-
-        }
-        addReccom()
-
-        let allReadyAddedC = []
-        let arrL = []
-
-        if (user !== '') {
-            let allgroc = JSON.parse(localStorage.getItem('grocFoodListCart'))
-
-            addBill()
-            if (allfd !== null && user !== '') {
-                if (allfd.length === 0) {
-                    document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
-                    document.querySelector('.ct_bin_ts_nav_ck ').style.display = 'none'
-
-                    document.querySelector('.for_ek_food_cart').style.display = 'flex'
-                    document.querySelector('.ct_subotatal').style.display = 'none'
-                    document.querySelector('.ct_list_food').style.borderBottom = 'none'
-                    document.querySelector('.no_req .ct_list_food').style.width = '97%'
-                } else {
-                    document.querySelector('.ct_other_nav_cart').style.display = 'block'
-                }
-
-
-                const goForCart = async () => {
-
-                    let dbColl = await db.collection('users').get()
-
-
-
-                    allfd.forEach((elem, i) => {
-                        //Verifying the  first purchasement
-                        let cheated = false
-                        dbColl.forEach(cu => {
-                            let data = cu.data()
-                            let id = data.rootAutyh
-                            let fstPur = false
-                            let locFree = false
-                            //checking from the locastorage data
-                            if (elem.permGroup !== undefined) {
-                                elem.permGroup.forEach(cur => {
-                                    if (cur.price === 'Free') {
-                                        locFree = true
-                                    }
-                                })
-                            }
-
-
-                            //if there is free perm data 
-                            if (locFree) {
-                                if (id === JSON.parse(getCookie('user')).rootAutyh) {
-                                    fstPur = data.fstPurchase
-                                    if (!fstPur && locFree) {
-                                        cheated = true
-                                    }
-                                    let objF = JSON.parse(getCookie('user'))
-                                    objF.fstPurchase = fstPur
-                                    document.cookie = "user" + "=" + JSON.stringify(objF) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-
-
-                                }
-                            }
-                        })
-
-                        // end................
-
-                        if (allfd.length !== 0) {
-                            let price = parseFloat(elem.price.split('₹')[1].split(',').join(''))
-
-                            addToCart(elem, '.bx_evt_cart_item ul', price, i, cheated)
-
-                        } else {
-                            if (allfd.length !== 0) {
-                                document.querySelector('.ek_cart').style.height = '100vh'
-
-                                document.querySelector('.for_ek_fd_cart_load').style.display = 'none'
-                                document.querySelector('.for_ek_food_cart').style.display = 'flex'
-                                document.querySelector('.ct_subotatal').style.display = 'none'
-                                document.querySelector('.ct_list_food').style.borderBottom = 'none'
-                                document.querySelector('.no_req .ct_list_food').style.width = '97%'
-                                document.querySelector('.ct_bin_ts_nav_ck ').style.display = 'none'
-                            }
-
-                        }
-                    })
-                }
-                goForCart()
-
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

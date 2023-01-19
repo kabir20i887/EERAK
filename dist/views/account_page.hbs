@@ -302,6 +302,816 @@
         justify-content: center;
     }
 
+    /*! CSS Used from: Embedded */
+    .ct_outer_saved {
+        position: absolute;
+        height: 100vh;
+        display: none;
+        z-index: 9999999;
+        width: 100vw;
+        background: #ffffffb3;
+        justify-content: center;
+    }
+
+    /*! CSS Used from: Embedded */
+    .confetti {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 999999999999;
+    }
+    
+
+        .ct_results {
+            margin: 0px 0 0 2px;
+            display: none;
+            border-radius: 2px;
+            border-top: 1px solid #d9d9d9;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-bottom: 16px;
+            position: static !important;
+            z-index: 9999999999999999;
+            position: absolute;
+        }
+
+    .confetti-piece {
+        position: absolute;
+        width: 10px;
+        height: 30px;
+        background: #ffd300;
+        top: 0;
+        opacity: 0;
+    }
+
+    .confetti-piece:nth-child(1) {
+        left: 7%;
+        -webkit-transform: rotate(-40deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 182ms;
+        -webkit-animation-duration: 1116ms;
+    }
+
+    .confetti-piece:nth-child(2) {
+        left: 14%;
+        -webkit-transform: rotate(4deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 161ms;
+        -webkit-animation-duration: 1076ms;
+    }
+
+    .confetti-piece:nth-child(3) {
+        left: 21%;
+        -webkit-transform: rotate(-51deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 481ms;
+        -webkit-animation-duration: 1103ms;
+    }
+
+    .confetti-piece:nth-child(4) {
+        left: 28%;
+        -webkit-transform: rotate(61deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 334ms;
+        -webkit-animation-duration: 708ms;
+    }
+
+    .confetti-piece:nth-child(5) {
+        left: 35%;
+        -webkit-transform: rotate(-52deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 302ms;
+        -webkit-animation-duration: 776ms;
+    }
+
+    .confetti-piece:nth-child(6) {
+        left: 42%;
+        -webkit-transform: rotate(38deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 180ms;
+        -webkit-animation-duration: 1168ms;
+    }
+
+    .confetti-piece:nth-child(7) {
+        left: 49%;
+        -webkit-transform: rotate(11deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 395ms;
+        -webkit-animation-duration: 1200ms;
+    }
+
+    .confetti-piece:nth-child(8) {
+        left: 56%;
+        -webkit-transform: rotate(49deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 14ms;
+        -webkit-animation-duration: 887ms;
+    }
+
+    .confetti-piece:nth-child(9) {
+        left: 63%;
+        -webkit-transform: rotate(-72deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 149ms;
+        -webkit-animation-duration: 805ms;
+    }
+
+    .confetti-piece:nth-child(10) {
+        left: 70%;
+        -webkit-transform: rotate(10deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 351ms;
+        -webkit-animation-duration: 1059ms;
+    }
+
+    .confetti-piece:nth-child(11) {
+        left: 77%;
+        -webkit-transform: rotate(4deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 307ms;
+        -webkit-animation-duration: 1132ms;
+    }
+
+    .confetti-piece:nth-child(12) {
+        left: 84%;
+        -webkit-transform: rotate(42deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 464ms;
+        -webkit-animation-duration: 776ms;
+    }
+
+    .confetti-piece:nth-child(13) {
+        left: 91%;
+        -webkit-transform: rotate(-72deg);
+        -webkit-animation: makeItRain 1000ms infinite ease-out;
+        -webkit-animation-delay: 429ms;
+        -webkit-animation-duration: 818ms;
+    }
+
+    .confetti-piece:nth-child(odd) {
+        background: #7431e8;
+    }
+
+    .confetti-piece:nth-child(even) {
+        z-index: 1;
+    }
+
+    .confetti-piece:nth-child(4n) {
+        width: 5px;
+        height: 12px;
+        -webkit-animation-duration: 2000ms;
+    }
+
+    .confetti-piece:nth-child(3n) {
+        width: 3px;
+        height: 10px;
+        -webkit-animation-duration: 2500ms;
+        -webkit-animation-delay: 1000ms;
+    }
+
+    .confetti-piece:nth-child(4n-7) {
+        background: red;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    @media print {
+
+        *,
+        ::after,
+        ::before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /*! CSS Used keyframes */
+    @-webkit-keyframes makeItRain {
+        from {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        to {
+            -webkit-transform: translateY(350px);
+        }
+    }
+
+    .ct_offer_saved_popup {
+        border-radius: 20px;
+        width: 500px;
+        height: 200px;
+        margin-top: 140px;
+        background: white;
+        z-index: 999999999;
+        padding: 11px 36px;
+        box-shadow: 0 0 14px #0000000f;
+    }
+
+    .ct_offer_saved_popup p {
+        color: black;
+        font-size: 29px;
+        font-family: 'roboto';
+    }
+
+    .ct_offer_saved_popup h3 {
+        background: linear-gradient(20deg, #ff008d, #a200ffad);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-family: 'poppins';
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    .ct_offer_saved_popup .ct_btn {
+        font-size: 18px;
+        width: max-content;
+        background: linear-gradient(316deg, #0011ff, #c700ffad);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin: 20px 160px;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    @media print {
+
+        *,
+        ::after,
+        ::before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        p {
+            orphans: 3;
+            widows: 3;
+        }
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    h3 {
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    /*! CSS Used from: Embedded */
+    .ct_load_items {
+        padding: 55px 0 66px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ct_coupons_all .ct_load_items {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .ct_load_items .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        margin: 8px;
+        border: 2px solid rgb(34, 34, 34);
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: rgb(87, 87, 87) transparent transparent transparent;
+    }
+
+    .ct_load_items .lds-ring {
+        position: relative;
+    }
+
+    .ct_load_items {
+        padding: 55px 0 66px 0;
+    }
+
+    .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    @media print {
+
+        *,
+        ::after,
+        ::before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 25px;
+        height: 25px;
+    }
+
+    .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        margin: 8px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /*! CSS Used keyframes */
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
     .ct_bx_error {
         display: none;
         padding: 20px;
@@ -3047,6 +3857,18 @@
         color: #ff7300;
     }
 
+    .ct_btns.returned .f4Ovn {
+        pointer-events: none;
+        background: #ffffff;
+        margin: 38px 0 0 28px;
+        color: #a0a0a0;
+        border: 1px solid #7c7c7c;
+    }
+
+    .ct_btns.returned span {
+        display: none;
+    }
+
     .f4Ovn:hover {
         position: relative;
         box-shadow: 0 4px 14px #d4d5d9;
@@ -3093,9 +3915,6 @@
         padding: 20px 41px;
     }
 
-    .g28rk:hover {
-        cursor: pointer;
-    }
 
     ._3SKK0 {
         padding-top: 20px;
@@ -3118,9 +3937,6 @@
         cursor: pointer;
     }
 
-    ._3h4gz:hover {
-        color: #fc8019;
-    }
 
     ._2haEe {
         font-size: 13px;
@@ -3551,22 +4367,38 @@
         margin: 0;
     }
 
-    .ct_results {
-        margin: 0px 0 0 2px;
-        display: none;
-        border-radius: 2px;
-        border-top: 1px solid #d9d9d9;
-        font-family: Arial, sans-serif;
-        box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        overflow: hidden;
-        margin-bottom: 16px;
-        position: static !important;
-        z-index: 9999999999999999;
-        position: absolute;
-    }
+/*! CSS Used from: Embedded */
+.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#515151;}
+.pac-item:hover{background-color:#fafafa;}
+.pac-matched{font-weight:700;}
+.pac-item-query{font-size:13px;padding-right:3px;color:#000;}
+.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px;}
+.pac-icon-marker{background-position:-1px -161px;}
+/*! CSS Used from: Embedded */
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*,::after,::before{box-sizing:border-box;}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+.pac-item-query{font-size:18px;padding-right:3px;color:#000;}
+*{padding:0;box-sizing:border-box;margin:0;}
 
     .create_account {
         font-family: 'Open Sans';
@@ -3651,7 +4483,6 @@
         text-align: center;
         height: 127px;
         font-family: 'Open sans';
-        opacity: 0;
         transition: all .7s ease-in-out;
     }
 
@@ -3887,6 +4718,7 @@
         font-size: 13px;
         font-family: 'open sans';
         user-select: text;
+        text-transform: lowercase;
         -webkit-user-select: text;
         /* Safari */
         -ms-user-select: text;
@@ -3895,7 +4727,7 @@
     .ct_link_box {
         margin-top: 10px;
         border-radius: 4px;
-        width: 83%;
+        width: 89%;
         background-color: #3d025f;
         padding: 18px 15px;
     }
@@ -3903,60 +4735,96 @@
     .ct_refer_panel .ct_flex {
         width: 100%;
     }
-    .ct_wallet_h6781sgh span,
-.ct_wallet_h6781sgh p {
-    font-size: 13px;
-    color: #000000;
-    font-family: 'open sans';
-    font-weight: 500;
-    margin-top: 0;
-}
-.ct_wallet_h6781sgh span {
-    font-size: 12px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #101010;
-    display: block;
-    width: max-content;
-    text-align: center;
-    margin: 11px 0 12px 0px;
-}
-.ct_wallet_h6781sgh .ct_lower{
-    margin-top: 30px;
-}
-.ct_wallet_h6781sgh button {
-    background-color: #20ad2f;
-    color: white;
-    padding: 15px 20px;
-    width: 28%;
-    font-size: 16px;
-    margin: 14px 0;
-    border: none;
-    font-family: 'Montserrat';
-    box-shadow: 0 4px 10px rgb(0 0 0 / 14%);
-}
-.ct_wallet_h6781sgh button.unactive{
-    background-color: #979797;
-    color: #1d1d1d;
-}
 
-    .ct_wallet_h6781sgh ion-icon{color: #000;}
-.ct_wallet_h6781sgh .ct_icon_wallet {
-    font-size: 20px;
-    display: block;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    margin: 7px 0 10px 38px;
-    width: 113px;
-    display: flex;
-    justify-content: center;
-    padding-top: 5px;
-    height: 33px;
-}
-.ct_wallet_h6781sgh h4 {
-    font-family: 'roboto';
-    font-size: 53px;
+    .ct_wallet_h6781sgh span,
+    .ct_wallet_h6781sgh p {
+        font-size: 13px;
+        color: #000000;
+        font-family: 'open sans';
+        font-weight: 500;
+        margin-top: 0;
+    }
+
+    .ct_wallet_h6781sgh span {
+        font-size: 12px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #101010;
+        display: block;
+        width: max-content;
+        text-align: center;
+        margin: 11px 0 12px 0px;
+    }
+
+    .ct_wallet_h6781sgh .ct_lower {
+        margin-top: 30px;
+    }
+
+    .ct_wallet_h6781sgh button {
+        background-color: #20ad2f;
+        color: white;
+        padding: 15px 20px;
+        width: 28%;
+        font-size: 16px;
+        margin: 14px 0;
+        border: none;
+        font-family: 'Montserrat';
+        box-shadow: 0 4px 10px rgb(0 0 0 / 14%);
+    }
+
+    .ct_wallet_h6781sgh button.unactive {
+        background-color: #979797;
+        color: #1d1d1d;
+    }
+
+    .ct_wallet_h6781sgh ion-icon {
+        color: #000;
+    }
+
+    .ct_wallet_h6781sgh .ct_icon_wallet {
+        font-size: 20px;
+        display: block;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        margin: 7px 0 10px 38px;
+        width: 113px;
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+        height: 33px;
+    }
+
+    .ct_wallet_h6781sgh h4 {
+        font-family: 'roboto';
+        font-size: 53px;
+        font-weight: 500;
+        color: black;
+    }
+    .ct_error_account{
+        background-color: rgba(255, 0, 119, 0.76);
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-bottom:40px;
+        display: none;
+    }
+.ct_info h4,
+.ct_error_account h4 {
+    color: white;
+    font-size: 13px;
     font-weight: 500;
+    font-family: 'roboto';
+}
+.ct_info h4 {
     color: black;
+    font-size: 15px;
+}
+.ct_info {
+    background-color: rgb(164 250 224 / 76%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    width: 100%;
+    margin: 24px;
+    display: none;
 }
 
     /*! CSS Used keyframes */
@@ -3965,9 +4833,32 @@
 <body>
     {{>nav}}
     <div class="ct_bx_ov_lay"></div>
-
+    <div class="ct_outer_saved">
+        <div class="ct_offer_saved_popup">
+            <h3>Hurrah!</h3>
+            <p>You have saved ₹ 49 on cooking sauce.</p>
+            <div class="ct_btn">
+                Enjoy
+            </div>
+        </div>
+    </div>
     <div class="ct_sep_bx">
         <div class="inner_seperation">
+            <div class="confetti">
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+                <div class="confetti-piece"></div>
+            </div>
             <div class="account_name_sec">
                 <div class="ct_img">
                     <img src="../img/account_icon_mn.png">
@@ -3976,8 +4867,8 @@
                 <div class="ct_inner">
                     <h4>Priyangshou Bhattacharjee</h4>
                     <div class="ct_flex">
-                        <p><ion-icon name="call-outline"></ion-icon> 9233054806</p>
-                        <p><ion-icon name="home-outline"></ion-icon> Badharghat, opposite of gramin bank</p>
+                        <p class="ph_num"><ion-icon name="call-outline"></ion-icon> 9233054806</p>
+                        <p class="add_ress"><ion-icon name="home-outline"></ion-icon> Badharghat, opposite of gramin bank</p>
                     </div>
 
                 </div>
@@ -3990,19 +4881,35 @@
 
             <div class="_3tDvm ">
                 <div class="v6luz FvIBT"></div>
+                <div class="ct_info success">
+                    <h4>Your Account has been successfully edited.</h4>
+                </div>
                 <div class="_2QhOV _3glSS">
                     <div class="_3R9IF">
                         <div class="_2gu8R">
                             <ul>
-
-                                <li class="awo_x _1B5rE">
+                                <li class="awo_x wlt_tab ">
+                                    <div class="ct_icon_img">
+                                        <ion-icon name="pencil-outline" role="img" class="md hydrated"
+                                            aria-label="pencil outline"></ion-icon>
+                                    </div>
+                                    <span class="_1ZYny">All coupons</span>
+                                </li>
+                                <li class="awo_x refer_tab ">
+                                    <div class="ct_icon_img">
+                                        <ion-icon name="pencil-outline" role="img" class="md hydrated"
+                                            aria-label="pencil outline"></ion-icon>
+                                    </div>
+                                    <span class="_1ZYny">Refer and Earn</span>
+                                </li>
+                                <li class="awo_x ord_89jjs _1B5rE">
                                     <div class="ct_icon_img">
                                         <img src="../img/order_icon_mn.png" alt="">
                                     </div>
                                     <span class="_1ZYny">My orders</span>
 
                                 </li>
-                                <li class="awo_x ">
+                                <li class="awo_x  edit_89jjs">
                                     <div class="ct_icon_img">
                                         <ion-icon name="pencil-outline" role="img" class="md hydrated"
                                             aria-label="pencil outline"></ion-icon>
@@ -4018,236 +4925,40 @@
                             </ul>
                         </div>
                         <div class="_1stFr">
-
+                            <div class="ct_load_items">
+                                <div class="lds-ring">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
                             <div class="ct_wallet_h6781sgh">
-                                <div class="ct_upper">
-                                <h4>₹ 40.00</h4>
-                                <div class="ct_icon_wallet">
-                                    <ion-icon name="wallet-outline"></ion-icon>
-                                </div>
-                                </div>
-                                <div class="ct_lower">
-                                <span>Description</span>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui provident tempora vel sapiente repellat impedit nemo suscipit iure laboriosam, recusandae minima deserunt maxime harum doloremque voluptates consectetur error neque!</p>
-                                <button>Activate</button>
-                                </div>
+
 
                             </div>
-                            <div class="ct_refer_panel">
-                                <div class="inner">
-                                    <div class="ct_img">
-                                        <img src="../img/refer_earn_icn_x.png">
+                            <div class="ct_refer_panel_outer">
 
-                                    </div>
-                                    <div class="ct_inner_txt">
-                                        <h3>Refer your friends And</h3>
-                                        <h2>Both get ₹ 50 </h2>
-                                        <p>Refer your friends and earn ₹ 50 both when created an account and logged in.
-                                        </p>
-
-                                    </div>
-
-                                    <div class="ct_inv_sn671sn">
-                                        <div class="ct_share_box">
-                                            <button>Invite <ion-icon name="chevron-forward-outline"></ion-icon></button>
-                                            <span>&mdash; or &mdash; </span>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_copy_link">
-                                        <h4>Copy the link and share</h4>
-                                        <div class="ct_link_box">
-                                            <p>http://krickfoods/mycart</p>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
+
                             <div class="ct_bx_account">
-                                <div class="ct_bx_otp_box fr_sign_otp">
-                                    <h4>Verify our phone number </h4>
-                                    <p>An OTP has been sent to you successfully.Please wait for a while if you donot
-                                        recived the
-                                        otp
-                                        yet.
-                                    </p>
-                                    <div class="ct_bx_inputs_otp">
-                                        <input id="input_1" type="tel" placeholder="0" style="opacity: 1;">
-                                        <input id="input_2" type="tel" disabled="" placeholder="0">
-                                        <input id="input_3" type="tel" disabled="" placeholder="0">
-                                        <input id="input_4" type="tel" disabled="" placeholder="0">
-
-                                    </div>
-                                    <p class="error_otp">Invalid OTP, please try again.</p>
-                                    <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
-                                    <button class="create_account">Create an account</button>
+                                <div class="ct_error_account">
+                                    <h4>Opps, Account already exist. Please try again.</h4>
                                 </div>
-                                <div class="ct_field_first_acc">
-                                    <div class="ct_section_box_accounts">
-                                        <h4>Edit account edit</h4>
-
-                                        <div class="gt_first_nam_second_name">
-                                            <div class="nick_name area last_name bx_acc">
-                                                <label for="area">Your location</label>
-
-                                                <input autocomplete="off" placeholder="Badharghat,agartala" name="area"
-                                                    class="last_of_user ac_setup pac-target-input" id="area"
-                                                    spellcheck="false" type="text" required="">
-                                                <div class="ct_results">
-
-                                                </div>
-                                            </div>
-                                            <div class="location_error error_signup">
-                                                <p>Sorry, we donot deliver to this location.</p>
-                                            </div>
-                                            <div class="nick_name bx_acc address">
-                                                <label class="labelM" for="address">Your House Address
-                                                </label>
-                                                <textarea name="address"
-                                                    placeholder="Badhargath,6th building , opposite street  of Gramin bankghat"
-                                                    id="" cols="10" rows="4" required=""></textarea>
-
-
-
-
-                                            </div>
-                                            <div class="address_error error_signup">
-                                                <p>Please fill this field</p>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="ct_section_box_accounts">
-                                        <div class="gt_first_nam_second_name">
-                                            <div class="nick_name name_un bx_acc">
-                                                <label for="name_inp"> Full name</label>
-
-                                                <input name="name_user" placeholder="Priyangshu Bhattacharjee"
-                                                    class="name_of_user ac_setup" id="name_inp" spellcheck="false"
-                                                    type="text" required="">
-
-
-                                            </div>
-
-                                        </div>
-                                        <div class="name_error error_signup">
-                                            <p>Please fill this field</p>
-                                        </div>
-                                    </div>
-
-
-
-
-                                    <div class="gt_first_nam_second_name ">
-
-                                        <div class="nick_name bx_acc phone_number">
-                                            <label for="phone">Phone Number</label>
-
-                                            <input autocomplete="off" placeholder="9233054806" name="phone"
-                                                class="name_of_user ac_setup" id="phone" spellcheck="false" type="tel"
-                                                required="">
-
-
-                                        </div>
-                                        <div class="phone_error error_signup">
-                                            <p>Invalid phone number</p>
-                                        </div>
-                                    </div>
-                                    <div class="ct_btn_acc">
-                                        <button class="cont_btn_acc  account_cont" name="continue_verify"
-                                            type="button"><span>Change Now</span></button>
-                                    </div>
-
-
-
-
+                                <div class="inner_x">
 
                                 </div>
+
                             </div>
-                            <div>
+                            <div class="order_lst">
                                 <div>
                                     <div class="_3lCtm"> My Orders </div>
+                                    <div class="ct_innner_orders">
+
+                                    </div>
                                     <div>
-                                        <div class="_3xMk0">
 
-                                            <div class="ct_other_av">
-                                                <div class="_2fkm7">
-                                                    <span>order placed on, Dec 3, 2022, 11:01 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="ct_rtrn_h78s success">
-                                                <h4>Delivered on 13th january</h4>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                                            </div>
-                                            <div class="g28rk">
-
-                                                <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
-                                                        alt="" src="../img/masala_fish.png">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="ct_flex">
-                                                        <div class="ct_inner">
-                                                            <div class="_3h4gz">Masala meat</div>
-                                                            <div class="_2haEe">qty:4</div>
-                                                            <div class="_2haEe">Net weight: 150gm</div>
-                                                        </div>
-                                                        <div class="ct_btns">
-                                                            <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
-                                                            <span class="learn_more">T&C apply* <p>Learn more</p></span>
-
-                                                        </div>
-
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="g28rk">
-                                                <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
-                                                        alt="" src="../img/masala_fish.png">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="ct_flex">
-                                                        <div class="ct_inner">
-                                                            <div class="_3h4gz">Masala meat</div>
-                                                            <div class="_2haEe">qty:4</div>
-                                                            <div class="_2haEe">Net weight: 150gm</div>
-                                                        </div>
-
-                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
-
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="g28rk">
-                                                <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
-                                                        alt="" src="../img/masala_fish.png">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="ct_flex">
-                                                        <div class="ct_inner">
-                                                            <div class="_3h4gz">Masala meat</div>
-                                                            <div class="_2haEe">qty:4</div>
-                                                            <div class="_2haEe">Net weight: 150gm</div>
-                                                        </div>
-
-                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
-
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="_3SKK0">
-                                                <div class="_33I3_">Payment mode: online</div>
-                                                <div class="_23DHc">Total Paid: <span class="_1jGfr"> 150 </span> </div>
-
-
-                                            </div>
-                                        </div>
                                     </div>
                                     <div>
                                         <div class="_3xMk0">
@@ -4334,12 +5045,802 @@
         </div>
     </div>
     {{>footer}}
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        document.querySelector('.ct_share').addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title:
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDZm_3Q1hGYk9JOHZrU0uHDYRbD58-FsRo",
+            authDomain: "krick-5050e.firebaseapp.com",
+            projectId: "krick-5050e",
+            storageBucket: "krick-5050e.appspot.com",
+            messagingSenderId: "737110334266",
+            appId: "1:737110334266:web:2fd97c14a592f622a20e03",
+            measurementId: "G-ZJGL359TRX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore()
+        var firebase = firebase
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+        integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../others/js/noframework.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='/socket.io/socket.io.js'></script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChps3-NrPNMwpBU3t6FywIsC4b6QRxOaA&libraries=places"> </script>
+
+    <script>
+        var socket = io()
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function base64url(source) {
+            // Encode in classical base64
+            let encodedSource = CryptoJS.enc.Base64.stringify(source);
+
+            // Remove padding equal characters
+            encodedSource = encodedSource.replace(/=+$/, '');
+
+            // Replace characters according to base64url specifications
+            encodedSource = encodedSource.replace(/\+/g, '-');
+            encodedSource = encodedSource.replace(/\//g, '_');
+
+            return encodedSource;
+        }
+        function secret(token) {
+            var base64Url = token.split('.')[1];
+            if (base64Url !== undefined) {
+                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+
+            } else {
+                return null
+            }
+        };
+
+        async function toggle_tab(typ) {
+            document.querySelector('.ct_load_items').style.display = 'flex'
+                          document.querySelector('.ct_refer_panel_outer').innerHTML = ''
+                        document.querySelector('.ct_bx_account .inner_x').innerHTML = ''
+                        document.querySelector('.ct_bx_account').style.display='none'
+                        document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
+                        document.querySelector('.order_lst').style.display = 'none'
+                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+            let dbCollection2 = db.collection("users")
+            let res = await dbCollection2.get()
+            document.querySelector('.ct_load_items').style.display = 'none'
+            let userDt = JSON.parse(getCookie('userData'))
+            res.docs.forEach(async cur => {
+                let dt = cur.data()
+                if (dt.id === userDt.id) {
+                    let csh = parseFloat(dt.cash_balance)
+                    let orders = dt.orders
+                    if (typ === 'edit') {
+
+
+
+                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                        document.querySelector('.edit_89jjs').classList.add('_1B5rE')
+                        let html = `                                <div class="ct_bx_otp_box fr_sign_otp">
+                                    <h4>Verify our phone number </h4>
+                                    <p>An OTP has been sent to you successfully.Please wait for a while if you donot
+                                        recived the
+                                        otp
+                                        yet.
+                                    </p>
+                                    <div class="ct_bx_inputs_otp">
+                                        <input id="input_1" type="tel" placeholder="0" style="opacity: 1;">
+                                        <input id="input_2" type="tel" disabled="" placeholder="0">
+                                        <input id="input_3" type="tel" disabled="" placeholder="0">
+                                        <input id="input_4" type="tel" disabled="" placeholder="0">
+
+                                    </div>
+                                    <p class="error_otp">Invalid OTP, please try again.</p>
+                                    <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
+                                    <button class="create_account">Create an account</button>
+                                </div>
+                                <div class="ct_field_first_acc">
+                                    <div class="ct_section_box_accounts">
+                                        <h4>Edit account edit</h4>
+
+                                        <div class="gt_first_nam_second_name">
+                                            <div class="nick_name area last_name bx_acc">
+                                                <label for="area">Your location</label>
+
+                                                <input autocomplete="off" placeholder="${dt.location}" name="area"
+                                                    class="last_of_user ac_setup pac-target-input" id="area"
+                                                    spellcheck="false" type="text" required="">
+                                                <div class="ct_results">
+
+                                                </div>
+                                            </div>
+                                            <div class="location_error error_signup">
+                                                <p>Sorry, we donot deliver to this location.</p>
+                                            </div>
+                                            <div class="nick_name bx_acc address">
+                                                <label class="labelM" for="address">Your House Address
+                                                </label>
+                                                <textarea name="address"
+                                                    placeholder="${dt.address}"
+                                                    id="" cols="10" rows="4" required=""></textarea>
+
+
+
+
+                                            </div>
+                                            <div class="address_error error_signup">
+                                                <p>Please fill this field</p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="ct_section_box_accounts">
+                                        <div class="gt_first_nam_second_name">
+                                            <div class="nick_name name_un bx_acc">
+                                                <label for="name_inp"> Full name</label>
+
+                                                <input name="name_user" placeholder="${dt.name}"
+                                                    class="name_of_user ac_setup" id="name_inp" spellcheck="false"
+                                                    type="text" required="">
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="name_error error_signup">
+                                            <p>Please fill this field</p>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="gt_first_nam_second_name ">
+
+                                        <div class="nick_name bx_acc phone_number">
+                                            <label for="phone">Phone Number</label>
+
+                                            <input autocomplete="off" placeholder="${dt.phone}" name="phone"
+                                                class="name_of_user ac_setup" id="phone" spellcheck="false" type="tel"
+                                                required="">
+
+
+                                        </div>
+                                        <div class="phone_error error_signup">
+                                            <p>Invalid phone number</p>
+                                        </div>
+                                    </div>
+                                    <div class="ct_btn_acc">
+                                        <button class="cont_btn_acc  account_cont" name="continue_verify"
+                                            type="button"><span>Change Now</span></button>
+                                    </div>
+
+                                </div>`
+                        document.querySelector('.ct_bx_account .inner_x').innerHTML = html
+                        document.querySelector('.ct_bx_account').style.display='block'
+                        if(sessionStorage.getItem('one_tm_dt_edt')!==null){
+                                                    document.querySelector('.ct_error_account').style.display = 'none'
+                        document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                        document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                        document.querySelector('.ct_field_first_acc').style.display = 'none'
+                        }
+        let inputs_sign = document.querySelectorAll('.ct_bx_inputs_otp input')
+        let pasteEv = false
+
+        function inputType(inputBx) {
+            inputBx.forEach((inp, index) => {
+                inp.addEventListener('keyup', (e) => {
+                    let currentInp = inp
+                    var key = e.which || e.keyCode
+                    var ctrl = e.ctrlKey ? e.ctrlKey : ((key === 17) ? true : false);
+                    if (key == 86 && ctrl) {
+                        pasteEv = true
+                    }
+                    if (currentInp.value.length > 1) {
+
+                        currentInp.value = currentInp.value.split('')[0]
+
+                    }
+                    document.querySelectorAll('.error_otp').forEach(cu => {
+                        cu.style.display = 'none'
+                    })
+                    document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                        cu11.style.background = 'rgb(246 245 245)'
+                        cu11.style.borderBottom = '2px solid rgb(198 198 198)'
+
+                    })
+                    if (!pasteEv) {
+                        nextInp = inp.nextElementSibling
+                        previousInp = inp.previousElementSibling
+
+                        console.log(nextInp)
+                        //
+                        if (nextInp && nextInp.hasAttribute('disabled') && currentInp.value !== '') {
+                            console.log(nextInp)
+                            nextInp.removeAttribute('disabled')
+                            nextInp.focus()
+                        }
+                        console.log(e.key)
+                        if (e.key === 'Backspace') {
+                            inputBx.forEach((inp11, index2) => {
+                                if (index2 < index) {
+                                    currentInp.setAttribute('disabled', true)
+                                    currentInp.value = ''
+                                    previousInp.removeAttribute('disabled')
+                                    previousInp.focus()
+                                }
+
+                            })
+                        }
+
+                    }
+
+                })
+            });
+            inputBx[0].addEventListener("paste", (e) => {
+                e.preventDefault()
+                let data = e.clipboardData.getData('text/plain')
+                let lengthInp = document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`).length
+                console.log(isNaN(Number(data)))
+                if (!isNaN(Number(data))) {
+                    data.split('').forEach((cu11, index) => {
+                        if (index <= lengthInp) {
+                            console.log(document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`), index)
+                            document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].value = cu11
+                            document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].removeAttribute('disabled')
+                        }
+                    })
+                } else {
+                    console.log(e)
+
+                }
+            });
+        }
+        inputType(inputs_sign)
+//-------------------------------------------
+
+
+              let directionSv = new google.maps.DirectionsService()
+
+        const center = { lat: 23.798500, lng: 91.263560 };
+        // Create a bounding box with sides ~10km away from the center point
+        const defaultBounds = {
+            north: center.lat + 1,
+            south: center.lat - 1,
+            east: center.lng + 1,
+            west: center.lng - 1,
+        };
+
+        const inputX = document.querySelector(".nick_name.area input");
+        const options = {
+            bounds: defaultBounds,
+            componentRestrictions: { country: "In" },
+            strictBounds: true,
+            types: ['(regions)'],
+
+        };
+        const autocomplete = new google.maps.places.Autocomplete(inputX, options);
+        // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+
+        // });
+        let objPlaces = ''
+        inputX.addEventListener('keyup', () => {
+
+            console.log(autocomplete.gm_accessors_.place)
+            objPlaces = autocomplete.gm_accessors_.place
+            let palcesFound = []
+            Object.keys(objPlaces).map(cur => {
+                if (objPlaces[cur].h !== undefined) {
+                    palcesFound = objPlaces[cur].h
+                }
             })
+            console.log(palcesFound)
+            if (palcesFound) {
+                document.querySelector('.ct_results').style.display = 'block'
+                let htmlX = document.querySelector('.pac-container').innerHTML
+                document.querySelector('.ct_results').innerHTML = htmlX
+                let w = document.querySelector('.nick_name.area input').getBoundingClientRect().width
+                document.querySelector('.ct_results').style.width = w + 'px'
+                document.querySelector('.ct_results').style.position = 'absolute'
+            }
+        })
+                    }
+                    if (typ === 'orders') {
+                        let total = 0
+                        document.querySelector('.ct_refer_panel_outer').innerHTML = ''
+                        document.querySelector('.ct_bx_account').innerHTML = ''
+                        document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
+                        document.querySelector('.order_lst').style.display = 'none'
+                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                        document.querySelector('.ord_89jjs').classList.add('_1B5rE')
+                        orders.forEach(cu11 => {
+                            let return_html = ''
+                            let delivered_html = ''
+                            let delivered_info = false
+                            // possible when delivered and arr -> return: true
+                            if (cu11.delivered) {
+                                delivered_info = true
+
+                                let delivered = cu11.delivered
+                                delivered_html = `<div class="ct_rtrn_h78s success">
+                                                <h4>Delivered on ${delivered.date}</h4>
+                                                <p>${delivered.info}</p>
+                                            </div>`
+                            }
+
+                            let arr_itms = cu11.arr.map(itm => {
+                                total += itm.am
+                                if (itm.return) {
+                                    // if user returned
+                                    if (itm.return.done) {
+                                        return_html = ` <div class="ct_btns returned">
+                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Returned</a></div>
+                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
+                                                    </div>`
+                                    } else {
+                                        return_html = ` <div class="ct_btns">
+                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
+                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
+                                                    </div>`
+                                    }
+
+                                }
+
+
+                                let hml = `                                            <div class="g28rk">
+
+                          <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
+                                  alt="" src="${itm.img}">
+                          </div>
+                          <div class="_2XWVq">
+                              <div class="ct_flex">
+                                  <div class="ct_inner">
+                                      <div class="_3h4gz">${itm.name}</div>
+                                      <div class="_2haEe">qty:${itm.qt}</div>
+                                      <div class="_2haEe">Net weight: ${itm.unit}</div>
+                                  </div>
+                                  ${return_html}
+
+
+                              </div>
+
+                          </div>
+                      </div>`
+                                return hml
+                            })
+                            let total_txt = 'Total Amount to pay'
+                            if (cu11.payMode.split(',').includes('online')) {
+                                total_txt = `Total Paid`
+                            }
+                            if (delivered_info) {
+                                total_txt = `Total Paid`
+
+                            }
+
+                            let html = `                                        <div class="_3xMk0">
+
+                                            <div class="ct_other_av">
+                                                <div class="_2fkm7">
+                                                    <span>order placed on, ${cu11.date}</span>
+                                                </div>
+                                            </div>
+                                            ${delivered_html}
+                                            <div class="ct_inner_itms">
+                                                ${arr_itms}
+                                             </div>
+                                            
+                                            <div class="_3SKK0">
+                                                <div class="_33I3_">Payment mode: ${cu11.payMode}</div>
+                                                <div class="_23DHc">${total_txt}: <span class="_1jGfr"> ${total.toLocaleString()} </span> </div>
+
+
+                                            </div>
+                                        </div>`
+                            document.querySelector('.order_lst').style.display = 'block'
+
+                            document.querySelector('.order_lst .ct_innner_orders').insertAdjacentHTML('beforeend', html)
+
+
+                        })
+
+
+                    }
+                    if (typ === 'wallet') {
+                        document.querySelector('.ct_refer_panel_outer').innerHTML = ''
+                        document.querySelector('.ct_bx_account').innerHTML = ''
+                        document.querySelector('.order_lst').innerHTML = ''
+                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                        document.querySelector('.wlt_tab').classList.add('_1B5rE')
+                        let html = `           
+                                    <div class="ct_upper">
+                                    <h4>₹ ${csh.toLocaleString()}.00</h4>
+                                    <div class="ct_icon_wallet">
+                                        <ion-icon name="wallet-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="ct_lower">
+                                    <span>Description</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui provident
+                                        tempora vel sapiente repellat impedit nemo suscipit iure laboriosam, recusandae
+                                        minima deserunt maxime harum doloremque voluptates consectetur error neque!</p>
+                                    <button>Activate</button>
+                                </div>`
+                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = html
+                    }
+                }
+            })
+
+
+        }
+
+        if (getCookie('show_saved') !== '') {
+            document.querySelector('.ct_outer_saved').style.display = 'flex'
+            document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50 by refering'
+            document.querySelector('.confetti').style.display = 'flex'
+
+        }
+        socket.on('get_csh', (csh, id) => {
+
+            let userDt = JSON.parse(getCookie('userData'))
+
+            if (id === userDt.id) {
+                document.querySelector('.ct_outer_saved').style.display = 'flex'
+                document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50 by refering'
+
+                document.querySelector('.confetti').style.display = 'flex'
+
+                document.querySelector('.ct_refer_panel_outer').innerHTML = ''
+                document.querySelector('.ct_bx_account').innerHTML = ''
+                document.querySelector('.order_lst').innerHTML = ''
+                document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+                document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                document.querySelector('.wlt_tab').classList.add('_1B5rE')
+                let html = `           
+                                    <div class="ct_upper">
+                                    <h4>₹ ${csh.toLocaleString()}.00</h4>
+                                    <div class="ct_icon_wallet">
+                                        <ion-icon name="wallet-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="ct_lower">
+                                    <span>Description</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui provident
+                                        tempora vel sapiente repellat impedit nemo suscipit iure laboriosam, recusandae
+                                        minima deserunt maxime harum doloremque voluptates consectetur error neque!</p>
+                                    <button>Activate</button>
+                                </div>`
+                document.querySelector('.ct_wallet_h6781sgh').innerHTML = html
+            }
+        })
+
+        async function getUser() {
+            let dbCollection2 = db.collection("users")
+            let res = await dbCollection2.get()
+            document.querySelector('.ct_load_items').style.display = 'none'
+
+            let userDt = JSON.parse(getCookie('userData'))
+            res.docs.forEach(async cur => {
+                let dt = cur.data()
+                let used_cpns = dt.cpns_used
+                if (dt.id === userDt.id) {
+                    //   used_cpns.forEach(cu11 => {
+                    //           let dbCollection23 = db.collection("coupons")
+                    //           let res2 = await dbCollection23.get()
+                    //           res2.docs.forEach(async cr => {
+                    //               let dt2 = cr.data()
+                    //               let limitX = parseFloat(cu11.use)
+                    //               let limitY = parseFloat(dt2.conditions.max)
+                    //               if (dt2.name !== cu11.name) {
+                    //                   if (limitX< limitY) {
+                    //                       let html = ` 
+                    //                   <div class="ct_refer_panel">
+                    //                   <div class="inner">
+                    //                       <div class="ct_img">
+                    //                           <img src="../img/refer_earn_icn_x.png">
+                    //
+                    //                       </div>
+                    //                       <div class="ct_inner_txt">
+                    //                           <h3>Refer your friends And</h3>
+                    //                           <h2>Both get ${dt2.off} discount </h2>
+                    //                           <p>Refer your friends and Both get 50% discount only for cooking sauces,
+                    //                               when created an account and logged in.
+                    //                           </p>
+                    //                       </div>
+                    //                       <div class="ct_coupon_code">
+                    //                           <span>coupon code</span>
+                    //                           <div class="ct_bx_coupon">
+                    //                               <h4>${}</h4>
+                    //                           </div>
+                    //                       </div>
+                    //
+                    //                       <div class="ct_inv_sn671sn">
+                    //                           <div class="ct_share_box">
+                    //                               <button>Invite <ion-icon
+                    //                                       name="chevron-forward-outline"></ion-icon></button>
+                    //                               <span>&mdash; or &mdash; </span>
+                    //                           </div>
+                    //
+                    //                       </div>
+                    //                       <div class="ct_copy_link">
+                    //                           <h4>Copy the link and share</h4>
+                    //                           <div class="ct_link_box">
+                    //                               <p>http://krickfoods/mycart?reffer=${dt.id}&true</p>
+                    //                           </div>
+                    //                       </div>
+                    //                   </div>
+                    //               </div>`
+                    //                   }else if(){
+                    //                       let html = ` 
+                    //        <div class="ct_refer_panel">
+                    //                   <div class="inner">
+                    //                       <div class="ct_img">
+                    //                           <img src="../img/refer_earn_icn_x.png">
+                    //
+                    //                       </div>
+                    //                       <div class="ct_inner_txt">
+                    //                           <h3>Refer your friends And</h3>
+                    //                           <h2>Both get 50% discount </h2>
+                    //                           <p>Refer your friends and Both get 50% discount only for cooking sauces,
+                    //                               when created an account and logged in.
+                    //                           </p>
+                    //                       </div>
+                    //                       <div class="ct_coupon_code">
+                    //                           <span>coupon code</span>
+                    //                           <div class="ct_bx_coupon">
+                    //                               <h4>${}</h4>
+                    //                           </div>
+                    //                       </div>
+                    //
+                    //                       <div class="ct_inv_sn671sn">
+                    //                           <div class="ct_share_box">
+                    //                               <button>Invite <ion-icon
+                    //                                       name="chevron-forward-outline"></ion-icon></button>
+                    //                               <span>&mdash; or &mdash; </span>
+                    //                           </div>
+                    //
+                    //                       </div>
+                    //                       <div class="ct_copy_link">
+                    //                           <h4>Copy the link and share</h4>
+                    //                           <div class="ct_link_box">
+                    //                               <p>http://krickfoods/mycart?reffer=${dt.id}&true</p>
+                    //                           </div>
+                    //                       </div>
+                    //                   </div>
+                    //               </div>`
+                    //                   }
+                    //               }
+                    //
+                    //           })
+                    //
+                    //           
+                    //   })
+                    //
+                    //   document.querySelector('.ct_refer_panel_outer').insertAdjacentHTML('beforeend', html)
+                    //   document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+                    //   document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                    //   document.querySelector('.refer_tab').classList.add('_1B5rE')
+                    //
+
+                }
+            })
+        }
+        getUser()
+
+
+        document.querySelector('html').addEventListener('click', (e) => {
+            let cls_popup = e.target.closest('.ct_offer_saved_popup .ct_btn')
+            let order_tab = e.target.closest('.ord_89jjs')
+            let edt_tab = e.target.closest('.edit_89jjs')
+            let verify_btn_ac = e.target.closest('.account_cont')
+                        let itemG = e.target.closest('.pac-item')
+            let inpX = e.target.closest('.nick_name.area input')
+            let  edit_acc=e.target.closest('.create_account')
+            if(edit_acc!==null){
+                        let userDt = JSON.parse(getCookie('userData'))
+                        let new_dt = JSON.parse(sessionStorage.getItem('one_tm_dt_edt'))
+
+                        let already=false
+                        async function setAccount(){
+                        let dbCollection2 = db.collection("users")
+                        let res = await dbCollection2.get()
+                        res.docs.forEach(async cur => {
+                            let dt = cur.data()
+                            let cpns_used = dt.cpns_used
+                            let allow_cpns = dt.allow_cpns
+
+                            // checking if phone no. already exist
+                            if(dt.id!==userDt.id){
+
+                            await dbCollection2.doc(cur.id).set({
+                                            admin: false,
+                                            id: dt.id,
+                                            name: new_dt.name,
+                                            phone: new_dt.phone,
+                                            address: new_dt.address,
+                                            location: new_dt.location,
+                                            cartItems: dt.cartItems,
+                                            allow_cpns:allow_cpns,
+                                            cpns_used: cpns_used,
+                                            refferedBy:dt.refferedBy,
+                                            reffer: dt.reffer,
+                                            orders: dt.orders
+                            })
+                                                    document.querySelector('.account_name_sec h4').innerText=new_dt.name
+                        document.querySelector('.ph_num').innerText=new_dt.phone
+                        document.querySelector('.add_ress').innerText=new_dt.address
+
+                            sessionStorage.clear()
+
+                            }
+                        })
+                        }
+                        setAccount()
+            }
+
+            if (itemG !== null) {
+                let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
+                document.querySelector('.nick_name.area input').value = text
+                document.querySelector('.ct_results').style.display = 'none'
+                document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
+                    cur.remove()
+                })
+            }
+            if (verify_btn_ac !== null) {
+  let location = document.querySelector('.nick_name.area input').value
+                let check_loc = true
+                let ph_num = document.querySelector('.phone_number input').value
+                let address = document.querySelector('.address textarea').value
+                let name = document.querySelector('.name_un  input').value
+                let error = false
+                document.querySelector('.nick_name.area input').style.background = 'rgb(245 245 245)'
+
+                if (ph_num === '') {
+                    document.querySelector('.phone_error p').innerText = 'Please fill this field'
+
+                    document.querySelector('.phone_error').style.display = 'block'
+                    error = true
+                }
+                if (location === '') {
+                    document.querySelector('.location_error p').innerText = 'Please fill this field'
+
+                    document.querySelector('.location_error').style.display = 'block'
+                    error = true
+
+                }
+                if (address === '') {
+                    error = true
+                    document.querySelector('.address_error').style.display = 'block'
+
+                }
+                if (name === '') {
+                    document.querySelector('.name_error').style.display = 'block'
+                    error = true
+
+                }
+                if (ph_num.length < 10) {
+                    document.querySelector('.phone_error').style.display = 'block'
+                    error = true
+                    document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+
+                }
+                if (error) return
+                let request = {
+                    origin: 'Badharghar, Agartala,Tripura',
+                    destination: location,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.IMPERIAL,
+                }
+              let directionSv = new google.maps.DirectionsService()
+
+                directionSv.route(request, async (res, stat) => {
+                    console.log(stat, stat === 'NOT_FOUND')
+                    if (stat === 'NOT_FOUND') {
+                        alert('invalid location')
+                        document.querySelector('.location_error p').innerText = 'Invalid location, please try again.'
+                        document.querySelector('.location_error').style.display = 'block'
+                    } else {
+                        if (stat === res.status) {
+                            let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
+                            let unitKM = unitMiles * 1.60934
+                            // EVERY LOCATION IS WORKING FINE
+                            //unitKM  checking the location by killometer distance from badharghat
+                            console.log(unitKM)
+                            if (unitKM <= 10) {
+
+                        let userDt = JSON.parse(getCookie('userData'))
+                        let already=false
+                        let dbCollection2 = db.collection("users")
+                        let res = await dbCollection2.get()
+                        res.docs.forEach(async cur => {
+                            let dt = cur.data()
+                            let used_cpns = dt.cpns_used
+
+                            // checking if phone no. already exist
+                            if(ph_num!==userDt.dt){
+                                 if(dt.ph===ph_num){
+                                    already=true
+                                    document.querySelector('.ct_error_account').style.display = 'flex'
+
+                                 }
+                            }
+
+                        })
+                        if(!already){
+                            
+                        document.querySelector('.ct_error_account').style.display = 'none'
+                        document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                        document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                        document.querySelector('.ct_field_first_acc').style.display = 'none'
+                        let obj={
+                                address: userDt.address,
+                                allow_cpns:userDt.allow_cpns,
+                                cpns_used:userDt.cpns_used,
+                                id:userDt.id,
+                                location:userDt.location,
+                                name:name,
+                                phone:ph_num,
+                        }
+                        sessionStorage.setItem('one_tm_dt_edt',JSON.stringify(obj))
+
+                        }
+                            
+  
+
+                            } else {
+                                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
+                                document.querySelector('.location_error').style.display = 'block'
+                                document.querySelector('.ct_inner_bottom_box').scrollTo(0, 0)
+                                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
+                            }
+                        }
+                    }
+
+                })
+
+            }
+            if (edt_tab !== null) {
+                toggle_tab('edit')
+            }
+            if (order_tab !== null) {
+                toggle_tab('orders')
+            }
+
+            if (cls_popup !== null) {
+                document.querySelector('.ct_outer_saved').style.display = 'none'
+                document.querySelector('.confetti').style.display = 'none'
             }
         })
     </script>

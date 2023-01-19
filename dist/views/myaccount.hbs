@@ -21100,44 +21100,7 @@ src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1"
     <script>
     // remove if desktop version is ready
 
-                var previousOrientation = window.orientation;
-var checkOrientation = function(){
-    if(window.orientation !== previousOrientation){
-        previousOrientation = window.orientation;
-        // orientation changed, do your magic here
-      
-          if(window.screen.width>470){
-            document.querySelector('.ct_bx_under_maintenance').style.display='block'
-            document.querySelector('.ct_sep_bx').style.display='none'
-            document.querySelector('.for_nav_main').style.display='none'
-            document.querySelector('body').classList.add('unavailable')
-            document.querySelector('.ct_bx_div_bottom_nav').style.display='none'
-            document.querySelector('footer').style.display='none'
 
-        }else{
-                    document.querySelector('.ct_bx_under_maintenance').style.display='none'
-            document.querySelector('.ct_sep_bx').style.display='block'
-            document.querySelector('.for_nav_main').style.display='block'
-            document.querySelector('.ct_bx_div_bottom_nav').style.display='block'
-            document.querySelector('footer').style.display='block'
-            document.querySelector('body').classList.remove('unavailable')
-
-        }
-    }
-};
-
-window.addEventListener("resize", checkOrientation, false);
-window.addEventListener("orientationchange", checkOrientation, false);
-          if(window.screen.width>470){
-                        document.querySelector('.ct_bx_under_maintenance').style.display='block'
-
-            document.querySelector('.ct_sep_bx').style.display='none'
-            document.querySelector('.for_nav_main').style.display='none'
-            document.querySelector('body').classList.add('unavailable')
-            document.querySelector('.ct_bx_div_bottom_nav').style.display='none'
-            document.querySelector('footer').style.display='none'
-
-        }
 //--------------------------//
 
         var waypoint = new Waypoint({
@@ -21164,6 +21127,7 @@ if(window.location.search===''&&window.location.pathname=='/your-account'){
                         document.cookie = "opt_for_update_send" + "=" + true + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/"
 
 }
+return
         let directionSv = new google.maps.DirectionsService()
 
         const center = { lat: 23.798500, lng: 91.263560 };
