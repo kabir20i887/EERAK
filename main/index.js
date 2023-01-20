@@ -359,6 +359,9 @@ app.get('/notavailable', (req, res) => {
     res.render('under_construction')
 
 })
+jwt.verify('eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyjuyw1lijoiu1vqrvi0mcisim9mzii6ijqwiiwiawf0ijoxnjc0mja3oty5fq.c8siutlx4ibzg2rt2hfwtvlg9snjn_q_zcy9vdxi8ow', 'shhhhh', function (err, decoded) {
+    console.log(decoded)
+})
  app.get('/account', (req, res) => {
     res.render('account_page')
 })
@@ -462,14 +465,19 @@ io.on('connection', (sock) => {
         var token = jwt.sign({ n: unique_num }, 'shhhhh');
         io.emit('sendCode',uniqueId,token,unique_num,authfst)
     })
+    sock.on('get_refer', (id,name,offer) => {
+        var token = jwt.sign({id:id, name: name,off:offer }, 'shhhhh');
+        console.log(token)
+        io.emit('send_refer',token)
+    })
     sock.on('setId', () => {
         const { v4: uuidv4 } = require('uuid');
 
         io.emit('getId', uuidv4())
 
     })
-    sock.on('cash_oth4', (csh,id) => {
-        io.emit('get_csh',csh,id)  
+    sock.on('cash_oth4', (name,off,id) => {
+        io.emit('get_csh',name,off,id)  
     })
     sock.on('acceptedOr4', () => {
         io.emit('acceptedOrC')

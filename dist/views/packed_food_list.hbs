@@ -8087,34 +8087,34 @@
         //  var socket = io()
 
 ///
-         let arrayItm2 = [{
-         conditions:[{max:1,upto:200}],
- data:"Get 20% off on your order up to Rs. 240",
- for:"sauce",
- hidden:false,
- name:"FLAT20",
- off:"20%",
- secret:null,
- grp:'b',
-         },
-         {
-         conditions:[{max:1,upto:200}],
- data:"Get 40% off on your order up to Rs. 240",
- for:"sauce",
- hidden:false,
- name:"SUPER40",
- off:"40%",
- secret:null,
- grp:'b',
-         }]
-     arrayItm2.forEach(cur => {
-         db.collection("coupons").add(cur).then(() => {
-             console.log("Document successfully written!");
-         })
-             .catch((error) => {
-                 console.error("Error writing document: ", error);
-             })
-     })
+     //              let arrayItm2 = [{
+     //              conditions:[{max:1,upto:200}],
+     //      data:"Get 20% off on your order up to Rs. 240",
+     //      for:"sauce",
+     //      hidden:false,
+     //      name:"FLAT20",
+     //      off:"20%",
+     //      secret:null,
+     //      grp:'b',
+     //              },
+     //              {
+     //              conditions:[{max:1,upto:200}],
+     //      data:"Get 40% off on your order up to Rs. 240",
+     //      for:"sauce",
+     //      hidden:false,
+     //      name:"SUPER40",
+     //      off:"40%",
+     //      secret:null,
+     //      grp:'b',
+     //              }]
+     //          arrayItm2.forEach(cur => {
+     //              db.collection("coupons").add(cur).then(() => {
+     //                  console.log("Document successfully written!");
+     //              })
+     //                  .catch((error) => {
+     //                      console.error("Error writing document: ", error);
+     //                  })
+     //          })
 ///
 
         //  arrayItm.forEach(cur => {

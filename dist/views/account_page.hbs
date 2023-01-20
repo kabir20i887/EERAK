@@ -85,6 +85,14 @@
         background-color: #fff;
     }
 
+    .ct_go_back_account h3 {
+        color: #6c6c6c;
+        font-size: 18px;
+        margin: 70px 0 39px 15px;
+        display: block;
+        font-family: 'Open sans';
+    }
+
     /*! CSS Used from: Embedded */
     ion-icon {
         visibility: hidden;
@@ -109,6 +117,10 @@
         direction: ltr;
         -webkit-font-feature-settings: 'liga';
         -webkit-font-smoothing: antialiased;
+    }
+
+    .order_lst {
+        display: none;
     }
 
     /*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
@@ -248,6 +260,35 @@
         position: absolute;
     }
 
+    .ct_coupon_code span,
+    .ct_bx_coupon h4 {
+        font-family: 'roboto';
+        color: white;
+        font-weight: 500;
+        font-size: 67px;
+    }
+
+    .ct_coupon_code {
+        margin-top: 40px;
+    }
+
+    .ct_coupon_code span {
+        font-size: 15px;
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .ct_bx_coupon {
+        border: 1px dotted white;
+        padding: 26px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     ion-icon {
         visibility: hidden;
     }
@@ -324,24 +365,24 @@
         overflow: hidden;
         z-index: 999999999999;
     }
-    
 
-        .ct_results {
-            margin: 0px 0 0 2px;
-            display: none;
-            border-radius: 2px;
-            border-top: 1px solid #d9d9d9;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            overflow: hidden;
-            margin-bottom: 16px;
-            position: static !important;
-            z-index: 9999999999999999;
-            position: absolute;
-        }
+
+    .ct_results {
+        margin: 0px 0 0 2px;
+        display: none;
+        border-radius: 2px;
+        border-top: 1px solid #d9d9d9;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-bottom: 16px;
+        position: static !important;
+        z-index: 9999999999999999;
+        position: absolute;
+    }
 
     .confetti-piece {
         position: absolute;
@@ -3409,7 +3450,7 @@
     }
 
     .ct_share_box {
-        margin: 0px 0 0 78px;
+        margin: 0px;
 
     }
 
@@ -4367,38 +4408,185 @@
         margin: 0;
     }
 
-/*! CSS Used from: Embedded */
-.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#515151;}
-.pac-item:hover{background-color:#fafafa;}
-.pac-matched{font-weight:700;}
-.pac-item-query{font-size:13px;padding-right:3px;color:#000;}
-.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px;}
-.pac-icon-marker{background-position:-1px -161px;}
-/*! CSS Used from: Embedded */
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*,::after,::before{box-sizing:border-box;}
-@media print{
-*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
-}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-*{padding:0;box-sizing:border-box;margin:0;}
-.pac-item-query{font-size:18px;padding-right:3px;color:#000;}
-*{padding:0;box-sizing:border-box;margin:0;}
+    /*! CSS Used from: Embedded */
+    .pac-item {
+        cursor: default;
+        padding: 0 4px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 30px;
+        text-align: left;
+        border-top: 1px solid #e6e6e6;
+        font-size: 11px;
+        color: #515151;
+    }
+
+    .pac-item:hover {
+        background-color: #fafafa;
+    }
+
+    .pac-matched {
+        font-weight: 700;
+    }
+
+    .pac-item-query {
+        font-size: 13px;
+        padding-right: 3px;
+        color: #000;
+    }
+
+    .pac-icon {
+        width: 15px;
+        height: 20px;
+        margin-right: 7px;
+        margin-top: 6px;
+        display: inline-block;
+        vertical-align: top;
+        background-image: url(https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);
+        background-size: 34px;
+    }
+
+    .pac-icon-marker {
+        background-position: -1px -161px;
+    }
+
+    /*! CSS Used from: Embedded */
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    @media print {
+
+        *,
+        ::after,
+        ::before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .pac-item-query {
+        font-size: 18px;
+        padding-right: 3px;
+        color: #000;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
 
     .create_account {
         font-family: 'Open Sans';
@@ -4413,11 +4601,12 @@
         position: relative;
         border: 1px solid;
         height: 38px;
-        width: 98%;
+        width: 57%;
         margin: 24px 0px;
         border: none;
         box-shadow: 0 4px 5px #0000002e;
         text-align: center;
+        transition: all .5s ease-in;
         background-image: linear-gradient(to right, #143bec, #143aec);
     }
 
@@ -4532,12 +4721,14 @@
         color: rgb(29, 29, 29);
         outline: none;
         border-radius: 8px;
-        border-bottom: 2px solid rgb(198 198 198);
-        background-color: rgb(245 245 245);
+        border-bottom: 2px solid rgb(229 227 227);
+        background-color: rgb(255 255 255);
         transform: translate(0, 0px);
         width: 98%;
         font-family: 'Open sans';
+        transition: all 1s ease-in;
     }
+
 
     .cont_btn_acc {
         font-family: 'Open Sans';
@@ -4548,16 +4739,26 @@
         color: rgb(255 255 255);
         border-radius: 33px;
         margin: 0 0 0 6px;
+        display: none;
         overflow: hidden;
         position: relative;
         border: 1px solid;
         height: 38px;
         width: 98%;
         margin: 10px 0px;
-        border: 1px solid #ec1450;
         box-shadow: 0 4px 5px #0000002e;
         text-align: center;
-        background-image: linear-gradient(to right, #ec1450, #ec145b);
+        transition: all .5s ease-in-out;
+        border: none;
+        margin-top: 40px;
+        background: linear-gradient(20deg, #ff008d, #a200ffad);
+    }
+
+    .cont_btn_acc.edit_btn {
+        color: black;
+        display: block;
+        background: white;
+        border: 1px solid black;
     }
 
     .nick_name {
@@ -4685,10 +4886,14 @@
 
     .ct_refer_panel .inner {
         display: block;
+        width: 71%;
     }
 
     .ct_inv_sn671sn {
-        margin: 36px 0 24px 52px;
+        margin: 36px 0 24px 0;
+        display: flex;
+        width: 100%;
+        justify-content: center;
     }
 
     .ct_share_box button ion-icon {
@@ -4718,7 +4923,7 @@
         font-size: 13px;
         font-family: 'open sans';
         user-select: text;
-        text-transform: lowercase;
+        text-transform: none;
         -webkit-user-select: text;
         /* Safari */
         -ms-user-select: text;
@@ -4727,7 +4932,8 @@
     .ct_link_box {
         margin-top: 10px;
         border-radius: 4px;
-        width: 89%;
+        word-break: break-word;
+        width: 32vw;
         background-color: #3d025f;
         padding: 18px 15px;
     }
@@ -4799,33 +5005,99 @@
         font-weight: 500;
         color: black;
     }
-    .ct_error_account{
+
+    .ct_error_account {
         background-color: rgba(255, 0, 119, 0.76);
         padding: 10px 20px;
         border-radius: 5px;
-        margin-bottom:40px;
+        margin-bottom: 40px;
         display: none;
     }
-.ct_info h4,
-.ct_error_account h4 {
-    color: white;
-    font-size: 13px;
-    font-weight: 500;
-    font-family: 'roboto';
-}
-.ct_info h4 {
-    color: black;
-    font-size: 15px;
-}
-.ct_info {
-    background-color: rgb(164 250 224 / 76%);
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 40px;
-    width: 100%;
-    margin: 24px;
-    display: none;
-}
+
+    .ct_info h4,
+    .ct_error_account h4 {
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: 'roboto';
+    }
+
+    .ct_info h4 {
+        color: black;
+        font-size: 15px;
+    }
+
+    .ct_info {
+        background-color: rgb(164 250 224 / 76%);
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-bottom: 40px;
+        width: 100%;
+        margin: 24px;
+        display: none;
+    }
+
+    .ct_notify {
+        background: linear-gradient(20deg, #fff0f4, #ff008dad);
+        padding: 17px 20px;
+        width: 98%;
+        border-radius: 8px;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .ct_notify .ct_inner {
+        display: flex;
+    }
+
+    .ct_notify .ct_inner span {
+        color: #ff008dad;
+        font-size: 30px;
+    }
+
+    .ct_notify .remove_btn {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        top: 10px;
+        color: black;
+    }
+
+    .ct_notify .remove_btn span {
+        font-size: 21px;
+    }
+
+    .ct_notify P {
+        font-family: 'roboto';
+        color: #970d8d;
+        margin-top: 5px;
+        margin-left: 20px;
+        font-size: 16px;
+    }
+
+    .ct_flex_bx_notif {
+        display: none;
+        margin-bottom: 40px;
+    }
+
+    .ct_flex_bx_notif h4 {
+        color: black;
+        font-size: 21px;
+        font-family: 'roboto';
+        margin-top: 13px;
+        font-weight: 500;
+        width: 80%;
+    }
+
+    .ct_flex_bx_notif button {
+        border: 1px solid black;
+        padding: 6px 14px;
+        font-size: 14px;
+        background-color: white;
+        color: black;
+    }
+
+
 
     /*! CSS Used keyframes */
 </style>
@@ -4867,8 +5139,8 @@
                 <div class="ct_inner">
                     <h4>Priyangshou Bhattacharjee</h4>
                     <div class="ct_flex">
-                        <p class="ph_num"><ion-icon name="call-outline"></ion-icon> 9233054806</p>
-                        <p class="add_ress"><ion-icon name="home-outline"></ion-icon> Badharghat, opposite of gramin bank</p>
+                        <p class="ph_num"><ion-icon name="call-outline"></ion-icon> <span></span></p>
+                        <p class="add_ress"><ion-icon name="home-outline"></ion-icon> <span></span></p>
                     </div>
 
                 </div>
@@ -4888,19 +5160,13 @@
                     <div class="_3R9IF">
                         <div class="_2gu8R">
                             <ul>
-                                <li class="awo_x wlt_tab ">
-                                    <div class="ct_icon_img">
-                                        <ion-icon name="pencil-outline" role="img" class="md hydrated"
-                                            aria-label="pencil outline"></ion-icon>
-                                    </div>
-                                    <span class="_1ZYny">All coupons</span>
-                                </li>
+
                                 <li class="awo_x refer_tab ">
                                     <div class="ct_icon_img">
                                         <ion-icon name="pencil-outline" role="img" class="md hydrated"
                                             aria-label="pencil outline"></ion-icon>
                                     </div>
-                                    <span class="_1ZYny">Refer and Earn</span>
+                                    <span class="_1ZYny">Refer and earn</span>
                                 </li>
                                 <li class="awo_x ord_89jjs _1B5rE">
                                     <div class="ct_icon_img">
@@ -4939,7 +5205,18 @@
                             </div>
                             <div class="ct_refer_panel_outer">
 
+                                <div class="ct_notify_refer_btn">
+                                    <div class="ct_flex_bx_notif notif_refer">
+                                        <h4>Notifications</h4>
+                                        <button>Remove All</button>
+                                    </div>
+                                </div>
+                                <div class="ct_flex_bx_notif for_ref">
+                                    <h4>Refer and get coupons</h4>
+                                </div>
+                                <div class="inner_x">
 
+                                </div>
                             </div>
 
                             <div class="ct_bx_account">
@@ -4952,90 +5229,11 @@
 
                             </div>
                             <div class="order_lst">
-                                <div>
-                                    <div class="_3lCtm"> My Orders </div>
-                                    <div class="ct_innner_orders">
+                                <div class="_3lCtm"> My Orders </div>
+                                <div class="ct_innner_orders">
 
-                                    </div>
-                                    <div>
-
-                                    </div>
-                                    <div>
-                                        <div class="_3xMk0">
-                                            <div class="g28rk">
-                                                <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
-                                                        alt=""
-                                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_200,c_fill/ydlt0ajggo4jnolpkf2h">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="_3h4gz">SURUCHI</div>
-                                                    <div class="_2haEe">RAMNAGAR ROAD NO-4</div>
-                                                    <div class="_299_I">ORDER #154452054336 | Sun, Dec 18, 2022, 08:50
-                                                        PM</div>
-                                                    <div class="_1ziWV">VIEW DETAILS</div>
-                                                    <div class="_2fkm7"><span>Delivered on Sun, Dec 18, 2022, 09:20
-                                                            PM<span class="h-Ntp icon-tickSharp"></span></span></div>
-                                                </div>
-                                            </div>
-                                            <div class="_3SKK0">
-                                                <div class="_33I3_">Rumali roti x 15</div>
-                                                <div class="_2a27y"><a class="_3PUy8 f4Ovn">REORDER</a><a
-                                                        class="_3PUy8">HELP</a></div>
-                                                <div class="_23DHc">Total Paid: <span class="_1jGfr"> 185 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="_3xMk0">
-                                            <div class="g28rk">
-                                                <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
-                                                        alt=""
-                                                        src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_200,c_fill/xlygyzj8gjiecjhbpgzz">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="_3h4gz">Mr Biryani Wala</div>
-                                                    <div class="_2haEe">Bikramnagar</div>
-                                                    <div class="_299_I">ORDER #153160055222 | Sat, Dec 3, 2022, 09:57 PM
-                                                    </div>
-                                                    <div class="_1ziWV">VIEW DETAILS</div>
-
-                                                </div>
-                                            </div>
-                                            <div class="_3SKK0">
-                                                <div class="_33I3_">Chicken " Dum " Biryani [1000ml] x 2</div>
-                                                <div class="_2a27y"><a class="_3PUy8 f4Ovn">REORDER</a><a
-                                                        class="_3PUy8">HELP</a></div>
-                                                <div class="_23DHc">Total Paid: <span class="_1jGfr"> 565 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="_3xMk0">
-
-                                            <div class="g28rk">
-                                                <div class="_359Fc"><img class="_12_oN" height="200" width="300" alt="">
-                                                </div>
-                                                <div class="_2XWVq">
-                                                    <div class="_3h4gz">Delicious Fast Food And Tiffin Hub</div>
-                                                    <div class="_2haEe">Badharghat</div>
-                                                    <div class="_299_I">ORDER #153073433475 | Fri, Dec 2, 2022, 09:53 PM
-                                                    </div>
-                                                    <div class="ct_other">
-
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="_3SKK0">
-                                                <div class="_33I3_">Chicken Dum Biryani x 2</div>
-                                                <div class="_2a27y"><a class="_3PUy8 f4Ovn">REORDER</a><a
-                                                        class="_3PUy8">HELP</a></div>
-                                                <div class="_23DHc">Total Paid: <span class="_1jGfr"> 451 </span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="_3eCKY">Show More Orders</div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -5129,12 +5327,14 @@
 
         async function toggle_tab(typ) {
             document.querySelector('.ct_load_items').style.display = 'flex'
-                          document.querySelector('.ct_refer_panel_outer').innerHTML = ''
-                        document.querySelector('.ct_bx_account .inner_x').innerHTML = ''
-                        document.querySelector('.ct_bx_account').style.display='none'
-                        document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
-                        document.querySelector('.order_lst').style.display = 'none'
-                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+            document.querySelector('.ct_refer_panel_outer').style.display='none'
+            document.querySelector('.ct_refer_panel_outer .inner_x').innerHTML=''
+
+            document.querySelector('.ct_bx_account .inner_x').innerHTML = ''
+            document.querySelector('.ct_bx_account').style.display = 'none'
+            document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
+            document.querySelector('.order_lst').style.display = 'none'
+            document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
             let dbCollection2 = db.collection("users")
             let res = await dbCollection2.get()
             document.querySelector('.ct_load_items').style.display = 'none'
@@ -5144,30 +5344,148 @@
                 if (dt.id === userDt.id) {
                     let csh = parseFloat(dt.cash_balance)
                     let orders = dt.orders
-                    if (typ === 'edit') {
+
+                    if (typ === 'refer') {
+                        document.querySelector('.ct_load_items').style.display = 'none'
+            document.querySelector('.ct_refer_panel_outer').style.display='block'
+
+                        let userDt = JSON.parse(getCookie('userData'))
+                        let used_cpns = dt.cpns_used
+                        // 1: show which coupons they will get through refer
+                        // 2: if refered and account created with link -----> push in refer cpns allow_cpns 
+                        document.querySelector('.account_name_sec h4').innerText = dt.name
+                        document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
+
+                        document.querySelector('.ph_num span').innerText = dt.phone
+                        document.querySelector('.add_ress span').innerText = dt.address.replace(/(\r\n|\n|\r)/gm, " ")
+                        let dbCollection23 = db.collection("reffer")
+                        let res2 = await dbCollection23.get()
+                        let mached = false
+                        let cpns_reffer_arr = res2.docs[0].data().cpns
+                        cpns_reffer_arr.forEach(async elem => {
+                            dt.allow_cpns.forEach(async cu1 => {
+                                if (cu1.for !== undefined) {
+                                    if (cu1.for === 'refer') {
+                                        if (elem.name === cu1.name) {
+                                            //if view_refer_info ->> removed by user
+                                            if (getCookie('view_refer_info') === '') {
+                                                document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+
+                                                let html = `<div class="ct_notify">
+                                        <div class="remove_btn">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div class="ct_inner">
+                                            <span class="material-symbols-outlined">
+                                                task_alt
+                                            </span>
+                                            <p>Hurrah!, COUPON: ${elem.name} unlocked. Grab the coupon from the cart and enjoy flat ${elem.off}%
+                                                discount</p>
+                                        </div>
+
+                                    </div>`
+                                                document.querySelector('.ct_notify_refer_btn').insertAdjacentHTML('beforeend', html)
+                                            }
+
+                                        }
 
 
+                                    }
+                                }
+                                if (cu1.name === elem.name) {
 
-                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                        document.querySelector('.edit_89jjs').classList.add('_1B5rE')
-                        let html = `                                <div class="ct_bx_otp_box fr_sign_otp">
-                                    <h4>Verify our phone number </h4>
-                                    <p>An OTP has been sent to you successfully.Please wait for a while if you donot
-                                        recived the
-                                        otp
-                                        yet.
-                                    </p>
-                                    <div class="ct_bx_inputs_otp">
-                                        <input id="input_1" type="tel" placeholder="0" style="opacity: 1;">
-                                        <input id="input_2" type="tel" disabled="" placeholder="0">
-                                        <input id="input_3" type="tel" disabled="" placeholder="0">
-                                        <input id="input_4" type="tel" disabled="" placeholder="0">
+                                    mached = true
+                                }
+                            })
 
+                        })
+                        // cpn can used and show it
+                        let use_cpn = cpns_reffer_arr[0]
+                        if (mached) {
+                            use_cpn = cpns_reffer_arr[1]
+                        }
+                        socket.emit('get_refer', userDt.id, use_cpn.name, use_cpn.off)
+                        socket.on('send_refer', (tcn) => {
+                            document.querySelector('.ct_flex_bx_notif.for_ref').style.display = 'flex'
+                            let html = ` 
+                                    <div class="ct_refer_panel">
+                                    <div class="inner">
+                                        <div class="ct_img">
+                                            <img src="../img/refer_earn_icn_x.png">
+                    
+                                     </div>
+                                     <div class="ct_inner_txt">
+                                         <h3>Refer your friends And</h3>
+                                         <h2>Both get ${use_cpn.off}% discount </h2>
+                                         <p>Refer your friends and Both get ${use_cpn.off}% discount only for cooking sauces,
+                                             when created an account and logged in.
+                                         </p>
+                                     </div>
+                                     <div class="ct_coupon_code">
+                                         <span>Invite and unlock the coupon</span>
+                                         <div class="ct_bx_coupon">
+                                             <h4>${use_cpn.name}</h4>
+                                         </div>
+                                     </div>
+                    
+                                        <div class="ct_inv_sn671sn">
+                                            <div class="ct_share_box">
+                                                <button>Invite <ion-icon
+                                                        name="chevron-forward-outline"></ion-icon></button>
+                                                <span>&mdash; or &mdash; </span>
+                                            </div>
+                
+                                        </div>
+                                        <div class="ct_copy_link">
+                                            <h4>Copy the link and share</h4>
+                                            <div class="ct_link_box">
+                                                <p>http://krickfoods/mycart?reffer=${tcn}&true</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="error_otp">Invalid OTP, please try again.</p>
-                                    <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
-                                    <button class="create_account">Create an account</button>
-                                </div>
+                                </div>`
+
+                            //                   }
+                            //               }
+                            //
+                            //           })
+                            //
+                            //           
+                            //   })
+                            //
+                            document.querySelector('.ct_refer_panel_outer .inner_x').innerHTML=html
+                            document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+                            document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                            document.querySelector('.refer_tab').classList.add('_1B5rE')
+                        })
+                    }
+
+                if (typ === 'edit') {
+                    document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                    document.querySelector('.edit_89jjs').classList.add('_1B5rE')
+                    let html = `                                     <div class="ct_bx_otp_box fr_sign_otp">
+                                        <div class="ct_go_back_account">
+                                            <h3><ion-icon name="arrow-back-outline"></ion-icon> Go Back</h3>
+                                        </div>
+                                        <h4>Verify our phone number </h4>
+                                        <p>An OTP has been sent to you successfully.Please wait for a while if you donot
+                                            recived the
+                                            otp
+                                            yet.
+                                        </p>
+                                        <div class="ct_bx_inputs_otp">
+                                            <input id="input_1" type="tel" placeholder="0" style="opacity: 1;">
+                                            <input id="input_2" type="tel" disabled="" placeholder="0">
+                                            <input id="input_3" type="tel" disabled="" placeholder="0">
+                                            <input id="input_4" type="tel" disabled="" placeholder="0">
+
+                                        </div>
+                                        <p class="error_otp">Invalid OTP, please try again.</p>
+                                        <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
+                                        <button class="create_account">Create an account</button>
+                                    </div>
                                 <div class="ct_field_first_acc">
                                     <div class="ct_section_box_accounts">
                                         <h4>Edit account edit</h4>
@@ -5176,7 +5494,7 @@
                                             <div class="nick_name area last_name bx_acc">
                                                 <label for="area">Your location</label>
 
-                                                <input autocomplete="off" placeholder="${dt.location}" name="area"
+                                                <input readonly autocomplete="off" placeholder="${dt.location}" name="area"
                                                     class="last_of_user ac_setup pac-target-input" id="area"
                                                     spellcheck="false" type="text" required="">
                                                 <div class="ct_results">
@@ -5189,7 +5507,7 @@
                                             <div class="nick_name bx_acc address">
                                                 <label class="labelM" for="address">Your House Address
                                                 </label>
-                                                <textarea name="address"
+                                                <textarea readonly name="address"
                                                     placeholder="${dt.address}"
                                                     id="" cols="10" rows="4" required=""></textarea>
 
@@ -5209,7 +5527,7 @@
                                             <div class="nick_name name_un bx_acc">
                                                 <label for="name_inp"> Full name</label>
 
-                                                <input name="name_user" placeholder="${dt.name}"
+                                                <input readonly name="name_user" placeholder="${dt.name}"
                                                     class="name_of_user ac_setup" id="name_inp" spellcheck="false"
                                                     type="text" required="">
 
@@ -5230,7 +5548,7 @@
                                         <div class="nick_name bx_acc phone_number">
                                             <label for="phone">Phone Number</label>
 
-                                            <input autocomplete="off" placeholder="${dt.phone}" name="phone"
+                                            <input readonly autocomplete="off" readonly placeholder="${dt.phone}" name="phone"
                                                 class="name_of_user ac_setup" id="phone" spellcheck="false" type="tel"
                                                 required="">
 
@@ -5241,185 +5559,180 @@
                                         </div>
                                     </div>
                                     <div class="ct_btn_acc">
+                                        <button class="cont_btn_acc  edit_btn" name="continue_verify"
+                                            type="button"><span>Edit</span></button>
                                         <button class="cont_btn_acc  account_cont" name="continue_verify"
-                                            type="button"><span>Change Now</span></button>
+                                            type="button"><span>Verify and change</span></button>
                                     </div>
 
                                 </div>`
-                        document.querySelector('.ct_bx_account .inner_x').innerHTML = html
-                        document.querySelector('.ct_bx_account').style.display='block'
-                        if(sessionStorage.getItem('one_tm_dt_edt')!==null){
-                                                    document.querySelector('.ct_error_account').style.display = 'none'
+                    document.querySelector('.ct_bx_account .inner_x').innerHTML = html
+                    document.querySelector('.ct_bx_account').style.display = 'block'
+                    if (sessionStorage.getItem('one_tm_dt_edt') !== null) {
+                        document.querySelector('.ct_error_account').style.display = 'none'
                         document.querySelector('.ct_bx_otp_box').style.display = 'block'
                         document.querySelector('.ct_bx_otp_box').style.opacity = '1'
                         document.querySelector('.ct_field_first_acc').style.display = 'none'
-                        }
-        let inputs_sign = document.querySelectorAll('.ct_bx_inputs_otp input')
-        let pasteEv = false
-
-        function inputType(inputBx) {
-            inputBx.forEach((inp, index) => {
-                inp.addEventListener('keyup', (e) => {
-                    let currentInp = inp
-                    var key = e.which || e.keyCode
-                    var ctrl = e.ctrlKey ? e.ctrlKey : ((key === 17) ? true : false);
-                    if (key == 86 && ctrl) {
-                        pasteEv = true
                     }
-                    if (currentInp.value.length > 1) {
+                    let inputs_sign = document.querySelectorAll('.ct_bx_inputs_otp input')
+                    let pasteEv = false
 
-                        currentInp.value = currentInp.value.split('')[0]
-
-                    }
-                    document.querySelectorAll('.error_otp').forEach(cu => {
-                        cu.style.display = 'none'
-                    })
-                    document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
-                        cu11.style.background = 'rgb(246 245 245)'
-                        cu11.style.borderBottom = '2px solid rgb(198 198 198)'
-
-                    })
-                    if (!pasteEv) {
-                        nextInp = inp.nextElementSibling
-                        previousInp = inp.previousElementSibling
-
-                        console.log(nextInp)
-                        //
-                        if (nextInp && nextInp.hasAttribute('disabled') && currentInp.value !== '') {
-                            console.log(nextInp)
-                            nextInp.removeAttribute('disabled')
-                            nextInp.focus()
-                        }
-                        console.log(e.key)
-                        if (e.key === 'Backspace') {
-                            inputBx.forEach((inp11, index2) => {
-                                if (index2 < index) {
-                                    currentInp.setAttribute('disabled', true)
-                                    currentInp.value = ''
-                                    previousInp.removeAttribute('disabled')
-                                    previousInp.focus()
+                    function inputType(inputBx) {
+                        inputBx.forEach((inp, index) => {
+                            inp.addEventListener('keyup', (e) => {
+                                let currentInp = inp
+                                var key = e.which || e.keyCode
+                                var ctrl = e.ctrlKey ? e.ctrlKey : ((key === 17) ? true : false);
+                                if (key == 86 && ctrl) {
+                                    pasteEv = true
                                 }
+                                if (currentInp.value.length > 1) {
 
-                            })
-                        }
+                                    currentInp.value = currentInp.value.split('')[0]
 
-                    }
+                                }
+                                document.querySelectorAll('.error_otp').forEach(cu => {
+                                    cu.style.display = 'none'
+                                })
+                                document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                                    cu11.style.background = 'rgb(246 245 245)'
+                                    cu11.style.borderBottom = '2px solid rgb(198 198 198)'
 
-                })
-            });
-            inputBx[0].addEventListener("paste", (e) => {
-                e.preventDefault()
-                let data = e.clipboardData.getData('text/plain')
-                let lengthInp = document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`).length
-                console.log(isNaN(Number(data)))
-                if (!isNaN(Number(data))) {
-                    data.split('').forEach((cu11, index) => {
-                        if (index <= lengthInp) {
-                            console.log(document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`), index)
-                            document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].value = cu11
-                            document.querySelectorAll(`${parentM} .ct_bx_inputs_otp input`)[index].removeAttribute('disabled')
-                        }
-                    })
-                } else {
-                    console.log(e)
+                                })
+                                if (!pasteEv) {
+                                    nextInp = inp.nextElementSibling
+                                    previousInp = inp.previousElementSibling
 
-                }
-            });
-        }
-        inputType(inputs_sign)
-//-------------------------------------------
+                                    console.log(nextInp)
+                                    //
+                                    if (nextInp && nextInp.hasAttribute('disabled') && currentInp.value !== '') {
+                                        console.log(nextInp)
+                                        nextInp.removeAttribute('disabled')
+                                        nextInp.focus()
+                                    }
+                                    console.log(e.key)
+                                    if (e.key === 'Backspace') {
+                                        inputBx.forEach((inp11, index2) => {
+                                            if (index2 < index) {
+                                                currentInp.setAttribute('disabled', true)
+                                                currentInp.value = ''
+                                                previousInp.removeAttribute('disabled')
+                                                previousInp.focus()
+                                            }
 
-
-              let directionSv = new google.maps.DirectionsService()
-
-        const center = { lat: 23.798500, lng: 91.263560 };
-        // Create a bounding box with sides ~10km away from the center point
-        const defaultBounds = {
-            north: center.lat + 1,
-            south: center.lat - 1,
-            east: center.lng + 1,
-            west: center.lng - 1,
-        };
-
-        const inputX = document.querySelector(".nick_name.area input");
-        const options = {
-            bounds: defaultBounds,
-            componentRestrictions: { country: "In" },
-            strictBounds: true,
-            types: ['(regions)'],
-
-        };
-        const autocomplete = new google.maps.places.Autocomplete(inputX, options);
-        // google.maps.event.addListener(autocomplete, 'place_changed', function() {
-
-
-        // });
-        let objPlaces = ''
-        inputX.addEventListener('keyup', () => {
-
-            console.log(autocomplete.gm_accessors_.place)
-            objPlaces = autocomplete.gm_accessors_.place
-            let palcesFound = []
-            Object.keys(objPlaces).map(cur => {
-                if (objPlaces[cur].h !== undefined) {
-                    palcesFound = objPlaces[cur].h
-                }
-            })
-            console.log(palcesFound)
-            if (palcesFound) {
-                document.querySelector('.ct_results').style.display = 'block'
-                let htmlX = document.querySelector('.pac-container').innerHTML
-                document.querySelector('.ct_results').innerHTML = htmlX
-                let w = document.querySelector('.nick_name.area input').getBoundingClientRect().width
-                document.querySelector('.ct_results').style.width = w + 'px'
-                document.querySelector('.ct_results').style.position = 'absolute'
-            }
-        })
-                    }
-                    if (typ === 'orders') {
-                        let total = 0
-                        document.querySelector('.ct_refer_panel_outer').innerHTML = ''
-                        document.querySelector('.ct_bx_account').innerHTML = ''
-                        document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
-                        document.querySelector('.order_lst').style.display = 'none'
-                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
-                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                        document.querySelector('.ord_89jjs').classList.add('_1B5rE')
-                        orders.forEach(cu11 => {
-                            let return_html = ''
-                            let delivered_html = ''
-                            let delivered_info = false
-                            // possible when delivered and arr -> return: true
-                            if (cu11.delivered) {
-                                delivered_info = true
-
-                                let delivered = cu11.delivered
-                                delivered_html = `<div class="ct_rtrn_h78s success">
-                                                <h4>Delivered on ${delivered.date}</h4>
-                                                <p>${delivered.info}</p>
-                                            </div>`
-                            }
-
-                            let arr_itms = cu11.arr.map(itm => {
-                                total += itm.am
-                                if (itm.return) {
-                                    // if user returned
-                                    if (itm.return.done) {
-                                        return_html = ` <div class="ct_btns returned">
-                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Returned</a></div>
-                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
-                                                    </div>`
-                                    } else {
-                                        return_html = ` <div class="ct_btns">
-                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
-                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
-                                                    </div>`
+                                        })
                                     }
 
                                 }
 
+                            })
+                        });
+                        inputBx[0].addEventListener("paste", (e) => {
+                            e.preventDefault()
+                            let data = e.clipboardData.getData('text/plain')
+                            let lengthInp = document.querySelectorAll(`.ct_bx_inputs_otp input`).length
+                            console.log(Number(data))
+                            console.log(isNaN(Number(data)))
+                            if (!isNaN(Number(data))) {
+                                data.split('').forEach((cu11, index) => {
+                                    if (index <= lengthInp) {
+                                        console.log(document.querySelectorAll(`.ct_bx_inputs_otp input`), index)
+                                        document.querySelectorAll(`.ct_bx_inputs_otp input`)[index].value = cu11
+                                        document.querySelectorAll(`.ct_bx_inputs_otp input`)[index].removeAttribute('disabled')
+                                    }
+                                })
+                            } else {
+                                console.log(e)
 
-                                let hml = `                                            <div class="g28rk">
+                            }
+                        });
+                    }
+                    inputType(inputs_sign)
+                    let directionSv = new google.maps.DirectionsService()
+
+                    const center = { lat: 23.798500, lng: 91.263560 };
+                    // Create a bounding box with sides ~10km away from the center point
+                    const defaultBounds = {
+                        north: center.lat + 1,
+                        south: center.lat - 1,
+                        east: center.lng + 1,
+                        west: center.lng - 1,
+                    };
+
+                    const inputX = document.querySelector(".nick_name.area input");
+                    const options = {
+                        bounds: defaultBounds,
+                        componentRestrictions: { country: "In" },
+                        strictBounds: true,
+                        types: ['(regions)'],
+
+                    };
+                    const autocomplete = new google.maps.places.Autocomplete(inputX, options);
+                    // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+
+                    // });
+                    let objPlaces = ''
+                    inputX.addEventListener('keyup', () => {
+
+                        console.log(autocomplete.gm_accessors_.place)
+                        objPlaces = autocomplete.gm_accessors_.place
+                        let palcesFound = []
+                        Object.keys(objPlaces).map(cur => {
+                            if (objPlaces[cur].h !== undefined) {
+                                palcesFound = objPlaces[cur].h
+                            }
+                        })
+                        console.log(palcesFound)
+                        if (palcesFound) {
+                            document.querySelector('.ct_results').style.display = 'block'
+                            let htmlX = document.querySelector('.pac-container').innerHTML
+                            document.querySelector('.ct_results').innerHTML = htmlX
+                            let w = document.querySelector('.nick_name.area input').getBoundingClientRect().width
+                            document.querySelector('.ct_results').style.width = w + 'px'
+                            document.querySelector('.ct_results').style.position = 'absolute'
+                        }
+                    })
+                }
+                if (typ === 'orders') {
+                    let total = 0
+                    document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                    document.querySelector('.ord_89jjs').classList.add('_1B5rE')
+                    orders.forEach(cu11 => {
+                        let return_html = ''
+                        let delivered_html = ''
+                        let delivered_info = false
+                        // possible when delivered and arr -> return: true
+                        if (cu11.delivered) {
+                            delivered_info = true
+
+                            let delivered = cu11.delivered
+                            delivered_html = `<div class="ct_rtrn_h78s success">
+                                                <h4>Delivered on ${delivered.date}</h4>
+                                                <p>${delivered.info}</p>
+                                            </div>`
+                        }
+
+                        let arr_itms = cu11.arr.map(itm => {
+                            total += itm.am
+                            if (itm.return) {
+                                // if user returned
+                                if (itm.return.done) {
+                                    return_html = ` <div class="ct_btns returned">
+                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Returned</a></div>
+                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
+                                                    </div>`
+                                } else {
+                                    return_html = ` <div class="ct_btns">
+                                                        <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
+                                                        <span  class="learn_more">T&C apply* <p>Learn more</p></span>
+                                                    </div>`
+                                }
+
+                            }
+
+
+                            let hml = `                                            <div class="g28rk">
 
                           <div class="_359Fc"><img class="_2tuBw _12_oN" height="200" width="300"
                                   alt="" src="${itm.img}">
@@ -5438,18 +5751,18 @@
 
                           </div>
                       </div>`
-                                return hml
-                            })
-                            let total_txt = 'Total Amount to pay'
-                            if (cu11.payMode.split(',').includes('online')) {
-                                total_txt = `Total Paid`
-                            }
-                            if (delivered_info) {
-                                total_txt = `Total Paid`
+                            return hml
+                        })
+                        let total_txt = 'Total Amount to pay'
+                        if (cu11.payMode.split(',').includes('online')) {
+                            total_txt = `Total Paid`
+                        }
+                        if (delivered_info) {
+                            total_txt = `Total Paid`
 
-                            }
+                        }
 
-                            let html = `                                        <div class="_3xMk0">
+                        let html = `                                        <div class="_3xMk0">
 
                                             <div class="ct_other_av">
                                                 <div class="_2fkm7">
@@ -5468,23 +5781,20 @@
 
                                             </div>
                                         </div>`
-                            document.querySelector('.order_lst').style.display = 'block'
+                        document.querySelector('.order_lst').style.display = 'block'
 
-                            document.querySelector('.order_lst .ct_innner_orders').insertAdjacentHTML('beforeend', html)
-
-
-                        })
+                        document.querySelector('.order_lst .ct_innner_orders').insertAdjacentHTML('beforeend', html)
 
 
-                    }
-                    if (typ === 'wallet') {
-                        document.querySelector('.ct_refer_panel_outer').innerHTML = ''
-                        document.querySelector('.ct_bx_account').innerHTML = ''
-                        document.querySelector('.order_lst').innerHTML = ''
-                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
-                        document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                        document.querySelector('.wlt_tab').classList.add('_1B5rE')
-                        let html = `           
+                    })
+
+
+                }
+                if (typ === 'wallet') {
+
+                    document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                    document.querySelector('.wlt_tab').classList.add('_1B5rE')
+                    let html = `           
                                     <div class="ct_upper">
                                     <h4>₹ ${csh.toLocaleString()}.00</h4>
                                     <div class="ct_icon_wallet">
@@ -5498,13 +5808,14 @@
                                         minima deserunt maxime harum doloremque voluptates consectetur error neque!</p>
                                     <button>Activate</button>
                                 </div>`
-                        document.querySelector('.ct_wallet_h6781sgh').innerHTML = html
-                    }
+                    document.querySelector('.ct_wallet_h6781sgh').innerHTML = html
                 }
+            }
             })
 
 
         }
+        toggle_tab('refer')
 
         if (getCookie('show_saved') !== '') {
             document.querySelector('.ct_outer_saved').style.display = 'flex'
@@ -5512,152 +5823,20 @@
             document.querySelector('.confetti').style.display = 'flex'
 
         }
-        socket.on('get_csh', (csh, id) => {
+        socket.on('get_csh', (name, off, id) => {
 
             let userDt = JSON.parse(getCookie('userData'))
 
             if (id === userDt.id) {
                 document.querySelector('.ct_outer_saved').style.display = 'flex'
-                document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50 by refering'
+                document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${name} unlocked. Grab the coupon from the cart and enjoy flat ${off}% discount`
 
                 document.querySelector('.confetti').style.display = 'flex'
 
-                document.querySelector('.ct_refer_panel_outer').innerHTML = ''
-                document.querySelector('.ct_bx_account').innerHTML = ''
-                document.querySelector('.order_lst').innerHTML = ''
-                document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
-                document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                document.querySelector('.wlt_tab').classList.add('_1B5rE')
-                let html = `           
-                                    <div class="ct_upper">
-                                    <h4>₹ ${csh.toLocaleString()}.00</h4>
-                                    <div class="ct_icon_wallet">
-                                        <ion-icon name="wallet-outline"></ion-icon>
-                                    </div>
-                                </div>
-                                <div class="ct_lower">
-                                    <span>Description</span>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui provident
-                                        tempora vel sapiente repellat impedit nemo suscipit iure laboriosam, recusandae
-                                        minima deserunt maxime harum doloremque voluptates consectetur error neque!</p>
-                                    <button>Activate</button>
-                                </div>`
-                document.querySelector('.ct_wallet_h6781sgh').innerHTML = html
             }
         })
 
-        async function getUser() {
-            let dbCollection2 = db.collection("users")
-            let res = await dbCollection2.get()
-            document.querySelector('.ct_load_items').style.display = 'none'
 
-            let userDt = JSON.parse(getCookie('userData'))
-            res.docs.forEach(async cur => {
-                let dt = cur.data()
-                let used_cpns = dt.cpns_used
-                if (dt.id === userDt.id) {
-                    //   used_cpns.forEach(cu11 => {
-                    //           let dbCollection23 = db.collection("coupons")
-                    //           let res2 = await dbCollection23.get()
-                    //           res2.docs.forEach(async cr => {
-                    //               let dt2 = cr.data()
-                    //               let limitX = parseFloat(cu11.use)
-                    //               let limitY = parseFloat(dt2.conditions.max)
-                    //               if (dt2.name !== cu11.name) {
-                    //                   if (limitX< limitY) {
-                    //                       let html = ` 
-                    //                   <div class="ct_refer_panel">
-                    //                   <div class="inner">
-                    //                       <div class="ct_img">
-                    //                           <img src="../img/refer_earn_icn_x.png">
-                    //
-                    //                       </div>
-                    //                       <div class="ct_inner_txt">
-                    //                           <h3>Refer your friends And</h3>
-                    //                           <h2>Both get ${dt2.off} discount </h2>
-                    //                           <p>Refer your friends and Both get 50% discount only for cooking sauces,
-                    //                               when created an account and logged in.
-                    //                           </p>
-                    //                       </div>
-                    //                       <div class="ct_coupon_code">
-                    //                           <span>coupon code</span>
-                    //                           <div class="ct_bx_coupon">
-                    //                               <h4>${}</h4>
-                    //                           </div>
-                    //                       </div>
-                    //
-                    //                       <div class="ct_inv_sn671sn">
-                    //                           <div class="ct_share_box">
-                    //                               <button>Invite <ion-icon
-                    //                                       name="chevron-forward-outline"></ion-icon></button>
-                    //                               <span>&mdash; or &mdash; </span>
-                    //                           </div>
-                    //
-                    //                       </div>
-                    //                       <div class="ct_copy_link">
-                    //                           <h4>Copy the link and share</h4>
-                    //                           <div class="ct_link_box">
-                    //                               <p>http://krickfoods/mycart?reffer=${dt.id}&true</p>
-                    //                           </div>
-                    //                       </div>
-                    //                   </div>
-                    //               </div>`
-                    //                   }else if(){
-                    //                       let html = ` 
-                    //        <div class="ct_refer_panel">
-                    //                   <div class="inner">
-                    //                       <div class="ct_img">
-                    //                           <img src="../img/refer_earn_icn_x.png">
-                    //
-                    //                       </div>
-                    //                       <div class="ct_inner_txt">
-                    //                           <h3>Refer your friends And</h3>
-                    //                           <h2>Both get 50% discount </h2>
-                    //                           <p>Refer your friends and Both get 50% discount only for cooking sauces,
-                    //                               when created an account and logged in.
-                    //                           </p>
-                    //                       </div>
-                    //                       <div class="ct_coupon_code">
-                    //                           <span>coupon code</span>
-                    //                           <div class="ct_bx_coupon">
-                    //                               <h4>${}</h4>
-                    //                           </div>
-                    //                       </div>
-                    //
-                    //                       <div class="ct_inv_sn671sn">
-                    //                           <div class="ct_share_box">
-                    //                               <button>Invite <ion-icon
-                    //                                       name="chevron-forward-outline"></ion-icon></button>
-                    //                               <span>&mdash; or &mdash; </span>
-                    //                           </div>
-                    //
-                    //                       </div>
-                    //                       <div class="ct_copy_link">
-                    //                           <h4>Copy the link and share</h4>
-                    //                           <div class="ct_link_box">
-                    //                               <p>http://krickfoods/mycart?reffer=${dt.id}&true</p>
-                    //                           </div>
-                    //                       </div>
-                    //                   </div>
-                    //               </div>`
-                    //                   }
-                    //               }
-                    //
-                    //           })
-                    //
-                    //           
-                    //   })
-                    //
-                    //   document.querySelector('.ct_refer_panel_outer').insertAdjacentHTML('beforeend', html)
-                    //   document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
-                    //   document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                    //   document.querySelector('.refer_tab').classList.add('_1B5rE')
-                    //
-
-                }
-            })
-        }
-        getUser()
 
 
         document.querySelector('html').addEventListener('click', (e) => {
@@ -5665,49 +5844,132 @@
             let order_tab = e.target.closest('.ord_89jjs')
             let edt_tab = e.target.closest('.edit_89jjs')
             let verify_btn_ac = e.target.closest('.account_cont')
-                        let itemG = e.target.closest('.pac-item')
+            let itemG = e.target.closest('.pac-item')
             let inpX = e.target.closest('.nick_name.area input')
-            let  edit_acc=e.target.closest('.create_account')
-            if(edit_acc!==null){
+            let edit_acc = e.target.closest('.create_account')
+            let go_bck_acc = e.target.closest('.ct_go_back_account')
+            let edit_now = e.target.closest('.cont_btn_acc.edit_btn')
+            let remove_notif = e.target.closest('.ct_flex_bx_notif button')
+            let refer_tab = e.target.closest('.refer_tab')
+
+
+            if(refer_tab!==null){
+                toggle_tab('refer')
+            }
+            if (remove_notif !== null) {
+                document.querySelectorAll('.ct_notify').forEach(cu1 => {
+                    cu1.remove()
+                })
+                document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'none'
+                document.cookie = "view_refer_info" + "=" + '3sjhgs' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+
+            }
+            if (edit_now !== null) {
+                document.querySelectorAll('.ct_field_first_acc textarea').forEach(cu1 => {
+                    cu1.removeAttribute('readonly')
+                    cu1.style.borderBottom = '2px solid rgb(198 198 198);'
+                    cu1.style.background = 'rgb(245 245 245)'
+                })
+                document.querySelectorAll('.ct_field_first_acc input').forEach(cu1 => {
+                    cu1.removeAttribute('readonly')
+                    cu1.style.borderBottom = '2px solid rgb(198 198 198);'
+                    cu1.style.background = 'rgb(245 245 245)'
+                })
+                document.querySelector('.cont_btn_acc.edit_btn').style.display = 'none'
+                document.querySelector('.cont_btn_acc.account_cont').style.display = 'block'
+            }
+
+
+            if (go_bck_acc !== null) {
+                sessionStorage.clear()
+                toggle_tab('edit')
+            }
+            if (edit_acc !== null) {
+                edit_acc.style.opacity = '.3'
+                edit_acc.style.pointerEvents = 'none'
+
+                if (sessionStorage.getItem('one_tm_dt_edt_tp') !== null) {
+                    let nm_tp = secret(sessionStorage.getItem('one_tm_dt_edt_tp')).n
+                    let nm = []
+                    document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                        nm.push(cu11.value)
+                    })
+                    let nm_otp = nm.join('')
+                    console.log(nm_tp, nm_otp)
+                    if (nm_tp === nm_otp) {
                         let userDt = JSON.parse(getCookie('userData'))
                         let new_dt = JSON.parse(sessionStorage.getItem('one_tm_dt_edt'))
 
-                        let already=false
-                        async function setAccount(){
-                        let dbCollection2 = db.collection("users")
-                        let res = await dbCollection2.get()
-                        res.docs.forEach(async cur => {
-                            let dt = cur.data()
-                            let cpns_used = dt.cpns_used
-                            let allow_cpns = dt.allow_cpns
+                        let already = false
+                        async function setAccount() {
+                            let dbCollection2 = db.collection("users")
+                            let res = await dbCollection2.get()
+                            edit_acc.style.opacity = '1'
+                            edit_acc.style.pointerEvents = 'auto'
+                            res.docs.forEach(async cur => {
+                                let dt = cur.data()
+                                let cpns_used = dt.cpns_used
+                                let allow_cpns = dt.allow_cpns
 
-                            // checking if phone no. already exist
-                            if(dt.id!==userDt.id){
+                                // checking if phone no. already exist
+                                if (dt.id === userDt.id) {
+                                    if (dt.orders === undefined) {
+                                        dt.orders = []
+                                    }
+                                    let obj = {
+                                        id: dt.id,
+                                        name: new_dt.name,
+                                        phone: new_dt.phone,
+                                        address: new_dt.address,
+                                        location: new_dt.location,
+                                        allow_cpns: allow_cpns,
+                                        cpns_used: cpns_used,
+                                    }
+                                    await dbCollection2.doc(cur.id).set({
+                                        admin: false,
+                                        id: dt.id,
+                                        name: new_dt.name,
+                                        phone: new_dt.phone,
+                                        address: new_dt.address,
+                                        location: new_dt.location,
+                                        cartItems: dt.cartItems,
+                                        allow_cpns: allow_cpns,
+                                        cpns_used: cpns_used,
+                                        refferedBy: dt.refferedBy,
+                                        reffer: dt.reffer,
+                                        orders: dt.orders
+                                    })
+                                    document.querySelector('.ct_info').style.display = 'flex'
+                                    window.scrollTo(0, 0)
+                                    setTimeout(function () {
+                                        document.querySelector('.ct_info').style.display = 'none'
+                                    }, 20000)
 
-                            await dbCollection2.doc(cur.id).set({
-                                            admin: false,
-                                            id: dt.id,
-                                            name: new_dt.name,
-                                            phone: new_dt.phone,
-                                            address: new_dt.address,
-                                            location: new_dt.location,
-                                            cartItems: dt.cartItems,
-                                            allow_cpns:allow_cpns,
-                                            cpns_used: cpns_used,
-                                            refferedBy:dt.refferedBy,
-                                            reffer: dt.reffer,
-                                            orders: dt.orders
+                                    document.querySelector('.account_name_sec h4').innerText = new_dt.name
+                                    document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
+
+                                    document.querySelector('.ph_num span').innerText = new_dt.phone
+                                    document.querySelector('.add_ress span').innerText = new_dt.address
+                                    document.cookie = "userData" + "=" + JSON.stringify(obj) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+
+                                    sessionStorage.clear()
+                                    toggle_tab('edit')
+                                }
                             })
-                                                    document.querySelector('.account_name_sec h4').innerText=new_dt.name
-                        document.querySelector('.ph_num').innerText=new_dt.phone
-                        document.querySelector('.add_ress').innerText=new_dt.address
-
-                            sessionStorage.clear()
-
-                            }
-                        })
                         }
                         setAccount()
+                    } else {
+                        edit_acc.style.opacity = '1'
+                        edit_acc.style.pointerEvents = 'auto'
+                        document.querySelector('.error_otp').style.display = 'block'
+                        document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                            cu11.style.background = 'rgb(253 242 242)'
+                            cu11.style.borderBottom = '2px solid rgb(255 39 39)'
+
+                        })
+                    }
+                }
+
             }
 
             if (itemG !== null) {
@@ -5719,7 +5981,10 @@
                 })
             }
             if (verify_btn_ac !== null) {
-  let location = document.querySelector('.nick_name.area input').value
+                verify_btn_ac.style.opacity = '.3'
+                verify_btn_ac.style.pointerEvents = 'none'
+
+                let location = document.querySelector('.nick_name.area input').value
                 let check_loc = true
                 let ph_num = document.querySelector('.phone_number input').value
                 let address = document.querySelector('.address textarea').value
@@ -5763,12 +6028,13 @@
                     travelMode: google.maps.TravelMode.DRIVING,
                     unitSystem: google.maps.UnitSystem.IMPERIAL,
                 }
-              let directionSv = new google.maps.DirectionsService()
+                let directionSv = new google.maps.DirectionsService()
 
                 directionSv.route(request, async (res, stat) => {
                     console.log(stat, stat === 'NOT_FOUND')
                     if (stat === 'NOT_FOUND') {
-                        alert('invalid location')
+                        verify_btn_ac.style.opacity = '1'
+                        verify_btn_ac.style.pointerEvents = 'auto'
                         document.querySelector('.location_error p').innerText = 'Invalid location, please try again.'
                         document.querySelector('.location_error').style.display = 'block'
                     } else {
@@ -5780,44 +6046,71 @@
                             console.log(unitKM)
                             if (unitKM <= 10) {
 
-                        let userDt = JSON.parse(getCookie('userData'))
-                        let already=false
-                        let dbCollection2 = db.collection("users")
-                        let res = await dbCollection2.get()
-                        res.docs.forEach(async cur => {
-                            let dt = cur.data()
-                            let used_cpns = dt.cpns_used
+                                let userDt = JSON.parse(getCookie('userData'))
+                                let already = false
+                                let dbCollection2 = db.collection("users")
+                                let res = await dbCollection2.get()
+                                verify_btn_ac.style.opacity = '1'
+                                verify_btn_ac.style.pointerEvents = 'auto'
 
-                            // checking if phone no. already exist
-                            if(ph_num!==userDt.dt){
-                                 if(dt.ph===ph_num){
-                                    already=true
-                                    document.querySelector('.ct_error_account').style.display = 'flex'
+                                res.docs.forEach(async cur => {
+                                    let dt = cur.data()
+                                    let used_cpns = dt.cpns_used
 
-                                 }
-                            }
+                                    //No need to verify if same number
+                                    if (ph_num !== userDt.phone) {
+                                        console.log(dt.phone, ph_num)
+                                        // checking if phone no. already exist
+                                        if (dt.phone === ph_num) {
+                                            already = true
+                                            document.querySelector('.ct_error_account').style.display = 'flex'
 
-                        })
-                        if(!already){
-                            
-                        document.querySelector('.ct_error_account').style.display = 'none'
-                        document.querySelector('.ct_bx_otp_box').style.display = 'block'
-                        document.querySelector('.ct_bx_otp_box').style.opacity = '1'
-                        document.querySelector('.ct_field_first_acc').style.display = 'none'
-                        let obj={
-                                address: userDt.address,
-                                allow_cpns:userDt.allow_cpns,
-                                cpns_used:userDt.cpns_used,
-                                id:userDt.id,
-                                location:userDt.location,
-                                name:name,
-                                phone:ph_num,
-                        }
-                        sessionStorage.setItem('one_tm_dt_edt',JSON.stringify(obj))
+                                        }
+                                    }
 
-                        }
-                            
-  
+                                })
+
+                                if (!already) {
+                                    socket.emit('getCode');
+                                    document.querySelector('.ct_error_account').style.display = 'none'
+
+                                    socket.on('sendCode', (id, token, number, key) => {
+                                        var settings = {
+                                            "async": true,
+                                            "crossDomain": true,
+                                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                            "method": "GET"
+                                        }
+                                        $.ajax(settings).done(function (response) {
+                                            console.log(response, 'sent!!!')
+
+                                            if (response.return) {
+                                                document.querySelector('.ct_error_account').style.display = 'none'
+                                                document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                                                document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                                                document.querySelector('.ct_field_first_acc').style.display = 'none'
+                                                let obj = {
+                                                    address: userDt.address,
+                                                    allow_cpns: userDt.allow_cpns,
+                                                    cpns_used: userDt.cpns_used,
+                                                    id: userDt.id,
+                                                    location: userDt.location,
+                                                    name: name,
+                                                    phone: ph_num,
+                                                }
+                                                sessionStorage.setItem('one_tm_dt_edt', JSON.stringify(obj))
+                                                sessionStorage.setItem('one_tm_dt_edt_tp', JSON.stringify(token))
+                                            } else {
+                                                document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+                                                document.querySelector('.phone_error').style.display = 'block'
+                                            }
+                                        });
+
+
+                                    })
+                                }
+
+
 
                             } else {
                                 document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
@@ -5826,6 +6119,8 @@
                                 document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
                             }
                         }
+
+
                     }
 
                 })
