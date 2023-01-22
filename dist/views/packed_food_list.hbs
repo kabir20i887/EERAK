@@ -318,12 +318,59 @@
             margin-top: -6px;
         }
 
-        .ct_bx_about_mobile2 {
-            display: block;
-            text-align: center;
-            width: auto;
-            margin: 15px;
-        }
+.ct_bx_about_mobile2 {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: 0 5px;
+
+}
+.ct_bx_about_mobile2 a{
+    padding: 14px 10px;
+}
+.ct_info_cart{
+    border-radius: 20px;
+    width: 24px;
+    position: absolute;
+    right: 0;
+    display: none;
+top: -5px;
+
+    padding: 4px;
+    background-color: #000000;
+}
+.ct_bx_about_mobile2 .ct_info_cart p{
+    color: white;
+    font-size: 12px;
+    font-family: 'roboto';
+    font-weight: 500;
+}
+.ct_nav_erak  a:hover{
+    text-decoration: none;
+}
+.ct_bx_about_mobile2.account_btn a,
+.ct_bx_about_mobile2.cart_btn a{
+        border: 1px solid #adadad;
+    padding-left: 7px;
+    height: 41px;
+    width: max-content;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.ct_bx_about_mobile2:active,
+.ct_bx_about_mobile2:hover{
+    background: whitesmoke;
+border-bottom: 2px solid #0077ff;
+}
+
+    .ct_bx_about_mobile2 .material-symbols-outlined {
+        color: #0c0c0c;
+        font-size: 26px;
+        margin: -9px 5px;
+    }
+
+
 
         .ct_nav_erak .for_seravh_in_nav {
             width: 66%;
@@ -8154,17 +8201,7 @@
 
         }
         if (getCookie('user') !== '') {
-            let allfds = JSON.parse(localStorage.getItem('foodsAdded'))
-            let lengthX = allfds.length
 
-
-            if (lengthX > 0 && getCookie('notclickedtocart') !== '') {
-                if (lengthX > 9) {
-                    lengthX = '9+'
-                }
-                document.querySelector('.cart_nav span').style.display = 'flex'
-                document.querySelector('.cart_nav span').innerText = lengthX
-            }
 
         }
         // global variables//
@@ -9617,117 +9654,35 @@
 
             }
         })
-
-        let user = getCookie('user')
-        if (user !== '') {
-            let parsedData = JSON.parse(user)
-            if (document.querySelector('.ct_bx_matched_itm') !== null) {
+        function load_basic_dt(){
+            let total_itms=0
+            let allfd_sauce = JSON.parse(localStorage.getItem('sauce'))
+            let allfd_essen = JSON.parse(localStorage.getItem('essentials'))
+            if(allfd_essen!==null){
+                total_itms+=allfd_essen.length
             }
-
-            if (document.querySelector('.ct_acc_dt_ov h3') !== null) {
-                document.querySelector('.slides_ul .login').style.display = 'none'
-                document.querySelector('.slides_ul .signup').style.display = 'none'
-                if (window.screen.width <= 1200) {
-                    if (document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov') !== null) {
-
-                        document.querySelectorAll('.ct_bx_slide_bx .ct_acc_dt_ov p').forEach(cur => {
-                            console.log(cur)
-                            cur.innerText = 'Hello ' + parsedData.n.split(' ').join('')
-                        })
-                        let dS = document.querySelectorAll('.ct_bx_slide_bx .ct_acc_dt_ov  a')
-
-                    }
-                }
-                if (window.screen.width < 1200) {
-                    document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov p').innerText = "Hello " + parsedData.n.split(' ').join('')
-
-                }
-                if (window.screen.width <= 1200) {
-                    if (window.screen.width <= 740) {
-                        document.querySelector('.cart_nav ').style.display = 'none'
-
-                    }
-                }
-                if (window.screen.width > 1200) {
-                    document.querySelector('.acc_set_main_nav').style.display = 'flex'
-                    // document.querySelector('.acc_set_main_nav h3').innerText = parsedData.n.split(' ').join('')
-
-                }
-
-                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
+            if(allfd_sauce!==null){
+                total_itms+=allfd_sauce.length
             }
-
-            if (parsedData.admin === true) {
-
-                document.querySelectorAll('.dash_board a').forEach(cur => cur.setAttribute('href', `/admin/msdhooni7`))
-                if (window.screen.width > 1200) {
-                    if (document.querySelector('.mai_ul') != null) {
-                        document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')
-
-                    }
-                }
-                if (window.screen.width <= 1000) {
-                    document.querySelectorAll('.slides_ul .dash_board').forEach(cur => cur.style.display = 'block')
-
-                }
-            } else if (parsedData.deliv === true) {
-                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'block')
-
-                document.querySelectorAll('.mekuud a').forEach(cur => cur.setAttribute('href', `/delivery?authUser=${parsedData.rootAutyh}`))
-
-                if (window.screen.width > 1000) {
-                    document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')
-                }
-                if (window.screen.width <= 1000) {
-                    document.querySelectorAll('.slides_ul .dash_board').forEach(cur => cur.style.display = 'block')
-
-                }
-                if (window.screen.width > 1000) {
-                    document.querySelectorAll('.dash_board').forEach(cur => cur.style.display = 'block')
-
-                }
-
+            if(total_itms>9){
+                total_itms='+9'
             }
-            if (window.screen.width <= 470) {
-                document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
-                document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'block')
-
-            }
-
-
-        } else {
-            if (document.querySelector('.sign_UP_btn a') !== null) {
-
-                document.querySelector('.sign_UP_btn a').style.display = 'block'
-                document.querySelector('.log_in_btn_pk1').style.display = 'block'
-
-                document.querySelector('.account_nav').style.display = 'none'
-                document.querySelector('.account_nav2').style.display = 'none'
-
-                if (window.screen.width <= 1200) {
-                    document.querySelectorAll('.display_on_no_acc').forEach(cur => cur.style.display = 'none')
-
-                    if (document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov') !== null) {
-                        document.querySelector('.ct_bx_slide_bx .ct_acc_dt_ov p').innerText = 'Hello, Sign in'
-                        document.querySelector('.ct_bx_slide_bx  a').setAttribute('href', '/login')
-                    }
+            document.querySelector('.ct_info_cart').style.display='block'
+            document.querySelector('.ct_info_cart p').innerText=total_itms
+                let userDtx = getCookie('userData')
+                if (userDtx !== '') {
+                    let dt_user = JSON.parse(userDtx)
+                    document.querySelector('.mobile_only.account_btn').style.display='block'
+                    document.querySelector('.account_nav2').style.display='block'
+                    // remove the banner of signup offer
 
 
 
                 }
-                if (window.screen.width <= 470) {
-                    document.querySelectorAll('.ct_bx_login_mobile').forEach(cur => cur.style.display = 'flex')
-                    document.querySelectorAll('.myaccount_mob_a').forEach(cur => cur.style.display = 'none')
-                    document.querySelectorAll('.cart_nav').forEach(cur => cur.style.display = 'none')
-                    document.querySelectorAll('.login_mob_a').forEach(cur => cur.style.display = 'block')
-                    document.querySelectorAll('.signup_mob_a').forEach(cur => cur.style.display = 'block')
-                    document.querySelectorAll('.myOrders_btn_a').forEach(cur => cur.style.display = 'none')
-                }
-            }
-
-
-
         }
+        load_basic_dt()
+
+
         const loadFoodItems = async () => {
             let dbColl = db.collection(`sauce`)
             // dbColl.orderBy('group').get()

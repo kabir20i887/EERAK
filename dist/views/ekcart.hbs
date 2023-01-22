@@ -143,6 +143,7 @@
             line-height: 21px;
             margin: 18px 0 0 16px;
         }
+        .ct_info_cpns.active{display: block;}
 
         .ct_bx_deliv p {
             color: rgb(135 134 134);
@@ -324,7 +325,13 @@
             margin-top: auto;
             display: flex;
             margin-left: auto;
-            padding-bottom: 11px;
+                padding: 2px 6px;
+                margin-bottom: 10px;  
+                cursor: pointer;;         
+        }
+        .ct_info_btn:hover{
+                background: #e9d7ff;
+
         }
 
         .ct_coupons .ct_info_btn p {
@@ -2449,8 +2456,60 @@
             display: block;
             text-align: center;
             width: auto;
-            margin: 15px;
+            margin: 0 5px;
+
         }
+
+        .ct_bx_about_mobile2 a {
+            padding: 14px 10px;
+        }
+
+        .ct_info_cart {
+            border-radius: 20px;
+            width: 24px;
+            position: absolute;
+            right: 0;
+            display: none;
+            top: -5px;
+
+            padding: 4px;
+            background-color: #000000;
+        }
+
+        .ct_bx_about_mobile2 .ct_info_cart p {
+            color: white;
+            font-size: 12px;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .ct_nav_erak a:hover {
+            text-decoration: none;
+        }
+
+        .ct_bx_about_mobile2.account_btn a,
+        .ct_bx_about_mobile2.cart_btn a {
+            border: 1px solid #adadad;
+            padding-left: 7px;
+            height: 41px;
+            width: max-content;
+            display: flex;
+            position: relative;
+            justify-content: center;
+        }
+
+        .ct_bx_about_mobile2:active,
+        .ct_bx_about_mobile2:hover {
+            background: whitesmoke;
+            border-bottom: 2px solid #0077ff;
+        }
+
+        .ct_bx_about_mobile2 .material-symbols-outlined {
+            color: #0c0c0c;
+            font-size: 26px;
+            margin: -9px 5px;
+        }
+
 
         .ct_nav_erak .for_seravh_in_nav {
             width: 66%;
@@ -11212,8 +11271,8 @@
             animation-name: horizontalProgressBar;
             -webkit-animation-timing-function: ease;
             animation-timing-function: ease;
-            background: #ff8c16;
-            height: 6px;
+            background: #1529ff;
+            height: 3px;
             left: 0;
             width: 100%;
             z-index: 9999;
@@ -17822,87 +17881,90 @@
              <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
          </div>
      `
-                    if (offer !== null) {
-                        let priceX = parseFloat(itm.price_real)
-                        let price_off = 0
-                        let offer_del = ''
+                    if (sauce.length !== 0) {
 
-                        price_off = priceX * 100 / (100 - offer)
-                        price_off = Math.round(price_off)
-                        priceBX = ` <div class="ct_bx_price_fd hasoffPrice">
+                        if (offer !== null) {
+                            let priceX = parseFloat(itm.price_real)
+                            let price_off = 0
+                            let offer_del = ''
+
+                            price_off = priceX * 100 / (100 - offer)
+                            price_off = Math.round(price_off)
+                            priceBX = ` <div class="ct_bx_price_fd hasoffPrice">
                              <del class="pricenooff" >₹ ${price_off}</del>
                              <p class="price">₹ ${(priceX).toLocaleString()}</p>
                          </div>
                      `
-                    }
-
-                    let qty_obj = qty_unit.map((cur11, ind) => {
-                        let priceX = parseFloat(cur11.price)
-                        let pack = cur11.pack
-                        let name = cur11.name
-
-                        let price_off = 0
-                        let offer_del = ''
-
-                        if (offer !== null) {
-                            price_off = priceX * 100 / (100 - offer)
-                            price_off = Math.round(price_off)
-                            tot_pr_itm += price_off
-                            price_off = price_off.toLocaleString()
-                            if (price_off.split('.')[1] !== undefined) {
-                                price_off = price_off.split('.')[0]
-                            }
-
-
-                            price = price.toLocaleString()
-                            offer_del = ` <del>₹ ${price_off}</del>`
                         }
-
-                        let active_btn = 'unactive'
-
-
-
-
-                        let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
-                        <h4>${name}</h4>
-                        <span class="info_package">${pack}</span>
-                        <div class="ct_pr_bx">
-                           ${offer_del}
-                            <p>₹ ${priceX}</p>
-
-                        </div>
-
-                    </div>`
-                        return htmlXX
-                    })
-
-                    if (sauce.length !== 0) {
-
 
                         sauce.forEach(elem => {
                             let nm = elem.name.split(' ').join('')
                             itm_qt = parseFloat(elem.qty)
 
                             if (nm === nm2) {
-                                if (name === elem.slt_nm) {
-                                    active_btn = 'active'
-                                    let del_x = ``
 
-                                    let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
+
+
+                                let qty_obj = qty_unit.map((cur11, ind) => {
+                                    let priceX = parseFloat(cur11.price)
+                                    let pack = cur11.pack
+                                    let name = cur11.name
+                                    let active_btn = 'unactive'
+
+                                    let price_off = 0
+                                    let offer_del = ''
+
                                     if (offer !== null) {
-                                        del_x = `<p>₹ ${price_off.toLocaleString()}</p>`
+                                        price_off = priceX * 100 / (100 - offer)
+                                        price_off = Math.round(price_off)
+                                        tot_pr_itm += price_off
+                                        price_off = price_off.toLocaleString()
+                                        if (price_off.split('.')[1] !== undefined) {
+                                            price_off = price_off.split('.')[0]
+                                        }
+
+
+                                        price = price.toLocaleString()
+                                        offer_del = ` <del>₹ ${price_off}</del>`
                                     }
-                                    tot_pr_itm += (priceX * itm_qt)
+
+
+                                    if (name === elem.slt_nm) {
+
+                                        active_btn = 'active'
+                                        let del_x = ``
+
+                                        let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
+                                        if (offer !== null) {
+                                            del_x = `<p>₹ ${price_off.toLocaleString()}</p>`
+                                        }
+                                        tot_pr_itm += (priceX * itm_qt)
 
 
 
-                                    price_bx = `<div class="ct_pr sauce_pr">
+                                        price_bx = `<div class="ct_pr sauce_pr">
                                             ${del_x}
                                         ${pr_x}
                                         ${off_hm}
                                         
                                     </div>`
-                                }
+                                    }
+
+
+                                    let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
+                            <h4>${name}</h4>
+                            <span class="info_package">${pack}</span>
+                            <div class="ct_pr_bx">
+                               ${offer_del}
+                                <p>₹ ${priceX}</p>
+    
+                            </div>
+    
+                        </div>`
+                                    return htmlXX
+                                })
+
+
 
 
                                 let html = `<li>
@@ -18264,46 +18326,108 @@
         document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'flex'
         addItems(false)
 
-        async function addCpns() {
+        async function addCpns(secret) {
             // # check for coupons applied
             let userDt = JSON.parse(getCookie('userData'))
+            let dbCollection2 = db.collection("users")
+
             let dbCollection = db.collection("coupons")
-            let res = await dbCollection.orderBy('grp').get()
+            let res = await dbCollection.get()
+            let res2 = await dbCollection2.get()
 
             document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'none'
             document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
 
 
             res.docs.forEach(async cur => {
+
                 let data = cur.data()
                 let nm = data.name
                 let cpns_allow = userDt.allow_cpns
-                cpns_allow.forEach(cu11 => {
-                    let used = false
-                    if (userDt.cpns_used.length > 0) {
-                        userDt.cpns_used.forEach(em => {
-                            if (em.name === data.name) {
-                                let limitX = parseFloat(em.use)
-                                let limitY = parseFloat(data.conditions.max)
-                                if (limitX >= limitY) {
-                                    used = true
+                let used = false
+                let conditionX = false
+
+                res2.docs.forEach(async elm => {
+                    let data2 = elm.data()
+                    if (data2.id === userDt.id) {
+
+                        data2.allow_cpns.forEach(cuz => {
+                            if (secret !== '') {
+                                if (cuz.secret === secret) {
+                                    if (cuz.use !== undefined) {
+                                        if (parseFloat(cuz.use) === 0) {
+                                            return
+                                        }
+                                    }
+                                    if (data2.cpns_used.length > 0) {
+                                        data2.cpns_used.forEach(em => {
+                                            if (em.name === data.name) {
+                                                let limitX = parseFloat(em.use)
+                                                if (data.conditions.max !== null) {
+                                                    let limitY = parseFloat(data.conditions.max)
+                                                    if (limitX >= limitY) {
+                                                        used = true
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    }
+                                    let limit_pr = tot_pr_itm
+                                    if (data.for === 'groc') {
+                                        limit_pr = tot_pr_itm2
+                                    }
+                                    if (data.conditions.upto === null) {
+                                        conditionX = true
+                                    } else {
+                                        conditionX = parseFloat(data.conditions.upto) >= limit_pr
+                                    }
+                                    console.log(conditionX, parseFloat(data.conditions.upto), limit_pr, '-------------------------------')
+
+
+                                }
+                            } else {
+                                if (cuz.name === nm) {
+                                    if (cuz.use !== undefined) {
+                                        if (parseFloat(cuz.use) === 0) {
+                                            return
+                                        }
+                                    }
+                                    if (data2.cpns_used.length > 0) {
+                                        data2.cpns_used.forEach(em => {
+                                            if (em.name === data.name) {
+                                                let limitX = parseFloat(em.use)
+                                                if (data.conditions.max !== null) {
+                                                    let limitY = parseFloat(data.conditions.max)
+                                                    if (limitX >= limitY) {
+                                                        used = true
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    }
+                                    let limit_pr = tot_pr_itm
+                                    if (data.for === 'groc') {
+                                        limit_pr = tot_pr_itm2
+                                    }
+                                    if (data.conditions.upto === null) {
+                                        conditionX = true
+                                    } else {
+                                        conditionX = parseFloat(data.conditions.upto) >= limit_pr
+                                    }
+                                    console.log(conditionX, parseFloat(data.conditions.upto), limit_pr, '-------------------------------')
+
                                 }
                             }
+
                         })
                     }
-                    let limit_pr = tot_pr_itm
-                    if (data.for === 'groc') {
-                        limit_pr = tot_pr_itm2
-                    }
-                    let conditionX = false
-                    if (data.conditions.upto === null) {
-                        conditionX = true
-                    } else {
-                        conditionX = parseFloat(data.conditions.upto) >= limit_pr
-                    }
+
+                })
+                if (secret === '') {
                     if (data.secret === null && !used) {
                         let classAvai = 'notavailable'
                         let notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>`
+                        
                         if (data.for === 'sauce') {
                             let sauce = JSON.parse(localStorage.getItem('sauce'))
                             if (conditionX) {
@@ -18313,11 +18437,10 @@
                                     if (getCookie('cpns_appl') !== '') {
                                         let objCp = JSON.parse(getCookie('cpns_appl'))
                                         if (objCp.name === nm) {
-                                            notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
+                                            notavailable_hm = `
                                         <button class="remove" style='display:block'>Remove</button>`
                                         } else {
-                                            notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
-                                        <button class="remove" style='display:none'>Remove</button>
+                                            notavailable_hm = `
                                         <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
                                         `
                                         }
@@ -18329,8 +18452,7 @@
                                 }
                             } else {
                                 classAvai = ''
-                                notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
-                                        <button class="remove" style='display:none'>Remove</button>
+                                notavailable_hm = `
                                         <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
                                         `
                             }
@@ -18343,11 +18465,10 @@
                                     if (getCookie('cpns_appl') !== '') {
                                         let objCp = JSON.parse(getCookie('cpns_appl'))
                                         if (objCp.name === nm) {
-                                            notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
+                                            notavailable_hm = `
                                     <button class="remove" style='display:block'>Remove</button>`
                                         } else {
-                                            notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
-                                    <button class="remove" style='display:none'>Remove</button>
+                                            notavailable_hm = `
                                     <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
                                     `
                                         }
@@ -18358,8 +18479,7 @@
                                 }
                             } else {
                                 classAvai = ''
-                                notavailable_hm = `<button class='claim' style='display:none'>Apply</button>
-                                        <button class="remove" style='display:none'>Remove</button>
+                                notavailable_hm = `
                                         <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
                                         `
                             }
@@ -18448,10 +18568,124 @@
                         document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
 
                     }
-                })
+                }else{
+                    if(data.secret===secret){
+  let classAvai = 'notavailable'
+                    let notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>`
+                    if (data.for === 'sauce') {
+                        let sauce = JSON.parse(localStorage.getItem('sauce'))
+                        if (conditionX) {
+                            if (sauce !== null && sauce.length !== 0) {
+                                notavailable_hm = `<button class='claim'>Apply</button>
+                                <button class="remove">Remove</button>`
+                                if (getCookie('cpns_appl') !== '') {
+                                    let objCp = JSON.parse(getCookie('cpns_appl'))
+                                    if (objCp.name === nm) {
+                                        notavailable_hm = `
+                                        <button class="remove" style='display:block'>Remove</button>`
+                                    
+                                    } else {
+                                        notavailable_hm = `
+                                        <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>
+                                        `
+                            document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
+                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
+
+                                    }
+                                }
+                                classAvai = ''
+                            } else {
+                                classAvai = ''
+
+                            }
+                        } else {
+                            classAvai = ''
+                            notavailable_hm = `
+                                        <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>
+                                        `
+                            document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
+                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
+
+                        }
+                    } 
+                   // else if (data.for === 'groc') {
+                   //     let grocs = JSON.parse(localStorage.getItem('essentials'))
+                   //     if (conditionX) {
+                   //         if (grocs !== null && grocs.length !== 0) {
+                   //             notavailable_hm = `<button class='claim'>Apply</button>
+                   //         <button class="remove">Remove</button>`
+                   //             if (getCookie('cpns_appl') !== '') {
+                   //                 let objCp = JSON.parse(getCookie('cpns_appl'))
+                   //                 if (objCp.name === nm) {
+                   //                     notavailable_hm = `
+                   //                 <button class="remove" style='display:block'>Remove</button>`
+                   //                 } else {
+                   //                     notavailable_hm = `
+                   //                 <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
+                   //                 `
+                   //                 }
+                   //             }
+                   //             classAvai = ''
+                   //         } else {
+                   //             classAvai = ''
+                   //         }
+                   //     } else {
+                   //         classAvai = ''
+                   //         notavailable_hm = `
+                   //                     <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
+                   //                     `
+                   //     }
+//
+//
+                   // }
+
+                                document.querySelector('.ct_load_items').style.display = 'none'
+
+                    let html = `<div class="outer_cpns">
+                    <div class="ct_coupons ${classAvai}">
+                        <div class="ct_off_info_cpns">
+                            <h4>${data.off} OFF</h4>
+                        </div>
+                        <img src="../img/reward_icon_mn.png" alt="coupon">
+                        <div class="ct_inner">
+                            <h4>Coupon: ${data.name}</h4>
+
+                            <p>${data.data}</p>
+                            <div class="ct_inner_btns">
+                                ${notavailable_hm}
+                             </div>
+                        </div>
+                        <div class="ct_info_btn">
+                            <p>More <ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></p>
+
+                        </div>
+                    </div>
+                    <div class="ct_info_cpns">
+                        <h4>Description</h4>
+                        <ul>
+                            <li>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ab voluptatem</p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ab voluptatem</p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ab voluptatem</p>
+                            </li>
+                            <li>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ab voluptatem</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>`
+
+
+                    document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
+                    }
+                   
+                }
 
             })
-
 
         }
 
@@ -18690,7 +18924,7 @@
         var waypoint = new Waypoint({
             element: document.querySelector('.bx_evt_cart_item'),
             handler: function (direction) {
-                let w = document.querySelector('.ct_nav_erak .mai_ul').getBoundingClientRect().width
+                let w = document.querySelector('. .mai_ul').getBoundingClientRect().width
                 if (direction === 'down') {
 
                     // if (window.screen.width <= 470) {
@@ -18823,7 +19057,7 @@
             }
         }
         if (window.location.hash === '#login') {
-  
+
             login_toggle()
         }
         if (window.location.hash === '#signup') {
@@ -18892,17 +19126,11 @@
                             let num_22 = sessionStorage.getItem("ct_901_12");
                             check_otp = check_otp.split('')
                             console.log(check_otp)
-                            document.querySelectorAll('.ct_bx_inputs_otp input')[0].style.opacity = '1'
-                            setTimeout(function () {
-                                document.querySelectorAll('.ct_bx_inputs_otp input')[1].style.opacity = '1'
-                            }, 200)
+                            document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                                cu11.style.opacity = '1'
+                            })
 
-                            setTimeout(function () {
-                                document.querySelectorAll('.ct_bx_inputs_otp input')[2].style.opacity = '1'
-                            }, 300)
-                            setTimeout(function () {
-                                document.querySelectorAll('.ct_bx_inputs_otp input')[3].style.opacity = '1'
-                            }, 400)
+
 
                             // if (num_22 !== null) {
                             // session saved. No need to login
@@ -19002,7 +19230,7 @@
                             document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
                                 cu11.innerText = `Hurrah! Create an account and login to get discount of ${objBx.off}%`
                             })
-                            
+
                             document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
                                 cu11.style.marginTop = '18px'
                             })
@@ -19271,10 +19499,10 @@
                     })
                     let dvpr = JSON.parse(sessionStorage.getItem('app_i8m89x5'))
                     dvpr = parseFloat(dvpr)
-                    console.log(pay_typ,'--------00rghfgghfgudfbfEkfb',pay_typ.split(' ').join('') === 'payonline')
+                    console.log(pay_typ, '--------00rghfgghfgudfbfEkfb', pay_typ.split(' ').join('') === 'payonline')
                     if (pay_typ.split(' ').join('') === 'payonline') {
                         objItms.payMode = pay_typ
-                        dvpr=0
+                        dvpr = 0
                     } else if (dvpr > 0) {
                         objItms.payMode = 'cash'
                     }
@@ -19345,58 +19573,79 @@
                     let res3 = await dbCollection3.get()
                     res3.docs.forEach(async cur => {
                         let data = cur.data()
+                        let matched_nm = false
 
                         if (data.id === userDt.id) {
                             if (data.cpns_used.length !== 0) {
                                 data.cpns_used.forEach(em => {
+
                                     console.log(em.name, coupons_used.name)
                                     if (em.name === coupons_used.name) {
-                                        console.log(em.use >= parseFloat(coupons_used.max), ' -------------------')
-                                        em.use = parseFloat(em.use)
-                                        em.use += 1
-                                        if (em.use <= parseFloat(coupons_used.max)) {
-                                            check_coupon(true)
-                                            userDt.cpns_used = data.cpns_used
-                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                            if (em.use === parseFloat(coupons_used.max)) {
-                                                em.use = coupons_used.max
+                                        matched_nm = true
+                                        if (coupons_used.max !== null) {
+                                            console.log(em.use >= parseFloat(coupons_used.max), ' -------------------')
+                                            em.use = parseFloat(em.use)
+                                            em.use += 1
+                                            if (em.use <= parseFloat(coupons_used.max)) {
+                                                check_coupon(true)
+                                                userDt.cpns_used = data.cpns_used
+                                                document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                if (em.use === parseFloat(coupons_used.max)) {
+                                                    em.use = coupons_used.max
+                                                    document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                                                    document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                                                    document.querySelector('.disocunted.block_1_charge span').innerText = 0
+                                                    userDt.cpns_used = data.cpns_used
+                                                    objItms.total_amount = tot_am
+                                                    check_coupon(false)
+
+                                                    document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                }
+                                            } else if (em.use > parseFloat(coupons_used.max)) {
                                                 document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
                                                 document.querySelector('.disocunted.block_1_charge').style.display = 'none'
                                                 document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                                userDt.cpns_used = data.cpns_used
-                                                objItms.total_amount = tot_am
                                                 check_coupon(false)
 
+                                                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                                                em.use = coupons_used.max
+                                                userDt.cpns_used = data.cpns_used
                                                 document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+
                                             }
-                                        } else if (em.use > parseFloat(coupons_used.max)) {
-                                            document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
-                                            document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                                            document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                            check_coupon(false)
-
-                                            document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
-                                            em.use = coupons_used.max
-                                            userDt.cpns_used = data.cpns_used
-                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-
                                         }
+
                                     }
 
 
                                 })
+                                if (!matched_nm) {
+                                    if (coupons_used !== '') {
+                                        coupon_obj = { name: coupons_used.name, use: 1 }
+                                        data.cpns_used.push(coupon_obj)
+
+                                    }
+                                    console.log(data.cpns_used, coupons_used)
+
+                                    check_coupon(1)
+                                    userDt.cpns_used = data.cpns_used
+                                    document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                }
                             } else {
+                                matched_nm
                                 if (coupons_used !== '') {
                                     coupon_obj = { name: coupons_used.name, use: 1 }
                                     data.cpns_used.push(coupon_obj)
 
                                 }
+                                console.log(data.cpns_used, coupons_used)
 
                                 check_coupon(1)
                                 userDt.cpns_used = data.cpns_used
                                 document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                             }
+
                             console.log(objItms.total_amount, '------ididuudu')
                             let all_order = [objItms]
                             if (data.orders.length !== 0) {
@@ -19404,6 +19653,31 @@
                                 all_order.push(objItms)
                             }
 
+                            let matchedX = false
+                            data.allow_cpns.forEach((cux, ind) => {
+                                if (cux.name === coupons_used.name) {
+
+
+                                    if (cux.for !== undefined) {
+                                        if (cux.for === 'refer') {
+
+                                            let usemn = parseFloat(cux.use) - 1
+                                            cux.use = usemn
+                                            matchedX = true
+                                            check_coupon(true)
+                                            document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                                            if (usemn === 0 && coupons_used.max !== null) {
+                                                data.allow_cpns.splice(ind, 1)
+                                            }
+                                        }
+                                    }
+                                }
+                            })
+                            if (!matchedX) {
+                                check_coupon(false)
+                                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+
+                            }
 
                             await dbCollection3.doc(cur.id).set({
                                 admin: data.admin,
@@ -19429,7 +19703,7 @@
                             order_btn.style.opacity = '1'
                             order_btn.style.pointerEvents = 'auto'
                             document.querySelector('.sucess_order').style.display = 'block'
-                            document.querySelector('.sucess_order p').innerText =`Hey ${userDt.name}, your order will be delivered within 24 hr.`
+                            document.querySelector('.sucess_order p').innerText = `Hey ${userDt.name}, your order will be delivered within 24 hr.`
                             document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                             setTimeout(function () {
                                 document.querySelector('.sucess_order').style.display = 'none'
@@ -19695,7 +19969,7 @@
                 addAmount()
                 document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'flex'
                 document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
-                addCpns()
+                addCpns('')
 
             }
             if (apply_cpns !== null) {
@@ -19721,29 +19995,29 @@
                         let nm = data.name
                         if (name === nm) {
                             // checking if user used this coupon if already..
-                            let cpn_used_max = false
-                            let dbCollection2 = db.collection("users")
-                            let res2 = await dbCollection2.get()
-                            res2.docs.forEach(async doc => {
-                                let usrDt = doc.data()
-                                console.log(usrDt)
-                                console.log(usrDt.id, userDt.id)
-                                if (usrDt.id === userDt.id) {
-                                    usrDt.cpns_used.forEach(cu11 => {
-                                        let user_cpns_use = parseFloat(cu11.use)
-                                        user_cpns_use += user_cpns_use
-                                        let nmx = cu11.name.split(' ').join('')
-                                        let max_use = parseFloat(data.max)
-                                        console.log(nmx, name)
-                                        if (nmx === name) {
-                                            if (user_cpns_use > max_use) {
-                                                cpn_used_max = true
-                                            }
-                                        }
-                                    })
-                                }
-                            })
-                            if (cpn_used_max) { return }
+                            //            let cpn_used_max = false
+                            //            let dbCollection2 = db.collection("users")
+                            //            let res2 = await dbCollection2.get()
+                            //            res2.docs.forEach(async doc => {
+                            //                let usrDt = doc.data()
+                            //                console.log(usrDt)
+                            //                console.log(usrDt.id, userDt.id)
+                            //                if (usrDt.id === userDt.id) {
+                            //                    usrDt.cpns_used.forEach(cu11 => {
+                            //                        let user_cpns_use = parseFloat(cu11.use)
+                            //                        user_cpns_use += user_cpns_use
+                            //                        let nmx = cu11.name.split(' ').join('')
+                            //                        let max_use = parseFloat(data.max)
+                            //                        console.log(nmx, name)
+                            //                        if (nmx === name) {
+                            //                            if (user_cpns_use > max_use) {
+                            //                                cpn_used_max = true
+                            //                            }
+                            //                        }
+                            //                    })
+                            //                }
+                            //            })
+                            //  if (cpn_used_max) { return }
                             document.querySelector('.sucess_order').style.display = 'none'
 
                             let offerMn = ''
@@ -19808,7 +20082,7 @@
                     document.querySelector('.ct_bx_layer').style.opacity = '1'
                 }, 780)
                 document.querySelector('.container_coupons_Refer').style.right = '0'
-                addCpns()
+                addCpns('')
             }
             if (close_popup_cpns !== null || close_popup_cpns2 !== null) {
 
@@ -19868,10 +20142,9 @@
                 document.querySelector('.forlogin .ct_field_first_acc').style.display = 'block'
                 document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'none'
                 document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '0'
-                document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[0].style.opacity = '1'
-                document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[1].style.opacity = '1'
-                document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[2].style.opacity = '1'
-                document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[3].style.opacity = '1'
+                document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
+                    cu11.style.opacity = '1'
+                })
             }
             if (goback_sgn !== null) {
                 document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
@@ -19882,10 +20155,9 @@
                 document.querySelector('.for_signup .ct_field_first_acc').style.display = 'block'
                 document.querySelector('.for_signup .ct_bx_otp_box').style.display = 'none'
                 document.querySelector('.for_signup .ct_bx_otp_box').style.opacity = '0'
-                document.querySelectorAll('.for_signup .ct_bx_inputs_otp input')[0].style.opacity = '1'
-                document.querySelectorAll('.for_signup .ct_bx_inputs_otp input')[1].style.opacity = '1'
-                document.querySelectorAll('.for_signup .ct_bx_inputs_otp input')[2].style.opacity = '1'
-                document.querySelectorAll('.for_signup .ct_bx_inputs_otp input')[3].style.opacity = '1'
+                document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
+                    cu11.style.opacity = '1'
+                })
             }
 
             if (login_main_btn !== null) {
@@ -19917,23 +20189,55 @@
                     if (window.location.search.split('?')[1] !== undefined) {
                         if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
                             let id_ref = secret(getCookie('signup_3sy13'))
-                            let objBx =id_ref
+                            let objBx = id_ref
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
                                 let res = await dbCollection2.get()
-
+                                document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                    cu11.style.display = 'flex'
+                                })
+                                document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
+                                    cu11.innerText = `Hurrah! Create an account and login to get discount of ${objBx.off}%`
+                                })
                                 res.docs.forEach(async cu => {
                                     let data = cu.data()
-                                    let csh_m = 50
+                                    let cps_allow = data.allow_cpns
                                     if (objBx.id === data.id) {
+
+                                        let use_max = 1
+                                        let dbCollection2x = db.collection("reffer")
+                                        let resx = await dbCollection2x.get()
+                                        let matched_use = false
+                                        resx.docs[0].data().cpns.forEach(async cux => {
+                                            let dt_x = cux
+                                            if (dt_x.name === objBx.name) {
+                                                if (dt_x.use === null) {
+                                                    cps_allow.forEach(elem => {
+                                                        if (elem.name === dt_x.name) {
+                                                            let use = parseFloat(elem.use)
+                                                            use_max += use
+                                                            elem.use = use_max
+                                                            matched_use = true
+                                                        }
+                                                    })
+                                                }
+                                            }
+                                        })
+                                        console.log(use_max)
                                         let obj_cpns = {
                                             for: 'refer',
                                             name: objBx.name,
+                                            use: use_max,
                                         }
-                                        data.allow_cpns.push(obj_cpns)
+                                        socket.emit('cash_oth4', objBx.name, objBx.off, objBx.id)
+                                        if (!matched_use) {
+
+                                            cps_allow.push(obj_cpns)
+
+                                        }
                                         if (!data.reffer) {
                                             data.reffer = []
-                                            data.reffer.push({ id: id })
+                                            data.reffer.push({ id: data.id })
                                         }
                                         data.cpns_used.push(obj_cpns)
                                         await dbCollection2.doc(cu.id).set({
@@ -19945,13 +20249,13 @@
                                             location: data.location,
                                             cartItems: data.cartItems,
                                             refferedBy: data.refferedBy,
-                                            allow_cpns: data.allow_cpns,
+                                            allow_cpns: cps_allow,
                                             cpns_used: data.cpns_used,
-                                            orders: [],
+                                            orders: data.orders,
                                             reffer: data.reffer,
                                         })
-                                                                                document.querySelector('.confetti').style.display = 'block'
-                                        document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${obj_cpns.name} unlocked. Grab the coupon from the cart and enjoy flat ${obj_cpns.off}% discount`
+                                        document.querySelector('.confetti').style.display = 'block'
+                                        document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
                                         document.querySelector('.ct_outer_saved').style.display = 'flex'
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                             cu11.style.display = 'none'
@@ -19972,21 +20276,20 @@
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                                         document.querySelector('.popup_info.sucess_account').style.display = 'flex'
 
-                                        document.querySelector('.popup_info.sucess_account p').innerText='Successfully logged in to account'
+                                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in to account'
                                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
 
                                         document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                                        socket.emit('cash_oth4', obj_cpns.name, obj_cpns.off, id_ref)
 
                                         setTimeout(function () {
                                             document.querySelector('.popup_info.sucess_account').style.display = 'none'
+                                            //  window.location.replace('/mycart')
 
 
                                         }, 20000)
                                     }
                                 })
-                                                                window.location.replace('/mycart')
 
                             }
                             getUser()
@@ -20010,6 +20313,13 @@
 
 
                 } else {
+                    document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu1 => {
+                        cu1.setAttribute('disabled', true)
+                        cu1.value = ''
+                    })
+                    document.querySelectorAll('.forlogin  .ct_bx_inputs_otp input')[0].removeAttribute('disabled')
+                    document.querySelectorAll('.forlogin  .ct_bx_inputs_otp input')[0].focus()
+
                     document.querySelector('.forlogin .error_otp').style.display = 'block'
                     document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
                         cu11.style.background = 'rgb(253 242 242)'
@@ -20023,7 +20333,7 @@
                 let phoneNum = document.querySelector('.forlogin .phone_number input').value
                 if (sessionStorage.getItem("ct_901_12") === null) {
                     // if no auto logging
-                                                  document.querySelector('.forlogin .ct_go_back_account h3').style.display = 'flex'
+                    document.querySelector('.forlogin .ct_go_back_account h3').style.display = 'flex'
                     document.querySelector('.forlogin .ct_go_back_account h3').style.margin = '40px 0 9px 25px'
                     if (phoneNum.length >= 10) {
                         document.querySelector('.login_verify').style.opacity = '.5'
@@ -20057,17 +20367,9 @@
                                         document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'block'
                                         document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '1'
 
-                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[0].style.opacity = '1'
-                                        setTimeout(function () {
-                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[1].style.opacity = '1'
-                                        }, 200)
-
-                                        setTimeout(function () {
-                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[2].style.opacity = '1'
-                                        }, 300)
-                                        setTimeout(function () {
-                                            document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')[3].style.opacity = '1'
-                                        }, 400)
+                                        document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
+                                            cu11.style.opacity = '1'
+                                        })
                                         return
                                         var settings = {
                                             "async": true,
@@ -20158,7 +20460,7 @@
                                 reffer: false,
                                 orders: []
                             }
-                             db.collection("users")
+                            db.collection("users")
                                 .add(
                                     objU
                                 ).then(res => {
@@ -20195,253 +20497,248 @@
                         createAccount()
                     }
                 } else {
-            document.querySelector('.error_otp').style.display = 'block'
-                document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
-                cu11.style.background = 'rgb(253 242 242)'
-                cu11.style.borderBottom = '2px solid rgb(255 39 39)'
+                    document.querySelector('.error_otp').style.display = 'block'
+                    document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
+                        cu11.style.background = 'rgb(253 242 242)'
+                        cu11.style.borderBottom = '2px solid rgb(255 39 39)'
 
-            })
+                    })
+                }
+
             }
 
-        }
-        
 
 
 
-        
+
             if (acont_account !== null) {
-            let location = document.querySelector('.nick_name.area input').value
-            let check_loc = true
-            let ph_num = document.querySelector('.phone_number input').value
-            let address = document.querySelector('.address textarea').value
-            let name = document.querySelector('.name_un  input').value
-            let error = false
-            document.querySelector('.nick_name.area input').style.background = 'rgb(245 245 245)'
+                let location = document.querySelector('.nick_name.area input').value
+                let check_loc = true
+                let ph_num = document.querySelector('.phone_number input').value
+                let address = document.querySelector('.address textarea').value
+                let name = document.querySelector('.name_un  input').value
+                let error = false
+                document.querySelector('.nick_name.area input').style.background = 'rgb(245 245 245)'
 
-            if (ph_num === '') {
-                document.querySelector('.phone_error p').innerText = 'Please fill this field'
+                if (ph_num === '') {
+                    document.querySelector('.phone_error p').innerText = 'Please fill this field'
 
-                document.querySelector('.phone_error').style.display = 'block'
-                error = true
-            }
-            if (location === '') {
-                document.querySelector('.location_error p').innerText = 'Please fill this field'
+                    document.querySelector('.phone_error').style.display = 'block'
+                    error = true
+                }
+                if (location === '') {
+                    document.querySelector('.location_error p').innerText = 'Please fill this field'
 
-                document.querySelector('.location_error').style.display = 'block'
-                error = true
-
-            }
-            if (address === '') {
-                error = true
-                document.querySelector('.address_error').style.display = 'block'
-
-            }
-            if (name === '') {
-                document.querySelector('.name_error').style.display = 'block'
-                error = true
-
-            }
-            if (ph_num.length < 10) {
-                document.querySelector('.phone_error').style.display = 'block'
-                error = true
-                document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-
-            }
-            if (error) return
-            let request = {
-                origin: 'Badharghar, Agartala,Tripura',
-                destination: location,
-                travelMode: google.maps.TravelMode.DRIVING,
-                unitSystem: google.maps.UnitSystem.IMPERIAL,
-            }
-
-            directionSv.route(request, (res, stat) => {
-                console.log(stat, stat === 'NOT_FOUND')
-                if (stat === 'NOT_FOUND') {
-                    document.querySelector('.location_error p').innerText = 'Invalid location, please try again.'
                     document.querySelector('.location_error').style.display = 'block'
-                } else {
-                    if (stat === res.status) {
-                        let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
-                        let unitKM = unitMiles * 1.60934
-                        // EVERY LOCATION IS WORKING FINE
-                        //unitKM  checking the location by killometer distance from badharghat
-                        console.log(unitKM)
-                        if (unitKM <= 10) {
-                            document.querySelector('.account_cont').style.opacity = '0.5'
-                            document.querySelector('.account_cont').style.pointerEvents = 'none'
+                    error = true
 
-                            async function phoneExist() {
+                }
+                if (address === '') {
+                    error = true
+                    document.querySelector('.address_error').style.display = 'block'
+
+                }
+                if (name === '') {
+                    document.querySelector('.name_error').style.display = 'block'
+                    error = true
+
+                }
+                if (ph_num.length < 10) {
+                    document.querySelector('.phone_error').style.display = 'block'
+                    error = true
+                    document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+
+                }
+                if (error) return
+                let request = {
+                    origin: 'Badharghar, Agartala,Tripura',
+                    destination: location,
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.IMPERIAL,
+                }
+
+                directionSv.route(request, (res, stat) => {
+                    console.log(stat, stat === 'NOT_FOUND')
+                    if (stat === 'NOT_FOUND') {
+                        document.querySelector('.location_error p').innerText = 'Invalid location, please try again.'
+                        document.querySelector('.location_error').style.display = 'block'
+                    } else {
+                        if (stat === res.status) {
+                            let unitMiles = parseFloat(res.routes[0].legs[0].distance.text)
+                            let unitKM = unitMiles * 1.60934
+                            // EVERY LOCATION IS WORKING FINE
+                            //unitKM  checking the location by killometer distance from badharghat
+                            console.log(unitKM)
+                            if (unitKM <= 10) {
+                                document.querySelector('.account_cont').style.opacity = '0.5'
+                                document.querySelector('.account_cont').style.pointerEvents = 'none'
 
 
-                                let checked_ph = false
+                                async function phoneExist() {
 
-                                let dbCollection22 = db.collection("users")
-                                let res22 = await dbCollection22.get()
-                                document.querySelector('.account_cont').style.opacity = '1'
-                                document.querySelector('.account_cont').style.pointerEvents = 'auto'
-                                res22.docs.forEach(cur11 => {
-                                    let itmDb = cur11.data()
-                                    console.log(ph_num, itmDb.phone)
-                                    if (ph_num === itmDb.phone) {
-                                        checked_ph = true
-                                        console.log('checking.......')
-                                    }
-                                })
-                                if (!checked_ph) {
-                                    // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
-                                    // document.querySelector('.error_account').style.display = 'none'
-                                    console.log('yo yo.......')
-                                    socket.emit('getCode');
-                                    socket.on('sendCode', (id, token, number, key) => {
-                                        //sessionStorage.setItem("ct_901_12", token);
 
-                                        let objUserData = {
-                                            id: id,
-                                            name: name,
-                                            phone: ph_num,
-                                            address: address,
-                                            location: location,
+                                    let checked_ph = false
 
-                                            cartItems: [{
-                                                name: 'masala meat',
-                                                price: '85',
-                                                type: 'sauce',
-                                                unitSelect: [{ name: '150g' }],
-                                                qty: 1
-
-                                            }]
-
+                                    let dbCollection22 = db.collection("users")
+                                    let res22 = await dbCollection22.get()
+                                    document.querySelector('.account_cont').style.opacity = '1'
+                                    document.querySelector('.account_cont').style.pointerEvents = 'auto'
+                                    res22.docs.forEach(cur11 => {
+                                        let itmDb = cur11.data()
+                                        console.log(ph_num, itmDb.phone)
+                                        if (ph_num === itmDb.phone) {
+                                            checked_ph = true
+                                            console.log('checking.......')
                                         }
-                                        if (window.location.search !== '') {
-                                            let searchM = window.location.search
-                                            window.location.replace(`/mycart${searchM}#dataRecived`)
-                                        } else {
-                                            window.location.replace('/mycart#dataRecived')
-                                        }
-                                        setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
-                                        document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                        document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
+                                    })
+                                    if (!checked_ph) {
+                                        // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
+                                        // document.querySelector('.error_account').style.display = 'none'
+                                        console.log('yo yo.......')
+                                        socket.emit('getCode');
+                                        socket.on('sendCode', (id, token, number, key) => {
+                                            //sessionStorage.setItem("ct_901_12", token);
+
+                                            let objUserData = {
+                                                id: id,
+                                                name: name,
+                                                phone: ph_num,
+                                                address: address,
+                                                location: location,
+
+                                                cartItems: [{
+                                                    name: 'masala meat',
+                                                    price: '85',
+                                                    type: 'sauce',
+                                                    unitSelect: [{ name: '150g' }],
+                                                    qty: 1
+
+                                                }]
+
+                                            }
+                                            if (window.location.search !== '') {
+                                                let searchM = window.location.search
+                                                window.location.replace(`/mycart${searchM}#dataRecived`)
+                                            } else {
+                                                window.location.replace('/mycart#dataRecived')
+                                            }
+                                            setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
+                                            document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
 
 
-                                        document.querySelector('.ct_btn_acc').style.opacity = '0'
-                                        setTimeout(function () {
+                                            document.querySelector('.ct_btn_acc').style.opacity = '0'
                                             document.querySelector('.ct_bxsecured_info').style.opacity = '0'
 
-                                        }, 100)
-                                        setTimeout(function () {
                                             document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
 
-                                        }, 150)
-                                        setTimeout(function () {
                                             document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
 
-                                        }, 200)
-                                        setTimeout(function () {
                                             document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
 
-                                        }, 250)
-                                        setTimeout(function () {
                                             document.querySelector('.ct_field_first_acc').style.display = 'none'
                                             document.querySelector('.ct_bx_otp_box').style.display = 'block'
                                             document.querySelector('.ct_bx_otp_box').style.opacity = '1'
+                                            document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
+                                                cu11.style.opacity = '1'
+                                            })
                                             document.querySelector('.signup_bx .ct_bx_title_accounts').style.display = 'none'
+                                            document.querySelector('.ct_go_back_account h3').style.display = 'flex'
 
 
-                                        }, 300)
-                                        return
+                                            return
 
-                                        var settings = {
-                                            "async": true,
-                                            "crossDomain": true,
-                                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
-                                            "method": "GET"
-                                        }
-
-                                        $.ajax(settings).done(function (response) {
-                                            console.log(response, 'sent!!!')
-
-                                            if (response.return) {
-                                                console.log('sent!!!')
-                                                //  let user = {
-                                                //      address_user: address_inp,
-                                                //      continue_verify: "",
-                                                //      last_user: "",
-                                                //      lastname: lastname_inp,
-                                                //      name_user: name_inp,
-                                                //      password_login: pass_inp,
-                                                //      phone: phonenumber_inp,
-                                                //      city: city,
-                                                //  };
-                                                //  var header = {
-                                                //      "alg": "HS256",
-                                                //      "typ": "JWT"
-                                                //  }
-                                                //  var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
-                                                //  var encodedHeader = base64url(stringifiedHeader)
-                                                //  var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
-                                                //  var encodedData = base64url(stringifiedData);
-                                                //  var token = encodedHeader + "." + encodedData;;
-                                                //  console.log(token, 'token');
-                                                // window.location.replace(`/signup?authUser=${token}`)
-                                                document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                                window.location.replace('/mycart#dataRecived')
-
-
-                                            } else {
-                                                document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                                document.querySelector('.phone_error').style.display = 'block'
+                                            var settings = {
+                                                "async": true,
+                                                "crossDomain": true,
+                                                "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                                "method": "GET"
                                             }
-                                        });
 
-                                    })
-                                } else {
-                                    // account exist already
+                                            $.ajax(settings).done(function (response) {
+                                                console.log(response, 'sent!!!')
 
-                                    document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                        cu11.style.display = 'none'
-                                    })
-                                    document.querySelector('.error_account').style.display = 'flex'
-                                    setTimeout(function () {
+                                                if (response.return) {
+                                                    console.log('sent!!!')
+                                                    //  let user = {
+                                                    //      address_user: address_inp,
+                                                    //      continue_verify: "",
+                                                    //      last_user: "",
+                                                    //      lastname: lastname_inp,
+                                                    //      name_user: name_inp,
+                                                    //      password_login: pass_inp,
+                                                    //      phone: phonenumber_inp,
+                                                    //      city: city,
+                                                    //  };
+                                                    //  var header = {
+                                                    //      "alg": "HS256",
+                                                    //      "typ": "JWT"
+                                                    //  }
+                                                    //  var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
+                                                    //  var encodedHeader = base64url(stringifiedHeader)
+                                                    //  var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
+                                                    //  var encodedData = base64url(stringifiedData);
+                                                    //  var token = encodedHeader + "." + encodedData;;
+                                                    //  console.log(token, 'token');
+                                                    // window.location.replace(`/signup?authUser=${token}`)
+                                                    document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                    window.location.replace('/mycart#dataRecived')
+
+
+                                                } else {
+                                                    document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+                                                    document.querySelector('.phone_error').style.display = 'block'
+                                                }
+                                            });
+
+                                        })
+                                    } else {
+                                        // account exist already
+
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                            cu11.style.display = 'flex'
+                                            cu11.style.display = 'none'
                                         })
-                                        document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
-                                            cu11.style.marginTop = '18px'
-                                        })
-                                        document.querySelector('.error_account').style.display = 'none'
+                                        document.querySelector('.error_account').style.display = 'flex'
+                                        setTimeout(function () {
+                                            document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                                cu11.style.display = 'flex'
+                                            })
+                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
+                                                cu11.style.marginTop = '18px'
+                                            })
+                                            document.querySelector('.error_account').style.display = 'none'
 
-                                    }, 8000)
+                                        }, 8000)
+                                    }
                                 }
+                                phoneExist()
+
+
+                            } else {
+                                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
+                                document.querySelector('.location_error').style.display = 'block'
+                                document.querySelector('.ct_inner_bottom_box').scrollTo(0, 0)
+                                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
                             }
-                            phoneExist()
-
-
-                        } else {
-                            document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
-                            document.querySelector('.location_error').style.display = 'block'
-                            document.querySelector('.ct_inner_bottom_box').scrollTo(0, 0)
-                            document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
                         }
                     }
-                }
 
-            })
+                })
 
 
-        }
-        if (inpX === null && !e.target.closest('.ct_results')) {
-            document.querySelector('.ct_results').style.display = 'none'
-        }
+            }
+            if (inpX === null && !e.target.closest('.ct_results')) {
+                document.querySelector('.ct_results').style.display = 'none'
+            }
 
-        if (itemG !== null) {
-            let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
-            document.querySelector('.nick_name.area input').value = text
-            document.querySelector('.ct_results').style.display = 'none'
-            document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
-                cur.remove()
-            })
-        }
+            if (itemG !== null) {
+                let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
+                document.querySelector('.nick_name.area input').value = text
+                document.querySelector('.ct_results').style.display = 'none'
+                document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
+                    cur.remove()
+                })
+            }
         })
 
         let ifd = []
@@ -20460,7 +20757,6 @@
         let iG = 0
         let numnext = 1
         let qtsuper = document.querySelector('.ct_bx_qty_inner')
-        let pasteEv = false
         let inputs_login2 = document.querySelectorAll('.ct_field_first_acc input')
         inputs_login2.forEach((inp, index) => {
             inp.addEventListener('keyup', (e) => {
@@ -20474,15 +20770,19 @@
         let inputs_sign = document.querySelectorAll('.fr_sign_otp .ct_bx_inputs_otp input')
         let inputs_login = document.querySelectorAll('.forlogin .ct_bx_inputs_otp input')
         function inputType(inputBx, parentM) {
-            console.log(parentM, 'kkk')
+            let pasteEv = false
+
             inputBx.forEach((inp, index) => {
                 inp.addEventListener('keyup', (e) => {
+
                     let currentInp = inp
                     var key = e.which || e.keyCode
                     var ctrl = e.ctrlKey ? e.ctrlKey : ((key === 17) ? true : false);
                     if (key == 86 && ctrl) {
                         pasteEv = true
                     }
+                    console.log(parentM, pasteEv, 'kkk')
+
                     if (currentInp.value.length > 1) {
 
                         currentInp.value = currentInp.value.split('')[0]
@@ -20555,7 +20855,56 @@
             let addBsitm = e.target.closest('.add_base_itm')
             let remBtn = e.target.closest('.itm_cart_nav')
             let rmItm = e.target.closest('.remove_fd_itm_ct')
+            let info_cpns=e.target.closest('.ct_info_btn')
+            let check_code_cpns = e.target.closest('.ct_search_cpns button')
 
+            if(info_cpns!==null){
+                if(info_cpns.parentElement.parentElement.childNodes[3].classList.value.includes('active')){
+                info_cpns.parentElement.parentElement.childNodes[3].classList.remove('active')
+
+                }else{
+                info_cpns.parentElement.parentElement.childNodes[3].classList.add('active')
+
+                }
+            }else{
+                if(document.querySelector('.ct_info_cpns.active')!==null){
+                   document.querySelector('.ct_info_cpns.active').classList.remove('active') 
+                }
+            }
+            if (check_code_cpns !== null) {
+                document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
+
+                document.querySelector('.ct_load_items').style.display = 'flex'
+
+                let code = check_code_cpns.parentElement.childNodes[1].value
+          async  function cpns(){
+  let dbCollection = db.collection("coupons")
+                let res = await dbCollection.orderBy('grp').get()
+
+                res.docs.forEach(async cur => {
+                    let dt = cur.data()
+                    if (dt.secret !== null) {
+                        console.log(code)
+                        if (dt.secret === code) {
+                            // show the coupon 
+                            // add to allowed cpns
+                        document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'none'
+                        addCpns(code.toLowerCase())
+
+                        } else {
+                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'none'
+
+                            document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'block'
+                                document.querySelector('.ct_load_items').style.display = 'none'
+addCpns('')
+                            // invalid code
+                        }
+                    }
+                })
+            }
+            cpns()
+              
+            }
             if (rmItm !== null) {
                 let h4
                 let groc

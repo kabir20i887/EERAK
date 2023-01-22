@@ -330,16 +330,16 @@ app.get('/events', (req, res) => {
     res.render('index')
 
 })
-// app.get('/admin/:id', (req, res) => {
-// console.log(req.params)
-//     if (req.params.id === 'msdhooni7') {
-//         res.render('admin')
+app.get('/admin/:id', (req, res) => {
+console.log(req.params)
+    if (req.params.id === 'msdhooni7') {
+        res.render('admin')
 
-//     }else{
-//         res.redirect('/')
+    }else{
+        res.redirect('/')
 
-//     }
-// })
+    }
+})
 // app.get('/admin', (req, res) => {
 
 //     res.redirect('/')

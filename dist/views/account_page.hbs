@@ -62,6 +62,60 @@
         flex-direction: column;
         min-height: 100vh;
     }
+.ct_bx_about_mobile2 {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: 0 5px;
+
+}
+.ct_bx_about_mobile2 a{
+    padding: 14px 10px;
+}
+.ct_info_cart{
+    border-radius: 20px;
+    width: 24px;
+    position: absolute;
+    right: 0;
+top: -5px;
+display: none;
+    padding: 4px;
+    background-color: #000000;
+}
+.ct_bx_about_mobile2 .ct_info_cart p{
+    color: white;
+    font-size: 12px;
+    font-family: 'roboto';
+    font-weight: 500;
+}
+.ct_nav_erak  a:hover{
+    text-decoration: none;
+}
+.ct_bx_about_mobile2.account_btn a,
+.ct_bx_about_mobile2.cart_btn a{
+        border: 1px solid #adadad;
+    padding-left: 7px;
+    height: 41px;
+    width: max-content;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.ct_bx_about_mobile2:active,
+.ct_bx_about_mobile2:hover{
+    background: whitesmoke;
+border-bottom: 2px solid #0077ff;
+}
+
+
+    .ct_bx_about_mobile2 .material-symbols-outlined {
+        color: #0c0c0c;
+        font-size: 26px;
+        margin: -9px 5px;
+    }
+
+
+
 
     body {
         background: #ffffff;
@@ -190,12 +244,7 @@
         margin-top: -6px;
     }
 
-    .ct_bx_about_mobile2 {
-        display: block;
-        text-align: center;
-        width: auto;
-        margin: 15px;
-    }
+ 
 
     .ct_nav_erak .for_seravh_in_nav {
         width: 66%;
@@ -206,11 +255,6 @@
         width: 100%;
     }
 
-    .ct_bx_about_mobile2 .material-symbols-outlined {
-        color: #000000;
-        font-size: 29px;
-        margin: -9px 5px;
-    }
 
     .ct_bx_about_mobile2 p {
         font-size: 13px;
@@ -4899,13 +4943,13 @@
     .ct_share_box button ion-icon {
         transform: translate(0, 4px);
     }
-
-    .account_name_sec {
-        display: flex;
-        width: 100%;
-        padding: 31px 62px;
-        background: #f2f2f2;
-    }
+.account_name_sec {
+    display: flex;
+    width: 100%;
+    padding: 31px 62px;
+    background: #f2f2f2;
+    margin-top: 79px;
+}
 
     .ct_copy_link {
         padding-bottom: 40px;
@@ -5096,9 +5140,98 @@
         background-color: white;
         color: black;
     }
+.ct_info_requested {
+    background: linear-gradient(20deg, #fff0f4, #ff008dad);
+    padding: 17px 20px;
+    width: 98%;
+    position: relative;
+    margin-top: 30px;
+    display: flex;
+}
+.ct_info_requested ion-icon{
+            color: #256e20;
+font-size: 30px;
+}
+.ct_info_requested .ct_remove {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+.ct_info_requested .ct_remove ion-icon{
+    color: black;
+    font-size: 24px;
+    
+}
+.ct_info_requested .ct_inner{
+    margin: 10px;
+}
+.ct_info_requested h4 {
+        color: #256e20;
+    font-family: 'roboto';
+    font-size: 19px;
+}
+.ct_info_requested span,
+.ct_info_requested p{
+            color: #256e20;
+    font-family: 'roboto';
+    font-weight: 500;
+    width:80%;
+    font-size: 15px;
+}
+.ct_info_requested span{margin-top: 7px;}
+.sucess_div {
+    background: linear-gradient(20deg, #f0fff1, #00ff6fad);
+}
 
+.ct_terms_cond {
+    display: block;
+    width: 500px;
+    position: fixed;
+    z-index: 9999999999999999999;
+    overflow: hidden;
+    height: 750px;
+    top: 120px;
+    right: -800px;
+    transition: all .7s ease-in-out;
+    top: 0;
+    height: 100vh;
+    padding: 0 20px;
+    background-color: white;
+    overflow-y: scroll;
+    /* border-radius: 20px; */
+    box-shadow: 0 0 10px #00000042;
+}
+.ct_terms_cond .txt,
+.ct_terms_cond h4{
+    color: black;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    width: 90%;
+margin-top: 90px;
+}
+.ct_terms_cond .txt{
+    color: rgb(83, 82, 82);
+    word-break: break-all;
+    font-size: 14px;
+    margin-top: 10px;
 
+}
+.ct_terms_cond.active{right: 0;}
 
+.ct_bx_go_back {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    cursor: pointer;
+    background: #ffffff;
+    width: 100%;
+    padding: 17px;
+    z-index: 999999;
+    box-shadow: 0 0 10px #0000002b;
+}
     /*! CSS Used keyframes */
 </style>
 
@@ -5150,11 +5283,29 @@
                 </div>
             </div>
 
-
+<div class="ct_terms_cond">
+    <div class="ct_bx_go_back">
+                    <ion-icon name="arrow-back-outline" role="img" class="md hydrated" aria-label="arrow back outline"></ion-icon>
+                    <p>Go Back</p>
+                </div>
+    <h4>Terms and condition for return</h4>
+    <p class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel obcaecati tenetur consectetur, a perferendis corporis ducimus, praesentium optio consequuntur totam nam error alias? Aliquam, architecto voluptate beatae nemo ipsam quia!</p>
+</div>
             <div class="_3tDvm ">
                 <div class="v6luz FvIBT"></div>
                 <div class="ct_info success">
                     <h4>Your Account has been successfully edited.</h4>
+                </div>
+                <div class="ct_info_requested sucess_div">
+                    <ion-icon name="checkmark-done-circle"></ion-icon>
+                    <div class="ct_inner">
+                    <h4>Successfully requested for return</h4>
+                    <p>Masala meat, net weight:150gm has been suceessfully requested for return, We will contact you on this number 9233054806</p>
+                    <span>For Help:- Call on this number 7005328132</span>
+                    </div>
+                    <div class="ct_remove">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </div>
                 </div>
                 <div class="_2QhOV _3glSS">
                     <div class="_3R9IF">
@@ -5209,6 +5360,9 @@
                                     <div class="ct_flex_bx_notif notif_refer">
                                         <h4>Notifications</h4>
                                         <button>Remove All</button>
+                                    </div>
+                                    <div class="ct_notif_inner">
+
                                     </div>
                                 </div>
                                 <div class="ct_flex_bx_notif for_ref">
@@ -5324,6 +5478,32 @@
                 return null
             }
         };
+        function load_basic_dt(){
+            let total_itms=0
+            let allfd_sauce = JSON.parse(localStorage.getItem('sauce'))
+            let allfd_essen = JSON.parse(localStorage.getItem('essentials'))
+            if(allfd_essen!==null){
+                total_itms+=allfd_sauce.length
+            }
+            if(allfd_sauce!==null){
+                total_itms+=allfd_sauce.length
+            }
+            document.querySelector('.ct_info_cart').style.display='block'
+            document.querySelector('.ct_info_cart p').innerText=total_itms
+                let userDtx = getCookie('userData')
+                if (userDtx !== '') {
+                    let dt_user = JSON.parse(userDtx)
+                    document.querySelector('.mobile_only.account_btn').style.display='block'
+                    document.querySelector('.account_nav2').style.display='block'
+                    // remove the banner of signup offer
+
+
+
+                }else{
+                    window.location.replace('/')
+                }
+        }
+        load_basic_dt()
 
         async function toggle_tab(typ) {
             document.querySelector('.ct_load_items').style.display = 'flex'
@@ -5360,6 +5540,7 @@
                         document.querySelector('.add_ress span').innerText = dt.address.replace(/(\r\n|\n|\r)/gm, " ")
                         let dbCollection23 = db.collection("reffer")
                         let res2 = await dbCollection23.get()
+                        document.querySelector('.ct_notify_refer_btn .ct_notif_inner').innerHTML=''
                         let mached = false
                         let cpns_reffer_arr = res2.docs[0].data().cpns
                         cpns_reffer_arr.forEach(async elem => {
@@ -5368,10 +5549,9 @@
                                     if (cu1.for === 'refer') {
                                         if (elem.name === cu1.name) {
                                             //if view_refer_info ->> removed by user
-                                            if (getCookie('view_refer_info') === '') {
+                                            
                                                 document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
-
-                                                let html = `<div class="ct_notify">
+       let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
                                         <div class="remove_btn">
                                             <span class="material-symbols-outlined">
                                                 close
@@ -5386,8 +5566,18 @@
                                         </div>
 
                                     </div>`
-                                                document.querySelector('.ct_notify_refer_btn').insertAdjacentHTML('beforeend', html)
+                                            if (getCookie('view_refer_info') !== '') {
+                                                let notif_viewed=JSON.parse(getCookie('view_refer_info'))
+                                                notif_viewed.forEach(elm=>{
+                                                    if(elm===elem.name.split(' ').join('_')){
+                                                        html=''
+                                                    }
+                                                })
                                             }
+
+                                         
+                                                document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+
 
                                         }
 
@@ -5399,6 +5589,10 @@
                                     mached = true
                                 }
                             })
+                            if(document.querySelector('.ct_notify_refer_btn .ct_notif_inner').innerHTML===''){
+                                                document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'none'
+
+                            }
 
                         })
                         // cpn can used and show it
@@ -5851,17 +6045,53 @@
             let edit_now = e.target.closest('.cont_btn_acc.edit_btn')
             let remove_notif = e.target.closest('.ct_flex_bx_notif button')
             let refer_tab = e.target.closest('.refer_tab')
+            let go_back = e.target.closest('.ct_bx_go_back')
+            let lear_mr=e.target.closest('.learn_more')
+            let return_order=e.target.closest('.f4Ovn')
+            let rem_return_pop=e.target.closest('.ct_info_requested .ct_remove')
+            if(rem_return_pop!==null){
+                document.querySelector('.ct_info_requested.sucess_div').style.display='none'
 
+            }
+            if(return_order!==null){
+                let order_dt=return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].innerText
+                let nm=return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                let qt=return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[3].innerText
+                let unit=return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[5].innerText
+                let dt_user=JSON.parse(getCookie('userData'))
+                let name=dt_user.name
+                let phone=dt_user.phone
+                let address=dt_user.address
+return_order.innerText='Requested'
+return_order.style.opacity='.5'
+return_order.style.pointerEvents='none'
+document.querySelector('.ct_info_requested.sucess_div').style.display='flex'
+document.querySelector('.ct_info_requested.sucess_div p').innerText=`${order_dt}, Item: ${nm},${qt}, ${unit} has been suceessfully requested for return, We will contact you on this number 9233054806`
+window.scrollTo(0,0)
 
+                console.log(nm,qt,unit,)
+            }
+            if(lear_mr!==null){
+            document.querySelector('.ct_terms_cond').classList.add('active')
+
+            }
+            if(go_back!==null){
+            document.querySelector('.ct_terms_cond').classList.remove('active')
+            }
             if(refer_tab!==null){
                 toggle_tab('refer')
             }
             if (remove_notif !== null) {
+                let arr=[]
                 document.querySelectorAll('.ct_notify').forEach(cu1 => {
+                    
+                    let nm=cu1.classList.value.split(' ')[1]
+                    arr.push(nm)
                     cu1.remove()
                 })
                 document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'none'
-                document.cookie = "view_refer_info" + "=" + '3sjhgs' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                console.log(arr)
+              document.cookie = "view_refer_info" + "=" + JSON.stringify(arr) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
             }
             if (edit_now !== null) {
