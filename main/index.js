@@ -454,7 +454,7 @@ jwt.verify('eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyjuyw1lijoiu1vqrvi0mcisim9mzii
 
 //     res.render('myaccount')
 // })
-
+let doneTime=0
 io.on('connection', (sock) => {
     console.log('connected')
     var a = 1
@@ -469,6 +469,65 @@ io.on('connection', (sock) => {
         var token = jwt.sign({id:id, name: name,off:offer }, 'shhhhh');
         console.log(token)
         io.emit('send_refer',token)
+    })
+    sock.on('order_sms',(cd,name,am,phone)=>{
+    //    fst.query({
+    //        authorization: authfst,
+    //        route: 'dlt',
+    //        sender_id: 'krickG',
+    //        message: 145388,
+    //        variables_values: `${name}|${cd}|`,
+    //        numbers: phone,
+    //        flash: "0",
+    //    });
+    //    console.log(phone)
+//
+    //    fst.headers({
+    //        "cache-control": "no-cache"
+    //    });
+//
+//
+    //    fst.end(function (res) {
+    //        if (res.error) console.log(res.error);
+//
+    //        console.log(res.body);
+    //    });
+    })
+    sock.on('on_way_sms',(name,am,phone)=>{
+        //Hello kabir, your order of rs ... is out for delivery. Please use the code to verify order
+     // fst.query({
+     //     authorization: authfst,
+     //     route: 'dlt',
+     //     sender_id: 'krickG',
+     //     message: 145388,
+     //     variables_values: `${name}|${am}|`,
+     //     numbers: phone,
+     //     flash: "0",
+     // });
+     // console.log(phone)
+
+     // fst.headers({
+     //     "cache-control": "no-cache"
+     // });
+
+
+     // fst.end(function (res) {
+     //     if (res.error) console.log(res.error);
+
+     //     console.log(res.body);
+     // });
+    })
+    let doneTime1=0
+    sock.on('send_cd', () => {
+        
+        let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+
+        var token = jwt.sign({code:unique_num }, 'shhhhh');
+        let uniqueId= otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:true,upperCaseAlphabets:true,specialChars:false});
+    sock.emit('get_cd',token,uniqueId,authfst)
+        doneTime1+=1
+        console.log(doneTime)
+
     })
     sock.on('setId', () => {
         const { v4: uuidv4 } = require('uuid');

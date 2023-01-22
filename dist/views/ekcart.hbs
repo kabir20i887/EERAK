@@ -143,7 +143,10 @@
             line-height: 21px;
             margin: 18px 0 0 16px;
         }
-        .ct_info_cpns.active{display: block;}
+
+        .ct_info_cpns.active {
+            display: block;
+        }
 
         .ct_bx_deliv p {
             color: rgb(135 134 134);
@@ -325,12 +328,14 @@
             margin-top: auto;
             display: flex;
             margin-left: auto;
-                padding: 2px 6px;
-                margin-bottom: 10px;  
-                cursor: pointer;;         
+            padding: 2px 6px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            ;
         }
-        .ct_info_btn:hover{
-                background: #e9d7ff;
+
+        .ct_info_btn:hover {
+            background: #e9d7ff;
 
         }
 
@@ -390,7 +395,7 @@
         }
 
         .ct_off_info {
-            padding: 9px 8px;
+            padding: 9px 14px;
             background-color: #ddfce8;
             height: 33px;
             margin: -5px 20px;
@@ -400,6 +405,7 @@
             font-size: 11px;
             color: #119612;
             font-family: 'roboto';
+            text-transform: uppercase;
         }
 
 
@@ -1541,7 +1547,7 @@
         }
 
         .crousel_items .product {
-            max-width: 197px;
+            min-width: 257px;
             height: 90%;
             margin: 0 10px 0 0;
             border-radius: 20px;
@@ -1693,11 +1699,15 @@
         }
 
         .ct_bx_fooditm .main_im {
-            width: 54%;
+            width: 100%;
             height: auto;
             position: revert;
             margin-left: 48px;
             transform: translate(0px, 0px);
+        }
+
+        .main_im img {
+            width: 100%;
         }
 
         .ct_bx_inner_food_groc {
@@ -4747,6 +4757,10 @@
             transition: 0.8s ease-in-out;
             top: 20px;
             right: 20px;
+        }
+
+        .popup_info.place_order {
+            background-color: #099d4f;
         }
 
         .popup_info.sucess_account ion-icon,
@@ -16691,14 +16705,7 @@
             <p class="success_code">Hurrah! COUPON: NEWTRY unlocked.</p>
         </div>
 
-        {{!-- <div class="ct_efferal">
-            <h4>Enter Refferal code</h4>
-            <input type="text" placeholder="Code">
-            <button>Claim</button>
-        </div> --}}
-        {{!-- <div class="ct_bx_coupons">
-            <h4>Coupons </h4>
-        </div> --}}
+
         <div class="ct_coupons_all">
             <div class="ct_load_items">
                 <div class="lds-ring">
@@ -16954,6 +16961,15 @@
                 <div></div>
             </div>
             <p>Creating an account and logging in</p>
+        </div>
+        <div class="popup_info place_order">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Your order is placing</p>
         </div>
         <div class="popup_info error_info_popup">
             <ion-icon name="alert-circle-sharp"></ion-icon>
@@ -17748,6 +17764,9 @@
             document.querySelector('.bx_evt_cart_item ul').innerHTML = ''
             let essenX = JSON.parse(localStorage.getItem('essentials'))
             let sauceX = JSON.parse(localStorage.getItem('sauce'))
+            let recc_sauce = ''
+            let recc_essen = ''
+
             if (sauceX === null && essenX === null) {
 
                 document.querySelector('.empty_cart').style.display = 'flex'
@@ -17840,6 +17859,15 @@
                 let dbCollection = db.collection("sauce")
                 let res = await dbCollection.get()
                 document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
+
+                recc_sauce = res.docs.filter(elem => {
+                    let dt = elem.data().item
+                    console.log(dt.name)
+                    return !sauce.some(cItem => cItem.name.split(' ').join('') === dt.name.split(' ').join(''))
+                })
+
+
+
                 res.docs.forEach(async cur => {
                     let data = cur.data()
                     let itm = data.item
@@ -17859,6 +17887,7 @@
                                      <h4>${offer} off</h4>
                                  </div>`
                     }
+
                     //                             if(cpns){
 
                     //                                 if(cpns.for==='groc'&&cpns.off.split('%')[1]!==undefined){
@@ -17999,206 +18028,107 @@
                                         </li>`
                                 document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
                             } else {
-                                let offHtml = ``
-                                if (itm.offer !== null) {
-                                    offHtml = `<div class="ct_offer_box_cook2">
-         <span>${offer}%</span>
-         <p>off</p>
-     </div>`
 
-                                }
-                                itm_added += 1
-
-                                let html1 = `<div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-                                                    ${offHtml}
-                                                    <img class="main_im" alt="${itm.name}" src="${itm_img}">
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${itm.tagline}</p>
-                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
-
-                                                        ${priceBX}
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">${itm.name}</p>
-                                                            <p class="stock">${15}</p>
-                                                            <p class="price_pr">${itm.price_real}</p>
-                                                            <p class="offer">${itm.offer}</p>
-                                                            <p class="qty">${itm.weight_sh}</p>
-                                                            <p class="desc">${JSON.stringify(qty_unit)}</p>
-   
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>`
-                                document.querySelector('.ct_inner_itms').insertAdjacentHTML('beforeend', html1)
                             }
                         })
-                    } else {
-                        let offHtml = ``
-                        if (itm.offer !== null) {
-                            offHtml = `<div class="ct_offer_box_cook2">
-         <span>${offer}%</span>
-         <p>off</p>
-     </div>`
-
-                        }
-                        itm_added += 1
-
-                        let html1 = `
-                                                     
-                                                     <div class="product">
-                                                     <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-                                                    ${offHtml}
-                                                    <img class="main_im" alt="${itm.name}" src="${itm_img}">
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${itm.tagline}</p>
-                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
-
-                                                        ${priceBX}
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">${itm.name}</p>
-                                                            <p class="stock">${15}</p>
-                                                            <p class="price_pr">${itm.price_real}</p>
-                                                            <p class="price_off"></p>
-                                                            <p class="offer">${itm.offer}</p>
-                                                            <p class="about_list">${itm.about}</p>
-                                                            <p class="qty">${itm.weight_sh}</p>
-                                                            <p class="desc">''</p>
-                                                            <p class="essentials"></p>
-                                                            <p class="images_item"></p>
-   
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                                             <div class="ct_addbtns">
-                            <p>Add to cart</p>
-                            </div>
-                                            </a>
-                                        </div>
-                                        </div>`
-
-                        document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
                     }
 
                 })
-            }
-            let widthItm = 0
-            if (window.screen.width >= 1500) {
-                let widthm = document.querySelectorAll('.ct_bx_fooditm')[0].getBoundingClientRect().width
-                widthItm = widthm * itm_added
-                if (widthItm <= 1500) {
 
-                    document.querySelectorAll('.crousel_btns').forEach(cu11 => {
-                        cu11.style.display = 'none'
+
+
+
+                let essentials = JSON.parse(localStorage.getItem('essentials'))
+                if (essentials !== null) {
+                    let dbCollection = db.collection("essentials")
+                    let res = await dbCollection.get()
+                    document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
+                    recc_essen = res.docs.filter(elem => {
+                        let dt = elem.data().item
+                        console.log(dt.name)
+                        return !essentials.some(cItem => cItem.name.split(' ').join('') === dt.name.split(' ').join(''))
                     })
-                    document.querySelectorAll('.crousel_items').forEach(cu11 => {
-                        cu11.style.width = 'auto'
-                        cu11.style.margin = '0'
-                        cu11.style.width = 'auto'
-                        cu11.style.width = 'auto'
 
-                    })
-                }
-            }
-
-
-            let essentials = JSON.parse(localStorage.getItem('essentials'))
-            if (essentials !== null) {
-                let dbCollection = db.collection("essentials")
-                let res = await dbCollection.get()
-                document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
-
-                res.docs.forEach(async cur => {
-                    let data = cur.data()
-                    essentials.forEach(elem => {
-                        let nm = elem.name.split(' ').join('')
-                        let itm = data.item
-                        let nm2 = itm.name.split(' ').join('')
-                        console.log(nm, nm2)
-
-                        if (nm === nm2) {
-                            let offer = itm.offer
-                            let price = itm.price
-                            let qty_unit = itm.units
-                            let itm_img = itm.img
-                            //<div class="ct_offer_info">
-                            //                    <p>Coupon:SAVE20 applied , 20% off.</p>
-                            //                  </div>
-                            let coupon_html = ` `
-                            //<del>₹ 59</del>
-                            let off_hm = ``
-                            if (offer !== null) {
-                                off_hm = `<div class="ct_off_info">
+                    res.docs.forEach(async cur => {
+                        let data = cur.data()
+                        essentials.forEach(elem => {
+                            let nm = elem.name.split(' ').join('')
+                            let itm = data.item
+                            let nm2 = itm.name.split(' ').join('')
+                            console.log(nm, nm2)
+                            if (nm === nm2) {
+                                let offer = itm.offer
+                                let price = itm.price
+                                let qty_unit = itm.units
+                                let itm_img = itm.img
+                                //<div class="ct_offer_info">
+                                //                    <p>Coupon:SAVE20 applied , 20% off.</p>
+                                //                  </div>
+                                let coupon_html = ` `
+                                //<del>₹ 59</del>
+                                let off_hm = ``
+                                if (offer !== null) {
+                                    off_hm = `<div class="ct_off_info">
                                             <h4>${offer} off</h4>
                                         </div>`
-                            }
-                            //                             if(cpns){
+                                }
+                                //                             if(cpns){
 
-                            //                                 if(cpns.for==='groc'&&cpns.off.split('%')[1]!==undefined){
-                            //                                     offer=cpns.off.split('%')[0]
-                            //     coupon_html=`<div class="ct_offer_info">
-                            //                                             <p>Coupon:${cpns.name} applied , 20% off.</p>
-                            //                                             </div>`
-                            //                                 }
-                            //                             }
-                            let itm_qt = parseFloat(elem.qt)
-                            let price_bx = `<div class="ct_pr">
+                                //                                 if(cpns.for==='groc'&&cpns.off.split('%')[1]!==undefined){
+                                //                                     offer=cpns.off.split('%')[0]
+                                //     coupon_html=`<div class="ct_offer_info">
+                                //                                             <p>Coupon:${cpns.name} applied , 20% off.</p>
+                                //                                             </div>`
+                                //                                 }
+                                //                             }
+                                let itm_qt = parseFloat(elem.qt)
+                                let price_bx = `<div class="ct_pr">
                                         <p>₹ ${price.toLocaleString()}</p>
                                         ${off_hm}
                                         
                                     </div>`
-                            let qty_obj = qty_unit.map((cur11, ind) => {
-                                let priceX = parseFloat(cur11.price)
-                                let pack = ''
-                                let name = cur11.name
+                                let qty_obj = qty_unit.map((cur11, ind) => {
+                                    let priceX = parseFloat(cur11.price)
+                                    let pack = ''
+                                    let name = cur11.name
 
-                                let price_off = 0
-                                let offer_del = ''
-                                if (offer !== null) {
-                                    price_off = priceX * 100 / (100 - offer)
-                                    price_off = Math.round(price_off)
-                                    price_off = price_off.toLocaleString()
-                                    if (price_off.split('.')[1] !== undefined) {
-                                        price_off = price_off.split('.')[0]
-                                    }
-
-
-                                    price = price.toLocaleString()
-                                    offer_del = ` <del>₹ ${price_off}</del>`
-                                }
-                                let active_btn = 'unactive'
-                                if (name === elem.unit) {
-                                    active_btn = 'active'
-                                    let del_x = ``
-
-                                    let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
+                                    let price_off = 0
+                                    let offer_del = ''
                                     if (offer !== null) {
-                                        del_x = offer_del
+                                        price_off = priceX * 100 / (100 - offer)
+                                        price_off = Math.round(price_off)
+                                        price_off = price_off.toLocaleString()
+                                        if (price_off.split('.')[1] !== undefined) {
+                                            price_off = price_off.split('.')[0]
+                                        }
+
+
+                                        price = price.toLocaleString()
+                                        offer_del = ` <del>₹ ${price_off}</del>`
                                     }
-                                    tot_pr_itm2 += (priceX * itm_qt)
-                                    console.log(tot_pr_itm, ' ------------------')
+                                    let active_btn = 'unactive'
+                                    if (name === elem.unit) {
+                                        active_btn = 'active'
+                                        let del_x = ``
+
+                                        let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
+                                        if (offer !== null) {
+                                            del_x = offer_del
+                                        }
+                                        tot_pr_itm2 += (priceX * itm_qt)
+                                        console.log(tot_pr_itm, ' ------------------')
 
 
-                                    price_bx = `<div class="ct_pr essen_pr">
+                                        price_bx = `<div class="ct_pr essen_pr">
                                             ${del_x}
                                         ${pr_x}
                                         ${off_hm}
                                         
                                     </div>`
-                                }
+                                    }
 
 
-                                let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
+                                    let htmlXX = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
                         <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
@@ -18208,11 +18138,11 @@
                         </div>
 
                     </div>`
-                                return htmlXX
-                            })
+                                    return htmlXX
+                                })
 
 
-                            let html = `<li>
+                                let html = `<li>
                                             <div class="ct_items_bx essentials_itm">
                                                 <div class="ct_imgbx">
                                                     <img src="${itm_img}" alt="${nm} img">
@@ -18242,11 +18172,164 @@
                                                 </div>
                                             </div>
                                         </li>`
-                            document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
-                        }
+                                document.querySelector('.bx_evt_cart_item ul').insertAdjacentHTML('beforeend', html)
+                            }
+                        })
+
                     })
+                }
+
+if(recc_sauce!==''){
+  recc_sauce.forEach(cux => {
+                    let dt = cux.data()
+                    let itm = dt.item
+                    let offHtml = ``
+                    if (itm.offer !== null) {
+                        offHtml = `<div class="ct_offer_box_cook2">
+         <span>${itm.offer}%</span>
+         <p>off</p>
+     </div>`
+                    }
+                    let itm_qt = 1
+
+
+                    let priceBX = `
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style='display:none'></del>
+             <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
+         </div>
+     `
+
+
+                    itm_added += 1
+
+                    let html1 = `
+                                                     
+                                                     <div class="product">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    ${offHtml}
+                                                                    <div class="main_im">
+                                                    <img  alt="${itm.name}" src="${itm.images[0]}">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>${itm.name}</h4>
+                                                        <p class="item_intro">${itm.tagline}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+
+                                                        ${priceBX}
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">${itm.name}</p>
+                                                            <p class="stock">${15}</p>
+                                                            <p class="price_pr">${itm.price_real}</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">${itm.offer}</p>
+                                                            <p class="about_list">${itm.about}</p>
+                                                            <p class="qty">${itm.weight_sh}</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>`
+                    document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
 
                 })
+}
+              
+                if (recc_essen != '') {
+                    recc_essen.forEach(cux => {
+                        let dt = cux.data()
+                        let itm = dt.item
+                        let offHtml = ``
+                        if (itm.offer !== null) {
+                            offHtml = `<div class="ct_offer_box_cook2">
+         <span>${itm.offer}%</span>
+         <p>off</p>
+     </div>`
+
+                        }
+                        let itm_qt = 1
+
+                        let priceBX = `
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style='display:none'></del>
+             <p class="price">₹ ${(itm.price).toLocaleString()}</p>
+         </div>
+     `
+                        itm_added += 1
+
+                        let html1 = `
+                                                     
+                                                     <div class="product">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    ${offHtml}
+                                                                      <div class="main_im">
+                                                    <img  alt="${itm.name}" src="${itm.img}">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>${itm.name}</h4>
+                                                        <p class="item_intro">${itm.tagline}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+
+                                                        ${priceBX}
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">${itm.name}</p>
+                                                            <p class="stock">${15}</p>
+                                                            <p class="price_pr">${itm.price_real}</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">${itm.offer}</p>
+                                                            <p class="about_list">${itm.about}</p>
+                                                            <p class="qty">${itm.weight_sh}</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>`
+                        document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+
+                    })
+                }
+
+
+                console.log(recc_sauce)
+                let widthItm = 0
+                if (window.screen.width >= 1500) {
+                    let widthm = document.querySelectorAll('.ct_bx_fooditm')[0].getBoundingClientRect().width
+                    widthItm = widthm * itm_added
+                    if (widthItm <= 1500)
+                        document.querySelectorAll('.crousel_btns').forEach(cu11 => {
+                            cu11.style.display = 'none'
+                        })
+                    document.querySelectorAll('.crousel_items').forEach(cu11 => {
+                        cu11.style.width = 'auto'
+                        cu11.style.margin = '0'
+                        cu11.style.width = 'auto'
+                        cu11.style.width = 'auto'
+                    })
+                }
             }
 
             let toto_Pr = tot_pr_itm + tot_pr_itm2
@@ -18427,7 +18510,7 @@
                     if (data.secret === null && !used) {
                         let classAvai = 'notavailable'
                         let notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>`
-                        
+
                         if (data.for === 'sauce') {
                             let sauce = JSON.parse(localStorage.getItem('sauce'))
                             if (conditionX) {
@@ -18568,80 +18651,80 @@
                         document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
 
                     }
-                }else{
-                    if(data.secret===secret){
-  let classAvai = 'notavailable'
-                    let notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>`
-                    if (data.for === 'sauce') {
-                        let sauce = JSON.parse(localStorage.getItem('sauce'))
-                        if (conditionX) {
-                            if (sauce !== null && sauce.length !== 0) {
-                                notavailable_hm = `<button class='claim'>Apply</button>
+                } else {
+                    if (data.secret === secret) {
+                        let classAvai = 'notavailable'
+                        let notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>`
+                        if (data.for === 'sauce') {
+                            let sauce = JSON.parse(localStorage.getItem('sauce'))
+                            if (conditionX) {
+                                if (sauce !== null && sauce.length !== 0) {
+                                    notavailable_hm = `<button class='claim'>Apply</button>
                                 <button class="remove">Remove</button>`
-                                if (getCookie('cpns_appl') !== '') {
-                                    let objCp = JSON.parse(getCookie('cpns_appl'))
-                                    if (objCp.name === nm) {
-                                        notavailable_hm = `
+                                    if (getCookie('cpns_appl') !== '') {
+                                        let objCp = JSON.parse(getCookie('cpns_appl'))
+                                        if (objCp.name === nm) {
+                                            notavailable_hm = `
                                         <button class="remove" style='display:block'>Remove</button>`
-                                    
-                                    } else {
-                                        notavailable_hm = `
+
+                                        } else {
+                                            notavailable_hm = `
                                         <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>
                                         `
-                            document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
-                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
+                                            document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
+                                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
 
+                                        }
                                     }
+                                    classAvai = ''
+                                } else {
+                                    classAvai = ''
+
                                 }
-                                classAvai = ''
                             } else {
                                 classAvai = ''
-
-                            }
-                        } else {
-                            classAvai = ''
-                            notavailable_hm = `
+                                notavailable_hm = `
                                         <button class="locked" style="display:block;margin-bottom: 23px;">Already used</button>
                                         `
-                            document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
-                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
+                                document.querySelector('.ct_search_cpns_outer .success_code').innerText = `Hurrah! COUPON: ${data.name} unlocked.`
+                                document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'block'
 
+                            }
                         }
-                    } 
-                   // else if (data.for === 'groc') {
-                   //     let grocs = JSON.parse(localStorage.getItem('essentials'))
-                   //     if (conditionX) {
-                   //         if (grocs !== null && grocs.length !== 0) {
-                   //             notavailable_hm = `<button class='claim'>Apply</button>
-                   //         <button class="remove">Remove</button>`
-                   //             if (getCookie('cpns_appl') !== '') {
-                   //                 let objCp = JSON.parse(getCookie('cpns_appl'))
-                   //                 if (objCp.name === nm) {
-                   //                     notavailable_hm = `
-                   //                 <button class="remove" style='display:block'>Remove</button>`
-                   //                 } else {
-                   //                     notavailable_hm = `
-                   //                 <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
-                   //                 `
-                   //                 }
-                   //             }
-                   //             classAvai = ''
-                   //         } else {
-                   //             classAvai = ''
-                   //         }
-                   //     } else {
-                   //         classAvai = ''
-                   //         notavailable_hm = `
-                   //                     <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
-                   //                     `
-                   //     }
-//
-//
-                   // }
+                        // else if (data.for === 'groc') {
+                        //     let grocs = JSON.parse(localStorage.getItem('essentials'))
+                        //     if (conditionX) {
+                        //         if (grocs !== null && grocs.length !== 0) {
+                        //             notavailable_hm = `<button class='claim'>Apply</button>
+                        //         <button class="remove">Remove</button>`
+                        //             if (getCookie('cpns_appl') !== '') {
+                        //                 let objCp = JSON.parse(getCookie('cpns_appl'))
+                        //                 if (objCp.name === nm) {
+                        //                     notavailable_hm = `
+                        //                 <button class="remove" style='display:block'>Remove</button>`
+                        //                 } else {
+                        //                     notavailable_hm = `
+                        //                 <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
+                        //                 `
+                        //                 }
+                        //             }
+                        //             classAvai = ''
+                        //         } else {
+                        //             classAvai = ''
+                        //         }
+                        //     } else {
+                        //         classAvai = ''
+                        //         notavailable_hm = `
+                        //                     <button class="locked" style="display:block;margin-bottom: 23px;">Unavailable</button>
+                        //                     `
+                        //     }
+                        //
+                        //
+                        // }
 
-                                document.querySelector('.ct_load_items').style.display = 'none'
+                        document.querySelector('.ct_load_items').style.display = 'none'
 
-                    let html = `<div class="outer_cpns">
+                        let html = `<div class="outer_cpns">
                     <div class="ct_coupons ${classAvai}">
                         <div class="ct_off_info_cpns">
                             <h4>${data.off} OFF</h4>
@@ -18680,9 +18763,9 @@
                 </div>`
 
 
-                    document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
+                        document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
                     }
-                   
+
                 }
 
             })
@@ -18993,7 +19076,7 @@
                     address: objUser.address,
                     location: objUser.location,
                     cartItems: objUser.cartItems,
-                    allow_cpns: [{ name: 'KRICKUSER' }, { name: 'SUPER40' }, { name: 'FLAT20' }],
+                    allow_cpns: [{ name: 'FIRSTORDER50' }, { name: 'FLAT25' }],
                     cpns_used: [],
                     refferedBy: false,
                     reffer: false,
@@ -19410,314 +19493,348 @@
                     return
 
                 }
-
-
+                let time_emit = 0
                 order_btn.style.opacity = '.5'
                 order_btn.style.pointerEvents = 'none'
-                document.querySelector('.sucess_order').style.display = 'none'
-
-                let tot_am = 0
-                //  dt required------ name , img, totprice, paymode, unit, qty, returable 
-                let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.split(' ').join('').toLowerCase()
-                let objItms = {
-                    total_amount: 0,
-                    date: moment().format('LLL'),
-                    arr: [],
-                    payMode: '',
-                    delivered: false,
-                }
-                let tot_am_grc = 0
-                let tot_am_sauce = 0
                 let userDt = JSON.parse(getCookie('userData'))
-                let essen = JSON.parse(localStorage.getItem('essentials'))
-                let sauce = JSON.parse(localStorage.getItem('sauce'))
-                async function check_price() {
-                    let dbCollection = db.collection("sauce")
-                    let res = await dbCollection.get()
-                    sauce.forEach(cu11 => {
-                        let nm = cu11.name
-                        let qt = parseFloat(cu11.qty)
-                        res.docs.forEach(cur => {
-                            let dt = cur.data()
-                            let itm = dt.item
+                socket.emit('send_cd')
+                socket.on('get_cd', (token, id_order, key) => {
+                    time_emit += 1
+                    if (time_emit <= 1) {
+                        // not emit more than 1 times on btn click
+                        document.querySelector('.place_order').style.display = 'flex'
+                        document.querySelector('.sucess_order').style.display = 'none'
 
-                            if (itm.name === nm) {
-                                let nm_un = cu11.slt_nm
-                                itm.qty.forEach(elem => {
-                                    if (elem.name === nm_un) {
-                                        let pr = parseFloat(elem.price) * qt
-                                        tot_am += pr
-                                        tot_am_sauce += pr
-
-                                    }
-                                })
-                                let obj = {
-                                    img: itm.images[0],
-                                    name: itm.name,
-                                    unit: cu11.slt_nm,
-                                    qt: cu11.qty,
-                                    am: tot_am_sauce,
-                                    return: true,
-
-                                }
-                                objItms.arr.push(obj)
-
-                            }
-                        })
-
-                    })
-                    let dbCollection2 = db.collection("essentials")
-                    let res2 = await dbCollection2.get()
-                    essen.forEach(cu11 => {
-                        let nm = cu11.name
-                        let qt = parseFloat(cu11.qt)
-                        res2.docs.forEach(cur => {
-                            let dt = cur.data()
-                            let itm = dt.item
-                            if (itm.name === nm) {
-                                let nm_un = cu11.unit
-                                itm.units.forEach(elem => {
-                                    if (elem.name === nm_un) {
-                                        let pr = parseFloat(elem.price) * qt
-                                        tot_am += pr
-                                        tot_am_grc += pr
-                                    }
-                                })
-                                let obj = {
-                                    img: itm.img,
-                                    name: itm.name,
-                                    qt: cu11.qt,
-                                    unit: cu11.unit,
-                                    am: tot_am_grc,
-                                    return: true,
-
-                                }
-                                objItms.arr.push(obj)
-                            }
-                        })
-
-                    })
-                    let dvpr = JSON.parse(sessionStorage.getItem('app_i8m89x5'))
-                    dvpr = parseFloat(dvpr)
-                    console.log(pay_typ, '--------00rghfgghfgudfbfEkfb', pay_typ.split(' ').join('') === 'payonline')
-                    if (pay_typ.split(' ').join('') === 'payonline') {
-                        objItms.payMode = pay_typ
-                        dvpr = 0
-                    } else if (dvpr > 0) {
-                        objItms.payMode = 'cash'
-                    }
-                    let domPr = document.querySelector('.to_pay_cahge span b').innerText.split('₹')[1].split(',').join('')
-                    domPr = parseFloat(domPr)
-                    document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹' + tot_am.toLocaleString()
-                    document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = '₹' + dvpr.toLocaleString()
-
-                    tot_am += dvpr
-
-                    // # clac the offer not from DOM. From Db
-                    let dicounted_pr = 0
-                    let coupon_dt = ''
-                    let coupons_used = ''
-                    if (getCookie('cpns_appl') !== '') {
-                        let objCpns = JSON.parse(getCookie('cpns_appl'))
-                        let dbCollection21 = db.collection("coupons")
-                        let res21 = await dbCollection21.get()
-                        res21.docs.forEach(cur => {
-                            let dt = cur.data()
-                            console.log(dt.name, objCpns.name)
-                            if (dt.name === objCpns.name) {
-                                coupons_used = { name: dt.name, max: dt.conditions.max }
-                                coupon_dt = dt
-                            }
-
-                        })
-
-
-                    }
-                    objItms.total_amount = tot_am
-
-                    let userDt = JSON.parse(getCookie('userData'))
-                    // valid price found
-                    let coupon_obj = ''
-                    function check_coupon(em_n) {
-                        if (em_n) {
-                            // coupons validity
-                            if (coupon_dt !== '') {
-                                if (coupon_dt.off.split('%')[1] !== undefined) {
-                                    let offer_x = parseFloat(coupon_dt.off.split('%')[0])
-                                    dicounted_pr = (offer_x) / 100 * tot_am_sauce
-                                    dicounted_pr = Math.round(dicounted_pr)
-                                    dicounted_pr = dicounted_pr.toLocaleString()
-                                    document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
-                                    document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
-                                    if (coupon_dt.for === 'groc') {
-                                        dicounted_pr = (offerMn.am) / 100 * tot_am_grc
-                                        dicounted_pr = Math.round(dicounted_pr)
-                                        document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
-                                        document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
-                                    }
-                                } else {
-                                    let offer_x = parseFloat(coupon_dt.off)
-                                    dicounted_pr = offer_x
-                                    document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + offer_x.toLocaleString()
-                                }
-                                tot_am -= dicounted_pr
-                            }
-
+                        let tot_am = 0
+                        //  dt required------ name , img, totprice, paymode, unit, qty, returable 
+                        let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.split(' ').join('').toLowerCase()
+                        let objItms = {
+                            total_amount: 0,
+                            date: moment().format('LLL'),
+                            arr: [],
+                            payMode: '',
+                            delivered: false,
+                            id_ord: id_order
                         }
-                        objItms.total_amount = tot_am
-                        console.log(objItms.total_amount, '--------fuhfefw')
-                        addAmount()
-                    }
+                        let tot_am_grc = 0
+                        let tot_am_sauce = 0
+                        let userDt = JSON.parse(getCookie('userData'))
+                        let essen = JSON.parse(localStorage.getItem('essentials'))
+                        let sauce = JSON.parse(localStorage.getItem('sauce'))
+                        let cd = secret(token).code
+                        //  socket.emit('order_sms',cd,userDt.name,tot_am.toLocaleString(),userDt.phone)
+                        alert('hiii')
+                        // var settings = {
+                        //     "async": true,
+                        //     "crossDomain": true,
+                        //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145388&variables_values=${cd}|${userDt.name}&route=dlt&numbers=${userDt.phone}`,
+                        //     "method": "GET"
+                        // }
+                        // //
+                        // $.ajax(settings).done(function (response) {
+                        //     console.log(response, 'sent!!!')
+                        // 
+                        //   if (response.return) {
+                        //       console.log('sent!!!')
+                        //   } 
+                        // });
+                        async function check_price() {
+                            let dbCollection = db.collection("sauce")
+                            let res = await dbCollection.get()
+                            sauce.forEach(cu11 => {
+                                let nm = cu11.name
+                                let qt = parseFloat(cu11.qty)
+                                res.docs.forEach(cur => {
+                                    let dt = cur.data()
+                                    let itm = dt.item
 
-                    let dbCollection3 = db.collection("users")
-                    let res3 = await dbCollection3.get()
-                    res3.docs.forEach(async cur => {
-                        let data = cur.data()
-                        let matched_nm = false
+                                    if (itm.name === nm) {
+                                        let nm_un = cu11.slt_nm
+                                        itm.qty.forEach(elem => {
+                                            if (elem.name === nm_un) {
+                                                let pr = parseFloat(elem.price) * qt
+                                                tot_am += pr
+                                                tot_am_sauce += pr
 
-                        if (data.id === userDt.id) {
-                            if (data.cpns_used.length !== 0) {
-                                data.cpns_used.forEach(em => {
+                                            }
+                                        })
+                                        let obj = {
+                                            img: itm.images[0],
+                                            name: itm.name,
+                                            unit: cu11.slt_nm,
+                                            qt: cu11.qty,
+                                            am: tot_am_sauce,
+                                            return: false,
 
-                                    console.log(em.name, coupons_used.name)
-                                    if (em.name === coupons_used.name) {
-                                        matched_nm = true
-                                        if (coupons_used.max !== null) {
-                                            console.log(em.use >= parseFloat(coupons_used.max), ' -------------------')
-                                            em.use = parseFloat(em.use)
-                                            em.use += 1
-                                            if (em.use <= parseFloat(coupons_used.max)) {
-                                                check_coupon(true)
-                                                userDt.cpns_used = data.cpns_used
-                                                document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                                if (em.use === parseFloat(coupons_used.max)) {
-                                                    em.use = coupons_used.max
-                                                    document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
-                                                    document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                                                    document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                                    userDt.cpns_used = data.cpns_used
-                                                    objItms.total_amount = tot_am
-                                                    check_coupon(false)
+                                        }
+                                        objItms.arr.push(obj)
 
-                                                    document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                    }
+                                })
+
+                            })
+                            let dbCollection2 = db.collection("essentials")
+                            let res2 = await dbCollection2.get()
+                            essen.forEach(cu11 => {
+                                let nm = cu11.name
+                                let qt = parseFloat(cu11.qt)
+                                res2.docs.forEach(cur => {
+                                    let dt = cur.data()
+                                    let itm = dt.item
+                                    if (itm.name === nm) {
+                                        let nm_un = cu11.unit
+                                        itm.units.forEach(elem => {
+                                            if (elem.name === nm_un) {
+                                                let pr = parseFloat(elem.price) * qt
+                                                tot_am += pr
+                                                tot_am_grc += pr
+                                            }
+                                        })
+                                        let obj = {
+                                            img: itm.img,
+                                            name: itm.name,
+                                            qt: cu11.qt,
+                                            unit: cu11.unit,
+                                            am: tot_am_grc,
+                                            return: false,
+
+                                        }
+                                        objItms.arr.push(obj)
+                                    }
+                                })
+
+                            })
+                            let dvpr = JSON.parse(sessionStorage.getItem('app_i8m89x5'))
+                            dvpr = parseFloat(dvpr)
+                            console.log(pay_typ, '--------00rghfgghfgudfbfEkfb', pay_typ.split(' ').join('') === 'payonline')
+                            if (pay_typ.split(' ').join('') === 'payonline') {
+                                objItms.payMode = pay_typ
+                                dvpr = 0
+                            } else if (dvpr > 0) {
+                                objItms.payMode = 'cash'
+                            }
+                            let domPr = document.querySelector('.to_pay_cahge span b').innerText.split('₹')[1].split(',').join('')
+                            domPr = parseFloat(domPr)
+                            document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹' + tot_am.toLocaleString()
+                            document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = '₹' + dvpr.toLocaleString()
+
+                            tot_am += dvpr
+
+                            // # clac the offer not from DOM. From Db
+                            let dicounted_pr = 0
+                            let coupon_dt = ''
+                            let coupons_used = ''
+                            if (getCookie('cpns_appl') !== '') {
+                                let objCpns = JSON.parse(getCookie('cpns_appl'))
+                                let dbCollection21 = db.collection("coupons")
+                                let res21 = await dbCollection21.get()
+                                res21.docs.forEach(cur => {
+                                    let dt = cur.data()
+                                    console.log(dt.name, objCpns.name)
+                                    if (dt.name === objCpns.name) {
+                                        coupons_used = { name: dt.name, max: dt.conditions.max }
+                                        coupon_dt = dt
+                                    }
+
+                                })
+
+
+                            }
+                            objItms.total_amount = tot_am
+
+                            let userDt = JSON.parse(getCookie('userData'))
+                            // valid price found
+                            let coupon_obj = ''
+                            function check_coupon(em_n) {
+                                if (em_n) {
+                                    // coupons validity
+                                    if (coupon_dt !== '') {
+                                        if (coupon_dt.off.split('%')[1] !== undefined) {
+                                            let offer_x = parseFloat(coupon_dt.off.split('%')[0])
+                                            dicounted_pr = (offer_x) / 100 * tot_am_sauce
+                                            dicounted_pr = Math.round(dicounted_pr)
+                                            dicounted_pr = dicounted_pr.toLocaleString()
+                                            document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
+                                            document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
+                                            if (coupon_dt.for === 'groc') {
+                                                dicounted_pr = (offerMn.am) / 100 * tot_am_grc
+                                                dicounted_pr = Math.round(dicounted_pr)
+                                                document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
+                                                document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr.toLocaleString()
+                                            }
+                                        } else {
+                                            let offer_x = parseFloat(coupon_dt.off)
+                                            dicounted_pr = offer_x
+                                            document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + offer_x.toLocaleString()
+                                        }
+                                        tot_am -= dicounted_pr
+                                    }
+
+                                }
+                                objItms.total_amount = tot_am
+                                addAmount()
+                            }
+
+
+                            let dbCollection3 = db.collection("users")
+                            let res3 = await dbCollection3.get()
+                            res3.docs.forEach(async cur => {
+                                let data = cur.data()
+                                let matched_nm = false
+
+                                if (data.id === userDt.id) {
+                                    if (data.cpns_used.length !== 0) {
+                                        data.cpns_used.forEach(em => {
+
+                                            console.log(em.name, coupons_used.name)
+                                            if (em.name === coupons_used.name) {
+                                                matched_nm = true
+                                                if (coupons_used.max !== null) {
+                                                    console.log(em.use >= parseFloat(coupons_used.max), ' -------------------')
+                                                    em.use = parseFloat(em.use)
+                                                    em.use += 1
+                                                    if (em.use <= parseFloat(coupons_used.max)) {
+                                                        check_coupon(true)
+                                                        userDt.cpns_used = data.cpns_used
+                                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                        if (em.use === parseFloat(coupons_used.max)) {
+                                                            em.use = coupons_used.max
+                                                            document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                                                            document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                                                            document.querySelector('.disocunted.block_1_charge span').innerText = 0
+                                                            userDt.cpns_used = data.cpns_used
+                                                            objItms.total_amount = tot_am
+                                                            check_coupon(false)
+
+                                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                                        }
+                                                    } else if (em.use > parseFloat(coupons_used.max)) {
+                                                        document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                                                        document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                                                        document.querySelector('.disocunted.block_1_charge span').innerText = 0
+                                                        check_coupon(false)
+
+                                                        document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                                                        em.use = coupons_used.max
+                                                        userDt.cpns_used = data.cpns_used
+                                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+
+                                                    }
                                                 }
-                                            } else if (em.use > parseFloat(coupons_used.max)) {
-                                                document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
-                                                document.querySelector('.disocunted.block_1_charge').style.display = 'none'
-                                                document.querySelector('.disocunted.block_1_charge span').innerText = 0
-                                                check_coupon(false)
-
-                                                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
-                                                em.use = coupons_used.max
-                                                userDt.cpns_used = data.cpns_used
-                                                document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                             }
+
+
+                                        })
+                                        if (!matched_nm) {
+                                            if (coupons_used !== '') {
+                                                coupon_obj = { name: coupons_used.name, use: 1 }
+                                                data.cpns_used.push(coupon_obj)
+
+                                            }
+                                            console.log(data.cpns_used, coupons_used)
+
+                                            check_coupon(1)
+                                            userDt.cpns_used = data.cpns_used
+                                            document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         }
+                                    } else {
+                                        matched_nm
+                                        if (coupons_used !== '') {
+                                            coupon_obj = { name: coupons_used.name, use: 1 }
+                                            data.cpns_used.push(coupon_obj)
+
+                                        }
+                                        console.log(data.cpns_used, coupons_used)
+
+                                        check_coupon(1)
+                                        userDt.cpns_used = data.cpns_used
+                                        document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                     }
 
-
-                                })
-                                if (!matched_nm) {
-                                    if (coupons_used !== '') {
-                                        coupon_obj = { name: coupons_used.name, use: 1 }
-                                        data.cpns_used.push(coupon_obj)
-
+                                    console.log(objItms.total_amount, '------ididuudu')
+                                    let all_order = [objItms]
+                                    if (data.orders.length !== 0) {
+                                        all_order = data.orders
+                                        all_order.push(objItms)
                                     }
-                                    console.log(data.cpns_used, coupons_used)
 
-                                    check_coupon(1)
-                                    userDt.cpns_used = data.cpns_used
-                                    document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                }
-                            } else {
-                                matched_nm
-                                if (coupons_used !== '') {
-                                    coupon_obj = { name: coupons_used.name, use: 1 }
-                                    data.cpns_used.push(coupon_obj)
-
-                                }
-                                console.log(data.cpns_used, coupons_used)
-
-                                check_coupon(1)
-                                userDt.cpns_used = data.cpns_used
-                                document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-
-                            }
-
-                            console.log(objItms.total_amount, '------ididuudu')
-                            let all_order = [objItms]
-                            if (data.orders.length !== 0) {
-                                all_order = data.orders
-                                all_order.push(objItms)
-                            }
-
-                            let matchedX = false
-                            data.allow_cpns.forEach((cux, ind) => {
-                                if (cux.name === coupons_used.name) {
+                                    let matchedX = false
+                                    data.allow_cpns.forEach((cux, ind) => {
+                                        if (cux.name === coupons_used.name) {
 
 
-                                    if (cux.for !== undefined) {
-                                        if (cux.for === 'refer') {
+                                            if (cux.for !== undefined) {
+                                                if (cux.for === 'refer') {
 
-                                            let usemn = parseFloat(cux.use) - 1
-                                            cux.use = usemn
-                                            matchedX = true
-                                            check_coupon(true)
-                                            document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
-                                            if (usemn === 0 && coupons_used.max !== null) {
-                                                data.allow_cpns.splice(ind, 1)
+                                                    let usemn = parseFloat(cux.use) - 1
+                                                    cux.use = usemn
+                                                    matchedX = true
+                                                    check_coupon(true)
+                                                    document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                                                    if (usemn === 0 && coupons_used.max !== null) {
+                                                        data.allow_cpns.splice(ind, 1)
+                                                    }
+                                                }
                                             }
                                         }
+                                    })
+                                    if (!matchedX) {
+                                        check_coupon(false)
+                                        document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+
                                     }
+
+                                    await dbCollection3.doc(cur.id).set({
+                                        admin: data.admin,
+                                        id: data.id,
+                                        name: data.name,
+                                        phone: data.phone,
+                                        address: data.address,
+                                        location: data.location,
+                                        cartItems: data.cartItems,
+                                        refferedBy: data.refferedBy,
+                                        allow_cpns: data.allow_cpns,
+                                        cpns_used: data.cpns_used,
+                                        orders: all_order,
+                                        reffer: data.reffer,
+                                    })
+
+
+                                    // also add orders
+                                    let dbCollectidbCollection31 = db.collection("orders")
+                                    await dbCollectidbCollection31.add({
+                                        user: { id: data.id, name: data.name, phone: data.phone, address: data.address, location: data.location, verf_cd: token },
+                                        orderDt: objItms,
+
+                                    })
+                                    document.querySelector('.place_order').style.display = 'none'
+
+                                    order_btn.style.opacity = '1'
+                                    order_btn.style.pointerEvents = 'auto'
+                                    document.querySelector('.sucess_order').style.display = 'block'
+                                    document.querySelector('.sucess_order p').innerText = `Hey ${userDt.name}, your order will be delivered within 24 hr.`
+                                    document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+                                    setTimeout(function () {
+                                        document.querySelector('.sucess_order').style.display = 'none'
+                                        document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+                                    }, 30000)
+                                    window.scrollTo(0, 0)
+
                                 }
                             })
-                            if (!matchedX) {
-                                check_coupon(false)
-                                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
-
-                            }
-
-                            await dbCollection3.doc(cur.id).set({
-                                admin: data.admin,
-                                id: data.id,
-                                name: data.name,
-                                phone: data.phone,
-                                address: data.address,
-                                location: data.location,
-                                cartItems: data.cartItems,
-                                refferedBy: data.refferedBy,
-                                allow_cpns: data.allow_cpns,
-                                cpns_used: data.cpns_used,
-                                orders: all_order,
-                                reffer: data.reffer,
-                            })
-                            // also add orders
-                            let dbCollectidbCollection31 = db.collection("orders")
-                            await dbCollectidbCollection31.add({
-                                user: { id: data.id, name: data.name, phone: data.phone, address: data.address, location: data.location, },
-                                orderDt: objItms,
-
-                            })
-                            order_btn.style.opacity = '1'
-                            order_btn.style.pointerEvents = 'auto'
-                            document.querySelector('.sucess_order').style.display = 'block'
-                            document.querySelector('.sucess_order p').innerText = `Hey ${userDt.name}, your order will be delivered within 24 hr.`
-                            document.querySelector('.ct_info_offfer_saved').style.display = 'none'
-                            setTimeout(function () {
-                                document.querySelector('.sucess_order').style.display = 'none'
-                                document.querySelector('.ct_info_offfer_saved').style.display = 'none'
-                            }, 30000)
-                            window.scrollTo(0, 0)
 
                         }
-                    })
-
-                }
 
 
-                check_price()
+                        check_price()
+                    }
+                })
+
+
+
+
             }
             if (select_pay !== null) {
                 document.querySelector('.ct_option_pay.active').classList.remove('active')
@@ -20444,7 +20561,7 @@
                             let objUser = JSON.parse(getCookie('one_tm_dt'))
                             console.log(objUser)
 
-                            // adding the user with cash
+                            // creating account wih refer link
 
                             let objU = {
                                 admin: false,
@@ -20454,7 +20571,7 @@
                                 address: objUser.address,
                                 location: objUser.location,
                                 cartItems: objUser.cartItems,
-                                allow_cpns: [{ name: 'KRICKUSER' }, obj_cpns],
+                                allow_cpns: [{ name: 'FIRSTORDER50' }, { name: 'FLAT25' }, obj_cpns],
                                 cpns_used: [],
                                 refferedBy: { id: id },
                                 reffer: false,
@@ -20855,20 +20972,20 @@
             let addBsitm = e.target.closest('.add_base_itm')
             let remBtn = e.target.closest('.itm_cart_nav')
             let rmItm = e.target.closest('.remove_fd_itm_ct')
-            let info_cpns=e.target.closest('.ct_info_btn')
+            let info_cpns = e.target.closest('.ct_info_btn')
             let check_code_cpns = e.target.closest('.ct_search_cpns button')
 
-            if(info_cpns!==null){
-                if(info_cpns.parentElement.parentElement.childNodes[3].classList.value.includes('active')){
-                info_cpns.parentElement.parentElement.childNodes[3].classList.remove('active')
+            if (info_cpns !== null) {
+                if (info_cpns.parentElement.parentElement.childNodes[3].classList.value.includes('active')) {
+                    info_cpns.parentElement.parentElement.childNodes[3].classList.remove('active')
 
-                }else{
-                info_cpns.parentElement.parentElement.childNodes[3].classList.add('active')
+                } else {
+                    info_cpns.parentElement.parentElement.childNodes[3].classList.add('active')
 
                 }
-            }else{
-                if(document.querySelector('.ct_info_cpns.active')!==null){
-                   document.querySelector('.ct_info_cpns.active').classList.remove('active') 
+            } else {
+                if (document.querySelector('.ct_info_cpns.active') !== null) {
+                    document.querySelector('.ct_info_cpns.active').classList.remove('active')
                 }
             }
             if (check_code_cpns !== null) {
@@ -20877,33 +20994,33 @@
                 document.querySelector('.ct_load_items').style.display = 'flex'
 
                 let code = check_code_cpns.parentElement.childNodes[1].value
-          async  function cpns(){
-  let dbCollection = db.collection("coupons")
-                let res = await dbCollection.orderBy('grp').get()
+                async function cpns() {
+                    let dbCollection = db.collection("coupons")
+                    let res = await dbCollection.orderBy('grp').get()
 
-                res.docs.forEach(async cur => {
-                    let dt = cur.data()
-                    if (dt.secret !== null) {
-                        console.log(code)
-                        if (dt.secret === code) {
-                            // show the coupon 
-                            // add to allowed cpns
-                        document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'none'
-                        addCpns(code.toLowerCase())
+                    res.docs.forEach(async cur => {
+                        let dt = cur.data()
+                        if (dt.secret !== null) {
+                            console.log(code)
+                            if (dt.secret === code) {
+                                // show the coupon 
+                                // add to allowed cpns
+                                document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'none'
+                                addCpns(code.toLowerCase())
 
-                        } else {
-                            document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'none'
+                            } else {
+                                document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'none'
 
-                            document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'block'
+                                document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'block'
                                 document.querySelector('.ct_load_items').style.display = 'none'
-addCpns('')
-                            // invalid code
+                                addCpns('')
+                                // invalid code
+                            }
                         }
-                    }
-                })
-            }
-            cpns()
-              
+                    })
+                }
+                cpns()
+
             }
             if (rmItm !== null) {
                 let h4
