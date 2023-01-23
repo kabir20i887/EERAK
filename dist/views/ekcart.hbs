@@ -1784,7 +1784,7 @@
 
         .ct_bx_fooditm .ct_bx_price_fd p {
             font-size: 18px;
-            color: #e30c0c;
+            color: #000000;
             font-family: Montserrat;
         }
 
@@ -2492,17 +2492,7 @@
             padding: 14px 10px;
         }
 
-        .ct_info_cart {
-            border-radius: 20px;
-            width: 24px;
-            position: absolute;
-            right: 0;
-            display: none;
-            top: -5px;
 
-            padding: 4px;
-            background-color: #000000;
-        }
 
         .ct_bx_about_mobile2 .ct_info_cart p {
             color: white;
@@ -4783,7 +4773,7 @@
 
         .popup_info.sucess_account ion-icon,
         .popup_info.error_info_popup ion-icon {
-            color: red;
+            color: rgb(255, 255, 255);
             font-size: 24px;
 
         }
@@ -4813,7 +4803,6 @@
         }
 
         .popup_info.error_info_popup {
-            display: none;
             height: 60px;
             background-color: #474b49;
 
@@ -17795,6 +17784,7 @@ p{margin-bottom:auto;}
         var firebase = firebase
 
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
         integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
@@ -17925,12 +17915,12 @@ p{margin-bottom:auto;}
 
             })
             document.querySelectorAll('.disocunted.block_1_charge span').forEach(cur => {
+
                 if (cur.innerText.split('₹')[1] !== undefined) {
                     let pr = parseFloat(cur.innerText.split('₹')[1].split(',').join(''))
                     tot -= pr
                 }
             })
-            console.log(tot, ' ---------------')
             document.querySelector('.to_pay_cahge span b').innerText = '₹' + tot.toLocaleString()
 
 
@@ -18131,7 +18121,7 @@ p{margin-bottom:auto;}
 
                                     if (offer !== null) {
                                         price_off = priceX * 100 / (100 - offer)
-                                        price_off = Math.round(price_off)
+                                        price_off = Math.round(price_off)* itm_qt
                                         tot_pr_itm += price_off
                                         price_off = price_off.toLocaleString()
                                         if (price_off.split('.')[1] !== undefined) {
@@ -18278,7 +18268,7 @@ p{margin-bottom:auto;}
                                     let pack = ''
                                     let name = cur11.name
 
-                                    let price_off = 0
+                                    let price_off = '0'
                                     let offer_del = ''
                                     if (offer !== null) {
                                         price_off = priceX * 100 / (100 - offer)
@@ -18287,11 +18277,10 @@ p{margin-bottom:auto;}
                                         if (price_off.split('.')[1] !== undefined) {
                                             price_off = price_off.split('.')[0]
                                         }
-
-
                                         price = price.toLocaleString()
                                         offer_del = ` <del>₹ ${price_off}</del>`
                                     }
+                                    
                                     let active_btn = 'unactive'
                                     if (name === elem.unit) {
                                         active_btn = 'active'
@@ -18301,12 +18290,18 @@ p{margin-bottom:auto;}
                                         if (offer !== null) {
                                             del_x = offer_del
                                         }
+                                        let del_html=''
                                         tot_pr_itm2 += (priceX * itm_qt)
                                         console.log(tot_pr_itm, ' ------------------')
-
+                                    let prc_Del=price_off.split(',').join('')
+                                    prc_Del=parseFloat(prc_Del)*itm_qt
+                                    if(offer!==null){
+                                        del_html=` <del>₹ ${prc_Del}</del>`
+                                    }
+                                    prc_Del=prc_Del.toLocaleString()
 
                                         price_bx = `<div class="ct_pr essen_pr">
-                                            ${del_x}
+                                        ${del_html}
                                         ${pr_x}
                                         ${off_hm}
                                         
@@ -19665,6 +19660,21 @@ let pricemain=``
 
 
         }
+                function load_basic_dt(){
+
+                let userDtx = getCookie('userData')
+                if (userDtx !== '') {
+                    let dt_user = JSON.parse(userDtx)
+                    document.querySelector('.mobile_only.account_btn').style.display='block'
+                    document.querySelector('.account_nav2').style.display='block'
+                    // remove the banner of signup offer
+
+
+
+                }
+        }
+        load_basic_dt()
+
         document.querySelector('html').addEventListener('click', (e) => {
             let itemG = e.target.closest('.pac-item')
             let inpX = e.target.closest('.nick_name.area input')
@@ -19721,6 +19731,7 @@ let pricemain=``
             if (order_btn !== null) {
                 // # check for valid total amount
                 // # get coupon if exist
+                return
                 if (getCookie('userData') === '') {
                     document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
                     document.querySelector('.ct_overflow_customize').style.display = 'flex'
@@ -19758,7 +19769,6 @@ let pricemain=``
                         let sauce = JSON.parse(localStorage.getItem('sauce'))
                         let cd = secret(token).code
                         //  socket.emit('order_sms',cd,userDt.name,tot_am.toLocaleString(),userDt.phone)
-                        alert('hiii')
                         // var settings = {
                         //     "async": true,
                         //     "crossDomain": true,
@@ -19774,7 +19784,8 @@ let pricemain=``
                         //   } 
                         // });
                         async function check_price() {
-                            let dbCollection = db.collection("sauce")
+                            try{
+ let dbCollection = db.collection("sauce")
                             let res = await dbCollection.get()
                             sauce.forEach(cu11 => {
                                 let nm = cu11.name
@@ -19808,6 +19819,17 @@ let pricemain=``
                                 })
 
                             })
+                            }catch(err){
+                                document.querySelector('.error_info_popup').style.right='20px'
+document.querySelector('.check_out_btn_order').style.opacity='1'
+document.querySelector('.check_out_btn_order').style.pointerEvents='auto'
+setTimeout(function(){
+                                document.querySelector('.error_info_popup').style.right='-600px'
+
+},7000)
+
+                            }
+                           
                             let dbCollection2 = db.collection("essentials")
                             let res2 = await dbCollection2.get()
                             essen.forEach(cu11 => {
@@ -19816,9 +19838,12 @@ let pricemain=``
                                 res2.docs.forEach(cur => {
                                     let dt = cur.data()
                                     let itm = dt.item
-                                    if (itm.name === nm) {
+                                            console.log(itm.name , nm,' ------------i love u dkassjsjf')
+
+                                    if (itm.name.split(',').join('').split(' ').join('') === nm.split(',').join('').split(' ').join('')) {
                                         let nm_un = cu11.unit
                                         itm.units.forEach(elem => {
+                                            console.log(elem.name , nm_un,' ------------i love u')
                                             if (elem.name === nm_un) {
                                                 let pr = parseFloat(elem.price) * qt
                                                 tot_am += pr
@@ -20158,9 +20183,21 @@ let pricemain=``
                 val -= 1
                 if (val > 0) {
                     qty_dec.parentElement.childNodes[3].value = val
-                    let pr = parseFloat(qty_dec.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('₹')[1].split(',').join(''))
+
+                    if(qty_dec.parentElement.parentElement.childNodes[7].childNodes[3]!==undefined){
+                    pr= parseFloat(qty_dec.parentElement.parentElement.childNodes[7].childNodes[3].innerText.split('₹')[1].split(',').join(''))
+                  let  pr2= parseFloat(qty_dec.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('₹')[1].split(',').join(''))
+                    pr2 = (pr2 / (val + 1)) * val
+
+                    pr = (pr / (val + 1)) * val
+                    console.log(pr,pr2,'-----------------')
+                    qty_dec.parentElement.parentElement.childNodes[7].childNodes[3].innerText = '₹ ' + pr.toLocaleString()
+
+                    qty_dec.parentElement.parentElement.childNodes[7].childNodes[1].innerText = '₹ ' + pr2.toLocaleString()
+                    }else{
                     pr = (pr / (val + 1)) * val
                     qty_dec.parentElement.parentElement.childNodes[7].childNodes[1].innerText = '₹ ' + pr.toLocaleString()
+                    }
 
                     let cls_li = qty_dec.parentElement.parentElement.childNodes[7].classList.value.split(' ')[1]
                     let tot = 0
@@ -20175,10 +20212,8 @@ let pricemain=``
                         tot2 += pr
 
                     })
-                    console.log(tot2, '-------------')
                     document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + tot.toLocaleString()
                     addAmount()
-                    console.log(cls_li, tot2)
                     checkandsave(cls_li, tot2)
                 }
             }
@@ -20189,8 +20224,23 @@ let pricemain=``
                 if (val <= 15) {
                     qty_inc.parentElement.childNodes[3].value = val
                     let pr = parseFloat(qty_inc.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('₹')[1].split(',').join(''))
+
+                    
+                    if(qty_inc.parentElement.parentElement.childNodes[7].childNodes[3]!==undefined){
+                    pr= parseFloat(qty_inc.parentElement.parentElement.childNodes[7].childNodes[3].innerText.split('₹')[1].split(',').join(''))
+                  let  pr2= parseFloat(qty_inc.parentElement.parentElement.childNodes[7].childNodes[1].innerText.split('₹')[1].split(',').join(''))
+                    pr2 = (pr2 / (val - 1)) * val
+
+                    pr = (pr / (val - 1)) * val
+                    qty_inc.parentElement.parentElement.childNodes[7].childNodes[3].innerText = '₹ ' + pr.toLocaleString()
+
+                    qty_inc.parentElement.parentElement.childNodes[7].childNodes[1].innerText = '₹ ' + pr2.toLocaleString()
+                    }else{
                     pr = (pr / (val - 1)) * val
                     qty_inc.parentElement.parentElement.childNodes[7].childNodes[1].innerText = '₹ ' + pr.toLocaleString()
+                    }
+
+
 
                     let cls_li = qty_inc.parentElement.parentElement.childNodes[7].classList.value.split(' ')[1]
                     let tot = 0
@@ -20207,7 +20257,7 @@ let pricemain=``
                     })
                     let sauce = JSON.parse(localStorage.getItem('sauce'))
                     let groc = JSON.parse(localStorage.getItem('essentials'))
-                    document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + pr.toLocaleString()
+                    document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + tot.toLocaleString()
 
                     if (qty_inc.parentElement.parentElement.parentElement.classList.value.includes('sauce_itm')) {
                         let nm = qty_inc.parentElement.parentElement.childNodes[1].innerText
@@ -20300,6 +20350,7 @@ let pricemain=``
                 })
                 document.querySelectorAll(`.${cli_bx} p`).forEach(cu1 => {
                     let pr = parseFloat(cu1.innerText.split('₹')[1].split(',').join(''))
+
                     tot2 += pr
 
                 })
@@ -20546,6 +20597,7 @@ let pricemain=``
                         if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
                             let id_ref = secret(getCookie('signup_3sy13'))
                             let objBx = id_ref
+                            socket.emit('cash_oth4',objUser.name, objBx.name, objBx.off, objBx.id)
 
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
@@ -20560,7 +20612,6 @@ let pricemain=``
                                     let data = cu.data()
                                     let cps_allow = data.allow_cpns
                                     if (objBx.id === data.id) {
-                                        socket.emit('cash_oth4',objUser.name, objBx.name, objBx.off, objBx.id)
 
                                         let use_max = 1
                                         let dbCollection2x = db.collection("reffer")
@@ -24020,7 +24071,6 @@ document.querySelector('.ct_overflow_customize').style.display='none'
                                     if (ifd.length !== 0) {
                                         elem.price = "₹" + price
                                         ifd.splice(index, 1)
-                                        alert('pagal21222')
                                         ifd.push(elem)
                                         localStorage.setItem('foodsAdded', JSON.stringify(ifd))
                                     }
@@ -24103,7 +24153,6 @@ document.querySelector('.ct_overflow_customize').style.display='none'
                             stockFin = null
                             let arr = JSON.parse(localStorage.getItem('foodsAdded'))
                             arr.splice(index, 1)
-                            alert('pagal2122')
                             localStorage.setItem('foodsAdded', JSON.stringify(arr))
                             addBill()
 
@@ -24121,7 +24170,6 @@ document.querySelector('.ct_overflow_customize').style.display='none'
                                 })
                                 fds.forEach((cur, indx) => {
                                     if (cur.id === itemDb.id) {
-                                        alert('pagal212')
                                         fds.splice(indx, 1)
                                         localStorage.setItem('foodsAdded', JSON.stringify(fds))
 
@@ -24201,12 +24249,87 @@ document.querySelector('.ct_overflow_customize').style.display='none'
 
 
         }
-
-
+//       let googlePay 
+//         function onGooglePayLoaded() {
+//
+//       /// google pay setup
+// googlePay = new google.payments.api.PaymentsClient({
+//   environment: 'TEST', // or 'PRODUCTION'
+//   merchantId: 'BCR2DN4TYT2MJK25'
+// });
+//         }
+// // Set up the Google Pay button
+// const googlePayButton = document.querySelectorAll('.check_out_btn_order.for_cart_checkout')[1];
+//
+// // Handle button clicks
+// googlePayButton.addEventListener('click', async () => {
+//   // Create a payment request
+//   const paymentDataRequest = {
+//     apiVersion: 2,
+//     apiVersionMinor: 0,
+//     allowedPaymentMethods: [{
+//       type: 'CARD',
+//       parameters: {
+//     allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+//     allowedCardNetworks: ['VISA', 'MASTERCARD', 'RUPAY', 'AMEX']
+//       },
+//       tokenizationSpecification: {
+//         type: 'PAYMENT_GATEWAY',
+//         parameters: {
+//           gateway: 'example',
+//           gatewayMerchantId: 'BCR2DN4TYT2MJK25',
+//           encryptionType : 'RSA'
+//         }
+//       }
+//     }],
+//     transactionInfo: {
+//       totalPriceStatus: 'FINAL',
+//       totalPrice: '100.00',
+//       countryCode:'IN',
+//       currencyCode: 'INR'
+//     },
+//     merchantInfo={
+//           merchantId:'BCR2DN4TYT2MJK25',
+//           merchantName:'Krick Foods',
+//       }
+//   };
+//   function processPaymentData(dt){
+//       console.log(dt)
+//       fetch(dt,{
+//           method:'POST',
+//           headers:{
+//               'Content-Type':'application/json'
+//           },
+//           body:dt
+//       })
+//   }
+//
+//
+//
+//   // Load the payment data
+//   try {
+//   //const paymentData = await googlePay.loadPaymentData(paymentDataRequestX);
+//               googlePay.loadPaymentData(paymentDataRequestX)
+//       .then(paymentData=>{
+//           processPaymentData(paymentData)
+//           
+//       }).catch(err=>console.error(err))
+//   
+//      // // Send the payment token to your server for processing
+//      // const paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+//      // // Encrypt the payment token before sending it to your server
+//      // console.log(paymentData)
+//      // const encryptedToken = await encryptPaymentToken(paymentToken);
+//       // Send the encrypted token to your server for processing
+//       // ...
+//   } catch (err) {
+//       console.log(err)
+//   }
+// });
+  
 
 
     </script>
-
 </body>
 
 </html>

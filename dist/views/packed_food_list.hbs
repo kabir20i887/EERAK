@@ -712,6 +712,10 @@ border-bottom: 2px solid #0077ff;
             border-radius: 5px 0 0px 5px;
             padding: 1px 7px;
             box-shadow: 0 0 4px #0000006b;
+            cursor: pointer;
+        }
+        .btn_qtys:active{
+           background-color: rgb(179, 175, 175);
         }
         .itm_food_list_ek  .btn_qtys {
     cursor: pointer;
@@ -1035,6 +1039,19 @@ border-bottom: 2px solid #0077ff;
 
 
         }
+        .buy_now:active{
+            background-color: #2c4171;
+
+        }
+        .add_cart_btn:active{
+            background-color: #5e5e5e;
+
+        }
+        .add_cart_btn:hover{
+    box-shadow: 0 6px 8px rgb(0 0 0 / 52%);        }
+        .buy_now:hover{
+    box-shadow: 0 6px 8px rgb(0 0 0 / 52%);
+        }
 
         @keyframes shine {
             0% {
@@ -1053,6 +1070,10 @@ border-bottom: 2px solid #0077ff;
             display: none;
 
         }
+        .remove_itm:active{
+            background-color: rgb(56, 56, 56);
+        }
+        .ct_addded{pointer-events: none;cursor: auto;}
 
         .remove_itm {
             background-color: #eaeaea;
@@ -1277,8 +1298,7 @@ border-bottom: 2px solid #0077ff;
         }
 
         .ct_bx_for_ingredients p {
-            color: #484646;
-            margin: 10px 18px;
+color: #020202;            margin: 10px 18px;
             font-size: 14px;
             font-family: 'Open sans';
             line-height: 20px;
@@ -1996,7 +2016,34 @@ border-bottom: 2px solid #0077ff;
             height: 100%;
             padding: 13px 0
         }
-
+        .cust_ques{
+            margin-top: 20px;
+        }
+        .cust_ques h3{
+               font-family: 'Montserrat';
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #1a1a1a99;
+        }
+        .cust_ques{
+            border-top: 1px solid #b6b6b6;
+    padding: 16px 28px;        }
+.cust_ques h4{
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+}
+.ct_qns_bx{margin-bottom: 15px;}
+.cust_ques p{
+    color: rgb(73, 73, 73);
+    font-family: 'Roboto';
+    font-weight: 500;
+    width: 85%;
+    word-break: break-all;
+    margin-top: 6px;
+    font-size: 12px;
+}
         .ct_bx_error h4 {
             color: #cac0c0;
             font-size: 30px;
@@ -2352,6 +2399,7 @@ border-bottom: 2px solid #0077ff;
             flex-flow: row wrap;
             width: 100%;
             margin: 0;
+            margin-bottom: 20px;
             padding-bottom: 0
         }
 
@@ -2753,7 +2801,7 @@ border-bottom: 2px solid #0077ff;
             height: auto;
             /* background: #00000033; */
             position: revert;
-            filter: drop-shadow(1px 4px 7px #00000033);
+            filter: drop-shadow(1px 14px 7px #00000033);
             margin-left: 48px;
             transform: translate(0px, 0px);
         }
@@ -2771,8 +2819,15 @@ border-bottom: 2px solid #0077ff;
             /* color: black; */
             box-shadow: 0 0 2px #0000005c;
             border-radius: 7px;
+            cursor: pointer;
             padding: 14px 0px;
         }
+        .ct_bx_fooditm:active,
+        .ct_bx_fooditm:hover{
+            box-shadow: 0 8px 10px #00000030;
+
+        }
+
 
         .ct_bx_fooditm a .ct_bx_flex {
             display: block;
@@ -7492,6 +7547,17 @@ border-bottom: 2px solid #0077ff;
                     </a>
                 </div>
             </div> --}}
+                        <div class="cust_ques">
+                <h3>Frequently asked questions</h3>
+                <div class="ct_qns_bx">
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?</h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos maxime distinctio nobis, consectetur autem?</P>
+                </div>
+                <div class="ct_qns_bx">
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws</h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos maxime distinctio nobis, consectetur autem?</P>
+                </div>
+            </div>
             <div class="ct_bx_for_ingredients">
                 <h4>Ingredients</h4>
                 <p>Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered
@@ -9853,7 +9919,7 @@ border-bottom: 2px solid #0077ff;
                 let stock = item.stock
                 let qtys = item.qty
                 let price_real = item.price_real
-                let img = item.img
+                let img = item.images
                 let about = item.about
                 let desc = item.descrip
                 desc = JSON.stringify(desc)
@@ -10241,6 +10307,7 @@ border-bottom: 2px solid #0077ff;
                         localStorage.setItem('sauce', JSON.stringify(allfd))
 
                     }
+                    load_basic_dt()
                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
                     document.querySelector('.popup_info.sucess_account').classList.add('active')
                     setTimeout(function () {

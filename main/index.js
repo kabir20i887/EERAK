@@ -535,8 +535,8 @@ io.on('connection', (sock) => {
         io.emit('getId', uuidv4())
 
     })
-    sock.on('cash_oth4', (name,off,id) => {
-        io.emit('get_csh',name,off,id)  
+    sock.on('cash_oth4', (nm1,name,off,id) => {
+        io.emit('get_csh',nm1,name,off,id)  
     })
     sock.on('acceptedOr4', () => {
         io.emit('acceptedOrC')

@@ -234,11 +234,56 @@
         margin-top: -6px;
     }
 
-    .ct_bx_about_mobile2 {
-        display: block;
-        text-align: center;
-        width: auto;
-        margin: 15px;
+ .ct_bx_about_mobile2 {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: 0 5px;
+
+}
+.ct_bx_about_mobile2 a{
+    padding: 14px 10px;
+}
+.ct_info_cart{
+    border-radius: 20px;
+    width: 24px;
+    position: absolute;
+    right: 0;
+    display: none;
+top: -5px;
+
+    padding: 4px;
+    background-color: #000000;
+}
+.ct_bx_about_mobile2 .ct_info_cart p{
+    color: white;
+    font-size: 12px;
+    font-family: 'roboto';
+    font-weight: 500;
+}
+.ct_nav_erak  a:hover{
+    text-decoration: none;
+}
+.ct_bx_about_mobile2.account_btn a,
+.ct_bx_about_mobile2.cart_btn a{
+        border: 1px solid #adadad;
+    padding-left: 7px;
+    height: 41px;
+    width: max-content;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.ct_bx_about_mobile2:active,
+.ct_bx_about_mobile2:hover{
+    background: whitesmoke;
+border-bottom: 2px solid #0077ff;
+}
+
+    .ct_bx_about_mobile2 .material-symbols-outlined {
+        color: #0c0c0c;
+        font-size: 26px;
+        margin: -9px 5px;
     }
 
     .ct_nav_erak .for_seravh_in_nav {
@@ -4953,6 +4998,11 @@
         transition: 0.5s;
         border: 1px solid #c5c5c59c;
     }
+            .ct_cat_by_list .product:active,
+        .ct_cat_by_list .product:hover{
+            box-shadow: 0 8px 10px #00000030;
+
+        }
 .ct_dt_tm_food_res h4 {
     color: #5d5d5d;
     font-size: 13px;
@@ -4969,11 +5019,14 @@
         border-radius: 10px;
         cursor: pointer;
         margin: 9px 3px;
-    }
-    .ct_addbtns:active{
-        background-color: rgb(49, 48, 48);
 
     }
+            .ct_addbtns:active,
+        .ct_addbtns:hover{
+        background-color: rgb(13, 153, 59);
+
+        }
+
     .added_to_cart{background-color: #d7ffe8;display: none;}
 .added_to_cart p,
     .ct_addbtns p {
@@ -6661,6 +6714,33 @@ p{margin-bottom:auto;}
             }
             return "";
         }
+                function load_basic_dt(){
+            let total_itms=0
+            let allfd_sauce = JSON.parse(localStorage.getItem('sauce'))
+            let allfd_essen = JSON.parse(localStorage.getItem('essentials'))
+            if(allfd_essen!==null){
+                total_itms+=allfd_essen.length
+            }
+            if(allfd_sauce!==null){
+                total_itms+=allfd_sauce.length
+            }
+            if(total_itms>9){
+                total_itms='+9'
+            }
+            document.querySelector('.ct_info_cart').style.display='block'
+            document.querySelector('.ct_info_cart p').innerText=total_itms
+                let userDtx = getCookie('userData')
+                if (userDtx !== '') {
+                    let dt_user = JSON.parse(userDtx)
+                    document.querySelector('.mobile_only.account_btn').style.display='block'
+                    document.querySelector('.account_nav2').style.display='block'
+                    // remove the banner of signup offer
+
+
+
+                }
+        }
+        load_basic_dt()
     document.querySelector('html').addEventListener('click', (e) => {
         let slide = e.target.closest('.ct_field_small_size')
         let unit_select = e.target.closest('.ct_unit_box_selector')
@@ -6737,7 +6817,8 @@ p{margin-bottom:auto;}
 
                     }
             
-                return
+                    load_basic_dt()
+
               // let qty =1
               // let name = document.querySelector('.name_of_itm').innerText
               // let slt_nm = document.querySelector('.ct_for_bx1.active h4').innerText
@@ -7041,6 +7122,123 @@ document.querySelector('.ct_bx_info_web').style.display='flex'
         document.cookie = "popup_clicked" + "=" + 'yess' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
 
     })
+
+
+
+      let googlePay 
+          function onGooglePayLoaded() {
+
+        /// google pay setup
+  googlePay = new google.payments.api.PaymentsClient({
+    environment: 'TEST', // or 'PRODUCTION'
+    merchantId: 'BCR2DN4TYT2MJK25'
+  });
+     googlePay.isReadyToPay(paymentDataRequest).the(res=>{
+    if(res.result){
+        createAndAddButton()
+    }else{
+        alert(`can't pay with google pay`)
+    }
+   }).catch(err=>{
+    console.log(err)
+   })
+          }
+
+              const paymentDataRequest = {
+      apiVersion: 2,
+      apiVersionMinor: 0,
+      allowedPaymentMethods: [{
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['AMEX', 'DISCOVER', 'MASTERCARD', 'VISA']
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'BCR2DN4TYT2MJK25',
+            encryptionType : 'RSA'
+          }
+        }
+      }]
+    };
+          function createAndAddButton(){
+    const buttonGoogle=googlePay.createButton({
+        onClick:onGoogleButtonClicked,
+
+    });
+document.querySelector('.ct_btns_group_check_ek').appendChild(buttonGoogle)
+}
+function onGoogleButtonClicked(){
+            let paymentDataRequestX={...paymentDataRequest}
+        paymentDataRequestX.merchantInfo={
+            merchantId:'BCR2DN4TYT2MJK25',
+            merchantName:'Krick Foods',
+        }
+                paymentDataRequestX.merchantInfo={
+            merchantId:'BCR2DN4TYT2MJK25',
+            merchantName:'Krick Foods',
+        }
+              paymentDataRequestX.transactionInfo= {
+        totalPriceStatus: 'FINAL',
+        totalPrice: '100.00',
+        countryCode:'IN',
+        currencyCode: 'INR'
+      }
+                   googlePay.loadPaymentData(paymentDataRequestX)
+        .then(paymentData=>{
+            processPaymentData(paymentData)
+            
+        })
+}
+    function processPaymentData(dt){
+        console.log(dt)
+        fetch(dt,{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:dt
+        })
+    }
+
+  // Set up the Google Pay button
+  const googlePayButton = document.querySelectorAll('.check_out_btn_order.for_cart_checkout')[1];
+
+  // Handle button clicks
+//  googlePayButton.addEventListener('click', async () => {
+    // Create a payment request
+
+
+
+
+
+
+    // Load the payment data
+ //   try {
+ //   //const paymentData = await googlePay.loadPaymentData(paymentDataRequestX);
+ //  
+ //   
+ //      // // Send the payment token to your server for processing
+ //      // const paymentToken = paymentData.paymentMethodData.tokenizationData.token;
+ //      // // Encrypt the payment token before sending it to your server
+ //      // console.log(paymentData)
+ //      // const encryptedToken = await encryptPaymentToken(paymentToken);
+ //       // Send the encrypted token to your server for processing
+ //       // ...
+ //   } catch (err) {
+ //       console.log(err)
+ //   }
+ // });
+  
+ //async function encryptPaymentToken(token) {
+ //  // Use a secure encryption library to encrypt the token
+ //  // ...
+ //  return encryptedToken;
+ //}
+
+
 </script>
 
 </html>
