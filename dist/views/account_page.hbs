@@ -873,27 +873,24 @@
     }
 
     /*! CSS Used from: Embedded */
-    .ct_outer_saved {
-        position: absolute;
-        height: 100vh;
-        display: none;
-        z-index: 9999999;
-        width: 100vw;
-        background: #ffffffb3;
-        justify-content: center;
-    }
+.ct_outer_saved {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
 
     /*! CSS Used from: Embedded */
-    .confetti {
-        display: none;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        z-index: 999999999999;
-    }
+        .confetti {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 999999;
+        }
+
 
 
     .ct_results {
@@ -1181,37 +1178,44 @@
         margin: 0;
     }
 
-    /*! CSS Used keyframes */
-    @-webkit-keyframes makeItRain {
-        from {
-            opacity: 0;
+        @-webkit-keyframes makeItRain {
+            from {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            to {
+                -webkit-transform: translateY(60vh);
+            }
         }
-
-        50% {
-            opacity: 1;
-        }
-
-        to {
-            -webkit-transform: translateY(350px);
-        }
-    }
-
-    .ct_offer_saved_popup {
-        border-radius: 20px;
-        width: 500px;
-        height: 200px;
-        margin-top: 140px;
-        background: white;
-        z-index: 999999999;
-        padding: 11px 36px;
-        box-shadow: 0 0 14px #0000000f;
-    }
-
-    .ct_offer_saved_popup p {
-        color: black;
-        font-size: 29px;
-        font-family: 'roboto';
-    }
+.ct_offer_saved_popup {
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+    /* height: 172px; */
+    display: none;
+    margin-top: 140px;
+    position: fixed;
+    background: white;
+    z-index: 999999999999999;
+    padding: 11px 36px;
+    box-shadow: 0 10px 8px #0000004a;
+}
+.ct_offer_saved_popup span,
+.ct_offer_saved_popup p {
+    color: black;
+    font-size: 21px;
+    font-family: 'roboto';
+    /* font-weight: 700; */
+}
+.ct_offer_saved_popup span{
+    font-size: 15px;
+    margin: 14px 0
+}
+   
 
     .ct_offer_saved_popup h3 {
         background: linear-gradient(20deg, #ff008d, #a200ffad);
@@ -1223,16 +1227,21 @@
         font-size: 32px;
     }
 
-    .ct_offer_saved_popup .ct_btn {
-        font-size: 18px;
-        width: max-content;
-        background: linear-gradient(316deg, #0011ff, #c700ffad);
-        color: white;
-        padding: 4px 12px;
-        border-radius: 20px;
-        margin: 20px 160px;
-    }
+.ct_offer_saved_popup .ct_btn:active{
+        background: #9b0ac4
 
+}
+.ct_offer_saved_popup .ct_btn {
+    font-size: 18px;
+    width: max-content;
+    background: linear-gradient(316deg, #c700ff, #c700ffad);
+    color: white;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 20px 160px;
+    box-shadow: 0 9px 10px #00000054;
+}
     * {
         padding: 0;
         box-sizing: border-box;
@@ -5596,7 +5605,7 @@
     .ct_notify .remove_btn span {
         font-size: 21px;
     }
-
+.ct_notify .ct_inner_x span,
     .ct_notify P {
         font-family: 'roboto';
         color: #970d8d;
@@ -5604,7 +5613,11 @@
         margin-left: 20px;
         font-size: 16px;
     }
-
+    .ct_notify .ct_inner_x span {
+        font-size: 12px;
+        text-transform: capitalize;
+        margin: 10px 0 0 21px
+    }
     .ct_flex_bx_notif {
         display: none;
         margin-bottom: 40px;
@@ -5745,6 +5758,7 @@
         <div class="ct_offer_saved_popup">
             <h3>Hurrah!</h3>
             <p>You have saved ₹ 49 on cooking sauce.</p>
+            <span></span>
             <div class="ct_btn">
                 Enjoy
             </div>
@@ -6079,6 +6093,46 @@ window.location.replace('/')
                                 if (cu1.for !== undefined) {
                                     if (cu1.for === 'refer') {
                                         if (elem.name === cu1.name) {
+                                            if( cu1.by.length>0){
+                                     cu1.by.forEach(cu=>{
+
+                                            
+                                            //if view_refer_info ->> removed by user
+
+                                            document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                            let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
+                                        <div class="remove_btn">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div class="ct_inner">
+                                            <span class="material-symbols-outlined">
+                                                task_alt
+                                            </span>
+                                            <div class="ct_inner_x">
+                                                <p>Hurrah!, COUPON: ${elem.name} unlocked. Grab the coupon from the cart and enjoy flat ${elem.off}%
+                                                discount</p>
+                                            <span>${cu.name} created and account logged in by your referal link </span>
+                                                </div>
+
+                                        </div>
+
+                                    </div>`
+                                            if (getCookie('view_refer_info') !== '') {
+                                                let notif_viewed = JSON.parse(getCookie('view_refer_info'))
+                                                notif_viewed.forEach(elm => {
+                                                    if (elm === elem.name.split(' ').join('_')) {
+                                                        html = ''
+                                                    }
+                                                })
+                                            }
+
+
+                                            document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+                                            })
+                                            }else{
+
                                             //if view_refer_info ->> removed by user
 
                                             document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
@@ -6109,6 +6163,8 @@ window.location.replace('/')
 
                                             document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
 
+                                            }
+                                         
 
                                         }
 
@@ -6555,19 +6611,15 @@ return
         }
         toggle_tab('refer')
 
-        if (getCookie('show_saved') !== '') {
-            document.querySelector('.ct_outer_saved').style.display = 'flex'
-            document.querySelector('.ct_offer_saved_popup p').innerText = 'You have earned ₹ 50 by refering'
-            document.querySelector('.confetti').style.display = 'flex'
 
-        }
-        socket.on('get_csh', (name, off, id) => {
+        socket.on('get_csh', (refer_by_nm,name, off, id) => {
 
             let userDt = JSON.parse(getCookie('userData'))
-
+console.log(refer_by_nm,id)
             if (id === userDt.id) {
-                document.querySelector('.ct_outer_saved').style.display = 'flex'
+                document.querySelector('.ct_offer_saved_popup').style.display = 'block'
                 document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${name} unlocked. Grab the coupon from the cart and enjoy flat ${off}% discount`
+                document.querySelector('.ct_offer_saved_popup span').innerText = `${refer_by_nm} by your link`
 
                 document.querySelector('.confetti').style.display = 'flex'
 
@@ -6594,6 +6646,7 @@ return
             let return_order = e.target.closest('.f4Ovn')
             let rem_return_pop = e.target.closest('.ct_info_requested .ct_remove')
             let logout_tab=e.target.closest('.awo_x.logout')
+
             if(logout_tab!==null){
 toggle_tab('logout')
             }
@@ -6914,7 +6967,7 @@ toggle_tab('logout')
             }
 
             if (cls_popup !== null) {
-                document.querySelector('.ct_outer_saved').style.display = 'none'
+                document.querySelector('.ct_offer_saved_popup').style.display = 'none'
                 document.querySelector('.confetti').style.display = 'none'
             }
         })

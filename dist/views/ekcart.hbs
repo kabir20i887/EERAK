@@ -161,6 +161,11 @@
             color: rgb(131, 130, 130);
 
         }
+            .itm_food_list_ek {
+                border-radius: 20px;
+    padding: 9px 10px;
+    border: 1px solid #c5c5c59c;
+            }
 
         .ct_bx_deliv img {
             width: 47px;
@@ -391,7 +396,7 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            z-index: 999999999999;
+            z-index: 999999;
         }
 
         .ct_off_info {
@@ -584,35 +589,35 @@
             margin-bottom: 8px;
             display: none;
         }
-
-        .ct_outer_saved {
-            position: absolute;
-            height: 100vh;
-            display: none;
-            z-index: 9999999;
-            width: 100vw;
-            background: #ffffffb3;
-            justify-content: center;
-        }
-
-        .ct_offer_saved_popup {
-            border-radius: 20px;
-            width: 500px;
-            height: 200px;
-            /* height: 172px; */
-            margin-top: 140px;
-            background: white;
-            z-index: 999999999;
-            padding: 11px 36px;
-            box-shadow: 0 0 14px #0000000f;
-        }
-
-        .ct_offer_saved_popup p {
-            color: black;
-            font-size: 29px;
-            font-family: 'roboto';
-            /* font-weight: 700; */
-        }
+.ct_outer_saved {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.ct_offer_saved_popup {
+    border-radius: 20px;
+    width: 500px;
+    height: 200px;
+    /* height: 172px; */
+    display: none;
+    margin-top: 140px;
+    position: fixed;
+    background: white;
+    z-index: 999999999999999;
+    padding: 11px 36px;
+    box-shadow: 0 10px 8px #0000004a;
+}
+.ct_offer_saved_popup span,
+.ct_offer_saved_popup p {
+    color: black;
+    font-size: 21px;
+    font-family: 'roboto';
+    /* font-weight: 700; */
+}
+.ct_offer_saved_popup span{
+    font-size: 15px;
+    margin: 14px 0
+}
 
         .ct_offer_saved_popup h3 {
             background: linear-gradient(20deg, #ff008d, #a200ffad);
@@ -624,15 +629,21 @@
             font-size: 32px;
         }
 
-        .ct_offer_saved_popup .ct_btn {
-            font-size: 18px;
-            width: max-content;
-            background: linear-gradient(316deg, #0011ff, #c700ffad);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin: 20px 160px;
-        }
+.ct_offer_saved_popup .ct_btn:active{
+        background: #9b0ac4
+
+}
+.ct_offer_saved_popup .ct_btn {
+    font-size: 18px;
+    width: max-content;
+    background: linear-gradient(316deg, #c700ff, #c700ffad);
+    color: white;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 20px 160px;
+    box-shadow: 0 9px 10px #00000054;
+}
 
         .confetti-piece {
             position: absolute;
@@ -782,7 +793,7 @@
             }
 
             to {
-                -webkit-transform: translateY(350px);
+                -webkit-transform: translateY(60vh);
             }
         }
 
@@ -891,8 +902,13 @@
 
         /*! CSS Used from: Embedded */
         .ct_qty_box {
-            display: flex;
+            display: none;
             margin: 19px 20px;
+        }
+        .ct_img_res_main{
+            display: flex;
+    justify-content: center;
+    margin: 23px 0;
         }
 
         .material-symbols-outlined {
@@ -1427,15 +1443,14 @@
         }
 
         .crousel_items {
-            width: 90%;
             height: auto;
-            margin-top: 90px;
-            margin: auto;
             padding-top: 25px;
             display: flex;
             align-items: center;
             overflow-x: auto;
             padding-left: 20px;
+            width: 90%;
+            margin: 0px 0 0 74px;
         }
 
         .ct_back_btn {
@@ -1451,19 +1466,18 @@
             display: none;
         }
 
-        .crousel_btns {
-            background-color: #fdfdfd;
-            box-shadow: 0 0 1px #090909cf;
-            width: 67px;
-            padding: 16px 0;
-            height: 66px;
-            text-align: center;
-            position: absolute;
-            border-radius: 50%;
-            z-index: 999999;
-            margin-top: 30px;
-        }
-
+.crousel_btns {
+    background-color: #fdfdfd;
+    box-shadow: 0 0 1px #090909cf;
+    width: 67px;
+    padding: 16px 0;
+    height: 66px;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 999999;
+    margin-top: 150px;
+}
         /*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css */
         *,
         ::after,
@@ -1534,17 +1548,22 @@
         }
 
         /*! CSS Used from: Embedded */
-        .ct_main_crousel_box h4 {
-            font-size: 17px;
-            color: #373737;
-            text-transform: capitalize;
-            padding: 0 40px 10px 10px;
-            margin-left: 8px;
-            margin-top: 12px;
-            margin-bottom: 0;
-            font-weight: 700;
-            font-family: 'poppins';
-        }
+        .ct_main_crousel_box h3,
+.ct_main_crousel_box h4 {
+    font-size: 17px;
+    color: #373737;
+    text-transform: capitalize;
+    padding: 0 40px 6px 0px;
+    margin-left: 8px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-family: 'poppins';
+}
+.ct_main_crousel_box h3{
+        margin-top: 32px;
+    margin-bottom: 16px;
+}
 
         .crousel_items .product {
             min-width: 257px;
@@ -1580,16 +1599,16 @@
             display: flex;
         }
 
-        .ct_bx_fooditm .item_intro {
-            font-size: 10px;
-            border-radius: 5px;
-            color: #5e5e5e;
-            font-family: 'open sans';
-            width: 100%;
-            line-height: 10px;
-            font-weight: 500;
-            margin: 3px 0 6px 3px;
-        }
+.ct_bx_fooditm .item_intro {
+    font-size: 11px;
+    border-radius: 5px;
+    color: #3b3b3b;
+    font-family: 'open sans';
+    width: 100%;
+    line-height: 15px;
+    font-weight: 500;
+    margin: 3px 0 6px 3px;
+}
 
         .ct_bx_item_details_hide {
             display: none;
@@ -1603,19 +1622,18 @@
             font-family: 'Inter Tight';
             font-weight: 600;
         }
-
-        .ct_offer_box_cook2 {
-            display: block;
-            width: 52px;
-            margin: 6px 10px;
-            padding: 6px 10px 10px 5px;
-            position: absolute;
-            height: auto;
-            z-index: 999;
-            border-radius: 50%;
-            transform: translate(2px, -2px);
-            background-color: #2b3bff;
-        }
+.ct_offer_box_cook2 {
+    display: block;
+    width: 52px;
+    margin: 6px 10px;
+    padding: 6px 10px 13px 5px;
+    position: absolute;
+    height: auto;
+    z-index: 999;
+    border-radius: 50%;
+    transform: translate(2px, -2px);
+    background-color: #2b3bff;
+}
 
         .ct_offer_box_cook2 span {
             margin: 5px 0 0 6px;
@@ -1702,12 +1720,18 @@
             width: 100%;
             height: auto;
             position: revert;
-            margin-left: 48px;
+            margin-left: 0;
+            display: flex;
+            justify-content: center;
             transform: translate(0px, 0px);
         }
 
         .main_im img {
-            width: 100%;
+            width: 59%;
+        }
+
+        .main_im.sauces img {
+            width: 43%;
         }
 
         .ct_bx_inner_food_groc {
@@ -1717,9 +1741,9 @@
 
         .ct_bx_fooditm {
             margin-right: 20px;
-            margin: 0px 0px 20px 0px;
+            margin:0px;
             box-shadow: 0 0 2px #0000005c;
-            border-radius: 7px;
+            border-radius: 20px;
             padding: 14px 0px;
             width: 100%;
         }
@@ -1771,13 +1795,7 @@
         }
 
         @media only screen and (min-width:1550px) {
-            .ct_bx_fooditm .main_im {
-                width: 54%;
-                height: auto;
-                position: revert;
-                margin-left: 48px;
-                transform: translate(0px, 0px);
-            }
+
 
             .ct_bx_fooditm h4 {
                 font-size: 18px;
@@ -4744,7 +4762,7 @@
         }
 
         .popup_info {
-            display: none;
+            display: flex;
             background-color: #280ade;
             margin-left: 12px;
             border-radius: 20px;
@@ -4756,7 +4774,7 @@
             height: 45px;
             transition: 0.8s ease-in-out;
             top: 20px;
-            right: 20px;
+            right: -600px;
         }
 
         .popup_info.place_order {
@@ -4802,7 +4820,6 @@
         }
 
         .popup_info.sucess_account {
-            display: none;
             height: 50px;
         }
 
@@ -5808,9 +5825,6 @@
                 margin: 2% 0 20px 21px;
             }
 
-            .itm_food_list_ek {
-                width: 22%;
-            }
 
             .ct_img_res_main img {
                 height: 176px;
@@ -9448,10 +9462,20 @@
         }
 
         .ct_img_res_main img {
-            width: 105%;
-            height: 176px;
+            height: auto;
         }
-
+.ct_bx_priceandoff span {
+    color: black;
+    margin: 1px 0 0 2px;
+    font-size: 15px;
+    font-family: 'Montserrat';
+}
+.ct_bx_priceandoff del {
+    color: #5b5b5be3;
+    font-size: 11px;
+    font-family: 'poppins';
+    margin: 7px 5px 0 8px;
+}
         .ct_bx_ratings span .not_filed_rating_itm {
             color: rgb(206, 205, 202);
             font-size: 20px;
@@ -9518,15 +9542,6 @@
             margin-left: 8px;
         }
 
-        .price_food span {
-            font-size: 17px;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        .ct_bx_priceandoff p span {
-            color: rgb(197 25 25);
-        }
 
         .ct_bx_priceandoff del span {
             color: #bc2424;
@@ -9700,13 +9715,182 @@
             margin: 60px 0 20px 0;
         }
 
-        .itm_food_list_ek {
-            margin: 14px 0 0px 10px;
-            width: 20%;
-            cursor: pointer;
-            padding-bottom: 20px;
-        }
-
+.itm_food_list_ek {
+    margin:0px;
+    width: auto;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+/*! CSS Used from: Embedded */
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+/*! CSS Used from: Embedded */
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ul{list-style:none;}
+ul{padding-left:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ul{list-style:none;}
+ul{padding-left:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ul{list-style:none;}
+ul{padding-left:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ul{list-style:none;}
+ul{padding-left:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+.ct_bx_selection{display:flex;}
+.ct_pr_bx_unit span,.ct_pr_bx_unit p{font-size:12px;color:black;margin:4px;margin-right:5px;font-family:'roboto';font-weight:500;}
+.ct_popup_unit_btn{border-left:1px solid #919090;color:#282a29;padding-top:2px;}
+.ct_pr_bx_unit{width:97%;display:flex;margin-left:9px;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+.ct_unit_box_selector {
+    display: block;
+    border: 1px solid #a7a7a7;
+    height: 26px;
+    width: 96%;
+    margin: 0 0 10px 8px;    cursor: pointer;
+}
+.ct_other_units{background:white;box-shadow:0 0 4px #000000a3;position:relative;display:none;height:65px;overflow-y:scroll;}
+.ct_other_units::-webkit-scrollbar{width:2px;}
+.ct_other_units::-webkit-scrollbar-track{background:#f1f1f1;}
+.ct_other_units::-webkit-scrollbar-thumb{background:rgb(78, 78, 78);}
+.ct_other_units::-webkit-scrollbar-thumb:hover{background:#555;}
+.ct_other_units li{display:flex;padding:4px 10px;}
+.ct_other_units li:hover{background-color:whitesmoke;}
+.ct_other_units li:active{background-color:whitesmoke;}
+.ct_other_units span,.ct_other_units p,.ct_pr_bx_unit span,.ct_pr_bx_unit p{font-size:12px;color:black;margin:4px;margin-right:5px;font-family:'roboto';font-weight:500;}
+.ct_popup_unit_btn{border-left:1px solid #919090;color:#282a29;padding-top:2px;}
+.ct_pr_bx_unit{width:97%;display:flex;margin-left:9px;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+ion-icon{visibility:hidden;}
+.hydrated{visibility:inherit;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+ion-icon{pointer-events:none;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+*{padding:0;box-sizing:border-box;margin:0;}
+*{padding:0;box-sizing:border-box;margin:0;}
+p{margin-bottom:auto;}
+p{margin-bottom:auto;}
+*{padding:0;box-sizing:border-box;margin:0;}
         .ct_inner_fd1_dt_grid {
             margin-left: -10px;
         }
@@ -10870,7 +11054,7 @@
         }
 
         .itm_food_list_ek .ct_img_res_main img {
-            width: 100%;
+            width:75%;
         }
 
         .fd_ek_cell_car_recom .itm_food_list_ek {
@@ -11333,10 +11517,11 @@
             margin-left: 0;
         }
 
-        .ct_bx_priceandoff {
-            display: flex;
-            margin-top: 8px;
-        }
+.ct_bx_priceandoff {
+    display: flex;
+    margin-top: 8px;
+    margin: 20px 0 13px 10px;
+}
 
         .crousel .ct_bx_priceandoff {
             margin-top: 0;
@@ -16989,6 +17174,7 @@
         <div class="ct_offer_saved_popup">
             <h3>Hurrah!</h3>
             <p>You have saved ₹ 49 on cooking sauce.</p>
+        <span></span>
             <div class="ct_btn">
                 Enjoy
             </div>
@@ -17528,7 +17714,7 @@
             <section class="recomended_cart for_items_recm">
                 <div class="ct_main_crousel_box">
                     <div class="ct_inner_m_crou">
-                        <h4>Check your other items</h4>
+                        <h3>Check your other items</h3>
                         <div class="ct_back_btn crousel_btns">
                             <span class="material-symbols-outlined">
                                 arrow_back_ios
@@ -18179,76 +18365,8 @@
                     })
                 }
 
-if(recc_sauce!==''){
-  recc_sauce.forEach(cux => {
-                    let dt = cux.data()
-                    let itm = dt.item
-                    let offHtml = ``
-                    if (itm.offer !== null) {
-                        offHtml = `<div class="ct_offer_box_cook2">
-         <span>${itm.offer}%</span>
-         <p>off</p>
-     </div>`
-                    }
-                    let itm_qt = 1
-
-
-                    let priceBX = `
-              <div class="ct_bx_price_fd hasoffPrice">
-             <del class="pricenooff" style='display:none'></del>
-             <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
-         </div>
-     `
-
-
-                    itm_added += 1
-
-                    let html1 = `
-                                                     
-                                                     <div class="product">
-                                                     <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-                                                    ${offHtml}
-                                                                    <div class="main_im">
-                                                    <img  alt="${itm.name}" src="${itm.images[0]}">
-                </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${itm.tagline}</p>
-                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
-
-                                                        ${priceBX}
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">${itm.name}</p>
-                                                            <p class="stock">${15}</p>
-                                                            <p class="price_pr">${itm.price_real}</p>
-                                                            <p class="price_off"></p>
-                                                            <p class="offer">${itm.offer}</p>
-                                                            <p class="about_list">${itm.about}</p>
-                                                            <p class="qty">${itm.weight_sh}</p>
-                                                            <p class="desc">''</p>
-                                                            <p class="essentials"></p>
-                                                            <p class="images_item"></p>
-   
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                                             <div class="ct_addbtns">
-                            <p>Add to cart</p>
-                            </div>
-                                            </a>
-                                        </div>
-                                        </div>`
-                    document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
-
-                })
-}
-              
-                if (recc_essen != '') {
-                    recc_essen.forEach(cux => {
+                if (recc_sauce !== '') {
+                    recc_sauce.forEach(cux => {
                         let dt = cux.data()
                         let itm = dt.item
                         let offHtml = ``
@@ -18257,16 +18375,18 @@ if(recc_sauce!==''){
          <span>${itm.offer}%</span>
          <p>off</p>
      </div>`
-
                         }
                         let itm_qt = 1
+
 
                         let priceBX = `
               <div class="ct_bx_price_fd hasoffPrice">
              <del class="pricenooff" style='display:none'></del>
-             <p class="price">₹ ${(itm.price).toLocaleString()}</p>
+             <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
          </div>
      `
+
+
                         itm_added += 1
 
                         let html1 = `
@@ -18276,8 +18396,8 @@ if(recc_sauce!==''){
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
-                                                                      <div class="main_im">
-                                                    <img  alt="${itm.name}" src="${itm.img}">
+                                                                    <div class="main_im sauces">
+                                                    <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
 
@@ -18312,24 +18432,133 @@ if(recc_sauce!==''){
 
                     })
                 }
+let pricemain=``
+                if (recc_essen != '') {
+                    recc_essen.forEach(cux => {
+                        let dt = cux.data()
+                        let itm = dt.item
+                        let offHtml = ``
+                            let price = itm.price
+        let offer=itm.offer
+
+            let emptyArr = itm.units.map(cur11 => {
+                let html = `<li>
+                <p>${cur11.name}</p>
+                <span>₹ ${cur11.price.toLocaleString()}</span>
+            </li>`
+                return html
+            })
+                        if (itm.offer !== null) {
+                            offHtml = `<div class="ct_offer_box_cook2">
+         <span>${itm.offer}%</span>
+         <p>off</p>
+     </div>`
+                 offer = parseFloat(offer)
+            price = parseFloat(price)
+             pricemain = price - (price * (offer / 100))
+            pricemain = Math.round(pricemain)
+
+                        }
 
 
-                console.log(recc_sauce)
-                let widthItm = 0
-                if (window.screen.width >= 1500) {
-                    let widthm = document.querySelectorAll('.ct_bx_fooditm')[0].getBoundingClientRect().width
-                    widthItm = widthm * itm_added
-                    if (widthItm <= 1500)
-                        document.querySelectorAll('.crousel_btns').forEach(cu11 => {
-                            cu11.style.display = 'none'
-                        })
-                    document.querySelectorAll('.crousel_items').forEach(cu11 => {
-                        cu11.style.width = 'auto'
-                        cu11.style.margin = '0'
-                        cu11.style.width = 'auto'
-                        cu11.style.width = 'auto'
+                                    let price_box= `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
+
+                            if(itm.offer===null){
+
+                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
+                                
+                            }
+                        let itm_qt = 1
+
+
+                        itm_added += 1
+                        let html1 = `<div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        ${offHtml}
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="${itm.img}">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>${itm.name}</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> ${itm.units[0].name}</p>
+                                                <span>₹ ${itm.units[0].price.toLocaleString()}</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units active">
+                                                <ul>
+                                                ${emptyArr.join('')}
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            ${price_box}
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>`
+
+                      
+                        document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+
                     })
                 }
+
+
+               // console.log(recc_sauce)
+               // let widthItm = 0
+               // if (window.screen.width >= 1500) {
+               //     let widthm = document.querySelectorAll('.ct_bx_fooditm')[0].getBoundingClientRect().width
+               //     widthItm = widthm * itm_added
+               //     if (widthItm <= 1500)
+               //         document.querySelectorAll('.crousel_btns').forEach(cu11 => {
+               //             cu11.style.display = 'none'
+               //         })
+               //     document.querySelectorAll('.crousel_items').forEach(cu11 => {
+               //         cu11.style.width = 'auto'
+               //         cu11.style.margin = '0'
+               //         cu11.style.width = 'auto'
+               //         cu11.style.width = 'auto'
+               //     })
+               // }
             }
 
             let toto_Pr = tot_pr_itm + tot_pr_itm2
@@ -19259,8 +19488,9 @@ if(recc_sauce!==''){
                     window.location.replace(`/mycart${searchM}#dataRecived`)
                     signup_toggle()
                     document.querySelector('.ct_go_back_account h3').style.display = 'flex'
-                    document.querySelector('.ct_go_back_account h3').style.margin = '40px 0 9px 25px'
+                document.querySelector('.for_signup  .inf0_fyu').style.display='none'
 
+                                        document.querySelector('.for_signup  .ct_bx_title_accounts').style.display = 'none'
                     document.querySelector('.ct_btn_acc').style.opacity = '0'
                     setTimeout(function () {
                         document.querySelector('.ct_bxsecured_info').style.opacity = '0'
@@ -19445,6 +19675,7 @@ if(recc_sauce!==''){
             let login_main_btn = e.target.closest('.login_account')
             let goback_login = e.target.closest('.ct_go_back_account')
             let goback_sgn = e.target.closest('.for_signup  .ct_go_back_account')
+            let cls_popup = e.target.closest('.ct_offer_saved_popup .ct_btn')
 
             let coupons_box = e.target.closest('.ct_apply_coupons .ct_bx1')
             let close_popup_cpns = e.target.closest('.for_cpns.ct_bx_layer')
@@ -19462,6 +19693,10 @@ if(recc_sauce!==''){
             let overflow_div = e.target.closest('.ct_overflow_customize')
 
 
+            if (cls_popup !== null) {
+                document.querySelector('.ct_offer_saved_popup').style.display = 'none'
+                document.querySelector('.confetti').style.display = 'none'
+            }
             if (overflow_div !== null) {
                 document.querySelector('.ct_overflow_customize').style.display = 'none'
                 document.querySelector('.login_bx .box_pop_up_accounts ').classList.remove('active')
@@ -20259,6 +20494,8 @@ if(recc_sauce!==''){
                 document.querySelector('.forlogin .ct_field_first_acc').style.display = 'block'
                 document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'none'
                 document.querySelector('.forlogin .ct_bx_otp_box').style.opacity = '0'
+                document.querySelector('.forlogin .inf0_fyu').style.display='flex'
+
                 document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
                     cu11.style.opacity = '1'
                 })
@@ -20272,6 +20509,8 @@ if(recc_sauce!==''){
                 document.querySelector('.for_signup .ct_field_first_acc').style.display = 'block'
                 document.querySelector('.for_signup .ct_bx_otp_box').style.display = 'none'
                 document.querySelector('.for_signup .ct_bx_otp_box').style.opacity = '0'
+                document.querySelector('.for_signup .inf0_fyu').style.display='flex'
+
                 document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
                     cu11.style.opacity = '1'
                 })
@@ -20307,6 +20546,7 @@ if(recc_sauce!==''){
                         if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
                             let id_ref = secret(getCookie('signup_3sy13'))
                             let objBx = id_ref
+
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
                                 let res = await dbCollection2.get()
@@ -20320,6 +20560,7 @@ if(recc_sauce!==''){
                                     let data = cu.data()
                                     let cps_allow = data.allow_cpns
                                     if (objBx.id === data.id) {
+                                        socket.emit('cash_oth4',objUser.name, objBx.name, objBx.off, objBx.id)
 
                                         let use_max = 1
                                         let dbCollection2x = db.collection("reffer")
@@ -20335,6 +20576,7 @@ if(recc_sauce!==''){
                                                             use_max += use
                                                             elem.use = use_max
                                                             matched_use = true
+                                                            elem.by.push({name:objUser.name,id:objUser.id})
                                                         }
                                                     })
                                                 }
@@ -20346,7 +20588,6 @@ if(recc_sauce!==''){
                                             name: objBx.name,
                                             use: use_max,
                                         }
-                                        socket.emit('cash_oth4', objBx.name, objBx.off, objBx.id)
                                         if (!matched_use) {
 
                                             cps_allow.push(obj_cpns)
@@ -20373,7 +20614,10 @@ if(recc_sauce!==''){
                                         })
                                         document.querySelector('.confetti').style.display = 'block'
                                         document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
-                                        document.querySelector('.ct_outer_saved').style.display = 'flex'
+                                        document.querySelector('.ct_offer_saved_popup span').innerText = `Refered to you by ${data.name} `
+                                        document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+
+                                        document.querySelector('.ct_offer_saved_popup').style.display = 'block'
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                             cu11.style.display = 'none'
                                         })
@@ -20387,20 +20631,20 @@ if(recc_sauce!==''){
                                         console.log(resREF.docs[0].data().text, ' --------------------------------hahahaha----------------------------')
                                         document.querySelector('.ct_overflow_customize').style.display = 'none'
 
-
+document.querySelector('.ct_overflow_customize').style.display='none'
                                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                                        document.querySelector('.popup_info.sucess_account').style.right = '20px'
 
                                         document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in to account'
                                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+                                        document.cookie = "ct_901_12_x" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
 
-                                        document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
 
                                         setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').style.display = 'none'
+                                            document.querySelector('.popup_info.sucess_account').style.right = '-600px'
                                             //  window.location.replace('/mycart')
 
 
@@ -20416,15 +20660,15 @@ if(recc_sauce!==''){
                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                        document.querySelector('.popup_info.sucess_account').style.right='20px'
                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
 
                         setTimeout(function () {
-                            document.querySelector('.popup_info.sucess_account').style.display = 'none'
+                            document.querySelector('.popup_info.sucess_account').style.right='-600px'
 
 
-                        }, 20000)
+                        }, 7000)
                     }
 
 
@@ -20451,7 +20695,6 @@ if(recc_sauce!==''){
                 if (sessionStorage.getItem("ct_901_12") === null) {
                     // if no auto logging
                     document.querySelector('.forlogin .ct_go_back_account h3').style.display = 'flex'
-                    document.querySelector('.forlogin .ct_go_back_account h3').style.margin = '40px 0 9px 25px'
                     if (phoneNum.length >= 10) {
                         document.querySelector('.login_verify').style.opacity = '.5'
                         document.querySelector('.login_verify').style.pointerEvents = 'none'
@@ -20479,6 +20722,7 @@ if(recc_sauce!==''){
 
                                         document.querySelector('.forlogin .ct_inner_bottom_box').style.height = '74vh'
                                         document.querySelector('.forlogin .ct_field_first_acc').style.display = 'none'
+                document.querySelector('.forlogin .inf0_fyu').style.display='none'
 
                                         document.querySelector('.forlogin .ct_bx_title_accounts').style.display = 'none'
                                         document.querySelector('.forlogin .ct_bx_otp_box').style.display = 'block'
@@ -20549,6 +20793,8 @@ if(recc_sauce!==''){
                             let obj_cpns = {
                                 for: 'refer',
                                 name: objBx.name,
+                                use:1,
+                                by:[]
                             }
                             console.log(objBx.name, ' ------------------------hiihuihhh')
 
@@ -20561,7 +20807,7 @@ if(recc_sauce!==''){
                             let objUser = JSON.parse(getCookie('one_tm_dt'))
                             console.log(objUser)
 
-                            // creating account wih refer link
+                            // creating account wih refer link and can use 1 refer coupon now
 
                             let objU = {
                                 admin: false,
@@ -20590,12 +20836,12 @@ if(recc_sauce!==''){
                                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                     document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                     document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                                    document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                                    document.querySelector('.popup_info.sucess_account').style.right='20px'
                                     setTimeout(function () {
-                                        document.querySelector('.popup_info.sucess_account').style.display = 'none'
+                                        document.querySelector('.popup_info.sucess_account').style.right='-600px'
 
 
-                                    }, 20000)
+                                    }, 7000)
 
                                     if (window.location.search !== '') {
                                         let searchM = window.location.search
@@ -20755,6 +21001,7 @@ if(recc_sauce!==''){
 
                                             document.querySelector('.ct_field_first_acc').style.display = 'none'
                                             document.querySelector('.ct_bx_otp_box').style.display = 'block'
+                                            document.querySelector('.for_signup .inf0_fyu').style.display='none'
                                             document.querySelector('.ct_bx_otp_box').style.opacity = '1'
                                             document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
                                                 cu11.style.opacity = '1'
