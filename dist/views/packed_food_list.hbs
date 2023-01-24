@@ -55,7 +55,13 @@
         .carousel-control-next-icon.material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 200, 'opsz' 40;
         }
-
+        .for_nav_main  .admin_panel,
+.for_nav_main  .admin_page{
+    display:none;
+}
+.account_btn.ct_bx_about_mobile2 {
+    display: none;
+}
         .carousel-control-next-icon,
         .carousel-control-prev-icon {
             background-image: none;
@@ -131,7 +137,9 @@
             bottom: 20px;
             right: -500px;
         }
-
+.btn_bottom_nav img{
+    width: 33px;
+}
         .popup_info.active {
             right: 20px;
         }
@@ -280,7 +288,7 @@
             display: block;
             font-family: 'roboto';
             font-weight: 500;
-            transform: translate(8px, 0px);
+            transform: translate(8px, -3px);
         }
 
         .ct_acc_dt_ov p {
@@ -2802,8 +2810,12 @@ color: #020202;            margin: 10px 18px;
             /* background: #00000033; */
             position: revert;
             filter: drop-shadow(1px 14px 7px #00000033);
-            margin-left: 48px;
+            margin-left: 0;
             transform: translate(0px, 0px);
+        }
+        .ct_img_layer{width: 100%;
+        display: flex;
+    justify-content: center;
         }
 
         .ct_bx_inner_food_groc {
@@ -3360,7 +3372,7 @@ color: #020202;            margin: 10px 18px;
                 width: 54%;
                 height: auto;
                 position: revert;
-                margin-left: 48px;
+                margin-left: 0;
                 transform: translate(0px, 0px);
             }
 
@@ -4166,11 +4178,6 @@ color: #020202;            margin: 10px 18px;
             #ek_res_ev {
                 margin-bottom: 0;
             }
-
-            .mobile_only {
-                display: none;
-            }
-
             .for_ain_home_logo {
                 margin: 0;
                 margin-top: 10px;
@@ -4184,15 +4191,12 @@ color: #020202;            margin: 10px 18px;
                 font-size: 11px;
             }
 
-            .logo img {
-                width: 43px;
-            }
+.logo img {
+    width: 43px;
+    height: 44px;
+}
 
-            .ct_field_small_size {
-                margin: -4px 10px 0 0;
-                transform: translate(0px, 0);
-                display: block;
-            }
+
 
             .ct_field_small_size span {
                 font-size: 32px;
@@ -4267,7 +4271,7 @@ color: #020202;            margin: 10px 18px;
             }
 
             .ct_bx_fooditm {
-                width: 23vw
+                width: 22vw
             }
 
             .ct_bx_matched_itm {
@@ -4375,13 +4379,12 @@ color: #020202;            margin: 10px 18px;
             .ct_nav_erak ul .nav_main_ek_li {
                 height: max-content
             }
-
-            .groc_list .ct_cat_by_list {
-                margin-left: .5vw;
-                width: 100vw;
-                padding-bottom: 20px;
-            }
-
+.groc_list .ct_cat_by_list {
+    margin-left: 1.5vw;
+    margin-top: 15px;
+    width: 100vw;
+    padding-bottom: 20px;
+}
             .ct_bx_ratings span .filed_rating_itm {
                 font-size: 21px
             }
@@ -4537,7 +4540,23 @@ color: #020202;            margin: 10px 18px;
             .bx_btns_crousel ion-icon {
                 font-size: 20px;
             }
-
+.ct_bx_about_mobile2.account_btn a, .ct_bx_about_mobile2.cart_btn a {
+    height: 38px;
+}
+.ct_bx_about_mobile2 .material-symbols-outlined {
+    font-size: 22px;
+}
+.ct_info_cart {
+    width: 22px;
+    padding: 3px;
+}
+.ct_bx_about_mobile2 .ct_info_cart p {
+    font-size: 10px;
+}
+.ct_bx_about_mobile2 p {
+    font-size: 11px;
+    color: black;
+}
             .ct_bx_fooditm {
                 width: 31vw;
             }
@@ -4825,7 +4844,49 @@ color: #020202;            margin: 10px 18px;
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
+            /*codex*/
+.ct_bx_about_mobile2.account_btn a, .ct_bx_about_mobile2.cart_btn a {
+    height: 36px;
+    padding: 16px 3px;
+}
+.for_ain_home_logo h4 {
+    font-size: 23px;
+    margin-left: 11px;
+    margin-top: -8px;
+}
 
+            .for_nav_main {
+                height: 71px;
+            }
+.for_nav_main .logo img {
+    width: 37px;
+    height: 38px;
+    margin-top: -6px;
+}
+.for_ain_home_logo span {
+    font-size: 10px;transform: translate(8px, -1px);
+}
+.ct_bx_about_mobile2 .ct_info_cart p {
+    font-size: 8px;
+}
+.ct_info_cart {
+    width: 19px;
+    padding: 3px;
+}
+.for_nav_main .ct_inner_nav {
+    padding: 14px 12px 0px 12px;
+}
+.ct_bx_about_mobile2 a {
+    padding: 14px 4px;
+}
+.ct_bx_about_mobile2 .material-symbols-outlined {
+    font-size: 18px;
+}
+.ct_bx_about_mobile2 p {
+    font-size: 10px;
+    color: black;
+}
+/*-----*/
             .crousel_items .product {
                 min-width: 46.9%;
             }
@@ -4886,12 +4947,6 @@ color: #020202;            margin: 10px 18px;
             .logo img {
                 width: 40px;
                 height: 40px;
-            }
-
-            .for_ain_home_logo h4 {
-                font-size: 26px;
-                margin-left: 11px;
-                margin-top: -11px;
             }
 
 
@@ -5030,10 +5085,6 @@ color: #020202;            margin: 10px 18px;
                 margin-top: 1px;
             }
 
-            .ct_bx_about_mobile2 .material-symbols-outlined {
-                font-size: 34px;
-                margin: -15px 5px;
-            }
 
             .ct_inner_nav {
                 padding: 21px 20px 10px 20px;
@@ -5076,9 +5127,6 @@ color: #020202;            margin: 10px 18px;
                 background-color: #fff
             }
 
-            .for_nav_main {
-                height: 77px;
-            }
 
             .for_mobile_search {
                 top: 68px
@@ -5124,6 +5172,39 @@ color: #020202;            margin: 10px 18px;
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
+
+            /*codex*/
+.for_nav_main .ct_inner_nav {
+    padding: 21px 17px 0px 18px;
+}
+.btn_bottom_nav img {
+    width: 28px;
+    margin-top: -4px;
+}
+.btn_bottom_nav p {
+    font-size: 8px;
+    margin-top: -1px;
+}
+.btn_bottom_nav .material-symbols-outlined {
+    color: #545454;
+    font-size: 21px;
+}
+.ct_bx_div_bottom_nav .ct_flex_bx {
+    height: 55px;
+}
+.btn_bottom_nav {
+    padding: 4px 23px 20px 23px;
+    display: block;
+    /* width: 100%; */
+    margin: 3px 3px;
+    background: #f8f8f8;
+    text-align: center;
+    /* border: 1px solid #e0e0e0; */
+}
+.ct_bx_div_bottom_nav a{
+    width: 100%;
+}
+            /****/
 
             .recomended_cart {
                 margin-bottom: 80px;
@@ -7317,30 +7398,36 @@ color: #020202;            margin: 10px 18px;
             <ion-icon name="arrow-forward-outline"></ion-icon>
         </div>
     </a> --}}
-    {{!-- <div class="ct_bx_div_bottom_nav">
+    <div class="ct_bx_div_bottom_nav">
         <div class="ct_flex_bx">
             <a href="/your-account#orders" class="myOrders_btn_a">
                 <div class="btn_bottom_nav myOrders_btn">
                     <div class="ct_bx_info">
-                        <ion-icon name="alert-outline" role="img" class="md hydrated" aria-label="alert outline">
-                        </ion-icon>
                     </div>
-                    <span class="material-symbols-outlined">
-                        list_alt
-                    </span>
-                    <p>My orders</p>
-                </div>
-            </a>
+                        <img src="../img/orders_icon.png" alt="">
+<p>Orders</p>
 
-            <a href="/mycart">
+                </div>
+
+            </a>
+            <a href="/">
 
                 <div class="btn_bottom_nav">
                     <span class="material-symbols-outlined">
-                        shopping_cart
+                        home
                     </span>
-                    <p>My cart</p>
 
+<p>Home</p>
+                </div>
+            </a>
+            <a href="/account">
+
+                <div class="btn_bottom_nav">
+                    <span class="material-symbols-outlined">
+                        account_circle
                     </span>
+
+<p>Account</p>
 
                 </div>
             </a>
@@ -7370,7 +7457,7 @@ color: #020202;            margin: 10px 18px;
             </a>
         </div>
 
-    </div> --}}
+    </div>
     <div class="ct_bx_layer">
 
     </div>
@@ -9733,16 +9820,24 @@ color: #020202;            margin: 10px 18px;
             if(total_itms>9){
                 total_itms='+9'
             }
-            document.querySelector('.ct_info_cart').style.display='block'
-            document.querySelector('.ct_info_cart p').innerText=total_itms
+                        if(allfd_essen!==0){
+            document.querySelector('.ct_info_cart').style.display = 'block'
+            document.querySelector('.ct_info_cart p').innerText = total_itms
+            }
+
                 let userDtx = getCookie('userData')
                 if (userDtx !== '') {
                     let dt_user = JSON.parse(userDtx)
                     document.querySelector('.mobile_only.account_btn').style.display='block'
                     document.querySelector('.account_nav2').style.display='block'
                     // remove the banner of signup offer
+if(userDtx.admin!==undefined){
+    if(userDtx.admin){
+        document.querySelector('.admin_page').style.display='block'
+    document.querySelector('.admin_panel').style.display='block'
 
-
+    }
+}
 
                 }
         }
@@ -9961,7 +10056,10 @@ color: #020202;            margin: 10px 18px;
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
+                                                    <div class="ct_img_layer">
                                                     <img class="main_im" alt="${name}" src="${img[0]}">
+
+                                                     </div>
                                                     <div class="ct_bx_inner_food_groc">
 
                                                         <h4>${name}</h4>

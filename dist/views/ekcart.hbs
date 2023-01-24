@@ -95,7 +95,14 @@
         .error_account {
             background: rgb(255, 0, 106);
         }
-
+       .for_nav_main  .admin_panel,
+.for_nav_main  .admin_page{
+    display:none;
+}
+.account_btn.ct_bx_about_mobile2 {
+    display: none;
+}
+    
         .ct_addbtns {
             padding: 11px 12px;
             width: max-content;
@@ -16848,6 +16855,7 @@ p{margin-bottom:auto;}
     <div class="ct_bx_layer for_cpns">
 
     </div>
+ 
 
     <div class="place_order_btn_bottom">
         <div class="ct_inner_bottom_place">
@@ -20590,6 +20598,7 @@ setTimeout(function(){
                         phone: objUser.phone,
                         allow_cpns: objUser.allow_cpns,
                         cpns_used: objUser.cpns_used,
+                        admin:false,
 
                     }
 

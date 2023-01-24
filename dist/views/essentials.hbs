@@ -103,6 +103,14 @@
     font-size: 13px;
     font-family: 'open sans';
 }
+       .for_nav_main  .admin_panel,
+.for_nav_main  .admin_page{
+    display:none;
+}
+.account_btn.ct_bx_about_mobile2 {
+    display: none;
+}
+    
 .ct_bx_info_web .ct_inner{
     margin-left: 20px;
 }
@@ -6727,8 +6735,12 @@ p{margin-bottom:auto;}
             if(total_itms>9){
                 total_itms='+9'
             }
-            document.querySelector('.ct_info_cart').style.display='block'
-            document.querySelector('.ct_info_cart p').innerText=total_itms
+                        if(allfd_essen!==0){
+            document.querySelector('.ct_info_cart').style.display = 'block'
+            document.querySelector('.ct_info_cart p').innerText = total_itms
+            }
+
+
                 let userDtx = getCookie('userData')
                 if (userDtx !== '') {
                     let dt_user = JSON.parse(userDtx)

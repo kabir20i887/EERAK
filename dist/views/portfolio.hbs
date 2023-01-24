@@ -620,7 +620,14 @@
     margin: 0;
     display: none;
   }
-
+       .for_nav_main  .admin_panel,
+.for_nav_main  .admin_page{
+    display:none;
+}
+.account_btn.ct_bx_about_mobile2 {
+    display: none;
+}
+    
   .ct_4_slide .h1_forbx2_2 {
     font-family: 'poppins';
     color: white;
@@ -1232,12 +1239,60 @@
     margin-top: -6px;
   }
 
-  .ct_bx_about_mobile2 {
+
+.ct_bx_about_mobile2 {
     display: block;
     text-align: center;
     width: auto;
-    margin: 15px;
-  }
+    margin: 0 5px;
+
+}
+.ct_bx_about_mobile2 a{
+    padding: 14px 10px;
+}
+.ct_info_cart{
+    border-radius: 20px;
+    width: 24px;
+    position: absolute;
+    right: 0;
+    display: none;
+top: -5px;
+
+    padding: 4px;
+    background-color: #000000;
+}
+.ct_bx_about_mobile2 .ct_info_cart p{
+    color: white;
+    font-size: 12px;
+    font-family: 'roboto';
+    font-weight: 500;
+}
+.ct_nav_erak  a:hover{
+    text-decoration: none;
+}
+.ct_bx_about_mobile2.account_btn a,
+.ct_bx_about_mobile2.cart_btn a{
+        border: 1px solid #adadad;
+    padding-left: 7px;
+    height: 41px;
+    width: max-content;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.ct_bx_about_mobile2:active,
+.ct_bx_about_mobile2:hover{
+    background: whitesmoke;
+border-bottom: 2px solid #0077ff;
+}
+
+    .ct_bx_about_mobile2 .material-symbols-outlined {
+        color: #0c0c0c;
+        font-size: 26px;
+        margin: -9px 5px;
+    }
+
+
 
   .ct_nav_erak .for_seravh_in_nav {
     width: 66%;
@@ -1254,13 +1309,12 @@
     margin: -9px 5px;
   }
 
-  .ct_bx_about_mobile2 p {
-    font-size: 16px;
+.ct_bx_about_mobile2 p {
+    font-size: 12px;
     color: rgb(0, 0, 0);
     font-family: 'roboto';
     font-weight: 500;
-  }
-
+}
   .ct_inner_box_nav {
     width: 90%;
     margin-top: 9px;
@@ -1529,12 +1583,11 @@
     transition: .5s;
     position: relative;
   }
-
-  .for_nav_main {
+.for_nav_main {
     display: flex;
     width: 100%;
-    padding: 30px 20px;
-    height: 96px;
+    padding: 12px 20px;
+    height: 78px;
     justify-content: space-between;
     position: absolute;
     top: 0;
@@ -1542,8 +1595,7 @@
     z-index: 99999999999;
     text-align: center;
     box-shadow: 0 0 4px rgb(0 0 0 / 38%);
-  }
-
+}
   * {
     padding: 0;
     box-sizing: border-box;
@@ -1619,9 +1671,7 @@
       height: 900px;
     }
 
-    .ct_inner_nav {
-      padding-left: 40px;
-    }
+
 
     .ct_5_slide {
       height: 1090px;
@@ -4711,190 +4761,7 @@
 </style>
 
 <body>
-  <div class="ct_nav_erak for_nav_main for_all_other_nav">
-    {{!-- for_member --}}
-    <div class="ct_inner_nav">
-      <div class="ct_field_small_size_bx">
-        <div class="ct_bx_info">
-          <ion-icon name="alert-outline"></ion-icon>
-        </div>
-        <div class="ct_field_small_size">
-          <span class="material-symbols-outlined">
-            menu
-          </span>
-        </div>
-      </div>
-      <div class="logo for_ain_home_logo">
-
-        <a href="/">
-          <img alt="logo" src="../img/logo_black_tr_2.png">
-          <div class="ct_inner">
-            <h4>KRICK</h4>
-            <span>Uniquely Yours</span>
-          </div>
-
-        </a>
-
-      </div>
-      <div class="for_seravh_in_nav for_nav_search  for_big_scr_only">
-        <div class="ct_bx_search for_nonfix_search">
-          <div class="ct_bx_go_back_nav fadein">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-          </div>
-          <div class="icon_search_bx">
-            <ion-icon class="search-icon" name="search-sharp"></ion-icon>
-
-          </div>
-
-          <input type="text" spellcheck="false" placeholder="Search">
-
-          <div class="ct_bx_close_over">
-            <div class="xclose_icon">
-              <ion-icon name="close-outline"></ion-icon>
-            </div>
-          </div>
-
-        </div>
-        <div class="ct_bx_matched_itm">
-          <div class="ct_error_overlay">
-            <div class="ct_bx_error">
-              <h4> (o^^)o
-              </h4>
-              <p></p>
-            </div>
-          </div>
-
-          <div class="ct_content_all_searched">
-            <ul>
-
-            </ul>
-
-          </div>
-        </div>
-      </div>
-      {{!-- <ul class="mai_ul">
-
-        <li class="dash_board mekuud">
-          <a href="/admin">
-            <p>Dashboard</p>
-          </a>
-        </li>
-
-
-        <li class="log_in_btn_pk nav_main_ek_li super_groc only_big_screen2 only_big_screen">
-          <a href="/">
-            <p>Home</p>
-          </a>
-        </li>
-
-
-        <li class="cart_nav nav_main_ek_li">
-          <a href="/mycart">
-            <ion-icon name="cart-outline"></ion-icon>
-          </a>
-          <span>1</span>
-        </li>
-        <li title="My account" class="nav_main_ek_li_big acc_set_main_nav  only_for_mob">
-          <a href="/your-account">
-
-            <ion-icon name="person"></ion-icon>
-            <div class="ct_account_bx_mobile">
-              <span>Account</span>
-            </div>
-            <div class="ct_acc_dt_ov">
-              <p></p>
-              <h3> </h3>
-            </div>
-          </a>
-
-        </li>
-      </ul> --}}
-      <div class="ct_inner_box_nav">
-
-
-        <div class="ct_bx_about_mobile2 mobile_only active_nav">
-          <a href="/sauce">
-            <p>Cooking sauce</p>
-          </a>
-
-        </div>
-        <div class="ct_bx_about_mobile2 mobile_only">
-          <a href="/essentials">
-            <p>Essentials</p>
-          </a>
-
-        </div>
-        <div class="ct_bx_about_mobile2 mobile_only">
-          <a href="/notavailable">
-            <p>Business</p>
-          </a>
-
-        </div>
-        <div class="ct_bx_about_mobile2 home_btn ">
-          <a href="/">
-
-
-            <p>Home</p>
-          </a>
-
-        </div>
-        <div class="ct_bx_about_mobile2  cart_btn">
-          <a href="/notavailable">
-            <span class="material-symbols-outlined">
-              shopping_cart
-            </span>
-
-            <p>My Cart</p>
-          </a>
-        </div>
-
-      </div>
-
-      {{!-- <div
-        class="log_in_btn_pk1 nav_main_ek_li for_main_nav_login  for_main_nav_login1 only_for_mob display_on_no_acc">
-        <a href="/login">Log in</a>
-      </div> --}}
-      {{!-- <div class="sign_UP_btn  only_big_screen nav_main_ek_li only_for_mob display_on_no_acc">
-        <a href="/signup">Sign Up</a>
-      </div> --}}
-
-    </div>
-
-    <div class="for_mobile_search for_seravh_in_nav">
-      <div class="ct_bx_matched_itm">
-        <div class="ct_error_overlay">
-          <div class="ct_bx_error">
-            <h4> (o^^)o
-            </h4>
-            <p></p>
-          </div>
-        </div>
-        <div class="ct_content_all_searched">
-          <ul>
-
-          </ul>
-
-        </div>
-      </div>
-      <div class="ct_bx_search for_nonfix_search">
-
-        <div class="ct_bx_search_icon">
-          <ion-icon class="search-icon" name="search-sharp"></ion-icon>
-
-        </div>
-
-
-        <input type="text" spellcheck="false" placeholder="Search">
-
-        <div class="ct_bx_close_over">
-          <div class="xclose_icon">
-            <ion-icon name="close-outline"></ion-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+{{>nav}}
 
   <div class="ct_bx_ov_lay">
 
