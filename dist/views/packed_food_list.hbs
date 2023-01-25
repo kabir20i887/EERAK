@@ -55,13 +55,25 @@
         .carousel-control-next-icon.material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 200, 'opsz' 40;
         }
-        .for_nav_main  .admin_panel,
-.for_nav_main  .admin_page{
-    display:none;
-}
-.account_btn.ct_bx_about_mobile2 {
-    display: none;
-}
+
+        .for_nav_main .admin_panel,
+        .for_nav_main .admin_page {
+            display: none;
+        }
+
+        .account_btn.ct_bx_about_mobile2 {
+            display: none;
+        }
+
+        .btn_bottom_nav .ct_inner {
+            position: relative;
+            width: max-content;
+        }
+
+        .ct_bx_div_bottom_nav .hide_gshs {
+            display: none;
+        }
+
         .carousel-control-next-icon,
         .carousel-control-prev-icon {
             background-image: none;
@@ -137,9 +149,11 @@
             bottom: 20px;
             right: -500px;
         }
-.btn_bottom_nav img{
-    width: 33px;
-}
+
+        .btn_bottom_nav img {
+            width: 33px;
+        }
+
         .popup_info.active {
             right: 20px;
         }
@@ -202,7 +216,7 @@
         }
 
         .crousel_items .product {
-            min-width:218px;
+            min-width: 218px;
             height: 90%;
             margin: 0 10px 0 0;
             border-radius: 20px;
@@ -261,7 +275,8 @@
             margin-right: 7px;
             cursor: pointer;
         }
-        .crousel_btns:active{
+
+        .crousel_btns:active {
             background-color: rgb(90, 90, 90);
 
         }
@@ -326,57 +341,64 @@
             margin-top: -6px;
         }
 
-.ct_bx_about_mobile2 {
-    display: block;
-    text-align: center;
-    width: auto;
-    margin: 0 5px;
+        .ct_bx_about_mobile2 {
+            display: block;
+            text-align: center;
+            width: auto;
+            margin: 0 5px;
 
-}
-.ct_bx_about_mobile2 a{
-    padding: 14px 10px;
-}
-.ct_info_cart{
-    border-radius: 20px;
-    width: 24px;
-    position: absolute;
-    right: 0;
-    display: none;
-top: -5px;
+        }
 
-    padding: 4px;
-    background-color: #000000;
-}
-.ct_bx_about_mobile2 .ct_info_cart p{
-    color: white;
-    font-size: 12px;
-    font-family: 'roboto';
-    font-weight: 500;
-}
-.ct_nav_erak  a:hover{
-    text-decoration: none;
-}
-.ct_bx_about_mobile2.account_btn a,
-.ct_bx_about_mobile2.cart_btn a{
-        border: 1px solid #adadad;
-    padding-left: 7px;
-    height: 41px;
-    width: max-content;
-    display: flex;
-    position: relative;
-    justify-content: center;
-}
-.ct_bx_about_mobile2:active,
-.ct_bx_about_mobile2:hover{
-    background: whitesmoke;
-border-bottom: 2px solid #0077ff;
-}
+        .ct_bx_about_mobile2 a {
+            padding: 14px 10px;
+        }
 
-    .ct_bx_about_mobile2 .material-symbols-outlined {
-        color: #0c0c0c;
-        font-size: 26px;
-        margin: -9px 5px;
-    }
+        .ct_info_cart {
+            border-radius: 20px;
+            width: 24px;
+            position: absolute;
+            right: 0;
+            display: none;
+            top: -5px;
+
+            padding: 4px;
+            background-color: #000000;
+        }
+
+        .btn_bottom_nav .ct_info_cart p,
+        .ct_bx_about_mobile2 .ct_info_cart p {
+            color: white;
+            font-size: 12px;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .ct_nav_erak a:hover {
+            text-decoration: none;
+        }
+
+        .ct_bx_about_mobile2.account_btn a,
+        .ct_bx_about_mobile2.cart_btn a {
+            border: 1px solid #adadad;
+            padding-left: 7px;
+            height: 41px;
+            width: max-content;
+            display: flex;
+            position: relative;
+            justify-content: center;
+        }
+
+        .ct_bx_about_mobile2:active,
+        .ct_bx_about_mobile2:hover {
+            background: whitesmoke;
+            border-bottom: 2px solid #0077ff;
+        }
+
+        .ct_bx_about_mobile2 .material-symbols-outlined {
+            color: #0c0c0c;
+            font-size: 26px;
+            margin: -9px 5px;
+        }
 
 
 
@@ -536,31 +558,38 @@ border-bottom: 2px solid #0077ff;
             justify-content: center;
         }
 
-    .ct_unit_box_selector {
-        display: block;
-        border: 1px solid #a7a7a7;
-        height: 26px;
-        cursor: pointer;
-    }
-.ct_other_units span, .ct_other_units p, .ct_pr_bx_unit span, .ct_pr_bx_unit p {
-    font-size: 12px;
-    color: black;
-    margin: 4px;
-    margin-right: 5px;
-    font-family: 'roboto';
-    font-weight: 500;
-}
-.ct_other_units {
-    background: white;
-    box-shadow: 0 0 4px #000000a3;
-    position: relative;
-    display: none;
-    height: 65px;
-    overflow-y: scroll;
-}
-.ct_other_units ul{
-    margin-bottom: 0;
-}
+        .ct_unit_box_selector {
+            display: block;
+            border: 1px solid #a7a7a7;
+            height: 26px;
+            cursor: pointer;
+        }
+
+        .ct_other_units span,
+        .ct_other_units p,
+        .ct_pr_bx_unit span,
+        .ct_pr_bx_unit p {
+            font-size: 12px;
+            color: black;
+            margin: 4px;
+            margin-right: 5px;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
+
+        .ct_other_units {
+            background: white;
+            box-shadow: 0 0 4px #000000a3;
+            position: relative;
+            display: none;
+            height: 65px;
+            overflow-y: scroll;
+        }
+
+        .ct_other_units ul {
+            margin-bottom: 0;
+        }
+
         .ct_other_units::-webkit-scrollbar {
             width: 2px;
         }
@@ -581,13 +610,13 @@ border-bottom: 2px solid #0077ff;
         }
 
 
-    .ct_other_units li:hover {
-        background-color: whitesmoke;
-    }
+        .ct_other_units li:hover {
+            background-color: whitesmoke;
+        }
 
-    .ct_other_units li:active {
-        background-color: whitesmoke;
-    }
+        .ct_other_units li:active {
+            background-color: whitesmoke;
+        }
 
 
         .ct_other_units li {
@@ -605,12 +634,12 @@ border-bottom: 2px solid #0077ff;
             font-weight: 500;
         }
 
-.ct_popup_unit_btn {
-    border-left: 1px solid #919090;
-    color: #282a29;
-    padding-top: 2px;
-    font-size: 14px;
-}
+        .ct_popup_unit_btn {
+            border-left: 1px solid #919090;
+            color: #282a29;
+            padding-top: 2px;
+            font-size: 14px;
+        }
 
         .ct_bx_priceandoff {
             margin-top: 10px;
@@ -657,11 +686,12 @@ border-bottom: 2px solid #0077ff;
             display: flex;
             margin: 19px 20px;
         }
+
         .itm_food_list_ek .ct_qty_box {
-    display: none;
-    margin: 17px 0 22px 4px;
-    height: 26px;
-}
+            display: none;
+            margin: 17px 0 22px 4px;
+            height: 26px;
+        }
 
         .recomended_cart {
             border-top: 1px solid black;
@@ -722,16 +752,18 @@ border-bottom: 2px solid #0077ff;
             box-shadow: 0 0 4px #0000006b;
             cursor: pointer;
         }
-        .btn_qtys:active{
-           background-color: rgb(179, 175, 175);
+
+        .btn_qtys:active {
+            background-color: rgb(179, 175, 175);
         }
-        .itm_food_list_ek  .btn_qtys {
-    cursor: pointer;
-    background: #e6e6e6;
-    border-radius: 5px 0 0px 5px;
-    padding: 1px 6px;
-    box-shadow: 0 0 3px #0000008a;
-}
+
+        .itm_food_list_ek .btn_qtys {
+            cursor: pointer;
+            background: #e6e6e6;
+            border-radius: 5px 0 0px 5px;
+            padding: 1px 6px;
+            box-shadow: 0 0 3px #0000008a;
+        }
 
 
         .ct_qty_box input {
@@ -742,15 +774,18 @@ border-bottom: 2px solid #0077ff;
             color: black;
             border: 1px solid #cdcdcd;
         }
-.itm_food_list_ek .ct_qty_box input{
-    width: 40px;
-    font-size: 11px; 
-}
-.itm_food_list_ek .btn_qtys .material-symbols-outlined {
-    color: #000000;
-    margin-top: 0;
-    font-size: 17px;
-}
+
+        .itm_food_list_ek .ct_qty_box input {
+            width: 40px;
+            font-size: 11px;
+        }
+
+        .itm_food_list_ek .btn_qtys .material-symbols-outlined {
+            color: #000000;
+            margin-top: 0;
+            font-size: 17px;
+        }
+
         .ct_qty_box p {
             font-size: 14px;
             font-family: 'open sans';
@@ -1047,18 +1082,23 @@ border-bottom: 2px solid #0077ff;
 
 
         }
-        .buy_now:active{
+
+        .buy_now:active {
             background-color: #2c4171;
 
         }
-        .add_cart_btn:active{
+
+        .add_cart_btn:active {
             background-color: #5e5e5e;
 
         }
-        .add_cart_btn:hover{
-    box-shadow: 0 6px 8px rgb(0 0 0 / 52%);        }
-        .buy_now:hover{
-    box-shadow: 0 6px 8px rgb(0 0 0 / 52%);
+
+        .add_cart_btn:hover {
+            box-shadow: 0 6px 8px rgb(0 0 0 / 52%);
+        }
+
+        .buy_now:hover {
+            box-shadow: 0 6px 8px rgb(0 0 0 / 52%);
         }
 
         @keyframes shine {
@@ -1078,10 +1118,15 @@ border-bottom: 2px solid #0077ff;
             display: none;
 
         }
-        .remove_itm:active{
+
+        .remove_itm:active {
             background-color: rgb(56, 56, 56);
         }
-        .ct_addded{pointer-events: none;cursor: auto;}
+
+        .ct_addded {
+            pointer-events: none;
+            cursor: auto;
+        }
 
         .remove_itm {
             background-color: #eaeaea;
@@ -1244,10 +1289,6 @@ border-bottom: 2px solid #0077ff;
             display: none;
         }
 
-        .signup_mob_a,
-        .login_mob_a {
-            display: none;
-        }
 
         .ct_bx_stock h4 {
             color: #bc1515;
@@ -1306,7 +1347,8 @@ border-bottom: 2px solid #0077ff;
         }
 
         .ct_bx_for_ingredients p {
-color: #020202;            margin: 10px 18px;
+            color: #020202;
+            margin: 10px 18px;
             font-size: 14px;
             font-family: 'Open sans';
             line-height: 20px;
@@ -1320,19 +1362,7 @@ color: #020202;            margin: 10px 18px;
             display: none;
         }
 
-        .btn_bottom_nav.ct_bx_signup_mobile,
-        .btn_bottom_nav.ct_bx_login_mobile {
-            width: 89px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            padding: 5px 8px;
-            border-radius: 20px;
-            background-color: white;
-            padding-top: 10px;
-            margin-top: 17px;
-            box-shadow: 0 0 10px #0000004f;
-        }
+
 
         .btn_bottom_nav.ct_bx_signup_mobile {
             width: 126px;
@@ -1533,13 +1563,6 @@ color: #020202;            margin: 10px 18px;
             transition: all 1s ease;
         }
 
-        .ct_remove_bx_pop_p {
-            position: absolute;
-            right: 5%;
-            top: -7%;
-            display: none;
-            z-index: 99999999999999;
-        }
 
 
         .ct_offer_box_cook2 span {
@@ -1567,10 +1590,6 @@ color: #020202;            margin: 10px 18px;
             color: rgb(255, 255, 255);
         }
 
-        .ct_remove_bx_pop_p ion-icon {
-            color: white;
-            font-size: 25px;
-        }
 
         .ct_bx_video iframe {
             width: 100vw;
@@ -1579,7 +1598,7 @@ color: #020202;            margin: 10px 18px;
 
         .ct_bx_div_bottom_nav .ct_flex_bx {
             display: flex;
-            padding: 0px 10px;
+            padding: 0px 4px;
             justify-content: center;
             width: 100%;
             height: 65px;
@@ -1731,9 +1750,14 @@ color: #020202;            margin: 10px 18px;
         .btn_bottom_nav {
             padding: 7px 23px;
             display: block;
+            position: relative;
             margin: 3px 10px;
             text-align: center;
         }
+        .btn_bottom_nav .ct_info_cart {
+
+    right: -15px;}
+        .btn_bottom_nav.for_cart_btn{display: flex;width: 100%;justify-content: center;}
 
         .btn_bottom_nav p {
             font-size: 12px;
@@ -1773,6 +1797,7 @@ color: #020202;            margin: 10px 18px;
             position: fixed;
             background: white;
             width: 100%;
+            display: none;
             bottom: 0%;
             z-index: 999999;
             box-shadow: 0 -10px 12px #0000002e;
@@ -2024,34 +2049,44 @@ color: #020202;            margin: 10px 18px;
             height: 100%;
             padding: 13px 0
         }
-        .cust_ques{
+
+        .cust_ques {
             margin-top: 20px;
         }
-        .cust_ques h3{
-               font-family: 'Montserrat';
-    font-size: 16px;
-    margin-bottom: 25px;
-    color: #1a1a1a99;
+
+        .cust_ques h3 {
+            font-family: 'Montserrat';
+            font-size: 16px;
+            margin-bottom: 25px;
+            color: #1a1a1a99;
         }
-        .cust_ques{
+
+        .cust_ques {
             border-top: 1px solid #b6b6b6;
-    padding: 16px 28px;        }
-.cust_ques h4{
-    color: black;
-    font-family: 'Roboto';
-    font-weight: 500;
-    font-size: 15px;
-}
-.ct_qns_bx{margin-bottom: 15px;}
-.cust_ques p{
-    color: rgb(73, 73, 73);
-    font-family: 'Roboto';
-    font-weight: 500;
-    width: 85%;
-    word-break: break-all;
-    margin-top: 6px;
-    font-size: 12px;
-}
+            padding: 16px 28px;
+        }
+
+        .cust_ques h4 {
+            color: black;
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .ct_qns_bx {
+            margin-bottom: 15px;
+        }
+
+        .cust_ques p {
+            color: rgb(73, 73, 73);
+            font-family: 'Roboto';
+            font-weight: 500;
+            width: 85%;
+            word-break: break-all;
+            margin-top: 6px;
+            font-size: 12px;
+        }
+
         .ct_bx_error h4 {
             color: #cac0c0;
             font-size: 30px;
@@ -2813,9 +2848,11 @@ color: #020202;            margin: 10px 18px;
             margin-left: 0;
             transform: translate(0px, 0px);
         }
-        .ct_img_layer{width: 100%;
-        display: flex;
-    justify-content: center;
+
+        .ct_img_layer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         .ct_bx_inner_food_groc {
@@ -2834,8 +2871,9 @@ color: #020202;            margin: 10px 18px;
             cursor: pointer;
             padding: 14px 0px;
         }
+
         .ct_bx_fooditm:active,
-        .ct_bx_fooditm:hover{
+        .ct_bx_fooditm:hover {
             box-shadow: 0 8px 10px #00000030;
 
         }
@@ -4178,6 +4216,7 @@ color: #020202;            margin: 10px 18px;
             #ek_res_ev {
                 margin-bottom: 0;
             }
+
             .for_ain_home_logo {
                 margin: 0;
                 margin-top: 10px;
@@ -4191,10 +4230,10 @@ color: #020202;            margin: 10px 18px;
                 font-size: 11px;
             }
 
-.logo img {
-    width: 43px;
-    height: 44px;
-}
+            .logo img {
+                width: 43px;
+                height: 44px;
+            }
 
 
 
@@ -4379,12 +4418,14 @@ color: #020202;            margin: 10px 18px;
             .ct_nav_erak ul .nav_main_ek_li {
                 height: max-content
             }
-.groc_list .ct_cat_by_list {
-    margin-left: 1.5vw;
-    margin-top: 15px;
-    width: 100vw;
-    padding-bottom: 20px;
-}
+
+            .groc_list .ct_cat_by_list {
+                margin-left: 1.5vw;
+                margin-top: 15px;
+                width: 100vw;
+                padding-bottom: 20px;
+            }
+
             .ct_bx_ratings span .filed_rating_itm {
                 font-size: 21px
             }
@@ -4540,23 +4581,36 @@ color: #020202;            margin: 10px 18px;
             .bx_btns_crousel ion-icon {
                 font-size: 20px;
             }
-.ct_bx_about_mobile2.account_btn a, .ct_bx_about_mobile2.cart_btn a {
-    height: 38px;
+            .carousel-item {
+    height: 396px;
+    background: whitesmoke;
 }
-.ct_bx_about_mobile2 .material-symbols-outlined {
-    font-size: 22px;
-}
-.ct_info_cart {
-    width: 22px;
-    padding: 3px;
-}
-.ct_bx_about_mobile2 .ct_info_cart p {
-    font-size: 10px;
-}
-.ct_bx_about_mobile2 p {
-    font-size: 11px;
-    color: black;
-}
+
+
+            .ct_bx_about_mobile2.account_btn a,
+            .ct_bx_about_mobile2.cart_btn a {
+                height: 38px;
+            }
+
+            .ct_bx_about_mobile2 .material-symbols-outlined {
+                font-size: 22px;
+            }
+
+            .ct_info_cart {
+                width: 22px;
+                padding: 3px;
+            }
+
+            .btn_bottom_nav .ct_info_cart p,
+            .ct_bx_about_mobile2 .ct_info_cart p {
+                font-size: 10px;
+            }
+
+            .ct_bx_about_mobile2 p {
+                font-size: 11px;
+                color: black;
+            }
+
             .ct_bx_fooditm {
                 width: 31vw;
             }
@@ -4844,49 +4898,120 @@ color: #020202;            margin: 10px 18px;
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
+.carousel-item {
+    height: 333px;
+    background: whitesmoke;
+}
+.itm_img_prod .w-100 {
+    transform: translate(151px, 26px);
+}
+
+
             /*codex*/
-.ct_bx_about_mobile2.account_btn a, .ct_bx_about_mobile2.cart_btn a {
-    height: 36px;
-    padding: 16px 3px;
-}
-.for_ain_home_logo h4 {
-    font-size: 23px;
-    margin-left: 11px;
-    margin-top: -8px;
-}
+
+            .ct_bx_div_bottom_nav{display: block;}
+            .ct_field_small_size {
+                display: flex;
+            }
+                  .for_nav_main .ct_inner_nav {
+                padding: 21px 17px 0px 18px;
+            }
+            .ct_bx_about_mobile2.home_btn{
+                display: none;
+            }
+            .ct_bx_about_mobile2.cart_btn{display: none;}
+.bannerX {
+    margin-top: 69px;}
+            .btn_bottom_nav img {
+                width: 28px;
+                margin-top: -4px;
+            }
+
+            .btn_bottom_nav p {
+                font-size: 8px;
+                margin-top: -1px;
+            }
+
+            .btn_bottom_nav .material-symbols-outlined {
+                color: #545454;
+                font-size: 21px;
+            }
+
+            .ct_bx_div_bottom_nav .ct_flex_bx {
+                height: 55px;
+            }
+
+            .btn_bottom_nav {
+                padding: 4px 23px 20px 23px;
+                display: block;
+                /* width: 100%; */
+                margin: 3px 3px;
+                background: #f8f8f8;
+                text-align: center;
+                /* border: 1px solid #e0e0e0; */
+            }
+
+            .ct_bx_div_bottom_nav a {
+                width: 100%;
+            }
+
+.bannerX {
+    margin-top: 68px;}
+            .ct_bx_about_mobile2.account_btn a,
+            .ct_bx_about_mobile2.cart_btn a {
+                height: 36px;
+                padding: 16px 3px;
+            }
+
+            .for_ain_home_logo h4 {
+                font-size: 23px;
+                margin-left: 11px;
+                margin-top: -8px;
+            }
 
             .for_nav_main {
                 height: 71px;
             }
-.for_nav_main .logo img {
-    width: 37px;
-    height: 38px;
-    margin-top: -6px;
-}
-.for_ain_home_logo span {
-    font-size: 10px;transform: translate(8px, -1px);
-}
-.ct_bx_about_mobile2 .ct_info_cart p {
-    font-size: 8px;
-}
-.ct_info_cart {
-    width: 19px;
-    padding: 3px;
-}
-.for_nav_main .ct_inner_nav {
-    padding: 14px 12px 0px 12px;
-}
-.ct_bx_about_mobile2 a {
-    padding: 14px 4px;
-}
-.ct_bx_about_mobile2 .material-symbols-outlined {
-    font-size: 18px;
-}
-.ct_bx_about_mobile2 p {
-    font-size: 10px;
-    color: black;
-}
-/*-----*/
+
+            .for_nav_main .logo img {
+                width: 37px;
+                height: 38px;
+                margin-top: -6px;
+            }
+
+            .for_ain_home_logo span {
+                font-size: 10px;
+                transform: translate(8px, -1px);
+            }
+
+            .btn_bottom_nav .ct_info_cart p,
+            .ct_bx_about_mobile2 .ct_info_cart p {
+                font-size: 8px;
+            }
+
+            .ct_info_cart {
+                width: 19px;
+                padding: 3px;
+            }
+
+            .for_nav_main .ct_inner_nav {
+                padding: 14px 12px 0px 12px;
+            }
+
+            .ct_bx_about_mobile2 a {
+                padding: 14px 4px;
+            }
+
+            .ct_bx_about_mobile2 .material-symbols-outlined {
+                font-size: 18px;
+            }
+
+            .ct_bx_about_mobile2 p {
+                font-size: 13px;
+                color: black;
+            }
+
+            /*-----*/
             .crousel_items .product {
                 min-width: 46.9%;
             }
@@ -5172,43 +5297,57 @@ color: #020202;            margin: 10px 18px;
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
-
-            /*codex*/
-.for_nav_main .ct_inner_nav {
-    padding: 21px 17px 0px 18px;
-}
-.btn_bottom_nav img {
-    width: 28px;
-    margin-top: -4px;
-}
-.btn_bottom_nav p {
-    font-size: 8px;
-    margin-top: -1px;
-}
-.btn_bottom_nav .material-symbols-outlined {
-    color: #545454;
-    font-size: 21px;
-}
-.ct_bx_div_bottom_nav .ct_flex_bx {
-    height: 55px;
-}
-.btn_bottom_nav {
-    padding: 4px 23px 20px 23px;
-    display: block;
-    /* width: 100%; */
-    margin: 3px 3px;
-    background: #f8f8f8;
-    text-align: center;
-    /* border: 1px solid #e0e0e0; */
-}
-.ct_bx_div_bottom_nav a{
-    width: 100%;
-}
-            /****/
-
-            .recomended_cart {
-                margin-bottom: 80px;
+            .carousel-item {
+    height: auto;
             }
+            .itm_img_prod .w-100 {
+    width: 36vw !important;
+    padding-bottom: 49px;}
+            /*codex*/
+            .for_nav_main .ct_inner_nav {
+                padding: 21px 17px 0px 18px;
+            }
+            
+            .ct_bx_about_mobile2.home_btn{
+                display: none;
+            }
+            .ct_bx_about_mobile2.cart_btn{display: none;}
+.bannerX {
+    margin-top: 69px;}
+            .btn_bottom_nav img {
+                width: 28px;
+                margin-top: -4px;
+            }
+
+            .btn_bottom_nav p {
+                font-size: 8px;
+                margin-top: -1px;
+            }
+
+            .btn_bottom_nav .material-symbols-outlined {
+                color: #545454;
+                font-size: 21px;
+            }
+
+            .ct_bx_div_bottom_nav .ct_flex_bx {
+                height: 55px;
+            }
+
+            .btn_bottom_nav {
+                padding: 4px 23px 20px 23px;
+                display: block;
+                /* width: 100%; */
+                margin: 3px 3px;
+                background: #f8f8f8;
+                text-align: center;
+                /* border: 1px solid #e0e0e0; */
+            }
+
+            .ct_bx_div_bottom_nav a {
+                width: 100%;
+            }
+
+            /****/
 
             .follow_us {
                 width: 15%;
@@ -5222,23 +5361,10 @@ color: #020202;            margin: 10px 18px;
                 width: 24%;
             }
 
-            .ct_bx_go_back {
-                display: none;
-            }
-
-            .ct_popup_inner,
-            .ct_pop_up_items_order {
-                border-radius: 20px;
-            }
-
             .ct_pop_up_items_order.active {
-                bottom: -124px;
+                bottom: 0;
             }
 
-            .ct_bx_layer {
-                background-color: rgb(0 0 0 / 42%);
-                z-index: 999999999999999999;
-            }
 
             .for_ek_fd_full_load {
                 margin-left: 21px;
@@ -5449,10 +5575,6 @@ color: #020202;            margin: 10px 18px;
                 margin-top: -4px;
             }
 
-            .ct_bx_about_mobile2 .material-symbols-outlined {
-                font-size: 27px;
-                margin: -15px 5px;
-            }
 
             .ct_offer_box_cook2 span {
                 font-size: 10px;
@@ -5478,11 +5600,7 @@ color: #020202;            margin: 10px 18px;
                 margin-left: 26px;
             }
 
-            .ct_bx_fooditm .item_intro {
-                font-size: 11px;
-                line-height: 15px;
-                width: 80%;
-            }
+
 
             .ct_logox img {
                 width: 64%;
@@ -5521,9 +5639,6 @@ color: #020202;            margin: 10px 18px;
                 margin-top: 2px;
             }
 
-            .for_unit_itm {
-                font-size: 14px;
-            }
 
             .ct_all_list_food h2 {
 
@@ -5555,10 +5670,6 @@ color: #020202;            margin: 10px 18px;
                 margin: 0px 0 0 5px;
             }
 
-            .for_unit_itm {
-                font-size: 12px;
-                margin: 10px 3px;
-            }
 
             .for_nav_main {
                 box-shadow: 0 0 4px rgb(0 0 0 / 18%);
@@ -5803,9 +5914,6 @@ color: #020202;            margin: 10px 18px;
                 padding: 5px 0 7px
             }
 
-            .for_nav_main {
-                height: 84px
-            }
 
             .for_mobile_search .ct_bx_search {
                 height: 44px;
@@ -5958,11 +6066,6 @@ color: #020202;            margin: 10px 18px;
                 display: flex;
             }
 
-            .ct_bx_fooditm h4 {
-                font-size: 18px;
-                color: #000000;
-            }
-
             .list_food_at_ov h3 {
                 margin-top: 0
             }
@@ -6022,6 +6125,30 @@ color: #020202;            margin: 10px 18px;
             .ct_inner_nav {
                 justify-content: initial
             }
+            /*codeX*/
+.for_nav_main .logo img {
+    width: 33px;
+    height: 34px;
+    margin-top: -6px;
+}
+.for_ain_home_logo h4 {
+    font-size: 22px;
+    margin-left: 8px;
+}
+.for_ain_home_logo span {
+    font-size: 9px;
+    transform: translate(5px, -1px);
+}
+.ct_field_small_size span {
+    font-size: 21px;
+    margin-top: 10px;
+}
+.ct_bx_about_mobile2 p {
+    font-size: 9px;
+    color: black;
+}
+
+            /*------------------------------*/
 
             .btn_bottom_nav.ct_bx_signup_mobile,
             .btn_bottom_nav.ct_bx_login_mobile {
@@ -6275,10 +6402,7 @@ color: #020202;            margin: 10px 18px;
                 padding: 7px 0;
             }
 
-            .ct_bx_fooditm .item_intro {
-                font-size: 10px;
-                line-height: 11px;
-            }
+
 
             .btn_bottom_nav.ct_bx_signup_mobile,
             .btn_bottom_nav.ct_bx_login_mobile {
@@ -6358,9 +6482,7 @@ color: #020202;            margin: 10px 18px;
                 margin-left: 33px;
             }
 
-            .ct_bx_price_fd.hasoffPrice {
-                margin-top: 16px;
-            }
+
 
             .ct_bx_price_fd .price:nth-child(2) {
                 margin-top: -2px;
@@ -6668,6 +6790,7 @@ color: #020202;            margin: 10px 18px;
             display: flex;
             justify-content: center;
         }
+
         .ct_pr_bx_unit span,
         .ct_pr_bx_unit p {
             font-size: 12px;
@@ -6762,7 +6885,8 @@ color: #020202;            margin: 10px 18px;
             font-family: 'Montserrat';
             color: rgb(255, 255, 255);
         }
-        .itm_food_list_ek  .ct_offer_box_cook2 p{
+
+        .itm_food_list_ek .ct_offer_box_cook2 p {
             margin: -2px 0 0 11px;
             font-size: 9px;
         }
@@ -6812,6 +6936,90 @@ color: #020202;            margin: 10px 18px;
             .ct_offer_box_cook2 span {
                 font-size: 10px;
             }
+.itm_img_prod .w-100 {
+    transform: translate(127px, 26px);
+}
+.ct_flex_crousel{display: none;}
+.crousel_items {padding-bottom: 23px;}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    font-size: 33px;}
+            /*codeX*/
+            .ct_info_cart {
+                width: 19px;
+                padding: 6px 0 3px 0;
+            }
+
+.btn_bottom_nav p{display: none;}
+.btn_bottom_nav .ct_info_cart p {
+    font-size: 7px;
+    margin-top: -2px;display: block;
+}
+.btn_bottom_nav .material-symbols-outlined {
+    font-size: 24px;
+}
+.btn_bottom_nav {
+    padding: 13px 23px 20px 23px;}
+            .ct_bx_fooditm h4 {
+                font-size: 16px;
+                color: #000000;
+            }
+
+            .for_unit_itm {
+                font-size: 10px;
+                margin: 5px 0 4px 3px;
+            }
+
+            .ct_bx_fooditm .item_intro {
+                font-size: 10px;
+                line-height: 12px;
+                width: 80%;
+            }
+
+            .for_nav_main {
+                height: 65px;
+            }
+
+            .ct_field_small_size span {
+                font-size: 27px;
+                margin-top: 10px;
+            }
+
+            .for_nav_main .logo img {
+                margin-top: -4px;
+            }
+
+            .bannerX {
+                margin-top: 64px;
+            }
+
+            .for_ain_home_logo h4 {
+                margin-top: -5px;
+            }
+
+            .ct_img_layer {
+                width: 300px;
+            }
+
+            .ct_bx_price_fd .price:nth-child(2) {
+                font-size: 15px;
+            }
+
+            .for_nav_main .ct_inner_nav {
+                padding: 14px 10px 0px 10px;
+            }
+
+            .ct_bx_about_mobile2 p {
+                margin-top: 5px;
+            }
+
+            .btn_bottom_nav .ct_info_cart p,
+            .ct_bx_about_mobile2 .ct_info_cart p {
+                font-size: 7px;
+                margin-top: -2px;
+            }
+
+
+            /*------------------------*/
 
             .ct_offer_box_cook2 p {
                 font-size: 8px;
@@ -7398,66 +7606,7 @@ color: #020202;            margin: 10px 18px;
             <ion-icon name="arrow-forward-outline"></ion-icon>
         </div>
     </a> --}}
-    <div class="ct_bx_div_bottom_nav">
-        <div class="ct_flex_bx">
-            <a href="/your-account#orders" class="myOrders_btn_a">
-                <div class="btn_bottom_nav myOrders_btn">
-                    <div class="ct_bx_info">
-                    </div>
-                        <img src="../img/orders_icon.png" alt="">
-<p>Orders</p>
 
-                </div>
-
-            </a>
-            <a href="/">
-
-                <div class="btn_bottom_nav">
-                    <span class="material-symbols-outlined">
-                        home
-                    </span>
-
-<p>Home</p>
-                </div>
-            </a>
-            <a href="/account">
-
-                <div class="btn_bottom_nav">
-                    <span class="material-symbols-outlined">
-                        account_circle
-                    </span>
-
-<p>Account</p>
-
-                </div>
-            </a>
-            <a href="/your-account" class="myaccount_mob_a">
-                <div class="btn_bottom_nav myaccount_mob">
-                    <span class="material-symbols-sharp">
-                        account_circle
-                    </span>
-                    <p>My account </p>
-                    </span>
-                </div>
-
-            </a>
-            <a href="/signup" class="signup_mob_a">
-
-                <div class="btn_bottom_nav ct_bx_signup_mobile">
-                    <p>Create account <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </p>
-                </div>
-            </a>
-            <a href="/login" class="login_mob_a">
-
-                <div class="btn_bottom_nav ct_bx_login_mobile">
-                    <p>Log in <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </p>
-                </div>
-            </a>
-        </div>
-
-    </div>
     <div class="ct_bx_layer">
 
     </div>
@@ -7489,11 +7638,8 @@ color: #020202;            margin: 10px 18px;
             <p>Masala Meat sucessfully added to cart </p>
         </div>
     </div>
-    
+
     <div class="ct_pop_up_items_order">
-        <div class="ct_remove_bx_pop_p">
-            <ion-icon name="close-outline"></ion-icon>
-        </div>
 
         <div class="ct_popup_inner">
             <div class="ct_bx_go_back">
@@ -7634,15 +7780,21 @@ color: #020202;            margin: 10px 18px;
                     </a>
                 </div>
             </div> --}}
-                        <div class="cust_ques">
+            <div class="cust_ques">
                 <h3>Frequently asked questions</h3>
                 <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?</h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos maxime distinctio nobis, consectetur autem?</P>
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?
+                    </h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
+                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
+                        maxime distinctio nobis, consectetur autem?</P>
                 </div>
                 <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws</h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos maxime distinctio nobis, consectetur autem?</P>
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws
+                    </h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
+                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
+                        maxime distinctio nobis, consectetur autem?</P>
                 </div>
             </div>
             <div class="ct_bx_for_ingredients">
@@ -8286,36 +8438,36 @@ color: #020202;            margin: 10px 18px;
         //--------------------------//
         //  var socket = io()
 
-///
-     //              let arrayItm2 = [{
-     //              conditions:[{max:1,upto:200}],
-     //      data:"Get 20% off on your order up to Rs. 240",
-     //      for:"sauce",
-     //      hidden:false,
-     //      name:"FLAT20",
-     //      off:"20%",
-     //      secret:null,
-     //      grp:'b',
-     //              },
-     //              {
-     //              conditions:[{max:1,upto:200}],
-     //      data:"Get 40% off on your order up to Rs. 240",
-     //      for:"sauce",
-     //      hidden:false,
-     //      name:"SUPER40",
-     //      off:"40%",
-     //      secret:null,
-     //      grp:'b',
-     //              }]
-     //          arrayItm2.forEach(cur => {
-     //              db.collection("coupons").add(cur).then(() => {
-     //                  console.log("Document successfully written!");
-     //              })
-     //                  .catch((error) => {
-     //                      console.error("Error writing document: ", error);
-     //                  })
-     //          })
-///
+        ///
+        //              let arrayItm2 = [{
+        //              conditions:[{max:1,upto:200}],
+        //      data:"Get 20% off on your order up to Rs. 240",
+        //      for:"sauce",
+        //      hidden:false,
+        //      name:"FLAT20",
+        //      off:"20%",
+        //      secret:null,
+        //      grp:'b',
+        //              },
+        //              {
+        //              conditions:[{max:1,upto:200}],
+        //      data:"Get 40% off on your order up to Rs. 240",
+        //      for:"sauce",
+        //      hidden:false,
+        //      name:"SUPER40",
+        //      off:"40%",
+        //      secret:null,
+        //      grp:'b',
+        //              }]
+        //          arrayItm2.forEach(cur => {
+        //              db.collection("coupons").add(cur).then(() => {
+        //                  console.log("Document successfully written!");
+        //              })
+        //                  .catch((error) => {
+        //                      console.error("Error writing document: ", error);
+        //                  })
+        //          })
+        ///
 
         //  arrayItm.forEach(cur => {
         //      db.collection("sauce").add({
@@ -8377,9 +8529,9 @@ color: #020202;            margin: 10px 18px;
             let itmPopucloseIcon = e.target.closest('.ct_remove_bx_pop_p')
             let unit_select = e.target.closest('.ct_unit_box_selector')
             let unit_li = e.target.closest('.ct_other_units li')
-        document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+            document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                 cu11.classList.remove('active')
-                cu11.style.display='none'
+                cu11.style.display = 'none'
             })
             let itmPopup = e.target.closest('.ct_popup_inner')
             let itmqtinc = e.target.closest('.ct_bx_item_add')
@@ -8402,112 +8554,112 @@ color: #020202;            margin: 10px 18px;
             let maxMove = 99203;
             // mobile_view	
 
-                    let inc_btn=e.target.closest('.inc_btn')
-        let dec_btn=e.target.closest('.dec_btn')
-        
-        if(inc_btn!==null){
-            let val=parseFloat(inc_btn.parentElement.childNodes[3].value)
-            let nm=inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            nm=nm.split(' ').join('')
-            val+=1
-            inc_btn.parentElement.childNodes[3].value=val
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-                if(grocs!==null){
-                        grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===nm){
-                               cu11.qt=val
-                             }
-                        })
-                }
-            localStorage.setItem('essentials',JSON.stringify(grocs))
-            
-        }
-        if(dec_btn!==null){
-            let val=parseFloat(dec_btn.parentElement.childNodes[3].value)
-            let nm=dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            nm=nm.split(' ').join('')
-            val-=1
-            if(val>0){
-            dec_btn.parentElement.childNodes[3].value=val
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-                if(grocs!==null){
-                        grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===nm){
-                               cu11.qt=val
-                             }
-                        })
-                }
-            localStorage.setItem('essentials',JSON.stringify(grocs))
-            }
+            let inc_btn = e.target.closest('.inc_btn')
+            let dec_btn = e.target.closest('.dec_btn')
 
-            
-        }
+            if (inc_btn !== null) {
+                let val = parseFloat(inc_btn.parentElement.childNodes[3].value)
+                let nm = inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                nm = nm.split(' ').join('')
+                val += 1
+                inc_btn.parentElement.childNodes[3].value = val
+                let grocs = JSON.parse(localStorage.getItem('essentials'))
+                if (grocs !== null) {
+                    grocs.forEach(cu11 => {
+                        if (cu11.name.split(' ').join('') === nm) {
+                            cu11.qt = val
+                        }
+                    })
+                }
+                localStorage.setItem('essentials', JSON.stringify(grocs))
+
+            }
+            if (dec_btn !== null) {
+                let val = parseFloat(dec_btn.parentElement.childNodes[3].value)
+                let nm = dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                nm = nm.split(' ').join('')
+                val -= 1
+                if (val > 0) {
+                    dec_btn.parentElement.childNodes[3].value = val
+                    let grocs = JSON.parse(localStorage.getItem('essentials'))
+                    if (grocs !== null) {
+                        grocs.forEach(cu11 => {
+                            if (cu11.name.split(' ').join('') === nm) {
+                                cu11.qt = val
+                            }
+                        })
+                    }
+                    localStorage.setItem('essentials', JSON.stringify(grocs))
+                }
+
+
+            }
             let mob_view = window.matchMedia("(max-width: 768px)");
-
-                    if (unit_li !== null) {
-            let nm_itm=unit_li.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            let name = unit_li.childNodes[1].innerText
-            let pr = unit_li.childNodes[3].innerText
-            let offer= null
-            let pricemain=0
-            pr = pr.split('₹')[1]
-            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1]===undefined){
-            pricemain = parseFloat(pr) 
-            pricemain = pricemain.toLocaleString()  
-            }else{
-            offer = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            offer = offer.split('%')[0]
-            offer = parseFloat(offer)
-            
-            pricemain = pr - (pr * (offer / 100))
-            pricemain = Math.round(pricemain)
-            pricemain = pricemain.toLocaleString()
-            }
-
-            if(unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3]!==undefined){
-            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3].childNodes[0].innerText = '₹' + pricemain
-            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].innerText = pr
-
-            }else{
-            unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes[0].innerText = '₹' + pricemain
-
-            }
-
-            unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText = name
-            unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pr
-
-            console.log(unit_li.parentElement.parentElement)
-              if(!unit_li.parentElement.parentElement.classList.value.includes('active')){
-                      unit_li.parentElement.parentElement.classList.add('active')
-                      unit_li.parentElement.parentElement.style.display='none'
-              }else{
-                    unit_li.parentElement.parentElement.classList.remove('active')
-                    unit_li.parentElement.parentElement.style.display='none'
-              }
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-                if(grocs!==null){
-                        grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===nm_itm.split(' ').join('')){
-                                cu11.unit=name
-                             }
-                        })
-                }
-            localStorage.setItem('essentials',JSON.stringify(grocs))
-
-        }
             if (unit_select !== null) {
-            document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
-                cu11.classList.remove('active')
-                cu11.style.display='none'
-            })
-            if (!unit_select.childNodes[3].classList.value.includes('active')) {
-                unit_select.childNodes[3].classList.add('active')
-                unit_select.childNodes[3].style.display = 'block'
-            } else {
-                unit_select.childNodes[3].classList.remove('active')
-                unit_select.childNodes[3].style.display = 'none'
+                document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
+                    cu11.classList.remove('active')
+                    cu11.style.display = 'none'
+                })
+                if (!unit_select.childNodes[3].classList.value.includes('active')) {
+                    unit_select.childNodes[3].classList.add('active')
+                    unit_select.childNodes[3].style.display = 'block'
+                } else {
+                    unit_select.childNodes[3].classList.remove('active')
+                    unit_select.childNodes[3].style.display = 'none'
+                }
             }
+            if (unit_li !== null) {
+                let nm_itm = unit_li.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                let name = unit_li.childNodes[1].innerText
+                let pr = unit_li.childNodes[3].innerText
+                let offer = null
+                let pricemain = 0
+                pr = pr.split('₹')[1]
+                if (unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1] === undefined) {
+                    pricemain = parseFloat(pr)
+                    pricemain = pricemain.toLocaleString()
+                } else {
+                    offer = unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                    offer = offer.split('%')[0]
+                    offer = parseFloat(offer)
+
+                    pricemain = pr - (pr * (offer / 100))
+                    pricemain = Math.round(pricemain)
+                    pricemain = pricemain.toLocaleString()
+                }
+
+                if (unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3] !== undefined) {
+                    unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[3].childNodes[0].innerText = '₹' + pricemain
+                    unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].innerText = pr
+
+                } else {
+                    unit_li.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[5].childNodes[5].childNodes[1].childNodes[0].innerText = '₹' + pricemain
+
+                }
+
+                unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[1].innerText = name
+                unit_li.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].childNodes[3].innerText = '₹' + pr.toLocaleString()
+
+                console.log(unit_li.parentElement.parentElement.classList.value)
+                if (!unit_li.parentElement.parentElement.classList.value.includes('active')) {
+                    unit_li.parentElement.parentElement.classList.add('active')
+                    unit_li.parentElement.parentElement.style.display = 'none'
+                } else {
+                    unit_li.parentElement.parentElement.classList.remove('active')
+                    unit_li.parentElement.parentElement.style.display = 'none'
+                }
+                let grocs = JSON.parse(localStorage.getItem('essentials'))
+                if (grocs !== null) {
+                    grocs.forEach(cu11 => {
+                        if (cu11.name.split(' ').join('') === nm_itm.split(' ').join('')) {
+                            cu11.unit = name
+                        }
+                    })
+                }
+                localStorage.setItem('essentials', JSON.stringify(grocs))
+
             }
+
             if (mob_view.matches) {
                 movePer = 50.36;
                 maxMove = 504;
@@ -8563,58 +8715,58 @@ color: #020202;            margin: 10px 18px;
 
                 if (count_qty <= stock_itm_global) {
                     document.querySelector('.ct_qty_box input').value = count_qty
-                    let userDt = JSON.parse(getCookie('userData'))
-                 // async function getUser() {
-                 //     let dbCollection = db.collection("users")
-                 //     dbCollection.get().then(res => {
-                 //         res.docs.forEach(async cur => {
-                 //             let userDt_db = cur.data()
-                 //             if (userDt_db.id === userDt.id) {
+                    //let userDt = JSON.parse(getCookie('userData'))
+                    // async function getUser() {
+                    //     let dbCollection = db.collection("users")
+                    //     dbCollection.get().then(res => {
+                    //         res.docs.forEach(async cur => {
+                    //             let userDt_db = cur.data()
+                    //             if (userDt_db.id === userDt.id) {
 
-                 //                 userDt_db.cartItems.forEach(cu11 => {
-                 //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
-                 //                     let nameM = nameItm.split(' ').join('').toLowerCase()
-                 //                     console.log(nameD, nameM, ' -----------------')
+                    //                 userDt_db.cartItems.forEach(cu11 => {
+                    //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+                    //                     let nameM = nameItm.split(' ').join('').toLowerCase()
+                    //                     console.log(nameD, nameM, ' -----------------')
 
-                 //                     if (nameD === nameM) {
-                 //                         cu11.qty = count_qty
+                    //                     if (nameD === nameM) {
+                    //                         cu11.qty = count_qty
 
-                 //                     }
-                 //                 })
+                    //                     }
+                    //                 })
 
-                 //                 async function pushData() {
-                 //                     dbCollection.doc(cur.id).set({
-                 //                         address: userDt_db.address,
-                 //                         admin: userDt_db.admin,
-                 //                         cartItems: userDt_db.cartItems,
-                 //                         id: userDt_db.id,
-                 //                         location: userDt_db.location,
-                 //                         name: userDt_db.name,
-                 //                         phone: userDt_db.phone,
-                 //                         refferedBy: userDt_db.refferedBy,
-                 //                         reffer: userDt_db.reffer,
-                 //                     })
-                 //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                 //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
-                 //                     setTimeout(function () {
-                 //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                 //                     }, 10000)
+                    //                 async function pushData() {
+                    //                     dbCollection.doc(cur.id).set({
+                    //                         address: userDt_db.address,
+                    //                         admin: userDt_db.admin,
+                    //                         cartItems: userDt_db.cartItems,
+                    //                         id: userDt_db.id,
+                    //                         location: userDt_db.location,
+                    //                         name: userDt_db.name,
+                    //                         phone: userDt_db.phone,
+                    //                         refferedBy: userDt_db.refferedBy,
+                    //                         reffer: userDt_db.reffer,
+                    //                     })
+                    //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                    //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                    //                     setTimeout(function () {
+                    //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                    //                     }, 10000)
 
-                 //                 }
-                 //                 pushData()
-                 //             }
-                 //         })
-                 //     })
-                 // }
-                 // getUser()
-                let allfd = JSON.parse(localStorage.getItem('sauce'))
-                 let nameM = nameItm.split(' ').join('').toLowerCase()
-                 allfd.forEach((cu11,ind)=>{
-                    if(cu11.name.split(' ').join('').toLowerCase()===nameM){
-                        cu11.qty=count_qty
-                    }
-                 })
-                 localStorage.setItem('sauce', JSON.stringify(allfd))
+                    //                 }
+                    //                 pushData()
+                    //             }
+                    //         })
+                    //     })
+                    // }
+                    // getUser()
+                    let allfd = JSON.parse(localStorage.getItem('sauce'))
+                    let nameM = nameItm.split(' ').join('').toLowerCase()
+                    allfd.forEach((cu11, ind) => {
+                        if (cu11.name.split(' ').join('').toLowerCase() === nameM) {
+                            cu11.qty = count_qty
+                        }
+                    })
+                    localStorage.setItem('sauce', JSON.stringify(allfd))
 
                 }
 
@@ -8626,59 +8778,59 @@ color: #020202;            margin: 10px 18px;
                 if (count_qty > 0) {
                     document.querySelector('.ct_qty_box input').value = count_qty
                     let userDt = JSON.parse(getCookie('userData'))
-                   // async function getUser() {
-                   //     let dbCollection = db.collection("users")
-                   //     dbCollection.get().then(res => {
-                   //         res.docs.forEach(async cur => {
-                   //             let userDt_db = cur.data()
-                   //             if (userDt_db.id === userDt.id) {
-//
-                   //                 userDt_db.cartItems.forEach(cu11 => {
-                   //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
-                   //                     let nameM = nameItm.split(' ').join('').toLowerCase()
-                   //                     console.log(nameD, nameM, ' -----------------')
-//
-                   //                     if (nameD === nameM) {
-                   //                         cu11.qty = count_qty
-//
-                   //                     }
-                   //                 })
-//
-                   //                 async function pushData() {
-                   //                     dbCollection.doc(cur.id).set({
-                   //                         address: userDt_db.address,
-                   //                         admin: userDt_db.admin,
-                   //                         cartItems: userDt_db.cartItems,
-                   //                         id: userDt_db.id,
-                   //                         location: userDt_db.location,
-                   //                         name: userDt_db.name,
-                   //                         phone: userDt_db.phone,
-                   //                         refferedBy: userDt_db.refferedBy,
-                   //                         reffer: userDt_db.reffer,
-                   //                     })
-                   //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                   //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
-                   //                     setTimeout(function () {
-                   //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                   //                     }, 10000)
-//
-                   //                 }
-                   //                 pushData()
-                   //             }
-                   //         })
-                   //     })
-                   // }
-                   // getUser()
-                                   let allfd = JSON.parse(localStorage.getItem('sauce'))
-                 let nameM = nameItm.split(' ').join('').toLowerCase()
-                 allfd.forEach((cu11,ind)=>{
-                    if(cu11.name.split(' ').join('').toLowerCase()===nameM){
-                        cu11.qty=count_qty
-                    }
-                 })
-                 localStorage.setItem('sauce', JSON.stringify(allfd))
+                    // async function getUser() {
+                    //     let dbCollection = db.collection("users")
+                    //     dbCollection.get().then(res => {
+                    //         res.docs.forEach(async cur => {
+                    //             let userDt_db = cur.data()
+                    //             if (userDt_db.id === userDt.id) {
+                    //
+                    //                 userDt_db.cartItems.forEach(cu11 => {
+                    //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+                    //                     let nameM = nameItm.split(' ').join('').toLowerCase()
+                    //                     console.log(nameD, nameM, ' -----------------')
+                    //
+                    //                     if (nameD === nameM) {
+                    //                         cu11.qty = count_qty
+                    //
+                    //                     }
+                    //                 })
+                    //
+                    //                 async function pushData() {
+                    //                     dbCollection.doc(cur.id).set({
+                    //                         address: userDt_db.address,
+                    //                         admin: userDt_db.admin,
+                    //                         cartItems: userDt_db.cartItems,
+                    //                         id: userDt_db.id,
+                    //                         location: userDt_db.location,
+                    //                         name: userDt_db.name,
+                    //                         phone: userDt_db.phone,
+                    //                         refferedBy: userDt_db.refferedBy,
+                    //                         reffer: userDt_db.reffer,
+                    //                     })
+                    //                     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                    //                     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                    //                     setTimeout(function () {
+                    //                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                    //                     }, 10000)
+                    //
+                    //                 }
+                    //                 pushData()
+                    //             }
+                    //         })
+                    //     })
+                    // }
+                    // getUser()
+                    let allfd = JSON.parse(localStorage.getItem('sauce'))
+                    let nameM = nameItm.split(' ').join('').toLowerCase()
+                    allfd.forEach((cu11, ind) => {
+                        if (cu11.name.split(' ').join('').toLowerCase() === nameM) {
+                            cu11.qty = count_qty
+                        }
+                    })
+                    localStorage.setItem('sauce', JSON.stringify(allfd))
 
-                
+
                 } else {
                     count_qty = 1
                 }
@@ -8727,75 +8879,75 @@ color: #020202;            margin: 10px 18px;
                 }
                 if (document.querySelector('.ct_addded').style.display === 'block') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
-                   // if (getCookie('userData') === '') {
-                        if (allfd !== null) {
+                    // if (getCookie('userData') === '') {
+                    if (allfd !== null) {
 
-                            allfd.forEach(cu11 => {
-                                let nameD = cu11.name.split(' ').join('')
-                                let nameM = nameItm.split(' ').join('')
-                                    console.log(nameD,nameM, ' -----------------')
+                        allfd.forEach(cu11 => {
+                            let nameD = cu11.name.split(' ').join('')
+                            let nameM = nameItm.split(' ').join('')
+                            console.log(nameD, nameM, ' -----------------')
 
-                                if (nameD === nameM) {
+                            if (nameD === nameM) {
 
-                                    cu11.slt_nm = name11
-                                    cu11.slt_p = info
-                                    console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
+                                cu11.slt_nm = name11
+                                cu11.slt_p = info
+                                console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
 
-                                        
-                                    document.querySelector('.buy_now').style.display = 'none'
-                                    document.querySelector('.add_cart_btn').style.display = 'none'
-                                    document.querySelector('.ct_addded').style.display = 'block'
-                                    document.querySelector('.remove_itm').style.display = 'block'
 
-                                    document.querySelector('.ct_qty_box input').value = cu11.qty
-                                }
-                            })
-                            localStorage.setItem('sauce', JSON.stringify(allfd))
-                        }
-                   //} else {
+                                document.querySelector('.buy_now').style.display = 'none'
+                                document.querySelector('.add_cart_btn').style.display = 'none'
+                                document.querySelector('.ct_addded').style.display = 'block'
+                                document.querySelector('.remove_itm').style.display = 'block'
 
-                   //    let userDt = JSON.parse(getCookie('userData'))
-                   //    async function getItm() {
-                   //        let dbCollection2 = db.collection("users")
-                   //        let res = await dbCollection2.get()
+                                document.querySelector('.ct_qty_box input').value = cu11.qty
+                            }
+                        })
+                        localStorage.setItem('sauce', JSON.stringify(allfd))
+                    }
+                    //} else {
 
-                   //        res.docs.forEach(async cu => {
-                   //            let data = cu.data()
-                   //            let matched = false
-                   //            console.log(userDt.id, data.id, ' -----------------')
+                    //    let userDt = JSON.parse(getCookie('userData'))
+                    //    async function getItm() {
+                    //        let dbCollection2 = db.collection("users")
+                    //        let res = await dbCollection2.get()
 
-                   //            if (userDt.id === data.id) {
+                    //        res.docs.forEach(async cu => {
+                    //            let data = cu.data()
+                    //            let matched = false
+                    //            console.log(userDt.id, data.id, ' -----------------')
 
-                   //                data.cartItems.forEach(cu11 => {
-                   //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
-                   //                    let nameM = nameItm.split(' ').join('').toLowerCase()
-                   //                    console.log(nameD, nameM, ' -----------------')
+                    //            if (userDt.id === data.id) {
 
-                   //                    if (nameD === nameM) {
-                   //                        cu11.slt_nm = name11
-                   //                        cu11.slt_p = info
-                   //                        console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
+                    //                data.cartItems.forEach(cu11 => {
+                    //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                    //                    let nameM = nameItm.split(' ').join('').toLowerCase()
+                    //                    console.log(nameD, nameM, ' -----------------')
 
-                   //                    }
-                   //                })
-                   //                await dbCollection2.doc(cu.id).set({
-                   //                    admin: data.admin,
-                   //                    id: data.id,
-                   //                    name: data.name,
-                   //                    phone: data.phone,
-                   //                    address: data.address,
-                   //                    location: data.location,
-                   //                    cartItems: data.cartItems,
-                   //                    refferedBy: data.refferedBy,
-                   //                    reffer: data.reffer,
-                   //                })
-                   //            }
+                    //                    if (nameD === nameM) {
+                    //                        cu11.slt_nm = name11
+                    //                        cu11.slt_p = info
+                    //                        console.log(cu11.slt_p, cu11.slt_nm, ' -----------------')
 
-                   //        })
+                    //                    }
+                    //                })
+                    //                await dbCollection2.doc(cu.id).set({
+                    //                    admin: data.admin,
+                    //                    id: data.id,
+                    //                    name: data.name,
+                    //                    phone: data.phone,
+                    //                    address: data.address,
+                    //                    location: data.location,
+                    //                    cartItems: data.cartItems,
+                    //                    refferedBy: data.refferedBy,
+                    //                    reffer: data.reffer,
+                    //                })
+                    //            }
 
-                   //    }
-                   //    getItm()
-                   //}
+                    //        })
+
+                    //    }
+                    //    getItm()
+                    //}
                 }
             }
             if (gCart !== null) {
@@ -8887,38 +9039,38 @@ color: #020202;            margin: 10px 18px;
 
 
                             if (nm === nm2) {
-            let name = item.name
-            let offer = parseFloat(item.offer)
-            let units = item.units
-            let price = item.price
-            let img = item.img
+                                let name = item.name
+                                let offer = parseFloat(item.offer)
+                                let units = item.units
+                                let price = item.price
+                                let img = item.img
 
-            offer = parseFloat(offer)
-            price = parseFloat(price)
-            let pricemain = price - (price * (offer / 100))
-            pricemain = Math.round(pricemain)
-            let emptyArr = units.map(cur11 => {
-                let html = `<li>
+                                offer = parseFloat(offer)
+                                price = parseFloat(price)
+                                let pricemain = price - (price * (offer / 100))
+                                pricemain = Math.round(pricemain)
+                                let emptyArr = units.map(cur11 => {
+                                    let html = `<li>
                 <p>${cur11.name}</p>
                 <span>₹ ${cur11.price.toLocaleString()}</span>
             </li>`
-                return html
-            })
-            let price_box= `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
+                                    return html
+                                })
+                                let price_box = `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
                         <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
-            let offer_html=`<div class="ct_offer_box_cook2">
+                                let offer_html = `<div class="ct_offer_box_cook2">
                                 <span>${offer}%</span>
                                 <p>off</p>
                             </div>`
-                            if(item.offer===null){
-                                offer_html=`<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+                                if (item.offer === null) {
+                                    offer_html = `<div class="ct_offer_box_cook2 no_offer" style='display:none'>
 
                                     </div>
                                 `
-                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
-                                
-                            }
-                            let selected_unit=`                                            <div class="ct_bx_selection">
+                                    price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
+
+                                }
+                                let selected_unit = `                                            <div class="ct_bx_selection">
                                                 <div class="ct_pr_bx_unit">
                                                 <p>${units[0].name}</p>
                                                 <span>₹ ${units[0].price.toLocaleString()}</span>
@@ -8929,7 +9081,7 @@ color: #020202;            margin: 10px 18px;
                                                 </div>
 
                                             </div>`
-                            let action_bx=`
+                                let action_bx = `
                              <div class="ct_addbtns">
                             <p>Add to cart</p>
                             </div>
@@ -8946,11 +9098,11 @@ color: #020202;            margin: 10px 18px;
                                                 </span>
                                             </div>
                                         </div>`
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-            if(grocs!==null){
-                         grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===name.split(' ').join('')){
-                                 action_bx=`
+                                let grocs = JSON.parse(localStorage.getItem('essentials'))
+                                if (grocs !== null) {
+                                    grocs.forEach(cu11 => {
+                                        if (cu11.name.split(' ').join('') === name.split(' ').join('')) {
+                                            action_bx = `
                                                                          <div class="ct_addbtns" style='display:none'>
                                                          <p>Add to cart</p>
                                                      </div>
@@ -8968,9 +9120,9 @@ color: #020202;            margin: 10px 18px;
                                                          </div>
                                                      </div>
                                  `
-                                 units.forEach(cur11=>{
-                                     if(cur11.name===cu11.unit){
-                                  selected_unit=`                                            <div class="ct_bx_selection">
+                                            units.forEach(cur11 => {
+                                                if (cur11.name === cu11.unit) {
+                                                    selected_unit = `                                            <div class="ct_bx_selection">
                                                              <div class="ct_pr_bx_unit">
                                                              <p>${cu11.unit}</p>
                                                              <span>₹ ${cur11.price.toLocaleString()}</span>
@@ -8981,26 +9133,26 @@ color: #020202;            margin: 10px 18px;
                                                              </div>
 
                                                          </div>`
-                                                         pricemain = cur11.price - (cur11.price * (offer / 100))
-                                                        pricemain = Math.round(pricemain)
-                                                          price_box= `<del class="pricenooff">₹ ${cur11.price.toLocaleString()}</del>
+                                                    pricemain = cur11.price - (cur11.price * (offer / 100))
+                                                    pricemain = Math.round(pricemain)
+                                                    price_box = `<del class="pricenooff">₹ ${cur11.price.toLocaleString()}</del>
                                  <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
 
-                            if(item.offer===null){
-                                offer_html=`<div class="ct_offer_box_cook2 no_offer" style='display:none'>
+                                                    if (item.offer === null) {
+                                                        offer_html = `<div class="ct_offer_box_cook2 no_offer" style='display:none'>
 
                                     </div>
                                 `
-                                price_box=`<p class="price_food for_oly_ekfd_price"><span>₹ ${cur11.price.toLocaleString()} </span> </p>`
-                                
-                            }
-                                     }
-                                 })
+                                                        price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${cur11.price.toLocaleString()} </span> </p>`
 
-                             }
-                         })
-            }
-            let html = `   <div class="product">
+                                                    }
+                                                }
+                                            })
+
+                                        }
+                                    })
+                                }
+                                let html = `   <div class="product">
                             <div class="itm_food_list_ek added_itm_ek_fd">
 
                                 <div class="ct_inner_fd_dt_grid">
@@ -9034,7 +9186,7 @@ color: #020202;            margin: 10px 18px;
                                 </div>
                             </div>
                         </div>`
-            //#${cur.data().group.split(' ').join('')}
+                                //#${cur.data().group.split(' ').join('')}
                                 document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
                             }
 
@@ -9070,33 +9222,33 @@ color: #020202;            margin: 10px 18px;
 
                 let qty_obj = JSON.parse(qtys)
                 qty_obj.forEach((cur11, ind) => {
-                                    let price = cur11.price
-                                    let pack = cur11.pack
-                                    let name = cur11.name
+                    let price = cur11.price
+                    let pack = cur11.pack
+                    let name = cur11.name
 
-                                    let price_off = 0
-                                    let offer_del = ''
-                                    if (!isNaN(offer)) {
-                                        price_off = parseFloat(price) * 100 / (100 - offer)
-                                        price_off = price_off
-                                        price_off = price_off.toLocaleString()
-                                        if (price_off.split('.')[1] !== undefined) {
-                                            price_off = price_off.split('.')[0]
-                                        }
+                    let price_off = 0
+                    let offer_del = ''
+                    if (!isNaN(offer)) {
+                        price_off = parseFloat(price) * 100 / (100 - offer)
+                        price_off = price_off
+                        price_off = price_off.toLocaleString()
+                        if (price_off.split('.')[1] !== undefined) {
+                            price_off = price_off.split('.')[0]
+                        }
 
-                                        price = price.toLocaleString()
-                                        offer_del = ` <del>₹ ${price_off}</del>`
-                                    } else {
-                                        price = price.toLocaleString()
-                                    }
+                        price = price.toLocaleString()
+                        offer_del = ` <del>₹ ${price_off}</del>`
+                    } else {
+                        price = price.toLocaleString()
+                    }
 
-                                    let active_btn = 'active'
-                                    if (ind > 0) {
-                                        active_btn = 'unactive'
-                                        // price of active qty
-                                    }
+                    let active_btn = 'active'
+                    if (ind > 0) {
+                        active_btn = 'unactive'
+                        // price of active qty
+                    }
 
-                                    let html = `<div class="ct_for_bx1 ${active_btn}">
+                    let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
                         <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
@@ -9109,7 +9261,7 @@ color: #020202;            margin: 10px 18px;
 
 
 
-                                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
                 })
 
                 if (!isNaN(offer)) {
@@ -9119,56 +9271,56 @@ color: #020202;            margin: 10px 18px;
                     document.querySelector('.ct_bx_total_amount_to_pay del').style.display = 'none'
                     document.querySelector('.offer_item').style.display = 'none'
                 }
-              //  if (getCookie('userData') === '') {
-                    document.querySelector('.buy_now').style.display = 'block'
-                    document.querySelector('.add_cart_btn').style.display = 'block'
-                    document.querySelector('.ct_addded').style.display = 'none'
-                    document.querySelector('.remove_itm').style.display = 'none'
-                    if (allfd !== null) {
+                //  if (getCookie('userData') === '') {
+                document.querySelector('.buy_now').style.display = 'block'
+                document.querySelector('.add_cart_btn').style.display = 'block'
+                document.querySelector('.ct_addded').style.display = 'none'
+                document.querySelector('.remove_itm').style.display = 'none'
+                if (allfd !== null) {
 
-                        allfd.forEach(cu11 => {
-                            let nameD = cu11.name.split(' ').join('')
-                            let nameM = name.split(' ').join('')
-                            if (nameD === nameM) {
+                    allfd.forEach(cu11 => {
+                        let nameD = cu11.name.split(' ').join('')
+                        let nameM = name.split(' ').join('')
+                        if (nameD === nameM) {
 
-                                document.querySelector('.buy_now').style.display = 'none'
-                                document.querySelector('.add_cart_btn').style.display = 'none'
-                                document.querySelector('.remove_itm').style.display = 'block'
+                            document.querySelector('.buy_now').style.display = 'none'
+                            document.querySelector('.add_cart_btn').style.display = 'none'
+                            document.querySelector('.remove_itm').style.display = 'block'
 
-                                document.querySelector('.ct_addded').style.display = 'block'
+                            document.querySelector('.ct_addded').style.display = 'block'
 
-                                document.querySelector('.ct_qty_box input').value = cu11.qty
-                                let qty_obj = JSON.parse(qtys)
-                                 document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
-                                qty_obj.forEach((cur11, ind) => {
-                                    let price = cur11.price
-                                    let pack = cur11.pack
-                                    let name = cur11.name
+                            document.querySelector('.ct_qty_box input').value = cu11.qty
+                            let qty_obj = JSON.parse(qtys)
+                            document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
+                            qty_obj.forEach((cur11, ind) => {
+                                let price = cur11.price
+                                let pack = cur11.pack
+                                let name = cur11.name
 
-                                    let price_off = 0
-                                    let offer_del = ''
-                                    if (!isNaN(offer)) {
-                                        price_off = parseFloat(price) * 100 / (100 - offer)
-                                        price_off = price_off
-                                        price_off = price_off.toLocaleString()
-                                        if (price_off.split('.')[1] !== undefined) {
-                                            price_off = price_off.split('.')[0]
-                                        }
-
-                                        price = price.toLocaleString()
-                                        offer_del = ` <del>₹ ${price_off}</del>`
-                                    } else {
-                                        price = price.toLocaleString()
+                                let price_off = 0
+                                let offer_del = ''
+                                if (!isNaN(offer)) {
+                                    price_off = parseFloat(price) * 100 / (100 - offer)
+                                    price_off = price_off
+                                    price_off = price_off.toLocaleString()
+                                    if (price_off.split('.')[1] !== undefined) {
+                                        price_off = price_off.split('.')[0]
                                     }
 
-                                    let active_btn = 'unactive'
-                                    if (name === cu11.slt_nm) {
-                                        active_btn = 'active'
-                                        // price of active qty
-                                        document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
-                                    }
+                                    price = price.toLocaleString()
+                                    offer_del = ` <del>₹ ${price_off}</del>`
+                                } else {
+                                    price = price.toLocaleString()
+                                }
 
-                                    let html = `<div class="ct_for_bx1 ${active_btn}">
+                                let active_btn = 'unactive'
+                                if (name === cu11.slt_nm) {
+                                    active_btn = 'active'
+                                    // price of active qty
+                                    document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
+                                }
+
+                                let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
                         <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
@@ -9181,124 +9333,124 @@ color: #020202;            margin: 10px 18px;
 
 
 
-                                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
-                                })
-                            }
-                        })
-                    }
+                                document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                            })
+                        }
+                    })
+                }
 
-              //} else {
+                //} else {
 
-              //    document.querySelector('.buy_now').style.display = 'none'
-              //    document.querySelector('.add_cart_btn').style.display = 'none'
-              //    document.querySelector('.ct_addded').style.display = 'none'
-              //    document.querySelector('.remove_itm').style.display = 'none'
+                //    document.querySelector('.buy_now').style.display = 'none'
+                //    document.querySelector('.add_cart_btn').style.display = 'none'
+                //    document.querySelector('.ct_addded').style.display = 'none'
+                //    document.querySelector('.remove_itm').style.display = 'none'
 
-              //    let userDt = JSON.parse(getCookie('userData'))
-              //    document.querySelectorAll('.buttons_loading').forEach(cu => {
-              //        cu.style.display = 'block'
-              //    })
+                //    let userDt = JSON.parse(getCookie('userData'))
+                //    document.querySelectorAll('.buttons_loading').forEach(cu => {
+                //        cu.style.display = 'block'
+                //    })
 
-              //    async function getItm() {
-              //        let dbCollection2 = db.collection("users")
-              //        let res = await dbCollection2.get()
-              //        document.querySelectorAll('.buttons_loading').forEach(cu => {
-              //            cu.style.display = 'none'
-              //        })
-              //        res.docs.forEach(async cu => {
-              //            let data = cu.data()
-              //            let matched = false
-              //            if (userDt.id === data.id) {
+                //    async function getItm() {
+                //        let dbCollection2 = db.collection("users")
+                //        let res = await dbCollection2.get()
+                //        document.querySelectorAll('.buttons_loading').forEach(cu => {
+                //            cu.style.display = 'none'
+                //        })
+                //        res.docs.forEach(async cu => {
+                //            let data = cu.data()
+                //            let matched = false
+                //            if (userDt.id === data.id) {
 
-              //                data.cartItems.forEach(cu11 => {
-              //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
-              //                    let nameM = name.split(' ').join('').toLowerCase()
-              //                    console.log(nameD === nameM, ' ----------------fhaha')
-              //                    if (nameD === nameM) {
-              //                        matched = true
-              //                        document.querySelector('.buy_now').style.display = 'none'
-              //                        document.querySelector('.add_cart_btn').style.display = 'none'
-              //                        document.querySelector('.ct_addded').style.display = 'block'
-              //                        document.querySelector('.remove_itm').style.display = 'block'
+                //                data.cartItems.forEach(cu11 => {
+                //                    let nameD = cu11.name.split(' ').join('').toLowerCase()
+                //                    let nameM = name.split(' ').join('').toLowerCase()
+                //                    console.log(nameD === nameM, ' ----------------fhaha')
+                //                    if (nameD === nameM) {
+                //                        matched = true
+                //                        document.querySelector('.buy_now').style.display = 'none'
+                //                        document.querySelector('.add_cart_btn').style.display = 'none'
+                //                        document.querySelector('.ct_addded').style.display = 'block'
+                //                        document.querySelector('.remove_itm').style.display = 'block'
 
-              //                        document.querySelector('.ct_qty_box input').value = cu11.qty
-              //                        let qty_obj = JSON.parse(qtys)
-              //                        document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
-              //                        qty_obj.forEach((cur11, ind) => {
-              //                            let price = cur11.price
-              //                            let pack = cur11.pack
-              //                            let name = cur11.name
-              //                            let price_off = 0
-              //                            let offer_del = ''
-              //                            if (!isNaN(offer)) {
-              //                                price_off = parseFloat(price) * 100 / (100 - offer)
-              //                                price_off = price_off
-              //                                price_off = price_off.toLocaleString()
-              //                                if (price_off.split('.')[1] !== undefined) {
-              //                                    price_off = price_off.split('.')[0]
-              //                                }
+                //                        document.querySelector('.ct_qty_box input').value = cu11.qty
+                //                        let qty_obj = JSON.parse(qtys)
+                //                        document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
+                //                        qty_obj.forEach((cur11, ind) => {
+                //                            let price = cur11.price
+                //                            let pack = cur11.pack
+                //                            let name = cur11.name
+                //                            let price_off = 0
+                //                            let offer_del = ''
+                //                            if (!isNaN(offer)) {
+                //                                price_off = parseFloat(price) * 100 / (100 - offer)
+                //                                price_off = price_off
+                //                                price_off = price_off.toLocaleString()
+                //                                if (price_off.split('.')[1] !== undefined) {
+                //                                    price_off = price_off.split('.')[0]
+                //                                }
 
-              //                                price = price.toLocaleString()
-              //                                offer_del = ` <del>₹ ${price_off}</del>`
-              //                            } else {
-              //                                price = price.toLocaleString()
-              //                            }
+                //                                price = price.toLocaleString()
+                //                                offer_del = ` <del>₹ ${price_off}</del>`
+                //                            } else {
+                //                                price = price.toLocaleString()
+                //                            }
 
-              //                            let active_btn = 'unactive'
-              //                            console.log(pack, cu11.pack, ' hahaha')
-              //                            if (name === cu11.slt_nm) {
-              //                                active_btn = 'active'
-              //                                // price of active qty
-              //                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
-              //                            }
+                //                            let active_btn = 'unactive'
+                //                            console.log(pack, cu11.pack, ' hahaha')
+                //                            if (name === cu11.slt_nm) {
+                //                                active_btn = 'active'
+                //                                // price of active qty
+                //                                document.querySelector('.ct_bx_total_amount_to_pay h3').innerText = '₹ ' + price
+                //                            }
 
-              //                            let html = `<div class="ct_for_bx1 ${active_btn}">
-              //        <h4>${name}</h4>
-              //        <span class="info_package">${pack}</span>
-              //        <div class="ct_pr_bx">
-              //           ${offer_del}
-              //            <p>₹ ${price}</p>
+                //                            let html = `<div class="ct_for_bx1 ${active_btn}">
+                //        <h4>${name}</h4>
+                //        <span class="info_package">${pack}</span>
+                //        <div class="ct_pr_bx">
+                //           ${offer_del}
+                //            <p>₹ ${price}</p>
 
-              //        </div>
+                //        </div>
 
-              //    </div>`
+                //    </div>`
 
-              //                            //                                  if (cur11.info !== undefined) {
-              //                            //                                      html = `<div class="ct_for_bx1 ${active_btn}">
-              //                            //  <div class="ct_pop_info">
-              //                            //                  <p></p>
-              //                            //              </div>
-              //                            //                  <div class="ct_bx_flex">
-              //                            //                 <h4>${name}</h4>
-              //                            //                  <div class="ct_x_info">
-              //                            //                      <ion-icon name="help-circle-outline"></ion-icon>
-              //                            //                  </div>
-              //                            //              </div>
-              //                            //              <span class="info_package">${pack}</span>
-              //                            //              <div class="ct_pr_bx">
-              //                            //                  <del>₹ ${price_off}</del>
-              //                            //                  <p>₹ ${price}</p>
+                //                            //                                  if (cur11.info !== undefined) {
+                //                            //                                      html = `<div class="ct_for_bx1 ${active_btn}">
+                //                            //  <div class="ct_pop_info">
+                //                            //                  <p></p>
+                //                            //              </div>
+                //                            //                  <div class="ct_bx_flex">
+                //                            //                 <h4>${name}</h4>
+                //                            //                  <div class="ct_x_info">
+                //                            //                      <ion-icon name="help-circle-outline"></ion-icon>
+                //                            //                  </div>
+                //                            //              </div>
+                //                            //              <span class="info_package">${pack}</span>
+                //                            //              <div class="ct_pr_bx">
+                //                            //                  <del>₹ ${price_off}</del>
+                //                            //                  <p>₹ ${price}</p>
 
-              //                            //              </div>
+                //                            //              </div>
 
-              //                            //          </div>`
-              //                            //                                  }
+                //                            //          </div>`
+                //                            //                                  }
 
-              //                            document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
-              //                        })
-              //                    }
-              //                })
-              //                if (!matched) {
-              //                    document.querySelector('.buy_now').style.display = 'block'
-              //                    document.querySelector('.add_cart_btn').style.display = 'block'
-              //                }
-              //            }
+                //                            document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                //                        })
+                //                    }
+                //                })
+                //                if (!matched) {
+                //                    document.querySelector('.buy_now').style.display = 'block'
+                //                    document.querySelector('.add_cart_btn').style.display = 'block'
+                //                }
+                //            }
 
-              //        })
+                //        })
 
-              //    }
-              //    getItm()
-              //}
+                //    }
+                //    getItm()
+                //}
                 document.querySelector('.name_of_itm').innerText = name
                 document.querySelector('.name_of_itm').innerText = name
                 console.log(desc)
@@ -9333,7 +9485,6 @@ color: #020202;            margin: 10px 18px;
                 document.querySelector('.ct_bx_stock').style.display = 'none'
 
                 document.querySelector('.ct_bx_layer').style.display = 'block'
-                document.querySelector('.ct_remove_bx_pop_p').style.display = 'block'
 
             }
             if (placeOrderItm !== null) {
@@ -9435,7 +9586,6 @@ color: #020202;            margin: 10px 18px;
             }
             if (itmPopuclose !== null && itmPopup === null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
-                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
                 document.querySelector('.popup_info.sucess_account').classList.remove('active')
@@ -9444,18 +9594,16 @@ color: #020202;            margin: 10px 18px;
             if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
 
-                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
-                document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                //document.querySelector('.popup_info.sucess_account').classList.remove('active')
 
             }
             if (itmPopucloseIcon !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
-                document.querySelector('.ct_remove_bx_pop_p').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
-                document.querySelector('.popup_info.sucess_account').classList.remove('active')
+              //  document.querySelector('.popup_info.sucess_account').classList.remove('active')
 
 
             }
@@ -9807,39 +9955,48 @@ color: #020202;            margin: 10px 18px;
 
             }
         })
-        function load_basic_dt(){
-            let total_itms=0
+        function load_basic_dt() {
+            let total_itms = 0
             let allfd_sauce = JSON.parse(localStorage.getItem('sauce'))
             let allfd_essen = JSON.parse(localStorage.getItem('essentials'))
-            if(allfd_essen!==null){
-                total_itms+=allfd_essen.length
+            if (allfd_essen !== null) {
+                total_itms += allfd_essen.length
             }
-            if(allfd_sauce!==null){
-                total_itms+=allfd_sauce.length
+            if (allfd_sauce !== null) {
+                total_itms += allfd_sauce.length
             }
-            if(total_itms>9){
-                total_itms='+9'
+            if (total_itms > 9) {
+                total_itms = '+9'
             }
-                        if(allfd_essen!==0){
-            document.querySelector('.ct_info_cart').style.display = 'block'
-            document.querySelector('.ct_info_cart p').innerText = total_itms
+            if (allfd_essen !== 0) {
+                document.querySelector('.ct_info_cart').style.display = 'block'
+                document.querySelector('.ct_info_cart p').innerText = total_itms
             }
 
-                let userDtx = getCookie('userData')
-                if (userDtx !== '') {
-                    let dt_user = JSON.parse(userDtx)
-                    document.querySelector('.mobile_only.account_btn').style.display='block'
-                    document.querySelector('.account_nav2').style.display='block'
-                    // remove the banner of signup offer
-if(userDtx.admin!==undefined){
-    if(userDtx.admin){
-        document.querySelector('.admin_page').style.display='block'
-    document.querySelector('.admin_panel').style.display='block'
-
-    }
-}
+            let userDtx = getCookie('userData')
+            if (userDtx !== '') {
+                let dt_user = JSON.parse(userDtx)
+                document.querySelector('.mobile_only.account_btn').style.display = 'block'
+                document.querySelector('.account_nav2').style.display = 'block'
+                if(dt_user.split(' ')[0]!==undefined){
+                document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
 
                 }
+                // remove the banner of signup offer
+                if (userDtx.admin !== undefined) {
+                    if (userDtx.admin) {
+                        if(window.screen.width>740){
+                        document.querySelector('.admin_page').style.display = 'block'
+
+                        }
+                        document.querySelector('.admin_panel').style.display = 'block'
+
+                    }
+                }
+                document.querySelector('.hide_gshs2').style.display='none'
+                document.querySelector('.hide_gshs').style.display='block'
+
+            }
         }
         load_basic_dt()
 
@@ -10149,116 +10306,114 @@ if(userDtx.admin!==undefined){
 
         document.querySelector('html').addEventListener('click', (e) => {
             let slide = e.target.closest('.ct_field_small_size')
-  let addTocartbtn = e.target.closest('.ct_addbtns')
-        let inc_btn=e.target.closest('.inc_btn')
-        let dec_btn=e.target.closest('.dec_btn')
-        
-        if(inc_btn!==null){
-            let val=parseFloat(inc_btn.parentElement.childNodes[3].value)
-            let nm=inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            nm=nm.split(' ').join('')
-            val+=1
-            inc_btn.parentElement.childNodes[3].value=val
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-                if(grocs!==null){
-                        grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===nm){
-                               cu11.qt=val
-                             }
-                        })
+            let addTocartbtn = e.target.closest('.ct_addbtns')
+            let inc_btn = e.target.closest('.inc_btn')
+            let dec_btn = e.target.closest('.dec_btn')
+            if (inc_btn !== null) {
+                let val = parseFloat(inc_btn.parentElement.childNodes[3].value)
+                let nm = inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                nm = nm.split(' ').join('')
+                val += 1
+                inc_btn.parentElement.childNodes[3].value = val
+                let grocs = JSON.parse(localStorage.getItem('essentials'))
+                if (grocs !== null) {
+                    grocs.forEach(cu11 => {
+                        if (cu11.name.split(' ').join('') === nm) {
+                            cu11.qt = val
+                        }
+                    })
                 }
-            localStorage.setItem('essentials',JSON.stringify(grocs))
-            
-        }
-        if(dec_btn!==null){
-            let val=parseFloat(dec_btn.parentElement.childNodes[3].value)
-            let nm=dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-            nm=nm.split(' ').join('')
-            val-=1
-            if(val>0){
-            dec_btn.parentElement.childNodes[3].value=val
-            let grocs= JSON.parse(localStorage.getItem('essentials'))
-                if(grocs!==null){
-                        grocs.forEach(cu11=>{
-                             if(cu11.name.split(' ').join('')===nm){
-                               cu11.qt=val
-                             }
-                        })
-                }
-            localStorage.setItem('essentials',JSON.stringify(grocs))
+                localStorage.setItem('essentials', JSON.stringify(grocs))
+
             }
-
-            
-        }
-      if (addTocartbtn !== null) {
-       
-
-                let unit_name=addTocartbtn.parentElement.childNodes[3].childNodes[1].childNodes[1].childNodes[1].innerText
-                // decided not to add on database...no need as less data
-                let name=addTocartbtn.parentElement.childNodes[1].childNodes[1].innerText
-             let userDt = JSON.parse(getCookie('userData'))
-
-             let obj={
-                unit:unit_name,
-                name:name,
-                qt:1,
-             }
-
-
-                    addTocartbtn.parentElement.childNodes[9].style.display='flex'
-                    addTocartbtn.style.display = 'none'
-                    if (localStorage.getItem('essentials') === '[]' || localStorage.getItem('essentials') === null) {
-                        localStorage.setItem('essentials', JSON.stringify([obj]))
-                    } else {
-                        let allfd = JSON.parse(localStorage.getItem('essentials'))
-                        allfd.push(obj)
-                        localStorage.setItem('essentials', JSON.stringify(allfd))
-
+            if (dec_btn !== null) {
+                let val = parseFloat(dec_btn.parentElement.childNodes[3].value)
+                let nm = dec_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+                nm = nm.split(' ').join('')
+                val -= 1
+                if (val > 0) {
+                    dec_btn.parentElement.childNodes[3].value = val
+                    let grocs = JSON.parse(localStorage.getItem('essentials'))
+                    if (grocs !== null) {
+                        grocs.forEach(cu11 => {
+                            if (cu11.name.split(' ').join('') === nm) {
+                                cu11.qt = val
+                            }
+                        })
                     }
-            
-                return
-              // let qty =1
-              // let name = document.querySelector('.name_of_itm').innerText
-              // let slt_nm = document.querySelector('.ct_for_bx1.active h4').innerText
-              // let slt_p = document.querySelector('.ct_for_bx1.active .info_package').innerText
-              // let obj = {
-              //     name: name,
-              //     qty: qty,
-              //     slt_nm: slt_nm,
-              //     slt_p: slt_p,
-              //     type: 'sauce'
-              // }
-              // if (getCookie('userData') === '') {
-              //     // if user has no account then, add to localstorge
-              //     document.querySelector('.account_btn').style.display = 'block'
-
-              //     buyNow_btn.style.display = 'none'
-              //     document.querySelector('.add_cart_btn').style.display = 'none'
-              //     document.querySelector('.ct_addded').style.display = 'block'
-              //     document.querySelector('.remove_itm').style.display = 'block'
-
-              //     if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
-              //         localStorage.setItem('sauce', JSON.stringify([obj]))
-              //     } else {
-              //         let allfd = JSON.parse(localStorage.getItem('sauce'))
-              //         allfd.push(obj)
-              //         localStorage.setItem('sauce', JSON.stringify(allfd))
-
-              //     }
-              //     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-              //     document.querySelector('.popup_info.sucess_account').classList.add('active')
-              //     setTimeout(function () {
-              //         document.querySelector('.popup_info.sucess_account').classList.remove('active')
-              //     }, 10000)
-              //     buyNow_btn.style.opacity = '1'
-              //     document.querySelector('.add_cart_btn').style.opacity = '1'
-              // } else if (getCookie('userData') !== '') {
-              //     console.log('user!!!!!!!!!!!!!!!')
+                    localStorage.setItem('essentials', JSON.stringify(grocs))
+                }
 
 
+            }
+            if (addTocartbtn !== null) {
 
-              // }
-      }    
+
+                let unit_name = addTocartbtn.parentElement.childNodes[3].childNodes[1].childNodes[1].childNodes[1].innerText
+                // decided not to add on database...no need as less data
+                let name = addTocartbtn.parentElement.childNodes[1].childNodes[1].innerText
+
+                let obj = {
+                    unit: unit_name,
+                    name: name,
+                    qt: 1,
+                }
+
+
+                addTocartbtn.parentElement.childNodes[9].style.display = 'flex'
+                addTocartbtn.style.display = 'none'
+                if (localStorage.getItem('essentials') === '[]' || localStorage.getItem('essentials') === null) {
+                    localStorage.setItem('essentials', JSON.stringify([obj]))
+                } else {
+                    let allfd = JSON.parse(localStorage.getItem('essentials'))
+                    allfd.push(obj)
+                    localStorage.setItem('essentials', JSON.stringify(allfd))
+
+                }
+
+                //let userDt = JSON.parse(getCookie('userData'))
+                // let qty =1
+                // let name = document.querySelector('.name_of_itm').innerText
+                // let slt_nm = document.querySelector('.ct_for_bx1.active h4').innerText
+                // let slt_p = document.querySelector('.ct_for_bx1.active .info_package').innerText
+                // let obj = {
+                //     name: name,
+                //     qty: qty,
+                //     slt_nm: slt_nm,
+                //     slt_p: slt_p,
+                //     type: 'sauce'
+                // }
+                // if (getCookie('userData') === '') {
+                //     // if user has no account then, add to localstorge
+                //     document.querySelector('.account_btn').style.display = 'block'
+
+                //     buyNow_btn.style.display = 'none'
+                //     document.querySelector('.add_cart_btn').style.display = 'none'
+                //     document.querySelector('.ct_addded').style.display = 'block'
+                //     document.querySelector('.remove_itm').style.display = 'block'
+
+                //     if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
+                //         localStorage.setItem('sauce', JSON.stringify([obj]))
+                //     } else {
+                //         let allfd = JSON.parse(localStorage.getItem('sauce'))
+                //         allfd.push(obj)
+                //         localStorage.setItem('sauce', JSON.stringify(allfd))
+
+                //     }
+                //     document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                //     document.querySelector('.popup_info.sucess_account').classList.add('active')
+                //     setTimeout(function () {
+                //         document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                //     }, 10000)
+                //     buyNow_btn.style.opacity = '1'
+                //     document.querySelector('.add_cart_btn').style.opacity = '1'
+                // } else if (getCookie('userData') !== '') {
+                //     console.log('user!!!!!!!!!!!!!!!')
+
+
+
+                // }
+            }
 
             if (slide !== null) {
                 if (slide !== null) {
@@ -10316,64 +10471,67 @@ if(userDtx.admin!==undefined){
             let buyNow_btn = e.target.closest('.buy_now')
             let slide = e.target.closest('.ct_field_small_size')
             let removeItm = e.target.closest('.remove_itm')
+            let addCrt=e.target.closest('.add_cart_btn')
 
             if (removeItm !== null) {
-                let userDt = JSON.parse(getCookie('userData'))
 
                 let name = document.querySelector('.name_of_itm').innerText
-                
-                 let allfd = JSON.parse(localStorage.getItem('sauce'))
-                if (allfd!== null) {
-                      let nameM = name.split(' ').join('').toLowerCase()
-                      allfd.forEach((cu11,ind)=>{
-                         console.log(cu11.name.split(' ').join('').toLowerCase(),nameM)
-                         if(cu11.name.split(' ').join('').toLowerCase()===nameM){
-                             allfd.splice(ind,1)
-                         }
-                      })
-                      localStorage.setItem('sauce', JSON.stringify(allfd))
-                     document.querySelector('.buy_now').style.display = 'block'
-                     document.querySelector('.add_cart_btn').style.display = 'block'
-                     document.querySelector('.ct_addded').style.display = 'none'
-                     document.querySelector('.remove_itm').style.display = 'none'
+
+                let allfd = JSON.parse(localStorage.getItem('sauce'))
+                if (allfd !== null) {
+                    let nameM = name.split(' ').join('').toLowerCase()
+                    allfd.forEach((cu11, ind) => {
+                        console.log(cu11.name.split(' ').join('').toLowerCase(), nameM)
+                        if (cu11.name.split(' ').join('').toLowerCase() === nameM) {
+                            allfd.splice(ind, 1)
+                        }
+                    })
+                    localStorage.setItem('sauce', JSON.stringify(allfd))
+                    document.querySelector('.buy_now').style.display = 'block'
+                    document.querySelector('.add_cart_btn').style.display = 'block'
+                    document.querySelector('.ct_addded').style.display = 'none'
+                    document.querySelector('.remove_itm').style.display = 'none'
                 }
-               // async function getUser() {
-               //     let dbCollection = db.collection("users")
-               //     dbCollection.get().then(res => {
-               //         res.docs.forEach(async cur => {
-               //             let userDt_db = cur.data()
-               //             if (userDt_db.id === userDt.id) {
-//
-               //                 userDt_db.cartItems.forEach((cu11, index) => {
-               //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
-               //                     let nameM = name.split(' ').join('').toLowerCase()
-               //                     if (nameD === nameM) {
-               //                         userDt_db.cartItems.splice(index, 1)
-               //                         document.querySelector('.buy_now').style.display = 'block'
-               //                         document.querySelector('.add_cart_btn').style.display = 'block'
-               //                         document.querySelector('.ct_addded').style.display = 'none'
-               //                         document.querySelector('.remove_itm').style.display = 'none'
-               //                     }
-               //                 })
-               //                 dbCollection.doc(cur.id).set({
-               //                     address: userDt_db.address,
-               //                     admin: userDt_db.admin,
-               //                     cartItems: userDt_db.cartItems,
-               //                     id: userDt_db.id,
-               //                     location: userDt_db.location,
-               //                     name: userDt_db.name,
-               //                     phone: userDt_db.phone,
-               //                     refferedBy: userDt_db.refferedBy,
-               //                     reffer: userDt_db.reffer,
-               //                 })
-               //             }
-//
-               //         })
-               //     })
-               // }
-               // getUser()
+                //                let userDt = JSON.parse(getCookie('userData'))
+
+                // async function getUser() {
+                //     let dbCollection = db.collection("users")
+                //     dbCollection.get().then(res => {
+                //         res.docs.forEach(async cur => {
+                //             let userDt_db = cur.data()
+                //             if (userDt_db.id === userDt.id) {
+                //
+                //                 userDt_db.cartItems.forEach((cu11, index) => {
+                //                     let nameD = cu11.name.split(' ').join('').toLowerCase()
+                //                     let nameM = name.split(' ').join('').toLowerCase()
+                //                     if (nameD === nameM) {
+                //                         userDt_db.cartItems.splice(index, 1)
+                //                         document.querySelector('.buy_now').style.display = 'block'
+                //                         document.querySelector('.add_cart_btn').style.display = 'block'
+                //                         document.querySelector('.ct_addded').style.display = 'none'
+                //                         document.querySelector('.remove_itm').style.display = 'none'
+                //                     }
+                //                 })
+                //                 dbCollection.doc(cur.id).set({
+                //                     address: userDt_db.address,
+                //                     admin: userDt_db.admin,
+                //                     cartItems: userDt_db.cartItems,
+                //                     id: userDt_db.id,
+                //                     location: userDt_db.location,
+                //                     name: userDt_db.name,
+                //                     phone: userDt_db.phone,
+                //                     refferedBy: userDt_db.refferedBy,
+                //                     reffer: userDt_db.reffer,
+                //                 })
+                //             }
+                //
+                //         })
+                //     })
+                // }
+                // getUser()
             }
-            if (buyNow_btn !== null) {
+            
+            if (buyNow_btn !== null||addCrt!==null) {
                 buyNow_btn.style.opacity = '.5'
                 document.querySelector('.add_cart_btn').style.opacity = '.5'
 
@@ -10388,87 +10546,98 @@ if(userDtx.admin!==undefined){
                     slt_p: slt_p,
                     type: 'sauce'
                 }
-              //  if (getCookie('userData') === '') {
-                    // if user has no account then, add to localstorge
-                    document.querySelector('.account_btn').style.display = 'block'
+                //  if (getCookie('userData') === '') {
+                // if user has no account then, add to localstorge
+                document.querySelector('.account_btn').style.display = 'block'
+if (buyNow_btn !== null){
+                buyNow_btn.style.display = 'none'
 
-                    buyNow_btn.style.display = 'none'
-                    document.querySelector('.add_cart_btn').style.display = 'none'
-                    document.querySelector('.ct_addded').style.display = 'block'
-                    document.querySelector('.remove_itm').style.display = 'block'
+}
+if (addCrt !== null){
+                addCrt.style.display = 'none'
 
-                    if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
-                        localStorage.setItem('sauce', JSON.stringify([obj]))
-                    } else {
-                        let allfd = JSON.parse(localStorage.getItem('sauce'))
-                        allfd.push(obj)
-                        localStorage.setItem('sauce', JSON.stringify(allfd))
+}
+                document.querySelector('.add_cart_btn').style.display = 'none'
+                document.querySelector('.ct_addded').style.display = 'block'
+                document.querySelector('.remove_itm').style.display = 'block'
 
-                    }
-                    load_basic_dt()
-                    document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-                    document.querySelector('.popup_info.sucess_account').classList.add('active')
-                    setTimeout(function () {
-                        document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                    }, 10000)
-                    buyNow_btn.style.opacity = '1'
-                    document.querySelector('.add_cart_btn').style.opacity = '1'
-              //} else if (getCookie('userData') !== '') {
-              //    console.log('user!!!!!!!!!!!!!!!')
-              //    let userDt = JSON.parse(getCookie('userData'))
+                if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
+                    localStorage.setItem('sauce', JSON.stringify([obj]))
+                } else {
+                    let allfd = JSON.parse(localStorage.getItem('sauce'))
+                    allfd.push(obj)
+                    localStorage.setItem('sauce', JSON.stringify(allfd))
 
-              //    //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
-              //    //      localStorage.setItem('items_added', JSON.stringify([name]))
-              //    //  } else {
-              //    //      let allfd = JSON.parse(localStorage.getItem('items_added'))
-              //    //      allfd.push(name)
-              //    //      localStorage.setItem('items_added', JSON.stringify(allfd))
-              //    //
-              //    //  }
+                }
+                load_basic_dt()
+               // document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                //document.querySelector('.popup_info.sucess_account').classList.add('active')
+                //setTimeout(function () {
+                //    document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                //}, 10000)
+      
+                document.querySelector('.add_cart_btn').style.opacity = '1'
+                
+                //} else if (getCookie('userData') !== '') {
+                //    console.log('user!!!!!!!!!!!!!!!')
+                //    let userDt = JSON.parse(getCookie('userData'))
 
-              //    buyNow_btn.style.opacity = '1'
-              //    document.querySelector('.add_cart_btn').style.opacity = '1'
-              //    buyNow_btn.style.display = 'none'
-              //    document.querySelector('.ct_addded').style.display = 'block'
-              //    document.querySelector('.remove_itm').style.display = 'block'
+                //    //  if (localStorage.getItem('items_added') === '[]' || localStorage.getItem('items_added')===null) {
+                //    //      localStorage.setItem('items_added', JSON.stringify([name]))
+                //    //  } else {
+                //    //      let allfd = JSON.parse(localStorage.getItem('items_added'))
+                //    //      allfd.push(name)
+                //    //      localStorage.setItem('items_added', JSON.stringify(allfd))
+                //    //
+                //    //  }
 
-              //    document.querySelector('.add_cart_btn').style.display = 'none'
-              //    async function getUser() {
-              //        let dbCollection = db.collection("users")
-              //        dbCollection.get().then(res => {
-              //            res.docs.forEach(async cur => {
-              //                let userDt_db = cur.data()
-              //                if (userDt_db.id === userDt.id) {
-              //                    userDt_db.cartItems.push(obj)
-              //                    console.log(userDt_db.cartItems)
-              //                    async function pushData() {
-              //                        dbCollection.doc(cur.id).set({
-              //                            address: userDt_db.address,
-              //                            admin: userDt_db.admin,
-              //                            cartItems: userDt_db.cartItems,
-              //                            id: userDt_db.id,
-              //                            location: userDt_db.location,
-              //                            name: userDt_db.name,
-              //                            phone: userDt_db.phone,
-              //                            refferedBy: userDt_db.refferedBy,
-              //                            reffer: userDt_db.reffer,
-              //                        })
-              //                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
-              //                        document.querySelector('.popup_info.sucess_account').classList.add('active')
-              //                        setTimeout(function () {
-              //                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
-              //                        }, 10000)
+                //    buyNow_btn.style.opacity = '1'
+                //    document.querySelector('.add_cart_btn').style.opacity = '1'
+                //    buyNow_btn.style.display = 'none'
+                //    document.querySelector('.ct_addded').style.display = 'block'
+                //    document.querySelector('.remove_itm').style.display = 'block'
 
-              //                    }
-              //                    pushData()
-              //                }
-              //            })
-              //        })
-              //    }
-              //    getUser()
+                //    document.querySelector('.add_cart_btn').style.display = 'none'
+                //    async function getUser() {
+                //        let dbCollection = db.collection("users")
+                //        dbCollection.get().then(res => {
+                //            res.docs.forEach(async cur => {
+                //                let userDt_db = cur.data()
+                //                if (userDt_db.id === userDt.id) {
+                //                    userDt_db.cartItems.push(obj)
+                //                    console.log(userDt_db.cartItems)
+                //                    async function pushData() {
+                //                        dbCollection.doc(cur.id).set({
+                //                            address: userDt_db.address,
+                //                            admin: userDt_db.admin,
+                //                            cartItems: userDt_db.cartItems,
+                //                            id: userDt_db.id,
+                //                            location: userDt_db.location,
+                //                            name: userDt_db.name,
+                //                            phone: userDt_db.phone,
+                //                            refferedBy: userDt_db.refferedBy,
+                //                            reffer: userDt_db.reffer,
+                //                        })
+                //                        document.querySelector('.popup_info.sucess_account p').innerText = `${name} sucessfully added to the cart`
+                //                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+                //                        setTimeout(function () {
+                //                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                //                        }, 10000)
+
+                //                    }
+                //                    pushData()
+                //                }
+                //            })
+                //        })
+                //    }
+                //    getUser()
 
 
-              //}
+                //}
+if (buyNow_btn !== null){
+    window.location.replace('/mycart')
+
+}
 
 
 
