@@ -1047,7 +1047,7 @@
 
         .ct_apply_coupons .ct_bx1 {
             display: flex;
-            width: 87%;
+            width: 100%;
             cursor: pointer;
             padding: 14px 0 6px 10px;
             background-color: white;
@@ -1077,7 +1077,7 @@
 
         .ct_option_pay {
             display: flex;
-            width: 87%;
+            width: 100%;
             cursor: pointer;
             padding: 12px 0 16px 13px;
             margin-bottom: 10px;
@@ -1195,7 +1195,10 @@ a{text-decoration:none;}
 .btn_bottom_nav .material-symbols-outlined{color:#545454;font-size:21px;}
 .ct_bx_div_bottom_nav .ct_flex_bx{height:55px;}
 .btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 3px;background:#f8f8f8;text-align:center;}
-.ct_bx_div_bottom_nav a{width:100%;}
+.ct_bx_div_bottom_nav a {
+    width: 100%;
+    padding: 2px 3px;
+}
 .btn_bottom_nav .ct_info_cart p{font-size:8px;}
 .ct_info_cart{width:19px;padding:3px;}
 }
@@ -1928,11 +1931,6 @@ p{margin-bottom:auto;}
                 width: 100%;
             }
 
-            .ct_bx_fooditm {
-                width: 23vw;
-                margin: 13px 8px;
-            }
-
             .ct_bx_inner_food_groc {
                 margin-top: 0;
             }
@@ -2273,8 +2271,7 @@ p{margin-bottom:auto;}
             font-size: 10px;
             color: #454545;
             font-family: 'open sans';
-            margin: 6px 9px;
-        }
+    margin: 6px 8px 0 4px;        }
 
         .ct_for_bx1 .ct_pr_bx {
             display: flex;
@@ -2984,7 +2981,13 @@ p{margin-bottom:auto;}
             .for_ain_home_logo {
                 width: auto;
             }
-
+            .ct_apply_coupons .ct_bx1,
+.ct_option_pay {
+    width: 87%;}
+        .title_h1 {
+            font-size: 24px;
+            margin: 30px 0 20px 20px;
+        }
             .ct_bx_information_cart h3 {
                 font-size: 15px;
                 margin-top: 5px;
@@ -5385,14 +5388,10 @@ p{margin-bottom:auto;}
             display: none;
         }
 
-        .title_h1 {
-            color: #3e3b3b;
-            font-size: 24px;
-            font-family: 'Montserrat';
-            text-transform: uppercase;
-            padding-top: 43px;
-            margin: 30px 0 20px 20px;
-        }
+.title_h1 {
+    font-size: 18px;
+    margin: 0px 0 20px 20px;
+}
 
         .nOp,
         .orderId {
@@ -5433,20 +5432,15 @@ p{margin-bottom:auto;}
             color: black;
         }
 
-        .ct_bx_div_bottom_nav .ct_flex_bx {
-            display: flex;
-            padding: 0px 10px;
-            justify-content: center;
-            width: 100%;
-            height: 65px;
-        }
 
-        .btn_bottom_nav {
-            padding: 7px 23px;
-            display: block;
-            margin: 3px 10px;
-            text-align: center;
-        }
+
+.btn_bottom_nav {
+    padding: 7px 0;
+    display: block;
+    margin: 3px 0px;
+    text-align: center;
+    width: 100%;
+}
 
         .login_mob_a {
             display: none;
@@ -11037,9 +11031,7 @@ p{margin-bottom:auto;}
             box-shadow: 0 0 2px #00000080;
         }
 
-        .ct_bx_qt_foods div:nth-of-type(2) {
-            margin-left: auto;
-        }
+
 
         .ct_bx_qt_foods input {
             border: none;
@@ -12029,10 +12021,6 @@ p{margin-bottom:auto;}
                 margin: 2% 0 20px 21px;
             }
 
-            .itm_food_list_ek {
-                width: 22%;
-            }
-
             .ct_img_res_main img {
                 height: 176px;
             }
@@ -12119,7 +12107,19 @@ p{margin-bottom:auto;}
             .main_cart_img {
                 max-width: 100%;
             }
+.ct_info_items .ct_for_bx1 h4 {
+    font-size: 11px;
+}
+.ct_info_items del {
+    font-size: 10px;
+    margin: 4px 0px 0 8px;
+}
 
+
+.ct_for_bx1 .ct_pr_bx p {
+    font-size: 11px;}
+.ct_for_bx1 .ct_pr_bx del {
+    font-size: 8px;}
             .ct_bx_ratings span .not_filed_rating_itm {
                 font-size: 20px;
             }
@@ -12411,7 +12411,7 @@ p{margin-bottom:auto;}
     margin-top: 2px;
 }
 .ct_billing_info {
-    width: 32%;
+    width: 38%;
 }
 .ct_option_pay p {
     font-size: 10px;
@@ -12483,13 +12483,13 @@ p{margin-bottom:auto;}
                 display: none;
             }
 
-.remove_fd_itm_ct {
-    margin: 18px 0 10px 10px;
-    text-align: center;
-    width: 100px;
-}
+
 .ct_info_items .ct_pr p {
     margin: 3px 0 11px 10px;
+}
+.ct_info_items del {
+    font-size: 10px;
+    margin: 7px 7px 0 13px;
 }
 .ct_bx_deliv{width: 100%;}
             .for_nonfix_search input {
@@ -12746,10 +12746,6 @@ p{margin-bottom:auto;}
 
             .crousel {
                 height: auto;
-            }
-
-            .itm_food_list_ek {
-                width: 21%;
             }
 
             .ct_img_res_main img {
@@ -13217,7 +13213,9 @@ p{margin-bottom:auto;}
                 text-align: center;
                 width: 53%;
             }
-
+.ct_items_bx .ct_pr {
+    margin-top: 20px;
+}
             .ct_order_confirm {
                 margin-top: 3px;
                 padding: 12px 0 10px 0px;
@@ -13852,11 +13850,6 @@ p{margin-bottom:auto;}
                 border-radius: 0px;
             }
 
-            .remove_fd_itm_ct {
-                margin: 8px 0 10px -22px;
-                text-align: center;
-                width: 100px;
-            }
 
             .ct_dt_tm_food_res h4 {
                 font-size: 17px;
@@ -14830,37 +14823,10 @@ margin-bottom: 27px;
             }
 
             .bx_evt_cart_item .ct_bx_qt_foods {
-                width: 36vw;
+                width: 120px;
                 margin-left: 7px;
             }
 
-            .body_cart .ct_bx_qt_foods div {
-                margin-top: 0;
-                width: 31%;
-            }
-
-            .ct_bx_qt_foods input {
-                font-size: 11px;
-                border: 1px solid #e4e4e4;
-                width: 32%;
-                height: 26px;
-                margin: 0;
-                margin-top: 0px;
-            }
-
-            .body_cart .ct_bx_qt_foods div {
-                margin-top: 0;
-                box-shadow: -1px 1px 10px #00000030;
-                border-radius: 17px;
-                width: 30%;
-                margin-top: 3px;
-                border-radius: 2px;
-                height: 36px;
-            }
-
-            .body_cart .ct_bx_qt_foods div ion-icon {
-                font-size: 31px;
-            }
 
             /* FOOTER 740 */
 
@@ -16227,10 +16193,6 @@ margin-bottom: 27px;
                 font-size: 14px;
             }
 
-
-            .bx_evt_cart_item .ct_bx_qt_foods {
-                width: 41vw;
-            }
 
             .main_li_cart_fd_lis .ct_bx_units_item ul {
                 transform: translate(-63px);
