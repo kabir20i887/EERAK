@@ -56,6 +56,29 @@
         src: url(https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVI.woff2) format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
     }
+    .ct_area_toggle{display: none;}
+
+    .ct_area_toggle {
+        background-color: #ffffff;
+        padding: 20px 40px;
+        margin: 0px 9px;
+        z-index: 9999999999999;
+    }
+.ct_icon_x_dwn,
+    .ct_icon_x_up {
+        display: none;
+    }
+    .toggle_area_nav{
+        animation: widthDwn 4s ease;
+    }
+    @keyframes widthDwn{
+        from{
+            height: 0;
+        }
+        to{
+            height: max-content;
+        }
+    }
 
     body {
         display: flex;
@@ -74,12 +97,13 @@
     .ct_bx_about_mobile2 a {
         padding: 14px 10px;
     }
-       .for_nav_main  .admin_panel,
-.for_nav_main  .admin_page{
-    display:none;
-}
 
-    
+    .for_nav_main .admin_panel,
+    .for_nav_main .admin_page {
+        display: none;
+    }
+
+
     .ct_info_cart {
         border-radius: 20px;
         width: 24px;
@@ -90,119 +114,588 @@
         padding: 4px;
         background-color: #000000;
     }
+
     ._3tDvm {
         box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .15);
         width: 1300px;
         margin: 0 auto;
         position: relative;
     }
-/*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
-/*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
-/*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
-/*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css */
-*,::after,::before{box-sizing:border-box;}
-p{margin-top:0;margin-bottom:1rem;}
-a{color:#007bff;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects;}
-a:hover{color:#0056b3;text-decoration:underline;}
-@media print{
-*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
-a:not(.btn){text-decoration:underline;}
-p{orphans:3;widows:3;}
-}
-/*! CSS Used from: Embedded */
-.btn_bottom_nav .ct_inner{position:relative;width:max-content;}
-.ct_bx_div_bottom_nav .hide_gshs{display:none;}
-.ct_info_cart{border-radius:20px;width:24px;position:absolute;right:0;display:none;top:-5px;padding:4px;background-color:#000000;}
-.btn_bottom_nav .ct_info_cart p{color:white;font-size:12px;font-family:'roboto';font-weight:500;}
-.material-symbols-outlined{font-variation-settings:'FILL' 0,                 'wght' 400,                 'GRAD' 0,                 'opsz' 48;}
-.ct_bx_div_bottom_nav .ct_flex_bx{display:flex;padding:0px 4px;justify-content:center;width:100%;height:65px;}
-.btn_bottom_nav{padding:7px 23px;display:block;position:relative;margin:3px 10px;text-align:center;}
-.btn_bottom_nav .ct_info_cart{right:-15px;}
-.btn_bottom_nav.for_cart_btn{display:flex;width:100%;justify-content:center;}
-.btn_bottom_nav p{font-size:12px;font-family:'Inter Tight', sans-serif;font-weight:600;text-align:center;color:black;}
-.btn_bottom_nav .material-symbols-outlined{color:#2f2f2f;font-size:25px;}
-.material-symbols-outlined{font-variation-settings:'FILL' 0,                 'wght' 400,                 'GRAD' 200,                 'opsz' 40;}
-.ct_bx_div_bottom_nav{position:fixed;background:white;width:100%;display:none;bottom:0%;z-index:999999;box-shadow:0 -10px 12px #0000002e;}
-*{padding:0;box-sizing:border-box;margin:0;}
-p{margin-bottom:auto;}
-p{margin-bottom:auto;}
-a{text-decoration:none;}
-*{padding:0;box-sizing:border-box;margin:0;}
-a{text-decoration:none;}
-@media all and (max-width: 900px){
-.ct_info_cart{width:22px;padding:3px;}
-.btn_bottom_nav .ct_info_cart p{font-size:10px;}
-}
-@media only screen and (max-width:740px){
-.ct_bx_div_bottom_nav{display:block;}
-.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
-.btn_bottom_nav .material-symbols-outlined{color:#545454;font-size:21px;}
-.ct_bx_div_bottom_nav .ct_flex_bx{height:55px;}
-.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 3px;background:#f8f8f8;text-align:center;}
-.ct_bx_div_bottom_nav a{width:100%;}
-.btn_bottom_nav .ct_info_cart p{font-size:8px;}
-.ct_info_cart{width:19px;padding:3px;}
-}
-@media only screen and (max-width:550px){
-.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
-.btn_bottom_nav .material-symbols-outlined{color:#545454;font-size:21px;}
-.ct_bx_div_bottom_nav .ct_flex_bx{height:55px;}
-.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 3px;background:#f8f8f8;text-align:center;}
-.ct_bx_div_bottom_nav a{width:100%;}
-}
-@media only screen and (max-width:400px){
-.btn_bottom_nav p{font-size:11px;}
-.ct_bx_div_bottom_nav .ct_flex_bx{padding:0px;}
-}
-@media only screen and (max-width:360px){
-.btn_bottom_nav p{font-size:10px;}
-.btn_bottom_nav{padding:7px 10px;}
-}
-*{padding:0;box-sizing:border-box;margin:0;}
-p{margin-bottom:auto;}
-p{margin-bottom:auto;}
-*{padding:0;box-sizing:border-box;margin:0;}
-@media only screen and (max-width:470px){
-.ct_info_cart{width:19px;padding:6px 0 3px 0;}
-.btn_bottom_nav p{display:none;}
-.btn_bottom_nav .ct_info_cart p{font-size:7px;margin-top:-2px;display:block;}
-.btn_bottom_nav .material-symbols-outlined{font-size:24px;}
-.btn_bottom_nav{padding:13px 23px 20px 23px;}
-.btn_bottom_nav .ct_info_cart p{font-size:7px;margin-top:-2px;}
-}
-/*! CSS Used fontfaces */
-@font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;src:url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');}
-@font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;src:url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');}
-@font-face{font-family:'Material Symbols Outlined';font-style:normal;font-weight:100 700;src:url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');unicode-range:U+0370-03FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');unicode-range:U+0370-03FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');unicode-range:U+0370-03FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
-@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
+    /*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /*! CSS Used from: https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200 */
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css */
+    *,
+    ::after,
+    ::before {
+        box-sizing: border-box;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+    }
+
+    a:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    @media print {
+
+        *,
+        ::after,
+        ::before {
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        a:not(.btn) {
+            text-decoration: underline;
+        }
+
+        p {
+            orphans: 3;
+            widows: 3;
+        }
+    }
+
+    /*! CSS Used from: Embedded */
+    .btn_bottom_nav .ct_inner {
+        position: relative;
+        width: max-content;
+    }
+
+    .ct_bx_div_bottom_nav .hide_gshs {
+        display: none;
+    }
+
+    .ct_info_cart {
+        border-radius: 20px;
+        width: 24px;
+        position: absolute;
+        right: 0;
+        display: none;
+        top: -5px;
+        padding: 4px;
+        background-color: #000000;
+    }
+
+    .btn_bottom_nav .ct_info_cart p {
+        color: white;
+        font-size: 12px;
+        font-family: 'roboto';
+        font-weight: 500;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+    }
+
+    .ct_bx_div_bottom_nav .ct_flex_bx {
+        display: flex;
+        padding: 0px 4px;
+        justify-content: center;
+        width: 100%;
+        height: 65px;
+    }
+
+    .btn_bottom_nav {
+        padding: 7px 23px;
+        display: block;
+        position: relative;
+        margin: 3px 10px;
+        text-align: center;
+    }
+
+    .btn_bottom_nav .ct_info_cart {
+        right: -15px;
+    }
+
+    .btn_bottom_nav.for_cart_btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn_bottom_nav p {
+        font-size: 12px;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
+
+    .btn_bottom_nav .material-symbols-outlined {
+        color: #2f2f2f;
+        font-size: 25px;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 200, 'opsz' 40;
+    }
+
+    .ct_bx_div_bottom_nav {
+        position: fixed;
+        background: white;
+        width: 100%;
+        display: none;
+        bottom: 0%;
+        z-index: 999999;
+        box-shadow: 0 -10px 12px #0000002e;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    @media all and (max-width: 900px) {
+        .ct_info_cart {
+            width: 22px;
+            padding: 3px;
+        }
+
+        .btn_bottom_nav .ct_info_cart p {
+            font-size: 10px;
+        }
+    }
+
+    @media only screen and (max-width:740px) {
+        .ct_bx_div_bottom_nav {
+            display: block;
+        }
+
+        .btn_bottom_nav p {
+            font-size: 8px;
+            margin-top: -1px;
+        }
+
+        .btn_bottom_nav .material-symbols-outlined {
+            color: #545454;
+            font-size: 21px;
+        }
+
+        .ct_bx_div_bottom_nav .ct_flex_bx {
+            height: 55px;
+        }
+
+        .btn_bottom_nav {
+            padding: 4px 23px 20px 23px;
+            display: block;
+            margin: 3px 3px;
+            background: #f8f8f8;
+            text-align: center;
+        }
+
+        .ct_bx_div_bottom_nav a {
+            width: 100%;
+        }
+
+        .btn_bottom_nav .ct_info_cart p {
+            font-size: 8px;
+        }
+
+        .ct_info_cart {
+            width: 19px;
+            padding: 3px;
+        }
+    }
+
+    @media only screen and (max-width:550px) {
+        .btn_bottom_nav p {
+            font-size: 8px;
+            margin-top: -1px;
+        }
+
+        .btn_bottom_nav .material-symbols-outlined {
+            color: #545454;
+            font-size: 21px;
+        }
+
+        .ct_bx_div_bottom_nav .ct_flex_bx {
+            height: 55px;
+        }
+
+        .btn_bottom_nav {
+            padding: 4px 23px 20px 23px;
+            display: block;
+            margin: 3px 3px;
+            background: #f8f8f8;
+            text-align: center;
+        }
+
+        .ct_bx_div_bottom_nav a {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width:400px) {
+        .btn_bottom_nav p {
+            font-size: 11px;
+        }
+
+        .ct_bx_div_bottom_nav .ct_flex_bx {
+            padding: 0px;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+        .btn_bottom_nav p {
+            font-size: 10px;
+        }
+
+        .btn_bottom_nav {
+            padding: 7px 10px;
+        }
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    p {
+        margin-bottom: auto;
+    }
+
+    * {
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    @media only screen and (max-width:470px) {
+        .ct_info_cart {
+            width: 19px;
+            padding: 6px 0 3px 0;
+        }
+
+        .btn_bottom_nav p {
+            display: none;
+        }
+
+        .btn_bottom_nav .ct_info_cart p {
+            font-size: 7px;
+            margin-top: -2px;
+            display: block;
+        }
+
+        .btn_bottom_nav .material-symbols-outlined {
+            font-size: 24px;
+        }
+
+        .btn_bottom_nav {
+            padding: 13px 23px 20px 23px;
+        }
+
+        .btn_bottom_nav .ct_info_cart p {
+            font-size: 7px;
+            margin-top: -2px;
+        }
+    }
+
+    /*! CSS Used fontfaces */
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 100 700;
+        src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 100 700;
+        src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 100 700;
+        src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v76/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsK8ah8QA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsD8ah8QA.woff2) format('woff2');
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsL8ah8QA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsE8ah8QA.woff2) format('woff2');
+        unicode-range: U+0370-03FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsI8ah8QA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsJ8ah8QA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    @font-face {
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
     ._3tDvm,
     .v6luz {
         background: #fff;
         contain: layout;
     }
+
     .ct_bx_about_mobile2 .ct_info_cart p {
         color: white;
         font-size: 12px;
@@ -642,6 +1135,7 @@ p{margin-bottom:auto;}
         z-index: 99999999;
 
     }
+
     .body_cart .yt-loader {
         display: flex;
         opacity: 1;
@@ -3880,32 +4374,32 @@ p{margin-bottom:auto;}
         }
     }
 
-    
-        .ct_bx_erak_logo {
-            margin-top: -25px;
-            padding: 20px 0 15px 10px;
-            height: auto;
-        }
 
-        .ct_bx_slide_bx {
-            display: block;
-            right: -300px;
-            width: 294px;
-        }
+    .ct_bx_erak_logo {
+        margin-top: -25px;
+        padding: 20px 0 15px 10px;
+        height: auto;
+    }
 
-        .ct_bx_erak_logo a {
-            display: flex;
-        }
+    .ct_bx_slide_bx {
+        display: block;
+        right: -300px;
+        width: 294px;
+    }
 
-        .ct_acc_dt_ov p {
-            margin: 10px 0 0 11px;
-            font-size: 15px;
-            color: #fff;
-        }
+    .ct_bx_erak_logo a {
+        display: flex;
+    }
 
-        .acc_erak_mobile {
-            padding: 14px 0 0;
-        }
+    .ct_acc_dt_ov p {
+        margin: 10px 0 0 11px;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .acc_erak_mobile {
+        padding: 14px 0 0;
+    }
     }
 
     @media only screen and (max-width:740px) {
@@ -4603,18 +5097,20 @@ p{margin-bottom:auto;}
         margin: 43px 0 0 26px;
     }
 
-.account_name_sec p {
-    font-size: 13px;
-    color: #3b3636;
-    font-family: 'open sans';
-    font-weight: 500;
-    margin: 7px 0;
-    display: flex;
-    margin-right: 21px;
-}
-.account_name_sec ion-icon {
-margin-right: 10px;
-}
+    .account_name_sec p {
+        font-size: 13px;
+        color: #3b3636;
+        font-family: 'open sans';
+        font-weight: 500;
+        margin: 7px 0;
+        display: flex;
+        margin-right: 21px;
+    }
+
+    .account_name_sec ion-icon {
+        margin-right: 10px;
+    }
+
     .account_name_sec img {
         width: 100%;
         filter: contrast(0.4);
@@ -4922,8 +5418,12 @@ margin-right: 10px;
         margin-left: 20px;
         cursor: pointer;
         display: -ms-flexbox;
-        display: flex;
+        display: block;
         position: relative;
+    }
+
+    .awo_x .inner_ms {
+        display: flex;
     }
 
     .awo_x:hover ._1ZYny {
@@ -6332,53 +6832,78 @@ margin-right: 10px;
         box-shadow: 0 0 10px #0000002b;
     }
 
-@media only screen and (max-width:1200px) {
+    @media only screen and (max-width:1200px) {
         .ct_bx_slide_bx {
             right: -460px;
             width: 26%;
         }
-.ct_refer_panel {
-    width: 94%;
-}
-.ct_refer_panel h2 {
-    margin-top: 3px;
-    margin-bottom: 10px;
-    line-height: 49px;
-}
-.ct_bx_account{
-    margin-left: 38px;
-    width: 97%;
-}
-._3R9IF {
 
-    width: 98vw;
-}
-.g28rk{
-    padding-bottom: 50px;
-}
-.order_lst {
-    width: 95%;
-    margin-left: 30px;
-}
-.ct_flex_bx_notif h4 {
-    margin-left: 28px;
-}
-._359Fc {
-    width: 90px;}
-._1stFr {
-    padding: 37px 0 0 10px;}
+        .ct_refer_panel {
+            width: 94%;
+        }
+
+        .ct_refer_panel h2 {
+            margin-top: 3px;
+            margin-bottom: 10px;
+            line-height: 49px;
+        }
+
+        .ct_bx_account {
+            margin-left: 38px;
+            width: 97%;
+        }
+
+        ._3R9IF {
+
+            width: 98vw;
+        }
+
+        .g28rk {
+            padding-bottom: 50px;
+        }
+
+        .order_lst {
+            width: 95%;
+            margin-left: 30px;
+        }
+
+        .ct_flex_bx_notif h4 {
+            margin-left: 28px;
+        }
+
+        ._359Fc {
+            width: 90px;
+        }
+
+        ._1stFr {
+            padding: 37px 0 0 10px;
+        }
+
         .ct_coupon_code span {
-    font-size: 11px;}
+            font-size: 11px;
+        }
+
         .ct_refer_panel p {
-    font-size: 13px;}
-        .ct_refer_panel h2, .ct_refer_panel h3 {
-    font-size: 33px;}
-.ct_refer_panel h2 {
-    font-size: 43px;}
+            font-size: 13px;
+        }
+
+        .ct_refer_panel h2,
+        .ct_refer_panel h3 {
+            font-size: 33px;
+        }
+
+        .ct_refer_panel h2 {
+            font-size: 43px;
+        }
+
         .ct_link_box {
-    width: 100%;}
-            ._3tDvm {
-        width: 100vw;}
+            width: 100%;
+        }
+
+        ._3tDvm {
+            width: 100vw;
+        }
+
         .ct_bx_erak_logo a {
             display: flex;
             padding: 13px 0 20px 29px;
@@ -6420,110 +6945,237 @@ margin-right: 10px;
         .ct_bx_erak_logo {
             background: #fff;
         }
-.ct_refer_panel .inner {
-    width: 85%;
-}
-.ct_bx_account {
-    margin-left: 18px;
-    width: 97%;
-}
-.create_account {
-    width: 76%;}
+
+        .ct_refer_panel .inner {
+            width: 85%;
+        }
+
+        .ct_bx_account {
+            margin-left: 18px;
+            width: 97%;
+        }
+
+        .create_account {
+            width: 76%;
+        }
+
         .ct_bx_erak_logo a {
             display: flex;
             padding: 13px 0 0 11px;
         }
-.ct_go_back_account h3 {
-    margin: 70px 0 39px -5px;
-}
-.ct_bx_otp_box p {
-    font-size: 12px;}
+
+        .ct_go_back_account h3 {
+            margin: 70px 0 39px -5px;
+        }
+
+        .ct_bx_otp_box p {
+            font-size: 12px;
+        }
 
 
     }
+
     @media only screen and (max-width:850px) {
 
-.ct_refer_panel h2, .ct_refer_panel h3 {
-    font-size: 27px;
-}
-.ct_refer_panel h2{
-font-size: 34px;
-}
-.ct_refer_panel p {
-    font-size: 11px;
-    line-height: 16px;
-}
-._1ZYny {
-    margin-left: 16px;
-    font-size: 13px;
-}
-._2gu8R {
-    min-width: 211px;}
-.ct_icon_img img {
-    width: 28px;
-}
-.ct_rtrn_h78s h4 {
-    font-size: 11px;}
-._3h4gz {
-    font-size: 13px;}
-._2haEe {
-    font-size: 10px;}
-.ct_refer_panel img {  margin-left: 108px;}
- .ct_bx_coupon h4 {
+        .ct_refer_panel h2,
+        .ct_refer_panel h3 {
+            font-size: 27px;
+        }
 
-    font-size: 38px;
-}
+        .ct_refer_panel h2 {
+            font-size: 34px;
+        }
+
+        .ct_refer_panel p {
+            font-size: 11px;
+            line-height: 16px;
+        }
+
+        ._1ZYny {
+            margin-left: 16px;
+            font-size: 13px;
+        }
+
+        ._2gu8R {
+            min-width: 211px;
+        }
+
+        .ct_icon_img img {
+            width: 28px;
+        }
+
+        .ct_rtrn_h78s h4 {
+            font-size: 11px;
+        }
+
+        ._3h4gz {
+            font-size: 13px;
+        }
+
+        ._2haEe {
+            font-size: 10px;
+        }
+
+        .ct_refer_panel img {
+            margin-left: 108px;
+        }
+
+        .ct_bx_coupon h4 {
+
+            font-size: 38px;
+        }
     }
 
-
-        @media only screen and (max-width:740px) {
-            ._3R9IF {
-    width: 100%;
-}
-._2gu8R {
-    width: 100vw;
-    height: auto;background-color: white;}
-.account_name_sec .ct_inner {
-    margin: 23px 0 0 26px;
-}
-.account_name_sec h4 {
-    font-size: 28px;
-}
-.account_name_sec {
-    padding: 31px 20px;
-}
-.account_name_sec .ct_flex {
-    display: flex;
-    margin-top: 3px;
-}
-._2gu8R ul {
-    position: relative;top: 0;
-}
-._1stFr {
-    display: none;
-}
-.account_name_sec p {
-    font-size: 11px;
-    color: #616161;}
-.account_name_sec .ct_img {
-    width: 75px;
-    height: auto;}
-._3glSS {
-    padding-top: 0 !important;}
-.awo_x {
-    padding: 25px 20px;
-    margin-left: 20px;
-    margin: 10px;
-    box-shadow: 0 0px 1.3px #0000003b;
-    border-radius: 11px;background:white;
-    transition: all .6s ease-in-out;
-}
-._1B5rE {
-    box-shadow: 0 3px 4px #00000047;
-}
-
-
+    @media only screen and (max-width:740px) {
+        ._3R9IF {
+            width: 100%;
         }
+        .ct_refer_panel_outer{height: 0;transition: all 1s ease;}
+.ct_icon_x_dwn{display: block;}
+        ._2gu8R {
+            width: 100vw;
+            height: auto;
+            background-color: white;
+        }
+
+        .account_name_sec .ct_inner {
+            margin: 23px 0 0 26px;
+        }
+
+        .account_name_sec h4 {
+            font-size: 28px;
+        }
+
+        .account_name_sec {
+            padding: 31px 20px;
+        }
+
+        .account_name_sec .ct_flex {
+            display: flex;
+            margin-top: 3px;
+        }
+
+        ._2gu8R ul {
+            position: relative;
+            top: 0;
+        }
+
+        ._1stFr {
+            display: none;
+        }
+
+        .account_name_sec p {
+            font-size: 11px;
+            color: #616161;
+        }
+
+        .account_name_sec .ct_img {
+            width: 75px;
+            height: auto;
+        }
+
+        ._3glSS {
+            padding-top: 0 !important;
+        }
+
+        .awo_x {
+            padding: 25px 0px;
+            /* border-bottom: 2px solid rgb(214, 214, 214); */
+            background: white;
+            transition: all .6s ease-in-out;
+            box-shadow: 0 1px 4px #00000026;
+            border-radius: 20px;
+            width: 98%;
+            margin-top: 6px;
+            margin-left: 7px;
+        }
+
+
+        .awo_x .inner_ms {
+            display: flex;
+            padding-left: 27px;
+        }
+        .ct_icon_x_up ion-icon,
+        .ct_icon_x_dwn ion-icon {
+            color: #787878;
+            font-size: 25px;
+            position: absolute;
+            right: 30px;
+        }
+
+        .order_lst {
+            width: 98%;
+            margin-left: 0;
+        }
+
+        ._1B5rE ._1ZYny {
+            font-size: 17px;
+            color: black;
+        }
+
+        ._3lCtm {
+            display: none;
+        }
+
+        .ct_area_toggle {
+            background-color: #ffffff;
+            padding: 20px 0px;
+            width: 96%;
+            margin: 0px 19px;
+            z-index: 9999999999999;
+            display: none;
+        }
+
+
+    }
+
+    @media only screen and (max-width:550px) {
+        .g28rk {
+            padding: 20px 27px 30px 8px;
+        }
+
+        ._3h4gz {
+            font-size: 15px;
+        }
+
+        .ct_btns span {
+            margin: 10px 0 0 0px;
+        }
+
+        .f4Ovn {
+            margin: 28px 0 0 0px;
+        }
+
+        ._2XWVq .ct_flex {
+            display: block;
+        }
+
+        ._359Fc {
+            width: 120px;
+            height: max-content;
+        }
+
+        ._23DHc {
+            font-size: 12px;
+        }
+
+        ._33I3_ {
+            font-size: 11px;
+        }
+    }
+
+    @media only screen and (max-width:470px) {
+        ._359Fc {
+            width: 100px;
+        }
+
+        ._3PUy8 {
+            font-size: 11px;
+        }
+
+
+    }
+
     /*! CSS Used keyframes */
 </style>
 
@@ -6613,31 +7265,104 @@ font-size: 34px;
                             <ul>
 
                                 <li class="awo_x refer_tab ">
-                                    <div class="ct_icon_img">
-                                        <img src="../img/earn_icon.png" alt="">
+                                    <div class="inner_ms">
+                                        <div class="ct_icon_img">
+                                            <img src="../img/earn_icon.png" alt="">
+                                        </div>
+                                        <span class="_1ZYny">Refer and earn</span>
+                                        <div class="ct_icon_x_dwn">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_icon_x_up">
+                                            <ion-icon name="chevron-up-outline"></ion-icon>
+                                        </div>
                                     </div>
-                                    <span class="_1ZYny">Refer and earn</span>
+                                    <div class="ct_area_toggle">
+                                        <div class="ct_refer_panel_outer">
+
+                                            <div class="ct_notify_refer_btn">
+                                                <div class="ct_flex_bx_notif notif_refer">
+                                                    <h4>Notifications</h4>
+                                                    <button>Remove All</button>
+                                                </div>
+                                                <div class="ct_notif_inner">
+
+                                                </div>
+                                            </div>
+                                            <div class="ct_flex_bx_notif for_ref">
+                                                <h4>Refer and Earn</h4>
+                                            </div>
+                                            <div class="inner_x">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </li>
-                                div.ct_
+
                                 <li class="awo_x ord_89jjs _1B5rE">
-                                    <div class="ct_icon_img">
-                                        <img src="../img/order_icon_mn.png" alt="">
+                                    <div class="inner_ms">
+                                        <div class="ct_icon_img">
+                                            <img src="../img/order_icon_mn.png" alt="">
+                                        </div>
+                                        <span class="_1ZYny">My orders</span>
+                                                                                <div class="ct_icon_x_dwn">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_icon_x_up">
+                                            <ion-icon name="chevron-up-outline"></ion-icon>
+                                        </div>
                                     </div>
-                                    <span class="_1ZYny">My orders</span>
+                                    <div class="ct_area_toggle">
+                                        <div class="order_lst">
+                                            <div class="empty_cart for_ek_food_cart">
+
+
+                                                <div class="ct_bx_flex_msg_cart">
+                                                    <img src="../img/empty_cart_n.png">
+                                                    <h3>Your order list is empty</h3>
+                                                    <a href="/sauce">cooking sauce</a>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="_3lCtm"> My Orders </div>
+                                            <div class="ct_innner_orders">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
 
                                 </li>
                                 <li class="awo_x  edit_89jjs">
-                                    <div class="ct_icon_img">
-                                        <ion-icon name="pencil-outline" role="img" class="md hydrated"
-                                            aria-label="pencil outline"></ion-icon>
+                                    <div class="inner_ms">
+
+                                        <div class="ct_icon_img">
+                                            <ion-icon name="pencil-outline" role="img" class="md hydrated"
+                                                aria-label="pencil outline"></ion-icon>
+                                        </div>
+                                        <span class="_1ZYny">Edit account</span>
+                                                                                <div class="ct_icon_x_dwn">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_icon_x_up">
+                                            <ion-icon name="chevron-up-outline"></ion-icon>
+                                        </div>
                                     </div>
-                                    <span class="_1ZYny">Edit account</span>
+                                    <div class="ct_area_toggle"></div>
+
                                 </li>
                                 <li class="awo_x logout">
-                                    <div class="ct_icon_img">
-                                        <ion-icon name="log-out-outline"></ion-icon>
+                                    <div class="inner_ms">
+                                        <div class="ct_icon_img">
+                                            <ion-icon name="log-out-outline"></ion-icon>
+                                        </div>
+                                        <span class="_1ZYny">Logout</span>
                                     </div>
-                                    <span class="_1ZYny">Logout</span>
+                                    <div class="ct_area_toggle"></div>
+
                                 </li>
                             </ul>
                         </div>
@@ -6823,7 +7548,7 @@ font-size: 34px;
         load_basic_dt()
 
         async function toggle_tab(typ) {
-                        if(getCookie('userData')===''){
+            if (getCookie('userData') === '') {
                 window.location.replace('/')
             }
             document.querySelector('.ct_load_items').style.display = 'flex'
@@ -6835,6 +7560,9 @@ font-size: 34px;
             document.querySelector('.order_lst .ct_innner_orders').innerHTML = ''
             document.querySelector('.order_lst').style.display = 'none'
             document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
+            document.querySelectorAll('.ct_area_toggle').forEach(cux => {
+                cux.style.display = 'none'
+            })
             let dbCollection2 = db.collection("users")
             let res = await dbCollection2.get()
             document.querySelector('.yt-loader').style.display = 'none'
@@ -6865,6 +7593,14 @@ font-size: 34px;
                         window.location.replace('/')
                     }
                     if (typ === 'refer') {
+                        let refer_tb=document.querySelector('.refer_tab')
+                        if(refer_tb.classList.value.includes('active')){
+                        document.querySelector('.refer_tab').classList.remove('active')
+                        return
+                        }
+                        document.querySelectorAll('.ct_flex_bx_notif.for_ref').forEach(cu1=>{cu1.style.display='block'})
+                        document.querySelector('.refer_tab').classList.add('active')
+
                         document.querySelector('.ct_load_items').style.display = 'none'
                         document.querySelector('.ct_refer_panel_outer').style.display = 'block'
 
@@ -6887,24 +7623,25 @@ font-size: 34px;
                                 if (cu1.for !== undefined) {
                                     if (cu1.for === 'refer') {
                                         if (elem.name === cu1.name) {
-                                            if (cu1.by.length > 0) {
-                                                if (getCookie('show_popup') !== '') {
-                                                    let notif_viewed = getCookie('show_popup')
-                                                    if (notif_viewed !== 'nope') {
+                                            if (cu1.by !== undefined) {
+                                                if (cu1.by.length > 0) {
+                                                    if (getCookie('show_popup') !== '') {
+                                                        let notif_viewed = getCookie('show_popup')
+                                                        if (notif_viewed !== 'nope') {
+                                                            document.cookie = "show_popup" + "=" + 'yes' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+
+                                                        }
+
+                                                    } else {
                                                         document.cookie = "show_popup" + "=" + 'yes' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                                     }
 
-                                                } else {
-                                                    document.cookie = "show_popup" + "=" + 'yes' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
-                                                }
+                                                    cu1.by.forEach(cu => {
 
-
-                                                cu1.by.forEach(cu => {
-
-                                                    document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
-                                                    let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
+                                                        document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                        let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
                                         <div class="remove_btn">
                                             <span class="material-symbols-outlined">
                                                 close
@@ -6923,6 +7660,40 @@ font-size: 34px;
                                         </div>
 
                                     </div>`
+                                                        if (getCookie('view_refer_info') !== '') {
+                                                            let notif_viewed = JSON.parse(getCookie('view_refer_info'))
+                                                            notif_viewed.forEach(elm => {
+                                                                if (elm === elem.name.split(' ').join('_')) {
+                                                                    html = ''
+                                                                }
+                                                            })
+                                                            document.cookie = "show_popup" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+
+                                                        }
+
+
+                                                        document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+                                                    })
+                                                } else {
+
+                                                    //if view_refer_info ->> removed by user
+
+                                                    document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                    let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
+                                        <div class="remove_btn">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                        <div class="ct_inner">
+                                            <span class="material-symbols-outlined">
+                                                task_alt
+                                            </span>
+                                            <p>Hurrah!, COUPON: ${elem.name} unlocked. Grab the coupon from the cart and enjoy flat ${elem.off}%
+                                                discount</p>
+                                        </div>
+
+                                    </div>`
                                                     if (getCookie('view_refer_info') !== '') {
                                                         let notif_viewed = JSON.parse(getCookie('view_refer_info'))
                                                         notif_viewed.forEach(elm => {
@@ -6930,17 +7701,13 @@ font-size: 34px;
                                                                 html = ''
                                                             }
                                                         })
-                                                        document.cookie = "show_popup" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-
                                                     }
 
 
                                                     document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
-                                                })
+
+                                                }
                                             } else {
-
-                                                //if view_refer_info ->> removed by user
-
                                                 document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                 let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
                                         <div class="remove_btn">
@@ -6968,9 +7735,7 @@ font-size: 34px;
 
 
                                                 document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
-
                                             }
-
 
                                         }
 
@@ -7040,7 +7805,14 @@ font-size: 34px;
                             //           
                             //   })
                             //
-                            document.querySelector('.ct_refer_panel_outer .inner_x').innerHTML = html
+                            if(window.screen.widh<=740){
+                            document.querySelector('.refer_tab .ct_area_toggle').style.display='block'
+
+                            }
+                            document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
+                                cux.innerHTML = html
+                            })
+                            document.querySelector('.ct_refer_panel_outer').classList.add('toggle_area_nav')
                             document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
                             document.querySelector('._1B5rE').classList.remove('_1B5rE')
                             document.querySelector('.refer_tab').classList.add('_1B5rE')
@@ -7371,7 +8143,7 @@ font-size: 34px;
                                             ${accepted_hm}
                                             ${delivered_html}
                                             <div class="ct_inner_itms">
-                                                ${arr_itms}
+                                                ${arr_itms.join('')}
                                              </div>
                                             
                                             <div class="_3SKK0">
@@ -7383,8 +8155,15 @@ font-size: 34px;
                                         </div>`
                             document.querySelector('.order_lst').style.display = 'block'
 
-                            document.querySelector('.order_lst .ct_innner_orders').insertAdjacentHTML('beforeend', html)
-
+                            document.querySelectorAll('.order_lst').forEach(cux => {
+                                cux.style.display = 'block'
+                            })
+                            document.querySelectorAll('.order_lst .ct_innner_orders').forEach(cux => {
+                                cux.insertAdjacentHTML('beforeend', html)
+                            })
+                            if (window.screen.width <= 740) {
+                                document.querySelector('.ord_89jjs .ct_area_toggle').style.display = 'block'
+                            }
 
                         })
 

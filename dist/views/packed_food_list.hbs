@@ -9976,8 +9976,7 @@
             let userDtx = getCookie('userData')
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
-                document.querySelector('.mobile_only.account_btn').style.display = 'block'
-                document.querySelector('.account_nav2').style.display = 'block'
+
                //if(dt_user.split(' ')[0]!==undefined){
                //document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
 
@@ -9987,8 +9986,10 @@
                     if (userDtx.admin) {
                         if(window.screen.width>740){
                         document.querySelector('.admin_page').style.display = 'block'
-
+                document.querySelector('.mobile_only.account_btn').style.display = 'block'
                         }
+                document.querySelector('.account_nav2').style.display = 'block'
+
                         document.querySelector('.admin_panel').style.display = 'block'
 
                     }
@@ -10726,15 +10727,15 @@ if (buyNow_btn !== null){
             })
         })
 
-        if (getCookie('popup_clicked') === '') {
-            document.querySelector('.ct_bx_info_web').style.display = 'flex'
+      // if (getCookie('popup_clicked') === '') {
+      //     document.querySelector('.ct_bx_info_web').style.display = 'flex'
 
-        }
-        document.querySelector('.ct_bx_info_web button').addEventListener('click', () => {
-            document.querySelector('.ct_bx_info_web').style.display = 'none'
-            document.cookie = "popup_clicked" + "=" + 'yess' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
+      // }
+      // document.querySelector('.ct_bx_info_web button').addEventListener('click', () => {
+      //     document.querySelector('.ct_bx_info_web').style.display = 'none'
+      //     document.cookie = "popup_clicked" + "=" + 'yess' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
 
-        })
+      // })
     </script>
 </body>
 
