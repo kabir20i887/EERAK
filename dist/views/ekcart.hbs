@@ -3055,6 +3055,7 @@
             color: black;
             font-family: 'roboto';
             font-weight: 500;
+            width: max-content;
         }
 
         .ct_inner_box_nav {
@@ -5294,9 +5295,9 @@
             height: 45px;
             transition: 0.8s ease-in-out;
             top: 20px;
-            right: -600px;
+            right: -1000px;
         }
-
+.popup_info.active{right: 20px;}
         .popup_info.place_order {
             background-color: #099d4f;
         }
@@ -5665,17 +5666,17 @@
             font-size: 16px;
         }
 
-        .ct_total-amount {
-            width: 31%;
-        }
-
-        .ct_total-amount span {
-            font-size: 12px;
-            color: black;
-            font-family: 'Open sans';
-            display: block;
-            margin: -2px 7px;
-        }
+.ct_total-amount {
+    width: auto;
+    padding-right: 20px;
+}
+.ct_total-amount span {
+    font-size: 10px;
+    color: #696969;
+    font-family: 'Open sans';
+    display: block;
+    margin: -2px 7px;
+}
 
         .place_order_btn_bottom {
             position: fixed;
@@ -5694,17 +5695,14 @@
             width: 100%;
         }
 
-        .place_order_btn_bottom .for_cart_checkout {
-            display: block;
-            margin: 3px 0 0 18px;
-            border-radius: 9px;
-            width: 59vw;
-        }
+.place_order_btn_bottom .for_cart_checkout {
+    display: block;
+    margin: 3px 0 0 18px;
+    width: 84vw;
+}
 
         .place_order_btn_bottom .check_out_btn_order {
             color: rgb(255 255 255);
-            border-color: #e9174e;
-            background-image: linear-gradient(to right, #ec1450, #ec145b);
         }
 
         .title_h1_box ion-icon {
@@ -14797,7 +14795,15 @@
             .ct_bx_required_groc h3 {
                 margin-top: 0;
             }
-
+            .ct_total-amount {
+    width: 169px;}
+    .place_order_btn_bottom .for_cart_checkout {
+    width: 100%;
+}
+.ct_subotatal .for_cart_checkout{
+    display: none;
+}
+.place_order_btn_bottom{display: block;}
             .ct_delivery_info {
                 height: auto;
                 padding-bottom: 43px;
@@ -16001,7 +16007,32 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
+.check_out_btn_order {
+    height: 38px;}
+    .for_cart_checkout p {
+    font-size: 12px;
+    margin-top: 10px;
+}
 
+.place_order_btn_bottom {height: 70px;}
+
+.popup_info.active{right: 7px;}
+
+.popup_info {
+    width: 98vw;
+    height: 48px;
+    top: initial;
+    bottom: 32px;
+}
+.popup_info p {
+    font-size: 11px;
+    margin: 9px 0 0 18px;
+}
+.ctbx_info_popups .lds-ring {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+}
             .ct_bx_footer {
                 padding-bottom: 60px;
             }
@@ -16486,7 +16517,9 @@
             .ct_bx_qty p {
                 margin-left: 0;
             }
-
+.popup_info.active {
+    right: 3px;
+}
             .ct_inner_itms {
                 padding: 0 5px;
             }
@@ -16745,11 +16778,10 @@
                 margin: 1px 0 8px 10px;
                 right: 40px;
             }
-
-            .for_cart_checkout p {
-                font-size: 12px;
-            }
-
+.for_cart_checkout p {
+    font-size: 14px;
+    margin-top:16px;
+}
             .ct_bx_info_web ion-icon {
                 color: black;
                 font-size: 21px;
@@ -17311,7 +17343,7 @@
             }
 
             .check_out_btn_order {
-                height: 34px;
+                height: 47px;
             }
 
 
@@ -17694,9 +17726,6 @@
                 width: 241px;
             }
 
-            .for_cart_checkout p {
-                font-size: 14px;
-            }
 
 
             .main_li_cart_fd_lis .ct_bx_units_item ul {
@@ -17755,13 +17784,6 @@
                 font-size: 20px;
             }
 
-            .check_out_btn_order {
-                height: 37px;
-            }
-
-            .for_cart_checkout p ion-icon {
-                font-size: 20px;
-            }
 
             .to_pay_cahge span c {
                 margin-left: 2px;
@@ -18489,11 +18511,11 @@
                 <span>Total amount</span>
             </div>
 
-            <a href='#' class="for_checkout_order check_out_btn_order for_cart_checkout 
+            <div class="for_checkout_order check_out_btn_order for_cart_checkout 
                         ">
                 <p>Order Now
                 </p>
-            </a>
+            </div>
         </div>
     </div>
     <div class="container_coupons_Refer">
@@ -19555,7 +19577,9 @@
                     tot -= pr
                 }
             })
+            
             document.querySelector('.to_pay_cahge span b').innerText = '₹' + tot.toLocaleString()
+            document.querySelector('.ct_total-amount p').innerText = '₹' + tot.toLocaleString()
 
 
         }
@@ -20867,6 +20891,7 @@ let htmlXX=``
 
         async function createAccount() {
             document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
+            document.querySelector('.place_order_btn_bottom').style.display='none'
             document.querySelector('.create_account').style.opacity = '.5'
             document.querySelector('.create_account').style.pointerEvents = 'none'
             document.querySelector('.resend_otp').style.color = '#005ace'
@@ -20898,10 +20923,13 @@ let htmlXX=``
                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     // document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objUser) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                     document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
                     setTimeout(function () {
                         document.querySelector('.popup_info.sucess_account').style.display = 'none'
-
+                        if(window.screen.width<=1100){
+                            document.querySelector('.place_order_btn_bottom').style.display='block'
+                        }
 
                     }, 20000)
                     if (window.location.search !== '') {
@@ -22258,7 +22286,8 @@ let htmlXX=``
                             let id_ref = secret(getCookie('signup_3sy13'))
                             let objBx = id_ref
                             socket.emit('cash_oth4', objUser.name, objBx.name, objBx.off, objBx.id)
-
+                        document.querySelector('.place_order_btn_bottom').style.display='none'
+                    
                             async function getUser() {
                                 let dbCollection2 = db.collection("users")
                                 let res = await dbCollection2.get()
@@ -22327,7 +22356,7 @@ let htmlXX=``
                                         document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
                                         document.querySelector('.ct_offer_saved_popup span').innerText = `Refered to you by ${data.name} `
                                         document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
                                         document.querySelector('.ct_offer_saved_popup').style.display = 'block'
                                         document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
                                             cu11.style.display = 'none'
@@ -22346,7 +22375,8 @@ let htmlXX=``
                                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                                        document.querySelector('.popup_info.sucess_account').style.right = '20px'
+                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
 
                                         document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in to account'
                                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
@@ -22355,9 +22385,10 @@ let htmlXX=``
 
 
                                         setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').style.right = '-600px'
-                                            //  window.location.replace('/mycart')
-
+                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                                            if(window.screen.width<=1100){
+                                                document.querySelector('.place_order_btn_bottom').style.display='block'
+                                            }
 
                                         }, 20000)
                                     }
@@ -22371,14 +22402,16 @@ let htmlXX=``
                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                        document.querySelector('.popup_info.sucess_account').style.right = '20px'
+                        document.querySelector('.popup_info.sucess_account').classList.add('active')
                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
 
                         setTimeout(function () {
-                            document.querySelector('.popup_info.sucess_account').style.right = '-600px'
+                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
 
-
+                    if(window.screen.width<=1100){
+                        document.querySelector('.place_order_btn_bottom').style.display='block'
+                    }
                         }, 7000)
                     }
 
@@ -22508,7 +22541,9 @@ let htmlXX=``
                                 by: []
                             }
                             console.log(objBx.name, ' ------------------------hiihuihhh')
-
+                    if(window.screen.width<=1100){
+                        document.querySelector('.place_order_btn_bottom').style.display='none'
+                    }
                             document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
                             document.querySelector('.create_account').style.opacity = '.5'
                             document.querySelector('.create_account').style.pointerEvents = 'none'
@@ -22547,11 +22582,13 @@ let htmlXX=``
                                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                     document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                     document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                                    document.querySelector('.popup_info.sucess_account').style.right = '20px'
+                                    document.querySelector('.popup_info.sucess_account').classList.add('active')
                                     setTimeout(function () {
-                                        document.querySelector('.popup_info.sucess_account').style.right = '-600px'
+                                        document.querySelector('.popup_info.sucess_account').classList.remove('active')
 
-
+                    if(window.screen.width<=1100){
+                        document.querySelector('.place_order_btn_bottom').style.display='block'
+                    }
                                     }, 7000)
 
                                     if (window.location.search !== '') {
