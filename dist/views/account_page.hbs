@@ -63,21 +63,13 @@
         padding: 20px 40px;
         margin: 0px 9px;
         z-index: 9999999999999;
+        height: 100%;
     }
+    
+
 .ct_icon_x_dwn,
     .ct_icon_x_up {
         display: none;
-    }
-    .toggle_area_nav{
-        animation: widthDwn 4s ease;
-    }
-    @keyframes widthDwn{
-        from{
-            height: 0;
-        }
-        to{
-            height: max-content;
-        }
     }
 
     body {
@@ -386,7 +378,8 @@
             font-size: 8px;
             margin-top: -1px;
         }
-
+.pac-item-query {
+    font-size: 14px;}
         .btn_bottom_nav .material-symbols-outlined {
             color: #545454;
             font-size: 21px;
@@ -3267,9 +3260,6 @@
     }
 
     @media only screen and (max-width:1100px) {
-        .mobile_only {
-            display: none;
-        }
 
         .for_ain_home_logo {
             margin: 0;
@@ -3291,8 +3281,16 @@
         .ct_field_small_size {
             margin: -4px 10px 0 0;
             transform: translate(0px, 0);
-            display: block;
+            display: none;
         }
+.ct_bx_about_mobile2.account_btn a, .ct_bx_about_mobile2.cart_btn a {
+    height: 40px;
+    padding-top: 15px;
+}
+.ct_bx_about_mobile2 .material-symbols-outlined {
+    color: #0c0c0c;
+    font-size: 21px;}
+
 
         .ct_field_small_size span {
             font-size: 32px;
@@ -3645,24 +3643,19 @@
             font-size: 37px;
             margin-top: 1px;
         }
-
-        .ct_bx_about_mobile2 .material-symbols-outlined {
-            font-size: 34px;
-            margin: -15px 5px;
-        }
-
-        .ct_inner_nav {
-            padding: 21px 20px 10px 20px;
-        }
-
+.ct_bx_about_mobile2 a {
+    padding: 24px 10px;
+}
+.ct_inner_nav {
+    padding: 14px 10px 0px 10px;
+}
         .ct_inner_box_nav {
             margin-top: 3px;
         }
 
-        .ct_field_small_size {
-            margin: -12px 4px 0 0;
-        }
-
+.ct_field_small_size {
+    margin: -7px 4px 0 0;
+}
         .for_mobile_search .ct_bx_search {
             background-color: inherit;
         }
@@ -3728,7 +3721,7 @@
         }
 
         .ct_inner_nav {
-            padding: 25px 10px 10px 10px;
+            padding-top: 14px;
         }
 
         .ct_field_small_size_bx {
@@ -3797,18 +3790,12 @@
     }
 
     @media only screen and (max-width:470px) {
-        .home_btn {
-            display: none;
-        }
+
 
         .ct_bx_about_mobile2 p {
             margin-top: -4px;
         }
 
-        .ct_bx_about_mobile2 .material-symbols-outlined {
-            font-size: 27px;
-            margin: -15px 5px;
-        }
 
         .for_nav_main {
             box-shadow: 0 0 4px rgb(0 0 0 / 18%);
@@ -3889,9 +3876,12 @@
         }
 
         .for_nav_main {
-            height: 84px;
+            height: 70px;
         }
 
+.account_name_sec {
+    margin-top: 70px;
+}
         .for_mobile_search .ct_bx_search {
             height: 44px;
         }
@@ -4400,7 +4390,7 @@
     .acc_erak_mobile {
         padding: 14px 0 0;
     }
-    }
+    
 
     @media only screen and (max-width:740px) {
         .ct_bx_slide_bx2 .ct_bx_erak_logo {
@@ -6675,17 +6665,6 @@
         font-size: 30px;
     }
 
-    .ct_notify .remove_btn {
-        position: absolute;
-        right: 10px;
-        cursor: pointer;
-        top: 10px;
-        color: black;
-    }
-
-    .ct_notify .remove_btn span {
-        font-size: 21px;
-    }
 
     .ct_notify .ct_inner_x span,
     .ct_notify P {
@@ -7030,13 +7009,78 @@
         ._3R9IF {
             width: 100%;
         }
-        .ct_refer_panel_outer{height: 0;transition: all 1s ease;}
+        .ct_bx_otp_box {
+    margin: 120px 0px 40px 1px;}
+.ct_field_first_acc {
+    padding: 10px 0; margin-bottom: 0;}
+.ct_bx_account {
+    margin-left: 7px;}
+
+        .ct_refer_panel {
+    width: 97%;    margin: 19px 2px;
+}
 .ct_icon_x_dwn{display: block;}
         ._2gu8R {
             width: 100vw;
             height: auto;
             background-color: white;
         }
+        .ct_field_small_size{
+            display: block;
+        }
+
+        .ct_flex_bx_notif button {
+    padding: 1px 14px;
+    font-size: 11px;
+    height: 30px;
+}
+.ct_notify_refer_btn{
+        margin-top: 34px;
+}
+.ct_flex_bx_notif button {
+    padding: 1px 14px;
+    font-size: 11px;
+    height: 30px;
+}
+.ct_flex_bx_notif h4 {
+    margin-left: 12px;
+}
+.ct_flex_bx_notif h4 {color: black;font-size: 14px;}
+.ct_notify{margin-left: 8px;
+    width: 95%;
+}
+.ct_notify .ct_inner_x span, .ct_notify P {
+    width: 77%;
+}
+.ct_flex_bx_notif h4 {
+    margin-left: 6px;
+}
+.ct_notify .ct_inner_x span, .ct_notify P {
+    font-size: 13px;
+    width: 77%;
+}
+.ct_share_box button {
+    padding: 0px 23px 10px 23px;
+    font-size: 13px;
+    margin-top: 0;
+}
+.ct_bx_about_mobile2.cart_btn{display: none;}
+.ct_bx_about_mobile2.admin_page{display: none;}
+.ct_bx_about_mobile2.account_btn{display: none;} 
+.ct_bx_about_mobile2.home_btn{display: none;}
+.btn_bottom_nav {
+    padding: 4px 23px 20px 23px;
+    display: block;
+    /* width: 100%; */
+    margin: 3px 3px;
+    background: #f8f8f8;
+    text-align: center;
+    /* border: 1px solid #e0e0e0; */
+}
+.ct_bx_div_bottom_nav a {
+    width: 100%;
+    padding: 0;
+}
 
         .account_name_sec .ct_inner {
             margin: 23px 0 0 26px;
@@ -7133,6 +7177,41 @@
         .g28rk {
             padding: 20px 27px 30px 8px;
         }
+        .ct_bx_inputs_otp input {
+    padding: 8px 14px 6px 11px;
+    font-size: 20px;}
+.account_name_sec h4 {
+    font-size: 22px;
+}
+.account_name_sec p {
+    font-size: 9px;
+}
+.account_name_sec ion-icon {
+    font-size: 13px;
+}
+.account_name_sec .ct_flex {
+    display: block;
+    margin-top: 3px;
+}
+.ct_flex_bx_notif button {
+    position: absolute;
+    right: 31px;
+}
+.ct_refer_panel img {
+    margin-left: 48px;
+}
+.ct_notify {
+    width: 94%;
+    margin-left: 11px;
+}
+.ct_notify .ct_inner_x span, .ct_notify P {
+    width: 76%;
+}
+.ct_refer_panel h2 {
+    font-size: 37px;
+    margin-top: 0;
+    line-height: 43px;
+}
 
         ._3h4gz {
             font-size: 15px;
@@ -7164,17 +7243,92 @@
         }
     }
 
+
+
+    @media all and (max-width: 900px) {
+
+
+    .ct_bx_about_mobile2 p {
+    font-size: 11px;}
+
+
+    }
     @media only screen and (max-width:470px) {
         ._359Fc {
             width: 100px;
         }
+        .ct_bx_about_mobile2 a {
+    padding: 24px 6px;
+}
+.nick_name textarea, .nick_name input {
+    padding: 8px 14px 6px 20px;
+    font-size: 13px;}
+.ct_field_small_size span {
+    font-size: 27px;
+    margin-top: 10px;
+}
+.ct_refer_panel h2, .ct_refer_panel h3 {
+    font-size: 17px;
+}
+.ct_refer_panel h2 {
+    font-size: 28px;
+    margin-top: 6px;
+    line-height: 32px;
+}
+.ct_area_toggle {
+    width: 96%;
+    margin: 0 13px;
+}
+.ct_notify .ct_inner_x span, .ct_notify P {
+    font-size: 11px;}
+.btn_bottom_nav {
+    padding: 13px 23px 20px 23px;
+}
+.account_name_sec .ct_inner {
+    margin: 11px 0 0 11px;
+}
+.account_name_sec .ct_img {
+    width: 39px;
+}
+.account_name_sec h4 {
+    font-size: 18px;
+}
+.account_name_sec {
+    margin-top: 70px;
+}
+.account_name_sec p.ph_num{display: none;}
 
         ._3PUy8 {
             font-size: 11px;
         }
-
+.for_ain_home_logo a {
+    padding-left: 2px;
+}
 
     }
+    @media only screen and (max-width:400px) {
+        .for_ain_home_logo h4 {
+    font-size: 22px;}
+.for_ain_home_logo span {
+    font-size: 9px;
+    transform: translate(5px, -1px);
+}
+.for_nav_main .logo img {
+    width: 33px;
+    height: 34px;}
+.for_nav_main {
+    height: 65px;
+}
+.account_name_sec {
+    margin-top: 62px;
+}
+.ct_bx_about_mobile2 p {
+    font-size: 9px;
+    color: black;
+}
+
+    }
+
 
     /*! CSS Used keyframes */
 </style>
@@ -7351,7 +7505,18 @@
                                             <ion-icon name="chevron-up-outline"></ion-icon>
                                         </div>
                                     </div>
-                                    <div class="ct_area_toggle"></div>
+                                    <div class="ct_area_toggle">
+                            <div class="ct_bx_account">
+                                <div class="ct_error_account">
+                                    <h4>Opps, Account already exist. Please try again.</h4>
+                                </div>
+                                <div class="inner_x">
+
+                                </div>
+
+                            </div>
+
+                                    </div>
 
                                 </li>
                                 <li class="awo_x logout">
@@ -7535,14 +7700,27 @@
             let userDtx = getCookie('userData')
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
-                document.querySelector('.mobile_only.account_btn').style.display = 'block'
-                document.querySelector('.account_nav2').style.display = 'block'
+
+               //if(dt_user.split(' ')[0]!==undefined){
+               //document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
+
+               //}
                 // remove the banner of signup offer
+                if (userDtx.admin !== undefined) {
+                    if (userDtx.admin) {
+                        if(window.screen.width>740){
+                        document.querySelector('.admin_page').style.display = 'block'
+                document.querySelector('.mobile_only.account_btn').style.display = 'block'
+                        }
+                document.querySelector('.account_nav2').style.display = 'block'
 
+                        document.querySelector('.admin_panel').style.display = 'block'
 
+                    }
+                }
+                document.querySelector('.hide_gshs2').style.display='none'
+                document.querySelector('.hide_gshs').style.display='block'
 
-            } else {
-                window.location.replace('/')
             }
         }
         load_basic_dt()
@@ -7596,7 +7774,7 @@
                         let refer_tb=document.querySelector('.refer_tab')
                         if(refer_tb.classList.value.includes('active')){
                         document.querySelector('.refer_tab').classList.remove('active')
-                        return
+                      //  return
                         }
                         document.querySelectorAll('.ct_flex_bx_notif.for_ref').forEach(cu1=>{cu1.style.display='block'})
                         document.querySelector('.refer_tab').classList.add('active')
@@ -7642,11 +7820,7 @@
 
                                                         document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                         let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
-                                        <div class="remove_btn">
-                                            <span class="material-symbols-outlined">
-                                                close
-                                            </span>
-                                        </div>
+
                                         <div class="ct_inner">
                                             <span class="material-symbols-outlined">
                                                 task_alt
@@ -7680,11 +7854,7 @@
 
                                                     document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                     let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
-                                        <div class="remove_btn">
-                                            <span class="material-symbols-outlined">
-                                                close
-                                            </span>
-                                        </div>
+
                                         <div class="ct_inner">
                                             <span class="material-symbols-outlined">
                                                 task_alt
@@ -7710,11 +7880,7 @@
                                             } else {
                                                 document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                 let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
-                                        <div class="remove_btn">
-                                            <span class="material-symbols-outlined">
-                                                close
-                                            </span>
-                                        </div>
+
                                         <div class="ct_inner">
                                             <span class="material-symbols-outlined">
                                                 task_alt
@@ -7768,7 +7934,7 @@
                                      </div>
                                      <div class="ct_inner_txt">
                                          <h3>Refer your friends And</h3>
-                                         <h2>Both Earn ${use_cpn.off}% discount </h2>
+                                         <h2>Both Earn <b> ${use_cpn.off}% </b> discount </h2>
                                          <p>Refer your friends and Both Earn ${use_cpn.off}% discount,when created an account and logged in. Coupons are only applicable for cooking sauces.
                                              
                                          </p>
@@ -7805,14 +7971,15 @@
                             //           
                             //   })
                             //
-                            if(window.screen.widh<=740){
+                            if(window.screen.width<=740){
                             document.querySelector('.refer_tab .ct_area_toggle').style.display='block'
+                                document.querySelector('.refer_tab .ct_area_toggle').classList.add('toggle_dwn')
 
                             }
                             document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
                                 cux.innerHTML = html
                             })
-                            document.querySelector('.ct_refer_panel_outer').classList.add('toggle_area_nav')
+                            //document.querySelector('.ct_refer_panel_outer').classList.add('toggle_area_nav')
                             document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
                             document.querySelector('._1B5rE').classList.remove('_1B5rE')
                             document.querySelector('.refer_tab').classList.add('_1B5rE')
@@ -7845,7 +8012,7 @@
                                     </div>
                                 <div class="ct_field_first_acc">
                                     <div class="ct_section_box_accounts">
-                                        <h4>Edit account edit</h4>
+                                        <h4>Edit account</h4>
 
                                         <div class="gt_first_nam_second_name">
                                             <div class="nick_name area last_name bx_acc">
@@ -7923,8 +8090,24 @@
                                     </div>
 
                                 </div>`
-                        document.querySelector('.ct_bx_account .inner_x').innerHTML = html
-                        document.querySelector('.ct_bx_account').style.display = 'block'
+                        if(window.screen.width<=740){
+                            document.querySelector('.edit_89jjs  .ct_area_toggle').style.display='block'
+                                document.querySelector('.edit_89jjs .ct_area_toggle').classList.add('toggle_dwn')
+
+                            document.querySelector('.edit_89jjs .ct_bx_account').style.display = 'block'
+                        
+                        }else{
+                            document.querySelector('._1stFr .ct_bx_account').style.display = 'block'
+
+                        }
+                        document.querySelectorAll('.ct_bx_account .inner_x').forEach(cux=>{
+                            cux.innerHTML = html
+                        })
+                        if(window.screen.width<=740){
+                            document.querySelector('.ct_section_box_accounts h4').style.display='none'
+                        }
+                        
+
                         if (sessionStorage.getItem('one_tm_dt_edt') !== null) {
                             document.querySelector('.ct_error_account').style.display = 'none'
                             document.querySelector('.ct_bx_otp_box').style.display = 'block'
@@ -8163,6 +8346,8 @@
                             })
                             if (window.screen.width <= 740) {
                                 document.querySelector('.ord_89jjs .ct_area_toggle').style.display = 'block'
+                                document.querySelector('.ord_89jjs .ct_area_toggle').classList.add('toggle_dwn')
+
                             }
 
                         })
@@ -8218,6 +8403,7 @@
             let cls_popup = e.target.closest('.ct_offer_saved_popup .ct_btn')
             let order_tab = e.target.closest('.ord_89jjs')
             let edt_tab = e.target.closest('.edit_89jjs')
+            let area_tab_blw=e.target.closest('.ct_area_toggle')
             let verify_btn_ac = e.target.closest('.account_cont')
             let itemG = e.target.closest('.pac-item')
             let inpX = e.target.closest('.nick_name.area input')
@@ -8231,6 +8417,30 @@
             let return_order = e.target.closest('.f4Ovn')
             let rem_return_pop = e.target.closest('.ct_info_requested .ct_remove')
             let logout_tab = e.target.closest('.awo_x.logout')
+let shareBtn=e.target.closest('.ct_share_box button')
+if(shareBtn!=null){
+    let off=document.querySelector('.ct_refer_panel h2 b').innerText.split('%')[0]
+            let textX=`Transform your meals into culinary masterpieces with the all-in-one cooking sauces from Krick. And the best part? You can now enjoy a whopping ${off}% discount on all sauces by creating an account and logging in by the below link! Visit krickfoods.in now and make every meal a taste sensation.`
+        const share = e => {
+        
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Share your friends and earn",
+        text: textX,
+        url: document.querySelector('.ct_link_box p').innerText
+      })
+      .then(() => console.log("thanks for share"))
+      .catch(error => console.log("error", error));
+  }
+};
+if(!navigator.share) {
+ console.log('cannot be shared')
+}else{
+    share()
+
+}
+}
 
             if (logout_tab !== null) {
                 toggle_tab('logout')
@@ -8267,7 +8477,10 @@
                 document.querySelector('.ct_terms_cond').classList.remove('active')
             }
             if (refer_tab !== null) {
+                if(area_tab_blw===null){
+
                 toggle_tab('refer')
+                }
             }
             if (remove_notif !== null) {
                 let arr = []
@@ -8302,12 +8515,15 @@
 
             if (go_bck_acc !== null) {
                 sessionStorage.clear()
+
                 toggle_tab('edit')
             }
             if (edit_acc !== null) {
                 edit_acc.style.opacity = '.3'
                 edit_acc.style.pointerEvents = 'none'
-
+                if(area_tab_blw!==null){
+                    return
+                }
                 if (sessionStorage.getItem('one_tm_dt_edt_tp') !== null) {
                     let nm_tp = secret(sessionStorage.getItem('one_tm_dt_edt_tp')).n
                     let nm = []
@@ -8413,7 +8629,7 @@
                 document.querySelector('.nick_name.area input').style.background = 'rgb(245 245 245)'
 
                 if (ph_num === '') {
-                    document.querySelector('.phone_error p').innerText = 'Please fill this field'
+                    document.querySelectorAll('.phone_error p').innerText = 'Please fill this field'
 
                     document.querySelector('.phone_error').style.display = 'block'
                     error = true
@@ -8491,10 +8707,13 @@
                                 })
 
                                 if (!already) {
+                                     let msg_get=false
                                     socket.emit('getCode');
                                     document.querySelector('.ct_error_account').style.display = 'none'
 
                                     socket.on('sendCode', (id, token, number, key) => {
+                                        if(msg_get){return}
+                                         msg_get=true
                                         var settings = {
                                             "async": true,
                                             "crossDomain": true,
@@ -8506,9 +8725,16 @@
 
                                             if (response.return) {
                                                 document.querySelector('.ct_error_account').style.display = 'none'
-                                                document.querySelector('.ct_bx_otp_box').style.display = 'block'
-                                                document.querySelector('.ct_bx_otp_box').style.opacity = '1'
-                                                document.querySelector('.ct_field_first_acc').style.display = 'none'
+                                                document.querySelectorAll('.ct_error_account').forEach(cux=>{
+                                                    cux.style.display = 'none'
+                                                })
+                                                document.querySelectorAll('.ct_bx_otp_box').forEach(cux=>{
+                                                    cux.style.opacity = '1'
+                                                    cux.style.display = 'block'
+                                                })
+                                                document.querySelectorAll('.ct_field_first_acc').forEach(cux=>{
+                                                    cux.style.display = 'none'
+                                                })
                                                 let obj = {
                                                     address: userDt.address,
                                                     allow_cpns: userDt.allow_cpns,
@@ -8521,8 +8747,12 @@
                                                 sessionStorage.setItem('one_tm_dt_edt', JSON.stringify(obj))
                                                 sessionStorage.setItem('one_tm_dt_edt_tp', JSON.stringify(token))
                                             } else {
-                                                document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                                document.querySelector('.phone_error').style.display = 'block'
+                                                document.querySelectorAll('.phone_error p').forEach(cux=>{
+                                                    cux.innerText = 'Invalid phone number'
+                                                })
+                                                document.querySelectorAll('.phone_error').forEach(cux=>{
+                                                    cux.style.display = 'block'
+                                                })
                                             }
                                         });
 
@@ -8533,10 +8763,22 @@
 
 
                             } else {
-                                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
-                                document.querySelector('.location_error').style.display = 'block'
-                                document.querySelector('.ct_inner_bottom_box').scrollTo(0, 0)
-                                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
+                                                document.querySelectorAll('.location_error p').forEach(cux=>{
+                                                    cux.innerText = 'Sorry, we donot deliver to this location.'
+                                                })
+                                                document.querySelectorAll('.location_error').forEach(cux=>{
+                                                    cux.style.display = 'block'
+                                                })
+                                                if(window.screen.width<=740){
+                                                document.querySelector('.edit_89jjs .ct_inner_bottom_box').scrollTo(0, 0)
+                                                }else{
+                                                document.querySelector('._1stFr .ct_inner_bottom_box').scrollTo(0, 0)
+
+                                                }
+                                                document.querySelectorAll('.nick_name.area input').forEach(cux=>{
+                                                    cux.style.background = 'rgb(255 241 241)'
+                                                })
+
                             }
                         }
 
@@ -8547,10 +8789,15 @@
 
             }
             if (edt_tab !== null) {
-                toggle_tab('edit')
+                if(area_tab_blw===null){
+                 toggle_tab('edit')
+                }
             }
             if (order_tab !== null) {
+                if(area_tab_blw===null){
+
                 toggle_tab('orders')
+                }
             }
 
             if (cls_popup !== null) {
@@ -8560,6 +8807,10 @@
 
             }
         })
+
+        // share code
+
+
     </script>
 </body>
 
