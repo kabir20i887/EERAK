@@ -5298,13 +5298,8 @@
             right: -1000px;
         }
 
-        .popup_info.active {
-            right: 20px;
-        }
 
-        .popup_info.place_order {
-            background-color: #099d4f;
-        }
+
 
         .popup_info.sucess_account ion-icon,
         .popup_info.error_info_popup ion-icon {
@@ -5322,7 +5317,18 @@
             margin: 3px 13px;
             font-family: 'Open sans';
         }
-
+.popup_info.sucess_account .inner_x ion-icon{color:rgb(255, 255, 255);font-size:24px;}
+.popup_info.sucess_account ion-icon{color:white;}
+.popup_info.sucess_account .ct_rem_btn ion-icon {
+    color: rgb(255, 255, 255);
+    font-size: 21px;
+}
+.popup_info.sucess_account .ct_rem_btn {
+    position: absolute;
+    right: 20px;
+    margin-top: -1px;
+}
+.popup_info.sucess_account .inner_x {display: flex;}
         .popup_info.sucess_account p {
             font-size: 11px;
             margin: 6px 13px;
@@ -15031,11 +15037,13 @@
             .ct_bx_matched_itm {
                 transform: translate(7px, 7px);
             }
-
-            .ek_cart {
-                margin-top: 134px;
+            body{
+                background-color: white;
             }
-
+            .ek_cart {
+                margin-top: 0;
+            }
+.ct_bx_footer{padding-bottom: 60px;}
             .for_nonfix_search input {
                 margin: 0px;
             }
@@ -15046,6 +15054,7 @@
 
             .ek_cart {
                 padding: 0px;
+    padding-top: 20px;
             }
 
             .for_mobile_search {
@@ -15588,7 +15597,7 @@
             }
 
             .ct_billing_info {
-                width: 100%;
+                width: auto;
                 margin-right: 0px;
                 padding: 0 15px;
             }
@@ -15702,7 +15711,10 @@
                 margin-top: 0;
                 margin-left: 0;
             }
-
+            .body_cart .recomended_cart {
+    border-top: 1px solid #d5d5d5;
+}
+body{background-color: white;}
             .title_h1 {
                 font-size: 20px;
                 margin: 95px 0 0px 22px;
@@ -16540,7 +16552,13 @@
             .ct_bx_qty p {
                 margin-left: 0;
             }
-
+            .ct_delivery_info{padding-bottom: 0;}
+.body_cart .recomended_cart {
+    margin-bottom: 0;
+    margin-top: 0;
+    /* padding-top: 0; */
+    border-top: 1px solid #d5d5d5;
+}
             .popup_info.active {
                 right: 3px;
             }
@@ -18835,10 +18853,14 @@
             </div>
 
         </div>
-        <div class="popup_info sucess_account">
-            <ion-icon name="checkmark-circle-sharp"></ion-icon>
+    <div class="popup_info sucess_account">
+        <div class="inner_x">
+            <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated" aria-label="checkmark circle sharp"></ion-icon>
             <p>Your account has been successfully created </p>
-            {{!-- <span>Please try again later</span> --}}
+        </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
         </div>
     </div>
     <div class="ct_outer_saved">
@@ -19629,8 +19651,13 @@
             let recc_essen = []
             document.querySelector('.empty_cart').style.display = 'none'
             document.querySelector('.title_h1').style.display = 'block'
-
+if(window.screen.width>1100){
             document.querySelector('.ct_bx_flex_sub_list').style.display = 'flex'
+
+}else{
+            document.querySelector('.ct_bx_flex_sub_list').style.display = 'block'
+
+}
 
             document.querySelector('.body_cart .ct_overfow_for_load').style.opacity = '1'
             if (sauceX === null && essenX === null) {
