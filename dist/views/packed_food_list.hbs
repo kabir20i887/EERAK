@@ -315,6 +315,7 @@
             color: white;
             font-family: 'Poppins';
             font-size: 31px;
+            word-break: break-all;
             margin-left: 9px;
         }
 
@@ -9997,25 +9998,27 @@
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
 
-               //if(dt_user.split(' ')[0]!==undefined){
-               //document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
+               if(dt_user.name.split(' ')[0]!==undefined){
+               document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.name.split(' ')[0]
+               document.querySelector('.ct_acc_dt_ov p').innerText=`welcome,`
 
-               //}
-                // remove the banner of signup offer
+               }
+                document.querySelector('.account_nav2').style.display = 'block'
+                document.querySelector('.hide_gshs2').style.display='none'
+                document.querySelector('.hide_gshs').style.display='block'
+                if(window.screen.width>740){
+                    document.querySelector('.mobile_only.account_btn').style.display = 'block'
+                }
+
                 if (userDtx.admin !== undefined) {
                     if (userDtx.admin) {
                         if(window.screen.width>740){
                         document.querySelector('.admin_page').style.display = 'block'
-                document.querySelector('.mobile_only.account_btn').style.display = 'block'
                         }
-                document.querySelector('.account_nav2').style.display = 'block'
-
                         document.querySelector('.admin_panel').style.display = 'block'
 
                     }
                 }
-                document.querySelector('.hide_gshs2').style.display='none'
-                document.querySelector('.hide_gshs').style.display='block'
 
             }
         }

@@ -4367,7 +4367,8 @@ margin-top: 2px;
     .ct_acc_dt_ov h4 {
         color: white;
         font-family: 'Poppins';
-        font-size: 31px;
+        font-size: 31px;            word-break: break-all;
+
         margin-left: 9px;
     }
 
@@ -9064,7 +9065,27 @@ if(window.screen.width<=740){
 
 
         }
-        if(window.screen.width>740){
+let no_req=true
+
+        if(window.location.hash!==''){
+
+        if(window.location.hash.split('#')[1]==='orders'){
+        toggle_tab('orders')
+no_req=false
+        }
+         if(window.location.hash.split('#')[1]==='refer'){
+        toggle_tab('refer')
+no_req=false
+
+        }
+                 if(window.location.hash.split('#')[1]==='edit'){
+        toggle_tab('edit')
+no_req=false
+
+        }
+        }
+        if(no_req){
+           if(window.screen.width>740){
         toggle_tab('refer')
 
         }else{
@@ -9077,6 +9098,10 @@ if(window.screen.width<=740){
             document.querySelector('.ph_num span').innerText = userDt.phone
             document.querySelector('.add_ress span').innerText = userDt.address.replace(/(\r\n|\n|\r)/gm, " ")
         }
+        }
+         
+        
+
 
 
         socket.on('get_csh', (refer_by_nm, name, off, id) => {
