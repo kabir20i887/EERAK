@@ -103,11 +103,45 @@
             transform: translate(223px, 46px);
             filter: contrast(1.1) drop-shadow(1px 6px 6px #00000033);
         }
-
-        .carousel-item {
-            height: 472px;
-            background: whitesmoke;
+        .itm_img_prod{
+            height: 500px;
+            background-image: url(../img/dinning_back.png);
+            background-size: 100% 100%;
         }
+.ct_txt_bx {
+    position: absolute;
+    right: 1px;
+    top: 70px;
+}
+.fade-in {
+  animation: fade-in 2.3s linear;
+}
+
+.fade-in-left {
+  animation: fade-in-left 3.4s ease;
+}
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+        .ct_txt_bx img{
+            width: 250px;
+
+        }
+        .itm_img_prod h3{font-size: 24px;}
 
         .carousel-indicators .active {
             background-color: #050505;
@@ -7553,6 +7587,66 @@
             width: max-content;
             margin: 40px 0px;
         }
+.bounce-in-left {
+  animation: bounce-in-left 2.3s ease;
+}
+@keyframes bounce-in-left {
+  0% {
+    opacity: .6;
+    transform: translateX(-400px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.bounce-in-right {
+  animation: bounce-in-right 2.3s ease;
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: .6;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.gelatine {
+  animation: gelatine 0.5s linear;
+}
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+.prod_img2{
+    right: 275px;
+    top: 113px;
+    width: 230px;
+    /* background: #00000070; */
+    filter: drop-shadow(-1px 7px 2px #00000070) contrast(1.1);
+}
+.bounce2 {
+  animation: bounce2 2s ease;
+}
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+.prod_img1 {
+    right: 55px;
+    top: 259px;
+    z-index: 999999;
+    width: 385px;
+    filter: drop-shadow(7px 14px 8px #000000a3) contrast(1.1);
+}
+        .prod_img{
+position: absolute;
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -7675,7 +7769,14 @@
                 </ol>
                 <div class="carousel-inner">
 
-
+  <div class="carousel-item itm_img_prod active">
+                                      {{!-- <img class="d-block w-100" src="../img/dinning_back.png" alt="Second slide"> --}}
+                                      <img class="prod_img prod_img1" src="../img/chick_prod.png">
+                                      <img class="prod_img prod_img2" src="../img/Masala_Meat.png">
+                                      <div class="ct_txt_bx">
+                                        <img src="../img/txt_img.png" alt="">
+                                      </div>
+                                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon material-symbols-outlined"
@@ -9004,6 +9105,7 @@
                 if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
                     document.querySelector('.ct_pop_up_items_order').classList.add('active')
                 }
+                
                 console.log(view_itm.childNodes[1].childNodes[1].childNodes[1].src)
                 let imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[3].src
                 let name = ''
@@ -9218,7 +9320,7 @@
                 }
                 getItm_groc()
 
-                document.querySelector('.carousel-inner').innerHTML = ''
+             //   document.querySelector('.carousel-inner').innerHTML = ''
                 let images = JSON.parse(images_itm)
                 images.forEach((cu, ind) => {
                     let crousel_html = `    <div class="carousel-item itm_img_prod active">
@@ -9231,11 +9333,21 @@
                                     `
                     }
 
-                    document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
+                   // document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
                 })
 
                 console.log(JSON.parse(images_itm), ' -------------')
+document.querySelector('.prod_img2').classList.add('bounce-in-left')
+document.querySelector('.prod_img1').classList.add('bounce-in-right')
+document.querySelector('.ct_txt_bx').classList.add('fade-in-left')
 
+setTimeout(() => {
+    document.querySelector('.prod_img2').classList.add('gelatine')
+    
+
+    },1260)
+
+    
                 // document.querySelector('.ct_bx_img img').src = imgsrc
                 document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                 let allfd = JSON.parse(localStorage.getItem('sauce'))
