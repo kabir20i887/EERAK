@@ -5378,14 +5378,14 @@ margin-top: 2px;
         color: #242222;
         font-family: 'roboto';
     }
-
-    .ct_btns span {
-        font-size: 9px;
-        color: #8b8b8b;
-        font-family: 'roboto';
-        display: flex;
-        margin: 10px 0 0 33px;
-    }
+.ct_btns span {
+    font-size: 9px;
+    color: #8b8b8b;
+    font-family: 'roboto';
+    display: flex;
+    margin: 0px 0 0 33px;
+    padding-top: 10px;
+}
 
     .ct_btns span p {
         color: rgb(53, 102, 238);
@@ -7559,6 +7559,7 @@ display: block;
         .ct_bx_otp_box {
     margin: 40px 0px 40px 15px;
 }
+.ct_terms_cond{width: 100vw;}
 .empty_cart {
     margin-left: 0;
     position: relative;
@@ -8227,14 +8228,23 @@ p{margin-bottom:auto;}
                //document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
 
                //}
+
                 // remove the banner of signup offer
+                document.querySelector('.account_nav2').style.display = 'block'
+                                    document.querySelector('.account_name_sec h4').innerText = dt_user.name
+                                    document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
+
+                                    document.querySelector('.ph_num span').innerText = dt_user.phone
+                                    document.querySelector('.add_ress span').innerText = dt_user.address.replace(/(\r\n|\n|\r)/gm, " ")
+                        if(window.screen.width>740){
+                document.querySelector('.mobile_only.account_btn').style.display = 'block'
+                        }
                 if (userDtx.admin !== undefined) {
                     if (userDtx.admin) {
                         if(window.screen.width>740){
                         document.querySelector('.admin_page').style.display = 'block'
-                document.querySelector('.mobile_only.account_btn').style.display = 'block'
                         }
-                document.querySelector('.account_nav2').style.display = 'block'
+                
 
                         document.querySelector('.admin_panel').style.display = 'block'
 
@@ -8620,7 +8630,7 @@ if(window.screen.width<=740){
                                         </div>
                                         <p class="error_otp">Invalid OTP, please try again.</p>
                                         <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
-                                        <button class="create_account">Create an account</button>
+                                        <button class="create_account">Update account</button>
                                     </div>
                                 <div class="ct_field_first_acc">
                                     <div class="ct_section_box_accounts">
@@ -9136,7 +9146,7 @@ no_req=false
             let refer_tab = e.target.closest('.refer_tab')
             let go_back = e.target.closest('.ct_bx_go_back')
             let lear_mr = e.target.closest('.learn_more')
-            let return_order = e.target.closest('.f4Ovn')
+            let return_order = e.target.closest('._3PUy8.f4Ovn')
             let rem_return_pop = e.target.closest('.ct_info_requested .ct_remove')
             let logout_tab = e.target.closest('.awo_x.logout')
             let rem_popups= e.target.closest('.ct_rem_btn')
@@ -9302,6 +9312,7 @@ if(!navigator.share) {
                     console.log(nm_tp, nm_otp)
                     if (nm_tp === nm_otp) {
                         let userDt = JSON.parse(getCookie('userData'))
+                        
                         let new_dt = JSON.parse(sessionStorage.getItem('one_tm_dt_edt'))
 
                         let already = false
@@ -9346,7 +9357,6 @@ if(!navigator.share) {
                                     document.querySelector('.popup_info.sucess_account p').innerText='Your Account has been successfully updated'
                                     document.querySelector('.popup_info.sucess_account').style.right='3px'
                                     
-                                    window.scrollTo(0, 0)
                                     setTimeout(function () {
                                     document.querySelector('.popup_info.sucess_account').style.right='-1000px'
                                     }, 20000)
@@ -9355,7 +9365,7 @@ if(!navigator.share) {
                                     document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
 
                                     document.querySelector('.ph_num span').innerText = new_dt.phone
-                                    document.querySelector('.add_ress span').innerText = new_dt.address
+                                    document.querySelector('.add_ress span').innerText = new_dt.address.replace(/(\r\n|\n|\r)/gm, " ")
                                     document.cookie = "userData" + "=" + JSON.stringify(obj) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
                                     sessionStorage.clear()

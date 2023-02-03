@@ -98,10 +98,12 @@
             justify-content: center;
         }
 
+.w-100{height: 100%;}
         .itm_img_prod .w-100 {
             width: 36% !important;
             transform: translate(223px, 46px);
             filter: contrast(1.1) drop-shadow(1px 6px 6px #00000033);
+
         }
         .itm_img_prod{
             height: 500px;
@@ -539,7 +541,12 @@
             font-family: 'Montserrat';
 
         }
-
+        .carousel-item iframe{
+    height: 500px;width: 100%;
+}
+.carousel-inner .carousel-item{
+    height: 500px;
+}
 
         /* for essentials */
 
@@ -1953,24 +1960,8 @@
             background-color: rgb(0 0 0 / 39%);
         }
 
-        .ct_video_box iframe {
-            width: 100%;
-        }
 
-        .ct_video_box {
-            width: 100%;
-            display: none;
-            justify-content: center;
-        }
 
-        .ct_inner_video {
-            position: fixed;
-            height: auto;
-            z-index: 9999999999999;
-            top: 12%;
-            background: white;
-            box-shadow: 0 0 4px black;
-        }
 
         .ct_bx_btn_play {
             background-color: #0000005e;
@@ -4956,7 +4947,9 @@
 .itm_img_prod .w-100 {
     transform: translate(151px, 26px);
 }
-
+.ct_bx_footer {
+    padding-bottom: 60px;
+}
 
             /*codex*/
 
@@ -7766,17 +7759,14 @@ position: absolute;
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+
                 </ol>
                 <div class="carousel-inner">
+                        {{!-- <div class="carousel-item">
+                            <iframe width="1280" height="720" src="https://www.youtube.com/embed/O15xP3H4cYQ" title="Best beginner Fountain Pen - The Pilot Metropolitan🔥🔥 (Fine/Medium nibs reviewed)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div> --}}
 
-  <div class="carousel-item itm_img_prod active">
-                                      {{!-- <img class="d-block w-100" src="../img/dinning_back.png" alt="Second slide"> --}}
-                                      <img class="prod_img prod_img1" src="../img/chick_prod.png">
-                                      <img class="prod_img prod_img2" src="../img/Masala_Meat.png">
-                                      <div class="ct_txt_bx">
-                                        <img src="../img/txt_img.png" alt="">
-                                      </div>
-                                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon material-symbols-outlined"
@@ -8222,18 +8212,6 @@ position: absolute;
 
     <div class="ct_sep_bx">
         <div class="inner_seperation">
-
-            <div class="ct_video_box">
-                <div class="ct_inner_video">
-                    <div class="ct_close_video">
-                        <ion-icon name="close-outline"></ion-icon>
-                    </div>
-                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/XSOe0t7CBSI"
-                        title="World's first cooking sauce - krick sauce" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
 
 
 
@@ -9117,6 +9095,8 @@ position: absolute;
                 let qtys = ''
                 let desc = ''
                 let images_itm = ``
+                let images_prod = ``
+
                 let essen_ids = ``
                 if (view_itm.childNodes[1].childNodes[1].childNodes[5] === undefined) {
                     imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[1].src
@@ -9130,12 +9110,15 @@ position: absolute;
                     desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[15].innerHTML
                     essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[17].innerHTML
                     images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[19].innerHTML
+                    images_prod=view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[21].innerHTML
+
                 } else {
                     name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
                     stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[3].innerHTML
                     price = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[5].innerHTML
                     price_off = 0
                     offer = null
+                    images_prod=view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[21].innerHTML
                     about = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[11].innerHTML
                     qtys = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[13].innerHTML
                     desc = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[15].innerHTML
@@ -9143,6 +9126,7 @@ position: absolute;
                     images_itm = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[19].innerHTML
 
                 }
+                console.log(JSON.parse(images_prod),'  ---------------wjhsdahsadhsd')
                 document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
                 document.querySelector('.ct_load_items').style.display = 'flex'
 
@@ -9320,20 +9304,30 @@ position: absolute;
                 }
                 getItm_groc()
 
-             //   document.querySelector('.carousel-inner').innerHTML = ''
+         //    document.querySelector('.carousel-inner').innerHTML = ''
+             images_prod=JSON.parse(images_prod)
+             console.log(images_prod)
+            let crousel_html = `  <div class="carousel-item itm_img_prod active">
+                                      <img class="prod_img prod_img1" src="${images_prod.img2}">
+                                      <img class="prod_img prod_img2" src="${images_prod.pack}">
+                                      <div class="ct_txt_bx">
+                                        <img src="${images_prod.txt}" alt="">
+                                      </div>
+                                    </div>`
+                                    alert('1')
+                    document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
                 let images = JSON.parse(images_itm)
                 images.forEach((cu, ind) => {
-                    let crousel_html = `    <div class="carousel-item itm_img_prod active">
-                                      <img class="d-block w-100" src="${cu}" alt="Second slide">
-                                    </div>`
-                    if (ind > 0) {
+                    if(ind>0){
                         crousel_html = `    <div class="carousel-item">
                                       <img class="d-block w-100" src="${cu}" alt="Second slide">
                                     </div>
                                     `
-                    }
+                                                        document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
 
-                   // document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
+                    }
+                    
+
                 })
 
                 console.log(JSON.parse(images_itm), ' -------------')
@@ -9740,22 +9734,6 @@ setTimeout(() => {
 
 
             }
-            if (!e.target.closest('.ct_inner_video') && !e.target.closest('.ct_bx_btn_play')) {
-                document.querySelector('.ct_video_box').style.display = 'none'
-                document.querySelector('.ct_video_over').style.display = 'none'
-                var stopVideos = function () {
-                    var videos = document.querySelectorAll('iframe, video');
-                    Array.prototype.forEach.call(videos, function (video) {
-                        if (video.tagName.toLowerCase() === 'video') {
-                            video.pause();
-                        } else {
-                            var src = video.src;
-                            video.src = src;
-                        }
-                    });
-                };
-                stopVideos()
-            }
 
             if (e.target.closest('.ct_close_video')) {
                 document.querySelector('.ct_video_box').style.display = 'none'
@@ -9776,46 +9754,7 @@ setTimeout(() => {
 
         })
 
-        document.querySelector('.ct_bx_btn_play').addEventListener('click', (e) => {
-            //   let user11 = getCookie('user')
-            //   if (user11 === '') {
-            //       socket.emit('send_msg_adm2')
-            //   }
-            let l = window.screen.width
-            let lX
-            if (window.screen.width <= 800) {
-                lX = 10 / 100 * l
-                l = l - lX
-            } else {
-                lX = 20 / 100 * l
-                l = l - lX
-            }
-            let height = window.screen.height
-            let heightX
-            let checkSize = (height * 2) + 200
-            if (window.screen.height <= 740 && window.screen.height < window.screen.width) {
-                heightX = 30 / 100 * height
-                height = height - height
-            }
-            if (window.screen.height >= window.screen.width) {
-                heightX = height * 1 / 2
-                height = height - heightX
-                document.querySelector('.ct_inner_video').style.top = 28 + '%'
-            }
-            if (window.screen.height > 740 && window.screen.height < window.screen.width) {
-                if (window.screen.height > 1550) {
-                    heightX = 30 / 100 * heigh
-                } else {
-                    heightX = 40 / 100 * heigh
-                }
-                height = height - heightX
-            }
-            document.querySelector('.ct_video_over').style.display = 'block'
-            document.querySelector('.ct_video_box').style.display = 'flex'
-            document.querySelector('.ct_inner_video').style.height = (height - 38) + 'px'
-            document.querySelector('.ct_video_box iframe').style.height = height + 'px'
-            document.querySelector('.ct_inner_video').style.width = l + 'px'
-        })
+
         document.querySelectorAll('.ct_bx_search input').forEach(cur => {
             cur.addEventListener('keyup', (e) => {
                 console.log(cur.value)
@@ -10372,7 +10311,8 @@ setTimeout(() => {
                                                             <p class="desc">${desc}</p>
                                                             <p class="essentials">${JSON.stringify(essential_ids)}</p>
                                                             <p class="images_item">${images_itm}</p>
-   
+                                                               <p class="images_prod">${JSON.stringify(item.image_prod)}</p>
+
                                                         </div>
                                                     </div>
                                                 </div>

@@ -54,9 +54,7 @@ let number1 = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,up
 
 
 console.log(number1)
-// app.get('/about', (req, res) => {
-//     res.render('about')
-// })
+
 
 app.get('/Login', (req, res) => {
 
@@ -135,12 +133,12 @@ app.get('/sauce', (req, res) => {
    res.render('packed_food_list')
 
 })
-app.get('/offers', (req, res) => {
-    res.render('main_page')
+app.get('/aboutus', (req, res) => {
+    res.render('portfolio')
  
  })
  app.get('/', (req, res) => {
-    res.render('portfolio')
+    res.render('main_page')
  
  })
 
@@ -330,15 +328,9 @@ app.get('/events', (req, res) => {
     res.render('index')
 
 })
-app.get('/admin/:id', (req, res) => {
+app.get('/admin', (req, res) => {
 console.log(req.params)
-    if (req.params.id === 'msdhooni7') {
         res.render('admin')
-
-    }else{
-        res.redirect('/')
-
-    }
 })
 // app.get('/admin', (req, res) => {
 
@@ -492,6 +484,8 @@ io.on('connection', (sock) => {
 //
     //        console.log(res.body);
     //    });
+    })
+    sock.on('signup_msg',(phone)=>{
     })
     sock.on('on_way_sms',(name,am,phone)=>{
         //Hello kabir, your order of rs ... is out for delivery. Please use the code to verify order

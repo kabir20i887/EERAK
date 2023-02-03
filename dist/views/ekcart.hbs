@@ -648,20 +648,19 @@
             justify-content: center;
         }
 
-        .ct_offer_saved_popup {
-            border-radius: 20px;
-            width: 500px;
-            height: 200px;
-            /* height: 172px; */
-            display: none;
-            margin-top: 140px;
-            position: fixed;
-            background: white;
-            z-index: 999999999999999;
-            padding: 11px 36px;
-            box-shadow: 0 10px 8px #0000004a;
-        }
-
+.ct_offer_saved_popup {
+    border-radius: 20px;
+    width: 500px;
+    height: auto;
+    /* height: 172px; */
+    display: none;
+    margin-top: 140px;
+    position: fixed;
+    background: white;
+    z-index: 999999999999999;
+    padding: 11px 36px;
+    box-shadow: 0 10px 8px #0000004a;
+}
         .ct_offer_saved_popup span,
         .ct_offer_saved_popup p {
             color: black;
@@ -5342,16 +5341,16 @@
             font-size: 24px;
         }
 
-        .popup_info.sucess_account ion-icon {
+        .popup_info ion-icon {
             color: white;
         }
 
-        .popup_info.sucess_account .ct_rem_btn ion-icon {
+        .popup_info .ct_rem_btn ion-icon {
             color: rgb(255, 255, 255);
             font-size: 21px;
         }
 
-        .popup_info.sucess_account .ct_rem_btn {
+        .popup_info .ct_rem_btn {
             position: absolute;
             right: 20px;
             margin-top: -1px;
@@ -5381,6 +5380,11 @@
 
         }
 
+        .popup_info.error_info_popup.er_ald_acc {
+            height: 60px;
+            background-color: #803af5;
+
+        }
         .popup_info.sucess_account {
             height: 50px;
         }
@@ -7695,7 +7699,7 @@
             }
 
             .ek_cart {
-                background-color: #f7f7f7;
+                background-color:#f5f5f5;
                 padding: 0px;
                 margin-top: 0;
                 padding-top: 24px;
@@ -11246,7 +11250,7 @@
         }
 
         .ek_cart {
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
     padding: 40px 0 0 0;            margin-top: 0;
             padding-left: 30px;
         }
@@ -16594,6 +16598,20 @@ min-width: 180px;
     margin: 13px 0 0 27px;
     padding: 10px 10px;
 }
+.ct_offer_saved_popup .ct_btn {
+    margin: 20px 60px;
+}
+.ct_offer_saved_popup span, .ct_offer_saved_popup p {
+    font-size: 16px;
+}
+.ct_offer_saved_popup h3 {
+    font-size: 23px;
+}
+.ct_offer_saved_popup {
+    width: 93vw;
+    height: auto;
+    padding: 13px 15px;
+}
 .ct_info_cpns{
     margin-left: 26px;
 }
@@ -18906,7 +18924,12 @@ min-width: 180px;
                 <div></div>
                 <div></div>
             </div>
+                        <div class="inner_x">
             <p>Creating an account and logging in</p>
+            </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
         </div>
         <div class="popup_info place_order">
             <div class="lds-ring">
@@ -18915,15 +18938,37 @@ min-width: 180px;
                 <div></div>
                 <div></div>
             </div>
-            <p>Your order is placing</p>
-        </div>
-        <div class="popup_info error_info_popup">
-            <ion-icon name="alert-circle-sharp"></ion-icon>
-            <div>
-                <p>Something went wrong</p>
-                <span>Please try again later.</span>
+            <p>Placing order...</p>
+            <div class="inner_x">
+            <p>Placing order...</p>
             </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="popup_info error_info_popup wnt_wrg">
+            <ion-icon name="alert-circle-sharp"></ion-icon>
 
+            <div class="inner_x">
+
+                <p>Something went wrong</p>
+                <span>Please try again later.</span>                
+            </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+                <div class="popup_info error_info_popup er_ald_acc">
+            <ion-icon name="alert-circle-sharp"></ion-icon>
+
+            <div class="inner_x">
+
+                <p>Opps! Account already exist</p>
+                <span>Please try again with a new phone number.</span>                
+            </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
         </div>
         <div class="popup_info sucess_account">
             <div class="inner_x">
@@ -19840,7 +19885,7 @@ min-width: 180px;
                 recc_sauce = res.docs.filter(elem => {
                     let dt = elem.data().item
                     console.log(dt.name)
-                    return !sauce.some(cItem => cItem.name.split(' ').join('').toLowerCase() === dt.name.split(' ').join('').toLowerCase())
+                    return !sauce.some(cItem => cItem.name.replace(/[ ,]+/g, "").toLowerCase() === dt.name.replace(/[ ,]+/g, "").toLowerCase())
                 })
 
 
@@ -19848,7 +19893,7 @@ min-width: 180px;
                 res.docs.forEach(async cur => {
                     let data = cur.data()
                     let itm = data.item
-                    let nm2 = itm.name.split(' ').join('').toLowerCase()
+                    let nm2 = itm.name.replace(/[ ,]+/g, "").toLowerCase()
                     let offer = itm.offer
                     let price = itm.price_real
                     let qty_unit = itm.qty
@@ -19904,7 +19949,7 @@ min-width: 180px;
                         }
 
                         sauce.forEach(elem => {
-                            let nm = elem.name.split(' ').join('').toLowerCase()
+                            let nm = elem.name.replace(/[ ,]+/g, "").toLowerCase()
                             itm_qt = parseFloat(elem.qty)
                             if (nm === nm2) {
 
@@ -19913,7 +19958,7 @@ min-width: 180px;
                                 let qty_obj = qty_unit.map((cur11, ind) => {
                                     let priceX = parseFloat(cur11.price)
                                     let pack = cur11.pack
-                                    let name = cur11.name
+                                    let name = cur11.name.replace(/[ ,]+/g, "").toLowerCase()
                                     let active_btn = 'unactive'
                                     let htmlXX = ``
                                     let price_off = 0
@@ -19934,7 +19979,7 @@ min-width: 180px;
                                     }
 
 
-                                    if (name === elem.slt_nm.split(' ').join('').toLowerCase()) {
+                                    if (name === elem.slt_nm.replace(/[ ,]+/g, "").toLowerCase()) {
 
                                         active_btn = 'active'
                                         let del_x = ``
@@ -20044,15 +20089,15 @@ min-width: 180px;
                 recc_essen = res.docs.filter(elem => {
                     let dt = elem.data().item
                     console.log(dt.name)
-                    return !essentials.some(cItem => cItem.name.split(' ').join('').toLowerCase() === dt.name.split(' ').join('').toLowerCase())
+                    return !essentials.some(cItem => cItem.name.replace(/[ ,]+/g, "").toLowerCase() === dt.name.replace(/[ ,]+/g, "").toLowerCase())
                 })
 
                 res.docs.forEach(async cur => {
                     let data = cur.data()
                     essentials.forEach(elem => {
-                        let nm = elem.name.split(' ').join('').split(',').join('').toLowerCase('')
+                        let nm = elem.name.replace(/[ ,]+/g, "").toLowerCase()
                         let itm = data.item
-                        let nm2 = itm.name.split(' ').join('').split(',').join('').toLowerCase('')
+                        let nm2 = itm.name.replace(/[ ,]+/g, "").toLowerCase()
                         if (nm === nm2) {
                             let offer = itm.offer
                             let price = itm.price
@@ -20089,7 +20134,7 @@ min-width: 180px;
                             let qty_obj = qty_unit.map((cur11, ind) => {
                                 let priceX = parseFloat(cur11.price)
                                 let pack = ''
-                                let name = cur11.name.split(' ').join('').toLowerCase()
+                                let name = cur11.name.replace(/[ ,]+/g, "").toLowerCase()
                                 let htmlXX = ``
                                 let price_off = '0'
                                 let offer_del = ''
@@ -20105,7 +20150,7 @@ min-width: 180px;
                                 }
 
                                 let active_btn = 'unactive'
-                                if (name === elem.unit.split(' ').join('').toLowerCase()) {
+                                if (name === elem.unit.replace(/[ ,]+/g, "").toLowerCase()) {
                                     active_btn = 'active'
                                     let del_x = ``
 
@@ -20416,7 +20461,7 @@ min-width: 180px;
             //     })
             // }
 
-
+            console.log(tot_pr_itm ,tot_pr_itm2,' --------------------------tot_2xxxx')
             let toto_Pr = tot_pr_itm + tot_pr_itm2
             document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹' + toto_Pr.toLocaleString()
             addAmount()
@@ -20601,6 +20646,7 @@ min-width: 180px;
                             })
                         }
                     } else {
+                        onclose.log('ldkfdjfohsdhshddddddddddddddddddjjj')
                         document.querySelector('.ct_search_cpns').style.filter = `grayscale(1.4)`
                         document.querySelector('.ct_search_cpns').style.pointerEvents = 'none'
 
@@ -20686,7 +20732,7 @@ min-width: 180px;
                     })
                 if (secret !== ''){
                     if(data.secret!==null){
-                if(secret.split(' ').join('')===data.secret.split(' ').join('')){
+                if(secret.replace(/[ ,]+/g, "").toLowerCase()===data.secret.replace(/[ ,]+/g, "").toLowerCase()){
                     matched_secret=true
                     let not_av_html=`notavailable`
                     let btn_acc=`<button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
@@ -20703,7 +20749,7 @@ min-width: 180px;
                     }
                     if(getCookie('cpns_appl')!==''){
                 let objCpns = JSON.parse(getCookie('cpns_appl'))
-                    if(objCpns.name.split(' ').join('')===data.name.split(' ').join('')){
+                    if(objCpns.name.replace(/[ ,]+/g, "").toLowerCase()===data.name.replace(/[ ,]+/g, "").toLowerCase()){
                          btn_acc = ` <button class="remove" style="display:block;margin-bottom: 12px;">Remove</button>`
                         not_av_html=''
                     }
@@ -21153,6 +21199,8 @@ ${desc_htm_cpn.join('')}
                     reffer: false,
                     orders: [],
                 }).then(res => {
+
+                    socket.emit('created_account')
                     sessionStorage.clear()
                     document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
 
@@ -21561,7 +21609,6 @@ function remove_cpns_panel(){
             let goback_login = e.target.closest('.ct_go_back_account')
             let goback_sgn = e.target.closest('.for_signup  .ct_go_back_account')
             let cls_popup = e.target.closest('.ct_offer_saved_popup .ct_btn')
-
             let coupons_box = e.target.closest('.ct_apply_coupons .ct_bx1')
             let close_popup_cpns = e.target.closest('.for_cpns.ct_bx_layer')
             let close_popup_cpns2 = e.target.closest('.container_coupons_Refer .ct_bx_go_back')
@@ -21580,6 +21627,13 @@ function remove_cpns_panel(){
             let unit_select = e.target.closest('.ct_unit_box_selector')
             let unit_li = e.target.closest('.ct_other_units li')
             let goback_cart = e.target.closest('.ct_bx_go_back.nav_bar')
+            let rem_popups= e.target.closest('.ct_rem_btn')
+            if(rem_popups!==null){
+                document.querySelectorAll('.popup_info').forEach(cux=>{
+                    cux.style.right='-1000px'
+                })
+            }
+
             if (goback_cart !== null) {
                 window.location.replace('/')
             }
@@ -21707,7 +21761,7 @@ if(offer!==null){
 
                         let tot_am = 0
                         //  dt required------ name , img, totprice, paymode, unit, qty, returable 
-                        let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.split(' ').join('').toLowerCase()
+                        let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.replace(/[ ,]+/g, "").toLowerCase()
                         let objItms = {
                             total_amount: 0,
                             date: moment().format('LLL'),
@@ -21721,22 +21775,8 @@ if(offer!==null){
                         let userDt = JSON.parse(getCookie('userData'))
                         let essen = JSON.parse(localStorage.getItem('essentials'))
                         let sauce = JSON.parse(localStorage.getItem('sauce'))
-                        let cd = secret(token).code
                         //  socket.emit('order_sms',cd,userDt.name,tot_am.toLocaleString(),userDt.phone)
-                        // var settings = {
-                        //     "async": true,
-                        //     "crossDomain": true,
-                        //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145388&variables_values=${cd}|${userDt.name}&route=dlt&numbers=${userDt.phone}`,
-                        //     "method": "GET"
-                        // }
-                        // //
-                        // $.ajax(settings).done(function (response) {
-                        //     console.log(response, 'sent!!!')
-                        // 
-                        //   if (response.return) {
-                        //       console.log('sent!!!')
-                        //   } 
-                        // });
+
                         async function check_price() {
                             try {
                                 let dbCollection = db.collection("sauce")
@@ -21748,12 +21788,14 @@ if(offer!==null){
                                         let dt = cur.data()
                                         let itm = dt.item
 
-                                        if (itm.name === nm) {
+                                    if (itm.name.replace(/[ ,]+/g, "") === nm.replace(/[ ,]+/g, "")) {
                                             let nm_un = cu11.slt_nm
                                             itm.qty.forEach(elem => {
-                                                if (elem.name === nm_un) {
+                                                console.log(elem.name , nm_un,elem.name === nm_un,' -------------kahss')
+                                                if (elem.name.split(' ').join('') === nm_un.split(' ').join('')) {
                                                     let pr = parseFloat(elem.price) * qt
                                                     tot_am += pr
+                                                    console.log(itm.name,pr,'.......................dffjkrgeg')
                                                     tot_am_sauce += pr
 
                                                 }
@@ -21774,13 +21816,13 @@ if(offer!==null){
 
                                 })
                             } catch (err) {
-                                document.querySelector('.error_info_popup').style.right = '20px'
+                                document.querySelector('.error_info_popup.wnt_wrg').style.right = '4px'
                                 document.querySelector('.check_out_btn_order').style.opacity = '1'
                                 document.querySelector('.check_out_btn_order').style.pointerEvents = 'auto'
                                 setTimeout(function () {
-                                    document.querySelector('.error_info_popup').style.right = '-600px'
+                                    document.querySelector('.error_info_popup.wnt_wrg').style.right = '-1000px'
 
-                                }, 7000)
+                                }, 30000)
 
                             }
 
@@ -21792,16 +21834,16 @@ if(offer!==null){
                                 res2.docs.forEach(cur => {
                                     let dt = cur.data()
                                     let itm = dt.item
-                                    console.log(itm.name, nm, ' ------------i love u dkassjsjf')
-
-                                    if (itm.name.split(',').join('').split(' ').join('') === nm.split(',').join('').split(' ').join('')) {
+                                    if (itm.name.replace(/[ ,]+/g, "").toLowerCase() === nm.replace(/[ ,]+/g, "").toLowerCase()) {
                                         let nm_un = cu11.unit
                                         itm.units.forEach(elem => {
-                                            console.log(elem.name, nm_un, ' ------------i love u')
-                                            if (elem.name === nm_un) {
+                                                console.log(elem.name , nm_un,elem.name === nm_un,' -------------kahss')
+                                            if (elem.name.replace(/[ ,]+/g, "").toLowerCase() === nm_un.replace(/[ ,]+/g, "").toLowerCase()) {
                                                 let pr = parseFloat(elem.price) * qt
                                                 tot_am += pr
                                                 tot_am_grc += pr
+                                                    console.log(itm.name,pr,'.......................dffjkrgeg')
+
                                             }
                                         })
                                         let obj = {
@@ -21820,8 +21862,7 @@ if(offer!==null){
                             })
                             let dvpr = JSON.parse(sessionStorage.getItem('app_i8m89x5'))
                             dvpr = parseFloat(dvpr)
-                            console.log(pay_typ, '--------00rghfgghfgudfbfEkfb', pay_typ.split(' ').join('') === 'payonline')
-                            if (pay_typ.split(' ').join('') === 'payonline') {
+                            if (pay_typ.replace(/[ ,]+/g, "").toLowerCase() === 'payonline') {
                                 objItms.payMode = pay_typ
                                 dvpr = 0
                             } else if (dvpr > 0) {
@@ -22023,8 +22064,21 @@ if(offer!==null){
                                         orderDt: objItms,
 
                                     })
+                                    let cd = secret(token).code
                                     document.querySelector('.place_order').style.display = 'none'
-
+                        let nick_nm=userDt.name.split(' ')[0]
+                        var settings = {
+                            "async": true,
+                            "crossDomain": true,
+                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151167&variables_values=${userDt.name}|${cd}|${nick_nm}&route=dlt&numbers=${userDt.phone}`,
+                            "method": "GET"
+                        }
+                        //
+                        $.ajax(settings).done(function (response) {                        
+                          if (response.return) {
+                              console.log('sent!!!')
+                          } 
+                        });
                                     order_btn.style.opacity = '1'
                                     order_btn.style.pointerEvents = 'auto'
                                     document.querySelector('.sucess_order').style.display = 'block'
@@ -22076,8 +22130,8 @@ if(offer!==null){
 
                 if (remove_item.parentElement.parentElement.parentElement.childNodes[1].classList.value.includes('sauce_itm')) {
                     sauce.forEach((cu11, ind) => {
-                        let nmxx = cu11.name.split(' ').join('').split(',').join('').toLowerCase()
-                        let nm23s = nm.split(' ').join('').split(',').join('').toLowerCase()
+                        let nmxx = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
+                        let nm23s = nm.replace(/[ ,]+/g, "").toLowerCase()
                         if (nmxx === nm23s) {
                             sauce.splice(ind, 1)
                         }
@@ -22103,8 +22157,8 @@ if(offer!==null){
                     checkandsave('sauce_pr', tot2)
                 } else {
                     essen.forEach((cu11, ind) => {
-                        let nmxx = cu11.name.split(' ').join('').split(',').join('').toLowerCase()
-                        let nmx22 = nm.split(' ').join('').split(',').join('').toLowerCase()
+                        let nmxx = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
+                        let nmx22 = nm.replace(/[ ,]+/g, "").toLowerCase()
                         if (nmxx === nmx22) {
                             essen.splice(ind, 1)
                         }
@@ -22224,8 +22278,8 @@ if(offer!==null){
                     if (qty_inc.parentElement.parentElement.parentElement.classList.value.includes('sauce_itm')) {
                         let nm = qty_inc.parentElement.parentElement.childNodes[1].innerText
                         sauce.forEach(cu11 => {
-                            nm = nm.split(' ').join('')
-                            let nm2 = cu11.name.split(' ').join('')
+                            nm = nm.replace(/[ ,]+/g, "").toLowerCase()
+                            let nm2 = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
                             if (nm === nm2) {
                                 cu11.qty = val
 
@@ -22237,8 +22291,8 @@ if(offer!==null){
                     } else {
                         let nm = qty_inc.parentElement.parentElement.childNodes[1].innerText
                         groc.forEach(cu11 => {
-                            nm = nm.split(' ').join('')
-                            let nm2 = cu11.name.split(' ').join('')
+                            nm = nm.replace(/[ ,]+/g, "").toLowerCase()
+                            let nm2 = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
                             if (nm === nm2) {
                                 cu11.qt = val
 
@@ -22647,7 +22701,7 @@ remove_cpns_panel()
                                         document.querySelector('.popup_info.sucess_account').classList.add('active')
                                         document.querySelector('.ct_overflow_customize').style.display = 'none'
 
-                                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in to account'
+                                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in'
                                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
                                         document.cookie = "ct_901_12_x" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
@@ -22659,7 +22713,7 @@ remove_cpns_panel()
                                                 document.querySelector('.place_order_btn_bottom').style.display = 'block'
                                             }
 
-                                        }, 20000)
+                                        }, 30000)
                                     }
                                 })
 
@@ -22672,6 +22726,7 @@ remove_cpns_panel()
                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                         document.querySelector('.popup_info.sucess_account').classList.add('active')
+                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in'
                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
                         document.querySelector('.ct_overflow_customize').style.display = 'none'
@@ -22683,7 +22738,7 @@ remove_cpns_panel()
                             if (window.screen.width <= 1100) {
                                 document.querySelector('.place_order_btn_bottom').style.display = 'block'
                             }
-                        }, 7000)
+                        }, 30000)
                     }
 
 
@@ -22760,7 +22815,7 @@ remove_cpns_panel()
                                         var settings = {
                                             "async": true,
                                             "crossDomain": true,
-                                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
+                                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
                                             "method": "GET"
                                         }
                                         $.ajax(settings).done(function (response) {
@@ -22774,10 +22829,6 @@ remove_cpns_panel()
                                             }
                                         });
                                     })
-
-
-
-
                                 }
 
                             })
@@ -23044,7 +23095,7 @@ remove_cpns_panel()
                                             var settings = {
                                                 "async": true,
                                                 "crossDomain": true,
-                                                "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=145384&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                                "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${ph_num}`,
                                                 "method": "GET"
                                             }
 
@@ -23087,21 +23138,10 @@ remove_cpns_panel()
                                         })
                                     } else {
                                         // account exist already
-
-                                        document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                            cu11.style.display = 'none'
-                                        })
-                                        document.querySelector('.error_account').style.display = 'flex'
-                                        setTimeout(function () {
-                                            document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                                cu11.style.display = 'flex'
-                                            })
-                                            document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
-                                                cu11.style.marginTop = '18px'
-                                            })
-                                            document.querySelector('.error_account').style.display = 'none'
-
-                                        }, 8000)
+                                document.querySelector('.error_info_popup.er_ald_acc').style.right = '4px'
+                                setTimeout(function () {
+                                    document.querySelector('.error_info_popup.er_ald_acc').style.right = '-1000px'
+                                }, 30000)
                                     }
                                 }
                                 phoneExist()
@@ -23271,6 +23311,8 @@ remove_cpns_panel()
                 addItem.classList.add('added')
                 addItem.style.pointerEvents = 'none'
                 addItem.childNodes[1].innerText = 'Added to cart'
+tot_pr_itm =0
+tot_pr_itm2=0
                             if (window.screen.width <= 1100) {
                                 document.querySelector('.place_order_btn_bottom').style.display = 'block'
                             }
