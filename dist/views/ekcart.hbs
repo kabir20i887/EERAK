@@ -35,6 +35,61 @@
         rel="stylesheet">
 
     <style>
+
+.spinner-square {
+    display: flex;
+    flex-direction: row;
+    width: 90px;
+    height: 120px;
+      position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999999999999;
+}
+
+.spinner-square > .square {
+    width: 17px;
+    height: 80px;
+    margin: auto auto;
+    border-radius: 4px;
+}
+
+.square-1 {
+    animation: square-anim 1200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
+}
+
+.square-2 {
+    animation: square-anim 1200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 200ms infinite;
+}
+
+.square-3 {
+    animation: square-anim 1200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 400ms infinite;
+}
+
+@keyframes square-anim {
+    0% {
+        height: 80px;
+        background-color: rgb(240, 216, 111);
+    }
+    20% {
+        height: 80px;
+    }
+    40% {
+        height: 120px;
+        background-color: rgb(238, 212, 96);
+    }
+    80% {
+        height: 80px;
+    }
+    100% {
+        height: 80px;
+        background-color: rgb(241, 212, 82);
+    }
+}
+
+
         .ct_coupons .ct_off_info_cpns h4 {
             color: white;
             font-size: 17.5px;
@@ -171,7 +226,6 @@
             padding: 8px 17px 8px 17px;
             /* box-shadow: 0 0 14px #0000000f; */
             margin-bottom: 4px;
-            height: 63px;
             border-top: 2px dotted #b8b8b8;
         }
 
@@ -1788,13 +1842,21 @@
             src: url(https://fonts.gstatic.com/s/intertight/v2/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
-
+.ct_bx_otp_box  .otp_sent,
         .ct_bx_otp_box .error_otp,
         .error_signup p {
             color: red;
             font-size: 12px;
             font-family: 'roboto';
             margin-top: 7px;
+        }
+        .ct_bx_otp_box  .otp_sent{
+color: rgb(16 178 0);
+    margin: 15px;
+    margin-bottom: -2px;
+    background: #e3ffe3;
+    padding: 12px 7px;
+    display: none;
         }
 
         .error_otp {
@@ -2738,14 +2800,14 @@
             font-size: 13px;
         }
 
-        .bx_evt_cart_item li {
-            background: white;
-            width: 100%;
-            border-radius: 8px;
-            padding: 16px 17px 17px 47px;
-            box-shadow: 0 0 14px #0000000f;
-            margin-bottom: 4px;
-        }
+.bx_evt_cart_item li {
+    background: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 16px 17px 17px 16px;
+    box-shadow: 0 0 14px #0000000f;
+    margin-bottom: 4px;
+}
 
         ion-icon {
             visibility: hidden;
@@ -5176,7 +5238,7 @@
         }
 
         .ct_imgbx {
-            width: 15%;
+            width: 207px;
         }
 
         .ct_imgbx img {
@@ -5315,10 +5377,9 @@
             top: 20px;
             right: -1000px;
         }
-
-
-
-
+            .popup_info.active {
+                right: 3px;
+            }
         .popup_info.sucess_account ion-icon,
         .popup_info.error_info_popup ion-icon {
             color: rgb(255, 255, 255);
@@ -5362,8 +5423,7 @@
 
         .popup_info.sucess_account p {
             font-size: 11px;
-            margin: 6px 13px;
-            font-family: 'Open sans';
+margin: 6px 42px 0 13px;            font-family: 'Open sans';
         }
 
         .popup_info.error_info_popup span {
@@ -16646,9 +16706,7 @@ min-width: 180px;
                 border-top: 1px solid #d5d5d5;
             }
 
-            .popup_info.active {
-                right: 3px;
-            }
+
 
             .ct_inner_itms {
                 padding: 0 5px;
@@ -18733,8 +18791,11 @@ min-width: 180px;
                                 <input id="input_4" type="tel" disabled placeholder="0">
 
                             </div>
+
                             <p class="error_otp">Invalid OTP, please try again.</p>
                             <span>Donot recive any OTP. <button class="resend_otp">Resend</button> </span>
+                            <p class="otp_sent">OTP has been successfully sent.</p>
+
                             <button class="create_account">Create an account</button>
                         </div>
                         <div class="ct_field_first_acc">
@@ -18884,7 +18945,10 @@ min-width: 180px;
                                 <input id="input_4" type="tel" disabled placeholder="0">
 
                             </div>
+
                             <p class="error_otp">Invalid OTP, please try again.</p>
+                            <p class="otp_sent">OTP has been successfully sent.</p>
+
                             <button class="login_account">Login now</button>
                         </div>
                         <div class="ct_field_first_acc">
@@ -18915,7 +18979,11 @@ min-width: 180px;
             </div>
         </div>
     </div>
-
+<div class="spinner-square">
+        <div class="square-1 square"></div>
+        <div class="square-2 square"></div>
+        <div class="square-3 square"></div>
+</div>
     <div class="ctbx_info_popups">
         <div class="popup_info create_account_popup">
             <div class="lds-ring">
@@ -20074,13 +20142,22 @@ min-width: 180px;
 
 
             }
+        
             let essentials = JSON.parse(localStorage.getItem('essentials'))
 
             let dbCollection = db.collection("essentials")
             let res = await dbCollection.get()
             document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
+            if (essentials !== null) {
+
             if (essentials.length === 0) {
                 recc_essen = res.docs.filter(elem => {
+                    let dt = elem.data().item
+                    return dt
+                })
+            }
+            }else{
+                                recc_essen = res.docs.filter(elem => {
                     let dt = elem.data().item
                     return dt
                 })
@@ -21202,7 +21279,6 @@ ${desc_htm_cpn.join('')}
 
                     socket.emit('created_account')
                     sessionStorage.clear()
-                    document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
 
                     document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
@@ -21602,7 +21678,7 @@ function remove_cpns_panel(){
             let itemG = e.target.closest('.pac-item')
             let inpX = e.target.closest('.nick_name.area input')
             let acont_account = e.target.closest('.account_cont')
-            let create_acc = e.target.closest('.create_account')
+            let btn_acc_main = e.target.closest('.create_account')
             let resend_otp = e.target.closest('.resend_otp')
             let loginBtn = e.target.closest('.login_verify')
             let login_main_btn = e.target.closest('.login_account')
@@ -21776,7 +21852,12 @@ if(offer!==null){
                         let essen = JSON.parse(localStorage.getItem('essentials'))
                         let sauce = JSON.parse(localStorage.getItem('sauce'))
                         //  socket.emit('order_sms',cd,userDt.name,tot_am.toLocaleString(),userDt.phone)
-
+                if(essen===null){
+                    essen=[]
+                }
+                if(sauce===null){
+                    sauce=[]
+                }
                         async function check_price() {
                             try {
                                 let dbCollection = db.collection("sauce")
@@ -22082,10 +22163,9 @@ if(offer!==null){
                                     order_btn.style.opacity = '1'
                                     order_btn.style.pointerEvents = 'auto'
                                     document.querySelector('.sucess_order').style.display = 'block'
-                                    document.querySelector('.sucess_order p').innerText = `Hello ${userDt.name}, your order will be delivered within 24 hour, we apologize for the inconvenience.`
+                                    document.querySelector('.sucess_order p').innerText = `Hello ${userDt.name}, your order will be delivered within 24 hour.`
                                     document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                                     setTimeout(function () {
-                                        document.querySelector('.sucess_order').style.display = 'none'
                                         document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                                     }, 30000)
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -22125,6 +22205,12 @@ if(offer!==null){
                 // also remove offer going on on this item 
                 let essen = JSON.parse(localStorage.getItem('essentials'))
                 let sauce = JSON.parse(localStorage.getItem('sauce'))
+                if(essen===null){
+                    essen=[]
+                }
+                if(sauce===null){
+                    sauce=[]
+                }
 
                 let nm = remove_item.parentElement.childNodes[1].innerText
 
@@ -22156,6 +22242,7 @@ if(offer!==null){
                     addAmount()
                     checkandsave('sauce_pr', tot2)
                 } else {
+                    if(essen.length!==0){
                     essen.forEach((cu11, ind) => {
                         let nmxx = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
                         let nmx22 = nm.replace(/[ ,]+/g, "").toLowerCase()
@@ -22163,6 +22250,7 @@ if(offer!==null){
                             essen.splice(ind, 1)
                         }
                     })
+                    }
 
                     localStorage.setItem('essentials', JSON.stringify(essen))
                     remove_item.parentElement.parentElement.parentElement.remove()
@@ -22520,9 +22608,13 @@ remove_cpns_panel()
                     console.log(secret(token))
                     document.querySelector('.resend_otp').style.color = '#868686'
                     document.querySelector('.resend_otp').style.pointerEvents = 'none'
+
+                    document.querySelector('.for_signup .otp_sent').style.display = 'block'
+
                     setTimeout(function () {
                         document.querySelector('.resend_otp').style.color = '#005ace'
                         document.querySelector('.resend_otp').style.pointerEvents = 'auto'
+                    document.querySelector('.for_signup .otp_sent').style.display = 'none'
 
                     }, 30000)
                     document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
@@ -22846,7 +22938,7 @@ remove_cpns_panel()
 
             }
             // anyone can call the function createAccount
-            if (create_acc !== null) {
+            if (btn_acc_main !== null) {
                 let nm = []
                 document.querySelectorAll('.ct_bx_inputs_otp input').forEach(cu11 => {
                     nm.push(cu11.value)
@@ -22881,7 +22973,6 @@ remove_cpns_panel()
                             document.querySelector('.create_account').style.pointerEvents = 'none'
                             document.querySelector('.resend_otp').style.color = '#005ace'
                             document.querySelector('.resend_otp').style.pointerEvents = 'auto'
-
                             let objUser = JSON.parse(getCookie('one_tm_dt'))
                             console.log(objUser)
 

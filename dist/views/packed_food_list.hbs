@@ -107,12 +107,12 @@
         }
         .itm_img_prod{
             height: 500px;
-            background-image: url(../img/dinning_back.png);
+            background-image: url(../img/back_prod.png);
             background-size: 100% 100%;
         }
 .ct_txt_bx {
     position: absolute;
-    right: 1px;
+    right: 45px;
     top: 70px;
 }
 .fade-in {
@@ -140,7 +140,7 @@
 }
 
         .ct_txt_bx img{
-            width: 250px;
+            width: 277px;
 
         }
         .itm_img_prod h3{font-size: 24px;}
@@ -348,15 +348,14 @@
         }
 
         .ct_acc_dt_ov h4 {
-            color: white;
+            color: rgb(0, 0, 0);
             font-family: 'Poppins';
             font-size: 31px;
             word-break: break-all;
             margin-left: 9px;
         }
-
-        .ct_bx_slide_bx2 .ct_bx_erak_logo {
-            background-image: linear-gradient(to left, #144291, rgb(13 31 101));
+.ct_bx_slide_bx2 .ct_bx_erak_logo {
+    background-image: linear-gradient(to left, #74F2CE,#7CFFCB);
         }
 
         .for_ain_home_logo h4 {
@@ -2881,20 +2880,21 @@
             font-size: 22px
         }
 
-        .ct_bx_fooditm .main_im {
-            width: 54%;
-            height: auto;
-            /* background: #00000033; */
-            position: revert;
-            filter: drop-shadow(1px 14px 7px #00000033);
-            margin-left: 0;
-            transform: translate(0px, 0px);
-        }
+.ct_bx_fooditm .main_im {
+    height: auto;
+    position: revert;
+    margin-left: 0;
+    transform: translate(0px, 0px);
+    box-shadow: none;
+    /* filter: none; */
+    border-radius: 20px;
+    width: 100%;
+    background: #0000003b;
+    filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);
+}
 
         .ct_img_layer {
             width: 100%;
-            display: flex;
-            justify-content: center;
         }
 
         .ct_bx_inner_food_groc {
@@ -2908,10 +2908,11 @@
             margin: 20px 8px 20px 20px;
             /* border: 1px solid; */
             /* color: black; */
-            box-shadow: 0 0 2px #0000005c;
+           /* box-shadow: 0 0 2px #0000005c;*/
+            box-shadow:none;
             border-radius: 7px;
             cursor: pointer;
-            padding: 14px 0px;
+            padding: 0px;
         }
 
         .ct_bx_fooditm:active,
@@ -2961,7 +2962,7 @@
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
-            overflow-x: hidden
+            overflow-x: hidden;    background: #fcfffc;
         }
 
         body {
@@ -3448,13 +3449,16 @@
                 height: 185px
             }
 
-            .ct_bx_fooditm .main_im {
-                width: 54%;
-                height: auto;
-                position: revert;
-                margin-left: 0;
-                transform: translate(0px, 0px);
-            }
+.ct_bx_fooditm .main_im {
+    height: auto;
+    position: revert;
+    margin-left: 0;
+    transform: translate(0px, 0px);
+    box-shadow: none;
+    border-radius: 10px;
+    width: 100%;
+    filter: drop-shadow(-1px 7px 2px #00000042) contrast(1.1);
+}
 
             .ct_bx_search {
                 width: 98%
@@ -3631,11 +3635,11 @@
                 margin-left: 26px
             }
 
-            .groc_list .ct_cat_by_list {
-                margin-left: 5px;
-                margin-top: -7px;
-                width: 100%
-            }
+.groc_list .ct_cat_by_list {
+    margin-left: 14px;
+    margin-top: -7px;
+    width: 100%;
+}
 
             .for_seravh_in_nav {
                 width: 38%
@@ -4006,10 +4010,6 @@
 
             .groc_list .ct_cat_by_list {
                 margin: -60px 40px 25px 0
-            }
-
-            .erak_fd_body .groc_list .ct_cat_by_list {
-                margin-top: -10px
             }
 
             .list_food_at_ov h3:after {
@@ -4450,7 +4450,7 @@
             .ct_acc_dt_ov p {
                 margin: 10px 0 0 11px;
                 font-size: 15px;
-                color: #fff;
+                color: #000000;
             }
 
             .for_main_nav_login1 {
@@ -4462,7 +4462,7 @@
             }
 
             .groc_list .ct_cat_by_list {
-                margin-left: 1.5vw;
+                margin-left:4px;
                 margin-top: 15px;
                 width: 100vw;
                 padding-bottom: 20px;
@@ -5642,14 +5642,9 @@
                 display: flex;
                 width: 100%;
             }
-
-            .ct_bx_fooditm .main_im {
-                width: 108px;
-                margin-left: 26px;
-            }
-
-
-
+.ct_bx_fooditm .main_im {
+    margin-left: 5px;
+}
             .ct_logox img {
                 width: 64%;
             }
@@ -5729,11 +5724,6 @@
 
             .ct_bx_erak_logo a {
                 width: 90%;
-            }
-
-            .ct_acc_dt_ov p {
-                color: white;
-
             }
 
             .ct_bx_total_amount_to_pay h3 {
@@ -5835,7 +5825,7 @@
                 height: max-content;
                 margin: 0;
                 width: 98%;
-                padding-top: 20px;
+                padding-top: 13px;
                 margin-bottom: 6px;
                 margin-left: 0;
                 border-radius: 13px;
@@ -6096,11 +6086,14 @@
 
             .ct_bx_inner_food_groc {
                 width: 100%;
-                overflow: hidden;
-                margin-left: 7px;
-                margin-top: 26px;
+    overflow: hidden;
+    margin-top: 7px;
+    margin-left: 2px;
             }
-
+.ct_bx_price_fd.hasoffPrice {
+    margin-top: 1px;
+    margin-left: 3px;
+}
             .ct_loading_bx .ct_for_img_load {
                 width: 67%;
                 position: relative;
@@ -6173,6 +6166,16 @@
             .ct_inner_nav {
                 justify-content: initial
             }
+            .ct_bx_fooditm .main_im {
+    border-radius: 8px;
+    width: 100%;
+    margin-left: 9px;
+}
+.ct_bx_fooditm .item_intro {
+    font-size: 9px;
+    line-height: 11px;
+    width: 80%;
+}
             /*codeX*/
 .for_nav_main .logo img {
     width: 33px;
@@ -6230,10 +6233,8 @@
             }
 
             .ct_bx_fooditm {
-                width: 93%;
-                margin-bottom: 9px;
                 margin-left: 0;
-                padding: 13px 0;
+                padding:2px 0;
             }
 
             .ct_nav_erak .ct_bx_search {
@@ -6377,7 +6378,7 @@
             }
 
             .ct_bx_inner_food_groc {
-                width: 100%;
+                width: 100%;margin-left: 12px;
             }
 
 
@@ -6439,17 +6440,6 @@
             .ct_offer_box_cook2 {
                 transform: translate(-4px, 0px);
             }
-
-            .ct_bx_fooditm .main_im {
-                width: 25vw;
-                height: 40vw;
-                margin-left: 15px;
-            }
-
-            .ct_bx_fooditm {
-                padding: 7px 0;
-            }
-
 
 
             .btn_bottom_nav.ct_bx_signup_mobile,
@@ -6548,7 +6538,7 @@
             }
 
             .ct_bx_inner_food_groc {
-                margin-top: 12px;
+                margin-top: 2px;
             }
 
             .ct_offer_box_cook2 p {
@@ -6984,6 +6974,9 @@
             .ct_offer_box_cook2 span {
                 font-size: 10px;
             }
+            .ct_bx_fooditm .main_im{
+                border-radius:8px;
+            }
 .itm_img_prod .w-100 {
     transform: translate(127px, 26px);
 }
@@ -7020,7 +7013,7 @@
             .ct_bx_fooditm .item_intro {
                 font-size: 10px;
                 line-height: 12px;
-                width: 80%;
+                width: 95%;
             }
 
             .for_nav_main {
@@ -7084,11 +7077,20 @@
             .ct_offer_box_cook2 {
                 transform: translate(-4px, 0px);
             }
-
+.ct_bx_fooditm h4 {
+    font-size: 14px;
+}
+.for_unit_itm {
+    font-size: 9px;
+    margin: 0px 0 4px 3px;
+}
             .ct_offer_box_cook2 span {
                 font-size: 10px;
             }
-
+.ct_bx_fooditm .item_intro {
+    font-size: 8px;
+    line-height: 10px;
+}
             .ct_offer_box_cook2 p {
                 font-size: 8px;
             }
@@ -7581,8 +7583,10 @@
             margin: 40px 0px;
         }
 .bounce-in-left {
-  animation: bounce-in-left 2.3s ease;
+  animation: bounce-in-left 1.8s ease;
 }
+
+
 @keyframes bounce-in-left {
   0% {
     opacity: .6;
@@ -7615,11 +7619,10 @@
   50% { transform: scale(1.1, 0.9); }
   75% { transform: scale(0.95, 1.05); }
 }
-.prod_img2{
-    right: 275px;
-    top: 113px;
-    width: 230px;
-    /* background: #00000070; */
+.prod_img2 {
+    right: 309px;
+    top: 73px;
+    width: 255px;
     filter: drop-shadow(-1px 7px 2px #00000070) contrast(1.1);
 }
 .bounce2 {
@@ -7631,10 +7634,10 @@
 	60% {transform: translateY(-15px);}
 }
 .prod_img1 {
-    right: 55px;
-    top: 259px;
+    right: 12px;
+    top: 165px;
     z-index: 999999;
-    width: 385px;
+    width: 349px;
     filter: drop-shadow(7px 14px 8px #000000a3) contrast(1.1);
 }
         .prod_img{
@@ -7766,7 +7769,13 @@ position: absolute;
                         {{!-- <div class="carousel-item">
                             <iframe width="1280" height="720" src="https://www.youtube.com/embed/O15xP3H4cYQ" title="Best beginner Fountain Pen - The Pilot Metropolitan🔥🔥 (Fine/Medium nibs reviewed)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div> --}}
-
+<div class="carousel-item itm_img_prod active">
+                                      <img class="prod_img prod_img1" src="../img/chicken_curry.png">
+                                      <img class="prod_img prod_img2" src="../img/Masala_Meat.png">
+                                       <div class="ct_txt_bx">
+                                        <img src="../img/txt_img.png" alt="">
+                                      </div> 
+                                    </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon material-symbols-outlined"
@@ -8253,9 +8262,237 @@ position: absolute;
                                 <h2>Enjoy hassle free cooking</h2>
 
                                 <div class="list_food_at_ov groc_list for_erak_list" id="${idN}">
-                                    <div class="ct_cat_by_list">
+<div class="ct_cat_by_list">
 
-                                    </div>
+                                    <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div><div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div><div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div><div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div><div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div><div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                    <div class="ct_img_layer">
+                                                    <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
+
+                                                     </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Malai Mix</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Malai Mix</p>
+                                                            <p class="stock">4</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off">NaN</p>
+                                                            <p class="offer">NaN</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch pack"},{"name":"300gm","pack":"pouch pack","price":"75"},{"price":"125","pack":"container pack","name":"400gm"}]</p>
+                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5 minute to prepare.","Just add raw  paneer, chickpeas etc","Do not add raw oil, spices etc in the sauce. The sauce will release oil upon heating"]</p>
+                                                            <p class="essentials">["fresh garlic"]</p>
+                                                            <p class="images_item">["../img/malai_mix.png"]</p>
+                                                               <p class="images_prod">undefined</p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div></div>
 
                                 </div>
                             </div>
@@ -9304,18 +9541,17 @@ position: absolute;
                 }
                 getItm_groc()
 
-         //    document.querySelector('.carousel-inner').innerHTML = ''
+      //   document.querySelector('.carousel-inner').innerHTML = ''
              images_prod=JSON.parse(images_prod)
              console.log(images_prod)
-            let crousel_html = `  <div class="carousel-item itm_img_prod active">
-                                      <img class="prod_img prod_img1" src="${images_prod.img2}">
-                                      <img class="prod_img prod_img2" src="${images_prod.pack}">
-                                      <div class="ct_txt_bx">
-                                        <img src="${images_prod.txt}" alt="">
-                                      </div>
-                                    </div>`
-                                    alert('1')
-                    document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
+            //let crousel_html = `  <div class="carousel-item itm_img_prod active">
+            //                          <img class="prod_img prod_img1" src="${images_prod.img2}">
+            //                          <img class="prod_img prod_img2" src="${images_prod.pack}">
+            //                          <div class="ct_txt_bx">
+            //                            <img src="${images_prod.txt}" alt="">
+            //                          </div>
+            //                        </div>`
+              //      document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
                 let images = JSON.parse(images_itm)
                 images.forEach((cu, ind) => {
                     if(ind>0){
@@ -9337,7 +9573,8 @@ document.querySelector('.ct_txt_bx').classList.add('fade-in-left')
 
 setTimeout(() => {
     document.querySelector('.prod_img2').classList.add('gelatine')
-    
+    document.querySelector('.prod_img2').classList.remove('bounce-in-left')
+
 
     },1260)
 
@@ -9716,7 +9953,10 @@ setTimeout(() => {
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
                 document.querySelector('.popup_info.sucess_account').classList.remove('active')
-
+document.querySelector('.prod_img2').classList.remove('bounce-in-left')
+document.querySelector('.prod_img1').classList.remove('bounce-in-right')
+document.querySelector('.ct_txt_bx').classList.remove('fade-in-left')
+    document.querySelector('.prod_img2').classList.remove('gelatine')
             }
             if (e.target.closest('.ct_bx_go_back') !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
@@ -9724,14 +9964,20 @@ setTimeout(() => {
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
                 //document.querySelector('.popup_info.sucess_account').classList.remove('active')
-
+document.querySelector('.prod_img2').classList.remove('bounce-in-left')
+document.querySelector('.prod_img1').classList.remove('bounce-in-right')
+document.querySelector('.ct_txt_bx').classList.remove('fade-in-left')
+    document.querySelector('.prod_img2').classList.remove('gelatine')
             }
             if (itmPopucloseIcon !== null) {
                 document.querySelector('.ct_bx_layer').style.display = 'none'
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active')
                 document.querySelector('.ct_pop_up_items_order').classList.remove('active2')
               //  document.querySelector('.popup_info.sucess_account').classList.remove('active')
-
+document.querySelector('.prod_img2').classList.remove('bounce-in-left')
+document.querySelector('.prod_img1').classList.remove('bounce-in-right')
+document.querySelector('.ct_txt_bx').classList.remove('fade-in-left')
+    document.querySelector('.prod_img2').classList.remove('gelatine')
 
             }
 
@@ -10608,7 +10854,6 @@ setTimeout(() => {
             }
             
             if (buyNow_btn !== null||addCrt!==null) {
-                buyNow_btn.style.opacity = '.5'
                 document.querySelector('.add_cart_btn').style.opacity = '.5'
 
                 let qty = document.querySelector('.ct_qty_box input').value
@@ -10627,10 +10872,12 @@ setTimeout(() => {
                 document.querySelector('.account_btn').style.display = 'block'
 if (buyNow_btn !== null){
                 buyNow_btn.style.display = 'none'
+                buyNow_btn.style.opacity = '.5'
 
 }
 if (addCrt !== null){
                 addCrt.style.display = 'none'
+                document.querySelector('.buy_now').style.display = 'none'
 
 }
                 document.querySelector('.add_cart_btn').style.display = 'none'
