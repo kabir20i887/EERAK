@@ -445,8 +445,8 @@
             ;
         }
 
-        .ct_info_btn:hover {
-            background: #e9d7ff;
+        .ct_info_btn p:hover {
+            color: #000000;
 
         }
 
@@ -5361,7 +5361,9 @@ color: rgb(16 178 0);
             font-family: 'Montserrat';
             margin: 8px 23px;
         }
-
+.popup_info.create_account_popup  p {
+    margin: 8px 41px 0 11px;
+}
         .popup_info {
             display: flex;
             background-color: #280ade;
@@ -5396,7 +5398,9 @@ color: rgb(16 178 0);
             margin: 3px 13px;
             font-family: 'Open sans';
         }
-
+.popup_info .inner_x{
+    margin-right: 32px;
+}
         .popup_info.sucess_account .inner_x ion-icon {
             color: rgb(255, 255, 255);
             font-size: 24px;
@@ -19117,7 +19121,7 @@ min-width: 180px;
                     </div> --}}
                 </div>
                 <div class="sucess_order">
-                    <h4>Thank you!, Your order has been placed</h4>
+                    <h4>Thank you! Your order has been placed</h4>
                     <p>Hello kabir, your order will be delivered within 24 hour, we apologize for the inconvenience.</p>
                     <a href="/account#orders">Check out your order <ion-icon
                             name="chevron-forward-outline"></ion-icon></a>
@@ -20879,7 +20883,7 @@ min-width: 180px;
                         }
                         if (conditionX) {
                             classAvai = ''
-                            notavailable_hm = ` <button class="claim" style="display:block;margin-bottom: 22px;">Apply</button>`
+                            notavailable_hm = ` <button class="claim" style="display:block;margin-bottom: 12px;">Apply</button>`
                         }
                     if(getCookie('cpns_appl')!==''){
                 let objCpns = JSON.parse(getCookie('cpns_appl'))
@@ -21251,6 +21255,7 @@ ${desc_htm_cpn.join('')}
 
         async function createAccount() {
             document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
+
             document.querySelector('.place_order_btn_bottom').style.display = 'none'
             document.querySelector('.create_account').style.opacity = '.5'
             document.querySelector('.create_account').style.pointerEvents = 'none'
@@ -21283,9 +21288,9 @@ ${desc_htm_cpn.join('')}
                     document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     // document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objUser) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                    document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                    document.querySelector('.popup_info.sucess_account').classList.add('active')
+
                     setTimeout(function () {
                         document.querySelector('.popup_info.sucess_account').style.display = 'none'
                         if (window.screen.width <= 1100) {
@@ -21371,7 +21376,7 @@ ${desc_htm_cpn.join('')}
                             })
                             document.querySelector('.ct_overflow_customize').style.display = 'flex'
                             document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
-                                cu11.innerText = `Hurrah! Create an account and login to get discount of ${objBx.off}%`
+                                cu11.innerText = `Hurrah! Create an account and login to get a coupon of ${objBx.off}% off`
                             })
                             document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
                                 cu11.style.marginTop = '18px'
@@ -21510,7 +21515,7 @@ ${desc_htm_cpn.join('')}
                                 cu11.style.display = 'flex'
                             })
                             document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
-                                cu11.innerText = `Hurrah! Create an account and login to get discount of ${objBx.off}%`
+                                cu11.innerText = `Hurrah! Create an account and login to get a coupon of ${objBx.off}% off`
                             })
 
                             document.querySelectorAll('.ct_bx_title_accounts').forEach(cu11 => {
@@ -21636,9 +21641,21 @@ ${desc_htm_cpn.join('')}
         }
  function load_basic_dt() {
             let userDtx = getCookie('userData')
+document.querySelectorAll('.for_checkout_order').forEach(cu=>{
+cu.style.background='#0030ff'
+})
+document.querySelectorAll('.for_checkout_order p').forEach(cu=>{
+cu.innerText='Login and order'
+})
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
 
+document.querySelectorAll('.for_checkout_order').forEach(cu=>{
+cu.style.background='#ff0067'
+})
+document.querySelectorAll('.for_checkout_order p').forEach(cu=>{
+cu.innerText='order now'
+})
                if(dt_user.name.split(' ')[0]!==undefined){
                document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.name.split(' ')[0]
                document.querySelector('.ct_acc_dt_ov p').innerText=`welcome,`
@@ -21704,12 +21721,15 @@ function remove_cpns_panel(){
             let unit_li = e.target.closest('.ct_other_units li')
             let goback_cart = e.target.closest('.ct_bx_go_back.nav_bar')
             let rem_popups= e.target.closest('.ct_rem_btn')
+            let saved_popup=e.target.closest('.ct_offer_saved_popup')
             if(rem_popups!==null){
                 document.querySelectorAll('.popup_info').forEach(cux=>{
                     cux.style.right='-1000px'
                 })
             }
-
+if(saved_popup===null){
+ document.querySelector('.ct_offer_saved_popup').style.display='none'   
+}
             if (goback_cart !== null) {
                 window.location.replace('/')
             }
@@ -22696,6 +22716,7 @@ remove_cpns_panel()
 
                     if (window.location.search.split('?')[1] !== undefined) {
                         if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
+                            
 
                             let id_ref = secret(getCookie('signup_3sy13'))
                             let objBx = id_ref
@@ -22709,7 +22730,7 @@ remove_cpns_panel()
                                     cu11.style.display = 'flex'
                                 })
                                 document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
-                                    cu11.innerText = `Hurrah! Create an account and login to get discount of ${objBx.off}%`
+                                    cu11.innerText = `Hurrah! Create an account and login to get a coupon of ${objBx.off}% off`
                                 })
                                 res.docs.forEach(async cu => {
                                     let data = cu.data()
@@ -22766,6 +22787,8 @@ remove_cpns_panel()
                                             orders: data.orders,
                                             reffer: data.reffer,
                                         })
+                            // inform to the person who reffered by sms
+
                                         document.querySelector('.confetti').style.display = 'block'
                                         document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
                                         document.querySelector('.ct_offer_saved_popup span').innerText = `Refered to you by ${data.name} `
@@ -22777,12 +22800,10 @@ remove_cpns_panel()
                                         })
                                     }
 
-                                    console.log(objUser.id, data.id, data.refferedBy, '--------------')
                                     if (objUser.id === data.id && data.refferedBy) {
                                         // cross-checking if reffered to this user
                                         let dbCollection21 = db.collection("reffer")
                                         let resREF = await dbCollection21.get()
-                                        console.log(resREF.docs[0].data().text, ' --------------------------------hahahaha----------------------------')
                                         document.querySelector('.ct_overflow_customize').style.display = 'none'
 
                                         document.querySelector('.ct_overflow_customize').style.display = 'none'
@@ -22818,6 +22839,8 @@ remove_cpns_panel()
                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
                         document.querySelector('.popup_info.sucess_account').classList.add('active')
+                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+
                         document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in'
                         document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
                         document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
@@ -22955,9 +22978,6 @@ remove_cpns_panel()
                             let id = window.location.search.split('?')[1].split('=')[1].split('&')[0]
                             let objBx = secret(id)
 
-                            // objBx.name and objBx.off
-
-                            // setting the user who has refered
                             let obj_cpns = {
                                 for: 'refer',
                                 name: objBx.name,
@@ -22968,7 +22988,6 @@ remove_cpns_panel()
                             if (window.screen.width <= 1100) {
                                 document.querySelector('.place_order_btn_bottom').style.display = 'none'
                             }
-                            document.querySelector('.popup_info.create_account_popup').style.display = 'flex'
                             document.querySelector('.create_account').style.opacity = '.5'
                             document.querySelector('.create_account').style.pointerEvents = 'none'
                             document.querySelector('.resend_otp').style.color = '#005ace'
@@ -23004,7 +23023,8 @@ remove_cpns_panel()
                                     document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                     document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                    document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                    document.querySelector('.popup_info.sucess_account').classList.add('active')
+
                                     document.querySelector('.popup_info.sucess_account').classList.add('active')
                                     setTimeout(function () {
                                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
@@ -23012,7 +23032,7 @@ remove_cpns_panel()
                                         if (window.screen.width <= 1100) {
                                             document.querySelector('.place_order_btn_bottom').style.display = 'block'
                                         }
-                                    }, 7000)
+                                    }, 30000)
 
                                     if (window.location.search !== '') {
                                         let searchM = window.location.search
