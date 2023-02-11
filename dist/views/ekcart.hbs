@@ -18951,6 +18951,7 @@ min-width: 180px;
                             </div>
 
                             <p class="error_otp">Invalid OTP, please try again.</p>
+                            <span style="display:flex">Donot recive any OTP. <button class="resend_otp login_rsnd">Resend</button> </span>
                             <p class="otp_sent">OTP has been successfully sent.</p>
 
                             <button class="login_account">Login now</button>
@@ -21289,6 +21290,9 @@ ${desc_htm_cpn.join('')}
                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                     // document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objUser) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+                                                            document.querySelectorAll('.popup_info').forEach(cux=>{
+                                            cux.classList.remove('active')
+                                        })
                     document.querySelector('.popup_info.sucess_account').classList.add('active')
 
                     setTimeout(function () {
@@ -21298,12 +21302,50 @@ ${desc_htm_cpn.join('')}
                         }
 
                     }, 20000)
-                    if (window.location.search !== '') {
-                        let searchM = window.location.search
-                        window.location.replace(`/mycart${searchM}#login`)
-                    } else {
-                        window.location.replace('/mycart#login')
+                   // if (window.location.search !== '') {
+                   //     let searchM = window.location.search
+                   //     window.location.replace(`/mycart${searchM}#login`)
+                   // } else {
+                   //     window.location.replace('/mycart#login')
+                   // }
+                    let userDataMn = {
+                        id: objUser.id,
+                        name: objUser.name,
+                        address: objUser.address,
+                        location: objUser.location,
+                        phone: objUser.phone,
+                        allow_cpns: objUser.allow_cpns,
+                        cpns_used: objUser.cpns_used,
+                        admin: false,
                     }
+
+                    //if (window.location.search.split('?')[1] !== undefined) {
+                      
+                   // } else {
+                        document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                        document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                        document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                        document.querySelectorAll('.popup_info').forEach(cux=>{
+                            cux.classList.remove('active')
+                            cux.style.display = 'none'
+                        })
+                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+                        document.querySelector('.popup_info.sucess_account').style.display = 'flex'
+
+                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully created account and logged in'
+                        document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                        document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+                        load_basic_dt()
+
+                        setTimeout(function () {
+                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+
+                            if (window.screen.width <= 1100) {
+                                document.querySelector('.place_order_btn_bottom').style.display = 'block'
+                            }
+                        }, 30000)
+                        document.querySelector('.box_pop_up_accounts.for_signup').classList.remove('active')
                     //socket.emit('signedUp', n, phone)
 
                 })
@@ -21367,7 +21409,6 @@ ${desc_htm_cpn.join('')}
                             let resREF = await dbCollection21.get()
                             let dataRef = resREF.docs[0].data()
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                            document.querySelector('body').style.overflowY = 'hidden'
                             document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
                             document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
 
@@ -21465,23 +21506,6 @@ ${desc_htm_cpn.join('')}
                     document.querySelector('.for_signup  .inf0_fyu').style.display = 'none'
 
                     document.querySelector('.for_signup  .ct_bx_title_accounts').style.display = 'none'
-                    document.querySelector('.ct_btn_acc').style.opacity = '0'
-                    setTimeout(function () {
-                        document.querySelector('.ct_bxsecured_info').style.opacity = '0'
-
-                    }, 100)
-                    setTimeout(function () {
-                        document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
-
-                    }, 200)
-                    setTimeout(function () {
-                        document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
-
-                    }, 300)
-                    setTimeout(function () {
-                        document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
-
-                    }, 400)
                     setTimeout(function () {
                         document.querySelector('.ct_field_first_acc').style.display = 'none'
                         document.querySelector('.ct_bx_otp_box').style.display = 'block'
@@ -21508,7 +21532,6 @@ ${desc_htm_cpn.join('')}
                             let resREF = await dbCollection21.get()
                             let dataRef = resREF.docs[0].data()
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                            document.querySelector('body').style.overflowY = 'hidden'
                             document.querySelector('.box_pop_up_accounts.for_signup').style.display = 'block'
                             document.querySelector('.signup_bx .box_pop_up_accounts ').classList.add('active')
                             document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
@@ -21832,6 +21855,7 @@ if(offer!==null){
                 document.querySelector('.signup_bx .box_pop_up_accounts ').classList.remove('active')
                 document.querySelector('.ct_overflow_customize').style.display = 'none'
                 history.pushState(null, null, ' ')
+
             }
             if (order_btn !== null) {
                 // # check for valid total amount
@@ -22629,7 +22653,6 @@ remove_cpns_panel()
                     document.querySelector('.resend_otp').style.color = '#868686'
                     document.querySelector('.resend_otp').style.pointerEvents = 'none'
 
-                    document.querySelector('.for_signup .otp_sent').style.display = 'block'
 
                     setTimeout(function () {
                         document.querySelector('.resend_otp').style.color = '#005ace'
@@ -22637,7 +22660,15 @@ remove_cpns_panel()
                     document.querySelector('.for_signup .otp_sent').style.display = 'none'
 
                     }, 30000)
+                    if(resend_otp.classList.value.split(' ').includes('login_rsnd')){
+                    document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                    document.querySelector('.forlogin  .otp_sent').style.display = 'block'
+
+                    }else{
                     document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                    document.querySelector('.for_signup .otp_sent').style.display = 'block'
+
+                    }
 
                     //     var settings = {
                     //       "async": true,
@@ -22673,8 +22704,10 @@ remove_cpns_panel()
                 document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
                     cu11.style.opacity = '1'
                 })
+
             }
             if (goback_sgn !== null) {
+                confirm('hiii')
                 document.cookie = "ct_901_12" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                 document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                 document.querySelector('.for_signup .ct_go_back_account h3').style.display = 'none'
@@ -22686,6 +22719,7 @@ remove_cpns_panel()
                 document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
                     cu11.style.opacity = '1'
                 })
+
             }
 
             if (login_main_btn !== null) {
@@ -22714,130 +22748,15 @@ remove_cpns_panel()
                         admin: false,
                     }
 
-                    if (window.location.search.split('?')[1] !== undefined) {
-                        if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
-                            
-
-                            let id_ref = secret(getCookie('signup_3sy13'))
-                            let objBx = id_ref
-                            socket.emit('cash_oth4', objUser.name, objBx.name, objBx.off, objBx.id)
-                            document.querySelector('.place_order_btn_bottom').style.display = 'none'
-
-                            async function getUser() {
-                                let dbCollection2 = db.collection("users")
-                                let res = await dbCollection2.get()
-                                document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                    cu11.style.display = 'flex'
-                                })
-                                document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
-                                    cu11.innerText = `Hurrah! Create an account and login to get a coupon of ${objBx.off}% off`
-                                })
-                                res.docs.forEach(async cu => {
-                                    let data = cu.data()
-                                    let cps_allow = data.allow_cpns
-                                    if (objBx.id === data.id) {
-
-                                        let use_max = 1
-                                        let dbCollection2x = db.collection("reffer")
-                                        let resx = await dbCollection2x.get()
-                                        let matched_use = false
-                                        resx.docs[0].data().cpns.forEach(async cux => {
-                                            let dt_x = cux
-                                            if (dt_x.name === objBx.name) {
-                                                if (dt_x.use === null) {
-                                                    cps_allow.forEach(elem => {
-                                                        if (elem.name === dt_x.name) {
-                                                            let use = parseFloat(elem.use)
-                                                            use_max += use
-                                                            elem.use = use_max
-                                                            matched_use = true
-                                                            elem.by.push({ name: objUser.name, id: objUser.id })
-                                                        }
-                                                    })
-                                                }
-                                            }
-                                        })
-                                        console.log(use_max)
-                                        let obj_cpns = {
-                                            for: 'refer',
-                                            name: objBx.name,
-                                            use: use_max,
-                                        }
-                                        if (!matched_use) {
-
-                                            cps_allow.push(obj_cpns)
-
-                                        }
-                                        if (!data.reffer) {
-                                            data.reffer = []
-                                            data.reffer.push({ id: data.id })
-                                        }
-                                        data.cpns_used.push(obj_cpns)
-                                        await dbCollection2.doc(cu.id).set({
-                                            admin: data.admin,
-                                            id: data.id,
-                                            name: data.name,
-                                            phone: data.phone,
-                                            address: data.address,
-                                            location: data.location,
-                                            cartItems: data.cartItems,
-                                            refferedBy: data.refferedBy,
-                                            allow_cpns: cps_allow,
-                                            cpns_used: data.cpns_used,
-                                            orders: data.orders,
-                                            reffer: data.reffer,
-                                        })
-                            // inform to the person who reffered by sms
-
-                                        document.querySelector('.confetti').style.display = 'block'
-                                        document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
-                                        document.querySelector('.ct_offer_saved_popup span').innerText = `Refered to you by ${data.name} `
-                                        document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
-                                        document.querySelector('.ct_offer_saved_popup').style.display = 'block'
-                                        document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
-                                            cu11.style.display = 'none'
-                                        })
-                                    }
-
-                                    if (objUser.id === data.id && data.refferedBy) {
-                                        // cross-checking if reffered to this user
-                                        let dbCollection21 = db.collection("reffer")
-                                        let resREF = await dbCollection21.get()
-                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
-
-                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
-                                        document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                        load_basic_dt()
-                                        document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-                                        document.querySelector('.popup_info.create_account_popup').style.display = 'none'
-                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
-                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
-
-                                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in'
-                                        document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
-                                        document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
-                                        document.cookie = "ct_901_12_x" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
-
-
-                                        setTimeout(function () {
-                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
-                                            if (window.screen.width <= 1100) {
-                                                document.querySelector('.place_order_btn_bottom').style.display = 'block'
-                                            }
-
-                                        }, 30000)
-                                    }
-                                })
-
-                            }
-                            getUser()
-
-                        }
-                    } else {
+                    //if (window.location.search.split('?')[1] !== undefined) {
+                      
+                   // } else {
                         document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                         document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                         document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                                        document.querySelectorAll('.popup_info').forEach(cux=>{
+                                            cux.classList.remove('active')
+                                        })
                         document.querySelector('.popup_info.sucess_account').classList.add('active')
                         document.querySelector('.popup_info.sucess_account').style.display = 'flex'
 
@@ -22854,7 +22773,7 @@ remove_cpns_panel()
                                 document.querySelector('.place_order_btn_bottom').style.display = 'block'
                             }
                         }, 30000)
-                    }
+                  //  }
 
 
 
@@ -23024,7 +22943,9 @@ remove_cpns_panel()
                                     document.cookie = "one_tm_dt" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
                                     document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objU) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                     document.querySelector('.popup_info.sucess_account').classList.add('active')
-
+                                        document.querySelectorAll('.popup_info').forEach(cux=>{
+                                            cux.classList.remove('active')
+                                        })
                                     document.querySelector('.popup_info.sucess_account').classList.add('active')
                                     setTimeout(function () {
                                         document.querySelector('.popup_info.sucess_account').classList.remove('active')
@@ -23040,6 +22961,136 @@ remove_cpns_panel()
                                     } else {
                                         window.location.replace('/mycart#login')
                                     }
+                                                        let objUser = JSON.parse(getCookie('one_tm_dt2'))
+                    let userDataMn = {
+                        id: objUser.id,
+                        name: objUser.name,
+                        address: objUser.address,
+                        location: objUser.location,
+                        phone: objUser.phone,
+                        allow_cpns: objUser.allow_cpns,
+                        cpns_used: objUser.cpns_used,
+                        admin: false,
+                    }
+  if (window.location.search.split('?')[1].split('=')[0] === 'reffer' && getCookie('signup_3sy13') !== '') {
+                            
+                            document.querySelector('.place_order_btn_bottom').style.display = 'none'
+
+                            async function getUser() {
+                                let dbCollection2 = db.collection("users")
+                                let res = await dbCollection2.get()
+                                document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                    cu11.style.display = 'flex'
+                                })
+                                document.querySelectorAll('.ct_infor_reff h3').forEach(cu11 => {
+                                    cu11.innerText = `Hurrah! Create an account and login to get a coupon of ${objBx.off}% off`
+                                })
+                                res.docs.forEach(async cu => {
+                                    let data = cu.data()
+                                    let cps_allow = data.allow_cpns
+                                    if (objBx.id === data.id) {
+
+                                        let use_max = 1
+                                        let dbCollection2x = db.collection("reffer")
+                                        let resx = await dbCollection2x.get()
+                                        let matched_use = false
+                                        resx.docs[0].data().cpns.forEach(async cux => {
+                                            let dt_x = cux
+                                            if (dt_x.name === objBx.name) {
+                                                if (dt_x.use === null) {
+                                                    cps_allow.forEach(elem => {
+                                                        if (elem.name === dt_x.name) {
+                                                            let use = parseFloat(elem.use)
+                                                            use_max += use
+                                                            elem.use = use_max
+                                                            matched_use = true
+                                                            elem.by.push({ name: objUser.name, id: objUser.id })
+                                                        }
+                                                    })
+                                                }
+                                            }
+                                        })
+                                        console.log(use_max)
+                                        let obj_cpns = {
+                                            for: 'refer',
+                                            name: objBx.name,
+                                            use: use_max,
+                                        }
+                                        if (!matched_use) {
+
+                                            cps_allow.push(obj_cpns)
+
+                                        }
+                                        if (!data.reffer) {
+                                            data.reffer = []
+                                            data.reffer.push({ id: data.id })
+                                        }
+                                        data.cpns_used.push(obj_cpns)
+                                        await dbCollection2.doc(cu.id).set({
+                                            admin: data.admin,
+                                            id: data.id,
+                                            name: data.name,
+                                            phone: data.phone,
+                                            address: data.address,
+                                            location: data.location,
+                                            cartItems: data.cartItems,
+                                            refferedBy: data.refferedBy,
+                                            allow_cpns: cps_allow,
+                                            cpns_used: data.cpns_used,
+                                            orders: data.orders,
+                                            reffer: data.reffer,
+                                        })
+                            // inform to the person who reffered by sms
+
+                                        document.querySelector('.confetti').style.display = 'block'
+                                        document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${objBx.name} unlocked. Grab the coupon from the cart and enjoy flat ${objBx.off}% discount`
+                                        document.querySelector('.ct_offer_saved_popup span').innerText = `Refered to you by ${data.name} `
+                                        document.cookie = "signup_3sy13" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+                                        document.querySelector('.ct_offer_saved_popup').style.display = 'block'
+                                        document.querySelectorAll('.ct_infor_reff').forEach(cu11 => {
+                                            cu11.style.display = 'none'
+                                        })
+                                    }
+
+                                    if (objUser.id === data.id && data.refferedBy) {
+                                        // cross-checking if reffered to this user
+                                        let dbCollection21 = db.collection("reffer")
+                                        let resREF = await dbCollection21.get()
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+                                        document.cookie = "userData" + "=" + JSON.stringify(userDataMn) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                        load_basic_dt()
+                                        document.cookie = "one_tm_dt2" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+                                        document.querySelector('.popup_info.create_account_popup').style.display = 'none'
+                                                                                document.querySelectorAll('.popup_info').forEach(cux=>{
+                                            cux.classList.remove('active')
+                                        })
+                                        document.querySelector('.popup_info.sucess_account').classList.add('active')
+
+                                        document.querySelector('.ct_overflow_customize').style.display = 'none'
+
+                                        document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully logged in'
+                                        document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                                        document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+                                        document.cookie = "ct_901_12_x" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
+
+
+                                        setTimeout(function () {
+                                            document.querySelector('.popup_info.sucess_account').classList.remove('active')
+                                            if (window.screen.width <= 1100) {
+                                                document.querySelector('.place_order_btn_bottom').style.display = 'block'
+                                            }
+
+                                        }, 30000)
+                                    }
+                                })
+
+                            }
+                            getUser()
+
+                        }
                                     //socket.emit('signedUp', n, phone)
                                 })
                         } else {
@@ -23179,16 +23230,6 @@ remove_cpns_panel()
                                             setCookie('one_tm_dt', JSON.stringify(objUserData), 2)
                                             document.cookie = "ct_901_12" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                             document.querySelector('.ct_inner_bottom_box').style.height = '70vh'
-
-
-                                            document.querySelector('.ct_btn_acc').style.opacity = '0'
-                                            document.querySelector('.ct_bxsecured_info').style.opacity = '0'
-
-                                            document.querySelector('.gt_first_nam_second_name').style.opacity = '0'
-
-                                            document.querySelectorAll('.ct_section_box_accounts')[1].style.opacity = '0'
-
-                                            document.querySelectorAll('.ct_section_box_accounts')[0].style.opacity = '0'
 
                                             document.querySelector('.ct_field_first_acc').style.display = 'none'
                                             document.querySelector('.ct_bx_otp_box').style.display = 'block'
