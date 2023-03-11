@@ -138,11 +138,14 @@ app.get('/aboutus', (req, res) => {
  
  })
  app.get('/', (req, res) => {
-    res.render('main_page')
+    res.render('landing_page')
  
  })
 
-
+ app.get('/test', (req, res) => {
+    res.render('main_page')
+ 
+ })
 let number = number1
 
 let all_midellare = {

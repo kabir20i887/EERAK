@@ -48,14 +48,40 @@
   transform: translate(-50%, -50%);
   z-index: 9999999999999;
 }
-
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+        }
+        .ct_outer_flex{
+            display: flex;
+            justify-content: center;
+        }
+.ct_popup_45hj a{
+    font-size: 14px;
+    display: block;
+    color: black;
+    margin: -6px 10px;
+    width: max-content;text-decoration: revert;
+}
+.ct_popup_45hj a ion-icon{
+    transform: translate(4px, 3px);
+}
 .spinner-square > .square {
     width: 17px;
     height: 80px;
     margin: auto auto;
     border-radius: 4px;
 }
-
+.ct_popup_45hj .remove_btn {
+    position: absolute;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: -41px;
+}
 .square-1 {
     animation: square-anim 1200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
 }
@@ -260,7 +286,6 @@
         .itm_food_list_ek {
             border-radius: 20px;
             padding: 9px 10px;
-            border: 1px solid #c5c5c59c;
         }
 
         .ct_bx_deliv img {
@@ -641,12 +666,12 @@
             box-shadow: 0 4px 5px #0000002e;
         }
 
-        .ct_coupons button.remove {
-            box-shadow: none;
-            display: none;
-            color: #ff1818;
-            border-radius: 0px;
-            background: #f5e6d7;
+.ct_coupons button.remove {
+    box-shadow: none;
+    display: none;
+    color: #232121;
+    border-radius: 13px;
+    background: #e9e9e9;
         }
 
         .ct_coupons button:active {
@@ -692,7 +717,7 @@
             margin-top: 5px;
             font-weight: 700;
             margin-left: 17px;
-            margin-bottom: 8px;
+            margin-bottom: 0;
             display: none;
         }
 
@@ -701,7 +726,7 @@
             display: flex;
             justify-content: center;
         }
-
+.ct_popup_45hj,
 .ct_offer_saved_popup {
     border-radius: 20px;
     width: 500px;
@@ -715,6 +740,51 @@
     padding: 11px 36px;
     box-shadow: 0 10px 8px #0000004a;
 }
+.ct_popup_45hj{
+        display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90vw;
+    padding-top: 0;
+}
+.ct_popup_45hj .ct_inner_m h4{    padding: 14px;
+    padding-left: 4px;
+    width: 79%;
+    margin-top: 18px;
+    padding-bottom: 22px;
+    margin: 0;
+    margin-top: 9px;
+    color: black;    font-size: 17px;
+    font-family: 'poppins';
+}
+.ct_popup_45hj p{
+        font-size: 13px;
+    width: 82%;
+    color: black;
+    margin: 10px 20px;
+}
+.ct_popup_45hj.cpn_appl .ct_inner_m ion-icon{
+    color: #ffffff;
+}
+.ct_popup_45hj.cpn_appl .ct_inner_m {
+    background-image: linear-gradient(to left, #c574f2, #ff7cdc);
+}
+.ct_popup_45hj.cpn_appl .ct_inner_m h4{
+    color: #ffffff;
+}
+.ct_popup_45hj.cpn_appl a{display: none;}
+.ct_popup_45hj .ct_inner_m ion-icon{
+    font-size: 54px;
+    color: #0c8b86;
+    margin: 8px;
+}
+
+.ct_popup_45hj .ct_inner_m{
+        background-image: linear-gradient(to left, #74F2CE, #7CFFCB);
+    border-radius: 10px;
+    display: flex;
+}
+
         .ct_offer_saved_popup span,
         .ct_offer_saved_popup p {
             color: black;
@@ -1315,12 +1385,7 @@
             margin-bottom: 1rem;
         }
 
-        a {
-            color: #007bff;
-            text-decoration: none;
-            background-color: transparent;
-            -webkit-text-decoration-skip: objects;
-        }
+
 
         a:hover {
             color: #0056b3;
@@ -2136,17 +2201,17 @@ color: rgb(16 178 0);
             position: relative;
         }
 
-        .crousel_items {
-            height: auto;
-            padding-top: 25px;
-            display: flex;
-            align-items: center;
-            overflow-x: auto;
-            padding-left: 20px;
-            width: 90%;
-            margin: 0px 0 0 74px;
-            padding-bottom: 70px;
-        }
+.crousel_items {
+    height: auto;
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding-left: 20px;
+    width: 86%;
+    margin: 0px 0 0 119px;
+    padding-bottom: 70px;
+}
 
         .ct_back_btn {
             left: 13px;
@@ -2171,6 +2236,11 @@ color: rgb(16 178 0);
             border-radius: 50%;
             z-index: 999999;
             margin-top: 150px;
+            cursor: pointer;
+
+        }
+        .crousel_btns:active{
+            background: rgb(228, 228, 228);
         }
 
         /*! CSS Used from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css */
@@ -2271,6 +2341,9 @@ color: rgb(16 178 0);
             position: relative;
             left: 0;
             transition: 0.5s;
+                height: 368px;
+    overflow: hidden;
+    border: none;
         }
 
         .crousel_items a {
@@ -2429,23 +2502,29 @@ color: rgb(16 178 0);
             width: 59%;
         }
 
-        .main_im.sauces img {
-            width: 43%;
-        }
-
+.main_im.sauces img {
+    width: 43%;
+    height: auto;
+    position: revert;
+    margin-left: 0;
+    transform: translate(0px, 0px);
+    box-shadow: none;
+    border-radius: 10px;
+    width: 100%;
+    /* filter: drop-shadow(-1px 7px 2px #00000042) contrast(1.1); */
+}
         .ct_bx_inner_food_groc {
             margin-top: 0;
             padding: 8px;
         }
-
-        .ct_bx_fooditm {
-            margin-right: 20px;
-            margin: 0px;
-            box-shadow: 0 0 2px #0000005c;
-            border-radius: 20px;
-            padding: 14px 0px;
-            width: 100%;
-        }
+.ct_bx_fooditm {
+    margin-right: 20px;
+    margin: 0px;
+    /* box-shadow: 0 0 2px #0000005c; */
+    border-radius: 20px;
+    padding: 0px;
+    width: 100%;
+}
 
         .ct_bx_fooditm a .ct_bx_flex {
             display: block;
@@ -2556,16 +2635,6 @@ color: rgb(16 178 0);
                 padding: 3px 10px 10px 3px;
                 transform: translate(2px, 6px);
             }
-
-
-
-            .ct_bx_fooditm .main_im {
-                width: 108px;
-                margin-left: 26px;
-            }
-
-
-
             .ct_bx_price_fd .price:nth-child(2) {
                 margin-top: 4px;
                 font-size: 19px;
@@ -3462,12 +3531,14 @@ color: rgb(16 178 0);
             .for_ain_home_logo {
                 width: auto;
             }
-
-            .crousel_items .product {
-                min-width: 212px;
-                max-width: 250px;
-
-            }
+.crousel_items{
+       width: 1279px;
+    margin: 0px 0 0 119px;
+}
+.crousel_items .product {
+    min-width: 201px;
+    max-width: 239px;
+}
 
             .ct_main_crousel_box h3 {
                 margin-left: 0;
@@ -5807,7 +5878,7 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             background-color: white;
             box-shadow: 0 0 10px #0000004a;
             padding: 6px 10px;
-            z-index: 99999999999999;
+            z-index: 9999999;
         }
 
         .ct_inner_bottom_place {
@@ -10214,7 +10285,7 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             border: none;
             background-color: rgb(243, 241, 241);
         }
-
+.ct_bx_ov_lay_x,
         .ct_bx_ov_lay {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.424);
@@ -10225,6 +10296,8 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             ;
             display: block;
         }
+        .ct_bx_ov_lay_x {
+    background-color: rgb(141 141 141 / 17%)}
 
         .ct_bx_ov_lay {
             display: none;
@@ -14800,8 +14873,7 @@ min-width: 180px;
             .crousel_items {
                 margin: 0;
                 width: 100vw;
-                padding-bottom: 50px;
-            }
+padding: 20px 31px;            }
 
             .ct_main_crousel_box h3 {
                 margin-top: 12px;
@@ -15770,10 +15842,6 @@ min-width: 180px;
                 padding: 7px 12px;
             }
 
-            .main_im.sauces img {
-                width: 56%;
-            }
-
             .ct_bx_fooditm h4 {
                 font-size: 12px;
             }
@@ -16215,7 +16283,7 @@ min-width: 180px;
                 margin-top: 42px;
                 width: 128px;
                 height: 43px;
-                left: -41px;
+                left: -46px;
             }
 
             .ct_search_cpns_outer {
@@ -16653,6 +16721,20 @@ min-width: 180px;
             .ct_bx_qty p {
                 margin-left: 0;
             }
+            .ct_popup_45hj.cpn_appl {
+    height: auto;
+    padding: 0;
+    padding-bottom: 9px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 67%;
+}
+            .ct_popup_45hj{
+height: auto;
+    padding: 0;
+    padding-bottom: 38px;
+    width: 88%;}
+            .ct_flexbx {    padding: 3px 50px 3px 0px;}
 .empty_cart h3 {
     font-size: 13px;
 }
@@ -16955,10 +17037,6 @@ min-width: 180px;
 
             .ct_btns_group_check_ek {
                 padding: 0 7px;
-            }
-
-            .main_im.sauces img {
-                width: 89%;
             }
 
             .ct_bx_qt_foods input {
@@ -18632,6 +18710,36 @@ min-width: 180px;
             </div>
         </article>
     </div>
+    <div class="ct_outer_flex">
+
+    <div class="ct_popup_45hj">
+            <div class="remove_btn">
+                     <ion-icon name="close-outline"></ion-icon>
+                 </div>
+             <div class="ct_inner_m">
+                 <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+                 <h4>Thankyou! Order successfully placed</h4>
+
+             </div>
+             <p>Hey kabir, we have successfully recived your order.Your order will be delivered with in 24 hours.</p>
+            <a href="/account#orders">Check out your orders <ion-icon name="chevron-forward-outline"></ion-icon></a>   
+    </div>
+    </div>
+
+    {{!-- <div class="ct_outer_flex">
+    <div class="ct_popup_45hj cpn_appl">
+                    <div class="remove_btn">
+                     <ion-icon name="close-outline"></ion-icon>
+                 </div>
+             <div class="ct_inner_m">
+                 <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle"></ion-icon>
+                 <h4>Coupon applied !</h4>
+
+             </div>
+             <p>You saved</p>
+    </div>
+    </div> --}}
+
     <div class="animated yt-loader"></div>
     <div class="ct_overfow_for_load">
 
@@ -19184,170 +19292,300 @@ min-width: 180px;
                                             <div></div>
                                         </div>
                                     </div>
-                                    <ul>
-
-
-                                        <li>
-                                            <div class="ct_items_bx">
+<ul><li>
+                                            <div class="ct_items_bx sauce_itm">
                                                 <div class="ct_imgbx">
-                                                    <img src="../img/sample_img1.jpeg" alt="">
+                                                    <img src="../img/test_img.png" alt="malaimix img">
                                                 </div>
                                                 <div class="ct_info_items">
-                                                    <h4>Masala meat</h4>
-                                                    {{!-- <span>net weight: 150g</span> --}}
+                                                    <h4>Malai Mix</h4>
                                                     <div class="ct_flexbx">
-                                                        <div class="ct_for_bx1 active">
-                                                            <h4>150gm</h4>
-                                                            <span class="info_package">pouch pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 56</del>
-                                                                <p>₹ 45</p>
-
-                                                            </div>
-
+                                                      <div class="ct_for_bx1 active">
+                            <h4>150gm</h4>
+                            <span class="info_package">pouch pack</span>
+                            <div class="ct_pr_bx">
+                               
+                                <p>₹ 45</p>
+    
+                            </div>
+    
+                        </div><div class="ct_for_bx1 unactive">
+                                                        <h4>300gm</h4>
+                                                        <span class="info_package">pouch pack</span>
+                                                        <div class="ct_pr_bx">
+                                                           
+                                                            <p>₹ 75</p>
+    
                                                         </div>
-                                                        <div class="ct_for_bx1 unactive">
-                                                            <h4>300gm</h4>
-                                                            <span class="info_package">pouch pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 93</del>
-                                                                <p>₹ 75</p>
-
-                                                            </div>
-
+    
+                                                    </div><div class="ct_for_bx1 unactive">
+                                                        <h4>400gm</h4>
+                                                        <span class="info_package">container pack</span>
+                                                        <div class="ct_pr_bx">
+                                                           
+                                                            <p>₹ 125</p>
+    
                                                         </div>
-                                                        <div class="ct_for_bx1">
-                                                            <div class="ct_pop_info">
-                                                                <p></p>
-                                                            </div>
-                                                            <div class="ct_bx_flex">
-                                                                <h4>400g</h4>
-                                                                <div class="ct_x_info">
-                                                                    <ion-icon name="help-circle-outline" role="img"
-                                                                        class="md hydrated"
-                                                                        aria-label="help circle outline"></ion-icon>
-                                                                </div>
-                                                            </div>
-                                                            <span class="info_package">container pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 156</del>
-                                                                <p>₹ 125</p>
-
-                                                            </div>
-
-                                                        </div>
+    
+                                                    </div>
                                                     </div>
                                                     <div class="ct_bx_qt_foods">
                                                         <div class="ct_bx_item_rem">
-                                                            <ion-icon name="remove-outline" role="img"
-                                                                class="md hydrated"
-                                                                aria-label="remove outline"></ion-icon>
+                                                            <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
                                                         </div>
                                                         <input type="text" value="1" readonly="">
                                                         <div class="ct_bx_item_add">
-                                                            <ion-icon name="add-outline" role="img" class="md hydrated"
-                                                                aria-label="add outline"></ion-icon>
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
                                                         </div>
 
                                                     </div>
-                                                    <div class="ct_pr">
-                                                        <del>₹ 59</del>
-                                                        <p>₹ 49</p>
 
-                                                    </div>
-
+                                                    <div class="ct_pr sauce_pr">
+                                            
+                                        <p>₹ 45</p>
+                                        
+                                        
+                                    </div>            
                                                     <div class="remove_fd_itm_ct">
                                                         <p>Delete</p>
                                                     </div>
-                                                    <div class="ct_offer_info">
-                                                        <p>Coupon:SAVE20 applied , 20% off.</p>
-                                                    </div>
+                                                     
 
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="ct_items_bx">
+                                        </li><li>
+                                            <div class="ct_items_bx essentials_itm">
                                                 <div class="ct_imgbx">
-                                                    <img src="../img/fortune_oil.jpg" alt="">
+                                                    <img src="../img/garlic.webp" alt="freshgarlic img">
                                                 </div>
                                                 <div class="ct_info_items">
-                                                    <h4>Mustard oil, Fortune</h4>
-                                                    {{!-- <span>net weight: 150g</span> --}}
+                                                    <h4>Fresh garlic</h4>
                                                     <div class="ct_flexbx">
-                                                        <div class="ct_for_bx1 active">
-                                                            <h4>1 litre</h4>
-                                                            <span class="info_package" style="display: none;">pouch
-                                                                pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 56</del>
-                                                                <p>₹ 45</p>
+                                                      <div class="ct_for_bx1 active">
+                                    <h4>40g</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                       
+                                        <p>₹ 25</p>
 
-                                                            </div>
+                                    </div>
 
-                                                        </div>
-                                                        <div class="ct_for_bx1 unactive">
-                                                            <h4>3 litre</h4>
-                                                            <span class="info_package" style="display: none;">pouch
-                                                                pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 93</del>
-                                                                <p>₹ 75</p>
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>500g</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                       
+                                        <p>₹ 137</p>
 
-                                                            </div>
+                                    </div>
 
-                                                        </div>
-                                                        <div class="ct_for_bx1">
-                                                            <div class="ct_pop_info">
-                                                                <p></p>
-                                                            </div>
-                                                            <div class="ct_bx_flex">
-                                                                <h4>5 litre</h4>
-                                                                <div class="ct_x_info">
-                                                                    <ion-icon name="help-circle-outline" role="img"
-                                                                        class="md hydrated"
-                                                                        aria-label="help circle outline"></ion-icon>
-                                                                </div>
-                                                            </div>
-                                                            <span class="info_package" style="display: none;">pouch
-                                                                pack</span>
-                                                            <div class="ct_pr_bx">
-                                                                <del>₹ 156</del>
-                                                                <p>₹ 125</p>
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>1kg</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                       
+                                        <p>₹ 240</p>
 
-                                                            </div>
+                                    </div>
 
-                                                        </div>
+                                </div>
                                                     </div>
                                                     <div class="ct_bx_qt_foods">
                                                         <div class="ct_bx_item_rem">
-                                                            <ion-icon name="remove-outline" role="img"
-                                                                class="md hydrated"
-                                                                aria-label="remove outline"></ion-icon>
+                                                            <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
                                                         </div>
                                                         <input type="text" value="1" readonly="">
                                                         <div class="ct_bx_item_add">
-                                                            <ion-icon name="add-outline" role="img" class="md hydrated"
-                                                                aria-label="add outline"></ion-icon>
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
                                                         </div>
 
                                                     </div>
-                                                    <div class="ct_pr">
-                                                        <del>₹ 59</del>
-                                                        <p>₹ 49</p>
-                                                    </div>
 
+                                                    <div class="ct_pr essen_pr">
+                                        
+                                        <p>₹ 25</p>
+                                        
+                                        
+                                    </div>            
                                                     <div class="remove_fd_itm_ct">
                                                         <p>Delete</p>
                                                     </div>
-                                                    <div class="ct_offer_info">
-                                                        <p>Coupon:SAVE20 applied , 20% off.</p>
-                                                    </div>
+                                                     
 
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                        </li><li>
+                                            <div class="ct_items_bx essentials_itm">
+                                                <div class="ct_imgbx">
+                                                    <img src="../img/fortune_oil.jpg" alt="mustardoilfortune img">
+                                                </div>
+                                                <div class="ct_info_items">
+                                                    <h4> Mustard Oil, Fortune</h4>
+                                                    <div class="ct_flexbx">
+                                                      <div class="ct_for_bx1 active">
+                                    <h4>1litre</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 181</del>
+                                        <p>₹ 145</p>
+
+                                    </div>
+
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>5litre</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 796</del>
+                                        <p>₹ 637</p>
+
+                                    </div>
+
+                                </div>
+                                                    </div>
+                                                    <div class="ct_bx_qt_foods">
+                                                        <div class="ct_bx_item_rem">
+                                                            <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                                        </div>
+                                                        <input type="text" value="1" readonly="">
+                                                        <div class="ct_bx_item_add">
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="ct_pr essen_pr">
+                                         <del>₹ 181</del>
+                                        <p>₹ 145</p>
+                                        <div class="ct_off_info">
+                                            <h4>20 off</h4>
+                                        </div>
+                                        
+                                    </div>            
+                                                    <div class="remove_fd_itm_ct">
+                                                        <p>Delete</p>
+                                                    </div>
+                                                     
+
+                                                </div>
+                                            </div>
+                                        </li><li>
+                                            <div class="ct_items_bx essentials_itm">
+                                                <div class="ct_imgbx">
+                                                    <img src="../img/engine_oil.jpg" alt="mustardoilengine img">
+                                                </div>
+                                                <div class="ct_info_items">
+                                                    <h4>Mustard oil, Engine</h4>
+                                                    <div class="ct_flexbx">
+                                                      <div class="ct_for_bx1 active">
+                                    <h4>1litre</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 144</del>
+                                        <p>₹ 115</p>
+
+                                    </div>
+
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>5litre</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 700</del>
+                                        <p>₹ 560</p>
+
+                                    </div>
+
+                                </div>
+                                                    </div>
+                                                    <div class="ct_bx_qt_foods">
+                                                        <div class="ct_bx_item_rem">
+                                                            <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                                        </div>
+                                                        <input type="text" value="1" readonly="">
+                                                        <div class="ct_bx_item_add">
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="ct_pr essen_pr">
+                                         <del>₹ 144</del>
+                                        <p>₹ 115</p>
+                                        <div class="ct_off_info">
+                                            <h4>20 off</h4>
+                                        </div>
+                                        
+                                    </div>            
+                                                    <div class="remove_fd_itm_ct">
+                                                        <p>Delete</p>
+                                                    </div>
+                                                     
+
+                                                </div>
+                                            </div>
+                                        </li><li>
+                                            <div class="ct_items_bx essentials_itm">
+                                                <div class="ct_imgbx">
+                                                    <img src="../img/mutton_rm.jpg" alt="freshmutton img">
+                                                </div>
+                                                <div class="ct_info_items">
+                                                    <h4>Fresh Mutton</h4>
+                                                    <div class="ct_flexbx">
+                                                      <div class="ct_for_bx1 active">
+                                    <h4>500g</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 556</del>
+                                        <p>₹ 445</p>
+
+                                    </div>
+
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>1kg</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 1,546</del>
+                                        <p>₹ 1,237</p>
+
+                                    </div>
+
+                                </div><div class="ct_for_bx1 unactive">
+                                    <h4>2kg</h4>
+                                    <span class="info_package"></span>
+                                    <div class="ct_pr_bx">
+                                        <del>₹ 3,084</del>
+                                        <p>₹ 2,467</p>
+
+                                    </div>
+
+                                </div>
+                                                    </div>
+                                                    <div class="ct_bx_qt_foods">
+                                                        <div class="ct_bx_item_rem">
+                                                            <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline"></ion-icon>
+                                                        </div>
+                                                        <input type="text" value="1" readonly="">
+                                                        <div class="ct_bx_item_add">
+                                                            <ion-icon name="add-outline" role="img" class="md hydrated" aria-label="add outline"></ion-icon>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="ct_pr essen_pr">
+                                         <del>₹ 556</del>
+                                        <p>₹ 445</p>
+                                        <div class="ct_off_info">
+                                            <h4>20 off</h4>
+                                        </div>
+                                        
+                                    </div>            
+                                                    <div class="remove_fd_itm_ct">
+                                                        <p>Delete</p>
+                                                    </div>
+                                                     
+
+                                                </div>
+                                            </div>
+                                        </li></ul>
 
                                     {{!-- <div class="loader_cart for_ek_fd_cart_load">
 
@@ -19602,7 +19840,7 @@ min-width: 180px;
                 <div class="ct_main_crousel_box">
                     
                     <div class="ct_inner_m_crou">
-                        <h3>Check your other items</h3>
+                        <h3>Check our other items</h3>
                                     <div class="ct_load_items">
                 <div class="lds-ring">
                     <div></div>
@@ -19623,10 +19861,777 @@ min-width: 180px;
                                 arrow_forward_ios
                             </span>
                         </div>
-                        <div class="crousel_items">
+<div class="crousel_items">
 
 
-                        </div>
+                        
+                                                     
+                                                     <div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="masala meat" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>masala meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">masala meat</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>
+                                                     
+                                                     <div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="masala meat" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>masala meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">masala meat</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div><div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="masala meat" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>masala meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">masala meat</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div><div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="masala meat" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>masala meat</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 45</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">masala meat</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">45</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div><div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="Masala Fish" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Masala Fish</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 75</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Masala Fish</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">75</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>
+                                                     
+                                                     <div class="product" style="left: -11px;">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    
+                                                                    <div class="main_im sauces">
+                                                    <img alt="Veg Delight" src="../img/test_img.png">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+
+                                                        <h4>Veg Delight</h4>
+                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural ingredients.</p>
+                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
+
+                                                        
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style="display:none"></del>
+             <p class="price">₹ 65</p>
+         </div>
+     
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">Veg Delight</p>
+                                                            <p class="stock">15</p>
+                                                            <p class="price_pr">65</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">null</p>
+                                                            <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                                            <p class="qty">150gm</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/chicken_meat.png">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh chicken</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 300</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 300</span>
+            </li><li>
+                <p>1kg</p>
+                <span>₹ 546</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 300</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 240 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/jhania.webp">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Corriander powder</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 56</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 56</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 296</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 584</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 56</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>10%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/jeera_powder.webp">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Jeera powder</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 50</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 50</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 263</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 519</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 50</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/tomato_img.png">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh tomatoes</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 56</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 56</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 296</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 584</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 56</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/chillies.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh green chillies</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 56</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 56</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 296</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 584</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 56</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/onions.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh onions</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 56</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 56</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 296</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 584</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 56</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div><div class="product" style="left: -11px;">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                        <div class="ct_offer_box_cook2">
+         <span>20%</span>
+         <p>off</p>
+     </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Mustard oil , Engine image" src="../img/ginger.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh ginger</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                <p> 500g</p>
+                                                <span>₹ 56</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                <li>
+                <p>500g</p>
+                <span>₹ 56</span>
+            </li><li>
+                <p>5kg</p>
+                <span>₹ 296</span>
+            </li><li>
+                <p>10kg</p>
+                <span>₹ 584</span>
+            </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 56</del>
+                        <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
+                                        </div>
+
+                                        
+                             <div class="ct_addbtns essen">
+                            <p>Add to cart</p>
+                            </div>
+                            <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div></div>
                     </div>
 
                 </div>
@@ -20388,7 +21393,7 @@ min-width: 180px;
                                             </a>
                                         </div>
                                         </div>`
-                    document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+                    //document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
 
                 })
             }
@@ -20520,7 +21525,7 @@ min-width: 180px;
                         </div>`
 
 
-                    document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+                  //  document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
 
                 })
             }
@@ -20812,66 +21817,72 @@ min-width: 180px;
                             </li>`
                             return html
                     })
+                let sauces=JSON.parse(localStorage.getItem('sauce'))
                 if (secret !== ''){
                     if(data.secret!==null){
-                if(secret.replace(/[ ,]+/g, "").toLowerCase()===data.secret.replace(/[ ,]+/g, "").toLowerCase()){
-                    matched_secret=true
-                    let not_av_html=`notavailable`
-                    let btn_acc=`<button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
-                    if(getCookie('cpns_appl')===''){
-                    if (used) {
-                btn_acc=`                            <button class="locked">Already used</button>`
-                    }else{
-                        document.querySelector('.success_code').style.display='block'
-                        document.querySelector('.success_code').innerText=`Hurrah! COUPON: ${data.name} unlocked.`
-                        not_av_html=''
-                        btn_acc=`<button class="claim">Apply</button>`
-                    }
+                            if(secret.replace(/[ ,]+/g, "").toLowerCase()===data.secret.replace(/[ ,]+/g, "").toLowerCase()){
+                                matched_secret=true
+                                let not_av_html=`notavailable`
+                                let btn_acc=`<button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
+                               if(sauces!==null){
+                                    if(sauces.length!==0){
 
-                    }
-                    if(getCookie('cpns_appl')!==''){
-                let objCpns = JSON.parse(getCookie('cpns_appl'))
-                    if(objCpns.name.replace(/[ ,]+/g, "").toLowerCase()===data.name.replace(/[ ,]+/g, "").toLowerCase()){
-                         btn_acc = ` <button class="remove" style="display:block;margin-bottom: 12px;">Remove</button>`
-                        not_av_html=''
-                    }
+                                        if(getCookie('cpns_appl')===''){
+                                                if (used) {
+                                            btn_acc=`                            <button class="locked">Already used</button>`
+                                                }else{
+                                                    document.querySelector('.success_code').style.display='block'
+                                                    document.querySelector('.success_code').innerText=`Hurrah! COUPON: ${data.name} unlocked.`
+                                                    not_av_html=''
+                                                    btn_acc=`<button class="claim">Apply</button>`
+                                                }
+                                        }
+                                    }
+                               }
 
-                    }
+                                if(getCookie('cpns_appl')!==''){
+                            let objCpns = JSON.parse(getCookie('cpns_appl'))
+                                if(objCpns.name.replace(/[ ,]+/g, "").toLowerCase()===data.name.replace(/[ ,]+/g, "").toLowerCase()){
+                                    btn_acc = ` <button class="remove" style="display:block;margin-bottom: 12px;">Remove</button>`
+                                    not_av_html=''
+                                }
+
+                                }
 
 
-                        let html = `<div class="outer_cpns">
-                                <div class="ct_coupons ${not_av_html}">
-                        <div class="ct_off_info_cpns">
-                            <h4>${data.off} OFF</h4>
-                        </div>
-                        <img src="../img/reward_icon_mn.png" alt="coupon">
-                        <div class="ct_inner">
-                            <h4>Coupon: ${data.name}</h4>
+                                    let html = `<div class="outer_cpns">
+                                            <div class="ct_coupons ${not_av_html}">
+                                    <div class="ct_off_info_cpns">
+                                        <h4>${data.off} OFF</h4>
+                                    </div>
+                                    <img src="../img/reward_icon_mn.png" alt="coupon">
+                                    <div class="ct_inner">
+                                        <h4>Coupon: ${data.name}</h4>
 
-                            <p>${data.data}</p>
-                            <div class="ct_inner_btns">
+                                        <p>${data.data}</p>
+                                        <div class="ct_inner_btns">
 
-                            ${btn_acc}
-                            </div>
-                        </div>
-                        <div class="ct_info_btn">
-                            <p>More <ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></p>
+                                        ${btn_acc}
+                                        </div>
+                                    </div>
+                                    <div class="ct_info_btn">
+                                        <p>More <ion-icon name="chevron-down-outline" role="img" class="md hydrated" aria-label="chevron down outline"></ion-icon></p>
 
-                        </div>
-                    </div>
-                    <div class="ct_info_cpns">
-                        <h4>Description</h4>
-                        <ul>
+                                    </div>
+                                </div>
+                                <div class="ct_info_cpns">
+                                    <h4>Description</h4>
+                                    <ul>
 
- 
-                            ${desc_htm_cpn.join('')}
+            
+                                        ${desc_htm_cpn.join('')}
 
-                        </ul>
-                    </div>
-                </div>`
-                        document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
-   }
-                    }
+                                    </ul>
+                                </div>
+                            </div>`
+                                    document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', html)
+                        }
+                }
                  
                     
                 }else{
@@ -20883,17 +21894,22 @@ min-width: 180px;
                             notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> Please login</button>`
                         }
                         if (conditionX) {
+                             if(sauces!==null){
+                                    if(sauces.length!==0){
+
                             classAvai = ''
                             notavailable_hm = ` <button class="claim" style="display:block;margin-bottom: 12px;">Apply</button>`
+                                    }
+                             }
                         }
                     if(getCookie('cpns_appl')!==''){
                 let objCpns = JSON.parse(getCookie('cpns_appl'))
-                classAvai = 'notavailable'
- notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
-if(objCpns.name.split(' ').join('')===data.name.split(' ').join('')){
-                     notavailable_hm = ` <button class="remove" style="display:block;margin-bottom: 12px;">Remove</button>`
-classAvai = ''
-}
+                    classAvai = 'notavailable'
+                        notavailable_hm = ` <button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
+                        if(objCpns.name.split(' ').join('')===data.name.split(' ').join('')){
+                                            notavailable_hm = ` <button class="remove" style="display:block;margin-bottom: 12px;">Remove</button>`
+                        classAvai = ''
+                        }
  
                     }
                         let html = `<div class="outer_cpns">
@@ -22639,6 +23655,9 @@ remove_cpns_panel()
                 addCpns('')
             }
             if (close_popup_cpns !== null || close_popup_cpns2 !== null) {
+document.querySelector('.success_code').style.display='none'
+document.querySelector('.err_code').style.display='none'
+document.querySelector('.ct_search_cpns input').value=''
 
  remove_cpns_panel()
             }
