@@ -46,9 +46,282 @@
     {{!-- {{>favicon}} --}}
 
     <style>
+
+
+
+/*review design*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+.reviews-container {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+}
+
+.review {
+	border: 1px solid transparent;
+	border-radius: 5px;
+	color: #777;
+	display: flex;
+	font-size: 12px;
+	align-items: center;
+	padding: 10px;
+	margin: 5px 0;
+}
+.review ion-icon {
+    color: black;
+    font-size: 12px;
+    margin: -1px 2px;
+}
+.review:hover {
+	border: 1px solid #ddd;
+	box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.7);
+}
+
+.progress {
+	background-color: rgba(100, 100, 100, 0.2);
+	border-radius: 5px;
+	position: relative;
+	margin: 0 10px;
+	height: 10px;
+	width: 200px;    overflow: initial;
+}
+.progress-done {
+    background: linear-gradient(to left, rgb(255 98 5), rgb(255 104 16));
+    box-shadow: 0 3px 3px -5px rgb(255 102 11), 0 2px 5px rgb(255 123 0);
+    border-radius: 5px;
+    height: 8px;
+    width: 53%;
+    transition: width 1s ease 0.3s;
+}
+.percent {
+	color: #333;
+}
+
+/* SOCIAL PANEL CSS */
+.social-panel-container {
+	position: fixed;
+	right: 0;
+	bottom: 80px;
+	transform: translateX(100%);
+	transition: transform 0.4s ease-in-out;
+}
+
+.social-panel-container.visible {
+	transform: translateX(-10px);
+}
+
+.social-panel {	
+	background-color: #fff;
+	border-radius: 16px;
+	box-shadow: 0 16px 31px -17px rgba(0,31,97,0.6);
+	border: 5px solid #001F61;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Muli';
+	position: relative;
+	height: 169px;	
+	width: 370px;
+	max-width: calc(100% - 10px);
+}
+
+.social-panel button.close-btn {
+	border: 0;
+	color: #97A5CE;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+.social-panel button.close-btn:focus {
+	outline: none;
+}
+
+.social-panel p {
+	background-color: #001F61;
+	border-radius: 0 0 10px 10px;
+	color: #fff;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 2px 17px 6px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin: 0;
+	transform: translateX(-50%);
+	text-align: center;
+	width: 235px;
+}
+
+.social-panel p i {
+	margin: 0 5px;
+}
+
+.social-panel p a {
+	color: #FF7500;
+	text-decoration: none;
+}
+
+.social-panel h4 {
+	margin: 20px 0;
+	color: #97A5CE;	
+	font-family: 'Muli';	
+	font-size: 14px;	
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+.social-panel ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.social-panel ul li {
+	margin: 0 10px;
+}
+
+.social-panel ul li a {
+	border: 1px solid #DCE1F2;
+	border-radius: 50%;
+	color: #001F61;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	text-decoration: none;
+}
+
+.social-panel ul li a:hover {
+	border-color: #FF6A00;
+	box-shadow: 0 9px 12px -9px #FF6A00;
+}
+
+.floating-btn {
+	border-radius: 26.5px;
+	background-color: #001F61;
+	border: 1px solid #001F61;
+	box-shadow: 0 16px 22px -17px #03153B;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 20px;
+	padding: 12px 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+
+.floating-btn:hover {
+	background-color: #ffffff;
+	color: #001F61;
+}
+
+.floating-btn:focus {
+	outline: none;
+}
+
+.floating-text {
+	background-color: #001F61;
+	border-radius: 10px 10px 0 0;
+	color: #fff;
+	font-family: 'Muli';
+	padding: 7px 15px;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 998;
+}
+
+.floating-text a {
+	color: #FF7500;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+
+	.social-panel-container.visible {
+		transform: translateX(0px);
+	}
+	
+	.floating-btn {
+		right: 10px;
+	}
+}
+
+/****************************************************************************/
+
+
         @font-face {
             src: url(../others/fonts/Gagalin.otf);
             font-family: gagalin;
+        }
+        .ct_rat_bx_stat{
+            display: flex;
+            margin:4px 0 0  10px;
+
+        }
+        .prod_desc {
+    color: #272626;
+    font-family: 'roboto';
+    font-weight: 500;
+    display: block;
+    font-size: 10px;
+    line-height: 13px;
+    margin: 41px 0 0 10px;
+    width: 93%;
+}
+        .ct_rat_bx_stat ion-icon{
+color: rgb(255 165 0);
+        }
+
+        .ct_texts {
+            display: flex;
+            margin-top: 2px;
+    text-transform: capitalize;
+        }
+
+        .ct_prod_categ {
+            display: flex;
+            background: linear-gradient(109.6deg, rgb(253 251 64) 11.2%, rgb(244, 253, 0) 100.2%);
+            margin: -4px 0 8px 2px;
+            width: max-content;
+            padding: 3px 8px;
+            border-radius: 21px;
+        }
+
+        .ct_popup_inner .ct_prod_categ {
+            margin: 0 0 0px 18px;
+        }
+
+        .ct_prod_categ.regular {
+            background: linear-gradient(109.6deg, rgb(233, 233, 233) 11.2%, rgb(223, 223, 223) 100.2%);
+        }
+
+        .ct_prod_categ ion-icon,
+        .ct_bx_flex .ct_prod_categ ion-icon {
+            color: rgb(8 8 8);
+            font-size: 14px;
+            margin: 3px 1px;
+            transform: translate(0px);
+        }
+
+        .ct_prod_categ span {
+            color: #413f3f;
+            font-family: 'open sans';
+            font-size: 9px;
+            margin: 4px 5px;
         }
 
         .prod_img2 {
@@ -313,6 +586,9 @@
         }
 
         .crousel_items::-webkit-scrollbar {
+            display: none;
+        }
+                .carousel-inner::-webkit-scrollbar {
             display: none;
         }
 
@@ -580,6 +856,7 @@
 
         .carousel-inner .carousel-item {
             height: 500px;
+    background: #fff8f5;overflow: hidden;
         }
 
         /* for essentials */
@@ -921,7 +1198,7 @@
         .info_package {
             font-size: 12px;
             color: black;
-            display: block;
+            display: none;
             margin: 3px 8px;
             font-family: 'open sans';
         }
@@ -994,7 +1271,8 @@
 
         .ct_bx_info_sauce .inner_bxs {
             display: flex;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
+            height: auto;
         }
 
         .ct_bx_info_sauce span {
@@ -1002,7 +1280,8 @@
             display: block;
             font-size: 31px;
             margin-right: 8px;
-            margin-top: -4px;
+            margin-top: -7px;
+            height: 27px;
         }
 
         .ct_bx_info_sauce p {
@@ -1711,7 +1990,7 @@
             font-family: 'roboto';
             font-weight: 500;
             font-size: 26px;
-            margin: 27px 0 0 14px;
+            margin: 0px 0 0 14px;
         }
 
         .ct_bx_total_amount_to_pay {
@@ -2934,7 +3213,7 @@
             border-radius: 20px;
             width: 100%;
             background: #0000003b;
-            filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);
+            filter: drop-shadow(0px 6px 3px #0000003b) contrast(1.1);
         }
 
         .ct_img_layer {
@@ -4671,7 +4950,6 @@
 
             .carousel-item {
                 height: 396px;
-                background: #fffdf0;
             }
 
 
@@ -5413,11 +5691,22 @@
             }
 
             .prod_img2 {
-                right: 268px;
-                top: 88px;
-                width: 235px;
+                right: 222px;
+                top: 111px;
+                width: 221px;
             }
-
+        .carousel-inner .carousel-item {
+            height: 500px;
+    min-width: 96vw;    margin: 6px 12px 0 0;
+        }
+        .carousel-indicators{display: none;}
+        .carousel-inner {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    overflow: scroll;
+}
             .carousel-control-next-icon,
             .carousel-control-prev-icon {
                 top: 91px;
@@ -5434,9 +5723,9 @@
             }
 
             .prod_img1 {
-                right: -16px;
-                top: 165px;
-                width: 353px;
+                right: -18px;
+                top: 198px;
+                width: 308px;
             }
 
             .carousel-item {
@@ -5680,7 +5969,20 @@
             .ct_all_list_food h2 {
                 font-size: 15px;
             }
-
+          .prod_img1 {
+    right: -18px;
+    top: 99px;
+    width: 247px;
+}
+.prod_img2 {
+    right: 39vw;
+    top: 23px;
+    width: 184px;
+}
+.ct_txt_bx {
+    right: 0;
+    top: 30px;
+}
             .ct_bx_info_web ion-icon {
                 color: black;
                 font-size: 21px;
@@ -6273,7 +6575,16 @@
             .ct_inner_nav {
                 justify-content: initial
             }
-
+.prod_img1 {
+    right: -43px;
+    top: 108px;
+    width: 243px;
+}
+.prod_img2 {
+    right: 38vw;
+    top: 53px;
+    width: 178px;
+}
             .ct_bx_fooditm .main_im {
                 border-radius: 8px;
                 width: 100%;
@@ -7089,7 +7400,16 @@
             .ct_offer_box_cook2 span {
                 font-size: 10px;
             }
-
+  
+.carousel-inner .carousel-item {
+    min-width: 95vw;
+    margin: 6px 8px 0 0;
+}
+.carousel-inner .carousel-item {
+    height: 341px;}
+.ct_txt_bx img {
+    width: 146px;
+}
             .ct_bx_fooditm .main_im {
                 border-radius: 8px;
             }
@@ -7212,7 +7532,16 @@
             .ct_offer_box_cook2 {
                 transform: translate(-4px, 0px);
             }
-
+.prod_img2 {
+    right: 38vw;
+    top: 71px;
+    width: 163px;
+}
+.prod_img1 {
+    right: -34px;
+    top: 126px;
+    width: 223px;
+}
             .ct_bx_fooditm h4 {
                 font-size: 14px;
             }
@@ -7955,9 +8284,26 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
+<div class="ct_prod_info">
+                    <span class="prod_desc">Experience the authentic flavors of Punjab in the comfort of your own home with
+                    our premium quality cooking sauce. Made with the finest ingredients and carefully crafted spices,
+                    our sauce is the perfect blend of tangy and savory flavors that will tantalize your taste
+                    buds.</span>
+                <div class="ct_rat_bx_stat">
+                    <ion-icon name="star-sharp"></ion-icon>
+                    <ion-icon name="star-sharp"></ion-icon>
+                    <ion-icon name="star-sharp"></ion-icon>
+                    <ion-icon name="star-sharp"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                </div>
+</div>
             <div class="ct_texts">
+
                 <h4 class="name_of_itm">Masala Meat</h4>
+                {{!-- <div class="ct_prod_categ">
+                    <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
+                    <span>Star item</span>
+                </div> --}}
             </div>
             <div class="offer_item">
                 <p>20% of</p>
@@ -7969,7 +8315,9 @@
 
             <div class="ct_bx_info_sauce">
 
+                <ul>
 
+                </ul>
             </div>
             <div class="ct_select_qty_bx ">
                 <h3>Please select a quantity</h3>
@@ -8040,7 +8388,44 @@
 
             </div> --}}
 
-
+	<div class="reviews-container">
+			<h2>Reviews</h2>
+			<div class="review">
+				<span class="icon-container">5 <ion-icon name="star-sharp"></ion-icon></span>
+				<div class="progress">
+					<div class="progress-done" data-done="68"></div>
+				</div>
+				<span class="percent">68%</span>
+			</div>
+			<div class="review">
+				<span class="icon-container">4 <ion-icon name="star-sharp"></ion-icon></span>
+				<div class="progress">
+					<div class="progress-done" data-done="13"></div>
+				</div>
+				<span class="percent">13%</span>
+			</div>
+			<div class="review">
+				<span class="icon-container">3 <ion-icon name="star-sharp"></ion-icon></span>
+				<div class="progress">
+					<div class="progress-done" data-done="9"></div>
+				</div>
+				<span class="percent">9%</span>
+			</div>
+			<div class="review">
+				<span class="icon-container">2 <ion-icon name="star-sharp"></ion-icon></span>
+				<div class="progress">
+					<div class="progress-done" data-done="3"></div>
+				</div>
+				<span class="percent">3%</span>
+			</div>
+			<div class="review">
+				<span class="icon-container">1<ion-icon name="star-sharp"></ion-icon></span>
+				<div class="progress">
+					<div class="progress-done" data-done="7"></div>
+				</div>
+				<span class="percent">7%</span>
+			</div>
+		</div>
             <div class="bx_add_t_cart_btn_itm_dt place_order_btn_popup">
                 <p>Add to cart<ion-icon name="caret-forward"></ion-icon>
                 </p>
@@ -8084,6 +8469,9 @@
                         enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
                         maxime distinctio nobis, consectetur autem?</P>
                 </div>
+            </div>
+            <div class="ct_health_beni">
+
             </div>
             <div class="ct_bx_for_ingredients">
                 <h4>Ingredients</h4>
@@ -8441,8 +8829,12 @@
 
                                                     </div>
                                                     <div class="ct_bx_inner_food_groc">
-
+                                                        <div class="ct_prod_categ">
+                                                            <ion-icon name="star-sharp"></ion-icon>
+                                                            <span>Star item</span>
+                                                        </div>
                                                         <h4>Malai Mix</h4>
+
                                                         <p class="item_intro">Enjoy delicous chicken, mutton curry made
                                                             with all natural ingredients.</p>
                                                         <p class="for_unit_itm">Net.weight: 150gm</p>
@@ -8489,7 +8881,10 @@
 
                                                     </div>
                                                     <div class="ct_bx_inner_food_groc">
-
+                                                        <div class="ct_prod_categ regular">
+                                                            <ion-icon name="home-sharp"></ion-icon> <span>Home
+                                                                style</span>
+                                                        </div>
                                                         <h4>Malai Mix</h4>
                                                         <p class="item_intro">Enjoy delicous chicken, mutton curry made
                                                             with all natural ingredients.</p>
@@ -9782,9 +10177,16 @@
                 //                        </div>`
                 //      document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
                 let images = JSON.parse(images_itm)
+                let class_x=''
+                if(window.screen.width<=550){
+                    class_x=`active`
+                    document.querySelector('.carousel-control-prev').style.display='none'
+                    document.querySelector('.carousel-control-next').style.display='none'
+
+                }
                 images.forEach((cu, ind) => {
                     if (ind > 0) {
-                        crousel_html = `    <div class="carousel-item">
+                        crousel_html = `    <div class="carousel-item ${class_x}">
                                       <img class="d-block w-100" src="${cu}" alt="Second slide">
                                     </div>
                                     `
@@ -10048,16 +10450,16 @@
                 document.querySelector('.name_of_itm').innerText = name
                 document.querySelector('.name_of_itm').innerText = name
                 console.log(desc)
-                document.querySelector('.ct_bx_info_sauce').innerHTML = ''
+                document.querySelector('.ct_bx_info_sauce ul').innerHTML = ''
 
                 let desc_obj = JSON.parse(desc)
                 desc_obj.forEach(cur11 => {
-                    let html = `<div class="inner_bxs">
+                    let html = `<li class="inner_bxs">
                     <span>*</span>
 
                     <p>${cur11}</p>
-                </div>`
-                    document.querySelector('.ct_bx_info_sauce').insertAdjacentHTML('beforeend', html)
+                </li>`
+                    document.querySelector('.ct_bx_info_sauce ul').insertAdjacentHTML('beforeend', html)
                 })
 
 
@@ -10560,8 +10962,8 @@
             res.docs.forEach(cur => {
                 let item = cur.data().item
                 let grp = cur.data().grp
- 
-                                 
+
+
                 let name = item.name
                 let offer = parseFloat(item.offer)
                 let tagline = item.tagline
@@ -10642,19 +11044,19 @@
                                             </a>
                                         </div>`
                 //#${cur.data().group.split(' ').join('')}
-                let ord=grp.ord
-                let grpName=grp.name
-                
-                if(document.querySelector(`#${grpName}`)===null){
+                let ord = grp.ord
+                let grpName = grp.name
+
+                if (document.querySelector(`#${grpName}`) === null) {
                     // if null create a div then add itm to this div
-let htm_x=`<div class="list_food_at_ov groc_list for_erak_list" id="${grpName}"><h2>${grpName}</h2><div class="ct_cat_by_list"></div></div>`
-console.log(grpName,'-----------------------------')
-                document.querySelector(`.ct_all_list_food`).insertAdjacentHTML('beforeend', htm_x)
+                    let htm_x = `<div class="list_food_at_ov groc_list for_erak_list" id="${grpName}"><h2>${grpName}</h2><div class="ct_cat_by_list"></div></div>`
+                    console.log(grpName, '-----------------------------')
+                    document.querySelector(`.ct_all_list_food`).insertAdjacentHTML('beforeend', htm_x)
 
                 }
-console.log(document.querySelector(`#${grpName}`),'-----------------------------')
+                console.log(document.querySelector(`#${grpName}`), '-----------------------------')
 
-             //   console.log(document.querySelectorAll(`.ct_all_list_food .list_food_at_ov`))
+                //   console.log(document.querySelectorAll(`.ct_all_list_food .list_food_at_ov`))
                 document.querySelector(`#${grpName} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
                 document.querySelector('.ct_full_loading_box').style.display = 'none'
 
