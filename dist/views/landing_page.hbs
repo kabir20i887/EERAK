@@ -19,7 +19,20 @@
         align-items: center;
         justify-content: center;
     }
-
+    .inner_X{
+        display: flex;
+    }
+.ct_img_cuv {
+    position: absolute;
+    margin-top: 12px;
+    width: 113px;
+    margin-left: 34px;
+}
+.img_cuv2{
+transform: rotate(88deg);
+    margin-left: 43px;
+    margin-top: 20px;
+    width: 102px;}
     /*! CSS Used from: Embedded */
     /*! CSS Used from: Embedded */
 
@@ -47,8 +60,8 @@
 
   }
 .steps_bx {
-    width: 76px;
-    height: 76px;
+    width: 80px;
+    height: 57px;
     border-radius: 500px;
     background-color: #afdc16;
     display: flex;
@@ -67,19 +80,27 @@
     width: 18px;
     height: 15px;
     position: absolute;
-    top: 8px;
-    left: 18px;
+    top: 5px;
+    left: 8px;
 }
+.ct_inner_inr_stp{display: flex;justify-content: center;}
 
-    .how-it-works .step .ct_inner_stp .ct_inner_inr_stp{display: flex;justify-content: center;}
     .how-it-works .step .ct_inner_stp{width: 70vw;}
 .how-it-works .step{
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
 }
-
-
+.how-it-works .step1{
+    margin-left: 0px;
+}
+.how-it-works .step2 {
+    display: flex;
+    justify-content: end;
+    margin-top: 50px;
+}
+.how-it-works .step3 {
+    margin-left: 0px;
+    margin-top:115px;
+}
     .home .hero .how-it-works {
         z-index: 1;
         display: flex;
@@ -213,19 +234,19 @@
         right: 12px;
         transform: rotate(-36deg);
     }
-.how-it-works .title,
-.how-it-works .steps .title {
+.how-it-works .title, .how-it-works .steps .title {
     font-family: 'Moret';
-    font-size: 40px;
+    font-size: 34px;
     width: 70%;
-    margin-top: 12px;
+    margin-top: 17px;
     margin-bottom: 1px;
+    margin-left: 12px;
 }
 .how-it-works .title{
        font-family: 'Moret light';
-    font-size: 37px;
+    font-size: 23px;
     margin-top: 12px;
-    margin-bottom: 1px; 
+    margin-bottom: 41px; 
 }
     .how-it-works .title.outer_main{
         text-align: center;
@@ -13262,12 +13283,11 @@ margin: 9px 4px 0 0;
     justify-content: center;
 }
         .ct_inner_box_nav{display: none;}
-    .how-it-works .body {
-    font-size:17px;
+.how-it-works .body {
+    font-size: 15px;
     font-family: 'roboto';
     text-align: center;
-
-    }
+}
         .text-4xl {
             font-size: 25px;
             line-height: 34px;
@@ -13580,7 +13600,7 @@ margin: 9px 4px 0 0;
         <div id="how-it-works" class="how-it-works" data-v-92df1e84="">
             <h1 class="title outer_main" data-v-92df1e84="">How it works</h1>
             <div class="steps" data-v-92df1e84="">
-                <div class="step" data-v-92df1e84="">
+                <div class="step step1" data-v-92df1e84="">
                     <div class="ct_inner_stp">
                     <div class="ct_inner_inr_stp">
                         <div class="inner_X">
@@ -13593,12 +13613,16 @@ margin: 9px 4px 0 0;
                         </div>
 
                      </div>
+
                     <div class="body" data-v-92df1e84="">
                         Let Balloonary's AI generate ad suggestions for you.
                     </div>
                     </div>
                 </div>
-                <div class="step" data-v-92df1e84="">
+                                     <div class="ct_img_cuv">
+                        <img src="../img/curve_dash.png">
+                     </div>
+                <div class="step step2" data-v-92df1e84="">
                     <div class="ct_inner_stp">
 
                     <div class="ct_inner_inr_stp">
@@ -13617,7 +13641,10 @@ margin: 9px 4px 0 0;
                         </div>
                     </div>
                 </div>
-                <div class="step" data-v-92df1e84="">
+                                                     <div class="ct_img_cuv img_cuv2">
+                        <img src="../img/curve_dash.png">
+                     </div>
+                <div class="step step3" data-v-92df1e84="">
                     <div class="ct_inner_stp">
                      <div class="ct_inner_inr_stp">
                         <div class="inner_X">
@@ -13625,7 +13652,7 @@ margin: 9px 4px 0 0;
                             3
                         </div>
                         <div class="title" data-v-92df1e84="">
-                            Mix
+                            Cook
                         </div>
                         </div>
                      </div>
