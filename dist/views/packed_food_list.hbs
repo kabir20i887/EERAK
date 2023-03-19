@@ -52,72 +52,101 @@
 
         .reviews-container {
             background-color: #fff;
-            border-radius: 5px;
+            border-radius: 0;
             box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 0.3);
             padding: 20px;
+            border-top: 1px solid #a7a7a7;
+        }
+.ratings_bx{display: flex;}
+.ratings_bx span {
+    color: red;
+    font-size: 11px;
+    font-family: 'roboto';
+    margin: 7px 0 0 5px;
+}
+        .ct_prod_Cat.star {
+            font-size: 11px;
+            color: black;
+            font-family: 'Montserrat';
+            background-color: #fff033;
+            width: max-content;
+            margin: 20px 0 7px 11px;
+            padding: 6px 15px;
+            border-radius: 0 15px 0 12px;
         }
 
-.ct_prod_Cat.star {
-    font-size: 11px;
-    color: black;
-    font-family: 'Montserrat';
-    background-color: #fed840;
-    width: max-content;
-    margin: 20px 0 7px 11px;
-    padding: 6px 15px;
-    border-radius: 0 15px 0 12px;
-}
         .ct_flex {
             display: flex;
         }
-        .ct_rate_popup .ct_btns{margin-top: 20px;}
-.ct_btn_review, .btn_submit {
-    background-color: #0083ff;
-    font-size: 14px;
-    font-family: 'Montserrat';
-    padding: 11px 14px;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    margin-top: 9px;
-}
-.ct_rate_popup {
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
-    position: fixed;
-    top: 200px;
-    width: 80%;
-    display: none;
-    z-index: 9999999999;
-    margin-left: 10vw;
-    background: white;
-    padding: 20px;
-}
-.ct_rate_popup .btn_cancel{background-color: #ffffff;
-    color: black;}
-.ct_rate_popup textarea,
-.ct_rate_popup input{
-        background: #f3f3f3;
-    border: none;
-    padding: 11px;
-    width: 100%;    margin-bottom: 13px;
-}
-.ct_rate_popup span{
-    font-size: 12px;
-    color: black;
-    font-family: 'Roboto';
-}
-.ct_rate_popup .ct_text p{
-    color: black;
-    font-size: 14px;
-    font-family: 'Poppins';
-    margin-bottom: 11px;
-}
-.ct_rate_popup h4 {
-    color: rgb(41, 41, 41);
-    font-size: 17px;
-    font-family: 'poppins';
-}
+
+        .ct_rate_popup .ct_btns {
+            margin-top: 20px;
+        }
+
+        .ct_btn_review,
+        .btn_submit {
+            background-color: #0083ff;
+            font-size: 14px;
+            font-family: 'Montserrat';
+            padding: 11px 14px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 9px;
+        }
+
+        .ct_box_innside_reccom .req_know {
+            color: #e24794;
+            font-size: 21px;
+            margin: -9px 0 0 6px;
+        }
+
+        .ct_rate_popup {
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
+            position: fixed;
+            top: 200px;
+            width: 80%;
+            display: none;
+            z-index: 9999999999;
+            margin-left: 10vw;
+            background: white;
+            padding: 20px;
+        }
+
+        .ct_rate_popup .btn_cancel {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .ct_rate_popup textarea,
+        .ct_rate_popup input {
+            background: #f3f3f3;
+            border: none;
+            padding: 11px;
+            width: 100%;
+            margin-bottom: 13px;
+        }
+
+        .ct_rate_popup span {
+            font-size: 12px;
+            color: black;
+            font-family: 'Roboto';
+        }
+
+        .ct_rate_popup .ct_text p {
+            color: black;
+            font-size: 14px;
+            font-family: 'Poppins';
+            margin-bottom: 11px;
+        }
+
+        .ct_rate_popup h4 {
+            color: rgb(41, 41, 41);
+            font-size: 17px;
+            font-family: 'poppins';
+        }
+
         .ct_poup_xbshs {
             position: fixed;
             bottom: 20px;
@@ -129,11 +158,16 @@
             background-color: rgb(25, 86, 218);
             z-index: 999999;
         }
-        .ct_poup_xbshs .inner_x{width: 100%;}
-        .ct_poup_xbshs.sucess{
-                background-color: rgb(22 163 101);
+
+        .ct_poup_xbshs .inner_x {
+            width: 100%;
+        }
+
+        .ct_poup_xbshs.sucess {
+            background-color: rgb(22 163 101);
 
         }
+
         /* Input Rating */
         .rating {
             user-select: none;
@@ -151,7 +185,7 @@
         }
 
         .rating__star {
-            font-size:16vw;
+            font-size: 16vw;
             color: #d3d3d3;
             transition: all 0.1s ease-in-out;
         }
@@ -244,6 +278,158 @@
 
         .ct_account_icon {
             display: flex;
+        }
+
+        /*! CSS Used from: https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: .5rem;
+        }
+
+        h3 {
+            margin-bottom: .5rem;
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        .fade {
+            opacity: 0;
+            transition: opacity .15s linear;
+        }
+
+        .fade.show {
+            opacity: 1;
+        }
+
+        .popover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1060;
+            display: block;
+            max-width: 276px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            white-space: normal;
+            line-break: auto;
+            font-size: .875rem;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: .3rem;
+        }
+
+        .popover .arrow {
+            position: absolute;
+            display: block;
+            width: 1rem;
+            height: .5rem;
+            margin: 0 .3rem;
+        }
+
+        .popover .arrow::after,
+        .popover .arrow::before {
+            position: absolute;
+            display: block;
+            content: "";
+            border-color: transparent;
+            border-style: solid;
+        }
+
+        .bs-popover-bottom {
+            margin-top: .5rem;
+        }
+
+        .bs-popover-bottom .arrow {
+            top: calc((.5rem + 1px) * -1);
+        }
+
+        .bs-popover-bottom .arrow::after,
+        .bs-popover-bottom .arrow::before {
+            border-width: 0 .5rem .5rem .5rem;
+        }
+
+        .bs-popover-bottom .arrow::before {
+            top: 0;
+            border-bottom-color: rgba(0, 0, 0, .25);
+        }
+
+        .bs-popover-bottom .arrow::after {
+            top: 1px;
+            border-bottom-color: #fff;
+        }
+
+        .bs-popover-bottom .popover-header::before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            display: block;
+            width: 1rem;
+            margin-left: -.5rem;
+            content: "";
+            border-bottom: 1px solid #f7f7f7;
+        }
+
+        .popover-header {
+            padding: .5rem .75rem;
+            margin-bottom: 0;
+            font-size: 1rem;
+            color: inherit;
+            background-color: #f7f7f7;
+            border-bottom: 1px solid #ebebeb;
+            border-top-left-radius: calc(.3rem - 1px);
+            border-top-right-radius: calc(.3rem - 1px);
+        }
+
+        .popover-header:empty {
+            display: none;
+        }
+
+        .popover-body {
+            padding: .5rem .75rem;
+            color: #212529;
+        }
+
+        @media print {
+
+            *,
+            ::after,
+            ::before {
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+
+            h3 {
+                orphans: 3;
+                widows: 3;
+            }
+
+            h3 {
+                page-break-after: avoid;
+            }
         }
 
         .ct_rate_btn {
@@ -767,12 +953,14 @@
             margin: 0 0 0 10px;
             width: 93%;
         }
-.ct_prod_info{
-                margin-top: 41px;
-}
-.ct_rat_bx_stat ion-icon {
-    color: rgb(255 98 5);
-}
+
+        .ct_prod_info {
+            margin-top: 41px;
+        }
+
+        .ct_rat_bx_stat ion-icon {
+            color: rgb(255 98 5);
+        }
 
         .ct_texts {
             display: flex;
@@ -781,19 +969,34 @@
         }
 
         .ct_prod_categ {
-            display: flex;
-            background: linear-gradient(109.6deg, rgb(253 251 64) 11.2%, rgb(244, 253, 0) 100.2%);
-            margin: -4px 0 8px 2px;
+            font-size: 11px;
+            color: black;
+            position: absolute;
+            display: none;
+            font-family: 'Montserrat';
+            background-color: #fff033;
             width: max-content;
-            padding: 3px 8px;
-            border-radius: 21px;
+            margin: 4px 0 7px 0px;
+            padding: 5px 6px;
+            border-radius: 0 15px 0 12px;
+        }
+
+        .rating_itm {
+            display: flex;
+            margin: 6px 2px;
+        }
+
+        .rating_itm ion-icon {
+            color: #ff3800;
+            margin: 0;
+            font-size: 15px;
         }
 
         .ct_popup_inner .ct_prod_categ {
             margin: 0 0 0px 18px;
         }
 
-        .ct_prod_categ.regular {
+        .ct_prod_categ.regu {
             background: linear-gradient(109.6deg, rgb(233, 233, 233) 11.2%, rgb(223, 223, 223) 100.2%);
         }
 
@@ -807,9 +1010,9 @@
 
         .ct_prod_categ span {
             color: #413f3f;
-            font-family: 'open sans';
             font-size: 9px;
-            margin: 4px 5px;
+            font-family: 'Montserrat';
+            margin: 2px 5px;
         }
 
         .prod_img2 {
@@ -1497,6 +1700,21 @@
             margin: -2px 9px;
         }
 
+        .req_essen {
+            position: relative;
+        }
+
+        .req_essen .fade.show {
+            margin: 47px 21px;
+        }
+
+        .req_essen .ct_dt_tm_food_res p {
+            font-size: 12px;
+            font-family: 'roboto';
+            color: #0b0b0b;
+            margin: 2px 0 6px 4px;
+        }
+
         .ct_bx_priceandoff del {
             color: #5b5b5be3;
             font-size: 11px;
@@ -1532,7 +1750,7 @@
 
         .itm_food_list_ek .ct_qty_box {
             display: none;
-            margin: 17px 0 22px 4px;
+            margin: 11px 0 22px 4px;
             height: 26px;
         }
 
@@ -2911,6 +3129,7 @@
 
         .ct_allreviews {
             padding: 0 18px;
+            padding-bottom: 30px;
         }
 
         .cust_ques {
@@ -3290,10 +3509,7 @@
             display: flex
         }
 
-        .ct_bx_flex ion-icon {
-            color: #f53918;
-            font-size: 40px
-        }
+
 
         .groc_list {
             width: 100%;
@@ -5268,11 +5484,6 @@
                 margin-right: 10px
             }
 
-            .ct_bx_flex ion-icon {
-                font-size: 43px;
-                transform: translate(-20px)
-            }
-
             .ct_bx_erak_logo a {
                 display: flex
             }
@@ -6202,6 +6413,22 @@
                 width: 221px;
             }
 
+            .ct_img_res_main {
+                margin-bottom: 23px;
+            }
+
+            .crousel_items .product {
+                min-width: 200px;
+            }
+
+            .recomended_cart .ct_dt_tm_food_res h4 {
+                font-size: 13px;
+            }
+
+            .ct_flex_crousel {
+                display: none;
+            }
+
             .carousel-inner .carousel-item {
                 height: 500px;
                 min-width: 96vw;
@@ -7007,13 +7234,12 @@
             .ct_bx_ads {
                 width: 66px
             }
-
-            .ct_bx_inner_food_groc {
-                width: 100%;
-                overflow: hidden;
-                margin-top: 7px;
-                margin-left: 2px;
-            }
+.ct_bx_inner_food_groc {
+    width: 100%;
+    overflow: hidden;
+    margin-top: -8px;
+    margin-left: 8px;
+}
 
             .ct_bx_price_fd.hasoffPrice {
                 margin-top: 1px;
@@ -7092,7 +7318,9 @@
             .ct_inner_nav {
                 justify-content: initial
             }
-
+.ct_prod_categ span {
+    font-size: 8px;    color: #000000;
+}
             .prod_img1 {
                 right: -43px;
                 top: 108px;
@@ -7108,7 +7336,7 @@
             .ct_bx_fooditm .main_im {
                 border-radius: 8px;
                 width: 100%;
-                margin-left: 9px;
+                margin-left: 4px;
             }
 
             .ct_bx_fooditm .item_intro {
@@ -7215,10 +7443,7 @@
                 transform: translate(0, 0px)
             }
 
-            .ct_bx_flex ion-icon {
-                font-size: 43px;
-                transform: translate(3px)
-            }
+
 
             .erak_fd_body .ct_bx_footer {
                 padding: 14px 10px;
@@ -7324,7 +7549,7 @@
 
             .ct_bx_inner_food_groc {
                 width: 100%;
-                margin-left: 12px;
+                margin-left: 3px;
             }
 
 
@@ -7484,7 +7709,7 @@
             }
 
             .ct_bx_inner_food_groc {
-                margin-top: 2px;
+                margin-top: -4px;
             }
 
             .ct_offer_box_cook2 p {
@@ -7668,9 +7893,7 @@
                 height: 38px
             }
 
-            .ct_bx_flex ion-icon {
-                font-size: 43px
-            }
+
         }
 
         @media only screen and (max-width:330px) {
@@ -7688,7 +7911,7 @@
 
 
             .ct_bx_inner_food_groc {
-                padding-top: 2px;
+                padding-top: -4px;
             }
 
             .ct_bx_fooditm h4 {
@@ -7824,6 +8047,10 @@
             color: #282828;
         }
 
+        .recomended_cart.req_essen .ct_dt_tm_food_res.req_bcoz h4 {
+            margin-bottom: 0;
+        }
+
         .recomended_cart h4 {
             color: #1a1a1a99;
             display: block;
@@ -7934,10 +8161,6 @@
                 width: 146px;
             }
 
-            .ct_bx_fooditm .main_im {
-                border-radius: 8px;
-            }
-
             .itm_img_prod .w-100 {
                 transform: translate(127px, 26px);
             }
@@ -8017,7 +8240,7 @@
             }
 
             .ct_img_layer {
-                width: 300px;
+                width: 360px;
             }
 
             .ct_bx_price_fd .price:nth-child(2) {
@@ -8813,19 +9036,19 @@
             </div>
 
             <div class="ct_prod_info">
-                            <div class="ct_prod_Cat star">
-                    <p>Star item</p>
-            </div>
+                <div class="ct_prod_Cat star">
+                    <p>Exclusive</p>
+                </div>
                 <span class="prod_desc">Experience the authentic flavors of Punjab in the comfort of your own home with
                     our premium quality cooking sauce. Made with the finest ingredients and carefully crafted spices,
                     our sauce is the perfect blend of tangy and savory flavors that will tantalize your taste
                     buds.</span>
                 <div class="ct_rat_bx_stat">
-                    <a href="#reviews">                    <ion-icon name="star-sharp"></ion-icon>
-                    <ion-icon name="star-sharp"></ion-icon>
-                    <ion-icon name="star-sharp"></ion-icon>
-                    <ion-icon name="star-sharp"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon></a>
+                    <a> <ion-icon name="star-sharp"></ion-icon>
+                        <ion-icon name="star-sharp"></ion-icon>
+                        <ion-icon name="star-sharp"></ion-icon>
+                        <ion-icon name="star-sharp"></ion-icon>
+                        <ion-icon name="star-outline"></ion-icon></a>
                 </div>
             </div>
             <div class="ct_texts">
@@ -8886,7 +9109,654 @@
                     Remove
                 </div>
             </div>
+            <div class="recomended_cart for_items_recm req_essen">
 
+                <div class="ct_box_innside_reccom">
+                    <h4>Required Essentials<ion-icon class="req_know" name="help-circle"></ion-icon></h4>
+                    <div class="popover fade show bs-popover-bottom" role="tooltip" id="popover469561"
+                        x-placement="bottom">
+                        <div class="arrow" style="left: 124px;"></div>
+                        <h3 class="popover-header"></h3>
+                        <div class="popover-body">Vivamus sagittis lacus vel augue laoreet rutrum faucibus.</div>
+                    </div>
+                    <div class="ct_load_items" style="display: none;">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="crousel_items">
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2 no_offer" style="display:none">
+
+                                    </div>
+
+                                    <div class="ct_img_res_main">
+                                        <img alt="Fresh garlic image" src="../img/garlic.webp">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res req_bcoz">
+                                            <h4>Fresh garlic</h4>
+                                            <p>stating why is it required </p>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>40g</p>
+                                                    <span>₹ 25</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>40g</p>
+                                                        <span>₹ 25</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 137</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>1kg</p>
+                                                        <span>₹ 240</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 35 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt=" Mustard Oil, Fortune image" src="../img/fortune_oil.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res req_bcoz">
+                                            <h4> Mustard Oil, Fortune</h4>
+                                            <p>stating why is it required </p>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>5 litre</p>
+                                                    <span>₹ 637</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>1litre</p>
+                                                        <span>₹ 145</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>5 litre</p>
+                                                        <span>₹ 637</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff"> 637</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹510</span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Fresh Mutton image" src="../img/mutton_rm.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh Mutton</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 445</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 445</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>1kg</p>
+                                                        <span>₹ 1237</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>2kg</p>
+                                                        <span>₹ 2467</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 445</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 356 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Fresh chicken image" src="../img/chicken_meat.png">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh chicken</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 240</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 240</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>1kg</p>
+                                                        <span>₹ 437</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 240</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 192 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Corriander powder image" src="../img/jhania.webp">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Corriander powder</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 45</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 45</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>5kg</p>
+                                                        <span>₹ 237</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>10kg</p>
+                                                        <span>₹ 467</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 45</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 36 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>10%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Jeera powder image" src="../img/jeera_powder.webp">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Jeera powder</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 45</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 45</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>5kg</p>
+                                                        <span>₹ 237</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>10kg</p>
+                                                        <span>₹ 467</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 45</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 41 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Fresh tomatoes image" src="../img/tomato_img.png">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh tomatoes</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 45</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 45</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>5kg</p>
+                                                        <span>₹ 237</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>10kg</p>
+                                                        <span>₹ 467</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 45</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 36 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div class="itm_food_list_ek added_itm_ek_fd">
+
+                                <div class="ct_inner_fd_dt_grid">
+                                    <div class="ct_offer_box_cook2">
+                                        <span>20%</span>
+                                        <p>off</p>
+                                    </div>
+                                    <div class="ct_img_res_main">
+                                        <img alt="Fresh green chillies image" src="../img/chillies.jpg">
+
+                                    </div>
+                                    <div class="ct_inner_fd1_dt_grid">
+
+                                        <div class="ct_dt_tm_food_res">
+                                            <h4>Fresh green chillies</h4>
+                                        </div>
+                                        <div class="ct_unit_box_selector">
+                                            <div class="ct_bx_selection">
+                                                <div class="ct_pr_bx_unit">
+                                                    <p>500g</p>
+                                                    <span>₹ 45</span>
+                                                </div>
+
+                                                <div class="ct_popup_unit_btn">
+                                                    <ion-icon name="caret-forward-outline" role="img"
+                                                        class="md hydrated"
+                                                        aria-label="caret forward outline"></ion-icon>
+                                                </div>
+
+                                            </div>
+                                            <div class="ct_other_units" style="display: none;">
+                                                <ul>
+                                                    <li>
+                                                        <p>500g</p>
+                                                        <span>₹ 45</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>5kg</p>
+                                                        <span>₹ 237</span>
+                                                    </li>
+                                                    <li>
+                                                        <p>10kg</p>
+                                                        <span>₹ 467</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
+                                            <del class="pricenooff">₹ 45</del>
+                                            <p class="price_food for_oly_ekfd_price"><span>₹ 36 </span> </p>
+                                        </div>
+
+
+                                        <div class="ct_addbtns">
+                                            <p>Add to cart</p>
+                                        </div>
+                                        <div class="ct_qty_box">
+                                            <div class="btn_qtys dec_btn">
+                                                <span class="material-symbols-outlined">
+                                                    remove
+                                                </span>
+                                            </div>
+                                            <input type="text" value="1" readonly="">
+                                            <div class="btn_qtys inc_btn">
+                                                <span class="material-symbols-outlined">
+                                                    add
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="ct_flex_crousel">
+                    <div class="ct_back_btn crousel_btns">
+                        <span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span>
+                    </div>
+                    <div class="ct_forward_btn crousel_btns">
+                        <span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span>
+                    </div>
+                </div>
+
+            </div>
             <div class="ct_bx_qt_foods">
                 <div class="ct_bx_item_rem">
                     <ion-icon name="remove-outline" role="img" class="md hydrated" aria-label="remove outline">
@@ -8934,6 +9804,51 @@
             </div>
 
 
+
+            <div class="bx_add_t_cart_btn_itm_dt place_order_btn_popup">
+                <p>Add to cart<ion-icon name="caret-forward"></ion-icon>
+                </p>
+
+            </div>
+            <a href="/mycart">
+                <div class="bx_add_t_cart_btn_itm_dt added_to_cart">
+                    <p>Go to cart<ion-icon name="caret-forward"></ion-icon>
+                    </p>
+                </div>
+            </a>
+
+            <div class="ct_bx_stock">
+                <h4>Currently out of stock</h4>
+                <p>This item will be delivered within 24 hour</p>
+            </div>
+            {{!-- <div class="ct_bx_time_cookanddeliv2">
+
+                <div class="ct_bx_Time ct_bx_Time2 ct_bx_download_btn_x" style="margin-top: 17px;">
+                    <ion-icon name="download-outline" role="img" class="icon_bx_2 md hydrated"
+                        aria-label="download outline"></ion-icon>
+
+                    <a>
+                        <p>Click to download cooking steps</p>
+                    </a>
+                </div>
+            </div> --}}
+            <div class="cust_ques">
+                <h3>Frequently asked questions</h3>
+                <div class="ct_qns_bx">
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?
+                    </h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
+                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
+                        maxime distinctio nobis, consectetur autem?</P>
+                </div>
+                <div class="ct_qns_bx">
+                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws
+                    </h4>
+                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
+                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
+                        maxime distinctio nobis, consectetur autem?</P>
+                </div>
+            </div>
             <div class="reviews-container">
                 <h2>Ratings and Reviews</h2>
                 <div class="ct_flex">
@@ -9016,12 +9931,12 @@
                     </div>
                     <div class="sf62udsts">
                         <p>Add a written review </p>
-                                                                <textarea name="address" id="" cols="10" rows="4" required></textarea>
+                        <textarea name="address" id="" cols="10" rows="4" required></textarea>
 
                     </div>
                 </div>
                 <div class="ct_btns">
-                                    <div class="ct_btn_review btn_submit">
+                    <div class="ct_btn_review btn_submit">
                         <p>Submit</p>
                     </div>
                     <div class="ct_btn_review btn_cancel">
@@ -9066,53 +9981,6 @@
 
                     </div>
                 </div>
-            </div>
-            <div class="bx_add_t_cart_btn_itm_dt place_order_btn_popup">
-                <p>Add to cart<ion-icon name="caret-forward"></ion-icon>
-                </p>
-
-            </div>
-            <a href="/mycart">
-                <div class="bx_add_t_cart_btn_itm_dt added_to_cart">
-                    <p>Go to cart<ion-icon name="caret-forward"></ion-icon>
-                    </p>
-                </div>
-            </a>
-
-            <div class="ct_bx_stock">
-                <h4>Currently out of stock</h4>
-                <p>This item will be delivered within 24 hour</p>
-            </div>
-            {{!-- <div class="ct_bx_time_cookanddeliv2">
-
-                <div class="ct_bx_Time ct_bx_Time2 ct_bx_download_btn_x" style="margin-top: 17px;">
-                    <ion-icon name="download-outline" role="img" class="icon_bx_2 md hydrated"
-                        aria-label="download outline"></ion-icon>
-
-                    <a>
-                        <p>Click to download cooking steps</p>
-                    </a>
-                </div>
-            </div> --}}
-            <div class="cust_ques">
-                <h3>Frequently asked questions</h3>
-                <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?
-                    </h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
-                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
-                        maxime distinctio nobis, consectetur autem?</P>
-                </div>
-                <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws
-                    </h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
-                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
-                        maxime distinctio nobis, consectetur autem?</P>
-                </div>
-            </div>
-            <div class="ct_health_beni">
-
             </div>
             <div class="ct_bx_for_ingredients">
                 <h4>Ingredients</h4>
@@ -9470,10 +10338,22 @@
 
                                                     </div>
                                                     <div class="ct_bx_inner_food_groc">
-                                                        <div class="ct_prod_categ">
-                                                            <ion-icon name="star-sharp"></ion-icon>
-                                                            <span>Star item</span>
+                                                        <div class="ratings_bx">
+                                                        <div class="rating_itm">
+                                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                                aria-label="star sharp"></ion-icon>
+                                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                                aria-label="star sharp"></ion-icon>
+                                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                                aria-label="star sharp"></ion-icon>
+                                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                                aria-label="star sharp"></ion-icon>
+                                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                                aria-label="star outline"></ion-icon>
                                                         </div>
+                                                        <span>(10)</span>
+                                                        </div>
+
                                                         <h4>Malai Mix</h4>
 
                                                         <p class="item_intro">Enjoy delicous chicken, mutton curry made
@@ -9522,10 +10402,7 @@
 
                                                     </div>
                                                     <div class="ct_bx_inner_food_groc">
-                                                        <div class="ct_prod_categ regular">
-                                                            <ion-icon name="home-sharp"></ion-icon> <span>Home
-                                                                style</span>
-                                                        </div>
+
                                                         <h4>Malai Mix</h4>
                                                         <p class="item_intro">Enjoy delicous chicken, mutton curry made
                                                             with all natural ingredients.</p>
@@ -10629,7 +11506,7 @@
 
                 }
                 console.log(JSON.parse(images_prod), '  ---------------wjhsdahsadhsd')
-                document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
+                //document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
                 document.querySelector('.ct_load_items').style.display = 'flex'
 
                 async function getItm_groc() {
@@ -10796,7 +11673,7 @@
                             </div>
                         </div>`
                                 //#${cur.data().group.split(' ').join('')}
-                                document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
+                                //  document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
                             }
 
                         })

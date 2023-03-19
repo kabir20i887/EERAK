@@ -11,106 +11,227 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@500;700;800&family=Roboto+Slab:wght@600;700&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
 </head>
 <style>
     /*! CSS Used from: Embedded */
-            @font-face {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format("woff2");
-            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-        }
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 800;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gnD_g.woff2) format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+.ct_banner{
+    height: 590px;
+    background: #fffff4;}
+    .ct_banner_offers {
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+.ct_banner h2 {
+    font-family: 'Moret';
+    font-weight: 600;
+    color: #000000;
+    margin: -10px 0 0 79px;
+    font-size: 54px;
+    line-height: 54px;
+    width: 82%;
+}
+.cta-button{
+    -webkit-mask:url(../img/light_reflex.svg);
+    mask: url(../img/light_reflex.svg);
+    background-color: var(--font-color);
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 18px;
+    height: 15px;
+}
+    .cta-button {
+        height: calc(var(--height) - 4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 500px;
+        color: var(--font-color);
+        background-color: var(--background-color);
+        border: 2px solid var(--border-color);
+        padding: 0 24px;
+        min-width: 250px;
+        position: relative;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .ct_banner_offers .ct_banner img {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .ct_items_img {
+width: 82%;
+    margin: 29px 0 0 42px;
+    }
 
     .ui-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
-    .inner_X{
+
+    .ratings_bx {
         display: flex;
     }
-.ct_img_cuv {
-    position: absolute;
-    margin-top: 13px;
-    width: 26vw;
-    margin-left: 99px;
-}
-.img_cuv2 {
-    transform: rotate(88deg);
-    margin-left: 120px;
-    margin-top: 19px;
-    width: 17vw;
-}
-    /*! CSS Used from: Embedded */
-    /*! CSS Used from: Embedded */
+
+    .ratings_bx span {
+        color: red;
+        font-size: 11px;
+        font-family: 'roboto';
+        margin: 7px 0 0 5px;
+    }
+
+    .rating_itm {
+        display: flex;
+        margin: 6px 2px;
+    }
+
+    .back_shsgs {
+        background: #f5f5fd;
+        padding-bottom: 26px;
+    }
+
+    .ct_prod_categ {
+        font-size: 9px;
+        color: black;
+        font-family: 'Montserrat';
+        background-color: #fff033;
+        width: max-content;
+        margin: 10px 0 7px 0px;
+        padding: 5px 6px;
+        border-radius: 0 15px 0 12px;
+    }
+
+    .ct_prod_categ span {
+        color: #000000;
+        font-size: 9px;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        margin: 2px 5px;
+    }
+
+    .rating_itm ion-icon {
+        color: #ff3800;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .inner_X {
+        display: flex;
+    }
+
+    .ct_img_cuv {
+        position: absolute;
+        margin-top: 13px;
+        width: 26vw;
+        margin-left: 99px;
+    }
+
+    .img_cuv2 {
+        transform: rotate(88deg);
+        margin-left: 120px;
+        margin-top: 19px;
+        width: 17vw;
+    }
 
     /*! CSS Used from: Embedded */
-    
-        body {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-                        background-color: #edf4390d;
-            background-color: #edf4390d;
+    /*! CSS Used from: Embedded */
 
-        }
-  @font-face {
-    src: url(../others/fonts/Moret-Extrabold.otf);
-        font-family:Moret ;
+    /*! CSS Used from: Embedded */
 
-  }  @font-face {
-    src: url(../others/fonts/Moret-Semibold.otf);
-        font-family:'Moret light';
+    body {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        background-color: #edf4390d;
+        background-color: #edf4390d;
 
-  }
-.steps_bx {
-    width: 101px;
-    height: 77px;
-    border-radius: 500px;
-    background-color: #76dc16;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 29px;
-    font-family: 'poppins';
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 16px;
-    position: relative;
-}
-.steps_bx:after {
-    content: "";
-    background: url(../img/light_reflex.svg) no-repeat 50%;
-    width: 18px;
-    height: 15px;
-    position: absolute;
-    top: 7px;
-    left: 10px;
-}
-.ct_inner_inr_stp{display: flex;justify-content: center;}
+    }
 
-    .how-it-works .step .ct_inner_stp{width: 70vw;}
-.how-it-works .step{
-    margin-top: 20px;
-}
-.how-it-works .step1{
-    margin-left: 0px;
-}
-.how-it-works .step2 {
-    display: flex;
-    justify-content: end;
-    margin-top: 50px;
-}
-.how-it-works .step3 {
-    margin-left: 0px;
-    margin-top:115px;
-}
+    @font-face {
+        src: url(../others/fonts/Moret-Extrabold.otf);
+        font-family: Moret;
+
+    }
+
+    @font-face {
+        src: url(../others/fonts/Moret-Semibold.otf);
+        font-family: 'Moret light';
+
+    }
+
+    .steps_bx {
+        width: 101px;
+        height: 77px;
+        border-radius: 500px;
+
+        background-color: #4903af;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 29px;
+        font-family: 'poppins';
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 16px;
+        position: relative;
+    }
+
+    .steps_bx:after {
+        content: "";
+        background: url(../img/light_reflex.svg) no-repeat 50%;
+        width: 18px;
+        height: 15px;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+
+    .ct_inner_inr_stp {
+        display: flex;
+        justify-content: center;
+    }
+
+    .how-it-works .step .ct_inner_stp {
+        width: 70vw;
+    }
+
+    .how-it-works .step {
+        margin-top: 20px;
+    }
+
+    .how-it-works .step1 {
+        margin-left: 0px;
+    }
+
+    .how-it-works .step2 {
+        display: flex;
+        justify-content: end;
+        margin-top: 50px;
+    }
+
+    .how-it-works .step3 {
+        margin-left: 0px;
+        margin-top: 115px;
+    }
+
     .home .hero .how-it-works {
         z-index: 1;
         display: flex;
@@ -244,25 +365,30 @@
         right: 12px;
         transform: rotate(-36deg);
     }
-.how-it-works .title, .how-it-works .steps .title {
-    font-family: 'Moret';
-    font-size: 47px;
-    width: 70%;
-    margin-top: 17px;
-    margin-bottom: 1px;
-    margin-left: 12px;
-}
-.how-it-works .title {
-    font-family: 'Moret light';
-    font-size: 43px;
-    margin-top: 12px;
-    margin-bottom: 41px;
-}
-.how-it-works .title.outer_main {
-    text-align: center;
-    width: 100vw;
-    color: #393939;
-}
+
+    .how-it-works .title,
+    .how-it-works .steps .title {
+        font-family: 'Moret';
+        width: 70%;
+        margin-top: 17px;
+        margin-bottom: 1px;
+        margin-left: 12px;
+    }
+
+    .how-it-works .title.outer_main {
+        text-align: center;
+        width: 100vw;
+        font-size: 31px;
+        color: #000000;
+    }
+
+    .how-it-works .title {
+        font-family: 'Moret light';
+        font-size: 43px;
+        margin-top: 12px;
+        margin-bottom: 41px;
+    }
+
     @media (min-width:1100px) {
         .home .hero .how-it-works .steps .step .body {
             font-size: 24px;
@@ -1869,16 +1995,16 @@
         }
     }
 
-.ct_main_crousel_box h4 {
-    font-size: 17px;
-    color: #373636;
-    text-transform: capitalize;
-    padding: 0 40px 6px 0px;
-    margin-left: 17px;
-    margin-top: 12px;
-    margin-bottom: 0;
-    font-family: 'Moret light';
-}
+    .ct_main_crousel_box h4 {
+        font-size: 17px;
+        color: #000000;
+        text-transform: capitalize;
+        padding: 0 40px 6px 0px;
+        margin-left: 17px;
+        margin-top: 3px;
+        margin-bottom: 0;
+        font-family: 'Moret light';
+    }
 
     .crousel_items .product {
         min-width: 17vw;
@@ -2100,12 +2226,13 @@
     a {
         text-decoration: none;
     }
-.ct_bx_fooditm .ct_bx_price_fd p {
-    font-size: 18px;
-    font-weight: 700;
-    font-size: 27px;
-    font-family: 'Montserrat';
-}
+
+    .ct_bx_fooditm .ct_bx_price_fd p {
+        font-size: 18px;
+        font-weight: 700;
+        font-size: 27px;
+        font-family: 'Montserrat';
+    }
 
     .ct_bx_fooditm .ct_bx_price_fd del {
         color: #686868;
@@ -3792,8 +3919,9 @@
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
-font-size: 14px;
-    margin-left: 0;        }
+            font-size: 14px;
+            margin-left: 0;
+        }
 
         .ct_addbtns {
             padding: 7px 12px;
@@ -3826,7 +3954,7 @@ font-size: 14px;
         }
 
         @media only screen and (max-width:550px) {
-          .ct_main_crousel_box  .ct_bx_fooditm h4 {
+            .ct_main_crousel_box .ct_bx_fooditm h4 {
                 font-size: 16px;
                 width: max-content;
                 color: #111111;
@@ -4189,12 +4317,12 @@ font-size: 14px;
         }
 
         @media only screen and (max-width:550px) {
-.ct_main_crousel_box h4 {
-    font-size: 32px;
-    width: 100vw;
-    /* display: none; */
-    text-align: center;
-}
+            .ct_main_crousel_box h4 {
+                font-size: 26px;
+                width: 100vw;
+                /* display: none; */
+                text-align: center;
+            }
 
             .crousel_btns {
                 display: none;
@@ -8161,11 +8289,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             padding: 16px 3px;
         }
 
-.for_ain_home_logo h4 {
-    font-size: 31px;
-    margin-left: 6px;
-    margin-top: -8px;
-}
+        .for_ain_home_logo h4 {
+            font-size: 31px;
+            margin-left: 6px;
+            margin-top: -8px;
+        }
 
         .for_nav_main {
             height: 71px;
@@ -8176,10 +8304,12 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             height: 39px;
             margin-top: -6px;
         }
-.for_ain_home_logo span {
-    font-size: 11px;
-    transform: translate(1px, -1px);
-}
+
+        .for_ain_home_logo span {
+            font-size: 11px;
+            transform: translate(1px, -1px);
+        }
+
         .ct_bx_about_mobile2 .ct_info_cart p {
             font-size: 8px;
         }
@@ -8324,13 +8454,15 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         .ct_inner_box_nav {
             margin-top: 3px;
         }
-.ct_field_small_size {
-    margin: 9px 4px 0 0;
-    border: 1px solid #00000042;
-    border-radius: 50%;
-    padding: 7px 4px 0 9px;
-    height: 47px;
-}
+
+        .ct_field_small_size {
+            margin: 9px 4px 0 0;
+            border: 1px solid #00000042;
+            border-radius: 50%;
+            padding: 7px 4px 0 9px;
+            height: 47px;
+        }
+
         .for_mobile_search .ct_bx_search {
             background-color: inherit;
         }
@@ -8649,11 +8781,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             justify-content: initial;
         }
 
-.for_nav_main .logo img {
-    width: 42px;
-    height: 42px;
-    margin-top: -2px;
-}
+        .for_nav_main .logo img {
+            width: 42px;
+            height: 42px;
+            margin-top: -2px;
+        }
 
         .for_ain_home_logo h4 {
             font-size: 22px;
@@ -11189,17 +11321,12 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         left: 50%;
     }
 
-    .right-1\/2 {
-        right: 50%;
-    }
+
 
     .right-full {
         right: 100%;
     }
 
-    .top-8 {
-        top: 2rem;
-    }
 
     .top-full {
         top: 100%;
@@ -11215,7 +11342,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     }
 
     .-mr-3 {
-        margin-right: -.75rem;
+        margin-left: 20p;
+        width: 51vw;
+        margin-top: -39px;
+        margin-left: 14px;
     }
 
     .-mt-72 {
@@ -11278,8 +11408,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         display: grid;
     }
 
-    .hidden {
+    .pt-8 .hidden {
         display: none;
+        z-index: 0;
+        position: absolute;
     }
 
     .h-10 {
@@ -11380,12 +11512,13 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     .flex-wrap {
         flex-wrap: wrap;
     }
-.items-center {
-    align-items: center;
-    background: #41eba1;
-    padding: 8px 14px;
-    border-radius: 21px;
-}
+
+    .items-center {
+        align-items: center;
+        padding: 8px 14px;
+        border-radius: 21px;
+    }
+
     .justify-center {
         justify-content: center;
     }
@@ -11431,10 +11564,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     .rounded-md {
         border-radius: .375rem;
     }
-.rounded-l-3xl {
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-}
+
+    .rounded-l-3xl {
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
 
     .rounded-r-3xl {
         border-top-right-radius: 1.5rem;
@@ -11466,6 +11600,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
     .bg-gray-50 {
         --tw-bg-opacity: 1;
+        display: none;
         background-color: rgb(249 250 251 / var(--tw-bg-opacity));
     }
 
@@ -11491,6 +11626,8 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     .px-4 {
         padding-left: 1rem;
         padding-right: 1rem;
+        position: relative;
+        margin-left: 7vw;
     }
 
     .px-5 {
@@ -11532,12 +11669,13 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     .pt-16 {
         padding-top: 13px;
     }
-.pt-8 {
-    padding-top: 8px;
-    padding-bottom: 52px;
-    background: #68fb969c;
-    margin-top: 0;
-}
+
+    .pt-8 {
+        padding-top: 8px;
+        padding-bottom: 52px;
+        background: #f0f1fb9c;
+        margin-top: 0;
+    }
 
     .text-center {
         text-align: center;
@@ -11573,7 +11711,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     }
 
     .text-lg {
-        font-size: 1.125rem;
+        font-size: 17px;
         line-height: 1.75rem;
     }
 
@@ -11619,18 +11757,25 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         --tw-text-opacity: 1;
         color: rgb(229 231 235 / var(--tw-text-opacity));
     }
-.text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(0, 0, 0);
-    display: block;
-    margin-top: 11px;
-    line-height: 21px;
-}
-.text-gray-500 .text-sm{color: black;}
+
+    .text-gray-500 {
+        --tw-text-opacity: 1;
+        color: rgb(0, 0, 0);
+        font-family: 'poppins';
+        display: block;
+        margin-top: 11px;
+        line-height: 25px;
+        font-size: 18px;
+        width: 93%;
+    }
+
+    .text-gray-500 .text-sm {
+        color: black;
+    }
 
     .text-gray-800 {
         --tw-text-opacity: 1;
-        color:rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
     }
 
     .text-gray-900 {
@@ -13042,15 +13187,16 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
     @media all and (max-width: 900px) {
         @media only screen and (max-width:550px) {
-.carousel-item .banner_1 img {
-    border-radius: 0;
-    margin-top: 49px;
-    border-radius: 0;
-    height: auto;
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 0;
-}
+            .carousel-item .banner_1 img {
+                border-radius: 0;
+                margin-top: 49px;
+                border-radius: 0;
+                height: auto;
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+
             .carousel-indicators li {
                 height: 1.6px;
             }
@@ -13266,40 +13412,50 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     }
 
     @media only screen and (max-width:550px) {
-.crousel_items {
-    padding-bottom: 50px;
-    padding-left: 35px;
-    margin-top: 30px;
-}
- .for_nav_main .logo img {
-    width: 35px;
-    height: 35px;
-    margin-top: 0px;
-}
-.for_ain_home_logo a {
-    margin-left: 0px;
-    margin-top: 6px;
-}
+        .crousel_items {
+            padding-bottom: 50px;
+            padding-left: 35px;
+            margin-top: 30px;
+        }
+
+        .for_nav_main .logo img {
+            width: 35px;
+            height: 35px;
+            margin-top: 0px;
+        }
+
+        .for_ain_home_logo a {
+            margin-left: 0px;
+            margin-top: 6px;
+        }
+
         .for_nav_main .logo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-        .ct_inner_box_nav{display: none;}
-.how-it-works .body {
-    font-size: 20px;
-    font-family: 'roboto';
-    text-align: center;
-    width: 59vw;
-    margin-left: 23px;
-}
-.text-4xl {
-    font-size: 25px;
-    line-height: 34px;
-    font-family: 'poppins';
-    font-weight: 600;
-    color: black;
-}
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ct_inner_box_nav {
+            display: none;
+        }
+
+        .how-it-works .body {
+            font-size: 20px;
+            font-family: 'roboto';
+            text-align: center;
+            width: 59vw;
+            margin-left: 23px;
+        }
+
+        .text-4xl {
+            font-size: 35px;
+            line-height: 34px;
+            font-family: 'Moret';
+            font-weight: 600;
+            color: black;
+            width: 90%;
+            margin-top: 34px;
+        }
 
         .crousel_items {
             padding-bottom: 50px;
@@ -13307,7 +13463,8 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         }
 
         .w-full {
-            width: 83%;
+            width: 81%;
+            margin: 20px 10vw;
         }
 
         .img_right {
@@ -13398,25 +13555,25 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 </style>
 
 <body>
-<div class="ct_nav_erak for_nav_main for_all_other_nav">
+    <div class="ct_nav_erak for_nav_main for_all_other_nav">
         <div class="ct_inner_nav">
-           <div class="ct_field_small_size_bx">
+            <div class="ct_field_small_size_bx">
                 <div class="ct_bx_info">
                     <ion-icon name="alert-outline"></ion-icon>
                 </div>
-                
+
             </div>
             <div class="logo for_ain_home_logo">
-    
+
                 <a href="/">
                     <img alt="logo" src="../img/logo_black_tr_2.png ">
                     <div class="ct_inner">
-                                <h4>KRICK</h4>
-                <span>Uniquely Yours</span>
+                        <h4>KRICK</h4>
+                        <span>Uniquely Yours</span>
                     </div>
-    
+
                 </a>
-    
+
             </div>
             <div class="for_seravh_in_nav for_nav_search  for_big_scr_only">
                 <div class="ct_bx_search for_nonfix_search">
@@ -13425,17 +13582,17 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     </div>
                     <div class="icon_search_bx">
                         <ion-icon class="search-icon" name="search-sharp"></ion-icon>
-    
+
                     </div>
-    
+
                     <input type="text" spellcheck="false" placeholder="Search">
-    
+
                     <div class="ct_bx_close_over">
                         <div class="xclose_icon">
                             <ion-icon name="close-outline"></ion-icon>
                         </div>
                     </div>
-    
+
                 </div>
                 <div class="ct_bx_matched_itm">
                     <div class="ct_error_overlay">
@@ -13445,84 +13602,84 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                             <p></p>
                         </div>
                     </div>
-    
+
                     <div class="ct_content_all_searched">
                         <ul>
-    
+
                         </ul>
-    
+
                     </div>
                 </div>
             </div>
             <div class="ct_inner_box_nav">
-    
-    
+
+
                 <div class="ct_bx_about_mobile2 mobile_only active_nav">
                     <a href="/sauce">
                         <p>Cooking sauce</p>
                     </a>
-    
+
                 </div>
                 <div class="ct_bx_about_mobile2 mobile_only">
                     <a href="/essentials">
                         <p>Essentials</p>
                     </a>
-    
+
                 </div>
-              
+
                 <div class="ct_bx_about_mobile2 home_btn ">
                     <a href="/">
-    
-    
+
+
                         <p>Home</p>
                     </a>
-    
+
                 </div>
-                              <div class="ct_bx_about_mobile2 home_btn ">
+                <div class="ct_bx_about_mobile2 home_btn ">
                     <a href="/aboutus">
-    
-    
+
+
                         <p>About us</p>
                     </a>
-    
+
                 </div>
                 <div class="ct_bx_about_mobile2 home_btn admin_page">
                     <a href="/admin/msdhooni7">
-    
-    
+
+
                         <p>Admin panel</p>
                     </a>
-    
+
                 </div>
-                            <div class="ct_bx_about_mobile2 mobile_only account_btn">
+                <div class="ct_bx_about_mobile2 mobile_only account_btn">
                     <a href="/account">
                         <span class="material-symbols-outlined">
                             account_circle
                         </span>
-                        
-    
+
+
                     </a>
                 </div>
                 <div class="ct_bx_about_mobile2  cart_btn">
                     <a href="/mycart">
-                    <div class="ct_info_cart">
-                        <p>2</p>
-                    </div>
+                        <div class="ct_info_cart">
+                            <p>2</p>
+                        </div>
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
-    
+
                     </a>
                 </div>
             </div>
-    <div class="ct_field_small_size">
-    <span class="material-symbols-outlined">
-    menu
-    </span>
-                </div>
-    
+            <div class="ct_field_small_size">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+
         </div>
-    
+
         <div class="for_mobile_search for_seravh_in_nav">
             <div class="ct_bx_matched_itm">
                 <div class="ct_error_overlay">
@@ -13534,21 +13691,21 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 </div>
                 <div class="ct_content_all_searched">
                     <ul>
-    
+
                     </ul>
-    
+
                 </div>
             </div>
             <div class="ct_bx_search for_nonfix_search">
-    
+
                 <div class="ct_bx_search_icon">
                     <ion-icon class="search-icon" name="search-sharp"></ion-icon>
-    
+
                 </div>
-    
-    
+
+
                 <input type="text" spellcheck="false" placeholder="Search">
-    
+
                 <div class="ct_bx_close_over">
                     <div class="xclose_icon">
                         <ion-icon name="close-outline"></ion-icon>
@@ -13556,9 +13713,9 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 </div>
             </div>
         </div>
-    
+
     </div>
-        <div class="site-content bg-white overflow-hidden" data-testid="site-content" data-v-d7143d58="">
+    <div class="site-content bg-white overflow-hidden" data-testid="site-content" data-v-d7143d58="">
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -13568,9 +13725,22 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item  active">
-                    <a class="banner_1" href="/">
+
+                    <div class="ct_banner">
+                        <img class="ct_items_img" src="../img/items_img.png" alt="">
+                        <h2>Experience the Magic</h2>
+                        {{!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio dolorum molestias aliquid veritatis
+                            neque molestiae iure assumenda minus laborum illum et nostrum quo dolores vero architecto ipsa sed,
+                            ex a.</p>
+
+                        <div class="cta-button">
+                            Order now
+                            <div class="decal" data-v-7a0f4ce8=""></div>
+                        </div> --}}
+                    </div>
+                    {{!-- <a class="banner_1" href="/">
                         <img src="../img/krick_sauce_banner.png" alt="">
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -13607,66 +13777,72 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             <div class="steps" data-v-92df1e84="">
                 <div class="step step1" data-v-92df1e84="">
                     <div class="ct_inner_stp">
-                    <div class="ct_inner_inr_stp">
-                        <div class="inner_X">
-                        <div class="steps_bx" data-v-92df1e84="">
-                            1
-                        </div>
-                        <div class="title" data-v-92df1e84="">
-                            Add
-                        </div>
+                        <div class="ct_inner_inr_stp">
+                            <div class="inner_X">
+                                <div class="steps_bx" data-v-92df1e84="">
+                                    1
+                                </div>
+                                <div class="title" data-v-92df1e84="">
+                                    Add
+                                </div>
+                            </div>
+
                         </div>
 
-                     </div>
-
-                    <div class="body" data-v-92df1e84="">
-                        Let Balloonary's AI generate ad suggestions for you.
-                    </div>
+                        <div class="body" data-v-92df1e84="">
+                            Let Balloonary's AI generate ad suggestions for you.
+                        </div>
                     </div>
                 </div>
-                                     <div class="ct_img_cuv">
-                        <img src="../img/curve_dash.png">
-                     </div>
+                <div class="ct_img_cuv">
+                    <img src="../img/curve_dash.png">
+                </div>
                 <div class="step step2" data-v-92df1e84="">
                     <div class="ct_inner_stp">
 
-                    <div class="ct_inner_inr_stp">
-                        <div class="inner_X">
-                        <div class="steps_bx" data-v-92df1e84="">
-                            2
-                        </div>
-                        <div class="title" data-v-92df1e84="">
-                            Mix
-                        </div>
-                        </div>
+                        <div class="ct_inner_inr_stp">
+                            <div class="inner_X">
+                                <div class="steps_bx" data-v-92df1e84="">
+                                    2
+                                </div>
+                                <div class="title" data-v-92df1e84="">
+                                    Mix
+                                </div>
+                            </div>
 
-                     </div>
+                        </div>
                         <div class="body" data-v-92df1e84="">
                             Customize to build your perfect ad.
                         </div>
                     </div>
                 </div>
-                                                     <div class="ct_img_cuv img_cuv2">
-                        <img src="../img/curve_dash.png">
-                     </div>
+                <div class="ct_img_cuv img_cuv2">
+                    <img src="../img/curve_dash.png">
+                </div>
                 <div class="step step3" data-v-92df1e84="">
                     <div class="ct_inner_stp">
-                     <div class="ct_inner_inr_stp">
-                        <div class="inner_X">
-                        <div class="steps_bx" data-v-92df1e84="">
-                            3
+                        <div class="ct_inner_inr_stp">
+                            <div class="inner_X">
+                                <div class="steps_bx" data-v-92df1e84="">
+                                    3
+                                </div>
+                                <div class="title" data-v-92df1e84="">
+                                    Cook
+                                </div>
+                            </div>
                         </div>
-                        <div class="title" data-v-92df1e84="">
-                            Cook
-                        </div>
-                        </div>
-                     </div>
                         <div class="body" data-v-92df1e84="">
                             Get your forecast and launch with Balloonary.
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="ct_banner_offers">
+            <div class="ct_banner">
+                <img src="../img/offer_banner.png" alt="">
+            </div>
+
         </div>
         <div class="ct_main_crousel_box">
             <h4>Enjoy MagicMix</h4>
@@ -13682,10 +13858,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 </span>
             </div>
             <div class="crousel_items">
-
-
-
-
                 <div class="product" style="left: -11px;">
                     <div class="ct_bx_fooditm">
                         <a rel="nofollow">
@@ -13696,94 +13868,21 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                                 </div>
                                 <div class="ct_bx_inner_food_groc">
 
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
+                                        </div>
+                                        <span>(10)</span>
                                     </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
 
                                     <h4>masala meat</h4>
                                     <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
@@ -13829,6 +13928,22 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                                 </div>
                                 <div class="ct_bx_inner_food_groc">
 
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
+                                        </div>
+                                        <span>(10)</span>
+                                    </div>
+
                                     <h4>masala meat</h4>
                                     <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
                                         ingredients.</p>
@@ -13869,11 +13984,27 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                             <div class="ct_bx_flex">
 
                                 <div class="main_im sauces">
-                                    <img alt="Masala Fish" src="../img/test_img.png">
+                                    <img alt="masala meat" src="../img/test_img.png">
                                 </div>
                                 <div class="ct_bx_inner_food_groc">
 
-                                    <h4>Masala Fish</h4>
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
+                                        </div>
+                                        <span>(10)</span>
+                                    </div>
+
+                                    <h4>masala meat</h4>
                                     <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
                                         ingredients.</p>
                                     <p class="for_unit_itm">Net.weight: 150gm</p>
@@ -13881,14 +14012,14 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
                                     <div class="ct_bx_price_fd hasoffPrice">
                                         <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 75</p>
+                                        <p class="price">₹ 45</p>
                                     </div>
 
 
                                     <div class="ct_bx_item_details_hide">
-                                        <p class="name">Masala Fish</p>
+                                        <p class="name">masala meat</p>
                                         <p class="stock">15</p>
-                                        <p class="price_pr">75</p>
+                                        <p class="price_pr">45</p>
                                         <p class="price_off"></p>
                                         <p class="offer">null</p>
                                         <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
@@ -13907,18 +14038,33 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                         </a>
                     </div>
                 </div>
-
                 <div class="product" style="left: -11px;">
                     <div class="ct_bx_fooditm">
                         <a rel="nofollow">
                             <div class="ct_bx_flex">
 
                                 <div class="main_im sauces">
-                                    <img alt="Veg Delight" src="../img/test_img.png">
+                                    <img alt="masala meat" src="../img/test_img.png">
                                 </div>
                                 <div class="ct_bx_inner_food_groc">
 
-                                    <h4>Veg Delight</h4>
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
+                                        </div>
+                                        <span>(10)</span>
+                                    </div>
+
+                                    <h4>masala meat</h4>
                                     <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
                                         ingredients.</p>
                                     <p class="for_unit_itm">Net.weight: 150gm</p>
@@ -13926,14 +14072,14 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
                                     <div class="ct_bx_price_fd hasoffPrice">
                                         <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 65</p>
+                                        <p class="price">₹ 45</p>
                                     </div>
 
 
                                     <div class="ct_bx_item_details_hide">
-                                        <p class="name">Veg Delight</p>
+                                        <p class="name">masala meat</p>
                                         <p class="stock">15</p>
-                                        <p class="price_pr">65</p>
+                                        <p class="price_pr">45</p>
                                         <p class="price_off"></p>
                                         <p class="offer">null</p>
                                         <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
@@ -13953,552 +14099,130 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     </div>
                 </div>
                 <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
+                    <div class="ct_bx_fooditm">
+                        <a rel="nofollow">
+                            <div class="ct_bx_flex">
 
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/chicken_meat.png">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Fresh chicken</h4>
+                                <div class="main_im sauces">
+                                    <img alt="masala meat" src="../img/test_img.png">
                                 </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 300</span>
+                                <div class="ct_bx_inner_food_groc">
+
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
                                         </div>
+                                        <span>(10)</span>
+                                    </div>
 
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
+                                    <h4>masala meat</h4>
+                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
+                                        ingredients.</p>
+                                    <p class="for_unit_itm">Net.weight: 150gm</p>
+
+
+                                    <div class="ct_bx_price_fd hasoffPrice">
+                                        <del class="pricenooff" style="display:none"></del>
+                                        <p class="price">₹ 45</p>
+                                    </div>
+
+
+                                    <div class="ct_bx_item_details_hide">
+                                        <p class="name">masala meat</p>
+                                        <p class="stock">15</p>
+                                        <p class="price_pr">45</p>
+                                        <p class="price_off"></p>
+                                        <p class="offer">null</p>
+                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
+                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                        <p class="qty">150gm</p>
+                                        <p class="desc">''</p>
+                                        <p class="essentials"></p>
+                                        <p class="images_item"></p>
 
                                     </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 300</span>
-                                            </li>
-                                            <li>
-                                                <p>1kg</p>
-                                                <span>₹ 546</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
                                 </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 300</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 240 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
                             </div>
-
-
-                        </div>
+                            <div class="ct_addbtns sauce">
+                                <p>Add to cart</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
+                    <div class="ct_bx_fooditm">
+                        <a rel="nofollow">
+                            <div class="ct_bx_flex">
 
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/jhania.webp">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Corriander powder</h4>
+                                <div class="main_im sauces">
+                                    <img alt="masala meat" src="../img/test_img.png">
                                 </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 56</span>
+                                <div class="ct_bx_inner_food_groc">
+
+                                    <div class="ratings_bx">
+                                        <div class="rating_itm">
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-sharp" role="img" class="md hydrated"
+                                                aria-label="star sharp"></ion-icon>
+                                            <ion-icon name="star-outline" role="img" class="md hydrated"
+                                                aria-label="star outline"></ion-icon>
                                         </div>
+                                        <span>(10)</span>
+                                    </div>
 
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
+                                    <h4>masala meat</h4>
+                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
+                                        ingredients.</p>
+                                    <p class="for_unit_itm">Net.weight: 150gm</p>
+
+
+                                    <div class="ct_bx_price_fd hasoffPrice">
+                                        <del class="pricenooff" style="display:none"></del>
+                                        <p class="price">₹ 45</p>
+                                    </div>
+
+
+                                    <div class="ct_bx_item_details_hide">
+                                        <p class="name">masala meat</p>
+                                        <p class="stock">15</p>
+                                        <p class="price_pr">45</p>
+                                        <p class="price_off"></p>
+                                        <p class="offer">null</p>
+                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
+                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
+                                        <p class="qty">150gm</p>
+                                        <p class="desc">''</p>
+                                        <p class="essentials"></p>
+                                        <p class="images_item"></p>
 
                                     </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 56</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 296</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 584</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
                                 </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 56</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
                             </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
-
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>10%</span>
-                                <p>off</p>
+                            <div class="ct_addbtns sauce">
+                                <p>Add to cart</p>
                             </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/jeera_powder.webp">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Jeera powder</h4>
-                                </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 50</span>
-                                        </div>
-
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 50</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 263</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 519</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 50</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
-
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/tomato_img.png">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Fresh tomatoes</h4>
-                                </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 56</span>
-                                        </div>
-
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 56</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 296</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 584</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 56</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
-
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/chillies.jpg">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Fresh green chillies</h4>
-                                </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 56</span>
-                                        </div>
-
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 56</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 296</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 584</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 56</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
-
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/onions.jpg">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Fresh onions</h4>
-                                </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 56</span>
-                                        </div>
-
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 56</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 296</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 584</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 56</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="itm_food_list_ek added_itm_ek_fd">
-
-                        <div class="ct_inner_fd_dt_grid">
-                            <div class="ct_offer_box_cook2">
-                                <span>20%</span>
-                                <p>off</p>
-                            </div>
-
-                            <div class="ct_img_res_main">
-                                <img alt="Mustard oil , Engine image" src="../img/ginger.jpg">
-
-                            </div>
-                            <div class="ct_inner_fd1_dt_grid">
-
-                                <div class="ct_dt_tm_food_res">
-                                    <h4>Fresh ginger</h4>
-                                </div>
-                                <div class="ct_unit_box_selector">
-                                    <div class="ct_bx_selection">
-                                        <div class="ct_pr_bx_unit">
-                                            <p> 500g</p>
-                                            <span>₹ 56</span>
-                                        </div>
-
-                                        <div class="ct_popup_unit_btn">
-                                            <ion-icon name="caret-forward-outline" role="img" class="md hydrated"
-                                                aria-label="caret forward outline"></ion-icon>
-                                        </div>
-
-                                    </div>
-                                    <div class="ct_other_units" style="display: none;">
-                                        <ul>
-                                            <li>
-                                                <p>500g</p>
-                                                <span>₹ 56</span>
-                                            </li>
-                                            <li>
-                                                <p>5kg</p>
-                                                <span>₹ 296</span>
-                                            </li>
-                                            <li>
-                                                <p>10kg</p>
-                                                <span>₹ 584</span>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                    <del class="pricenooff">₹ 56</del>
-                                    <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-                                </div>
-
-
-                                <div class="ct_addbtns essen">
-                                    <p>Add to cart</p>
-                                </div>
-                                <div class="ct_qty_box">
-                                    <div class="btn_qtys dec_btn">
-                                        <span class="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </div>
-                                    <input type="text" value="1" readonly="">
-                                    <div class="btn_qtys inc_btn">
-                                        <span class="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <section id="jf7xh8er48" class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48" sectionname="hero"
             sectioncomponent="Hero" sortorder="0">
-          <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
+            <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
                 <div class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
                     <div class="hidden sm:block">
                         <div
@@ -14526,11 +14250,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             <div
                 class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
                 <div>
- 
+
                     <div class="mt-14">
                         <div class="mt-6 sm:max-w-xl">
                             <h1 class="text-4xl font-black tracking-tight text-gray-900 sm:text-6xl md:text-7xl">
-                               Cook Delicious meals in minutes, naturally<span class="text-primary">.</span></h1>
+                                Cook Delicious meals in minutes, naturally<span class="text-primary">.</span></h1>
                             <h2 class="mt-6 text-lg text-gray-500 sm:text-xl">Our all-natural ingredients make cooking a
                                 breeze, with delicious recipes in every mix.</h2>
                         </div>
@@ -14553,7 +14277,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     </div>
                 </div>
             </div>
-             
+
         </section>
         <section class="relative pt-16 pb-32 overflow-hidden bg-white space-y-24" sectionname="features" id="tgs2wwlmnp"
             sectioncomponent="Features" sortorder="1" site-name="MagicMix" site-id="y5sbR5c2IN3YlPWTdNqD"
@@ -14562,6 +14286,30 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             <div>
                 <div
                     class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24">
+
+                    <div class="hidden sm:block">
+                        <div
+                            class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
+                        </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
+                            fill="none" viewBox="0 0 404 392">
+                            <defs>
+                                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
+                                    patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor">
+                                    </rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+                        </svg>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                        <div
+                            class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
+                            <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
+                                src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHwzfHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                alt="Quick, convenient meals">
+                        </div>
+                    </div>
                     <div
                         class="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 space-y-6 lg:col-start-2">
                         <div>
@@ -14572,20 +14320,38 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                         </div>
                         <div><!----></div><!---->
                     </div>
-                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
-                        <div
-                            class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
-                            <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
-                                src="https://images.unsplash.com/photo-1556911261-6bd341186b2f?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHwzfHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                                alt="Quick, convenient meals">
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div>
                 <div
-                    class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24">
+                    class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24 back_shsgs">
                     <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 space-y-6">
+
+                        <div class="hidden sm:block">
+                            <div
+                                class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
+                            </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
+                                fill="none" viewBox="0 0 404 392">
+                                <defs>
+                                    <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20"
+                                        height="20" patternUnits="userSpaceOnUse">
+                                        <rect x="0" y="0" width="4" height="4" class="text-gray-200"
+                                            fill="currentColor">
+                                        </rect>
+                                    </pattern>
+                                </defs>
+                                <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+                            </svg>
+                        </div>
+                        <div class=" mt-12 sm:mt-16 lg:mt-0">
+                            <div
+                                class="img_right lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pl-4 sm:-mr-48 sm:-mr-6 sm:pl-6 md:-mr-16">
+                                <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:left-0"
+                                    src="https://images.unsplash.com/photo-1547592180-85f173990554?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw0fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                    alt="All-natural ingredients">
+                            </div>
+                        </div>
                         <div>
                             <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">All-natural
                                 ingredients<span class="text-primary">.</span></h2>
@@ -14595,14 +14361,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                         </div>
                         <div><!----></div><!---->
                     </div>
-                    <div class=" mt-12 sm:mt-16 lg:mt-0">
-                        <div
-                            class="img_right lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pl-4 sm:-mr-48 sm:-mr-6 sm:pl-6 md:-mr-16">
-                            <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:left-0"
-                                src="https://images.unsplash.com/photo-1547592180-85f173990554?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw0fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                                alt="All-natural ingredients">
-                        </div>
-                    </div>
                 </div>
             </div>
             <div>
@@ -14610,6 +14368,31 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24">
                     <div
                         class="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 space-y-6 lg:col-start-2">
+                        <div class="hidden sm:block">
+                            <div
+                                class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
+                            </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
+                                fill="none" viewBox="0 0 404 392">
+                                <defs>
+                                    <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20"
+                                        height="20" patternUnits="userSpaceOnUse">
+                                        <rect x="0" y="0" width="4" height="4" class="text-gray-200"
+                                            fill="currentColor">
+                                        </rect>
+                                    </pattern>
+                                </defs>
+                                <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+                            </svg>
+                        </div>
+                        <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                            <div
+                                class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
+                                <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
+                                    src="https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw1fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                    alt="Pre-sterilised for protection">
+                            </div>
+                        </div>
+
                         <div>
                             <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">Pre-sterilised for
                                 protection<span class="text-primary">.</span></h2>
@@ -14619,18 +14402,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                         </div>
                         <div><!----></div><!---->
                     </div>
-                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
-                        <div
-                            class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
-                            <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
-                                src="https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw1fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                                alt="Pre-sterilised for protection">
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
-        
+
         {{>footer}}
     </div>
 </body>
