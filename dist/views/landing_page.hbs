@@ -24,59 +24,145 @@
         src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_c5H3gnD_g.woff2) format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
     }
-.ct_banner{
- padding-bottom: 40px;
-    background: #fffff4;}
+    .ct_inner_box_nav {
+        width: 90%;
+        margin-top: 9px;
+        display: flex;
+        justify-content: end;
+    }
+    .ct_flex_banner {
+        display: flex;
+        justify-content: center;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+    .ct_offer_banner {
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        border-radius: 20px;
+        overflow: scroll;
+    }
+   .-mr-3 {
+        width: 51vw;
+        margin-top: -9px;
+        margin-left: 26px;
+    }
+    .ct_offer_banner a {
+        padding: 0;
+        margin-right: 10px;
+    }
+
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: relative;
+        margin-left: 7vw;
+    }
+
+    .items-center {
+        align-items: center;
+        padding: 8px 14px;
+        width: 71%;
+        border-radius: 21px;
+        /* background: white; */
+        border: 1px solid #eaeaea;
+    }
+
+    .ct_offer_banner img {
+        min-width: 90vw;
+        border-radius: 20px;
+    }
+
+    .ct_offer_banner::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ct_banner {
+        padding-bottom: 40px;
+        background: #fffff4;
+    }
 
 
-.ct_banner p {
-    font-size: 14px;
-    color: #2f2e2e;
-    font-family: 'roboto';
-    width: 70%;
-    margin: 15px 0 0 83px;
-    font-weight: 500;
-    line-height: 19px;
-}
-.ct_banner .ct_flex{display: flex;justify-content: center;}
-.ct_banner h2 {
-    font-family: 'Moret';
-    font-weight: 600;
-    color: #000000;
-    margin: -10px 0 0 79px;
-    font-size: 54px;
-    line-height: 54px;
-    width: 82%;
-}
-.cta-button {
-    background-color: #ff852b;
-    color: white;
-    font-family: 'roboto';
-    width: 40vw;
-    padding: 12px 24px;
-    border-radius: 20px;
-    position: relative;
-    margin: 22px 0 0 0px;
-    text-align: center;
-    justify-content: center;
-}
- .cta-button::before {
-    content: "";
-    background: url(../img/light_reflex.svg) no-repeat 50%;
-    width: 16px;
-    height: 9px;
-    position: absolute;
-    top: 7px;
-    left: 10px;
-}
+    .ct_banner .sub_head {
+        font-size: 14px;
+        color: #2f2e2e;
+        font-family: 'roboto';
+        width: 76%;
+        margin-top: 15px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    .how-it-works .steps {
+        margin-left: 40px;
+    }
+
+    .ct_banner .text-gray-800 {
+        color: black;
+    }
+
+    .ct_banner .text-gray-500 {
+        color: rgb(162 162 162);
+        margin-top: 2px;
+        font-size: 12px;
+    }
+
+    .how-it-works .body {
+        width: 90%;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .ct_banner .ct_flex {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ct_banner h2 {
+        font-family: 'Moret';
+        font-weight: 600;
+        color: #000000;
+        margin-top: -10px;
+        font-size: 37px;
+        line-height: 42px;
+        width: 77%;
+        word-spacing: 1px;
+    }
+
+    .cta-button {
+        background-color: #ff852b;
+        color: white;
+        font-family: 'roboto';
+        width: 40vw;
+        padding: 12px 24px;
+        border-radius: 20px;
+        position: relative;
+        margin: 22px 0 0 0px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .cta-button::before {
+        content: "";
+        background: url(../img/light_reflex.svg) no-repeat 50%;
+        width: 16px;
+        height: 9px;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+
     .ct_banner_offers .ct_banner img {
         width: 100%;
         margin: 10px 0;
     }
 
     .ct_items_img {
-width: 82%;
-    margin: 29px 0 0 42px;
+        width: 82%;
+        margin-top: 29px;
     }
 
     .ui-button {
@@ -102,8 +188,23 @@ width: 82%;
     }
 
     .back_shsgs {
-        background: #f5f5fd;
-        padding-bottom: 26px;
+        background: url(../img/bg_m1.jpeg);
+        https: //img.freepik.com/free-photo/green-gradient-abstract-background-empty-room-with-space-your-text-picture_1258-52336.jpg;
+            background-size: 126% 100%;
+        /* filter: brightness(0.9); */
+        padding-bottom: 50px;
+        /* background: white; */
+    }
+
+    .back_shsgs .-mr-3 {
+        margin-top: -5px;
+        margin-left: 0;
+    }
+
+    .back_shsgs .w-full {
+        width: 92%;
+        margin: 20px 3px;
+        position: relative;
     }
 
     .ct_prod_categ {
@@ -139,7 +240,7 @@ width: 82%;
         position: absolute;
         margin-top: 13px;
         width: 26vw;
-        margin-left: 99px;
+        margin-left: 8vw;
     }
 
     .img_cuv2 {
@@ -377,18 +478,19 @@ width: 82%;
         margin-left: 12px;
     }
 
- .how-it-works .title.outer_main {
-    text-align: center;
-    width: 100vw;
-    font-size: 35px;
-    padding-top: 52px;
-    color: #000000;
-}
-.how-it-works{
-    background: #fffff4;
-    display: block;
-    margin-top: -22px;
-}
+    .how-it-works .title.outer_main {
+        text-align: center;
+        width: 100vw;
+        font-size: 35px;
+        padding-top: 52px;
+        color: #000000;
+    }
+
+    .how-it-works {
+        background: #fffff4;
+        display: block;
+        margin-top: -22px;
+    }
 
     .how-it-works .title {
         font-family: 'Moret light';
@@ -529,7 +631,9 @@ width: 82%;
     .follow_us {
         width: auto;
         margin-top: 32px;
+        display: flex;
     }
+    .follow_us a{padding: 3px;}
 
     .coppy_right p {
         font-size: 16px;
@@ -654,6 +758,77 @@ width: 82%;
         }
     }
 
+    @media only screen and (max-width:550px) {
+        .crousel_items {
+            padding-bottom: 50px;
+            padding-left: 35px;
+            margin-top: 30px;
+        }
+
+        .for_nav_main .logo img {
+            width: 35px;
+            height: 35px;
+            margin-top: 0px;
+        }
+
+        .for_ain_home_logo a {
+            margin-left: 0px;
+            margin-top: 6px;
+        }
+
+        .for_nav_main .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ct_inner_box_nav {
+            display: none;
+        }
+
+        .how-it-works {
+            background: #fffff4;
+            display: block;
+            margin-top: -22px;
+            padding-bottom: 28px;
+        }
+
+        .text-4xl {
+            font-size: 35px;
+            line-height: 34px;
+            font-family: 'Moret';
+            font-weight: 600;
+            color: white;
+            width: 90%;
+            margin-top: 34px;
+        }
+
+        .pt-16 .text-4xl {
+            color: black;
+        }
+
+        .back_shsgs .text-4xl {
+            color: #08100b;
+        }
+
+        .back_shsgs .text-gray-500,
+        .pt-16 .text-gray-500 {
+            color: rgb(0, 0, 0);
+        }
+
+        .crousel_items {
+            padding-bottom: 50px;
+            padding-left: 35px;
+        }
+.w-full {
+    width: 91%;
+    margin: 20px 5vw;
+}
+        .img_right {
+            display: flex;
+        }
+
+    }
     @media only screen and (max-width:470px) {
         .coppy_right p {
             font-size: 14px;
@@ -695,18 +870,6 @@ width: 82%;
         }
     }
 
-    @media only screen and (max-width:360px) {
-        .coppy_right p {
-            font-size: 11px;
-            margin: 2px 6px 0 18px;
-        }
-
-        .about_us_link a {
-            font-size: 11px;
-            display: block;
-            margin-top: 3px;
-        }
-    }
 
     ion-icon {
         visibility: hidden;
@@ -1414,7 +1577,8 @@ width: 82%;
         .ct_offer_box_cook2 {
             transform: translate(-4px, 0px);
         }
-
+.cta-button {
+    width: 54vw;}
         .ct_bx_fooditm .main_im {
             width: 25vw;
             height: 40vw;
@@ -2319,11 +2483,9 @@ width: 82%;
             color: #000;
             margin-top: 2px;
         }
-
-        .for_unit_itm {
-            font-size: 14px;
-        }
-
+.for_unit_itm {
+    font-size: 11px;
+}
         .ct_bx_fooditm h4 {
             font-size: 18px;
         }
@@ -4338,12 +4500,12 @@ width: 82%;
 
             .ct_main_crousel_box {
                 position: relative;
-    margin-top: 0;
-    padding-top: 18px;background-color: #fffff4;
+                margin-top: 0;
+                padding-top: 18px;
+                background-color: #fffff4;
             }
 
             .crousel_items {
-                padding: 0;
                 padding-bottom: 50px;
             }
 
@@ -7482,12 +7644,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         font-weight: 500;
     }
 
-    .ct_inner_box_nav {
-        width: 90%;
-        margin-top: 9px;
-        display: flex;
-        justify-content: end;
-    }
 
     .for_ain_home_logo {
         margin: 0 0 0 1px;
@@ -7829,7 +7985,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         .for_ain_home_logo {
             width: auto;
         }
-
+.pr-4 {
+    padding-right: 1rem;
+    margin-right: 80px;
+}
         .ct_inner_box_nav {
             width: 77%;
         }
@@ -8784,95 +8943,27 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         }
     }
 
-    @media only screen and (max-width:400px) {
-        .ct_inner_nav {
-            justify-content: initial;
-        }
-
-        .for_nav_main .logo img {
-            width: 42px;
-            height: 42px;
-            margin-top: -2px;
-        }
-
-        .for_ain_home_logo h4 {
-            font-size: 22px;
-            margin-left: 8px;
-        }
-
-        .for_ain_home_logo span {
-            font-size: 9px;
-            transform: translate(5px, -1px);
-        }
-
-        .ct_field_small_size span {
-            font-size: 21px;
-            margin-top: 10px;
-        }
-
-        .ct_bx_about_mobile2 p {
-            font-size: 9px;
-            color: black;
-        }
-
-        .for_nav_main .logo {
-            margin: 4px 0;
-        }
-
-        .ct_nav_erak .ct_bx_search {
-            width: 100%;
-        }
-
-        .ct_inner_nav .ct_bx_search {
-            height: 90%;
-        }
-
-        .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
-            width: 100%;
-            position: absolute;
-        }
-
-        .ct_bx_search .search-icon {
-            padding: 10px 8px 10px 5px;
-        }
-
-        .for_nav_main .ct_inner_nav .for_nav_search .ct_bx_search input {
-            transform: translate(0, 0px);
-        }
-
-        .for_nonfix_search {
-            height: 38px;
-        }
-
-        .ct_nav_erak .ct_bx_search {
-            margin-top: 1px;
-        }
-
-        .for_mobile_search {
-            top: 67px;
-        }
-
-        .for_mobile_search.for_seravh_in_nav {
-            transform: translate(0px, -29px);
-        }
-
-        .for_nav_main .for_seravh_in_nav {
-            transform: translate(0px, -1px);
-        }
-
-        .for_seravh_in_nav {
-            transform: translate(0px, -33px);
-        }
-    }
 
     @media only screen and (max-width:360px) {
         .erak_fd_body .for_nav_main .logo {
             margin-left: 2px;
         }
 
-        .ct_field_small_size {
-            margin: -12px 4px 0 0;
+        .ct_img_cuv.img_cuv2 {
+            left: 27vw;
+            margin: 0;
+            margin-top: 30px;
+            width: 69px;
         }
+
+        .ct_img_cuv {
+            margin: 0;
+            margin-top: 21px;
+            width: 20vw;
+            left: 14vw;
+        }
+
+  
 
         .ct_field_small_size_bx {
             margin: 3px 0 0;
@@ -9032,15 +9123,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
         .ct_field_small_size span {
             font-size: 27px;
-            margin-top: 10px;
         }
 
         .for_nav_main .logo img {
             margin-top: -4px;
-        }
-
-        .for_ain_home_logo h4 {
-            margin-top: -5px;
         }
 
         .for_nav_main .ct_inner_nav {
@@ -10596,15 +10682,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         }
     }
 
-    @media only screen and (max-width:400px) {
-        .btn_bottom_nav p {
-            font-size: 11px;
-        }
-
-        .ct_bx_div_bottom_nav .ct_flex_bx {
-            padding: 0px;
-        }
-    }
 
     @media only screen and (max-width:360px) {
         .btn_bottom_nav p {
@@ -10642,6 +10719,73 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             padding: 6px 0 3px 0;
         }
 
+        .ct_banner h2 {
+            font-size: 35px;
+            line-height: 41px;
+            width: 83%;
+        }
+
+        .text-gray-500 {
+            line-height: 21px;
+            font-size: 15px;
+            width: 93%;
+        }
+
+        .text-4xl {
+            font-size: 33px;
+            line-height: 34px;
+            width: 97%;
+        }
+
+        .-mr-3 {
+            width: 51vw;
+            margin-top: -54px;
+            margin-left: 0;
+            right: 23px;
+        }
+
+        .back_shsgs {
+            background-size: 131% 100%;
+        }
+
+        .back_shsgs .w-full {
+            width: 100%;
+            margin: 41px 0 0 -3px;
+            position: relative;
+        }
+
+        .px-4 {
+            margin-left: 8px;
+        }
+
+        .ct_items_img {
+            margin-top: 54px;
+        }
+
+        .ct_banner .sub_head {
+            width: 81%;
+        }
+
+        .items-center {
+            align-items: center;
+            padding: 8px 14px;
+            width: 86%;
+        }
+
+        .ct_img_cuv {
+            margin: 0;
+            margin-top: 17px;
+            width: 25vw;
+            left: 11vw;
+        }
+
+        .ct_img_cuv.img_cuv2 {
+            left: 25vw;
+            margin: 0;
+            margin-top: 18px;
+            width: 87px;
+        }
+
         .btn_bottom_nav p {
             display: none;
         }
@@ -10663,6 +10807,141 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         .btn_bottom_nav .ct_info_cart p {
             font-size: 7px;
             margin-top: -2px;
+        }
+    }
+
+    @media only screen and (max-width:400px) {
+        .btn_bottom_nav p {
+            font-size: 11px;
+        }
+.ct_field_small_size {
+    padding: 8px 8px 0 11px;
+}
+.back_shsgs .-mr-3 {
+    margin-top: -28px;
+}
+        .ct_banner h2 {
+            font-size: 29px;
+            line-height: 35px;
+            width: 88%;
+        }
+
+        .text-gray-500 {
+            line-height: 22px;
+            font-size: 15px;
+            width: 93%;
+        }
+
+        .text-4xl {
+            width: 94%;    font-size: 37px;
+        }
+
+        .ct_inner_nav {
+            justify-content: initial;
+        }
+
+        .ct_banner .sub_head {
+            font-size: 12px;
+            width: 82%;
+            margin-top: 13px;
+            line-height: 18px;
+        }
+
+        .ct_banner h2 {
+            font-size: 31px;
+            line-height: 37px;
+            width: 88%;
+        }
+
+        .ct_banner .sub_head {
+            width: 87%;
+        }
+
+        .text-base {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .for_nav_main .logo img {
+            width: 42px;
+            height: 42px;
+            margin-top: -2px;
+        }
+
+        .ct_field_small_size span {
+            font-size: 21px;
+            margin-top: 0px;
+        }
+
+        .ct_bx_about_mobile2 p {
+            font-size: 9px;
+            color: black;
+        }
+
+        .for_nav_main .logo {
+            margin: 0;
+        }
+
+        .ct_nav_erak .ct_bx_search {
+            width: 100%;
+        }
+
+        .ct_inner_nav .ct_bx_search {
+            height: 90%;
+        }
+
+        .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
+            width: 100%;
+            position: absolute;
+        }
+
+        .ct_bx_search .search-icon {
+            padding: 10px 8px 10px 5px;
+        }
+
+        .for_nav_main .ct_inner_nav .for_nav_search .ct_bx_search input {
+            transform: translate(0, 0px);
+        }
+
+        .for_nonfix_search {
+            height: 38px;
+        }
+
+        .ct_nav_erak .ct_bx_search {
+            margin-top: 1px;
+        }
+
+        .for_mobile_search {
+            top: 67px;
+        }
+
+        .for_mobile_search.for_seravh_in_nav {
+            transform: translate(0px, -29px);
+        }
+
+        .for_nav_main .for_seravh_in_nav {
+            transform: translate(0px, -1px);
+        }
+
+        .for_seravh_in_nav {
+            transform: translate(0px, -33px);
+        }
+
+        .ct_bx_div_bottom_nav .ct_flex_bx {
+            padding: 0px;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+        .coppy_right p {
+            font-size: 11px;
+            margin: 2px 6px 0 18px;
+        }
+
+        .about_us_link a {
+            font-size: 11px;
+            display: block;
+            margin-top: 3px;
         }
     }
 
@@ -10986,9 +11265,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         height: 100%;
     }
 
-    .w-full {
-        width: 100%;
-    }
 
     .items-center {
         align-items: center;
@@ -11349,11 +11625,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         margin-left: -.75rem;
     }
 
-.-mr-3 {
-    width: 51vw;
-    margin-top: -9px;
-    margin-left: 26px;
-}
+ 
 
     .-mt-72 {
         margin-top: -18rem;
@@ -11387,8 +11659,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         margin-top: 1rem;
     }
 
-    .mt-6 {
-        margin-top: 1.5rem;
+    .ct_banner .mt-6 {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
     }
 
     .mt-8 {
@@ -11457,9 +11731,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         width: auto;
     }
 
-    .w-full {
-        width: 100%;
-    }
 
     .w-screen {
         width: 100vw;
@@ -11520,11 +11791,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         flex-wrap: wrap;
     }
 
-    .items-center {
-        align-items: center;
-        padding: 8px 14px;
-        border-radius: 21px;
-    }
 
     .justify-center {
         justify-content: center;
@@ -11542,8 +11808,8 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
     .space-y-24>:not([hidden])~:not([hidden]) {
         --tw-space-y-reverse: 0;
-        margin-top: calc(6rem * calc(1 - var(--tw-space-y-reverse)));
-        margin-bottom: calc(6rem * var(--tw-space-y-reverse));
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .space-y-6>:not([hidden])~:not([hidden]) {
@@ -11625,12 +11891,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         object-fit: cover;
     }
 
-    .px-4 {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        position: relative;
-        margin-left: 7vw;
-    }
+
 
     .px-5 {
         padding-left: 1.25rem;
@@ -11658,6 +11919,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
     .pb-32 {
         padding-bottom: 18px;
+        background-color: #fffff4;
     }
 
     .pl-4 {
@@ -11669,14 +11931,25 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
     }
 
     .pt-16 {
-        padding-top: 13px;
+        padding-top: 49px;
+        padding-bottom: 50px;
     }
-.pt-8 {
-    padding-top: 8px;
-    padding-bottom: 52px;
-    background: #2409f1c9;
-    margin-top: 0;
-}
+
+    .pt-16 .-mr-3 {
+        right: 0;
+    }
+
+    .pt-16 .mt-12 {
+        position: relative;
+        z-index: 99999999;
+    }
+
+    .pt-8 {
+        padding-top: 8px;
+        padding-bottom: 52px;
+        background: #2409f1c9;
+        margin-top: 0;
+    }
 
     .text-center {
         text-align: center;
@@ -11696,19 +11969,11 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         line-height: 2.25rem;
     }
 
-    .text-4xl {
-        font-size: 2.25rem;
-    }
 
-    .text-4xl {
-        line-height: 34px;
-        font-family: 'poppins';
-        font-weight: 500;
-    }
 
     .text-base {
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: 19px;
     }
 
     .text-lg {
@@ -11759,24 +12024,25 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         color: rgb(229 231 235 / var(--tw-text-opacity));
     }
 
-.text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255);
-    font-family: 'poppins';
-    display: block;
-    margin-top: 11px;
-    line-height: 25px;
-    font-size: 18px;
-    width: 93%;
-}
+    .text-gray-500 {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255);
+        font-family: 'poppins';
+        display: block;
+        margin-top: 11px;
+        line-height: 25px;
+        font-size: 18px;
+        width: 93%;
+    }
+
     .text-gray-500 .text-sm {
         color: black;
     }
 
-.text-gray-800 {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255);
-}
+    .text-gray-800 {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255);
+    }
 
     .text-gray-900 {
         --tw-text-opacity: 1;
@@ -13185,7 +13451,6 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         text-decoration: none;
     }
 
-    @media all and (max-width: 900px) {
         @media only screen and (max-width:550px) {
             .carousel-item .banner_1 img {
                 border-radius: 0;
@@ -13409,67 +13674,8 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             box-sizing: border-box;
             margin: 0;
         }
-    }
+    
 
-    @media only screen and (max-width:550px) {
-        .crousel_items {
-            padding-bottom: 50px;
-            padding-left: 35px;
-            margin-top: 30px;
-        }
-.for_nav_main {
-    background: #fffff4;
-}
-        .for_nav_main .logo img {
-            width: 35px;
-            height: 35px;
-            margin-top: 0px;
-        }
-
-        .for_ain_home_logo a {
-            margin-left: 0px;
-            margin-top: 6px;
-        }
-
-        .for_nav_main .logo {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .ct_inner_box_nav {
-            display: none;
-        }
-.how-it-works {
-    background: #fffff4;
-    display: block;
-    margin-top: -22px;
-    padding-bottom: 28px;
-}
-.text-4xl {
-    font-size: 35px;
-    line-height: 34px;
-    font-family: 'Moret';
-    font-weight: 600;
-    color: white;
-    width: 90%;
-    margin-top: 34px;
-}
-        .crousel_items {
-            padding-bottom: 50px;
-            padding-left: 35px;
-        }
-
-        .w-full {
-            width: 81%;
-            margin: 20px 10vw;
-        }
-
-        .img_right {
-            display: flex;
-        }
-
-    }
 
     /*! CSS Used fontfaces */
     @font-face {
@@ -13567,7 +13773,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     <img alt="logo" src="../img/logo_black_tr_2.png ">
                     <div class="ct_inner">
                         <h4>KRICK</h4>
-                        <span>Uniquely Yours</span>
+                        <span>Cook Magically</span>
                     </div>
 
                 </a>
@@ -13721,15 +13927,42 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 <div class="carousel-item  active">
 
                     <div class="ct_banner">
-                        <img class="ct_items_img" src="../img/items_img.png" alt="">
-                        <h2>Experience the Magic</h2>
-                        <p>Discover the secret to effortless, gourmet cooking with our magic mix. Enjoy homemade meals without sacrificing precious time. Try it now and revolutionize the way you cook!</p>
-<div class="ct_flex">
-                         <div class="cta-button">
-                            Try MagicMix
-                            <div class="decal" data-v-7a0f4ce8=""></div>
-                        </div> 
-</div>
+                        <div class="ct_flex_banner">
+                            <img class="ct_items_img" src="../img/items_img.png" alt="">
+
+                        </div>
+                        <div class="ct_flex_banner">
+
+                            <h2>Have A Magical Cooking Experience With MagicMix</h2>
+                        </div>
+                        <div class="ct_flex_banner">
+
+                            <p class="sub_head">Discover the secret to effortless, gourmet cooking with our magic mix.
+                                Enjoy homemade meals without sacrificing precious time. Try it now and revolutionize the
+                                way you cook!</p>
+                        </div>
+
+                        <div class="mt-6">
+                            <div class="inline-flex items-center"><img src="../img/person.png" alt="Dean Hamperson"
+                                    class="object-cover inline-block mr-3 border-2 border-primary rounded-full sm:mr-2 h-14 w-14">
+                                <div>
+                                    <p class="sm:pl-2.5 text-base font-black tracking-tight text-gray-800 sm:text-lg">
+                                        “ MagicMix has made my life so much easier. Quick and easy recipes and they
+                                        taste
+                                        delicious! ” </p>
+                                    <p class="sm:pl-2.5 text-sm sm:text-base font-bold text-gray-500">Dean Hamperson
+                                        <!---->
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ct_flex">
+                            <a href="/sauce" class="cta-button">
+                                Try MagicMix
+                                <div class="decal" data-v-7a0f4ce8=""></div>
+                            </a>
+                        </div>
                     </div>
                     {{!-- <a class="banner_1" href="/">
                         <img src="../img/krick_sauce_banner.png" alt="">
@@ -13764,7 +13997,10 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 <img src="../img/banner_ref_mn.png" alt="">
             </div>
         </div> --}}
-
+        <div class="ct_offer_banner">
+            <a href="/cart"> <img src="../img/banner_offer.png" alt=""></a>
+            <a href="/cart"><img src="../img/offer_2.png" alt=""></a>
+        </div>
         <div id="how-it-works" class="how-it-works" data-v-92df1e84="">
             <h1 class="title outer_main" data-v-92df1e84="">How it works</h1>
             <div class="steps" data-v-92df1e84="">
@@ -13833,7 +14069,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
         </div>
 
         <div class="ct_main_crousel_box">
-            <h4>Enjoy MagicMix</h4>
+            <h4>Our Varieties</h4>
 
             <div class="ct_back_btn crousel_btns">
                 <span class="material-symbols-outlined">
@@ -14208,70 +14444,12 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                 </div>
             </div>
         </div>
-        <section id="jf7xh8er48" class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48" sectionname="hero"
-            sectioncomponent="Hero" sortorder="0">
-            <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
-                <div class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                    <div class="hidden sm:block">
-                        <div
-                            class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
-                        </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
-                            fill="none" viewBox="0 0 404 392">
-                            <defs>
-                                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
-                                    patternUnits="userSpaceOnUse">
-                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor">
-                                    </rect>
-                                </pattern>
-                            </defs>
-                            <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                        </svg>
-                    </div>
-                    <div
-                        class="img_right  relative pl-4 -mr:20 sm:-mr-32 md:-mr-16 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:flex lg:items-center xl:pl-12">
-                        <img class="w-full rounded-l-3xl lg:w-auto 2xl:h-full 2xl:max-w-none"
-                            src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHwxMHx8Y29va2luZ3xlbnwwfDB8fHwxNjc4MzQ0ODMz&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                            alt="MagicMix">
-                    </div>
-                </div>
-            </div>
-            <div
-                class="max-w-md px-4 mx-auto sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
-                <div>
 
-                    <div class="mt-14">
-                        <div class="mt-6 sm:max-w-xl">
-                            <h1 class="text-4xl font-black tracking-tight text-gray-900 sm:text-6xl md:text-7xl">
-                                Cook Delicious meals in minutes, naturally<span class="text-primary">.</span></h1>
-                            <h2 class="mt-6 text-lg text-gray-500 sm:text-xl">Our all-natural ingredients make cooking a
-                                breeze, with delicious recipes in every mix.</h2>
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="inline-flex items-center"><img
-                                    src="https://storage.googleapis.com/mixo-files/public/img/avatars/male-2.png"
-                                    alt="Dean Hamperson"
-                                    class="object-cover inline-block mr-3 border-2 border-primary rounded-full sm:mr-2 h-14 w-14">
-                                <div>
-                                    <p class="sm:pl-2.5 text-base font-black tracking-tight text-gray-800 sm:text-lg">
-                                        “MagicMix has made my life so much easier. Quick and easy recipes and they taste
-                                        delicious!” </p>
-                                    <p class="sm:pl-2.5 text-sm sm:text-base font-bold text-gray-500">Dean Hamperson
-                                        <!---->
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-        <section class="relative pt-16 pb-32 overflow-hidden bg-white space-y-24" sectionname="features" id="tgs2wwlmnp"
+        <section class="relative  pb-32 overflow-hidden bg-white space-y-24" sectionname="features" id="tgs2wwlmnp"
             sectioncomponent="Features" sortorder="1" site-name="MagicMix" site-id="y5sbR5c2IN3YlPWTdNqD"
             site-logo-url="https://storage.googleapis.com/mixo-files/logos/magicMix-1678364595507.svg"
             site-logo-size="md">
-            <div>
+            {{!-- <div class="pt-16">
                 <div
                     class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24">
 
@@ -14310,7 +14488,7 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     </div>
 
                 </div>
-            </div>
+            </div> --}}
             <div>
                 <div
                     class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24 back_shsgs">
@@ -14351,36 +14529,35 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="pt-16">
                 <div
                     class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-6 xl:gap-12 2xl:gap-24">
+
+                    <div class="hidden sm:block">
+                        <div
+                            class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
+                        </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
+                            fill="none" viewBox="0 0 404 392">
+                            <defs>
+                                <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20"
+                                    patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor">
+                                    </rect>
+                                </pattern>
+                            </defs>
+                            <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+                        </svg>
+                    </div>
+                    <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                        <div
+                            class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
+                            <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
+                                src="../img/sterilised_img.jpeg"
+                                alt="Quick, convenient meals">
+                        </div>
+                    </div>
                     <div
                         class="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 space-y-6 lg:col-start-2">
-                        <div class="hidden sm:block">
-                            <div
-                                class="absolute inset-y-0 w-screen left-1/2 bg-gray-50 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full">
-                            </div><svg class="absolute -mr-3 top-8 right-1/2 lg:m-0 lg:left-0" width="404" height="392"
-                                fill="none" viewBox="0 0 404 392">
-                                <defs>
-                                    <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20"
-                                        height="20" patternUnits="userSpaceOnUse">
-                                        <rect x="0" y="0" width="4" height="4" class="text-gray-200"
-                                            fill="currentColor">
-                                        </rect>
-                                    </pattern>
-                                </defs>
-                                <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-                            </svg>
-                        </div>
-                        <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
-                            <div
-                                class="lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pr-4 -sm:ml-48 sm:pr-6 md:-ml-16">
-                                <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:right-0"
-                                    src="https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw1fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                                    alt="Pre-sterilised for protection">
-                            </div>
-                        </div>
-
                         <div>
                             <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">Pre-sterilised for
                                 protection<span class="text-primary">.</span></h2>
@@ -14393,6 +14570,8 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
 
                 </div>
             </div>
+
+
         </section>
 
         {{>footer}}
