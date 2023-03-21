@@ -4149,12 +4149,6 @@
             margin: 47px 21px;
         }
 
-        .req_essen .ct_dt_tm_food_res p {
-            font-size: 12px;
-            font-family: 'roboto';
-            color: #0b0b0b;
-            margin: 2px 0 6px 4px;
-        }
 
         .ct_bx_priceandoff del {
             color: #5b5b5be3;
@@ -10604,6 +10598,13 @@
 .ct_overall_ratings {
     padding: 20px 7px 0 24px;
 }
+.remove_itm, .ct_addded, .buy_now, .add_cart_btn {
+    width: 95%;
+    margin: 10px 0 20px 8px;
+}
+.ct_qty_box {
+    margin: 19px 10px;
+}
             .carousel-inner .carousel-item {
                 min-width: 95vw;
                 margin: 6px 8px 0 0;
@@ -10742,13 +10743,12 @@
     padding: 20px 7px 0 9px;
 }
 .ct_overall_ratings p {
-    font-size: 10px;
+    font-size: 12px;
     color: rgb(44, 44, 44);
 }
 .ct_overall_ratings p, .ct_overall_ratings h4 {
     color: black;
     font-family: 'open sans';
-    font-size: 21px;
 }
             .prod_img2 {
                 right: 38vw;
@@ -11615,7 +11615,6 @@
 
                                         <div class="ct_dt_tm_food_res req_bcoz">
                                             <h4>Fresh garlic</h4>
-                                            <p>stating why is it required </p>
                                         </div>
                                         <div class="ct_unit_box_selector">
                                             <div class="ct_bx_selection">
@@ -11692,7 +11691,6 @@
 
                                         <div class="ct_dt_tm_food_res req_bcoz">
                                             <h4> Mustard Oil, Fortune</h4>
-                                            <p>stating why is it required </p>
                                         </div>
                                         <div class="ct_unit_box_selector">
                                             <div class="ct_bx_selection">
@@ -13496,6 +13494,8 @@
             let itmPopucloseIcon = e.target.closest('.ct_remove_bx_pop_p')
             let unit_select = e.target.closest('.ct_unit_box_selector')
             let unit_li = e.target.closest('.ct_other_units li')
+            let rate_itm=e.target.closest('.ct_rate_btn')
+            
             document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                 cu11.classList.remove('active')
                 cu11.style.display = 'none'
@@ -13523,7 +13523,34 @@
 
             let inc_btn = e.target.closest('.inc_btn')
             let dec_btn = e.target.closest('.dec_btn')
+            if(rate_itm!==null){
+                async function db_shs(){
+                    let dbCollection = db.collection("users")
+                    let res = await dbCollection.get()
+                    let found_one=false
+                    res.docs.forEach(async cur => {
+                            let userDt = JSON.parse(getCookie('userData'))
+                            let userDt_db=cur.data()
+                            if(userDt_db.id===userDt.id){
+                                userDt_db.orders.forEach(cux=>{
+                                    cux.arr.forEach(itm=>{
+                                        let itm_nm=window.location.search.split('=')[1]
+                                        if(itm.name.split(' ').join('').toLowerCase()===itm_nm.split(' ').join('').toLowerCase()){
+                                            found_one=true
+                                        }
+                                    })
+                                })
 
+                            }
+
+                    })
+                    if(found_one){
+                        // allowed for review
+                    }
+
+                }
+                db_shs()
+            }
             if (inc_btn !== null) {
                 let val = parseFloat(inc_btn.parentElement.childNodes[3].value)
                 let nm = inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText

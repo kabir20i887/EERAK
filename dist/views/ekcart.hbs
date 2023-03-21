@@ -59,14 +59,14 @@
             display: flex;
             justify-content: center;
         }
-.ct_popup_45hj a{
+.ct_popup_main_sucess a{
     font-size: 14px;
     display: block;
     color: black;
     margin: -6px 10px;
     width: max-content;text-decoration: revert;
 }
-.ct_popup_45hj a ion-icon{
+.ct_popup_main_sucess a ion-icon{
     transform: translate(4px, 3px);
 }
 .spinner-square > .square {
@@ -75,7 +75,7 @@
     margin: auto auto;
     border-radius: 4px;
 }
-.ct_popup_45hj .remove_btn {
+.ct_popup_main_sucess .remove_btn {
     position: absolute;
     color: black;
     font-size: 30px;
@@ -83,6 +83,13 @@
     right: 0;
     top: -41px;
 }
+.ct_show_all_cpn{    
+    padding: 2px 14px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'roboto';
+    color: black;
+    text-decoration: underline;}
 .square-1 {
     animation: square-anim 1200ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
 }
@@ -846,7 +853,6 @@ ion-icon{pointer-events:none;}
             width: 100%;
             height: 100vh;
             display: none;
-            opacity: 0;
             z-index: 99999999;
             position: fixed;
             transition: all 1s ease;
@@ -994,7 +1000,7 @@ ion-icon{pointer-events:none;}
             display: none;
             justify-content: center;
             align-items: center;
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100vh;
             overflow: hidden;
@@ -1197,7 +1203,7 @@ ion-icon{pointer-events:none;}
             display: flex;
             justify-content: center;
         }
-.ct_popup_45hj,
+.ct_popup_main_sucess,
 .ct_offer_saved_popup {
     border-radius: 20px;
     width: 500px;
@@ -1211,46 +1217,46 @@ ion-icon{pointer-events:none;}
     padding: 11px 36px;
     box-shadow: 0 10px 8px #0000004a;
 }
-.ct_popup_45hj{
+.ct_popup_main_sucess{
         display: none;
     margin-right: auto;
     margin-left: auto;
     width: 90vw;
     padding-top: 0;
 }
-.ct_popup_45hj .ct_inner_m h4{    padding: 14px;
+.ct_popup_main_sucess .ct_inner_m h4{    padding: 14px;
     padding-left: 4px;
     width: 79%;
     margin-top: 18px;
-    padding-bottom: 22px;
+    padding-bottom: 22px;    word-break: break-word;
     margin: 0;
     margin-top: 9px;
     color: black;    font-size: 17px;
     font-family: 'poppins';
 }
-.ct_popup_45hj p{
+.ct_popup_main_sucess p{
         font-size: 13px;
     width: 82%;
     color: black;
     margin: 10px 20px;
 }
-.ct_popup_45hj.cpn_appl .ct_inner_m ion-icon{
+.ct_popup_main_sucess.cpn_appl .ct_inner_m ion-icon{
     color: #ffffff;
 }
-.ct_popup_45hj.cpn_appl .ct_inner_m {
+.ct_popup_main_sucess.cpn_appl .ct_inner_m {
     background-image: linear-gradient(to left, #c574f2, #ff7cdc);
 }
-.ct_popup_45hj.cpn_appl .ct_inner_m h4{
+.ct_popup_main_sucess.cpn_appl .ct_inner_m h4{
     color: #ffffff;
 }
-.ct_popup_45hj.cpn_appl a{display: none;}
-.ct_popup_45hj .ct_inner_m ion-icon{
+.ct_popup_main_sucess.cpn_appl a{display: none;}
+.ct_popup_main_sucess .ct_inner_m ion-icon{
     font-size: 54px;
     color: #0c8b86;
     margin: 8px;
 }
 
-.ct_popup_45hj .ct_inner_m{
+.ct_popup_main_sucess .ct_inner_m{
         background-image: linear-gradient(to left, #74F2CE, #7CFFCB);
     border-radius: 10px;
     display: flex;
@@ -1452,7 +1458,7 @@ ion-icon{pointer-events:none;}
 
         .sucess_order,
         .ct_info_offfer_saved {
-            background: linear-gradient(20deg, #fff0f4, #ff008dad);
+    background-image: linear-gradient(to left, #c574f2, #ff7cdc);
             padding: 17px 20px;
             width: 98%;
             display: none;
@@ -1461,7 +1467,7 @@ ion-icon{pointer-events:none;}
         .sucess_order h4,
         .ct_info_offfer_saved h4 {
             font-family: 'roboto';
-            color: #970d8d;
+            color: #ffffff;
             font-size: 19px;
         }
 
@@ -1476,7 +1482,7 @@ ion-icon{pointer-events:none;}
         .sucess_order p,
         .ct_info_offfer_saved P {
             font-family: 'roboto';
-            color: #970d8d;
+            color: #ffffff;
             margin-top: 5px;
             font-size: 14px;
         }
@@ -2791,7 +2797,7 @@ color: rgb(16 178 0);
             text-transform: capitalize;
             padding: 0 40px 6px 0px;
             margin-left: 8px;
-            margin-top: 12px;
+            margin-top: 0;
             margin-bottom: 0;
             font-weight: 700;
             font-family: 'poppins';
@@ -2982,8 +2988,7 @@ color: rgb(16 178 0);
     box-shadow: none;
     border-radius: 10px;
     width: 100%;
-    /* filter: drop-shadow(-1px 7px 2px #00000042) contrast(1.1); */
-}
+filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);}
         .ct_bx_inner_food_groc {
             margin-top: 0;
             padding: 8px;
@@ -5770,7 +5775,7 @@ color: rgb(16 178 0);
 
         .ct_info_items span {
             font-size: 12px;
-            display: block;
+            display: none;
             font-family: 'open sans';
             margin: 1px 0 6px 2px;
         }
@@ -5897,30 +5902,33 @@ color: rgb(16 178 0);
             background: #555;
         }
 
-        .popup_info p {
-            font-size: 12px;
-            color: white;
-            font-family: 'Montserrat';
-            margin: 8px 23px;
-        }
-.popup_info.create_account_popup  p {
-    margin: 8px 41px 0 11px;
+.popup_info p {
+    font-size: 12px;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 600;
+    margin: 8px 23px;
 }
-        .popup_info {
-            display: flex;
-            background-color: #280ade;
-            margin-left: 12px;
-            border-radius: 20px;
-            padding: 10px 15px;
-            position: fixed;
-            z-index: 999999999999999;
-            bottom: 10px;
-            width: max-content;
-            height: 45px;
-            transition: 0.8s ease-in-out;
-            top: 20px;
-            right: -1000px;
-        }
+.popup_info.create_account_popup p {
+    margin: 4px 41px 0 11px;
+}
+.popup_info {
+    display: flex;
+    margin-left: 12px;
+    border-radius: 8px;
+    padding: 10px 15px;
+    position: fixed;
+    z-index: 999999999999999;
+    bottom: 10px;
+    width: max-content;
+    height: max-content;
+    transition: 0.8s ease-in-out;
+    top: 20px;
+    right: -800px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
+    padding: 14px 16px;
+    background-color: rgb(25, 86, 218);
+}
             .popup_info.active {
                 right: 3px;
             }
@@ -5972,7 +5980,7 @@ color: rgb(16 178 0);
 margin: 6px 42px 0 13px;            font-family: 'Open sans';
         }
 
-        .popup_info.error_info_popup span {
+        .popup_info span {
             font-size: 11px;
             color: white;
             margin: -3px 15px;
@@ -5981,13 +5989,13 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
         }
 
         .popup_info.error_info_popup {
-            height: 60px;
+            height: max-content;
             background-color: #474b49;
 
         }
 
         .popup_info.error_info_popup.er_ald_acc {
-            height: 60px;
+            height: max-content;
             background-color: #803af5;
 
         }
@@ -6320,8 +6328,9 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
 
         .ct_total-amount {
             width: auto;
-            padding-right: 20px;
+            padding-right: 10px;
             display: none;
+            padding-left: 0;
             text-decoration: none;
 
         }
@@ -6653,7 +6662,7 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             display: none;
         }
 
-        . .recomended_cart h2 {
+        .recomended_cart h2 {
             font-size: 18px;
             margin: 15px 0 0px 85px;
         }
@@ -7621,7 +7630,8 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             .ct_bx_qt_foods {
                 width: 50%;
             }
-
+.ct_bx_item_add:active,
+.ct_bx_item_rem:active{background-color: #d1cfcf;}
             .ct_bx_qt_foods div ion-icon,
             .ct_bx_qty_inner ion-icon {
                 font-size: 17px;
@@ -16690,24 +16700,29 @@ padding: 20px 31px;            }
                 right: 7px;
             }
 
-            .popup_info {
-                width: 98vw;
-                height: 48px;
-                top: initial;
-                bottom: 8px;
-            }
+.popup_info {
+    width: 98vw;
+    height: max-content;
+    top: 59px;
+    bottom: inherit;
+}
+.popup_info.place_order{
+    background-color: rgb(16 178 94);
+}
 
             .popup_info p {
                 font-size: 11px;
                 margin: 9px 0 0 18px;
             }
-
-            .ctbx_info_popups .lds-ring {
-                width: 32px;
-                height: 32px;
-                margin-top: 0;
-            }
-
+            .popup_info.cpn_rem_info p {
+    font-size: 13px;
+    margin: 4px 0 6px 14px;
+}
+.ctbx_info_popups .lds-ring {
+    width: 32px;
+    height: 32px;
+    margin-top: -5px;
+}
             .ct_bx_footer {
                 padding-bottom: 60px;
             }
@@ -17192,15 +17207,19 @@ padding: 20px 31px;            }
             .ct_bx_qty p {
                 margin-left: 0;
             }
-            .ct_popup_45hj.cpn_appl {
+            .ct_popup_main_sucess.cpn_appl {
     height: auto;
     padding: 0;
     padding-bottom: 9px;
     margin-right: auto;
     margin-left: auto;
-    width: 67%;
+    width: 300px
+    
 }
-            .ct_popup_45hj{
+.ct_bx_fooditm h4 {
+    font-size: 14px;
+}
+            .ct_popup_main_sucess{
 height: auto;
     padding: 0;
     padding-bottom: 38px;
@@ -17245,7 +17264,7 @@ height: auto;
     margin-left: 39px;
 }
             .popup_info p {
-                width: 80%;
+                width: 94%;
             }
 
             .popup_info.sucess_account {
@@ -17362,10 +17381,9 @@ height: auto;
             .ct_bx_go_back p {
                 font-size: 12px;
             }
-
-            .ek_cart {
-                margin-top: 53px;
-            }
+.ek_cart {
+    margin-top: 23px;
+}
 
             .title_h1_box {
                 display: none;
@@ -18125,7 +18143,13 @@ height: auto;
             .ct_inner_nav {
                 justify-content: space-around;
             }
-
+            .ct_popup_main_sucess .ct_inner_m h4 {
+    width: 80%;
+    margin-top: 15px;
+    font-size: 13px;
+}
+.popup_info {
+    width: 95vw;}
             .to_pay_cahge span b {
                 font-size: 12px;
                 margin: 15px 0 3px 0px;
@@ -18395,6 +18419,10 @@ height: auto;
 .ct_search_cpns input {
     font-size: 10px;
     width: 52%;
+}
+         .ct_popup_main_sucess.cpn_appl {
+    width: 84vw
+    
 }
             .ct_bx_inputs_otp input {
                 padding: 8px 14px 6px 13px;
@@ -19183,7 +19211,7 @@ height: auto;
     </div>
     <div class="ct_outer_flex">
 
-    <div class="ct_popup_45hj">
+    <div class="ct_popup_main_sucess">
             <div class="remove_btn">
                      <ion-icon name="close-outline"></ion-icon>
                  </div>
@@ -19198,7 +19226,7 @@ height: auto;
     </div>
 
     {{!-- <div class="ct_outer_flex">
-    <div class="ct_popup_45hj cpn_appl">
+    <div class="ct_popup_main_sucess cpn_appl">
                     <div class="remove_btn">
                      <ion-icon name="close-outline"></ion-icon>
                  </div>
@@ -19591,9 +19619,7 @@ height: auto;
                 <div></div>
             </div>
             <p>Placing order...</p>
-            <div class="inner_x">
-            <p>Placing order...</p>
-            </div>
+
             <div class="ct_rem_btn">
                 <ion-icon name="close-outline"></ion-icon>
             </div>
@@ -19627,6 +19653,17 @@ height: auto;
                 <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated"
                     aria-label="checkmark circle sharp"></ion-icon>
                 <p>Your account has been successfully created </p>
+            </div>
+            <div class="ct_rem_btn">
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+                <div class="popup_info cpn_rem_info">
+                            <ion-icon name="alert-circle-sharp"></ion-icon>
+
+            <div class="inner_x">
+
+                <p>Coupon Removed</p>
             </div>
             <div class="ct_rem_btn">
                 <ion-icon name="close-outline"></ion-icon>
@@ -21425,7 +21462,7 @@ height: auto;
                                             </a>
                                         </div>
                                         </div>`
-                    //document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+                    document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
 
                 })
             }
@@ -21438,129 +21475,131 @@ height: auto;
                 if ((recc_sauce.length + recc_essen.length) <= 4) {
                     document.querySelector('.recomended_cart').style.display = 'none'
                 }
-            }
-            let pricemain = ``
-            if (recc_essen != '') {
-                recc_essen.forEach(cux => {
-                    let dt = cux.data()
-                    let itm = dt.item
-                    let offHtml = ``
-                    let price = itm.price
-                    let offer = itm.offer
+    }
+    // For groceries reccom
 
-                    let emptyArr = itm.units.map(cur11 => {
-                        let price_li=cur11.price.toLocaleString()
-                                            if (itm.offer !== null) {
-                        offHtml = `<div class="ct_offer_box_cook2">
-         <span>${itm.offer}%</span>
-         <p>off</p>
-     </div>`
+   //     let pricemain = ``
+   //     if (recc_essen != '') {
+   //         recc_essen.forEach(cux => {
+   //             let dt = cux.data()
+   //             let itm = dt.item
+   //             let offHtml = ``
+   //             let price = itm.price
+   //             let offer = itm.offer
 
-                        price_li = cur11.price * 100 / (100 - offer)
-                        price_li = Math.round(price_li)
-                        price_li = price_li.toLocaleString()
-                    }
-                        let html = `<li>
-                <p>${cur11.name}</p>
-                <span>₹ ${price_li}</span>
-            </li>`
-                        return html
-                    })
-                    if (itm.offer !== null) {
-                        offHtml = `<div class="ct_offer_box_cook2">
-         <span>${itm.offer}%</span>
-         <p>off</p>
-     </div>`
-                        offer = parseFloat(offer)
-                        price = parseFloat(price)
-                        pricemain = price
-                        price = price * 100 / (100 - offer)
-                        price = Math.round(price)
-                        price = price.toLocaleString()
-                        pricemain = pricemain.toLocaleString()
-                    }
+   //             let emptyArr = itm.units.map(cur11 => {
+   //                 let price_li=cur11.price.toLocaleString()
+   //                                     if (itm.offer !== null) {
+   //                 offHtml = `<div class="ct_offer_box_cook2">
+   //  <span>${itm.offer}%</span>
+   //  <p>off</p>
+   //div>`
 
-
-                    let price_box = `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
-                        <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
-
-                    if (itm.offer === null) {
-
-                        price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
-
-                    }
-                    let itm_qt = 1
+   //                 price_li = cur11.price * 100 / (100 - offer)
+   //                 price_li = Math.round(price_li)
+   //                 price_li = price_li.toLocaleString()
+   //             }
+   //                 let html = `<li>
+   //         <p>${cur11.name}</p>
+   //         <span>₹ ${price_li}</span>
+   //     </li>`
+   //                 return html
+   //             })
+   //             if (itm.offer !== null) {
+   //                 offHtml = `<div class="ct_offer_box_cook2">
+   //  <span>${itm.offer}%</span>
+   //  <p>off</p>
+   //div>`
+   //                 offer = parseFloat(offer)
+   //                 price = parseFloat(price)
+   //                 pricemain = price
+   //                 price = price * 100 / (100 - offer)
+   //                 price = Math.round(price)
+   //                 price = price.toLocaleString()
+   //                 pricemain = pricemain.toLocaleString()
+   //             }
 
 
-                    itm_added += 1
-                    let html1 = `<div class="product">
-                            <div class="itm_food_list_ek added_itm_ek_fd">
+   //             let price_box = `<del class="pricenooff">₹ ${price.toLocaleString()}</del>
+   //                 <p class="price_food for_oly_ekfd_price"><span>₹ ${pricemain.toLocaleString()} </span> </p>`
 
-                                <div class="ct_inner_fd_dt_grid">
-                                        ${offHtml}
+   //             if (itm.offer === null) {
 
-                                    <div class="ct_img_res_main">
-                                        <img alt="Mustard oil , Engine image" src="${itm.img}">
+   //                 price_box = `<p class="price_food for_oly_ekfd_price"><span>₹ ${price.toLocaleString()} </span> </p>`
 
-                                    </div>
-                                    <div class="ct_inner_fd1_dt_grid">
-
-                                        <div class="ct_dt_tm_food_res">
-                                            <h4>${itm.name}</h4>
-                                        </div>
-                                        <div class="ct_unit_box_selector">
-                                            <div class="ct_bx_selection">
-                                                <div class="ct_pr_bx_unit">
-                                                <p> ${itm.units[0].name}</p>
-                                                <span>₹ ${price}</span>
-                                                </div>
-
-                                                <div class="ct_popup_unit_btn">
-                                                    <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
-                                                </div>
-
-                                            </div>
-                                            <div class="ct_other_units active">
-                                                <ul>
-                                                ${emptyArr.join('')}
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                            ${price_box}
-                                        </div>
-
-                                        
-                             <div class="ct_addbtns essen">
-                            <p>Add to cart</p>
-                            </div>
-                            <div class="ct_qty_box">
-                                            <div class="btn_qtys dec_btn">
-                                                <span class="material-symbols-outlined">
-                                                    remove
-                                                </span>
-                                            </div>
-                                            <input type="text" value="1" readonly="">
-                                            <div class="btn_qtys inc_btn">
-                                                <span class="material-symbols-outlined">
-                                                    add
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                    </div>
+   //             }
+   //             let itm_qt = 1
 
 
-                                </div>
-                            </div>
-                        </div>`
+   //             itm_added += 1
+   //             let html1 = `<div class="product">
+   //                     <div class="itm_food_list_ek added_itm_ek_fd">
+
+   //                         <div class="ct_inner_fd_dt_grid">
+   //                                 ${offHtml}
+
+   //                             <div class="ct_img_res_main">
+   //                                 <img alt="Mustard oil , Engine image" src="${itm.img}">
+
+   //                             </div>
+   //                             <div class="ct_inner_fd1_dt_grid">
+
+   //                                 <div class="ct_dt_tm_food_res">
+   //                                     <h4>${itm.name}</h4>
+   //                                 </div>
+   //                                 <div class="ct_unit_box_selector">
+   //                                     <div class="ct_bx_selection">
+   //                                         <div class="ct_pr_bx_unit">
+   //                                         <p> ${itm.units[0].name}</p>
+   //                                         <span>₹ ${price}</span>
+   //                                         </div>
+
+   //                                         <div class="ct_popup_unit_btn">
+   //                                             <ion-icon name="caret-forward-outline" role="img" class="md hydrated" aria-label="caret forward outline"></ion-icon>
+   //                                         </div>
+
+   //                                     </div>
+   //                                     <div class="ct_other_units active">
+   //                                         <ul>
+   //                                         ${emptyArr.join('')}
+
+   //                                         </ul>
+   //                                     </div>
+   //                                 </div>
+   //                                 <div class="ct_bx_priceandoff" style="margin-top:10px">
+   //                                     ${price_box}
+   //                                 </div>
+
+   //                                 
+   //                      <div class="ct_addbtns essen">
+   //                     <p>Add to cart</p>
+   //                     </div>
+   //                     <div class="ct_qty_box">
+   //                                     <div class="btn_qtys dec_btn">
+   //                                         <span class="material-symbols-outlined">
+   //                                             remove
+   //                                         </span>
+   //                                     </div>
+   //                                     <input type="text" value="1" readonly="">
+   //                                     <div class="btn_qtys inc_btn">
+   //                                         <span class="material-symbols-outlined">
+   //                                             add
+   //                                         </span>
+   //                                     </div>
+   //                                 </div>
+
+   //                             </div>
 
 
-                  //  document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+   //                         </div>
+   //                     </div>
+   //                 </div>`
 
-                })
-            }
+
+   //           //  document.querySelector('.crousel_items').insertAdjacentHTML('beforeend', html1)
+
+   //         })
+   //     }
 
 
             // console.log(recc_sauce)
@@ -21675,8 +21714,7 @@ height: auto;
 
             document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'none'
             document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
-
-
+let found_cpn=false
             res.docs.forEach(async cur => {
 
                 let data = cur.data()
@@ -21765,7 +21803,6 @@ height: auto;
                             })
                         }
                     } else {
-                        onclose.log('ldkfdjfohsdhshddddddddddddddddddjjj')
                         document.querySelector('.ct_search_cpns').style.filter = `grayscale(1.4)`
                         document.querySelector('.ct_search_cpns').style.pointerEvents = 'none'
 
@@ -21853,6 +21890,7 @@ height: auto;
                 if (secret !== ''){
                     if(data.secret!==null){
                             if(secret.replace(/[ ,]+/g, "").toLowerCase()===data.secret.replace(/[ ,]+/g, "").toLowerCase()){
+                                found_cpn=true
                                 matched_secret=true
                                 let not_av_html=`notavailable`
                                 let btn_acc=`<button class="locked" style="display:block;margin-bottom: 12px;"><ion-icon name="lock-closed" role="img" class="md hydrated" aria-label="lock closed"></ion-icon> not available</button>`
@@ -22014,7 +22052,15 @@ ${desc_htm_cpn.join('')}
                     }
                 }
 
+
             })
+            if(found_cpn){
+                            let htmlMK=`<div class="ct_show_all_cpn">
+            <p>Show All</p>
+        </div>`
+                                document.querySelector('.ct_coupons_all .ct_inner_itms').insertAdjacentHTML('beforeend', htmlMK)
+            }
+
 
         }
 
@@ -22250,50 +22296,7 @@ ${desc_htm_cpn.join('')}
             }
 
         }
-        var waypoint = new Waypoint({
-            element: document.querySelector('.bx_evt_cart_item'),
-            handler: function (direction) {
-                let w = document.querySelector('. .mai_ul').getBoundingClientRect().width
-                if (direction === 'down') {
-
-                    // if (window.screen.width <= 470) {
-                    //     document.querySelectorAll('.ct_bx_about_mobile2').forEach(cur1 => {
-                    //         cur1.style.width = '60px'
-                    //         cur1.style.padding = '0 9px'
-
-                    //     })
-                    //     document.querySelectorAll('.ct_field_small_size').forEach(cur1 => {
-                    //         cur1.style.margin = '-5px 0px 0px -3px'
-
-                    //     })
-                    // }
-                    // if (document.querySelector('.for_seravh_in_nav.active') !== null) {
-                    //     document.querySelector('.ct_field_small_size_bx').style.display = 'none'
-                    //     document.querySelector('.mai_ul').style.display = 'none'
-                    //     document.querySelector('.ct_inner_nav').style.padding = '13px 0px 10px 0px'
-                    // }
-                    document.querySelector('.for_nav_main').style.top = '0'
-                    document.querySelector('.for_nav_main').style.position = 'fixed'
-                    document.querySelector('.for_mobile_search').style.position = 'fixed'
-
-                } else if (direction === 'up') {
-
-                    // if (window.screen.width >= 1200) {
-                    //     // document.querySelector('.ct_bx_categories_essen').style.position= 'absolute'
-                    //
-                    // }
-                    // if (window.screen.width <= 740) {
-                    //
-                    //     document.querySelector('.for_nav_main').style.height = '96px'
-                    // }
-                    document.querySelector('.for_nav_main').style.position = 'absolute'
-                    document.querySelector('.for_nav_main').style.top = '0'
-                    document.querySelector('.for_mobile_search').style.position = 'absolute'
-
-                }
-
-            }
-        })
+       
         document.cookie = "notclickedtocart" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
         document.querySelector('.phone_number input').addEventListener("keydown", function (e) {
             var a = e.which;
@@ -22615,6 +22618,7 @@ ${desc_htm_cpn.join('')}
 
                 tot_pr_itm2 = tot2
             }
+            console.log(cli_bx, tot2,'-------------------------------------')
             console.log(tot2, tot_pr_itm, tot_pr_itm2)
             if (getCookie('cpns_appl') !== '') {
                 let objCpns = JSON.parse(getCookie('cpns_appl'))
@@ -22659,7 +22663,6 @@ ${desc_htm_cpn.join('')}
                         }
 
                         if (sauce.length === 0) {
-
                             document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
                             document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
                             document.querySelector('.ct_info_offfer_saved').style.display = 'none'
@@ -22701,7 +22704,7 @@ ${desc_htm_cpn.join('')}
                     document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                     document.querySelector('.disocunted.block_1_charge').style.display = 'none'
                     document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
-
+                    document.querySelector('.popup_info.cpn_rem_info').style.right='5px'
                     document.querySelector('.disocunted.block_1_charge span').innerText = 0
                 }
 
@@ -22753,13 +22756,7 @@ cu.innerText='order now'
         }
         load_basic_dt()
 function remove_cpns_panel(){
-                   document.querySelector('.ct_bx_layer').classList.remove('animate')
-                document.querySelector('.ct_bx_layer').classList.add('animate2')
-
-                setTimeout(function () {
-                    document.querySelector('.ct_bx_layer').style.opacity = '0'
                     document.querySelector('.ct_bx_layer').style.display = 'none'
-                }, 780)
                 document.querySelector('.container_coupons_Refer').style.right = '-800px'
 }
         document.querySelector('html').addEventListener('click', (e) => {
@@ -22767,6 +22764,7 @@ function remove_cpns_panel(){
             let inpX = e.target.closest('.nick_name.area input')
             let acont_account = e.target.closest('.account_cont')
             let btn_acc_main = e.target.closest('.create_account')
+            let all_cpn_btn=e.target.closest('.ct_show_all_cpn')
             let resend_otp = e.target.closest('.resend_otp')
             let loginBtn = e.target.closest('.login_verify')
             let login_main_btn = e.target.closest('.login_account')
@@ -22809,6 +22807,14 @@ if(saved_popup===null){
                 cu11.classList.remove('active')
                 cu11.style.display = 'none'
             })
+            if(all_cpn_btn!==null){
+            document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'flex'
+                document.querySelector('.ct_inner_itms').innerHTML=''
+                document.querySelector('.success_code').style.display='none'
+                document.querySelector('.ct_search_cpns input').value=''
+                addCpns('')
+
+            }
             if (unit_select !== null) {
                 document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                     cu11.classList.remove('active')
@@ -22960,8 +22966,7 @@ if(offer!==null){
                                     res.docs.forEach(cur => {
                                         let dt = cur.data()
                                         let itm = dt.item
-
-                                    if (itm.name.replace(/[ ,]+/g, "") === nm.replace(/[ ,]+/g, "")) {
+                                    if (itm.name.replace(/[ ,]+/g, "").toLowerCase() === nm.replace(/[ ,]+/g, "").toLowerCase()) {
                                             let nm_un = cu11.slt_nm
                                             itm.qty.forEach(elem => {
                                                 console.log(elem.name , nm_un,elem.name === nm_un,' -------------kahss')
@@ -23254,8 +23259,14 @@ if(offer!==null){
                         });
                                     order_btn.style.opacity = '1'
                                     order_btn.style.pointerEvents = 'auto'
-                                    document.querySelector('.sucess_order').style.display = 'block'
-                                    document.querySelector('.sucess_order p').innerText = `Hello ${userDt.name}, your order will be delivered within 24 hour.`
+                                    document.querySelector('.ct_popup_main_sucess').classList.remove('cpn_appl')
+                                    document.querySelector('.ct_popup_main_sucess').style.display = 'block'
+
+                                    document.querySelector('.ct_popup_main_sucess p').innerText = `Hey ${userDt.name.split(' ')[0]}, we have successfully recived your order.Your order will be delivered with in 24 hours.`
+document.querySelector('.confetti').style.display='block'
+                                    document.querySelector('.ct_popup_main_sucess a').style.display='block'
+                                    document.querySelector('.ct_bx_ov_lay_x').style.display = 'block'
+                                    document.querySelector('.ct_popup_main_sucess h4').innerText = `Thankyou! Order successfully placed`
                                     document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                                     setTimeout(function () {
                                         document.querySelector('.ct_info_offfer_saved').style.display = 'none'
@@ -23408,6 +23419,35 @@ if(offer!==null){
                         tot2 += pr
 
                     })
+                                        let sauce = JSON.parse(localStorage.getItem('sauce'))
+                    let groc = JSON.parse(localStorage.getItem('essentials'))
+                       if (qty_dec.parentElement.parentElement.parentElement.classList.value.includes('sauce_itm')) {
+                        let nm = qty_dec.parentElement.parentElement.childNodes[1].innerText
+                        sauce.forEach(cu11 => {
+                            nm = nm.replace(/[ ,]+/g, "").toLowerCase()
+                            let nm2 = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
+                            if (nm === nm2) {
+                                cu11.qty = val
+
+
+                            }
+                        })
+                        localStorage.setItem('sauce', JSON.stringify(sauce))
+
+                    } else {
+                        let nm = qty_dec.parentElement.parentElement.childNodes[1].innerText
+                        groc.forEach(cu11 => {
+                            nm = nm.replace(/[ ,]+/g, "").toLowerCase()
+                            let nm2 = cu11.name.replace(/[ ,]+/g, "").toLowerCase()
+                            if (nm === nm2) {
+                                cu11.qt = val
+
+
+                            }
+                        })
+                        localStorage.setItem('essentials', JSON.stringify(groc))
+
+                    }
                     document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + tot.toLocaleString()
                     addAmount()
                     checkandsave(cls_li, tot2)
@@ -23482,9 +23522,7 @@ if(offer!==null){
                         localStorage.setItem('essentials', JSON.stringify(groc))
 
                     }
-                    console.log(tot2, '-------------')
                     addAmount()
-                    console.log(cls_li, tot2)
                     checkandsave(cls_li, tot2)
                 }
 
@@ -23587,7 +23625,8 @@ if(offer!==null){
                 let userDt = JSON.parse(getCookie('userData'))
                 let name = apply_cpns.parentElement.parentElement.childNodes[1].innerText.split(':')[1].split(' ').join('')
                 async function chcekCpns() {
-                    let dbCollection = db.collection("coupons")
+                    try{
+                        let dbCollection = db.collection("coupons")
                     let res = await dbCollection.orderBy('grp').get()
                     res.docs.forEach(async cur => {
                         let data = cur.data()
@@ -23635,7 +23674,13 @@ remove_cpns_panel()
 
                             document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'block'
                             document.querySelector('.ct_apply_coupons .ct_inner p').innerText = `COUPON:${name} applied`
-                            document.querySelector('.ct_info_offfer_saved').style.display = 'block'
+                            document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+                                        document.querySelector('.ct_popup_main_sucess').classList.add('cpn_appl')
+                                        document.querySelector('.ct_popup_main_sucess a').style.display='none'
+                                        document.querySelector('.ct_popup_main_sucess').style.display = 'block'
+document.querySelector('.confetti').style.display='block'
+                                        document.querySelector('.ct_bx_ov_lay_x').style.display = 'block'
+
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                             document.querySelector('.ct_info_offfer_saved p').innerText = `With COUPON:${name}`
 
@@ -23656,11 +23701,15 @@ remove_cpns_panel()
                                         document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr
                                     }
 
+                                        document.querySelector('.ct_popup_main_sucess h4').innerText=`COUPON:${name} Applied`
 
                                     if (data.for === 'groc') {
                                         document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on essentials.`
+                                        document.querySelector('.ct_popup_main_sucess p').innerText=`Hurrah! You saved ₹ ${dicounted_pr} on essentials.`
+
                                     } else {
                                         document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
+                                        document.querySelector('.ct_popup_main_sucess p').innerText=`Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
 
                                     }
                                 } else {
@@ -23671,18 +23720,18 @@ remove_cpns_panel()
                             }
 
                         }
-                    })
+                    }) 
+                    }catch(err){
+                        console.log(err)
+alert(err)
+                    }
+                   
                 }
                 chcekCpns()
             }
             if (coupons_box !== null) {
                 //container_coupons_Refer_outer
                 document.querySelector('.ct_bx_layer').style.display = 'block'
-                document.querySelector('.ct_bx_layer').classList.remove('animate2')
-                document.querySelector('.ct_bx_layer').classList.add('animate')
-                setTimeout(function () {
-                    document.querySelector('.ct_bx_layer').style.opacity = '1'
-                }, 780)
                 document.querySelector('.container_coupons_Refer').style.right = '0'
                 addCpns('')
             }
@@ -24494,7 +24543,8 @@ document.querySelector('.ct_search_cpns input').value=''
             let addBsitm = e.target.closest('.add_base_itm')
             let info_cpns = e.target.closest('.ct_info_btn')
             let check_code_cpns = e.target.closest('.ct_search_cpns button')
-
+let popup_succ=  e.target.closest('.ct_popup_main_sucess')
+let rem_pop_succ=  e.target.closest('.remove_btn')
             let bacck_btn = e.target.closest('.ct_back_btn');
             let forward_btn = e.target.closest('.ct_forward_btn');
 
@@ -24507,7 +24557,20 @@ document.querySelector('.ct_search_cpns input').value=''
                 movePer = 50.36;
                 maxMove = 504;
             }
+
             let addItem = e.target.closest('.ct_addbtns');
+
+if(!popup_succ || rem_pop_succ){
+document.querySelector('.ct_popup_main_sucess').style.display='none'
+document.querySelector('.ct_bx_ov_lay_x').style.display='none'
+document.querySelector('.confetti').style.display='none'
+
+if(document.querySelector('.ct_popup_main_sucess').classList.value.split(' ').includes('cpn_appl')){
+document.querySelector('.ct_info_offfer_saved').style.display='block'
+
+}
+}
+
             if (addItem !== null) {
                 let typ_fd = addItem.classList.value.split(' ')[1]
                 console.log(addItem.parentElement.childNodes)
@@ -24606,12 +24669,11 @@ tot_pr_itm2=0
                 document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
 
                 document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'flex'
-
                 let code = check_code_cpns.parentElement.childNodes[1].value
                 async function cpns() {
                     let dbCollection = db.collection("coupons")
                     let res = await dbCollection.orderBy('grp').get()
-
+                    let found=false
                     res.docs.forEach(async cur => {
                         let dt = cur.data()
                         if (dt.secret !== null) {
@@ -24619,19 +24681,20 @@ tot_pr_itm2=0
                             if (dt.secret === code) {
                                 // show the coupon 
                                 // add to allowed cpns
+                                found=true
                                 document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'none'
                                 addCpns(code.toLowerCase())
 
-                            } else {
-                                document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'none'
+                            } 
+                        }
+                    })
+                    if(!found){
+                                                        document.querySelector('.ct_search_cpns_outer .success_code').style.display = 'none'
 
                                 document.querySelector('.ct_search_cpns_outer .err_code').style.display = 'block'
                                 document.querySelector('.ct_load_items').style.display = 'none'
                                 addCpns('')
-                                // invalid code
-                            }
-                        }
-                    })
+                    }
                 }
                 cpns()
 
@@ -24639,8 +24702,6 @@ tot_pr_itm2=0
 
         })
         let btns = document.querySelectorAll('.ct_bx_buttons_actions')
-
-
         document.querySelector('html').addEventListener('click', (e) => {
             let bx2 = e.target.closest('.ct_slide_menu_acc')
 
