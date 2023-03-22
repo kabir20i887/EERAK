@@ -72,11 +72,11 @@
         /*! CSS Used from: Embedded */
         .ct_banner {
             padding-bottom: 40px;
-            background:#fffff4;
+            background: #fffff4;
         }
 
         .ct_banner .sub_head {
-            font-size:12px;
+            font-size: 12px;
             color: #2f2e2e;
             font-family: 'roboto';
             width: 76%;
@@ -88,28 +88,41 @@
         .ct_banner .text-gray-800 {
             color: black;
         }
-    .ct_flex_banner{display: flex;justify-content: center;}
+
+        .ct_flex_banner {
+            display: flex;
+            justify-content: center;
+        }
 
         .ct_banner .text-gray-500 {
             color: rgb(162 162 162);
             margin-top: 2px;
             font-size: 12px;
         }
+.ct_rate_popup span.err {
+    color: red;
+    font-size: 10px;
+    display: none;
+    margin-top: -5px;
+    margin-bottom: 11px;
+    font-family: 'roboto';
+}
 
         .ct_banner .ct_flex {
             display: flex;
             justify-content: center;
         }
-.ct_banner h2 {
-    font-family: 'Moret';
-    font-weight: 600;
-    color: #000000;
-    margin-top: -10px;
-    font-size: 32px;
-    line-height: 32px;
-    width:76%;
-    word-spacing: 1px;
-}
+
+        .ct_banner h2 {
+            font-family: 'Moret';
+            font-weight: 600;
+            color: #000000;
+            margin-top: -10px;
+            font-size: 32px;
+            line-height: 32px;
+            width: 76%;
+            word-spacing: 1px;
+        }
 
         .cta-button {
             background-color: #ff852b;
@@ -133,16 +146,167 @@
             top: 7px;
             left: 10px;
         }
-.ct_items_img {
-    width: 64%;
-    margin-top: 59px;
+
+        .ct_load_items {
+            padding: 55px 0 66px 0;
+            background: white;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 0 14px #0000000f;
+        }
+        .ct_load_review_verf .ct_load_items{
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+            box-shadow: none
+        }
+
+        .ct_load_items .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            margin: 8px;
+            border: 2px solid rgb(34, 34, 34);
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: rgb(87, 87, 87) transparent transparent transparent;
+        }
+
+        .ct_load_items .lds-ring {
+            position: relative;
+        }
+
+        .ct_load_items {
+            padding: 55px 0 66px 0;
+        }
+
+        .place_order_btn_bottom .ct_load_items {
+            padding: 15px 0 66px 0;
+        }
+
+        .place_order_btn_bottom .ct_load_items {
+            padding: 15px 0 66px 0;
+            width: 79px;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        @media print {
+
+            *,
+            ::after,
+            ::before {
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 25px;
+            height: 25px;
+        }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            margin: 8px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        /*! CSS Used keyframes */
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+.ct_load_review_verf {
+    background-color: #ffffff96;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999999;
+    position: fixed;
+    display: none;
 }
-.ratings_itm_info{display: flex;}
-.ratings_itm_info p {
-    color: red;
-    font-size: 14px;
-    margin: 5px 9px;
-}
+        .ct_items_img {
+            width: 64%;
+            margin-top: 59px;
+        }
+
+        .ratings_itm_info {
+            display: flex;
+        }
+
+        .ratings_itm_info p {
+            color: red;
+            font-size: 14px;
+            margin: 5px 9px;
+        }
 
         *,
         ::after,
@@ -2542,18 +2706,18 @@
             margin: -9px 0 0 6px;
         }
 
-.ct_rate_popup {
+        .ct_rate_popup {
 
-    top: 200px;
-    width: 100%;
-    display: block;
-    z-index: 9999999999;
-    margin-left: 0;
-    background: white;
-    padding: 20px;
-    border-top: 1px solid #cbcbcb;
-    border-bottom: 1px solid #cbcbcb;
-}
+            top: 200px;
+            width: 100%;
+            display: none;
+            z-index: 9999999999;
+            margin-left: 0;
+            background: white;
+            padding: 20px;
+            border-top: 1px solid #cbcbcb;
+            border-bottom: 1px solid #cbcbcb;
+        }
 
         .ct_rate_popup .btn_cancel {
             background-color: #ffffff;
@@ -2587,19 +2751,22 @@
             font-size: 17px;
             font-family: 'poppins';
         }
-
+        .sucess_review,
         .ct_poup_xbshs {
             position: fixed;
-            bottom: 20px;
-            width: 96vw;
+    top: 80px;            width: 96vw;
             border-radius: 8px;
             margin-left: 12px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
             padding: 14px 16px;
             background-color: rgb(25, 86, 218);
             z-index: 999999;
+            right: -1000px;
+            transition: all .7s ease;
         }
-
+.sucess_review {
+    background-color:rgb(9 165 104);
+}
         .ct_poup_xbshs .inner_x {
             width: 100%;
         }
@@ -2872,7 +3039,7 @@
                 page-break-after: avoid;
             }
         }
-
+        .remove_review,
         .ct_rate_btn {
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
             padding: 14px 12px;
@@ -2880,6 +3047,9 @@
             color: rgb(24, 24, 24);
             font-family: 'Montserrat';
             text-align: center;
+        }
+        .remove_review{display: none;
+            background-color: #cdcdcd;color:rgb(0, 0, 0);box-shadow:none
         }
 
         .ct_rate_now {
@@ -3378,7 +3548,7 @@
             font-family: gagalin;
         }
 
-        .ct_rat_bx_stat a {
+        .ct_rat_bx_stat {
             display: flex;
             margin: 4px 0 0 10px;
 
@@ -4732,6 +4902,22 @@
             }
         }
 
+        .fade-in-down {
+            animation: fade-in-down 2s ease;
+        }
+
+        @keyframes fade-in-down {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .popup_info p {
             font-size: 12px;
             color: white;
@@ -5307,7 +5493,7 @@
             width: 100%;
             display: none;
             bottom: 0%;
-            z-index: 999999;
+            z-index: 9999999999999;
             box-shadow: 0 -10px 12px #0000002e;
         }
 
@@ -8841,8 +9027,14 @@
             .erak_fd_body .for_nav_main .logo {
                 margin-top: -3px
             }
-.ct_banner h2 {
-    line-height: 35px;}
+.cust_ques {
+    border-top: 1px solid #b6b6b6;
+    padding: 16px 12px;
+}
+            .ct_banner h2 {
+                line-height: 35px;
+            }
+
             .prod_img2 {
                 right: 222px;
                 top: 111px;
@@ -9755,12 +9947,17 @@
             .ct_inner_nav {
                 justify-content: initial
             }
-.ct_banner h2 {
-    font-size: 29px;
-    line-height: 32px;
-    width: 85%;
-}
-.ct_banner .sub_head { width: 86%;}
+
+            .ct_banner h2 {
+                font-size: 29px;
+                line-height: 32px;
+                width: 85%;
+            }
+
+            .ct_banner .sub_head {
+                width: 86%;
+            }
+
             .ct_prod_categ span {
                 font-size: 8px;
                 color: #000000;
@@ -10592,19 +10789,27 @@
             .ct_offer_box_cook2 span {
                 font-size: 10px;
             }
-.ct_items_img {
-    margin-top: 62px;
-}
-.ct_overall_ratings {
-    padding: 20px 7px 0 24px;
-}
-.remove_itm, .ct_addded, .buy_now, .add_cart_btn {
-    width: 95%;
-    margin: 10px 0 20px 8px;
-}
-.ct_qty_box {
-    margin: 19px 10px;
-}
+
+            .ct_items_img {
+                margin-top: 62px;
+            }
+
+            .ct_overall_ratings {
+                padding: 20px 7px 0 24px;
+            }
+
+            .remove_itm,
+            .ct_addded,
+            .buy_now,
+            .add_cart_btn {
+                width: 95%;
+                margin: 10px 0 20px 8px;
+            }
+
+            .ct_qty_box {
+                margin: 19px 10px;
+            }
+
             .carousel-inner .carousel-item {
                 min-width: 95vw;
                 margin: 6px 8px 0 0;
@@ -10736,20 +10941,26 @@
             .ct_offer_box_cook2 {
                 transform: translate(-4px, 0px);
             }
-.coppy_right {
-    margin: 20px 7px 0 0px;
-}
-.ct_overall_ratings {
-    padding: 20px 7px 0 9px;
-}
-.ct_overall_ratings p {
-    font-size: 12px;
-    color: rgb(44, 44, 44);
-}
-.ct_overall_ratings p, .ct_overall_ratings h4 {
-    color: black;
-    font-family: 'open sans';
-}
+
+            .coppy_right {
+                margin: 20px 7px 0 0px;
+            }
+
+            .ct_overall_ratings {
+                padding: 20px 7px 0 9px;
+            }
+
+            .ct_overall_ratings p {
+                font-size: 12px;
+                color: rgb(44, 44, 44);
+            }
+
+            .ct_overall_ratings p,
+            .ct_overall_ratings h4 {
+                color: black;
+                font-family: 'open sans';
+            }
+
             .prod_img2 {
                 right: 38vw;
                 top: 71px;
@@ -11377,6 +11588,9 @@
             src="https://www.facebook.com/tr?id=772715493811728&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
     <!-- Google tag (gtag.js) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-11LX1H4F79"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11463,7 +11677,16 @@
     </div>
 
     <div class="ct_pop_up_items_order">
-
+   <div class="ct_load_review_verf">
+        <div class="ct_load_items">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
         <div class="ct_popup_inner">
             <div class="ct_bx_go_back">
                 <ion-icon name="arrow-back-outline"></ion-icon>
@@ -11485,7 +11708,7 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div> --}}
-                      <div class="carousel-item itm_img_prod active">
+                    <div class="carousel-item itm_img_prod active">
                         <img class="prod_img prod_img1" src="../img/chicken_curry.png">
                         <img class="prod_img prod_img2" src="../img/Masala_Meat.png">
                         <div class="ct_txt_bx">
@@ -11510,16 +11733,16 @@
                     our premium quality cooking sauce. Made with the finest ingredients and carefully crafted spices,
                     our sauce is the perfect blend of tangy and savory flavors that will tantalize your taste
                     buds.</span>
-                <div class="ratings_itm_info">
-                <div class="ct_rat_bx_stat">
-                    <a> <ion-icon name="star-sharp"></ion-icon>
-                        <ion-icon name="star-sharp"></ion-icon>
-                        <ion-icon name="star-sharp"></ion-icon>
-                        <ion-icon name="star-sharp"></ion-icon>
-                        <ion-icon name="star-outline"></ion-icon></a>
-                </div>
-                <p>(10)</p>
-                </div>
+                <a href="#ratings" class="ratings_itm_info">
+                    <div class="ct_rat_bx_stat">
+                         <ion-icon name="star-sharp"></ion-icon>
+                            <ion-icon name="star-sharp"></ion-icon>
+                            <ion-icon name="star-sharp"></ion-icon>
+                            <ion-icon name="star-sharp"></ion-icon>
+                            <ion-icon name="star-outline"></ion-icon>
+                    </div>
+                    <p>(10)</p>
+                </a>
 
             </div>
             <div class="ct_texts">
@@ -12272,7 +12495,20 @@
 
             </div>
 
+            <div class="ct_poup_xbshs sucess_review">
+                <div class="ct_flex">
+                    <div class="inner_x">
+                        <h4>Thankyou!</h4>
+                        <p>Successfully reviewed this product </p>
+                    </div>
 
+
+                    <div class="ct_remove">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div>
+
+            </div>
 
             <div class="bx_add_t_cart_btn_itm_dt place_order_btn_popup">
                 <p>Add to cart<ion-icon name="caret-forward"></ion-icon>
@@ -12303,19 +12539,8 @@
             </div> --}}
             <div class="cust_ques">
                 <h3>Frequently asked questions</h3>
-                <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?
-                    </h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
-                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
-                        maxime distinctio nobis, consectetur autem?</P>
-                </div>
-                <div class="ct_qns_bx">
-                    <h4><ion-icon name="help-circle-sharp"></ion-icon> Lorem ipsum dolor sit amet consectetur adipis ?ws
-                    </h4>
-                    <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur provident vero assumenda
-                        enim similique sit illo quam nisi, veritatis facere laboriosam porro. Exercitationem minima quos
-                        maxime distinctio nobis, consectetur autem?</P>
+                <div class="inner_x">
+                    
                 </div>
             </div>
             <div class="reviews-container">
@@ -12326,46 +12551,49 @@
                         <p>Out of 5<ion-icon name="star-sharp"></ion-icon></p>
                     </div>
                     <div class="ct_inner_flex">
-                        <div class="review">
+                        <div class="review rev_5">
                             <span class="icon-container">5 <ion-icon name="star-sharp"></ion-icon></span>
                             <div class="progress">
                                 <div class="progress-done" data-done="68"></div>
                             </div>
                             <span class="percent">68%</span>
                         </div>
-                        <div class="review">
+                        <div class="review rev_4">
                             <span class="icon-container">4 <ion-icon name="star-sharp"></ion-icon></span>
                             <div class="progress">
                                 <div class="progress-done" data-done="13"></div>
                             </div>
-                            <span class="percent">13%</span>
+                            <span class="percent">0%</span>
                         </div>
-                        <div class="review">
+                        <div class="review rev_3">
                             <span class="icon-container">3 <ion-icon name="star-sharp"></ion-icon></span>
                             <div class="progress">
                                 <div class="progress-done" data-done="9"></div>
                             </div>
-                            <span class="percent">9%</span>
+                            <span class="percent">0%</span>
                         </div>
-                        <div class="review">
+                        <div class="review rev_2">
                             <span class="icon-container">2 <ion-icon name="star-sharp"></ion-icon></span>
                             <div class="progress">
                                 <div class="progress-done" data-done="3"></div>
                             </div>
-                            <span class="percent">3%</span>
+                            <span class="percent">0%</span>
                         </div>
-                        <div class="review">
+                        <div class="review rev_1">
                             <span class="icon-container">1<ion-icon name="star-sharp"></ion-icon></span>
                             <div class="progress">
                                 <div class="progress-done" data-done="7"></div>
                             </div>
-                            <span class="percent">7%</span>
+                            <span class="percent">0%</span>
                         </div>
                     </div>
                 </div>
                 <div class="ct_rate_now">
                     <div class="ct_rate_btn">
                         <span>Rate this product</span>
+                    </div>
+                    <div class="remove_review">
+                        <span>Remove your review</span>
                     </div>
                     <p>Your opinion matters to us, and we would be grateful if you could take a few moments to rate our
                         performance and share your thoughts on how we can do better.</p>
@@ -12391,17 +12619,20 @@
 
                     </div>
 
+<span class="err">Please Rate this product</span>
 
                 </div>
                 <div class="ct_text">
-                    <div class="sf62udsts">
+                    <div class="sf62udsts title">
                         <p>Add a title</p>
                         <input type="text">
-                    </div>
-                    <div class="sf62udsts">
-                        <p>Add a written review </p>
-                        <textarea name="address" id="" cols="10" rows="4" required></textarea>
+                        <span  class="err">Please fill this field</span>
 
+                    </div>
+                    <div class="sf62udsts sub_head">
+                        <p>Add a written review </p>
+                        <textarea name="address" id="" cols="10" rows="4"></textarea>
+<span  class="err">Please fill this field</span>
                     </div>
                 </div>
                 <div class="ct_btns">
@@ -12416,7 +12647,8 @@
             </div>
             <div class="ct_allreviews">
                 <h4>Reviews</h4>
-                <div class="col _2wzgFH">
+                <div class="inner_x">
+  <div class="col _2wzgFH">
                     <div class="ct_account_icon">
                         <ion-icon name="person-circle"></ion-icon>
                         <p>Prince Bhattacharya</p>
@@ -12450,6 +12682,8 @@
 
                     </div>
                 </div>
+                </div>
+              
             </div>
             <div class="ct_bx_for_ingredients">
                 <h4>Ingredients</h4>
@@ -12757,20 +12991,22 @@
 
 
 
-<div class="ct_banner">
-<div class="ct_flex_banner">
-                        <img class="ct_items_img" src="../img/items_img.png" alt="">
+            <div class="ct_banner">
+                <div class="ct_flex_banner">
+                    <img class="ct_items_img" src="../img/items_img.png" alt="">
 
-                        </div>
-                        <div class="ct_flex_banner">
+                </div>
+                <div class="ct_flex_banner">
 
-                        <h2>Have A Magical Cooking Experience With MagicMix</h2>
-                        </div>
-                        <div class="ct_flex_banner">
+                    <h2>Have A Magical Cooking Experience With MagicMix</h2>
+                </div>
+                <div class="ct_flex_banner">
 
-                        <p class="sub_head">Discover the secret to effortless, gourmet cooking with our magic mix. Enjoy homemade meals without sacrificing precious time. Try it now and revolutionize the way you cook!</p>
-                        </div>
-                        </div>
+                    <p class="sub_head">Discover the secret to effortless, gourmet cooking with our magic mix. Enjoy
+                        homemade meals without sacrificing precious time. Try it now and revolutionize the way you cook!
+                    </p>
+                </div>
+            </div>
             {{!-- <div class="bannerX"></div> --}}
             {{!-- <img class="banner2X" alt="Introducing krickgrocery: The painkiller of cooking banner2"
                 src="../img/imgBanner2.webp" alt="img"> --}}
@@ -13403,48 +13639,131 @@
         //--------------------------//
         //  var socket = io()
 
-        ///
-        //              let arrayItm2 = [{
-        //              conditions:[{max:1,upto:200}],
-        //      data:"Get 20% off on your order up to Rs. 240",
-        //      for:"sauce",
-        //      hidden:false,
-        //      name:"FLAT20",
-        //      off:"20%",
-        //      secret:null,
-        //      grp:'b',
-        //              },
-        //              {
-        //              conditions:[{max:1,upto:200}],
-        //      data:"Get 40% off on your order up to Rs. 240",
-        //      for:"sauce",
-        //      hidden:false,
-        //      name:"SUPER40",
-        //      off:"40%",
-        //      secret:null,
-        //      grp:'b',
-        //              }]
-        //          arrayItm2.forEach(cur => {
-        //              db.collection("coupons").add(cur).then(() => {
-        //                  console.log("Document successfully written!");
-        //              })
-        //                  .catch((error) => {
-        //                      console.error("Error writing document: ", error);
-        //                  })
-        //          })
-        ///
+        
 
-        //  arrayItm.forEach(cur => {
-        //      db.collection("sauce").add({
-        //      item:cur
-        //        
-        //      }).then(() => {
-        //          console.log("Document successfully written!");
-        //      })
-        //          .catch((error) => {
-        //              console.error("Error writing document: ", error);
-        //          })
-        //  })
+        let arrayItm =       [{
+                 grp:{name:'y',ord:"b"},
+item:{
+
+about:{ing:"Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water",details:'',},
+descrip:["150gm suitable for 1kg meat.","Just add raw chicken, soya bean etc",
+"Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+],
+groc:[
+"Fresh garlic",
+"Mustard Oil, Fortune"
+,
+"Fresh Mutton"
+,
+"Fresh chicken"
+,
+"Corriander powder"
+,
+"Jeera powder"
+,
+"Fresh tomatoes"
+,
+"Fresh green chillies"],
+image_prod:[{img2:"../img/chick_prod.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
+images:["../img/test_img.png","../img/sample_fd2.webp"],
+name:"Masala Chicken",
+offer:null,
+price_real:'45',
+ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+ratings:[{
+star_1:0,
+star_3:0,
+star_4:4,
+star_5:5,
+start_2:0
+}],
+review:[{
+name:'Kabir',
+date:'12/03/23',
+title:'Amazing',
+sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+`,
+ratings:5,
+
+}],
+stock:10,
+tagline:"Enjoy delicous chicken, mutton curry made with all natural ingredients.",
+weight_sh:"150gm"
+ }
+        },{
+                 grp:{name:'y',ord:"b"},
+item:{
+
+about:{ing:"Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water",details:'',},
+descrip:["150gm suitable for 1kg meat.","Just add raw chicken, soya bean etc",
+"Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+],
+groc:[
+"Fresh garlic",
+"Mustard Oil, Fortune"
+,
+"Fresh Mutton"
+,
+"Fresh chicken"
+,
+"Corriander powder"
+,
+"Jeera powder"
+,
+"Fresh tomatoes"
+,
+"Fresh green chillies"],
+image_prod:[{img2:"../img/chick_prod.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
+images:["../img/test_img.png","../img/sample_fd2.webp"],
+name:"Mutton Korma",
+offer:null,
+price_real:'65',
+ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+ratings:[{
+star_1:0,
+star_3:0,
+star_4:4,
+star_5:5,
+start_2:0
+}],
+review:[{
+name:'Kabir',
+date:'12/03/23',
+title:'Amazing',
+sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+`,
+ratings:5,
+
+},{
+name:'Kabir',
+date:'12/03/23',
+title:'Amazing',
+sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+`,
+ratings:5,
+
+}],
+stock:10,
+tagline:"Enjoy delicous chicken, mutton curry made with all natural ingredients.",
+weight_sh:"150gm"
+ }
+        }
+    ]
+
+
+     // arrayItm.forEach(cur => {
+     //     db.collection("sauce").add({
+     //   grp:cur.grp,
+//
+     //   item:cur.item,
+     //       
+     //     }).then(() => {
+     //         console.log("Document successfully written!");
+     //     })
+     //         .catch((error) => {
+     //             console.error("Error writing document: ", error);
+     //         })
+     // })
 
         if (window.screen.width <= 1650) {
 
@@ -13494,8 +13813,212 @@
             let itmPopucloseIcon = e.target.closest('.ct_remove_bx_pop_p')
             let unit_select = e.target.closest('.ct_unit_box_selector')
             let unit_li = e.target.closest('.ct_other_units li')
-            let rate_itm=e.target.closest('.ct_rate_btn')
-            
+            let rate_itm = e.target.closest('.ct_rate_btn')
+            let remove_review_info= e.target.closest('.ct_remove')
+            let submit_btn_review=e.target.closest('.ct_btn_review.btn_submit')
+            let rm_rev_main=e.target.closest('.remove_review')
+
+            if(rm_rev_main!==null){
+            let userDt = JSON.parse(getCookie('userData'))
+async function rem_rev(){
+            let dbColl = db.collection(`sauce`)
+            document.querySelector('.ct_load_review_verf').style.display = 'flex'
+            let res = await dbColl.get()
+            let grouped = ``
+            let found=false
+            let val_rat=0
+            res.docs.forEach(async (cur,ind) => {
+                let item=cur.data().item
+                let itm_id=window.location.hash.split('#')[1]
+                if(item.name.split(' ').join('').toLowerCase()===itm_id){
+                    let found_rev=false
+                    item.review.forEach(cux=>{
+                        if(cux.id===userDt.id){
+                            found_rev=true
+                            val_rat=parseFloat(cux.ratings)
+                            item.review.splice(ind, 1)
+                        }
+                    })
+                        item.ratings.forEach(cux=>{
+                            if(parseFloat(cux.name)===parseFloat(val_rat)){
+                                cux.tot=parseFloat(cux.tot)-1
+                            }
+                        })
+                        if(found_rev){
+ await dbColl.doc(cur.id).set({
+                           grp:cur.data().grp,
+                           item:{name:item.name,
+                                about:item.about,
+                                descrip:item.descrip,
+                                about:item.name,
+                                groc:item.groc,
+                                image_prod:item.image_prod,
+                                images:item.images,
+                                offer:item.offer,
+                                price_real:item.price_real,
+                                qty:item.qty,
+                                ques_and_ans:item.ques_and_ans,
+                                review:item.review,
+                                stock:item.stock,
+                                tagline:item.tagline,
+                                weight_sh:item.weight_sh,
+                                ratings:item.ratings}
+                        }).then(res=>{
+                                        document.querySelector('.ct_load_review_verf').style.display = 'none'
+document.querySelector(`#${userDt.id}`).remove()
+document.querySelector('.remove_review').style.display='none'
+document.querySelector('.ct_rate_btn').style.display='block'
+document.querySelector('.ct_rate_now p').style.display='block'
+                        })
+                        }
+                       
+                }
+            })
+}
+rem_rev()
+
+
+            }
+
+
+            if(submit_btn_review!==null){
+let sub=document.querySelector('.ct_text .sub_head textarea').value
+let title=document.querySelector('.ct_text .title input').value
+let val_rat=0
+let inp_arr=document.querySelectorAll('.rating input')
+for(i = 0; i < inp_arr.length; i++) {
+            if(inp_arr[i].checked){
+               val_rat=  inp_arr[i].value
+            }
+}
+document.querySelectorAll('.ct_rate_popup  span.err').forEach(el=>{
+el.style.display='none'
+})
+if(parseFloat(val_rat)===0){
+document.querySelector('.rating span.err').style.display='block'
+return
+}
+console.log(sub,title,'-----------------')
+if(title===''){
+document.querySelector('.sf62udsts.title span.err').style.display='block'
+return
+}
+if(sub===''){
+document.querySelector('.sf62udsts.sub_head span.err').style.display='block'
+return
+}
+
+async function reviews_mn(){
+            let userDt = JSON.parse(getCookie('userData'))
+            let dbColl = db.collection(`sauce`)
+            // dbColl.orderBy('group').get()
+                                                        document.querySelector('.ct_load_review_verf').style.display = 'flex'
+
+            let res = await dbColl.get()
+            let grouped = ``
+            let found=false
+            res.docs.forEach(async cur => {
+                let item=cur.data().item
+                let itm_id=window.location.hash.split('#')[1]
+                                                            console.log(item.name.split(' ').join('').toLowerCase()===itm_id,'sdfojdfsdfsdfk;fjlfdldfl.dlldlddfdhfdhasdfdfdssdsf')
+
+                if(item.name.split(' ').join('').toLowerCase()===itm_id){
+                                            console.log('sdfojdfsdfsdfk;fjlfdldfl.dlldlddfdhfdhasdfdfdssdsf')
+
+                    item.review.forEach(cu=>{
+                        if(cu.id===userDt.id){
+                            found=true
+                        }
+                    })
+                    if(!found){
+                        console.log('piensdbdbkdfjdfsdghigfssdfjbdnsflkgjsfbkZXMnn xcx/vdn;dasnb v/bnfk')
+                        let arr_Rev=item.review
+                        arr_Rev.push({
+                            date:moment().format('LL'),
+                            id:userDt.id,
+                            name:userDt.name,
+                            ratings:val_rat,
+                            sub_head:sub,
+                            title:title,
+                        })
+                        item.ratings.forEach(cux=>{
+                            if(parseFloat(cux.name)===parseFloat(val_rat)){
+                                cux.tot=parseFloat(cux.tot)+1
+                            }
+                        })
+                        await dbColl.doc(cur.id).set({
+                           grp:cur.data().grp,
+                           item:{name:item.name,
+                                about:item.about,
+                                descrip:item.descrip,
+                                about:item.name,
+                                groc:item.groc,
+                                image_prod:item.image_prod,
+                                images:item.images,
+                                offer:item.offer,
+                                price_real:item.price_real,
+                                qty:item.qty,
+                                ques_and_ans:item.ques_and_ans,
+                                review:arr_Rev,
+                                stock:item.stock,
+                                tagline:item.tagline,
+                                weight_sh:item.weight_sh,
+                                ratings:item.ratings}
+                        }).then(res=>{
+                        let htm_rev=`<div class="col _2wzgFH" id='${userDt.id}'>
+                    <div class="ct_account_icon">
+                        <ion-icon name="person-circle" role="img" class="md hydrated" aria-label="person circle"></ion-icon>
+                        <p>${userDt.name}</p>
+                    </div>
+                    <div class="row">
+                        <div class="_3LWZlK _1BLPMq">${val_rat}<ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon></div>
+                        <p class="_2-N8zT">${title}</p>
+                    </div>
+                    <div class="row">
+                        <div class="t-ZTKy">
+                            <div>
+                                <div class="">${sub}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row _3n8db9">
+                        <div class="row">
+                            <p class="_2sc7ZR _2V5EHH">Posted on: 18/03/2023</p>
+                            <div class="flex_bx">
+                                <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated" aria-label="checkmark circle sharp"></ion-icon>
+                                <p id="review-e4a642e3-1dbd-4a79-a55b-5c74197d98b8" class="_2mcZGG"><span>Verified
+                                        Buyer</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>`
+document.querySelector('.sucess_review').style.right='3px'
+document.querySelector('.ct_allreviews .inner_x') .insertAdjacentHTML("afterbegin", htm_rev)
+                                            document.querySelector('.ct_load_review_verf').style.display = 'none'
+                                            document.querySelector('.ct_rate_popup').style.display = 'none'
+
+                                            document.querySelector('.ct_rate_btn').style.display = 'none'
+document.querySelector('.remove_review').style.display='block'
+document.querySelector('.ct_rate_btn').style.display='none'
+document.querySelector('.ct_rate_now p').style.display='none'
+
+                     })
+                     
+                    }
+                }
+                })
+            }
+
+            reviews_mn()
+            }
+            if(remove_review_info!==null){
+                document.querySelectorAll('.ct_poup_xbshs').forEach(cux=>{
+cux.style.right='-1000px'
+                })
+
+            }
+
             document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
                 cu11.classList.remove('active')
                 cu11.style.display = 'none'
@@ -13523,29 +14046,41 @@
 
             let inc_btn = e.target.closest('.inc_btn')
             let dec_btn = e.target.closest('.dec_btn')
-            if(rate_itm!==null){
-                async function db_shs(){
+            if (rate_itm !== null) {
+                async function db_shs() {
                     let dbCollection = db.collection("users")
-                    let res = await dbCollection.get()
-                    let found_one=false
-                    res.docs.forEach(async cur => {
-                            let userDt = JSON.parse(getCookie('userData'))
-                            let userDt_db=cur.data()
-                            if(userDt_db.id===userDt.id){
-                                userDt_db.orders.forEach(cux=>{
-                                    cux.arr.forEach(itm=>{
-                                        let itm_nm=window.location.search.split('=')[1]
-                                        if(itm.name.split(' ').join('').toLowerCase()===itm_nm.split(' ').join('').toLowerCase()){
-                                            found_one=true
-                                        }
-                                    })
-                                })
+                                            document.querySelector('.ct_load_review_verf .ct_load_items').style.display = 'flex'
+                        document.querySelector('.ct_load_review_verf').style.display = 'flex'
 
-                            }
+                    let res = await dbCollection.get()
+                        document.querySelector('.ct_load_review_verf').style.display = 'none'
+
+                    let found_one = false
+                    res.docs.forEach(async cur => {
+                        let userDt = JSON.parse(getCookie('userData'))
+                        let userDt_db = cur.data()
+                        if (userDt_db.id === userDt.id) {
+                            userDt_db.orders.forEach(cux => {
+                                cux.arr.forEach(itm => {
+                                    let itm_nm = window.location.hash.split('#')[1]
+                                    if (itm.name.split(' ').join('').toLowerCase() === itm_nm.split(' ').join('').toLowerCase()) {
+                                        // checking if this item had ordered
+                                        found_one = true
+                                    }
+                                })
+                            })
+
+                        }
 
                     })
-                    if(found_one){
-                        // allowed for review
+                    if (found_one) {
+                        
+                        document.querySelector('.ct_rate_popup').style.display = 'block'
+                        document.querySelector('.ct_rate_popup').classList.add('fade-in-down')
+                    }else{
+                        document.querySelector('.ct_poup_xbshs').style.right='4px'
+
+
                     }
 
                 }
@@ -13995,17 +14530,17 @@
                 console.log(view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes)
                 if (view_itm.childNodes[1].childNodes[1].childNodes[5] === undefined) {
                     imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[1].src
-                    name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[1].innerHTML
-                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[3].innerHTML
-                    price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[5].innerHTML
-                    price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[7].innerHTML
-                    offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[9].innerHTML
-                    about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[11].innerHTML
-                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[13].innerHTML
-                    desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[15].innerHTML
-                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[17].innerHTML
-                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[19].innerHTML
-                    images_prod = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[9].childNodes[21].innerHTML
+                    name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[1].innerHTML
+                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[3].innerHTML
+                    price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[5].innerHTML
+                    price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[7].innerHTML
+                    offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[11].innerHTML
+                    about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[11].innerHTML
+                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[13].innerHTML
+                    desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[15].innerHTML
+                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[17].innerHTML
+                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[19].innerHTML
+                    images_prod = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[21].innerHTML
 
                 } else {
                     name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
@@ -14021,6 +14556,7 @@
                     images_itm = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[19].innerHTML
 
                 }
+                console.log(name,images_prod,qtys)
                 console.log(JSON.parse(images_prod), '  ---------------wjhsdahsadhsd')
                 //document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
                 document.querySelector('.ct_load_items').style.display = 'flex'
@@ -14280,7 +14816,6 @@
 
                     let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
-                        <span class="info_package">${pack}</span>
                         <div class="ct_pr_bx">
                            ${offer_del}
                             <p>₹ ${price}</p>
@@ -14481,8 +15016,127 @@
                 //    }
                 //    getItm()
                 //}
-                document.querySelector('.name_of_itm').innerText = name
-                document.querySelector('.name_of_itm').innerText = name
+                console.log(view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].innerHTML)
+                
+                document.querySelector('.ct_rat_bx_stat').innerHTML=view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerHTML
+                document.querySelector('.ratings_itm_info p').innerHTML=view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].innerText
+
+                
+        const ratings_reviews = async () => {
+            let dbColl = db.collection(`sauce`)
+            // dbColl.orderBy('group').get()
+            let res = await dbColl.get()
+            let grouped = ``
+                document.querySelector('.cust_ques .inner_x').innerHTML=``
+            res.docs.forEach(cur => {
+                let item=cur.data().item
+                let itm_id=window.location.hash.split('#')[1]
+                if(item.name.split(' ').join('').toLowerCase()===itm_id){
+                    let tot_Reviews=0
+                    document.querySelector('.prod_desc').innerText=item.tagline
+                    item.ques_and_ans.forEach(itm=>{
+                        let htm=`<div class="ct_qns_bx">
+                    <h4>Ques. ${itm.q}</h4>
+                    <p>Ans. ${itm.ans}</p>
+                </div>`
+                document.querySelector('.cust_ques .inner_x').insertAdjacentHTML('beforeend', htm)
+
+                    })
+
+function calculateAverage(ratings) {
+let sum=0
+ratings.forEach(cux=>{
+    sum += (parseFloat(cux.tot)*parseFloat(cux.name))
+    tot_Reviews+= (parseFloat(cux.tot))
+})
+item.ratings.forEach(cux=>{
+    let bx_rat_nm=`rev_${cux.name}`
+    document.querySelectorAll('.review').forEach(elem=>{
+        let percent_bar=elem.childNodes[3].childNodes[1]
+        let percent_txt=elem.childNodes[5]
+
+        if(elem.classList.value.includes(bx_rat_nm)){
+            let user_rev=parseFloat(cux.tot)
+            let percent_rev=(user_rev/tot_Reviews)*100
+            percent_bar.style.width=percent_rev+'%'
+            console.log(percent_txt,percent_rev)
+percent_txt.innerText=Math.round(percent_rev)+'%'
+        }
+    })
+})
+let avg=sum/tot_Reviews
+return avg
+}
+let averageRating = calculateAverage(item.ratings);
+console.log(averageRating)
+averageRating=String(averageRating)
+if(averageRating.split('.')[1]!=undefined){
+
+
+    if(parseFloat(averageRating.split('.')[1])>=7){
+averageRating=Math.round(averageRating)
+    }else{
+            let avg_num=parseFloat(averageRating)
+    averageRating=avg_num.toFixed(1)
+    }
+}
+            let userDt =JSON.parse( getCookie('userData'))
+let found=false
+document.querySelector('.ct_overall_ratings h4').innerHTML=`${averageRating}<ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+let html_rev=item.review.map(cux=>{
+    console.log(cux.id,userDt.id,'  ----------------------------------------cjvhihvs')
+                            if(cux.id===userDt.id){
+                            found=true
+                        }
+    let html=`<div class="col _2wzgFH" id='${userDt.id}'>
+                    <div class="ct_account_icon">
+                        <ion-icon name="person-circle" role="img" class="md hydrated" aria-label="person circle"></ion-icon>
+                        <p>${cux.name}</p>
+                    </div>
+                    <div class="row">
+                        <div class="_3LWZlK _1BLPMq">${cux.ratings}<ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon></div>
+                        <p class="_2-N8zT">${cux.title}</p>
+                    </div>
+                    <div class="row">
+                        <div class="t-ZTKy">
+                            <div>
+                                <div class="">${cux.sub_head}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row _3n8db9">
+                        <div class="row">
+                            <p class="_2sc7ZR _2V5EHH">Posted on: ${cux.date}</p>
+                            <div class="flex_bx">
+                                <ion-icon name="checkmark-circle-sharp" role="img" class="md hydrated" aria-label="checkmark circle sharp"></ion-icon>
+                                <p id="review-e4a642e3-1dbd-4a79-a55b-5c74197d98b8" class="_2mcZGG"><span>Verified
+                                        Buyer</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>`
+        return html
+
+})
+if(found){
+document.querySelector('.remove_review').style.display='block'
+document.querySelector('.ct_rate_btn').style.display='none'
+document.querySelector('.ct_rate_now p').style.display='none'
+
+}else{
+    document.querySelector('.remove_review').style.display='none'
+
+}
+document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend', html_rev)
+
+                }
+
+            })
+        }
+        ratings_reviews()
+
+                           document.querySelector('.name_of_itm').innerText = name
                 console.log(desc)
                 document.querySelector('.ct_bx_info_sauce ul').innerHTML = ''
 
@@ -15039,19 +15693,58 @@
      `
 
                 }
+let rattings_stars=[]
+let tot_Reviews=0
 
+function calculateAverage(ratings) {
+let sum=0
+item.ratings.forEach(cux=>{
+    sum += (parseFloat(cux.tot)*parseFloat(cux.name))
+    tot_Reviews+= (parseFloat(cux.tot))
+})
+let avg=sum/tot_Reviews
+return avg
 
+}
+let averageRating = calculateAverage(item.ratings);
+console.log(averageRating,'     ratings item!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+if(!isNaN(averageRating)){
+    averageRating=String(averageRating)
+let stars=averageRating.split('.')[0]
+let halfstars=averageRating.split('.')[1]
 
+for(let i=0;i<stars;i++){
+let htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+rattings_stars.push(htm_sr)
+console.log('999999999999999disdfdffs')
+}
+if(halfstars!==undefined){
+    let htm_sr=`<ion-icon name="star-half-sharp"></ion-icon>`
+
+    if(halfstars>=7){
+htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+    }
+rattings_stars.push(htm_sr)
+}
+}
+console.log(rattings_stars.join(''))
+//<ion-icon name="star-half-sharp"></ion-icon>
+let ratings_bx=`<div class="ratings_bx">
+                                                            <div class="rating_itm">
+                                                                ${rattings_stars.join('')}
+                                                            </div>
+                                                            <span>(${tot_Reviews})</span>
+                                                        </div>`
 
                 let html = `<div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
+                                            <a href="#${name.split(' ').join('').toLowerCase()}">
                                                 <div class="ct_bx_flex">
-                                                    ${offHtml}
                                                     <div class="ct_img_layer">
                                                     <img class="main_im" alt="${name}" src="${img[0]}">
 
                                                      </div>
                                                     <div class="ct_bx_inner_food_groc">
+                                                    ${ratings_bx}
 
                                                         <h4>${name}</h4>
                                                         <p class="item_intro">${tagline}</p>
@@ -15157,6 +15850,7 @@
             let addTocartbtn = e.target.closest('.ct_addbtns')
             let inc_btn = e.target.closest('.inc_btn')
             let dec_btn = e.target.closest('.dec_btn')
+        
             if (inc_btn !== null) {
                 let val = parseFloat(inc_btn.parentElement.childNodes[3].value)
                 let nm = inc_btn.parentElement.parentElement.childNodes[1].childNodes[1].innerText
@@ -15385,12 +16079,10 @@
                 let qty = document.querySelector('.ct_qty_box input').value
                 let name = document.querySelector('.name_of_itm').innerText
                 let slt_nm = document.querySelector('.ct_for_bx1.active h4').innerText
-                let slt_p = document.querySelector('.ct_for_bx1.active .info_package').innerText
                 let obj = {
                     name: name,
                     qty: qty,
                     slt_nm: slt_nm,
-                    slt_p: slt_p,
                     type: 'sauce'
                 }
                 //  if (getCookie('userData') === '') {
