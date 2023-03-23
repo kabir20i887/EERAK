@@ -2751,6 +2751,7 @@
             font-size: 17px;
             font-family: 'poppins';
         }
+        .logut_info,
         .sucess_review,
         .ct_poup_xbshs {
             position: fixed;
@@ -2761,9 +2762,17 @@
             padding: 14px 16px;
             background-color: rgb(25, 86, 218);
             z-index: 999999;
-            right: -1000px;
+            right: -100vw;
             transition: all .7s ease;
         }
+        .logut_info{
+            padding: 6px 16px;
+        }
+        .ct_poup_xbshs.logut_info h4 {
+    font-size: 13px;
+    margin-top: 8px;
+}
+        
 .sucess_review {
     background-color:rgb(9 165 104);
 }
@@ -3625,14 +3634,12 @@
             font-family: 'Montserrat';
             margin: 2px 5px;
         }
-
-        .prod_img2 {
-            right: 309px;
-            top: 73px;
-            width: 255px;
-            filter: drop-shadow(-1px 7px 2px #00000070) contrast(1.1);
-        }
-
+.prod_img2 {
+    right: 309px;
+    top: 73px;
+    width: 255px;
+    filter: drop-shadow(-1px 7px 2px #00000070) contrast(1.2) saturate(1.1);
+}
         .carousel-control-prev-icon.material-symbols-outlined,
         .carousel-control-next-icon.material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 200, 'opsz' 40;
@@ -4317,6 +4324,7 @@
 
         .req_essen .fade.show {
             margin: 47px 21px;
+            display: none;
         }
 
 
@@ -4631,10 +4639,9 @@
         .ct_logox img {
             width: 62px;
         }
-
-        .coppy_right {
-            margin: 37px 7px 0 10px;
-        }
+.coppy_right {
+    margin: 23px 57px 0 10px;
+}
 
         .about_us_link {
             width: 13%;
@@ -6598,6 +6605,7 @@
             border-radius: 2px;
             height: auto;
             width: 22vw;
+            text-decoration: none;
             padding: 1px
         }
 
@@ -7319,7 +7327,20 @@
             .ct_bx_ratings span .not_filed_rating_itm {
                 font-size: 20px
             }
-
+.ct_items_img {
+    width: 700px;
+    margin-top: 59px;
+}
+.ct_banner h2 {
+    font-size: 56px;
+    line-height: 59px;}
+    .ct_banner .sub_head {
+    font-size: 20px;
+    line-height: 25px;
+}
+.rating_itm {
+    margin-left: 0;
+}
             .crousel_items .product {
                 min-width: 31.9%;
             }
@@ -8290,7 +8311,15 @@
                 height: 396px;
             }
 
+.ct_banner h2 {
+    width: 88%;
+}
+.ct_banner .sub_head {
+font-size: 18px;
+    line-height: 25px;
+    width: 87%;
 
+}
             .ct_bx_about_mobile2.account_btn a,
             .ct_bx_about_mobile2.cart_btn a {
                 height: 38px;
@@ -9031,15 +9060,23 @@
     border-top: 1px solid #b6b6b6;
     padding: 16px 12px;
 }
-            .ct_banner h2 {
-                line-height: 35px;
-            }
+.for_nav_main {
+    height: 70px;
+}
+.ct_banner h2 {
+    line-height: 43px;
+    font-size: 42px;
+}
+.ct_banner .sub_head {
+    font-size: 15px;
+    line-height: 21px;
+}
 
-            .prod_img2 {
-                right: 222px;
-                top: 111px;
-                width: 221px;
-            }
+.prod_img2 {
+    right: 39vw;
+    top: 23px;
+    width: 184px;
+}
 
             .ct_img_res_main {
                 margin-bottom: 23px;
@@ -9337,7 +9374,17 @@
             .ct_all_list_food h2 {
                 font-size: 15px;
             }
-
+.ct_banner h2 {
+    line-height: 37px;
+    font-size: 33px;
+    width: 80%;
+}
+.ct_banner .sub_head {
+    font-size: 13px;
+    line-height: 15px;
+    width: 78%;
+    margin-top: 7px;
+}
             .prod_img1 {
                 right: -18px;
                 top: 99px;
@@ -9947,12 +9994,20 @@
             .ct_inner_nav {
                 justify-content: initial
             }
+.ct_banner h2 {
+    line-height: 28px;
+    font-size: 25px;
+    width: 89%;
+}
+.ct_banner .sub_head {
+    font-size: 11px;
+    line-height: 14px;
+    width: 89%;
+    margin-top: 7px;
+}
+          .ct_items_img {
+    width: 80vw;}
 
-            .ct_banner h2 {
-                font-size: 29px;
-                line-height: 32px;
-                width: 85%;
-            }
 
             .ct_banner .sub_head {
                 width: 86%;
@@ -10556,9 +10611,6 @@
                 padding-top: -4px;
             }
 
-            .ct_bx_fooditm h4 {
-                margin-top: 10px;
-            }
 
             .ct_nav_erak ul .nav_main_ek_li {
                 margin-right: 0
@@ -10797,6 +10849,9 @@
             .ct_overall_ratings {
                 padding: 20px 7px 0 24px;
             }
+  
+            .ct_items_img {
+    width: 80vw;}
 
             .remove_itm,
             .ct_addded,
@@ -10941,10 +10996,9 @@
             .ct_offer_box_cook2 {
                 transform: translate(-4px, 0px);
             }
-
-            .coppy_right {
-                margin: 20px 7px 0 0px;
-            }
+.coppy_right {
+    margin: 20px 37px 0 10px;
+}
 
             .ct_overall_ratings {
                 padding: 20px 7px 0 9px;
@@ -11710,7 +11764,7 @@
                     </div> --}}
                     <div class="carousel-item itm_img_prod active">
                         <img class="prod_img prod_img1" src="../img/chicken_curry.png">
-                        <img class="prod_img prod_img2" src="../img/Masala_Meat.png">
+                        <img class="prod_img prod_img2" src="../img/Bihari Fish.png">
                         <div class="ct_txt_bx">
                             <img src="../img/txt_img.png" alt="">
                         </div>
@@ -12495,6 +12549,19 @@
 
             </div>
 
+            <div class="ct_poup_xbshs logut_info">
+                <div class="ct_flex">
+                    <div class="inner_x">
+                        <h4>Successfully logged out</h4>
+                    </div>
+
+
+                    <div class="ct_remove">
+                        <ion-icon name="close"></ion-icon>
+                    </div>
+                </div>
+                </div>
+
             <div class="ct_poup_xbshs sucess_review">
                 <div class="ct_flex">
                     <div class="inner_x">
@@ -12543,7 +12610,7 @@
                     
                 </div>
             </div>
-            <div class="reviews-container">
+            <div class="reviews-container" id="ratings">
                 <h2>Ratings and Reviews</h2>
                 <div class="ct_flex">
                     <div class="ct_overall_ratings">
@@ -12703,202 +12770,7 @@
                         </div>
                     </div>
                     <div class="crousel_items">
-                        <div class="product" style="left: 0px;">
-                            <div class="itm_food_list_ek added_itm_ek_fd">
-
-                                <div class="ct_inner_fd_dt_grid">
-                                    <div class="ct_offer_box_cook2">
-                                        <span>20%</span>
-                                        <p>off</p>
-                                    </div>
-                                    <div class="ct_img_res_main">
-                                        <img alt="Amritsari chole sauce image" src="../img/mutton_rm.jpg">
-
-                                    </div>
-                                    <div class="ct_inner_fd1_dt_grid">
-
-                                        <div class="ct_dt_tm_food_res">
-                                            <h4>Fresh Mutton</h4>
-                                        </div>
-                                        <div class="ct_unit_box_selector">
-                                            <div class="ct_bx_selection">
-                                                <div class="ct_pr_bx_unit">
-                                                    <p>500g</p>
-                                                    <span>₹ 445</span>
-                                                </div>
-
-                                                <div class="ct_popup_unit_btn">
-                                                    <ion-icon name="caret-forward-outline" role="img"
-                                                        class="md hydrated"
-                                                        aria-label="caret forward outline"></ion-icon>
-                                                </div>
-
-                                            </div>
-                                            <div class="ct_other_units active">
-                                                <ul>
-                                                    <li>
-                                                        <p>500g</p>
-                                                        <span>₹ 445</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>1kg</p>
-                                                        <span>₹ 1237</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>2kg</p>
-                                                        <span>₹ 2467</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                            <del class="pricenooff">₹ 445</del>
-                                            <p class="price_food for_oly_ekfd_price"><span>₹ 356 </span> </p>
-
-
-                                        </div>
-                                        <div class="ct_addbtns">
-                                            <p>Add to cart</p>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product" style="left: 0px;">
-                            <div class="itm_food_list_ek added_itm_ek_fd">
-
-                                <div class="ct_inner_fd_dt_grid">
-                                    <div class="ct_offer_box_cook2">
-                                        <span>20%</span>
-                                        <p>off</p>
-                                    </div>
-                                    <div class="ct_img_res_main">
-                                        <img alt="Amritsari chole sauce image" src="../img/chicken_meat.png">
-
-                                    </div>
-                                    <div class="ct_inner_fd1_dt_grid">
-
-                                        <div class="ct_dt_tm_food_res">
-                                            <h4>Fresh chicken</h4>
-                                        </div>
-                                        <div class="ct_unit_box_selector">
-                                            <div class="ct_bx_selection">
-                                                <div class="ct_pr_bx_unit">
-                                                    <p>500g</p>
-                                                    <span>₹ 45</span>
-                                                </div>
-
-                                                <div class="ct_popup_unit_btn">
-                                                    <ion-icon name="caret-forward-outline" role="img"
-                                                        class="md hydrated"
-                                                        aria-label="caret forward outline"></ion-icon>
-                                                </div>
-
-                                            </div>
-                                            <div class="ct_other_units active">
-                                                <ul>
-                                                    <li>
-                                                        <p>500g</p>
-                                                        <span>₹ 45</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>5kg</p>
-                                                        <span>₹ 237</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>10kg</p>
-                                                        <span>₹ 467</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                            <del class="pricenooff">₹ 45</del>
-                                            <p class="price_food for_oly_ekfd_price"><span>₹ 36 </span> </p>
-
-
-                                        </div>
-                                        <div class="ct_addbtns">
-                                            <p>Add to cart</p>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="product" style="left: 0px;">
-                            <div class="itm_food_list_ek added_itm_ek_fd">
-
-                                <div class="ct_inner_fd_dt_grid">
-                                    <div class="ct_offer_box_cook2 no_offer" style="display:none">
-
-                                    </div>
-
-                                    <div class="ct_img_res_main">
-                                        <img alt="Amritsari chole sauce image" src="../img/fortune_oil.jpg">
-
-                                    </div>
-                                    <div class="ct_inner_fd1_dt_grid">
-
-                                        <div class="ct_dt_tm_food_res">
-                                            <h4> Mustard Oil, Fortune</h4>
-                                        </div>
-                                        <div class="ct_unit_box_selector">
-                                            <div class="ct_bx_selection">
-                                                <div class="ct_pr_bx_unit">
-                                                    <p>500g</p>
-                                                    <span>₹ 45</span>
-                                                </div>
-
-                                                <div class="ct_popup_unit_btn">
-                                                    <ion-icon name="caret-forward-outline" role="img"
-                                                        class="md hydrated"
-                                                        aria-label="caret forward outline"></ion-icon>
-                                                </div>
-
-                                            </div>
-                                            <div class="ct_other_units active">
-                                                <ul>
-                                                    <li>
-                                                        <p>500g</p>
-                                                        <span>₹ 45</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>5kg</p>
-                                                        <span>₹ 237</span>
-                                                    </li>
-                                                    <li>
-                                                        <p>10kg</p>
-                                                        <span>₹ 467</span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="ct_bx_priceandoff" style="margin-top:10px">
-                                            <p class="price_food for_oly_ekfd_price"><span>₹ 45 </span> </p>
-
-
-                                        </div>
-                                        <div class="ct_addbtns">
-                                            <p>Add to cart</p>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
+                    
 
 
 
@@ -13793,6 +13665,27 @@ weight_sh:"150gm"
 
 
         }
+
+
+        let initialOrientation = window.orientation;
+
+// Check for a device rotation event
+window.addEventListener("orientationchange", function() {
+  // Get the new orientation of the device
+  let newOrientation = window.orientation;
+
+  // Compare the new orientation to the initial orientation
+  if (newOrientation !== initialOrientation) {
+   if(window.screen.width>550){
+window.location.replace('/notavailable')
+   }
+    // The device has been rotated
+    // Do something here, such as updating the layout or UI
+  }
+
+  // Update the initial orientation to the new orientation
+  initialOrientation = newOrientation;
+});
         // global variables//
         let itemstocks = 0
         let priceItem = 0
@@ -13817,7 +13710,25 @@ weight_sh:"150gm"
             let remove_review_info= e.target.closest('.ct_remove')
             let submit_btn_review=e.target.closest('.ct_btn_review.btn_submit')
             let rm_rev_main=e.target.closest('.remove_review')
+            let rm_rev_cancel=e.target.closest('.ct_btn_review.btn_cancel')
+            let info_req=e.target.closest('.req_essen h4')
+            if(info_req!==null){
+            if(!info_req.classList.value.split(' ').includes('open')){
+                document.querySelector('.req_essen .fade.show').style.display='block'
+                    info_req.classList.add('open')
+                }else{
+                document.querySelector('.req_essen .fade.show').style.display='none'
+                    info_req.classList.remove('open')
+                }
+            }else{
+                                document.querySelector('.req_essen .fade.show').style.display='none'
 
+            }
+            if(rm_rev_cancel!==null){
+                document.querySelector('.ct_rate_popup').style.display='none'
+                document.querySelector('.ct_rate_now').style.display='block'
+
+            }
             if(rm_rev_main!==null){
             let userDt = JSON.parse(getCookie('userData'))
 async function rem_rev(){
@@ -13829,7 +13740,8 @@ async function rem_rev(){
             let val_rat=0
             res.docs.forEach(async (cur,ind) => {
                 let item=cur.data().item
-                let itm_id=window.location.hash.split('#')[1]
+                let itm_id=window.location.hash.split('#')[1].split("?")[0]
+
                 if(item.name.split(' ').join('').toLowerCase()===itm_id){
                     let found_rev=false
                     item.review.forEach(cux=>{
@@ -13919,7 +13831,8 @@ async function reviews_mn(){
             let found=false
             res.docs.forEach(async cur => {
                 let item=cur.data().item
-                let itm_id=window.location.hash.split('#')[1]
+                let itm_id=window.location.hash.split('#')[1].split("?")[0]
+
                                                             console.log(item.name.split(' ').join('').toLowerCase()===itm_id,'sdfojdfsdfsdfk;fjlfdldfl.dlldlddfdhfdhasdfdfdssdsf')
 
                 if(item.name.split(' ').join('').toLowerCase()===itm_id){
@@ -14016,6 +13929,7 @@ document.querySelector('.ct_rate_now p').style.display='none'
                 document.querySelectorAll('.ct_poup_xbshs').forEach(cux=>{
 cux.style.right='-1000px'
                 })
+               document.cookie = "inf_lgot" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;path=/";
 
             }
 
@@ -14062,7 +13976,8 @@ cux.style.right='-1000px'
                         if (userDt_db.id === userDt.id) {
                             userDt_db.orders.forEach(cux => {
                                 cux.arr.forEach(itm => {
-                                    let itm_nm = window.location.hash.split('#')[1]
+                                    let itm_nm = window.location.hash.split('#')[1].split("?")[0]
+
                                     if (itm.name.split(' ').join('').toLowerCase() === itm_nm.split(' ').join('').toLowerCase()) {
                                         // checking if this item had ordered
                                         found_one = true
@@ -14074,7 +13989,7 @@ cux.style.right='-1000px'
 
                     })
                     if (found_one) {
-                        
+                document.querySelector('.ct_rate_now').style.display='none'
                         document.querySelector('.ct_rate_popup').style.display = 'block'
                         document.querySelector('.ct_rate_popup').classList.add('fade-in-down')
                     }else{
@@ -15030,7 +14945,9 @@ cux.style.right='-1000px'
                 document.querySelector('.cust_ques .inner_x').innerHTML=``
             res.docs.forEach(cur => {
                 let item=cur.data().item
-                let itm_id=window.location.hash.split('#')[1]
+                let itm_id=window.location.hash.split('#')[1].split("?")[0]
+
+
                 if(item.name.split(' ').join('').toLowerCase()===itm_id){
                     let tot_Reviews=0
                     document.querySelector('.prod_desc').innerText=item.tagline
@@ -15080,14 +14997,17 @@ averageRating=Math.round(averageRating)
     averageRating=avg_num.toFixed(1)
     }
 }
-            let userDt =JSON.parse( getCookie('userData'))
+            let userDt = getCookie('userData')
 let found=false
 document.querySelector('.ct_overall_ratings h4').innerHTML=`${averageRating}<ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
 let html_rev=item.review.map(cux=>{
-    console.log(cux.id,userDt.id,'  ----------------------------------------cjvhihvs')
-                            if(cux.id===userDt.id){
+    if(userDt!==''){
+        userDt=JSON.parse( getCookie('userData'))
+                                    if(cux.id===userDt.id){
                             found=true
                         }
+    }
+
     let html=`<div class="col _2wzgFH" id='${userDt.id}'>
                     <div class="ct_account_icon">
                         <ion-icon name="person-circle" role="img" class="md hydrated" aria-label="person circle"></ion-icon>
@@ -15606,12 +15526,24 @@ document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend'
             if (total_itms > 9) {
                 total_itms = '+9'
             }
-            if (allfd_essen !== 0) {
-                document.querySelector('.ct_info_cart').style.display = 'block'
-                document.querySelector('.ct_info_cart p').innerText = total_itms
+            if (total_itms !== 0) {
+                document.querySelectorAll('.ct_info_cart').forEach(cu=>{
+cu.style.display = 'block'
+                })
+               document.querySelectorAll('.ct_info_cart p').forEach(cu=>{
+                    cu.innerText = total_itms
+                })
+            }else{
+                               document.querySelectorAll('.ct_info_cart').forEach(cu=>{
+cu.style.display = 'none'
+                }) 
             }
 
             let userDtx = getCookie('userData')
+            let logout_info=getCookie('inf_lgot')
+            if(logout_info!==''){
+document.querySelector('.logut_info').style.right='3px'
+            }
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
 
@@ -15621,7 +15553,6 @@ document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend'
 
                 }
                 document.querySelector('.account_nav2').style.display = 'block'
-                document.querySelector('.hide_gshs2').style.display = 'none'
                 document.querySelector('.hide_gshs').style.display = 'block'
                 if (window.screen.width > 740) {
                     document.querySelector('.mobile_only.account_btn').style.display = 'block'
@@ -15649,6 +15580,13 @@ document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend'
             let grouped = ``
             res.docs.forEach(cur => {
                 let item = cur.data().item
+                let rating_href=``
+
+                if(window.location.hash.split('#')[1]!==undefined){
+             rating_href=window.location.hash.split('#')[1].split("?")[1]
+
+                }
+
                 let grp = cur.data().grp
 
 
@@ -15693,6 +15631,7 @@ document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend'
      `
 
                 }
+// RATINGS system
 let rattings_stars=[]
 let tot_Reviews=0
 
@@ -15735,9 +15674,10 @@ let ratings_bx=`<div class="ratings_bx">
                                                             </div>
                                                             <span>(${tot_Reviews})</span>
                                                         </div>`
+                                                        let name_id=name.split(' ').join('').toLowerCase()
 
-                let html = `<div class="ct_bx_fooditm">
-                                            <a href="#${name.split(' ').join('').toLowerCase()}">
+                let html = `<div class="ct_bx_fooditm ${name_id}">
+                                            <a href="#${name_id}">
                                                 <div class="ct_bx_flex">
                                                     <div class="ct_img_layer">
                                                     <img class="main_im" alt="${name}" src="${img[0]}">
@@ -15781,12 +15721,16 @@ let ratings_bx=`<div class="ratings_bx">
                     document.querySelector(`.ct_all_list_food`).insertAdjacentHTML('beforeend', htm_x)
 
                 }
-                console.log(document.querySelector(`#${grpName}`), '-----------------------------')
-
-                //   console.log(document.querySelectorAll(`.ct_all_list_food .list_food_at_ov`))
                 document.querySelector(`#${grpName} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
                 document.querySelector('.ct_full_loading_box').style.display = 'none'
-
+                if(rating_href!==undefined){
+                    if(name_id===window.location.hash.split('#')[1].split("?")[0]){
+                        console.log(document.querySelector(`.ct_bx_fooditm.${name_id}`))
+document.querySelector(`.ct_bx_fooditm.${name_id}`).click()      
+let element = document.getElementById('ratings');
+element.scrollIntoView({ behavior: 'smooth' });
+            }
+                }
             })
         }
         loadFoodItems()
@@ -16029,6 +15973,8 @@ let ratings_bx=`<div class="ratings_bx">
                         }
                     })
                     localStorage.setItem('sauce', JSON.stringify(allfd))
+                                        load_basic_dt()
+
                     document.querySelector('.buy_now').style.display = 'block'
                     document.querySelector('.add_cart_btn').style.display = 'block'
                     document.querySelector('.ct_addded').style.display = 'none'

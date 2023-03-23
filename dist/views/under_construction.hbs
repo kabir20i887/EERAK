@@ -151,10 +151,10 @@ width: 40%;
 
         </a>
     </div>
-    <h4>This page is under developement</h4>
-    <p class="text">We apologize for your inconvenience. Please check back soon</p>
+    <h4>Not available for this screen size</h4>
+    <p class="text">Sorry! we are currently available only on mobile</p>
     <div class="flex_box">
-    <a  href="/" class="ct_visit">
+    <a  href="/magicmix" class="ct_visit">
 <p>Home</p>
     </a>
     </div>
@@ -164,3 +164,27 @@ width: 40%;
 
 
 </article>
+<script>
+            let initialOrientation = window.orientation;
+
+// Check for a device rotation event
+window.addEventListener("orientationchange", function() {
+  // Get the new orientation of the device
+  let newOrientation = window.orientation;
+
+  // Compare the new orientation to the initial orientation
+  if (newOrientation !== initialOrientation) {
+   if(window.screen.width>550){
+window.location.replace('/notavailable')
+   }else{
+    window.location.replace('/magicmix')
+
+   }
+    // The device has been rotated
+    // Do something here, such as updating the layout or UI
+  }
+
+  // Update the initial orientation to the new orientation
+  initialOrientation = newOrientation;
+});
+</script>

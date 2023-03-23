@@ -4711,6 +4711,9 @@
     width: 92vw;
 }
   }
+    @media only screen and (max-width:550px) {
+        .g28rk .ct_flex{display: block;}
+    }
 
 
     </style>
@@ -5036,360 +5039,358 @@
     let socket = io()
 </script>
 <script>
-//    function getCookie(cname) {
-//        var name = cname + "=";
-//        var decodedCookie = decodeURIComponent(document.cookie);
-//        var ca = decodedCookie.split(';');
-//        for (var i = 0; i < ca.length; i++) {
-//            var c = ca[i];
-//            while (c.charAt(0) == ' ') {
-//                c = c.substring(1);
-//            }
-//            if (c.indexOf(name) == 0) {
-//                return c.substring(name.length, c.length);
-//            }
-//        }
-//        return "";
-//    }
-//    function secret(token) {
-//        var base64Url = token.split('.')[1];
-//        if (base64Url !== undefined) {
-//            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-//            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-//                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-//            }).join(''));
-//            return JSON.parse(jsonPayload);
-//
-//        } else {
-//            return null
-//        }
-//    };
-//
-//    document.querySelector('html').addEventListener('click', (e) => {
-//        let accept_ord = e.target.closest('.accept_ord a')
-//        let return_order = e.target.closest('.accept_return')
-//        let confirm_btn = e.target.closest('.ct_box_verify_order .f4Ovn')
-//        if (confirm_btn !== null) {
-//            confirm_btn.style.pointerEvents='none'
-//            confirm_btn.style.opacity='.5'
-//
-//            let id_ord=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
-//            let id_user=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
-//
-//            let cd = confirm_btn.parentElement.parentElement.childNodes[1].innerText
-//            console.log(secret(cd))
-//            cd = secret(cd).code
-//            let date = moment().format('LLL')
-//            let val = confirm_btn.parentElement.parentElement.childNodes[7].value
-//            if (val === cd) {
-//                async function confirmed() {
-//                    let dbCollection2 = db.collection("orders")
-//                    let res = await dbCollection2.get()
-//
-//                    res.docs.forEach(async cur => {
-//                        let order_dt = cur.data().orderDt
-//                        let data = cur.data()
-//
-//
-//                        if (order_dt.id_ord === id_ord) {
-//                            order_dt.delivered = {
-//                                date: date,
-//                            }
-//                            await dbCollection2.doc(cur.id).set({
-//                                user: data.user,
-//                                orderDt: order_dt,
-//
-//                            })
-//                        }
-//                    })
-//                    let dbCollection2x = db.collection("users")
-//                    let res2 = await dbCollection2x.get()
-//                    res2.docs.forEach(async cur => {
-//                        let data = cur.data()
-//                        console.log(data.id , id_user, 'papappapa')
-//                        if (data.id === id_user) {
-//                            data.orders.forEach(cux => {
-//                                    if (cux.id_ord === id_ord) {
-//                                        cux.delivered = {date:date}
-//                                    }
-//                            })
-//                            await dbCollection2x.doc(cur.id).set({
-//                                admin: data.admin,
-//                                id: data.id,
-//                                name: data.name,
-//                                phone: data.phone,
-//                                address: data.address,
-//                                location: data.location,
-//                                cartItems: data.cartItems,
-//                                refferedBy: data.refferedBy,
-//                                allow_cpns: data.allow_cpns,
-//                                cpns_used: data.cpns_used,
-//                                orders: data.orders,
-//                                reffer: data.reffer,
-//                            })
-//                        }
-//                    })
-//                                confirm_btn.style.pointerEvents='auto'
-//            confirm_btn.style.opacity='1'
-//                    confirm_btn.parentElement.parentElement.style.display='none'
-//                    window.scrollTo(0,0)
-//                                              document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
-//                            document.querySelector('.ct_info_requested.sucess_div p').innerText = `Order successfully confirmed`
-//                }
-//                confirmed()
-//            } else {
-//                            confirm_btn.style.pointerEvents='auto'
-//            confirm_btn.style.opacity='1'
-//                confirm_btn.parentElement.parentElement.childNodes[9].style.display = 'block'
-//            }
-//            console.log(confirm_btn.parentElement.parentElement.childNodes[7].value)
-//            console.log(secret(cd))
-//        }
-//        if (return_order !== null) {
-//            console.log(return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1])
-//
-//            let id = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
-//            let id_2 = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
-//            let order_id = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
-//
-//            let order_dt = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].innerText
-//            let nm = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
-//            let qt = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[3].innerText
-//            let unit = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[5].innerText
-//            let dt_user = JSON.parse(getCookie('userData'))
-//            let name = dt_user.name
-//            let phone = dt_user.phone
-//            let address = dt_user.address
-//
-//            async function return_itm() {
-//                let dbCollection2 = db.collection("users")
-//                let res = await dbCollection2.get()
-//                res.docs.forEach(async cur => {
-//                    let dt = cur.data()
-//                    if (dt.id === id) {
-//                        let matched = false
-//                        dt.orders.forEach(async cux => {
-//                            cux.arr.forEach(cu1 => {
-//                                console.log(cu1, id_2)
-//                                if (cu1.name.split(' ').join('_') === id_2) {
-//                                    cu1.return = true
-//                                    matched = true
-//                                    let arr = JSON.parse(localStorage.getItem('retu_ord'))
-//                                    if (arr !== null) {
-//                                        arr.push({ name: cu1.name.split(' ').join('_'), id: order_id })
-//                                    } else {
-//                                        arr = [{ name: cu1.name.split(' ').join('_'), id: order_id }]
-//                                    }
-//
-//                                    localStorage.setItem('retu_ord', JSON.stringify(arr))
-//                                }
-//                            })
-//
-//                        })
-//                        console.log(dt.orders[0].arr, '-------')
-//                        if (matched) {
-//
-//                            await dbCollection2.doc(cur.id).set({
-//                                admin: dt.admin,
-//                                id: dt.id,
-//                                name: dt.name,
-//                                phone: dt.phone,
-//                                address: dt.address,
-//                                location: dt.location,
-//                                cartItems: dt.cartItems,
-//                                allow_cpns: dt.allow_cpns,
-//                                cpns_used: dt.cpns_used,
-//                                refferedBy: dt.refferedBy,
-//                                reffer: dt.reffer,
-//                                orders: dt.orders
-//                            })
-//                            return_order.innerText = 'Returned'
-//                            return_order.style.opacity = '.5'
-//                            return_order.style.pointerEvents = 'none'
-//                            document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
-//                            document.querySelector('.ct_info_requested.sucess_div p').innerText = `${order_dt}, Item: ${nm},${qt}, ${unit} has been suceessfully requested for return, We will contact you on this number 9233054806`
-//                            window.scrollTo(0, 0)
-//                        }
-//
-//                    }
-//                })
-//            }
-//            return_itm()
-//
-//
-//
-//
-//            console.log(nm, qt, unit,)
-//        }
-//        if (accept_ord !== null) {
-//            // only send sms
-//            let total_amount = accept_ord.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].innerText
-//            let name = accept_ord.parentElement.parentElement.childNodes[3].childNodes[1].innerText
-//            let phone = accept_ord.parentElement.parentElement.childNodes[3].childNodes[5].innerText.split(':')[1]
-//            //   let name=accept_ord.parentElement.parentElement.childNodes[3].childNodes[1].innerText
-//            accept_ord.parentElement.parentElement.childNodes[9].style.display = 'block'
-//            let itm_id = accept_ord.parentElement.parentElement.classList.value.split(' ')[1]
-//            let arr = JSON.parse(localStorage.getItem('accepted_ord'))
-//            if (arr !== null) {
-//                arr.push(itm_id)
-//            } else {
-//                arr = [itm_id]
-//            }
-//
-//            localStorage.setItem('accepted_ord', JSON.stringify(arr))
-//            accept_ord.parentElement.style.display = 'none'
-//            console.log(accept_ord.parentElement.parentElement.classList.value)
-//            //   socket.emit('on_way_sms')
-//
-//        }
-//
-//    })
-//    async function loadOrders() {
-//        let dbCollection2 = db.collection("orders")
-//        let res = await dbCollection2.get()
-//        res.docs.forEach(async cur => {
-//            let dt = cur.data()
-//            let orders = dt.orderDt
-//            let user_data = dt.user
-//            let total = 0
-//            let blur_it = ''
-//            let returned = false
-//            let order_arr = orders.arr.map(cu1 => {
-//                let return_acc = `                                                <div class="ct_btns">
-//                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn accept_return">Accept return</a></div>
-//                                                </div>`
-//                let return_hm = ''
-//                if (cu1.return) {
-//                    returned = true
-//                    return_acc = ``
-//                    return_hm = `                                                    <div class="_2haEe" style='color:red'>Item returned</div>
-//`
-//                }
-//                let arrx = JSON.parse(localStorage.getItem('retu_ord'))
-//                if (arrx !== null) {
-//                    arrx.forEach(cuxm => {
-//                        console
-//                        if (cuxm.name === cu1.name.split(' ').join('_') && orders.id_ord === cuxm.id) {
-//                            returned = true
-//                            return_acc = ``
-//                            return_hm = `                                                    <div class="_2haEe" style='color:red'>Item returned</div>
-//`
-//                        }
-//                    })
-//                }
-//
-//                total += parseFloat(cu1.am)
-//
-//                let html_x = `                                    <div class="g28rk ${cu1.name.split(' ').join('_')}" ${blur_it}>
-//
-//                                      
-//                                        <div class="_2XWVq">
-//                                            <div class="ct_flex">
-//                                                <div class="ct_inner">
-//                                                    <div class="_3h4gz">${cu1.name}</div>
-//                                                    <div class="_2haEe">qty:${cu1.qt}</div>
-//                                                    <div class="_2haEe">Net weight: ${cu1.unit}</div>
-//${return_hm}
-//                                                </div>
-//                                                ${return_acc}
-//
-//
-//                                            </div>
-//
-//                                        </div>
-//
-//                                    </div> `
-//                return html_x
-//            })
-//            let arr_accep = JSON.parse(localStorage.getItem('accepted_ord'))
-//            let alr_acc = false
-//            if (arr_accep !== null) {
-//                arr_accep.forEach(cux => {
-//                    if (cux === orders.id_ord) {
-//                        alr_acc = true
-//                    }
-//                })
-//            }
-//            let html_verif = `                                                               <div class="ct_box_verify_order" style='display:none'>
-//                                                                    
-//                                    <p class='hdden'>${user_data.verf_cd}</p>
-//
-//                                    <h4>Verfiy the order</h4>
-//                                    <p>Enter the OTP from customer which was sent on order placement.</p>
-//                                    <input type="text" placeholder="OTP">
-//                                    <span class="err">Invalid otp</span>
-//                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn">Confirm</a></div>
-//
-//                                </div>`
-//            let accept_btn = `                              <div class="_2a27y accept_ord"><a class="_3PUy8 f4Ovn">Accept order</a></div>`
-//            let html_deliv = ``
-//            if (orders.delivered) {
-//                accept_btn = ``
-//                html_verif = ''
-//                html_deliv = `<div class="ct_rtrn_h78s success">
-//                                                <h4>Delivered on ${orders.delivered.date}</h4>
-//                                            </div>`
-//                                            alr_acc=false
-//            }
-//
-//            let total_txt = 'Total Amount to pay'
-//            if (orders.payMode === 'payonline') {
-//                total_txt = `Total Paid`
-//            }
-//            if (orders.delivered) {
-//                total_txt = `Total Paid`
-//
-//            }
-//            if (alr_acc) {
-//                accept_btn = ''
-//                html_verif = `                                                               <div class="ct_box_verify_order" style='display:block'>
-//                                                                    
-//                                    <p class='hdden'>${user_data.verf_cd}</p>
-//
-//                                    <h4>Verfiy the order</h4>
-//                                    <p>Enter the OTP from customer which was sent on order placement.</p>
-//                                    <input type="text" placeholder="OTP">
-//                                    <span class="err">Invalid otp</span>
-//                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn">Confirm</a></div>
-//
-//                                </div>`
-//            }
-//            let html = `<div class="_3xMk0 ${orders.id_ord} ${user_data.id}">
-//
-//
-//                                <div class="ct_other_av">
-//                                    <div class="_2fkm7">
-//                                        <span>order placed on, ${orders.date}</span>
-//                                    </div>
-//                                </div>
-//                                
-//${html_deliv}
-//                                <div class="ct_user_dt">
-//                                    <h4>${user_data.name}</h4>
-//                                    <p>${user_data.address}</p>
-//                                    <span>Phone no: ${user_data.phone}</span>
-//                                </div>
-//                                
-//                                <div class="_3SKK0">
-//                                    <div class="_33I3_">Payment mode: ${orders.payMode}</div>
-//                                    <div class="_23DHc">${total_txt} <span class="_1jGfr"> ${total}</span> </div>
-//
-//
-//                                </div>
-//
-//                                <div class="ct_inner_itms">
-//                                    ${order_arr.join('')}
-//                                </div>
-//
-//${html_verif}
-//${accept_btn}
-//
-//                            </div>`
-//            document.querySelector('.ct_innner_orders').insertAdjacentHTML('beforeend', html)
-//        })
-//
- //   }
-   // loadOrders()
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    function secret(token) {
+        var base64Url = token.split('.')[1];
+        if (base64Url !== undefined) {
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+
+        } else {
+            return null
+        }
+    };
+
+    document.querySelector('html').addEventListener('click', (e) => {
+        let accept_ord = e.target.closest('.accept_ord a')
+        let return_order = e.target.closest('.accept_return')
+        let confirm_btn = e.target.closest('.ct_box_verify_order .f4Ovn')
+        if (confirm_btn !== null) {
+            confirm_btn.style.pointerEvents='none'
+            confirm_btn.style.opacity='.5'
+
+            let id_ord=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
+            let id_user=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
+
+            let cd = confirm_btn.parentElement.parentElement.childNodes[1].innerText
+            console.log(secret(cd))
+            cd = secret(cd).code
+            let date = moment().format('LLL')
+            let val = confirm_btn.parentElement.parentElement.childNodes[7].value
+            if (val === cd) {
+                async function confirmed() {
+                    let dbCollection2 = db.collection("orders")
+                    let res = await dbCollection2.get()
+
+                    res.docs.forEach(async cur => {
+                        let order_dt = cur.data().orderDt
+                        let data = cur.data()
+
+
+                        if (order_dt.id_ord === id_ord) {
+                            order_dt.delivered = {
+                                date: date,
+                            }
+                            await dbCollection2.doc(cur.id).set({
+                                user: data.user,
+                                orderDt: order_dt,
+
+                            })
+                        }
+                    })
+                    let dbCollection2x = db.collection("users")
+                    let res2 = await dbCollection2x.get()
+                    res2.docs.forEach(async cur => {
+                        let data = cur.data()
+                        console.log(data.id , id_user, 'papappapa')
+                        if (data.id === id_user) {
+                            data.orders.forEach(cux => {
+                                    if (cux.id_ord === id_ord) {
+                                        cux.delivered = {date:date}
+                                    }
+                            })
+                            await dbCollection2x.doc(cur.id).set({
+                                admin: data.admin,
+                                id: data.id,
+                                name: data.name,
+                                phone: data.phone,
+                                address: data.address,
+                                location: data.location,
+                                cartItems: data.cartItems,
+                                refferedBy: data.refferedBy,
+                                allow_cpns: data.allow_cpns,
+                                cpns_used: data.cpns_used,
+                                orders: data.orders,
+                                reffer: data.reffer,
+                            })
+                        }
+                    })
+                                confirm_btn.style.pointerEvents='auto'
+            confirm_btn.style.opacity='1'
+                    confirm_btn.parentElement.parentElement.style.display='none'
+                    window.scrollTo(0,0)
+                                              document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
+                            document.querySelector('.ct_info_requested.sucess_div p').innerText = `Order successfully confirmed`
+                }
+                confirmed()
+            } else {
+                            confirm_btn.style.pointerEvents='auto'
+            confirm_btn.style.opacity='1'
+                confirm_btn.parentElement.parentElement.childNodes[9].style.display = 'block'
+            }
+            console.log(confirm_btn.parentElement.parentElement.childNodes[7].value)
+            console.log(secret(cd))
+        }
+        if (return_order !== null) {
+            console.log(return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1])
+
+            let id = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
+            let id_2 = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
+            let order_id = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
+
+            let order_dt = return_order.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].innerText
+            let nm = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].innerText
+            let qt = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[3].innerText
+            let unit = return_order.parentElement.parentElement.parentElement.childNodes[1].childNodes[5].innerText
+            let dt_user = JSON.parse(getCookie('userData'))
+            let name = dt_user.name
+            let phone = dt_user.phone
+            let address = dt_user.address
+
+            async function return_itm() {
+                let dbCollection2 = db.collection("users")
+                let res = await dbCollection2.get()
+                res.docs.forEach(async cur => {
+                    let dt = cur.data()
+                    if (dt.id === id) {
+                        let matched = false
+                        dt.orders.forEach(async cux => {
+                            cux.arr.forEach(cu1 => {
+                                console.log(cu1, id_2)
+                                if (cu1.name.split(' ').join('_') === id_2) {
+                                    cu1.return = true
+                                    matched = true
+                                    let arr = JSON.parse(localStorage.getItem('retu_ord'))
+                                    if (arr !== null) {
+                                        arr.push({ name: cu1.name.split(' ').join('_'), id: order_id })
+                                    } else {
+                                        arr = [{ name: cu1.name.split(' ').join('_'), id: order_id }]
+                                    }
+
+                                    localStorage.setItem('retu_ord', JSON.stringify(arr))
+                                }
+                            })
+
+                        })
+                        console.log(dt.orders[0].arr, '-------')
+                        if (matched) {
+
+                            await dbCollection2.doc(cur.id).set({
+                                admin: dt.admin,
+                                id: dt.id,
+                                name: dt.name,
+                                phone: dt.phone,
+                                address: dt.address,
+                                location: dt.location,
+                                cartItems: dt.cartItems,
+                                allow_cpns: dt.allow_cpns,
+                                cpns_used: dt.cpns_used,
+                                refferedBy: dt.refferedBy,
+                                reffer: dt.reffer,
+                                orders: dt.orders
+                            })
+                            return_order.innerText = 'Returned'
+                            return_order.style.opacity = '.5'
+                            return_order.style.pointerEvents = 'none'
+                            document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
+                            document.querySelector('.ct_info_requested.sucess_div p').innerText = `${order_dt}, Item: ${nm},${qt}, ${unit} has been suceessfully requested for return, We will contact you on this number 9233054806`
+                            window.scrollTo(0, 0)
+                        }
+
+                    }
+                })
+            }
+            return_itm()
+
+
+
+
+            console.log(nm, qt, unit,)
+        }
+        if (accept_ord !== null) {
+            // only send sms
+            let total_amount = accept_ord.parentElement.parentElement.childNodes[5].childNodes[3].childNodes[1].innerText
+            let name = accept_ord.parentElement.parentElement.childNodes[3].childNodes[1].innerText
+            let phone = accept_ord.parentElement.parentElement.childNodes[3].childNodes[5].innerText.split(':')[1]
+            //   let name=accept_ord.parentElement.parentElement.childNodes[3].childNodes[1].innerText
+            accept_ord.parentElement.parentElement.childNodes[9].style.display = 'block'
+            let itm_id = accept_ord.parentElement.parentElement.classList.value.split(' ')[1]
+            let arr = JSON.parse(localStorage.getItem('accepted_ord'))
+            if (arr !== null) {
+                arr.push(itm_id)
+            } else {
+                arr = [itm_id]
+            }
+
+            localStorage.setItem('accepted_ord', JSON.stringify(arr))
+            accept_ord.parentElement.style.display = 'none'
+            console.log(accept_ord.parentElement.parentElement.classList.value)
+            //   socket.emit('on_way_sms')
+
+        }
+
+    })
+    async function loadOrders() {
+        let dbCollection2 = db.collection("orders")
+        let res = await dbCollection2.get()
+        res.docs.forEach(async cur => {
+            let dt = cur.data()
+            let orders = dt.orderDt
+            let user_data = dt.user
+            let total = 0
+            let blur_it = ''
+            let returned = false
+            let order_arr = orders.arr.map(cu1 => {
+                let return_acc = `                                                <div class="ct_btns">
+                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn accept_return">Accept return</a></div>
+                                                </div>`
+                let return_hm = ''
+                if (cu1.return) {
+                    returned = true
+                    return_acc = ``
+                    return_hm = `                                                    <div class="_2haEe" style='color:red'>Item returned</div>
+`
+                }
+                let arrx = JSON.parse(localStorage.getItem('retu_ord'))
+                if (arrx !== null) {
+                    arrx.forEach(cuxm => {
+                        console
+                        if (cuxm.name === cu1.name.split(' ').join('_') && orders.id_ord === cuxm.id) {
+                            returned = true
+                            return_acc = ``
+                            return_hm = `                                                    <div class="_2haEe" style='color:red'>Item returned</div>
+`
+                        }
+                    })
+                }
+
+                total += parseFloat(cu1.am)
+
+                let html_x = `                                    <div class="g28rk ${cu1.name.split(' ').join('_')}" ${blur_it}>
+
+                                      
+                                        <div class="_2XWVq">
+                                            <div class="ct_flex">
+                                                <div class="ct_inner">
+                                                    <div class="_3h4gz">${cu1.name}</div>
+                                                    <div class="_2haEe">qty:${cu1.qt}</div>
+                                                    <div class="_2haEe">Net weight: ${cu1.unit}</div>
+${return_hm}
+                                                </div>
+                                                ${return_acc}
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div> `
+                return html_x
+            })
+            let arr_accep = JSON.parse(localStorage.getItem('accepted_ord'))
+            let alr_acc = false
+            if (arr_accep !== null) {
+                arr_accep.forEach(cux => {
+                    if (cux === orders.id_ord) {
+                        alr_acc = true
+                    }
+                })
+            }
+            let html_verif = `                                                               <div class="ct_box_verify_order" style='display:none'>
+                                                                    
+                                    <p class='hdden'>${user_data.verf_cd}</p>
+
+                                    <h4>Verfiy the order</h4>
+                                    <p>Enter the OTP from customer which was sent on order placement.</p>
+                                    <input type="text" placeholder="OTP">
+                                    <span class="err">Invalid otp</span>
+                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn">Confirm</a></div>
+
+                                </div>`
+            let accept_btn = `                              <div class="_2a27y accept_ord"><a class="_3PUy8 f4Ovn">Accept order</a></div>`
+            let html_deliv = ``
+            if (orders.delivered) {
+                accept_btn = ``
+                html_verif = ''
+                html_deliv = `<div class="ct_rtrn_h78s success">
+                                                <h4>Delivered on ${orders.delivered.date}</h4>
+                                            </div>`
+                                            alr_acc=false
+            }
+
+            let total_txt = 'Total Amount to pay'
+            if (orders.payMode === 'payonline') {
+                total_txt = `Total Paid`
+            }
+            if (orders.delivered) {
+                total_txt = `Total Paid`
+
+            }
+            if (alr_acc) {
+                accept_btn = ''
+                html_verif = `                                                               <div class="ct_box_verify_order" style='display:block'>
+                                                                    
+                                    <p class='hdden'>${user_data.verf_cd}</p>
+
+                                    <h4>Verfiy the order</h4>
+                                    <p>Enter the OTP from customer which was sent on order placement.</p>
+                                    <input type="text" placeholder="OTP">
+                                    <span class="err">Invalid otp</span>
+                                                    <div class="_2a27y"><a class="_3PUy8 f4Ovn">Confirm</a></div>
+
+                                </div>`
+            }
+            let html = `<div class="_3xMk0 ${orders.id_ord} ${user_data.id}">
+
+
+                                <div class="ct_other_av">
+                                    <div class="_2fkm7">
+                                        <span>order placed on, ${orders.date}</span>
+                                    </div>
+                                </div>
+                                
+${html_deliv}
+                                <div class="ct_user_dt">
+                                    <h4>${user_data.name}</h4>
+                                    <p>${user_data.address}</p>
+                                    <span>Phone no: ${user_data.phone}</span>
+                                </div>
+                                
+                                <div class="_3SKK0">
+                                    <div class="_33I3_">Payment mode: ${orders.payMode}</div>
+                                    <div class="_23DHc">${total_txt} <span class="_1jGfr"> ${total}</span> </div>
+
+
+                                </div>
+
+                                <div class="ct_inner_itms">
+                                    ${order_arr.join('')}
+                                </div>
+
+${html_verif}
+${accept_btn}
+                           </div>`
+           document.querySelector('.ct_innner_orders').insertAdjacentHTML('beforeend', html)
+       })
+   }
+   loadOrders()
 </script>
 
 </html>

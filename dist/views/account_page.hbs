@@ -69,7 +69,19 @@
         height: 100%;
     }
 
+.ct_btn_rate_this_prod{
+    display: block;
+    background: #ffffff;
+    font-size: 12px;
+    box-shadow: 0 1px 5px #00000024;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 16px;
+    color: black;
+    font-family: 'roboto';
+    margin-top: 18px;
 
+}
     .ct_icon_x_dwn,
     .ct_icon_x_up {
         display: none;
@@ -5692,9 +5704,9 @@
         width: 62px;
     }
 
-    .coppy_right {
-        margin: 37px 7px 0 10px;
-    }
+ .coppy_right {
+    margin: 23px 57px 0 10px;
+}
 
     .about_us_link {
         width: 13%;
@@ -8421,17 +8433,16 @@
             padding-top: 0 !important;
         }
 
-        .awo_x {
-            padding: 25px 0px;
-            /* border-bottom: 2px solid rgb(214, 214, 214); */
-            background: white;
-            transition: all .6s ease-in-out;
-            box-shadow: 0 1px 4px #00000026;
-            border-radius: 20px;
-            width: 98%;
-            margin-top: 6px;
-            margin-left: 7px;
-        }
+.awo_x {
+    padding: 25px 0px;
+    background: white;
+    transition: all .6s ease-in-out;
+    box-shadow: 0 1px 4px #00000026;
+    border-radius: 4;
+    width: 95%;
+    margin-top: 6px;
+    margin-left: 10px;
+}
 
 
         .awo_x .inner_ms {
@@ -8480,7 +8491,19 @@
         .ct_logox {
             width: 24%;
         }
-
+        .follow_us {
+    margin-top: 24px;
+}
+._3PUy8 {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: initial;
+    height: 27px;
+    padding: 0 15px;
+    margin-top: 0px;
+    padding: 7px;
+}
         .coppy_right p {
             font-size: 12px;
             margin: 5px 1px 0 10px;
@@ -8579,7 +8602,7 @@
         }
 
         .f4Ovn {
-            margin: 28px 0 0 0px;
+            margin: 14px 0 0 0px;border-radius: 20px;
         }
 
         ._2XWVq .ct_flex {
@@ -8814,9 +8837,9 @@
             width: 20%;
         }
 
-        .coppy_right {
-            margin: 37px 7px 0 10px;
-        }
+.coppy_right {
+    margin: 20px 37px 0 10px;
+}
 
         .ct_logox {
             width: 22%;
@@ -9281,7 +9304,7 @@
     <div class="ct_outer_saved">
         <div class="ct_offer_saved_popup">
             <h3>Hurrah!</h3>
-            <p>You have saved ₹ 49 on cooking sauce.</p>
+            <p>You have saved ₹ 49 on MagicMix.</p>
             <span></span>
             <div class="ct_btn">
                 Enjoy
@@ -9426,7 +9449,7 @@
                                                 <div class="ct_bx_flex_msg_cart">
                                                     <img src="../img/empty_cart_n.png">
                                                     <h3>Your order list is empty</h3>
-                                                    <a href="/sauce">cooking sauce</a>
+                                                    <a href="/magicmix">MagicMix</a>
 
                                                 </div>
 
@@ -9530,7 +9553,7 @@
                                     <div class="ct_bx_flex_msg_cart">
                                         <img src="../img/empty_cart_n.png">
                                         <h3>Your order list is empty</h3>
-                                        <a href="/sauce">cooking sauce</a>
+                                                    <a href="/magicmix">MagicMix</a>
 
                                     </div>
 
@@ -9678,7 +9701,6 @@
 
                     }
                 }
-                document.querySelector('.hide_gshs2').style.display = 'none'
                 document.querySelector('.hide_gshs').style.display = 'block'
 
             }
@@ -9751,7 +9773,7 @@
                         sessionStorage.clear()
                         removeAllCookies()
                         document.cookie = "inf_lgot" + "=" + 'true' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
-                        window.location.replace('/')
+                        window.location.replace('/magicmix')
                     }
                     if (typ === 'refer') {
                         let refer_tb = document.querySelector('.refer_tab')
@@ -9951,7 +9973,7 @@
                                      <div class="ct_inner_txt">
                                          <h3>Refer your friends And</h3>
                                          <h2>Both Earn a <b> ${use_cpn.off}% </b> discount coupon </h2>
-                                         <p>Refer your friends and Both Earn a ${use_cpn.off}% discount coupon, when created an account and logged in. Coupons are only applicable for cooking sauces.
+                                         <p>Refer your friends and Both Earn a ${use_cpn.off}% discount coupon, when created an account and logged in. Coupons are only applicable for MagicMix.
                                              
                                          </p>
                                      </div>
@@ -10371,7 +10393,8 @@
                             }
                             return
                         }
-                        orders.forEach(cu11 => {
+                        for (var i = orders.length - 1; i >= 0; i--) {
+                            let cu11=orders[i]
                             let return_html = ''
                             let delivered_html = ''
                             let delivered_info = false
@@ -10395,10 +10418,22 @@
                                                 <h4>Delivered on ${delivered.date}</h4>
                                             </div>`
                             }
+                            let rate_bx=``
+
                             let arr_itms = cu11.arr.map(itm => {
+                               let name_id=itm.name.split(' ').join('').toLowerCase()
+                                                            if (cu11.delivered) {
+                                if(itm.typ==='sauce'){
+                                    console.log('00000000000000000000000000')
+                                rate_bx=`<a  href="/magicmix#${name_id}?ratings=true" class="ct_btn_rate_this_prod">
+                                            <p>Rate this product</p>
+                                        </a>`
+                                }
+                             }
                                 if (itm.return) {
                                     // if user returned
                                     return_html = ` <div class="ct_btns returned">
+                                                    ${rate_bx}
                                                         <div class="_2a27y"><a class="_3PUy8 f4Ovn">Returned</a></div>
                                                         <span  class="learn_more">T&C apply* <p>Learn more</p></span>
                                                     </div>`
@@ -10406,6 +10441,8 @@
 
                                 } else {
                                     return_html = ` <div class="ct_btns">
+                                                                                            ${rate_bx}
+
                                                         <div class="_2a27y"><a class="_3PUy8 f4Ovn">Return</a></div>
                                                         <span  class="learn_more">T&C apply* <p>Learn more</p></span>
                                                     </div>`
@@ -10479,7 +10516,7 @@
                                 }, 960)
                             }
 
-                        })
+                        }
 
 
                     }
@@ -10614,7 +10651,7 @@
             let shareBtn = e.target.closest('.ct_share_box button')
             if (shareBtn != null) {
                 let off = document.querySelector('.ct_refer_panel h2 b').innerText.split('%')[0]
-                let textX = `Transform your meals into culinary masterpieces with the all-in-one cooking sauces from Krick. And the best part? You can now enjoy a whopping ${off}% discount on all sauces by creating an account and logging in by the below link! Visit krickfoods.in now and make every meal a taste sensation.`
+                let textX = `Transform your meals into culinary masterpieces with our MagicMix from Krick. And the best part? You can now enjoy a whopping ${off}% discount on all sauces by creating an account and logging in by the below link! Visit krickfoods.in now and make every meal a taste sensation.`
                 const share = e => {
 
                     if (navigator.share) {

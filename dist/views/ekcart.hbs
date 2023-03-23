@@ -122,6 +122,25 @@
         background-color: rgb(241, 212, 82);
     }
 }
+        .ct_load_review_verf .ct_load_items{
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+            box-shadow: none
+        }
+        .ct_load_review_verf {
+    background-color: #ffffff96;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999999;
+    position: fixed;
+    display: none;
+}
 /*! CSS Used from: Embedded */
 ion-icon{visibility:hidden;}
 .hydrated{visibility:inherit;}
@@ -2432,9 +2451,9 @@ color: rgb(16 178 0);
             width: 62px;
         }
 
-        .coppy_right {
-            margin: 37px 7px 0 10px;
-        }
+.coppy_right {
+    margin: 23px 57px 0 10px;
+}
 
         .about_us_link {
             width: 13%;
@@ -2582,10 +2601,9 @@ color: rgb(16 178 0);
                 margin: 2px 7px 0 10px;
             }
 
-            .coppy_right {
-                margin: 20px 7px 0 10px;
-            }
-
+.coppy_right {
+    margin: 20px 37px 0 10px;
+}
             .about_us_link {
                 width: 24%;
                 margin: 25px 0 0px 8px;
@@ -3254,9 +3272,6 @@ filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);}
                 padding-top: 2px;
             }
 
-            .ct_bx_fooditm h4 {
-                margin-top: 10px;
-            }
         }
 
         /*! CSS Used fontfaces */
@@ -13035,16 +13050,17 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             font-size: 15px;
         }
 
-        .empty_cart a {
-            margin-left: 3px;
-            font-size: 12px;
-            color: rgb(232 232 232);
-            background: black;
-            padding: 13px;
-            font-family: 'roboto';
-            border-radius: 21px;
-            margin: 20px 0 0 80px;
-        }
+.empty_cart a {
+    margin-left: 3px;
+    font-size: 12px;
+    color: rgb(232 232 232);
+    background: #1c5df2;
+    padding: 13px;
+    font-family: 'roboto';
+    border-radius: 21px;
+    margin: 20px 0 0 80px;
+    box-shadow: 0 3px 4px #00000054;
+}
 
         .empty_cart a:hover {
             color: rgb(255, 255, 255);
@@ -17216,6 +17232,9 @@ padding: 20px 31px;            }
     width: 300px
     
 }
+.empty_cart{
+         box-shadow:none;padding: 16px 17px 37px 7px;
+}
 .ct_bx_fooditm h4 {
     font-size: 14px;
 }
@@ -17231,7 +17250,7 @@ height: auto;
 .empty_cart a {
     border-radius: 0;
     font-size: 9px;
-    margin: 13px 0 0 27px;
+    margin: 13px 0 0 47px;
     padding: 10px 10px;
 }
 .ct_offer_saved_popup .ct_btn {
@@ -19181,6 +19200,7 @@ height: auto;
         <ion-icon name="arrow-back-outline"></ion-icon>
         <p>SHOPPING CART</p>
     </div>
+
     <div class="ct_bx_under_maintenance">
         <article>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24">
@@ -19362,7 +19382,16 @@ height: auto;
         <div class="box_pop_up_accounts for_signup">
 
 
-
+           <div class="ct_load_review_verf">
+        <div class="ct_load_items">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
             <div class="ct_inner_bottom_box">
                 <div class="ct_bx_go_back">
                     <ion-icon name="arrow-back-outline" role="img" class="md hydrated"
@@ -19519,7 +19548,16 @@ height: auto;
         </div>
     </div>
     <div class="ct_outer_account_bx login_bx">
-
+           <div class="ct_load_review_verf">
+        <div class="ct_load_items">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
         <div class="box_pop_up_accounts forlogin">
 
             <div class="ct_inner_bottom_box">
@@ -19591,6 +19629,7 @@ height: auto;
             </div>
         </div>
     </div>
+
 <div class="spinner-square">
         <div class="square-1 square"></div>
         <div class="square-2 square"></div>
@@ -19737,6 +19776,7 @@ height: auto;
                         <img src="../img/logo_black_tr.png" alt="">
                     </div> --}}
                 </div>
+
                 <div class="sucess_order">
                     <h4>Thank you! Your order has been placed</h4>
                     <p>Hello kabir, your order will be delivered within 24 hour, we apologize for the inconvenience.</p>
@@ -20310,7 +20350,7 @@ height: auto;
                     <div class="ct_bx_flex_msg_cart">
                         <img src="../img/empty_cart_n.png">
                         <h3>Your shopping cart is empty</h3>
-                        <a href="/">Shop cooking sauce</a>
+                        <a href="/">Shop MagicMix</a>
 
                     </div>
 
@@ -20370,336 +20410,7 @@ height: auto;
                             </span>
                         </div>
 <div class="crousel_items">
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="product" style="left: -11px;">
-                    <div class="ct_bx_fooditm">
-                        <a rel="nofollow">
-                            <div class="ct_bx_flex">
-
-                                <div class="main_im sauces">
-                                    <img alt="masala meat" src="../img/test_img.png">
-                                </div>
-                                <div class="ct_bx_inner_food_groc">
-
-                                    <div class="ratings_bx">
-                                        <div class="rating_itm">
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>
-                                            <ion-icon name="star-outline" role="img" class="md hydrated" aria-label="star outline"></ion-icon>
-                                        </div>
-                                        <span>(10)</span>
-                                    </div>
-
-                                    <h4>masala meat</h4>
-                                    <p class="item_intro">Enjoy delicous chicken, mutton curry made with all natural
-                                        ingredients.</p>
-                                    <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                    <div class="ct_bx_price_fd hasoffPrice">
-                                        <del class="pricenooff" style="display:none"></del>
-                                        <p class="price">₹ 45</p>
-                                    </div>
-
-
-                                    <div class="ct_bx_item_details_hide">
-                                        <p class="name">masala meat</p>
-                                        <p class="stock">15</p>
-                                        <p class="price_pr">45</p>
-                                        <p class="price_off"></p>
-                                        <p class="offer">null</p>
-                                        <p class="about_list">Pure mustard oil, Indian whole spices, Tomato, Onion,
-                                            Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water"</p>
-                                        <p class="qty">150gm</p>
-                                        <p class="desc">''</p>
-                                        <p class="essentials"></p>
-                                        <p class="images_item"></p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="ct_addbtns sauce">
-                                <p>Add to cart</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+             
             </div>
                     </div>
 
@@ -20937,11 +20648,13 @@ height: auto;
             }
 
             document.querySelector('.body_cart .ct_overfow_for_load').style.opacity = '1'
-            if (sauceX === null && essenX === null) {
+          if (sauceX === null) {
                 localStorage.setItem('sauce', '[]')
-                localStorage.setItem('essentials', '[]')
             }
-            if (sauceX !== null && essenX !== null) {
+            if(essenX === null){
+                localStorage.setItem('essentials', '[]')
+
+            }
                 if (sauceX.length === 0 && essenX.length === 0) {
                     document.querySelector('.empty_cart').style.display = 'flex'
                     document.querySelector('.title_h1').style.display = 'none'
@@ -20961,8 +20674,6 @@ height: auto;
 
                 }
 
-
-            }
 
             if (itm_typ === '') {
 
@@ -21125,7 +20836,7 @@ height: auto;
                                         offer_del = ` <del>₹ ${price_off}</del>`
                                     }
 
-
+console.log(name === elem.slt_nm.replace(/[ ,]+/g, "").toLowerCase())
                                     if (name === elem.slt_nm.replace(/[ ,]+/g, "").toLowerCase()) {
 
                                         active_btn = 'active'
@@ -21423,6 +21134,48 @@ height: auto;
 
                     itm_added += 1
 
+
+                            let rattings_stars=[]
+let tot_Reviews=0
+
+function calculateAverage(ratings) {
+let sum=0
+ratings.forEach(cux=>{
+    sum += (parseFloat(cux.tot)*parseFloat(cux.name))
+    tot_Reviews+= (parseFloat(cux.tot))
+})
+let avg=sum/tot_Reviews
+return avg
+
+}
+let averageRating = calculateAverage(itm.ratings);
+if(!isNaN(averageRating)){
+    averageRating=String(averageRating)
+let stars=averageRating.split('.')[0]
+let halfstars=averageRating.split('.')[1]
+
+for(let i=0;i<stars;i++){
+let htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+rattings_stars.push(htm_sr)
+}
+if(halfstars!==undefined){
+    let htm_sr=`<ion-icon name="star-half-sharp"></ion-icon>`
+
+    if(halfstars>=7){
+htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+    }
+rattings_stars.push(htm_sr)
+}
+}
+//<ion-icon name="star-half-sharp"></ion-icon>
+let ratings_bx=`<div class="ratings_bx">
+                                                            <div class="rating_itm">
+                                                                ${rattings_stars.join('')}
+                                                            </div>
+                                                            <span>(${tot_Reviews})</span>
+                                                        </div>`
+
+
                     let html1 = `
                                                      
                                                      <div class="product">
@@ -21434,7 +21187,7 @@ height: auto;
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
-
+                                                        ${ratings_bx}
                                                         <h4>${itm.name}</h4>
                                                         <p class="item_intro">${itm.tagline}</p>
                                                         <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
@@ -21467,8 +21220,7 @@ height: auto;
                 })
             }
             document.querySelector('.recomended_cart .ct_load_items').style.display='none'
-
-            if ((recc_sauce.length + recc_essen.length) <= 0) {
+            if ((recc_sauce.length) <= 0) {
                 document.querySelector('.recomended_cart').style.display = 'none'
             }
             if (window.screen.width > 740) {
@@ -22736,7 +22488,6 @@ cu.innerText='order now'
 
                }
                 document.querySelector('.account_nav2').style.display = 'block'
-                document.querySelector('.hide_gshs2').style.display='none'
                 document.querySelector('.hide_gshs').style.display='block'
                 if(window.screen.width>740){
                     document.querySelector('.mobile_only.account_btn').style.display = 'block'
@@ -22800,7 +22551,7 @@ if(saved_popup===null){
  document.querySelector('.ct_offer_saved_popup').style.display='none'   
 }
             if (goback_cart !== null) {
-                window.location.replace('/')
+                window.location.replace('/magicmix')
             }
 
             document.querySelectorAll('.ct_other_units.active').forEach(cu11 => {
@@ -22985,6 +22736,7 @@ if(offer!==null){
                                                 qt: cu11.qty,
                                                 am: tot_am_sauce,
                                                 return: false,
+                                                typ:'sauce',
 
                                             }
                                             objItms.arr.push(obj)
@@ -23031,6 +22783,7 @@ if(offer!==null){
                                             unit: cu11.unit,
                                             am: tot_am_grc,
                                             return: false,
+                                            typ:'groc',
 
                                         }
                                         objItms.arr.push(obj)
@@ -23080,7 +22833,7 @@ if(offer!==null){
                             let coupon_obj = ''
                             function check_coupon(em_n) {
                                 if (em_n) {
-                                    // coupons validity
+                                    // coupons valid and price can be discounted
                                     if (coupon_dt !== '') {
                                         if (coupon_dt.off.split('%')[1] !== undefined) {
                                             let offer_x = parseFloat(coupon_dt.off.split('%')[0])
@@ -23102,6 +22855,8 @@ if(offer!==null){
                                         }
                                         tot_am -= dicounted_pr
                                     }
+
+                                }else{
 
                                 }
                                 objItms.total_amount = tot_am
@@ -23172,7 +22927,6 @@ if(offer!==null){
                                             document.cookie = "userData" + "=" + JSON.stringify(userDt) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         }
                                     } else {
-                                        matched_nm
                                         if (coupons_used !== '') {
                                             coupon_obj = { name: coupons_used.name, use: 1 }
                                             data.cpns_used.push(coupon_obj)
@@ -23213,7 +22967,8 @@ if(offer!==null){
                                             }
                                         }
                                     })
-                                    if (!matchedX) {
+                                    if (!matchedX && !matched_nm) {
+                                        // remove if there is no cpn can be applied more -> matched_nm -> (checks this )
                                         check_coupon(false)
                                         document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
 
@@ -23341,6 +23096,7 @@ document.querySelector('.confetti').style.display='block'
                         tot += pr
 
                     })
+
                     document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹ ' + tot.toLocaleString()
                     addAmount()
                     checkandsave('sauce_pr', tot2)
@@ -23376,11 +23132,15 @@ document.querySelector('.confetti').style.display='block'
                     addAmount()
                     checkandsave('essen_pr', tot2)
                 }
+ if (sauce.length === 0){
+    alert('jhhhh')
+                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+ }
                 if (sauce.length === 0 && essen.length === 0) {
                     document.querySelector('.empty_cart').style.display = 'flex'
                     document.querySelector('.ct_bx_flex_sub_list').style.display = 'none'
                                     document.querySelector('.place_order_btn_bottom').style.display='none'
-
                 }
             }
             if (qty_dec !== null) {
@@ -23904,7 +23664,9 @@ document.querySelector('.ct_search_cpns input').value=''
                         const login = async () => {
                             let matched = false
                             let dbCollection = db.collection("users")
+                            document.querySelector('.ct_load_review_verf').style.display='flex'
                             let res = await dbCollection.get()
+                            document.querySelector('.ct_load_review_verf').style.display='none'
                             res.docs.forEach(cur11 => {
                                 let itmDb = cur11.data()
                                 console.log(phoneNum, itmDb.phone)
@@ -23924,7 +23686,6 @@ document.querySelector('.ct_search_cpns input').value=''
                                             admin: itmDb.admin,
                                         }
                                         console.log(itmDb.phone, 'phone no!!!')
-                                        console.log('sent!!!')
                                         document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objXs) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
@@ -24283,9 +24044,10 @@ document.querySelector('.ct_search_cpns input').value=''
 
 
                                     let checked_ph = false
-
+                                    document.querySelector('.ct_load_review_verf').style.display = 'flex'
                                     let dbCollection22 = db.collection("users")
                                     let res22 = await dbCollection22.get()
+                                    document.querySelector('.ct_load_review_verf').style.display = 'none'
                                     document.querySelector('.account_cont').style.opacity = '1'
                                     document.querySelector('.account_cont').style.pointerEvents = 'auto'
                                     res22.docs.forEach(cur11 => {
@@ -24342,7 +24104,6 @@ document.querySelector('.ct_search_cpns input').value=''
                                             document.querySelector('.ct_go_back_account h3').style.display = 'flex'
 
 
-                                            return
 
                                             var settings = {
                                                 "async": true,
@@ -24356,27 +24117,7 @@ document.querySelector('.ct_search_cpns input').value=''
 
                                                 if (response.return) {
                                                     console.log('sent!!!')
-                                                    //  let user = {
-                                                    //      address_user: address_inp,
-                                                    //      continue_verify: "",
-                                                    //      last_user: "",
-                                                    //      lastname: lastname_inp,
-                                                    //      name_user: name_inp,
-                                                    //      password_login: pass_inp,
-                                                    //      phone: phonenumber_inp,
-                                                    //      city: city,
-                                                    //  };
-                                                    //  var header = {
-                                                    //      "alg": "HS256",
-                                                    //      "typ": "JWT"
-                                                    //  }
-                                                    //  var stringifiedHeader = CryptoJS.enc.Utf8.parse(JSON.stringify(header));
-                                                    //  var encodedHeader = base64url(stringifiedHeader)
-                                                    //  var stringifiedData = CryptoJS.enc.Utf8.parse(JSON.stringify({ user: user, id: number }));
-                                                    //  var encodedData = base64url(stringifiedData);
-                                                    //  var token = encodedHeader + "." + encodedData;;
-                                                    //  console.log(token, 'token');
-                                                    // window.location.replace(`/signup?authUser=${token}`)
+
                                                     document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                                     window.location.replace('/mycart#dataRecived')
 
@@ -24584,12 +24325,14 @@ tot_pr_itm2=0
                             }
                                             if (typ_fd === 'sauce') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
+                    console.log(addItem.parentElement.childNodes[1].childNodes)
+                    
                     let inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
                     // price , nt weight, qty
                     let obj = {
-                        name: inner_bx[1].innerText,
+                        name: inner_bx[3].innerText,
                         qty: 1,
-                        slt_nm: inner_bx[5].innerText.split(':')[1],
+                        slt_nm: inner_bx[7].innerText.split(':')[1].split(' ').join(''),
                         slt_p: "pouch pack",
                         type: "sauce",
 

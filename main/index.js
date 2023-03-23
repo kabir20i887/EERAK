@@ -129,23 +129,16 @@ app.get('/Login', (req, res) => {
 // app.get('/verify', (req, res) => {
 //     res.render('verif')
 // })
-app.get('/sauce', (req, res) => {
+app.get('/magicmix', (req, res) => {
    res.render('packed_food_list')
 
 })
-app.get('/aboutus', (req, res) => {
-    res.render('portfolio')
- 
- })
+
  app.get('/', (req, res) => {
     res.render('landing_page')
  
  })
 
- app.get('/test', (req, res) => {
-    res.render('main_page')
- 
- })
 let number = number1
 
 let all_midellare = {
@@ -360,10 +353,7 @@ jwt.verify('eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyjuyw1lijoiu1vqrvi0mcisim9mzii
  app.get('/account', (req, res) => {
     res.render('account_page')
 })
-// app.get('/unavailable', (req, res) => {
-//     res.render('unable_website')
 
-// })
 // app.get('/your-account', (req, res) => {
 
 //                 if (req.query.n !== undefined) {            
