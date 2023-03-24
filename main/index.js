@@ -811,7 +811,9 @@ io.on('connection', (sock) => {
     sock.on('cancelOrder', () => {
         io.emit('oDcancel')
     })
-
+    sock.on('disconnect', function () {
+        console.log('A user disconnected.');
+      });
 })
 
 const port = process.env.PORT || 3000

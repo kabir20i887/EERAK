@@ -23133,7 +23133,6 @@ document.querySelector('.confetti').style.display='block'
                     checkandsave('essen_pr', tot2)
                 }
  if (sauce.length === 0){
-    alert('jhhhh')
                 document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
                 document.querySelector('.ct_info_offfer_saved').style.display = 'none'
  }
@@ -23142,6 +23141,9 @@ document.querySelector('.confetti').style.display='block'
                     document.querySelector('.ct_bx_flex_sub_list').style.display = 'none'
                                     document.querySelector('.place_order_btn_bottom').style.display='none'
                 }
+
+        addItems('', false)
+
             }
             if (qty_dec !== null) {
                 let val = parseFloat(qty_dec.parentElement.childNodes[3].value)
