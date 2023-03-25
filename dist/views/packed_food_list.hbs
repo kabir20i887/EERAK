@@ -86,7 +86,10 @@
     color: #105f10;
     font-family: 'roboto';
 }
-
+.recomended_cart.for_items_recm .product{padding: 0;border: none;}
+.recomended_cart.for_items_recm .ct_addbtns {
+    margin: 0px 16px;
+}
         .ct_banner .sub_head {
             font-size: 12px;
             color: #2f2e2e;
@@ -2742,11 +2745,13 @@
         .ct_rate_popup textarea,
         .ct_rate_popup input {
             background: #f3f3f3;
-            border: none;
             padding: 11px;
             width: 100%;
+            outline: none;
             margin-bottom: 13px;
         }
+
+
 
         .ct_rate_popup span {
             font-size: 12px;
@@ -2777,7 +2782,7 @@
             padding: 14px 16px;
             background-color: rgb(25, 86, 218);
             z-index: 999999;
-            right: -100vw;
+            right: -170vw;
             transition: all .7s ease;
         }
         .logut_info{
@@ -6197,6 +6202,10 @@
             color: #000;
             font-size: 28px;
             margin: 10px;
+                border: 1px solid #ababab;
+                border-radius: 20px;
+    padding: 5px 6px;
+    transform: translate(0px, 5px);
             display: none;
             cursor: pointer
         }
@@ -6653,7 +6662,7 @@
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
             overflow-x: hidden;
-            background: #fcfffc;
+            background: #ffffff;
         }
 
         body {
@@ -6955,6 +6964,19 @@
                 width: 100%;
                 height: 34vw
             }
+            .ct_banner h2{
+    font-size: 59px;
+    line-height: 55px;    width: 81%;
+}
+.ct_banner .sub_head {
+    font-size: 22px;
+    width: 79%;
+    line-height: 28px;
+}
+.ct_items_img {
+    width: 60%;
+    margin-top: 20px;
+}
             .ct_load_review_verf .ct_load_items {
     top: 50%;
     left: 36%;}
@@ -7391,19 +7413,25 @@
                 font-size: 20px
             }
 .prod_img1 {
+    right: -23px;
+    top: 162px;
     width: 429px;
+}
+.ct_txt_bx {
+    top: 70px;
 }
 .prod_img1.typ2 {
     width: 363px;
+        top: 205px;
 }
 .ct_items_img {
     width: 700px;
     margin-top: 59px;
 }
 .prod_img2 {
-    right: 309px;
+    right: 276px;
     top: 73px;
-    width: 279px;
+    width: 317px;
 }
 .ct_banner h2 {
     font-size: 56px;
@@ -8044,8 +8072,8 @@
 
             .ct_field_small_size span {
                 font-size: 32px;
-                margin-top: 5px;
-                margin-right: 5px;
+                margin-top: 0;
+                margin-right: 0;
             }
 
 
@@ -8381,7 +8409,24 @@
             .bx_btns_crousel ion-icon {
                 font-size: 20px;
             }
+.ct_txt_bx img {
+    
+    width:187px;
+}
+.ct_txt_bx{
+    right: 12px;
+}
 
+.prod_img1.typ2 {
+    right: -5px;
+    top: 271px;    width: 290px;
+}
+
+.prod_img2 {
+    right: 205px;
+    top: 91px;
+    width: 293px;
+}
             .carousel-item {
                 height: 396px;
             }
@@ -8707,7 +8752,34 @@ font-size: 18px;
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
-
+.ct_pop_up_items_order {
+    width: 100vw;
+}
+.ct_banner h2 {
+    font-size: 46px;
+    line-height: 51px;
+}
+.ct_banner .sub_head {
+    font-size: 16px;
+    line-height: 21px;
+}
+.ct_items_img {
+    margin-top: 20px;}
+.prod_img2 {
+    right: 37vw;
+    top: 55px;
+    width: 323px;
+}
+.prod_img1.typ2 {
+    right: -8px;
+    top: 195px;
+    width: 368px;
+}
+.prod_img1 {
+    right: -52px;
+    top: 162px;
+    width: 429px;
+}
             .carousel-item {
                 height: 333px;
             }
@@ -8847,10 +8919,7 @@ font-size: 18px;
             }
 
             /*-----*/
-            .crousel_items .product {
-                min-width: 46.9%;
-            }
-
+  
             .about_us_link {
                 width: 25%;
             }
@@ -8877,9 +8946,6 @@ font-size: 18px;
                 justify-content: center;
             }
 
-            .ct_pop_up_items_order {
-                width: 497px;
-            }
 
             .cart_nav span {
                 width: 32px;
@@ -9041,10 +9107,12 @@ font-size: 18px;
             }
 
             .ct_field_small_size span {
-                font-size: 37px;
-                margin-top: 1px;
+                font-size: 30px;
             }
 
+.for_nav_main .logo {
+    margin-top: 6px;
+}
 
             .ct_inner_nav {
                 padding: 21px 20px 10px 20px;
@@ -9055,7 +9123,7 @@ font-size: 18px;
             }
 
             .ct_field_small_size {
-                margin: -12px 4px 0 0;
+                margin: -12px 14px 0 0;
             }
 
             .mai_ul li {
@@ -9130,7 +9198,10 @@ font-size: 18px;
 
         @media only screen and (max-width:550px) {
             .erak_fd_body .for_nav_main .logo {
-                margin-top: -3px
+                margin-top:2px
+            }
+            .logut_info, .sucess_review, .ct_poup_xbshs{
+                    right: -1300px;
             }
 .cust_ques {
     border-top: 1px solid #b6b6b6;
@@ -10142,7 +10213,6 @@ font-size: 18px;
 
             .ct_field_small_size span {
                 font-size: 21px;
-                margin-top: 10px;
             }
 
             .ct_bx_about_mobile2 p {
@@ -10601,7 +10671,7 @@ font-size: 18px;
 
 
             .ct_field_small_size {
-                transform: translate(0px, -1px)
+                transform: translate(0px,4px)
             }
 
             .only_for_specific_bx {
@@ -10726,10 +10796,6 @@ font-size: 18px;
 
             .for_nav_main .logo {
                 left: 12%
-            }
-
-            .ct_field_small_size {
-                transform: translate(0px, 0)
             }
 
             .ct_nav_erak ul .nav_main_ek_li {
@@ -11029,7 +11095,7 @@ font-size: 18px;
 
             .ct_field_small_size span {
                 font-size: 27px;
-                margin-top: 10px;
+                margin-top: 0;
             }
 
             .for_nav_main .logo img {
@@ -11855,7 +11921,7 @@ font-size: 18px;
                     </div> --}}
                     <div class="carousel-item itm_img_prod active">
                         <img class="prod_img prod_img1 typ2" src="../img/labab_img.png">
-                        <img class="prod_img prod_img2" src="../img/Bihari Fish.png">
+                        <img class="prod_img prod_img2" src="../img/Kashmiri Mutton Rogan Josh.png">
                         <div class="ct_txt_bx">
                             <img src="../img/txt_img.png" alt="">
                         </div>
@@ -11955,7 +12021,7 @@ font-size: 18px;
                 </div>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, dolorem pariatur quo obcaecati repellendus itaque sapiente ut dolore odio ipsum, ipsa quis? Excepturi, explicabo in. Eveniet non aspernatur recusandae officia?</p>
             </div>
-            <div class="recomended_cart for_items_recm req_essen">
+            <div class="recomended_cart  req_essen">
 
                 <div class="ct_box_innside_reccom">
                     <h4>Required Essentials<ion-icon class="req_know" name="help-circle"></ion-icon></h4>
@@ -13613,47 +13679,42 @@ font-size: 18px;
                  grp:{name:'y',ord:"b"},
 item:{
 
-about:{ing:"Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water",details:'',},
+about:{ing:["Mustard seeds","Turmeric powder","Coriander","Cumin","Gralic","Green chillies","Black pepper","Mustard Oil","Filtered Water"],spec_ing:'',details:'',},
 descrip:["150gm suitable for 1kg meat.","Just add raw chicken, soya bean etc",
 "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
 ],
 groc:[
-"Fresh garlic",
-"Mustard Oil, Fortune"
-,
-"Fresh Mutton"
-,
-"Fresh chicken"
-,
-"Corriander powder"
-,
-"Jeera powder"
-,
-"Fresh tomatoes"
-,
-"Fresh green chillies"],
-image_prod:[{img2:"../img/chick_prod.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
-images:["../img/test_img.png","../img/sample_fd2.webp"],
-name:"Masala Chicken",
+"Fish"],
+image_prod:[{img2:"../img/biharifish_curry.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
+images:["../img/bihary_fish.png"],
+name:"Bihari Fish Curry",
 offer:null,
 price_real:'45',
 ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
 ratings:[{
 star_1:0,
 star_3:0,
-star_4:4,
+star_4:1,
 star_5:5,
 start_2:0
 }],
 review:[{
-name:'Kabir',
-date:'12/03/23',
+name:'Puja Chakraborty',
+date:'01/04/23',
+title:'Amazing',
+sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+ratings:5,
+
+},
+{
+name:'Puja Chakraborty',
+date:'01/04/23',
 title:'Amazing',
 sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
 `,
 ratings:5,
 
-}],
+},],
 stock:10,
 tagline:"Enjoy delicous chicken, mutton curry made with all natural ingredients.",
 weight_sh:"150gm"
