@@ -59,12 +59,13 @@
             display: flex;
             justify-content: center;
         }
-.ct_popup_main_sucess a{
+.ct_popup_main_sucess a {
     font-size: 14px;
     display: block;
     color: black;
-    margin: -6px 10px;
-    width: max-content;text-decoration: revert;
+    margin: 0px 21px;
+    width: max-content;
+    text-decoration: revert;
 }
 .ct_popup_main_sucess a ion-icon{
     transform: translate(4px, 3px);
@@ -1236,12 +1237,14 @@ ion-icon{pointer-events:none;}
     padding: 11px 36px;
     box-shadow: 0 10px 8px #0000004a;
 }
-.ct_popup_main_sucess{
-        display: none;
+.ct_popup_main_sucess {
+    display: none;
     margin-right: auto;
     margin-left: auto;
-    width: 90vw;
+    width: 400px;
+    padding: 0;
     padding-top: 0;
+    padding-bottom: 32px;
 }
 .ct_popup_main_sucess .ct_inner_m h4{    padding: 14px;
     padding-left: 4px;
@@ -2836,7 +2839,7 @@ color: rgb(16 178 0);
             position: relative;
             left: 0;
             transition: 0.5s;
-                height: 368px;
+                height: max-content;
     overflow: hidden;
     border: none;
         }
@@ -17370,13 +17373,13 @@ height: auto;
             }
 
             .bx_evt_cart_item li {
-                padding: 16px 0 44px 26px;
+                padding: 16px 0 44px 3px;
                 margin-left: 8px;
                 width: 96vw;
             }
 
             .ct_imgbx {
-                width: 87px;
+                width:160px;
             }
 
             .ct_info_items del {
@@ -20545,7 +20548,18 @@ height: auto;
         }
         deliv_price()
 
-
+function truncateString(str, limit) {
+  // Split the string into an array of words
+  let words = str.split(" ");
+  
+  // If the number of words is less than or equal to the limit, return the original string
+  if (words.length <= limit) {
+    return str;
+  }
+  
+  // Otherwise, join the first `limit` words and add ellipses
+  return words.slice(0, limit).join(" ") + "..";
+}
         function setCookie(cname, cvalue, exdays) {
             const d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -21109,7 +21123,6 @@ console.log(name === elem.slt_nm.replace(/[ ,]+/g, "").toLowerCase())
 
                 })
             }
-            console.log(recc_sauce.length, ' --------------jusddfjfsdfdfdsffdfdfdf')
             if (recc_sauce.length !== 0) {
                 recc_sauce.forEach(cux => {
                     let dt = cux.data()
@@ -21167,6 +21180,7 @@ htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="
 rattings_stars.push(htm_sr)
 }
 }
+let string_short=truncateString(itm.tagline,20)
 //<ion-icon name="star-half-sharp"></ion-icon>
 let ratings_bx=`<div class="ratings_bx">
                                                             <div class="rating_itm">
@@ -21189,7 +21203,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                     <div class="ct_bx_inner_food_groc">
                                                         ${ratings_bx}
                                                         <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${itm.tagline}</p>
+                                                        <p class="item_intro">${string_short}</p>
                                                         <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
 
                                                         ${priceBX}

@@ -74,6 +74,7 @@
             padding-bottom: 40px;
             background: #fffff4;
         }
+
 .ct_special_ing {
     background: #fcfffb;
     border: 1px solid green;
@@ -81,6 +82,15 @@
     padding: 8px 14px;
     display: flex;
     justify-content: center;
+}
+.ct_allreviews .ct_show_revies p {
+    color: #2525e1;
+    font-size: 12px;
+    width: 94vw;
+    text-align: center;
+    margin: 40px 0 0 1px;
+    text-decoration: underline;
+    font-family: 'roboto';
 }
 .ct_special_ing h3 {
     color: #105f10;
@@ -90,6 +100,12 @@
 .recomended_cart.for_items_recm .ct_addbtns {
     margin: 0px 16px;
 }
+        .ct_addbtns.added {
+            pointer-events: none;
+            background: #e4ffe9;
+        }
+        .ct_addbtns.added p{color: black;}
+
         .ct_banner .sub_head {
             font-size: 12px;
             color: #2f2e2e;
@@ -3694,6 +3710,7 @@
 
         .carousel-control-next-icon,
         .carousel-control-prev-icon {
+            display: none;
             background-image: none;
             font-size: 50px;
             background: white;
@@ -3788,6 +3805,7 @@
         }
 
         .carousel-indicators {
+            display: none;
             transform: translate(10px, 40px);
 
         }
@@ -4636,7 +4654,7 @@
         }
 
         .ct_bx_fooditm .item_intro {
-            font-size: 11px;
+            font-size: 10px;
             border-radius: 5px;
             color: #5e5e5e;
             font-family: 'open sans';
@@ -4777,11 +4795,13 @@
             padding: 9px 15px;
             width: 91%;
             cursor: pointer;
-            margin: 10px 0 20px 20px;
+            margin: 0px 0 6px 20px;
 
 
         }
-
+            .ct_block_addtocart{
+                padding-bottom: 20px;
+            }
         .buy_now:active {
             background-color: #2c4171;
 
@@ -5326,14 +5346,14 @@
             width: 600px;
             padding-bottom: 27px;
             display: block;
-            right: -900px;
+            right: -140vh;
             top: 0;
             height: 100vh;
             transition: 0.8s ease-in-out;
             z-index: 99999999;
             border-radius: 0;
             box-shadow: 0 0 10px #0000005e;
-            transition: all 1s ease;
+            transition: all .6s ease;
 
         }
 
@@ -7396,8 +7416,8 @@
             }
 
             .groc_list .ct_cat_by_list {
-                margin-left: 14px;
-                margin-top: -7px;
+                margin-left: 9px;
+                margin-top: 11px;
                 width: 100%;
             }
 
@@ -8413,6 +8433,11 @@
     
     width:187px;
 }
+           .prod_img1 {
+    right: -41px;
+    top: 243px;
+    width: 323px;
+}
 .ct_txt_bx{
     right: 12px;
 }
@@ -8572,7 +8597,7 @@ font-size: 18px;
 
         @media only screen and (max-width:800px) {
             .ct_bx_fooditm h4 {
-                font-size: 20px;
+                font-size: 16px;
                 width: 80%;
                 margin-left: 2px
             }
@@ -8752,8 +8777,16 @@ font-size: 18px;
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px
             }
+ 
 .ct_pop_up_items_order {
     width: 100vw;
+}
+.ct_load_review_verf .ct_load_items {
+    top: 50%;
+    left: 50%;
+}
+.logut_info, .sucess_review, .ct_poup_xbshs {
+    width: 97vw;
 }
 .ct_banner h2 {
     font-size: 46px;
@@ -9203,6 +9236,9 @@ font-size: 18px;
             .logut_info, .sucess_review, .ct_poup_xbshs{
                     right: -1300px;
             }
+            .ct_for_bx1 h4 {
+    font-size: 15px;
+}
 .cust_ques {
     border-top: 1px solid #b6b6b6;
     padding: 16px 12px;
@@ -9376,8 +9412,8 @@ font-size: 18px;
             .ct_pop_up_items_order {
                 right: unset;
                 top: unset;
-                bottom: -900px;
-                transition: all .7s ease;
+                bottom: -140vh;
+                transition: all .5s ease;
             }
 
             .ct_bx_btn_play ion-icon {
@@ -9402,10 +9438,6 @@ font-size: 18px;
                 margin-top: -61px;
             }
 
-
-            .ct_bx_fooditm h4 {
-                font-size: 18px;
-            }
 
             .erak_fd_body .ct_bx_ratings span .filed_rating_itm {
                 font-size: 18px
@@ -11013,7 +11045,7 @@ font-size: 18px;
             .buy_now,
             .add_cart_btn {
                 width: 95%;
-                margin: 10px 0 20px 8px;
+                margin: 0px 0 6px 8px;
             }
 
             .ct_qty_box {
@@ -11083,12 +11115,11 @@ font-size: 18px;
                 margin: 5px 0 4px 3px;
             }
 
-            .ct_bx_fooditm .item_intro {
-                font-size: 10px;
-                line-height: 12px;
-                width: 95%;
-            }
-
+.ct_bx_fooditm .item_intro {
+    font-size: 7px;
+    line-height: 10px;
+    width: 95%;
+}
             .for_nav_main {
                 height: 65px;
             }
@@ -12579,13 +12610,13 @@ font-size: 18px;
                                         <p>off</p>
                                     </div>
                                     <div class="ct_img_res_main">
-                                        <img alt="Fresh green chillies image" src="../img/chillies.jpg">
+                                        <img alt="Fresh Green chilies image" src="../img/chillies.jpg">
 
                                     </div>
                                     <div class="ct_inner_fd1_dt_grid">
 
                                         <div class="ct_dt_tm_food_res">
-                                            <h4>Fresh green chillies</h4>
+                                            <h4>Fresh Green chilies</h4>
                                         </div>
                                         <div class="ct_unit_box_selector">
                                             <div class="ct_bx_selection">
@@ -12879,40 +12910,9 @@ font-size: 18px;
             <div class="ct_allreviews">
                 <h4>Reviews</h4>
                 <div class="inner_x">
-  <div class="col _2wzgFH">
-                    <div class="ct_account_icon">
-                        <ion-icon name="person-circle"></ion-icon>
-                        <p>Prince Bhattacharya</p>
-                    </div>
-                    <div class="row">
-                        <div class="_3LWZlK _1BLPMq">4<ion-icon name="star-sharp"></ion-icon></div>
-                        <p class="_2-N8zT">Works like its supposed to</p>
-                    </div>
-                    <div class="row">
-                        <div class="t-ZTKy">
-                            <div>
-                                <div class="">Works like its supposed to..Portable design and comfortable to use. Its
-                                    suitable for a quick shave with little to minimal stubble. However if you want 100%
-                                    clean shave better to go for double bladed shaver types than round headed. Round
-                                    head are good only for quick shave, however it will take a bit time using the same
-                                    to get clean smooth shave due to the shape of the head.<br><br>Flat heads take time
-                                    and may not be quick, but give 100% clean and smooth shave.<br><br>The shaver heads
-                                    move to adjust to con...</div><span class="_1BWGvX"><span>READ MORE</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row _3n8db9">
-                        <div class="row">
-                            <p class="_2sc7ZR _2V5EHH">Posted on: 18/03/2023</p>
-                            <div class="flex_bx">
-                                <ion-icon name="checkmark-circle-sharp"></ion-icon>
-                                <p id="review-e4a642e3-1dbd-4a79-a55b-5c74197d98b8" class="_2mcZGG"><span>Verified
-                                        Buyer</span></p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+<div class="ct_show_revies more_rev">
+    <p>Show more</p>
+</div>
                 </div>
               
             </div>
@@ -13081,315 +13081,6 @@ font-size: 18px;
 
                                     <div class="ct_cat_by_list">
 
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-                                                        <div class="ratings_bx">
-                                                            <div class="rating_itm">
-                                                                <ion-icon name="star-sharp" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="star sharp"></ion-icon>
-                                                                <ion-icon name="star-sharp" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="star sharp"></ion-icon>
-                                                                <ion-icon name="star-sharp" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="star sharp"></ion-icon>
-                                                                <ion-icon name="star-sharp" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="star sharp"></ion-icon>
-                                                                <ion-icon name="star-outline" role="img"
-                                                                    class="md hydrated"
-                                                                    aria-label="star outline"></ion-icon>
-                                                            </div>
-                                                            <span>(10)</span>
-                                                        </div>
-
-                                                        <h4>Malai Mix</h4>
-
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>Malai Mix</h4>
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>Malai Mix</h4>
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>Malai Mix</h4>
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>Malai Mix</h4>
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
-                                                <div class="ct_bx_flex">
-
-                                                    <div class="ct_img_layer">
-                                                        <img class="main_im" alt="Malai Mix" src="../img/test_img.png">
-
-                                                    </div>
-                                                    <div class="ct_bx_inner_food_groc">
-
-                                                        <h4>Malai Mix</h4>
-                                                        <p class="item_intro">Enjoy delicous chicken, mutton curry made
-                                                            with all natural ingredients.</p>
-                                                        <p class="for_unit_itm">Net.weight: 150gm</p>
-
-
-                                                        <div class="ct_bx_price_fd hasoffPrice">
-                                                            <del class="pricenooff" style="display:none"></del>
-                                                            <p class="price">₹ 45</p>
-                                                        </div>
-
-
-                                                        <div class="ct_bx_item_details_hide">
-                                                            <p class="name">Malai Mix</p>
-                                                            <p class="stock">4</p>
-                                                            <p class="price_pr">45</p>
-                                                            <p class="price_off">NaN</p>
-                                                            <p class="offer">NaN</p>
-                                                            <p class="about_list">Pure mustard oil, Indian whole spices,
-                                                                Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian
-                                                                powdered spices, Filtered water"</p>
-                                                            <p class="qty">[{"name":"150gm","price":"45","pack":"pouch
-                                                                pack"},{"name":"300gm","pack":"pouch
-                                                                pack","price":"75"},{"price":"125","pack":"container
-                                                                pack","name":"400gm"}]</p>
-                                                            <p class="desc">["150gm suitable for 600g paneer.","Takes 5
-                                                                minute to prepare.","Just add raw paneer, chickpeas
-                                                                etc","Do not add raw oil, spices etc in the sauce. The
-                                                                sauce will release oil upon heating"]</p>
-                                                            <p class="essentials">["fresh garlic"]</p>
-                                                            <p class="images_item">["../img/malai_mix.png"]</p>
-                                                            <p class="images_prod">undefined</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
                                     </div>
 
                                 </div>
@@ -13675,108 +13366,974 @@ font-size: 18px;
 
         
 
-        let arrayItm =       [{
-                 grp:{name:'y',ord:"b"},
-item:{
+ let arrayItm =       [{
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Mustard seeds","Turmeric powder","Coriander","Cumin","Gralic","Green chilies",'Salt',"Black pepper","Mustard Oil",'Chopped Tomatoes',"Filtered Water"],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Fish"],
+                image_prod:[{img2:{typ:'typ1',value:"../img/bihari_fish.png"},pack:"../img/biharifish_curry.png",txt:"../img/txt_img.png"}],
+                images:["../img/bihary_fish.png"],
+                name:"Bihari Fish",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
 
-about:{ing:["Mustard seeds","Turmeric powder","Coriander","Cumin","Gralic","Green chillies","Black pepper","Mustard Oil","Filtered Water"],spec_ing:'',details:'',},
-descrip:["150gm suitable for 1kg meat.","Just add raw chicken, soya bean etc",
-"Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
-],
-groc:[
-"Fish"],
-image_prod:[{img2:"../img/biharifish_curry.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
-images:["../img/bihary_fish.png"],
-name:"Bihari Fish Curry",
-offer:null,
-price_real:'45',
-ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
-ratings:[{
-star_1:0,
-star_3:0,
-star_4:1,
-star_5:5,
-start_2:0
-}],
-review:[{
-name:'Puja Chakraborty',
-date:'01/04/23',
-title:'Amazing',
-sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
-ratings:5,
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
 
-},
-{
-name:'Puja Chakraborty',
-date:'01/04/23',
-title:'Amazing',
-sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
-`,
-ratings:5,
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
 
-},],
-stock:10,
-tagline:"Enjoy delicous chicken, mutton curry made with all natural ingredients.",
-weight_sh:"150gm"
- }
-        },{
-                 grp:{name:'y',ord:"b"},
-item:{
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
 
-about:{ing:"Pure mustard oil, Indian whole spices, Tomato, Onion, Ginger, Garlic, Chillies, Salt, Indian powdered spices, Filtered water",details:'',},
-descrip:["150gm suitable for 1kg meat.","Just add raw chicken, soya bean etc",
-"Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
-],
-groc:[
-"Fresh garlic",
-"Mustard Oil, Fortune"
-,
-"Fresh Mutton"
-,
-"Fresh chicken"
-,
-"Corriander powder"
-,
-"Jeera powder"
-,
-"Fresh tomatoes"
-,
-"Fresh green chillies"],
-image_prod:[{img2:"../img/chick_prod.png",pack:"../img/Masala_Meat.png",txt:"../img/txt_img.png"}],
-images:["../img/test_img.png","../img/sample_fd2.webp"],
-name:"Mutton Korma",
-offer:null,
-price_real:'65',
-ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
-ratings:[{
-star_1:0,
-star_3:0,
-star_4:4,
-star_5:5,
-start_2:0
-}],
-review:[{
-name:'Kabir',
-date:'12/03/23',
-title:'Amazing',
-sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
-`,
-ratings:5,
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
 
-},{
-name:'Kabir',
-date:'12/03/23',
-title:'Amazing',
-sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
-`,
-ratings:5,
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
 
-}],
-stock:10,
-tagline:"Enjoy delicous chicken, mutton curry made with all natural ingredients.",
-weight_sh:"150gm"
- }
-        }
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Experience the bold and pungent flavors of Bihari-style fish magicMix, made with a hearty mix of whole mustard seeds and aromatic spices that bring out the natural flavors of the fish in every bite",
+                weight_sh:"150g"
+                }
+            },
+            {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Ginger","Green chilies","Onion paste","Tomatoes","Bay leaf","Black Jeera",'Salt'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Fish"],
+                image_prod:[{img2:{typ:'typ1',value:"../img/beng_fish_curry.png"},pack:"../img/bengali_fish.png",txt:"../img/txt_img.png"}],
+                images:["../img/fish_curry.png"],
+                name:"Bengali Fish",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Indulge in the mouth-watering flavors of Bengal with MagicMix's Bengali Fish- a unique combination of aromatic spices that creates a deliciously rich and tangy fish curry that is sure to leave you wanting more",
+                weight_sh:"150g"
+                }
+            },
+             {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Curd","Turmeric Powder","Coriander","Cumin","Garam masala","Fenugreek",'Green chilies','Ghee','Ginger','Garlic','Onion','salt','Refined oil','Bay leaf','Cinnamon','Cardamom'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Fish"],
+                image_prod:[{img2:{typ:'typ2',value:"../img/afghani_chik_img.png"},pack:"../img/Afghani_Chicken.png",txt:"../img/txt_img.png"}],
+                images:["../img/afgh_chik.png"],
+                name:"Afghani Chicken",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Take your taste buds on a culinary journey to Afghanistan with MagicMix's Afghani Chicken - made with a perfect mix of aromatic spices and creamy yogurt that add a rich and flavorful twist to your chicken dishes.",
+                weight_sh:"150g"
+                }
+            },
+             {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Peanuts","Ginger","Garlic","Coriander",'Green Chilies','salt','Refined oil','Curd'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Chicken"],
+                image_prod:[{img2:{typ:'typ2',value:"../img/green_chik_img.png"},pack:"../img/Green_Chicken_Masala.png",txt:"../img/txt_img.png"}],
+                images:["../img/green_chick.png"],
+                name:"Green Chicken Masala",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Add a burst of freshness and flavor to your chicken dishes with our homemade green masala magicMix, made with a blend of aromatic herbs and spices that are sure to impress your taste buds",
+                weight_sh:"150g"
+                }
+            },
+               {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:['Green Chilies','Turmeric powder','Ginger','Garlic','Gram flour','Onion','Tomatoes','salt','Refined oil','Curd'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Chicken"],
+                image_prod:[{img2:{typ:'typ2',value:"../img/labab_img.png"},pack:"../img/Chicken_Labadar.png",txt:"../img/txt_img.png"}],
+                images:["../img/lababdar.png"],
+                name:"Chicken Lababdar",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Create a restaurant-style Chicken Lababdar in minutes with MagicMix - the ultimate solution for adding a burst of flavor to your chicken dishes, with a creamy tomato-based sauce and a perfect blend of aromatic spices that will leave your taste buds craving for more",
+                weight_sh:"150g"
+                }
+            },
+            {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Cardamom","Cinnamon","Clove","Coriander",'Green Chilies','Kashmiri Chilies','Ginger','Garlic','salt','Mustard oil','Curd','Bay leaf'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Chicken"],
+                image_prod:[{img2:{typ:'typ1',value:"../img/kashmiri_chick.png"},pack:"../img/Kashmiri_Chicken_prod.png",txt:"../img/txt_img.png"}],
+                images:["../img/kashmiri_chicken.png"],
+                name:"Kashmiri Chicken",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Add a fiery kick to your chicken with MagicMix's Kashmiri chicken - made with a perfect mix of aromatic spices and bold kashmiri red chilies that add a burst of flavor and color to your chicken dishes, making them an instant hit with your family and friends",
+                weight_sh:"150g"
+                }
+            },
+            {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Curd","Turmeric Powder","Coriander","Cumin","Fenugree",'Clove','Nutmeg','Hing','Ginger and garlic paste','Onion','Tomatoes','Green Chilies','salt','Refined oil','Bay leaf','Cinnamon','Cardamom'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Chicken"],
+                image_prod:[{img2:{typ:'typ1',value:"../img/anagara_chik_img.png"},pack:"../img/Chicken_Angara.png",txt:"../img/txt_img.png"}],
+                images:["../img/chicken_angara_m.png"],
+                name:"Chicken Angara",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Indulge in the perfect balance of spicy flavors with our lip-smacking chicken angara magicMix, a surefire way to impress your family and guests alike.",
+                weight_sh:"150g"
+                }
+            },
+            {
+                grp:{name:'y',ord:"b"},
+                item:{
+                about:{ing:["Curd","Turmeric Powder","Fenugreek",'Green chilies','Ghee','Ginger and garlic paste','Onion','salt','Refined oil','Tomatoes'],spec_ing:'',details:'',},
+                descrip:["150gm suitable for 1kg Fish","Just add raw chicken, soya bean etc",
+                "Do not add raw oil, spices etc to the sauce. The sauce will release oil upon heating"
+                ],
+                qty:[{name:'150g',price:'45'}],
+                groc:[
+                "Fish"],
+                image_prod:[{img2:{typ:'typ2',value:"../img/amritsari_chik.png"},pack:"../img/Amritsari_Chicken.png",txt:"../img/txt_img.png"}],
+                images:["../img/amritsari_chick.png"],
+                name:"Amritsari Chicken",
+                offer:null,
+                price_real:'45',
+                ques_and_ans:[{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'},{q:'Where should I store MagicMix ?',ans:'Must be stored in Refrigerator'}],
+                ratings:[{name:'1',tot:0},{name:'2',tot:0},{name:'3',tot:0},{name:'4',tot:0},{name:'5',tot:11}],
+                review:[{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`One thing I appreciate about this is how easy it is to make. With just a few simple ingredients and a quick simmer on the stove, you can have a delicious homemade sauce in no time.`,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },
+                {
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                }
+                ,{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },{
+                name:'Puja Chakraborty',
+                date:'01/04/23',
+                title:'Amazing',
+                sub_head:`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id aliquid sapiente aspernatur nam saepe soluta voluptatibus, reprehenderit qui dolore perspiciatis odio illum quos neque quidem doloremque sed debitis maxime.
+                `,
+                ratings:5,
+
+                },],
+                stock:10,
+                tagline:"Add a touch of Punjabi charm to your meals with MagicMix's Amritsari Chicken - a delicious combination of aromatic spices that will  leave your taste buds dancing with joy and your family asking for seconds",
+                weight_sh:"150g"
+                }
+            }
     ]
 
 
@@ -13855,7 +14412,18 @@ weight_sh:"150gm"
         let count_bx = 0
         let stock_itm_global = 0
         let movePer = 0
-
+function truncateString(str, limit) {
+  // Split the string into an array of words
+  let words = str.split(" ");
+  
+  // If the number of words is less than or equal to the limit, return the original string
+  if (words.length <= limit) {
+    return str;
+  }
+  
+  // Otherwise, join the first `limit` words and add ellipses
+  return words.slice(0, limit).join(" ") + "..";
+}
         //------------------------------------------//
         let cookSteps_img = ''
         document.querySelector('html').addEventListener('click', (e) => {
@@ -13869,6 +14437,69 @@ weight_sh:"150gm"
             let rm_rev_main=e.target.closest('.remove_review')
             let rm_rev_cancel=e.target.closest('.ct_btn_review.btn_cancel')
             let info_req=e.target.closest('.req_essen h4')
+            let addItem = e.target.closest('.ct_addbtns');
+            let show_m_rev=e.target.closest('.ct_show_revies.more_rev')
+            let show_ls_rev=e.target.closest('.ct_show_revies.less_rev')
+if(show_ls_rev!==null){
+   let arr_itm=Array.from(document.querySelectorAll('.ct_allreviews ._2wzgFH'))
+let slicedArr = arr_itm.slice(3);
+
+// Iterate over the sliced array using a for loop
+    for (let i = 0; i < slicedArr.length; i++) {
+     slicedArr[i].style.display='none'
+    }
+    document.querySelector('.ct_show_revies p').innerText='show more'
+    document.querySelector('.ct_show_revies').classList.add('more_rev')
+    document.querySelector('.ct_show_revies').classList.remove('less_rev')
+}
+if(show_m_rev!==null){
+    document.querySelectorAll('.ct_allreviews ._2wzgFH').forEach(itm=>{
+        itm.style.display='block'
+    })
+        document.querySelector('.ct_show_revies p').innerText='show less'
+
+    document.querySelector('.ct_show_revies').classList.remove('more_rev')
+    document.querySelector('.ct_show_revies').classList.add('less_rev')
+
+}
+  if (addItem !== null) {
+                let typ_fd = addItem.classList.value.split(' ')[1]
+                console.log(addItem.parentElement.childNodes)
+                addItem.classList.add('added')
+                addItem.style.pointerEvents = 'none'
+                addItem.childNodes[1].innerText = 'Added to cart'
+tot_pr_itm =0
+tot_pr_itm2=0
+
+                                            if (typ_fd === 'sauce') {
+                    let allfd = JSON.parse(localStorage.getItem('sauce'))
+                    console.log(addItem.parentElement.childNodes[1].childNodes[3].childNodes)
+                    
+                    let inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
+                    // price , nt weight, qty
+                    let obj = {
+                        name: inner_bx[3].innerText,
+                        qty: 1,
+                        slt_nm: inner_bx[7].innerText.split(':')[1].split(' ').join(''),
+                        slt_p: "pouch pack",
+                        type: "sauce",
+
+                    }
+                    allfd.push(obj)
+                    localStorage.setItem('sauce', JSON.stringify(allfd))
+
+
+                } else if (typ_fd === 'essen') {
+                    let allfd = JSON.parse(localStorage.getItem('essentials'))
+
+                    let nm = addItem.parentElement.childNodes[1].innerText
+                    let unit = addItem.parentElement.childNodes[3].childNodes[1].childNodes[1].childNodes[1].innerText
+                    let obj = { name: nm, qt: 1, unit: unit }
+                    allfd.push(obj)
+                    localStorage.setItem('essentials', JSON.stringify(allfd))
+
+                }
+            }
             if(info_req!==null){
             if(!info_req.classList.value.split(' ').includes('open')){
                 document.querySelector('.req_essen .fade.show').style.display='block'
@@ -14064,7 +14695,7 @@ async function reviews_mn(){
                     </div>
                 </div>`
 document.querySelector('.sucess_review').style.right='3px'
-document.querySelector('.ct_allreviews .inner_x') .insertAdjacentHTML("afterbegin", htm_rev)
+document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML("afterbegin", htm_rev)
                                             document.querySelector('.ct_load_review_verf').style.display = 'none'
                                             document.querySelector('.ct_rate_popup').style.display = 'none'
 
@@ -14098,6 +14729,7 @@ cux.style.right='-1000px'
             let itmqtinc = e.target.closest('.ct_bx_item_add')
             let itmqtdec = e.target.closest('.ct_bx_item_rem')
             let view_itm = e.target.closest('.ct_bx_fooditm')
+            let addItem_bx= e.target.closest('.ct_addbtns');
 
             let qty_bx_itm = e.target.closest('.ct_for_bx1')
             let placeOrderItm = e.target.closest('.place_order_btn_popup')
@@ -14580,7 +15212,7 @@ cux.style.right='-1000px'
                 localStorage.setItem('foodsAdded', JSON.stringify(arrFd))
 
             }
-            if (view_itm !== null) {
+            if (view_itm !== null && addItem_bx===null) {
                 if (!document.querySelector('.ct_pop_up_items_order').classList.value.split(' ').includes('active')) {
                     document.querySelector('.ct_pop_up_items_order').classList.add('active')
                 }
@@ -14630,9 +15262,9 @@ cux.style.right='-1000px'
                 }
                 console.log(name,images_prod,qtys)
                 console.log(JSON.parse(images_prod), '  ---------------wjhsdahsadhsd')
-                //document.querySelector('.ct_box_innside_reccom .crousel_items').innerHTML = ''
+                document.querySelector('.req_essen .ct_box_innside_reccom .crousel_items').innerHTML = ''
                 document.querySelector('.ct_load_items').style.display = 'flex'
-
+let found_esen=0
                 async function getItm_groc() {
                     let dbCollection2 = db.collection("essentials")
                     let res = await dbCollection2.get()
@@ -14648,6 +15280,7 @@ cux.style.right='-1000px'
 
 
                             if (nm === nm2) {
+                                found_esen+=1
                                 let name = item.name
                                 let offer = parseFloat(item.offer)
                                 let units = item.units
@@ -14796,27 +15429,29 @@ cux.style.right='-1000px'
                             </div>
                         </div>`
                                 //#${cur.data().group.split(' ').join('')}
-                                //  document.querySelector('.ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
+                                 document.querySelector('.req_essen .ct_box_innside_reccom .crousel_items').insertAdjacentHTML('beforeend', html)
                             }
 
                         })
 
                     })
-
+if(found_esen>=3){
+document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.display='none')
+}
                 }
                 getItm_groc()
 
-                //   document.querySelector('.carousel-inner').innerHTML = ''
+                  document.querySelector('.carousel-inner').innerHTML = ''
                 images_prod = JSON.parse(images_prod)
                 console.log(images_prod)
-                //let crousel_html = `  <div class="carousel-item itm_img_prod active">
-                //                          <img class="prod_img prod_img1" src="${images_prod.img2}">
-                //                          <img class="prod_img prod_img2" src="${images_prod.pack}">
-                //                          <div class="ct_txt_bx">
-                //                            <img src="${images_prod.txt}" alt="">
-                //                          </div>
-                //                        </div>`
-                //      document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
+                let crousel_html = `  <div class="carousel-item itm_img_prod active">
+                                          <img class="prod_img prod_img1 ${images_prod[0].img2.typ}" src="${images_prod[0].img2.value}">
+                                          <img class="prod_img prod_img2" src="${images_prod[0].pack}">
+                                          <div class="ct_txt_bx">
+                                            <img src="${images_prod[0].txt}" alt="">
+                                          </div>
+                                        </div>`
+                      document.querySelector('.carousel-inner').insertAdjacentHTML('beforeend', crousel_html)
                 let images = JSON.parse(images_itm)
                 let class_x = ''
                 if (window.screen.width <= 550) {
@@ -15092,13 +15727,33 @@ cux.style.right='-1000px'
                 document.querySelector('.ct_rat_bx_stat').innerHTML=view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerHTML
                 document.querySelector('.ratings_itm_info p').innerHTML=view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[1].childNodes[3].innerText
 
-                
+                                   document.querySelector('.for_items_recm .crousel_items').innerHTML=''
+         let itm_added = 0
+
         const ratings_reviews = async () => {
             let dbColl = db.collection(`sauce`)
             // dbColl.orderBy('group').get()
             let res = await dbColl.get()
             let grouped = ``
-                document.querySelector('.cust_ques .inner_x').innerHTML=``
+            let sauce = JSON.parse(localStorage.getItem('sauce'))
+
+            let recc_sauce=[]
+                        if (sauce === null) {
+                if (sauce.length === 0) {
+                    recc_sauce = res.docs.filter(elem => {
+                        let dt = elem.data().item
+                        return dt
+                    })
+                }
+            }
+
+            if (sauce !== null) {
+                recc_sauce = res.docs.filter(elem => {
+                    let dt = elem.data().item
+                    console.log(dt.name)
+                    return !sauce.some(cItem => cItem.name.replace(/[ ,]+/g, "").toLowerCase() === dt.name.replace(/[ ,]+/g, "").toLowerCase())
+                })
+            }
             res.docs.forEach(cur => {
                 let item=cur.data().item
                 let itm_id=window.location.hash.split('#')[1].split("?")[0]
@@ -15156,15 +15811,19 @@ averageRating=Math.round(averageRating)
             let userDt = getCookie('userData')
 let found=false
 document.querySelector('.ct_overall_ratings h4').innerHTML=`${averageRating}<ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
-let html_rev=item.review.map(cux=>{
+let html_rev=[]
+item.review.forEach(cux=>{
     if(userDt!==''){
         userDt=JSON.parse( getCookie('userData'))
                                     if(cux.id===userDt.id){
                             found=true
                         }
     }
-
-    let html=`<div class="col _2wzgFH" id='${userDt.id}'>
+    let style_x=`style="display:block"`
+        if(html_rev.length>=4){
+style_x=`style="display:none"`
+        }
+    let html=`<div class="col _2wzgFH" id='${userDt.id}' ${style_x}>
                     <div class="ct_account_icon">
                         <ion-icon name="person-circle" role="img" class="md hydrated" aria-label="person circle"></ion-icon>
                         <p>${cux.name}</p>
@@ -15192,7 +15851,8 @@ let html_rev=item.review.map(cux=>{
 
                     </div>
                 </div>`
-        return html
+        html_rev.push(html)
+
 
 })
 if(found){
@@ -15204,16 +15864,145 @@ document.querySelector('.ct_rate_now p').style.display='none'
     document.querySelector('.remove_review').style.display='none'
 
 }
-document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend', html_rev)
+document.querySelector('.ct_allreviews .inner_x').innerHTML=html_rev.join('')
+document.querySelector('.ct_allreviews .inner_x') .insertAdjacentHTML("beforeend", `<div class="ct_show_revies more_rev"><p>Show more</p></div>`)
 
+                }else{
+
+             
+                        
                 }
 
+
+
             })
+              if (recc_sauce.length !== 0) {
+                                    document.querySelector('.for_items_recm .ct_load_items').style.display='none'
+
+                recc_sauce.forEach(cux => {
+                    let dt = cux.data()
+                    let itm = dt.item
+                    let offHtml = ``
+                    
+                    if (itm.offer !== null) {
+                        offHtml = `<div class="ct_offer_box_cook2">
+         <span>${itm.offer}%</span>
+         <p>off</p>
+     </div>`
+                    }
+                    let itm_qt = 1
+
+
+                    let priceBX = `
+              <div class="ct_bx_price_fd hasoffPrice">
+             <del class="pricenooff" style='display:none'></del>
+             <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
+         </div>
+     `
+
+
+                    itm_added += 1
+let string_short=truncateString(itm.tagline,20)
+
+
+                            let rattings_stars=[]
+let tot_Reviews=0
+
+function calculateAverage(ratings) {
+let sum=0
+ratings.forEach(cux=>{
+    sum += (parseFloat(cux.tot)*parseFloat(cux.name))
+    tot_Reviews+= (parseFloat(cux.tot))
+})
+let avg=sum/tot_Reviews
+return avg
+
+}
+let averageRating = calculateAverage(itm.ratings);
+if(!isNaN(averageRating)){
+    averageRating=String(averageRating)
+let stars=averageRating.split('.')[0]
+let halfstars=averageRating.split('.')[1]
+
+for(let i=0;i<stars;i++){
+let htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+rattings_stars.push(htm_sr)
+}
+if(halfstars!==undefined){
+    let htm_sr=`<ion-icon name="star-half-sharp"></ion-icon>`
+
+    if(halfstars>=7){
+htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="star sharp"></ion-icon>`
+    }
+rattings_stars.push(htm_sr)
+}
+}
+//<ion-icon name="star-half-sharp"></ion-icon>
+let ratings_bx=`<div class="ratings_bx">
+                                                            <div class="rating_itm">
+                                                                ${rattings_stars.join('')}
+                                                            </div>
+                                                            <span>(${tot_Reviews})</span>
+                                                        </div>`
+
+
+                    let html1 = `
+                                                     
+                                                     <div class="product">
+                                                     <div class="ct_bx_fooditm">
+                                            <a rel="nofollow">
+                                                <div class="ct_bx_flex">
+                                                    ${offHtml}
+                                                                    <div class="main_im sauces">
+                                                    <img  alt="${itm.name}" src="${itm.images[0]}">
+                </div>
+                                                    <div class="ct_bx_inner_food_groc">
+                                                        ${ratings_bx}
+                                                        <h4>${itm.name}</h4>
+                                                        <p class="item_intro">${string_short}</p>
+                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+
+                                                        ${priceBX}
+
+                                                        <div class="ct_bx_item_details_hide">
+                                                            <p class="name">${itm.name}</p>
+                                                            <p class="stock">${15}</p>
+                                                            <p class="price_pr">${itm.price_real}</p>
+                                                            <p class="price_off"></p>
+                                                            <p class="offer">${itm.offer}</p>
+                                                            <p class="about_list">${itm.about}</p>
+                                                            <p class="qty">${itm.weight_sh}</p>
+                                                            <p class="desc">''</p>
+                                                            <p class="essentials"></p>
+                                                            <p class="images_item"></p>
+   
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                             <div class="ct_addbtns sauce">
+                            <p>Add to cart</p>
+                            </div>
+                                            </a>
+                                        </div>
+                                        </div>`
+                    document.querySelector('.for_items_recm .crousel_items').insertAdjacentHTML('beforeend', html1)
+
+                })
+            }
         }
         ratings_reviews()
 
                            document.querySelector('.name_of_itm').innerText = name
-                console.log(desc)
+
+                let about_obj=JSON.parse(about)
+                console.log(about_obj.ing.join(','))
+                if(about_obj.spec_ing!==''){
+                document.querySelector('.ct_bx_for_ingredients.ingred h3').innerText=about_obj.spec_ing
+
+                }else{
+                     document.querySelector('.ct_bx_for_ingredients .ct_special_ing').style.display='none'
+                }
+                document.querySelector('.ct_bx_for_ingredients.ingred p').innerHTML=about_obj.ing.join(',')
                 document.querySelector('.ct_bx_info_sauce ul').innerHTML = ''
 
                 let desc_obj = JSON.parse(desc)
@@ -15221,8 +16010,7 @@ document.querySelector('.ct_allreviews .inner_x').insertAdjacentHTML('beforeend'
                     let html = `<li class="inner_bxs">
                     <span>*</span>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsum odio harum, facilis a cupiditate adipisci iure, possimus, esse quam sint! Cupiditate voluptatibus vero repudiandae nulla facere atque. Quia, necessitatibus?
-</p>
+                    <p>${cur11}</p>
                 </li>`
                     document.querySelector('.ct_bx_info_sauce ul').insertAdjacentHTML('beforeend', html)
                 })
@@ -15823,6 +16611,8 @@ htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="
 rattings_stars.push(htm_sr)
 }
 }
+let string_short=truncateString(tagline,25)
+
 console.log(rattings_stars.join(''))
 //<ion-icon name="star-half-sharp"></ion-icon>
 let ratings_bx=`<div class="ratings_bx">
@@ -15844,7 +16634,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                     ${ratings_bx}
 
                                                         <h4>${name}</h4>
-                                                        <p class="item_intro">${tagline}</p>
+                                                        <p class="item_intro">${string_short}</p>
                                                         <p class="for_unit_itm">Net.weight: ${weight_sh}</p>
 
                                                         ${priceBX}
@@ -15855,7 +16645,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                             <p class="price_pr">${price_real}</p>
                                                             <p class="price_off">${price_off}</p>
                                                             <p class="offer">${offer}</p>
-                                                            <p class="about_list">${about}</p>
+                                                            <p class="about_list">${JSON.stringify(about)}</p>
                                                             <p class="qty">${qty_items}</p>
                                                             <p class="desc">${desc}</p>
                                                             <p class="essentials">${JSON.stringify(essential_ids)}</p>
@@ -15871,15 +16661,17 @@ let ratings_bx=`<div class="ratings_bx">
                 let ord = grp.ord
                 let grpName = grp.name
 
-                if (document.querySelector(`#${grpName}`) === null) {
-                    // if null create a div then add itm to this div
-                    let htm_x = `<div class="list_food_at_ov groc_list for_erak_list" id="${grpName}"><h2>${grpName}</h2><div class="ct_cat_by_list"></div></div>`
-                    console.log(grpName, '-----------------------------')
-                    document.querySelector(`.ct_all_list_food`).insertAdjacentHTML('beforeend', htm_x)
-
-                }
-                document.querySelector(`#${grpName} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
+               // if (document.querySelector(`#${grpName}`) === null) {
+               //     // if null create a div then add itm to this div
+               //     let htm_x = `<div class="list_food_at_ov groc_list for_erak_list" id="${grpName}"><h2>${grpName}</h2><div class="ct_cat_by_list"></div></div>`
+               //     console.log(grpName, '-----------------------------')
+               //     document.querySelector(`.ct_all_list_food`).insertAdjacentHTML('beforeend', htm_x)
+//
+                //}
+                //document.querySelector(`#${grpName} .ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
+                document.querySelector(`.ct_cat_by_list`).insertAdjacentHTML('beforeend', html)
                 document.querySelector('.ct_full_loading_box').style.display = 'none'
+                if(window.location.hash!==''){
                 if(rating_href!==undefined){
                     if(name_id===window.location.hash.split('#')[1].split("?")[0]){
                         console.log(document.querySelector(`.ct_bx_fooditm.${name_id}`))
@@ -15888,6 +16680,8 @@ let element = document.getElementById('ratings');
 element.scrollIntoView({ behavior: 'smooth' });
             }
                 }
+                }
+
             })
         }
         loadFoodItems()
