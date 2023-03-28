@@ -61,6 +61,22 @@
         display: none;
     }
 
+    ._2QhOV .awo_x.balance {
+        display: none;
+    }
+
+    .account_name_sec .ct_inner span.typ {
+        background-color: rgb(255 213 235);
+        font-size: 10px;
+        color: black;
+        font-family: 'roboto';
+        border-radius: 20px;
+        padding: 6px 15px;
+        display: none;
+        width: max-content;
+        margin: 5px 0;
+    }
+
     .ct_area_toggle {
         background-color: #ffffff;
         padding: 20px 40px;
@@ -69,19 +85,20 @@
         height: 100%;
     }
 
-.ct_btn_rate_this_prod{
-    display: block;
-    background: #ffffff;
-    font-size: 12px;
-    box-shadow: 0 1px 5px #00000024;
-    padding: 8px 0;
-    text-align: center;
-    border-radius: 16px;
-    color: black;
-    font-family: 'roboto';
-    margin-top: 18px;
+    .ct_btn_rate_this_prod {
+        display: block;
+        background: #ffffff;
+        font-size: 12px;
+        box-shadow: 0 1px 5px #00000024;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: 16px;
+        color: black;
+        font-family: 'roboto';
+        margin-top: 18px;
 
-}
+    }
+
     .ct_icon_x_dwn,
     .ct_icon_x_up {
         display: none;
@@ -109,8 +126,8 @@
         padding: 14px 10px;
     }
 
-    .for_nav_main .admin_panel,
-    .for_nav_main .admin_page {
+    .ct_bx_slide_bx .admin_panel,
+    .for_nav_main .ct_bx_slide_bx .admin_page {
         display: none;
     }
 
@@ -4128,13 +4145,17 @@
         justify-content: center;
     }
 
-    .ct_field_small_size {
-        color: #000;
-        font-size: 28px;
-        margin: 10px;
-        display: none;
-        cursor: pointer;
-    }
+.ct_field_small_size {
+    color: #000;
+    font-size: 28px;
+    margin: 10px;
+    border: 1px solid #ababab;
+    border-radius: 20px;
+    padding: 5px 6px;
+    transform: translate(0px, 5px);
+    display: none;
+    cursor: pointer;
+}
 
     .for_ain_home_logo a {
         display: flex;
@@ -4806,10 +4827,10 @@
             display: none;
         }
 
-        .ct_field_small_size span {
-            font-size: 37px;
-            margin-top: 1px;
-        }
+.ct_field_small_size span {
+    font-size: 23px;
+    margin: 4px;
+    margin-top: 4px;}
 
         .ct_bx_about_mobile2 a {
             padding: 24px 10px;
@@ -5357,12 +5378,12 @@
 
     /*! CSS Used from: Embedded */
     .ct_acc_dt_ov p {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 15px;
     }
 
     .ct_acc_dt_ov h4 {
-        color: white;
+        color: rgb(0, 0, 0);
         font-family: 'Poppins';
         font-size: 31px;
         word-break: break-all;
@@ -5558,7 +5579,7 @@
     .ct_acc_dt_ov p {
         margin: 10px 0 0 11px;
         font-size: 15px;
-        color: #fff;
+        color: #000000;
     }
 
     .acc_erak_mobile {
@@ -5581,9 +5602,7 @@
             width: 90%;
         }
 
-        .ct_acc_dt_ov p {
-            color: white;
-        }
+
 
         .ct_acc_dt_ov p {
             margin: 11px 0 0 11px;
@@ -5704,9 +5723,9 @@
         width: 62px;
     }
 
- .coppy_right {
-    margin: 23px 57px 0 10px;
-}
+    .coppy_right {
+        margin: 23px 57px 0 10px;
+    }
 
     .about_us_link {
         width: 13%;
@@ -7600,12 +7619,13 @@
         text-transform: capitalize;
         /* margin-top: -9px; */
     }
-.ct_refer_panel h2 {
-    font-size: 49px;
-    margin-top: 0px;
-    line-height: 53px;
-    margin-bottom: 13px;
-}
+
+    .ct_refer_panel h2 {
+        font-size: 49px;
+        margin-top: 0px;
+        line-height: 53px;
+        margin-bottom: 13px;
+    }
 
     .ct_refer_panel h2 span {
         color: #fd4;
@@ -7840,6 +7860,7 @@
         margin-bottom: 40px;
     }
 
+    .balance_influ h3,
     .ct_flex_bx_notif h4 {
         color: black;
         font-size: 21px;
@@ -7847,6 +7868,38 @@
         margin-top: 13px;
         font-weight: 500;
         width: 80%;
+    }
+
+    .balance_influ {
+        padding-bottom: 50px;
+    }
+
+    .balance_influ h3 {
+        margin-left: 28px;
+    }
+
+    .balance_influ .bx_flex {
+        display: flex;
+        justify-content: center;
+        width: 68vw;
+    }
+
+    .awo_x .balance_influ .bx_flex {
+        width: 84vw;
+    }
+
+    .balance_influ h2 {
+        color: black;
+        font-size: 50px;
+        font-family: 'roboto';
+        margin-top: 70px;
+    }
+
+    .balance_influ p {
+        font-family: 'open sans';
+        font-size: 14px;
+        color: black;
+        margin: 10px 10px;
     }
 
     .ct_flex_bx_notif button {
@@ -8215,7 +8268,8 @@
         }
 
         .ct_refer_panel h2 {
-            font-size: 34px;    line-height: 36px;
+            font-size: 34px;
+            line-height: 36px;
         }
 
         .ct_refer_panel p {
@@ -8433,16 +8487,16 @@
             padding-top: 0 !important;
         }
 
-.awo_x {
-    padding: 25px 0px;
-    background: white;
-    transition: all .6s ease-in-out;
-    box-shadow: 0 1px 4px #00000026;
-    border-radius: 4;
-    width: 95%;
-    margin-top: 6px;
-    margin-left: 10px;
-}
+        .awo_x {
+            padding: 25px 0px;
+            background: white;
+            transition: all .6s ease-in-out;
+            box-shadow: 0 1px 4px #00000026;
+            border-radius: 4;
+            width: 95%;
+            margin-top: 6px;
+            margin-left: 10px;
+        }
 
 
         .awo_x .inner_ms {
@@ -8487,23 +8541,38 @@
         .g28rk {
             padding: 20px 27px 30px 8px;
         }
-
+.ct_field_small_size {
+    margin: 0px 4px 0 0;
+}
         .ct_logox {
             width: 24%;
         }
+
         .follow_us {
-    margin-top: 24px;
-}
-._3PUy8 {
-    display: block;
-    width: 100%;
-    font-size: 14px;
-    line-height: initial;
-    height: 27px;
-    padding: 0 15px;
-    margin-top: 0px;
-    padding: 7px;
-}
+            margin-top: 24px;
+        }
+
+        .balance_influ h2 {
+            font-size: 38px;
+            margin-top: 26px;
+        }
+
+        .balance_influ p {
+            font-size: 11px;
+            margin: 10px 1px;
+        }
+
+        ._3PUy8 {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            line-height: initial;
+            height: 27px;
+            padding: 0 15px;
+            margin-top: 0px;
+            padding: 7px;
+        }
+
         .coppy_right p {
             font-size: 12px;
             margin: 5px 1px 0 10px;
@@ -8602,7 +8671,8 @@
         }
 
         .f4Ovn {
-            margin: 14px 0 0 0px;border-radius: 20px;
+            margin: 14px 0 0 0px;
+            border-radius: 20px;
         }
 
         ._2XWVq .ct_flex {
@@ -8754,10 +8824,14 @@
             font-size: 13px;
         }
 
-        .ct_field_small_size span {
-            font-size: 27px;
-            margin-top: 10px;
-        }
+.ct_field_small_size span {
+    font-size: 23px;
+    /* margin-top: 10px; */
+    margin: 4px 4px;
+}
+.ct_field_small_size {
+    margin: -1px 5px;
+}
 
         .ct_refer_panel h2,
         .ct_refer_panel h3 {
@@ -8823,7 +8897,11 @@
             font-size: 9px;
             transform: translate(5px, -1px);
         }
-
+.ct_field_small_size {
+    display: block;
+    padding: 2px 5px;
+    margin: -5px 7px 0 0;
+}
         .yt-loader {
             top: 63px;
         }
@@ -8837,9 +8915,9 @@
             width: 20%;
         }
 
-.coppy_right {
-    margin: 20px 37px 0 10px;
-}
+        .coppy_right {
+            margin: 20px 37px 0 10px;
+        }
 
         .ct_logox {
             width: 22%;
@@ -8943,19 +9021,19 @@
 
     /*! CSS Used from: Embedded */
     .ct_acc_dt_ov p {
-        color: white;
+        color: rgb(0, 0, 0);
         font-size: 15px;
     }
 
     .ct_acc_dt_ov h4 {
-        color: white;
         font-family: 'Poppins';
         font-size: 31px;
         margin-left: 9px;
     }
 
+
     .ct_bx_slide_bx2 .ct_bx_erak_logo {
-        background-image: linear-gradient(to left, #144291, rgb(13 31 101));
+        background-image: linear-gradient(to left, #74F2CE, #7CFFCB);
     }
 
     .ct_bx_slide_bx.active {
@@ -9189,7 +9267,6 @@
         .ct_acc_dt_ov p {
             margin: 10px 0 0 11px;
             font-size: 15px;
-            color: #fff;
         }
 
         .acc_erak_mobile {
@@ -9212,8 +9289,8 @@
             width: 90%;
         }
 
-        .ct_acc_dt_ov p {
-            color: white;
+        .account_name_sec .ct_inner span.typ {
+            font-size: 8px;
         }
 
         .ct_acc_dt_ov p {
@@ -9347,6 +9424,7 @@
                 </div>
                 <div class="ct_inner">
                     <h4>Priyangshou Bhattacharjee</h4>
+                    <span class="typ">Influencer</span>
                     <div class="ct_flex">
                         <p class="ph_num"><ion-icon name="call-outline"></ion-icon> <span></span></p>
                         <p class="add_ress"><ion-icon name="home-outline"></ion-icon> <span></span></p>
@@ -9391,7 +9469,38 @@
                     <div class="_3R9IF">
                         <div class="_2gu8R">
                             <ul>
+  <li class="awo_x  balance">
+                                    <div class="inner_ms">
 
+                                        <div class="ct_icon_img">
+                                            <img src="../img/refer_balance_icon.webp" alt="">
+                                        </div>
+                                        <span class="_1ZYny">Refer Balance</span>
+                                        <div class="ct_icon_x_dwn">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_icon_x_up">
+                                            <ion-icon name="chevron-up-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <div class="ct_area_toggle">
+                                        <div class="balance_influ">
+
+                                            <div class="bx_flex">
+                                                <div class="ct_inner">
+
+                                                    <h2>₹59.00</h2>
+                                                    <p>20 users used your coupon: n6789</p>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </li>
                                 <li class="awo_x refer_tab ">
                                     <div class="inner_ms">
                                         <div class="ct_icon_img">
@@ -9405,6 +9514,7 @@
                                             <ion-icon name="chevron-up-outline"></ion-icon>
                                         </div>
                                     </div>
+
                                     <div class="ct_area_toggle">
                                         <div class="ct_refer_panel_outer">
 
@@ -9464,6 +9574,8 @@
                                     </div>
 
                                 </li>
+
+                              
                                 <li class="awo_x  edit_89jjs">
                                     <div class="inner_ms">
 
@@ -9518,6 +9630,7 @@
 
 
                             </div>
+
                             <div class="ct_refer_panel_outer">
 
                                 <div class="ct_notify_refer_btn">
@@ -9536,7 +9649,20 @@
 
                                 </div>
                             </div>
+                            <div class="balance_influ main">
 
+                                <h3>Refer Balance</h3>
+                                <div class="bx_flex">
+                                    <div class="ct_inner">
+
+                                        <h2>₹59.00</h2>
+                                        <p>20 users used your coupon: n6789</p>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
                             <div class="ct_bx_account">
                                 <div class="ct_error_account">
                                     <h4>Opps, Account already exist. Please try again.</h4>
@@ -9553,7 +9679,7 @@
                                     <div class="ct_bx_flex_msg_cart">
                                         <img src="../img/empty_cart_n.png">
                                         <h3>Your order list is empty</h3>
-                                                    <a href="/magicmix">MagicMix</a>
+                                        <a href="/magicmix">MagicMix</a>
 
                                     </div>
 
@@ -9706,7 +9832,51 @@
             }
         }
         load_basic_dt()
+        async function check_user() {
+            let dbCollection2 = db.collection("users")
+            let res = await dbCollection2.get()
+            let userDt = JSON.parse(getCookie('userData'))
+            res.docs.forEach(async cur => {
+                let dt = cur.data()
+                if (dt.id === userDt.id) {
+                    if (dt.admin === 'influencer') {
+                       document.querySelectorAll('.balance_influ h2').forEach(itm=>{
+                        itm.innerText=`₹${dt.ref_balen.val}`
+                       })
+                                             document.querySelectorAll('.balance_influ p').forEach(itm=>{
+                        itm.innerText=`${dt.ref_balen.user_tot} users used your COUPON:${dt.ref_balen.code}`
+                       })
+                       document.querySelector('.account_name_sec span.typ').style.display = 'block'
+                        document.querySelector('.awo_x.balance').style.display = 'block'
+                        document.querySelector('.awo_x.balance').style.display = 'block'
 
+                    }
+                }
+            })
+        }
+        check_user()
+     if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+
+        let initialOrientation = window.orientation;
+            // Check for a device rotation event
+            window.addEventListener("orientationchange", function() {
+            // Get the new orientation of the device
+            let newOrientation = window.orientation;
+
+            // Compare the new orientation to the initial orientation
+            if (newOrientation !== initialOrientation) {
+            if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+                // The device has been rotated
+                // Do something here, such as updating the layout or UI
+            }
+
+            // Update the initial orientation to the new orientation
+            initialOrientation = newOrientation;
+        });
         async function toggle_tab(typ) {
             if (getCookie('userData') === '') {
                 window.location.replace('/')
@@ -9729,7 +9899,9 @@
                 }
 
             }
-
+            document.querySelectorAll('.balance_influ').forEach(cux => {
+                cux.style.display = 'none'
+            })
             document.querySelectorAll('.ct_bx_account ').forEach(cux => {
                 cux.style.display = 'none'
             })
@@ -9774,6 +9946,56 @@
                         removeAllCookies()
                         document.cookie = "inf_lgot" + "=" + 'true' + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/"
                         window.location.replace('/magicmix')
+                    }
+                    if (typ === 'balance_ref') {
+
+                        let tab_bl = document.querySelector('.balance')
+                        if (tab_bl.classList.value.includes('active')) {
+                            document.querySelector('.balance').classList.remove('active')
+                        }
+                        document.querySelector('.balance').classList.add('active')
+
+
+                        if (tab_bl.classList.value.includes('_1B5rE')) {
+                            if (window.screen.width <= 740) {
+
+                                document.querySelector('.balance .ct_icon_x_up').style.display = 'none'
+                                document.querySelector('.balance .ct_icon_x_dwn').style.display = 'block'
+                            }
+                            tab_bl.classList.remove('_1B5rE')
+
+                            return
+                        } else {
+
+
+                            if (window.screen.width <= 740) {
+                                document.querySelector('.balance .ct_icon_x_up').style.display = 'block'
+                                document.querySelector('.balance .ct_icon_x_dwn').style.display = 'none'
+                                document.querySelector('.balance .ct_icon_x_up ion-icon').classList.add('fade-in-down')
+                                setTimeout(function () {
+                                    document.querySelector('.balance .ct_icon_x_up ion-icon').classList.remove('fade-in-down')
+                                    document.querySelector('.balance .ct_icon_x_up ion-icon').style.opacity = '1'
+
+                                }, 960)
+                                document.querySelector('.balance .ct_area_toggle .balance_influ').style.display = 'block'
+                                document.querySelector('.balance .ct_area_toggle').style.display = 'block'
+                                document.querySelector('.balance .ct_area_toggle').classList.add('open')
+                                document.querySelector('.balance .ct_area_toggle').classList.add('fade-in-down')
+                                setTimeout(function () {
+                                    document.querySelector('.balance .ct_area_toggle').classList.remove('fade-in-down')
+                                    document.querySelector('.balance .ct_area_toggle').style.opacity = '1'
+
+                                }, 960)
+                            }
+                            document.querySelector('.balance_influ.main').style.display = 'block'
+
+                            if (document.querySelector('._1B5rE') !== null) {
+                                document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                            }
+                            document.querySelector('.balance').classList.add('_1B5rE')
+                            document.querySelector('.balance').classList.add('_1B5rE')
+                        }
+
                     }
                     if (typ === 'refer') {
                         let refer_tb = document.querySelector('.refer_tab')
@@ -10035,34 +10257,34 @@
                     if (typ === 'edit') {
 
                         let order_tab = document.querySelector('.edit_89jjs')
-                            if (window.screen.width <= 740) {
-                        if (order_tab.classList.value.includes('_1B5rE')) {
+                        if (window.screen.width <= 740) {
+                            if (order_tab.classList.value.includes('_1B5rE')) {
 
                                 document.querySelector('.edit_89jjs .ct_icon_x_up').style.display = 'none'
                                 document.querySelector('.edit_89jjs .ct_icon_x_dwn').style.display = 'block'
-                            
-                            order_tab.classList.remove('_1B5rE')
 
-                            return
-                        } else {
+                                order_tab.classList.remove('_1B5rE')
 
-                            if (window.screen.width <= 740) {
-                                document.querySelector('.edit_89jjs .ct_icon_x_up').style.display = 'block'
-                                document.querySelector('.edit_89jjs .ct_icon_x_dwn').style.display = 'none'
-                                document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').classList.add('fade-in-down')
-                                setTimeout(function () {
-                                    document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').classList.remove('fade-in-down')
-                                    document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').style.opacity = '1'
+                                return
+                            } else {
 
-                                }, 960)
+                                if (window.screen.width <= 740) {
+                                    document.querySelector('.edit_89jjs .ct_icon_x_up').style.display = 'block'
+                                    document.querySelector('.edit_89jjs .ct_icon_x_dwn').style.display = 'none'
+                                    document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').classList.add('fade-in-down')
+                                    setTimeout(function () {
+                                        document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').classList.remove('fade-in-down')
+                                        document.querySelector('.edit_89jjs .ct_icon_x_up ion-icon').style.opacity = '1'
+
+                                    }, 960)
+                                }
                             }
                         }
-                            }
-                            if (document.querySelector('._1B5rE') !== null) {
-                                document.querySelector('._1B5rE').classList.remove('_1B5rE')
-                            }
+                        if (document.querySelector('._1B5rE') !== null) {
+                            document.querySelector('._1B5rE').classList.remove('_1B5rE')
+                        }
 
-                            document.querySelector('.edit_89jjs').classList.add('_1B5rE')
+                        document.querySelector('.edit_89jjs').classList.add('_1B5rE')
                         document.querySelector('._1B5rE').classList.remove('_1B5rE')
                         document.querySelector('.edit_89jjs').classList.add('_1B5rE')
                         let html = `                                     <div class="ct_bx_otp_box fr_sign_otp">
@@ -10394,7 +10616,7 @@
                             return
                         }
                         for (var i = orders.length - 1; i >= 0; i--) {
-                            let cu11=orders[i]
+                            let cu11 = orders[i]
                             let return_html = ''
                             let delivered_html = ''
                             let delivered_info = false
@@ -10418,18 +10640,18 @@
                                                 <h4>Delivered on ${delivered.date}</h4>
                                             </div>`
                             }
-                            let rate_bx=``
+                            let rate_bx = ``
 
                             let arr_itms = cu11.arr.map(itm => {
-                               let name_id=itm.name.split(' ').join('').toLowerCase()
-                                                            if (cu11.delivered) {
-                                if(itm.typ==='sauce'){
-                                    console.log('00000000000000000000000000')
-                                rate_bx=`<a  href="/magicmix#${name_id}?ratings=true" class="ct_btn_rate_this_prod">
+                                let name_id = itm.name.split(' ').join('').toLowerCase()
+                                if (cu11.delivered) {
+                                    if (itm.typ === 'sauce') {
+                                        console.log('00000000000000000000000000')
+                                        rate_bx = `<a  href="/magicmix#${name_id}?ratings=true" class="ct_btn_rate_this_prod">
                                             <p>Rate this product</p>
                                         </a>`
+                                    }
                                 }
-                             }
                                 if (itm.return) {
                                     // if user returned
                                     return_html = ` <div class="ct_btns returned">
@@ -10614,6 +10836,7 @@
             let edit_now = e.target.closest('.cont_btn_acc.edit_btn')
             let remove_notif = e.target.closest('.ct_flex_bx_notif button')
             let refer_tab = e.target.closest('.refer_tab')
+            let balance_ref = e.target.closest('.awo_x.balance')
             let go_back = e.target.closest('.ct_bx_go_back')
             let lear_mr = e.target.closest('.learn_more')
             let return_order = e.target.closest('._3PUy8.f4Ovn')
@@ -10711,6 +10934,12 @@
                 if (area_tab_blw === null) {
 
                     toggle_tab('refer')
+                }
+            }
+            if (balance_ref !== null) {
+                if (area_tab_blw === null) {
+
+                    toggle_tab('balance_ref')
                 }
             }
             if (remove_notif !== null) {
@@ -10812,6 +11041,7 @@
                                     }
                                     await dbCollection2.doc(cur.id).set({
                                         admin: false,
+                                        ref_balen:new_dt.ref_balen,
                                         id: dt.id,
                                         name: new_dt.name,
                                         phone: new_dt.phone,
@@ -10830,6 +11060,9 @@
                                     setTimeout(function () {
                                         document.querySelector('.popup_info.sucess_account').style.right = '-1000px'
                                     }, 20000)
+                                    if (new_dt.admin === 'influencer') {
+
+                                    }
 
                                     document.querySelector('.account_name_sec h4').innerText = new_dt.name
                                     document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";

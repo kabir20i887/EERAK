@@ -1214,7 +1214,7 @@ ion-icon{pointer-events:none;}
             margin-top: 5px;
             font-weight: 700;
             margin-left: 17px;
-            margin-bottom: 0;
+            margin-bottom: 10px;
             display: none;
         }
 
@@ -1490,7 +1490,7 @@ ion-icon{pointer-events:none;}
         .ct_info_offfer_saved h4 {
             font-family: 'roboto';
             color: #ffffff;
-            font-size: 19px;
+            font-size: 15px;
         }
 
         .sucess_order h4 {
@@ -1506,7 +1506,7 @@ ion-icon{pointer-events:none;}
             font-family: 'roboto';
             color: #ffffff;
             margin-top: 5px;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .sucess_order p {
@@ -3853,13 +3853,17 @@ filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);}
             justify-content: center;
         }
 
-        .ct_field_small_size {
-            color: #000;
-            font-size: 28px;
-            margin: 10px;
-            display: none;
-            cursor: pointer;
-        }
+   .ct_field_small_size {
+    color: #000;
+    font-size: 28px;
+    margin: 10px;
+    border: 1px solid #ababab;
+    border-radius: 20px;
+    padding: 5px 6px;
+    transform: translate(0px, 5px);
+    display: none;
+    cursor: pointer;
+}
 
         .for_ain_home_logo a {
             display: flex;
@@ -4853,11 +4857,10 @@ filter: drop-shadow(-1px 5px 2px #0000003b) contrast(1.1);}
             .ct_nav_erak .for_mobile_search.for_seravh_in_nav {
                 display: none;
             }
-
-            .ct_field_small_size span {
-                font-size: 37px;
-                margin-top: 1px;
-            }
+.ct_field_small_size span {
+    font-size: 23px;
+    margin: 4px;
+    margin-top: 4px;}
 
             .ct_bx_about_mobile2 .material-symbols-outlined {
                 font-size: 34px;
@@ -13808,7 +13811,9 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
             .main_cart_img {
                 max-width: 100%;
             }
-
+.ct_imgbx {
+    width: 220px;
+}
             .sucess_order,
             .ct_info_offfer_saved {
                 width: 93%;
@@ -14556,12 +14561,12 @@ margin: 6px 42px 0 13px;            font-family: 'Open sans';
 
         @media only screen and (max-width:1100px) {
             .crousel_items {
-
-                margin: 0px 0px 0 62px;
+width: 81%;
+                margin: 0px 0px 0 94px;
             }
 
             .crousel_items .product {
-min-width: 180px;
+min-width: 20.1vw;
     max-width: 200px;
                 border-radius: 20px;
             }
@@ -15530,10 +15535,6 @@ padding: 20px 31px;            }
 
             }
 
-            .ct_imgbx {
-                width: 15%;
-            }
-
             ..crousel_items {
                 padding-bottom: 60px;
             }
@@ -16324,6 +16325,9 @@ padding: 20px 31px;            }
             .ct_loading_bx_all {
                 margin: 0 0 20px 10px;
             }
+            .ct_imgbx {
+    width: 159px;
+}
 
             .ct_inner_fd1_dt_grid {
                 margin-top: 43px;
@@ -17235,6 +17239,9 @@ padding: 20px 31px;            }
     width: 300px
     
 }
+            .sucess_order,
+            .ct_info_offfer_saved {
+                margin: 30px 0 0 8px;}
 .empty_cart{
          box-shadow:none;padding: 16px 17px 37px 7px;
 }
@@ -17364,7 +17371,7 @@ height: auto;
             .sucess_order h4,
             .ct_info_offfer_saved h4 {
                 font-family: 'roboto';
-                font-size: 15px;
+                font-size: 13px;
             }
 
             .sucess_order p,
@@ -17536,7 +17543,7 @@ height: auto;
                 border-radius: 49px;
                 padding-bottom: 44px;
             }
-
+.ct_apply_coupons .ct_inner p{margin-bottom: 0;}
             .error_account h4 {
                 margin: 13px 0 3px 15px;
             }
@@ -19715,7 +19722,7 @@ height: auto;
     <div class="ct_outer_saved">
         <div class="ct_offer_saved_popup">
             <h3>Hurrah!</h3>
-            <p>You have saved ₹ 49 on cooking sauce.</p>
+            <p>You have saved ₹ 49 on MagicMix.</p>
             <span></span>
             <div class="ct_btn">
                 Enjoy
@@ -19788,7 +19795,7 @@ height: auto;
                 </div>
 
                 <div class="ct_info_offfer_saved">
-                    <h4>Hurrah! You saved ₹ 49 on cooking sauce.</h4>
+                    <h4>Hurrah! You saved ₹ 49 on MagicMix.</h4>
                     <p>With COUPON: TRYNOW</p>
                 </div>
 
@@ -20511,6 +20518,28 @@ height: auto;
             }
             return "";
         }
+             if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+
+        let initialOrientation = window.orientation;
+            // Check for a device rotation event
+            window.addEventListener("orientationchange", function() {
+            // Get the new orientation of the device
+            let newOrientation = window.orientation;
+
+            // Compare the new orientation to the initial orientation
+            if (newOrientation !== initialOrientation) {
+            if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+                // The device has been rotated
+                // Do something here, such as updating the layout or UI
+            }
+
+            // Update the initial orientation to the new orientation
+            initialOrientation = newOrientation;
+        });
         function base64url(source) {
             // Encode in classical base64
             let encodedSource = CryptoJS.enc.Base64.stringify(source);
@@ -21429,7 +21458,7 @@ let ratings_bx=`<div class="ratings_bx">
                         if (objCpns.cpnfor === 'groc') {
                             document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on essentials.`
                         } else {
-                            document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
+                            document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on MagicMix.`
 
                         }
                     } else {
@@ -21667,10 +21696,13 @@ let found_cpn=false
                                                 if (used) {
                                             btn_acc=`                            <button class="locked">Already used</button>`
                                                 }else{
+
+                                                    if(conditionX){
+                                                    btn_acc=`<button class="claim">Apply</button>`
                                                     document.querySelector('.success_code').style.display='block'
                                                     document.querySelector('.success_code').innerText=`Hurrah! COUPON: ${data.name} unlocked.`
                                                     not_av_html=''
-                                                    btn_acc=`<button class="claim">Apply</button>`
+                                                    }
                                                 }
                                         }
                                     }
@@ -22087,6 +22119,7 @@ ${desc_htm_cpn.join('')}
             db.collection("users")
                 .add({
                     admin: false,
+                    ref_balen:null,
                     id: objUser.id,
                     name: objUser.name,
                     phone: objUser.phone,
@@ -22421,7 +22454,7 @@ ${desc_htm_cpn.join('')}
                             document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
                             document.querySelector('.disocunted.block_1_charge span').innerText = "— ₹" + dicounted_pr
 
-                            document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
+                            document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on MagicMix.`
 
                         } else {
                             document.querySelector('.disocunted.block_1_charge').style.display = 'flex'
@@ -22701,12 +22734,16 @@ if(offer!==null){
                         let tot_am = 0
                         //  dt required------ name , img, totprice, paymode, unit, qty, returable 
                         let pay_typ = document.querySelector('.ct_option_pay.active').childNodes[3].childNodes[1].innerText.replace(/[ ,]+/g, "").toLowerCase()
+                        
+                                    
                         let objItms = {
                             total_amount: 0,
                             date: moment().format('LLL'),
                             arr: [],
                             payMode: '',
                             delivered: false,
+                            coupn_usd:null,
+                            am_sauce:0,
                             id_ord: id_order
                         }
                         let tot_am_grc = 0
@@ -22721,6 +22758,29 @@ if(offer!==null){
                 if(sauce===null){
                     sauce=[]
                 }
+            let userDtx = getCookie('userData')
+
+                                if (getCookie('cpns_appl') !== '') {
+                                let objCpns = JSON.parse(getCookie('cpns_appl'))
+                                 async function user_influ() {
+                                        let dbCollection = db.collection("users")
+                                        let res = await dbCollection.get()
+                                        res.docs.forEach(async curx => {
+                                            let datax = curx.data()
+                                            if(datax.admin==='influencer'){
+                                                if(datax.id!==userDtx.id){
+                                                // cannot use if itself is the influencer
+                                            
+                                                if(datax.ref_balen.code.split(' ').join('')===objCpns.name.split(' ').join('')){
+                                                    objItms.coupn_usd={ofid:datax.id,val:5,code:datax.ref_balen.code}
+                                                }
+                                                }
+
+                                            }
+                                          })
+                                     }
+                                     user_influ()
+                                }
                         async function check_price() {
                             try {
                                 let dbCollection = db.collection("sauce")
@@ -22753,6 +22813,7 @@ if(offer!==null){
                                                 typ:'sauce',
 
                                             }
+                                            objItms.am_sauce=tot_am_sauce
                                             objItms.arr.push(obj)
 
                                         }
@@ -22991,6 +23052,7 @@ if(offer!==null){
                                     await dbCollection3.doc(cur.id).set({
                                         admin: data.admin,
                                         id: data.id,
+                                        ref_balen:data.ref_balen,
                                         name: data.name,
                                         phone: data.phone,
                                         address: data.address,
@@ -23005,6 +23067,7 @@ if(offer!==null){
 
 
                                     // also add orders
+                                    console.log(objItms,'----------------jiryfugdfgf8888889999999999999999')
                                     let dbCollectidbCollection31 = db.collection("orders")
                                     await dbCollectidbCollection31.add({
                                         user: { id: data.id, name: data.name, phone: data.phone, address: data.address, location: data.location, verf_cd: token },
@@ -23156,7 +23219,6 @@ document.querySelector('.confetti').style.display='block'
                                     document.querySelector('.place_order_btn_bottom').style.display='none'
                 }
 
-        addItems('', false)
 
             }
             if (qty_dec !== null) {
@@ -23484,8 +23546,8 @@ document.querySelector('.confetti').style.display='block'
                                         document.querySelector('.ct_popup_main_sucess p').innerText=`Hurrah! You saved ₹ ${dicounted_pr} on essentials.`
 
                                     } else {
-                                        document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
-                                        document.querySelector('.ct_popup_main_sucess p').innerText=`Hurrah! You saved ₹ ${dicounted_pr} on cooking sauce.`
+                                        document.querySelector('.ct_info_offfer_saved h4').innerText = `Hurrah! You saved ₹ ${dicounted_pr} on MagicMix.`
+                                        document.querySelector('.ct_popup_main_sucess p').innerText=`Hurrah! You saved ₹ ${dicounted_pr} on MagicMix.`
 
                                     }
                                 } else {
@@ -23801,6 +23863,7 @@ document.querySelector('.ct_search_cpns input').value=''
                                 address: objUser.address,
                                 location: objUser.location,
                                 cartItems: objUser.cartItems,
+                    ref_balen:null,
                                 allow_cpns: [{ name: 'FIRSTORDER50' }, { name: 'FLAT25' }, obj_cpns],
                                 cpns_used: [],
                                 refferedBy: { id: id },
@@ -23906,6 +23969,7 @@ document.querySelector('.ct_search_cpns input').value=''
                                         await dbCollection2.doc(cu.id).set({
                                             admin: data.admin,
                                             id: data.id,
+                    ref_balen:data.ref_balen,
                                             name: data.name,
                                             phone: data.phone,
                                             address: data.address,
@@ -24640,3 +24704,6 @@ tot_pr_itm2=0
 </body>
 
 </html>
+
+
+

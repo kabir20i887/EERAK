@@ -18042,6 +18042,28 @@ ed from: https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css
             offset: '95%'
 
         })
+             if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+
+        let initialOrientation = window.orientation;
+            // Check for a device rotation event
+            window.addEventListener("orientationchange", function() {
+            // Get the new orientation of the device
+            let newOrientation = window.orientation;
+
+            // Compare the new orientation to the initial orientation
+            if (newOrientation !== initialOrientation) {
+            if(window.screen.width>1300){
+            window.location.replace('/notavailable')
+            }
+                // The device has been rotated
+                // Do something here, such as updating the layout or UI
+            }
+
+            // Update the initial orientation to the new orientation
+            initialOrientation = newOrientation;
+        });
         var waypoint = new Waypoint({
             element: document.querySelector('.how-it-works'),
             handler: function (direction) {

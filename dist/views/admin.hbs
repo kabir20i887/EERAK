@@ -33,34 +33,70 @@
             padding-bottom: 40px;
         }
 
+        .ct_div_influ {
+            width: 90vw;
+            border-radius: 20px;
+            background-color: rgb(255, 232, 189);
+            padding: 10px 15px;
+            margin-bottom: 30px;
+        }
+
+        .ct_div_influ .ct_flex {
+            display: flex;
+            width: 100%;
+        }
+
+        .ct_div_influ span,
+        .ct_div_influ p,
+        .ct_div_influ h4 {
+            font-size: 16px;
+            font-family: 'roboto';
+            font-weight: 500;
+            color: black;
+        }
+
+        .ct_div_influ span {
+            font-size: 10px;
+            display: block;
+            margin: 0;
+            margin-top: 4px;
+        }
+.ct_div_influ .ct_inner_x{width: 50%;}
+        .ct_div_influ p {
+            font-size: 15px;
+            width: 50%;
+            text-align: end;
+        }
+
         .hdden {
             display: none;
         }
-    .ct_rtrn_h78s {
-        margin: 20px 0 20px 30px;
-    }
 
-    .ct_rtrn_h78s h4 {
-        color: rgb(206 49 137);
-        font-size: 15px;
-        font-family: 'roboto';
-        font-weight: 500;
-    }
+        .ct_rtrn_h78s {
+            margin: 20px 0 20px 30px;
+        }
 
-    .ct_rtrn_h78s.success h4 {
-        color: green;
-    }
+        .ct_rtrn_h78s h4 {
+            color: rgb(206 49 137);
+            font-size: 15px;
+            font-family: 'roboto';
+            font-weight: 500;
+        }
 
-    .ct_rtrn_h78s.success p {
-        display: none;
-    }
+        .ct_rtrn_h78s.success h4 {
+            color: green;
+        }
 
-    .ct_rtrn_h78s p {
-        font-size: 11px;
-        color: rgb(73, 73, 73);
-        width: 80%;
-        margin: 5px 0;
-    }
+        .ct_rtrn_h78s.success p {
+            display: none;
+        }
+
+        .ct_rtrn_h78s p {
+            font-size: 11px;
+            color: rgb(73, 73, 73);
+            width: 80%;
+            margin: 5px 0;
+        }
 
         .ct_bx_panel_main .ct_user_dt p,
         .ct_bx_panel_main .ct_user_dt h4 {
@@ -1495,7 +1531,7 @@
             width: 98%;
             position: relative;
             margin-top: 30px;
-            display: flex;
+            display: none;
             margin-bottom: 40px;
         }
 
@@ -2586,6 +2622,7 @@
             transition: opacity .3s ease-out;
         }
 
+        .ct_influncer_list h2,
         ._3lCtm {
             font-size: 24px;
             font-weight: 600;
@@ -3398,14 +3435,7 @@
                 margin: 20px -4px;
             }
 
-            .ct_selected_date_order h4 {
-                font-size: 14px;
-            }
-
-            .ct_selected_date_order h4 {
-                margin: 20px 0 50px 14px;
-            }
-
+     =
             .ct_slect_date_bx {
                 right: 14px;
             }
@@ -3863,13 +3893,6 @@
             display: none;
         }
 
-        .ct_selected_date_order h4 {
-            font-size: 27px;
-            font-family: 'Open Sans';
-            color: rgb(34, 33, 33);
-            margin: 40px 0 20px 30px;
-        }
-
         .ct_bx_panel_main h2 {
             color: rgb(7, 7, 7);
             font-family: 'Open Sans';
@@ -3969,21 +3992,6 @@
 
         ul {
             padding-left: 0;
-        }
-
-        .ct_bx_dt_sle_date span {
-            display: block;
-            font-size: 13px;
-            color: rgb(59, 57, 57);
-            font-family: 'Open Sans';
-            margin-top: -3px;
-        }
-
-        .ct_bx_dt_sle_date p {
-            font-size: 16px;
-            color: rgb(59, 57, 57);
-            font-family: 'Open Sans';
-            margin: 0;
         }
 
         ion-icon {
@@ -4295,7 +4303,16 @@
             .ct_nav_mobile_adm .ct_bx_inner {
                 width: 46%;
             }
-
+            .ct_div_influ {padding-top: 20px;}
+        .ct_div_influ p {
+            font-size: 15px;
+            width:max-content;
+            text-align: start;
+            margin: 10px 0;
+        }
+        .ct_div_influ .ct_flex {
+    display: block;
+}
             .ct_bx_stock_message {
                 padding: 13px 12px 9px 12px;
             }
@@ -4341,9 +4358,6 @@
                 padding: 0
             }
 
-            .ct_selected_date_order h4 {
-                font-size: 26px;
-            }
 
             .ct_bx_panel_main h2 {
                 font-size: 19px;
@@ -4450,10 +4464,6 @@
 
             .ct_bx_verifcation_order {
                 margin: 20px -4px;
-            }
-
-            .ct_selected_date_order h4 {
-                margin: 20px 0 50px 14px;
             }
 
             .ct_slect_date_bx {
@@ -4706,16 +4716,18 @@
             font-weight: 400;
             src: url(https://fonts.gstatic.com/s/materialicons/v121/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
         }
-  @media only screen and (max-width:1100px) {
-.order_lst {
-    width: 92vw;
-}
-  }
-    @media only screen and (max-width:550px) {
-        .g28rk .ct_flex{display: block;}
-    }
 
+        @media only screen and (max-width:1100px) {
+            .order_lst {
+                width: 92vw;
+            }
+        }
 
+        @media only screen and (max-width:550px) {
+            .g28rk .ct_flex {
+                display: block;
+            }
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -4839,7 +4851,6 @@
 
 
     <div class="ct_bx_panel_main">
-        <h3 class="order_h3">Manage And Recive Orders</h3>
         {{!-- <div class="ct_bx_set_delivery_time">
             <h2>Set delivery time for all the items.</h2>
             <div class="ct_flex_time_bx">
@@ -4891,47 +4902,30 @@
 
             <div class="ct_inner_part_adm">
 
-                <div class="ct_selected_date_order">
-                    <h4>Last 30 days</h4>
-
-                </div>
-
-                <div class="ct_slect_date_bx">
-                    <div class="ct_calicon">
-                        <ion-icon name="calendar-outline"></ion-icon>
-
-                    </div>
-                    <div class="ct_bx_dt_sle_date nottog_date_select">
-                        <p>Today</p>
-                        <span>2/04/21</span>
-                    </div>
-                    <div class="ct_sld_icon_order">
-
-                        <ion-icon name="chevron-down-outline"></ion-icon>
-                    </div>
-                    <div class="ct_select_dat">
-
-                    </div>
-                </div>
-
-
                 <div class="ct_view_order">
 
                     <div class="order_lst" style="display: block;">
+                        
                         <div class="ct_info_requested sucess_div">
                             <ion-icon name="checkmark-done-circle" role="img" class="md hydrated"
                                 aria-label="checkmark done circle"></ion-icon>
                             <div class="ct_inner">
                                 <h4>Successfully confirmed order</h4>
-                                <p>Masala meat, net weight:150gm has been suceessfully requested for return, We will
-                                    contact you on this number 9233054806</p>
+                                <p></p>
                             </div>
                             <div class="ct_remove">
                                 <ion-icon name="close-outline" role="img" class="md hydrated"
                                     aria-label="close outline"></ion-icon>
                             </div>
                         </div>
-                        <div class="_3lCtm"> My Orders </div>
+                        <div class="ct_influncer_list">
+                            <h2>Influencers</h2>
+                            <div class="ct_inner_inf">
+  
+                            </div>
+
+                        </div>
+                        <div class="_3lCtm">Orders </div>
                         <div class="ct_innner_orders">
                         </div>
 
@@ -5073,11 +5067,11 @@
         let return_order = e.target.closest('.accept_return')
         let confirm_btn = e.target.closest('.ct_box_verify_order .f4Ovn')
         if (confirm_btn !== null) {
-            confirm_btn.style.pointerEvents='none'
-            confirm_btn.style.opacity='.5'
+            confirm_btn.style.pointerEvents = 'none'
+            confirm_btn.style.opacity = '.5'
 
-            let id_ord=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
-            let id_user=confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
+            let id_ord = confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[1]
+            let id_user = confirm_btn.parentElement.parentElement.parentElement.classList.value.split(' ')[2]
 
             let cd = confirm_btn.parentElement.parentElement.childNodes[1].innerText
             console.log(secret(cd))
@@ -5098,28 +5092,70 @@
                             order_dt.delivered = {
                                 date: date,
                             }
+
                             await dbCollection2.doc(cur.id).set({
                                 user: data.user,
                                 orderDt: order_dt,
 
                             })
+                            // add balance to influencer if thier cpn used in this order
+                            let id_influ = order_dt.coupn_usd.ofid
+                            // id_influ -> only of the influencer
+                            let commision_influ = parseFloat(order_dt.coupn_usd.val)
+
+                            let order_sauce_am = order_dt.am_sauce
+
+                            if (order_dt.coupn_usd !== null) {
+                                let dbCollection2x = db.collection("users")
+                                let res2 = await dbCollection2x.get()
+                                res2.docs.forEach(async curx => {
+                                    let datax = curx.data()
+                                    if (datax.id === id_influ) {
+                                        // commision_influ -> 5%  etc
+                                        let users_tot_influ = parseFloat(datax.ref_balen.user_tot)
+                                        console.log(order_sauce_am, commision_influ, 'hoollagsfd----------------------')
+                                        let pirce_m = parseFloat(order_sauce_am) * (commision_influ / 100)
+                                        let ref_am = parseFloat(datax.ref_balen.val)
+                                        console.log(ref_am)
+                                        pirce_m += ref_am
+                                        console.log(pirce_m, 'mmmmmm')
+                                        users_tot_influ += 1
+                                        await dbCollection2x.doc(curx.id).set({
+                                            admin: datax.admin,
+                                            id: datax.id,
+                                            name: datax.name,
+                                            ref_balen: { val: pirce_m, code: datax.ref_balen.code, user_tot: users_tot_influ },
+                                            phone: datax.phone,
+                                            address: datax.address,
+                                            location: datax.location,
+                                            cartItems: datax.cartItems,
+                                            refferedBy: datax.refferedBy,
+                                            allow_cpns: datax.allow_cpns,
+                                            cpns_used: datax.cpns_used,
+                                            orders: datax.orders,
+                                            reffer: datax.reffer,
+                                        }).then(() => console.log(' influencer dt saved'))
+                                    }
+                                })
+                            }
+
                         }
                     })
                     let dbCollection2x = db.collection("users")
                     let res2 = await dbCollection2x.get()
                     res2.docs.forEach(async cur => {
                         let data = cur.data()
-                        console.log(data.id , id_user, 'papappapa')
                         if (data.id === id_user) {
                             data.orders.forEach(cux => {
-                                    if (cux.id_ord === id_ord) {
-                                        cux.delivered = {date:date}
-                                    }
+                                if (cux.id_ord === id_ord) {
+                                    cux.delivered = { date: date }
+                                }
                             })
                             await dbCollection2x.doc(cur.id).set({
                                 admin: data.admin,
                                 id: data.id,
                                 name: data.name,
+                                ref_balen: data.ref_balen,
                                 phone: data.phone,
                                 address: data.address,
                                 location: data.location,
@@ -5132,17 +5168,18 @@
                             })
                         }
                     })
-                                confirm_btn.style.pointerEvents='auto'
-            confirm_btn.style.opacity='1'
-                    confirm_btn.parentElement.parentElement.style.display='none'
-                    window.scrollTo(0,0)
-                                              document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
-                            document.querySelector('.ct_info_requested.sucess_div p').innerText = `Order successfully confirmed`
+                    confirm_btn.style.pointerEvents = 'auto'
+                    confirm_btn.style.opacity = '1'
+                    confirm_btn.parentElement.parentElement.style.display = 'none'
+                    window.scrollTo(0, 0)
+                    document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
+                    document.querySelector('.ct_info_requested.sucess_div p').innerText = `Order successfully confirmed`
+
                 }
                 confirmed()
             } else {
-                            confirm_btn.style.pointerEvents='auto'
-            confirm_btn.style.opacity='1'
+                confirm_btn.style.pointerEvents = 'auto'
+                confirm_btn.style.opacity = '1'
                 confirm_btn.parentElement.parentElement.childNodes[9].style.display = 'block'
             }
             console.log(confirm_btn.parentElement.parentElement.childNodes[7].value)
@@ -5195,6 +5232,7 @@
                             await dbCollection2.doc(cur.id).set({
                                 admin: dt.admin,
                                 id: dt.id,
+                                ref_balen: dt.ref_balen,
                                 name: dt.name,
                                 phone: dt.phone,
                                 address: dt.address,
@@ -5247,6 +5285,38 @@
         }
 
     })
+    async function load_influ() {
+        let dbCollection2 = db.collection("users")
+        let res = await dbCollection2.get()
+        let found='false'
+        res.docs.forEach(async cur => {
+            let dt = cur.data()
+            if(dt.admin){
+                if(dt.admin==='influencer'){
+                    found=true
+                    let html=`<div class="ct_div_influ">
+                                    <div class="ct_flex">
+                                        <div class="ct_inner_x">
+                                            <h4>${dt.name}</h4>
+                                            <span>${dt.phone}</span>
+                                            <span>COUPON:${dt.ref_balen.code}</span>
+                                        </div>
+    
+                                        <p>₹ ${dt.ref_balen.val}</p>
+                                    </div>
+    
+                                </div>`
+                        document.querySelector('.ct_inner_inf').insertAdjacentHTML('beforeend', html)
+            }
+}
+
+
+        })
+        if(!found){
+document.querySelector('.ct_influncer_list').style.display='none'
+        }
+    }
+    load_influ()
     async function loadOrders() {
         let dbCollection2 = db.collection("orders")
         let res = await dbCollection2.get()
@@ -5332,7 +5402,7 @@ ${return_hm}
                 html_deliv = `<div class="ct_rtrn_h78s success">
                                                 <h4>Delivered on ${orders.delivered.date}</h4>
                                             </div>`
-                                            alr_acc=false
+                alr_acc = false
             }
 
             let total_txt = 'Total Amount to pay'
@@ -5387,10 +5457,10 @@ ${html_deliv}
 ${html_verif}
 ${accept_btn}
                            </div>`
-           document.querySelector('.ct_innner_orders').insertAdjacentHTML('beforeend', html)
-       })
-   }
-   loadOrders()
+            document.querySelector('.ct_innner_orders').insertAdjacentHTML('beforeend', html)
+        })
+    }
+    loadOrders()
 </script>
 
 </html>
