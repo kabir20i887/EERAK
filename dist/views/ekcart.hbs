@@ -20518,28 +20518,28 @@ height: auto;
             }
             return "";
         }
-             if(window.screen.width>1300){
-            window.location.replace('/notavailable')
-            }
-
-        let initialOrientation = window.orientation;
-            // Check for a device rotation event
-            window.addEventListener("orientationchange", function() {
-            // Get the new orientation of the device
-            let newOrientation = window.orientation;
-
-            // Compare the new orientation to the initial orientation
-            if (newOrientation !== initialOrientation) {
-            if(window.screen.width>1300){
-            window.location.replace('/notavailable')
-            }
-                // The device has been rotated
-                // Do something here, such as updating the layout or UI
-            }
-
-            // Update the initial orientation to the new orientation
-            initialOrientation = newOrientation;
-        });
+     //        if(window.screen.width>1300){
+     //       window.location.replace('/notavailable')
+     //       }
+//
+     //   let initialOrientation = window.orientation;
+     //       // Check for a device rotation event
+     //       window.addEventListener("orientationchange", function() {
+     //       // Get the new orientation of the device
+     //       let newOrientation = window.orientation;
+//
+     //       // Compare the new orientation to the initial orientation
+     //       if (newOrientation !== initialOrientation) {
+     //       if(window.screen.width>1300){
+     //       window.location.replace('/notavailable')
+     //       }
+     //           // The device has been rotated
+     //           // Do something here, such as updating the layout or UI
+     //       }
+//
+     //       // Update the initial orientation to the new orientation
+     //       initialOrientation = newOrientation;
+     //   });
         function base64url(source) {
             // Encode in classical base64
             let encodedSource = CryptoJS.enc.Base64.stringify(source);
