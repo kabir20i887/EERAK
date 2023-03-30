@@ -2765,9 +2765,9 @@
             right: -170vw;
             transition: all .7s ease;
         }
-        .logut_info{
-            padding: 6px 16px;
-        }
+.logut_info {
+    padding: 7px 10px 16px 16px;
+}
         .ct_poup_xbshs.logut_info h4 {
     font-size: 13px;
     margin-top: 8px;
@@ -12874,7 +12874,7 @@ cux.style.right='-1000px'
             let itmqtinc = e.target.closest('.ct_bx_item_add')
             let itmqtdec = e.target.closest('.ct_bx_item_rem')
             let view_itm = e.target.closest('.ct_bx_fooditm')
-            let addItem_bx= e.target.closest('.ct_addbtns');
+            let addItem_bx= e.target.closest('.crousel_items .ct_bx_fooditm');
 
             let qty_bx_itm = e.target.closest('.ct_for_bx1')
             let placeOrderItm = e.target.closest('.place_order_btn_popup')
@@ -13799,7 +13799,7 @@ document.querySelector('.ct_allreviews .inner_x') .insertAdjacentHTML("beforeend
                     itm_added += 1
 let string_short=truncateString(itm.tagline,20)
 if(window.screen.width<=400){
-   string_short=truncateString(tagline,35) 
+   string_short=truncateString(itm.tagline,35) 
 }
 
                             let rattings_stars=[]
@@ -14386,11 +14386,13 @@ document.querySelector('.logut_info').style.right='3px'
 
                 if (userDtx.admin !== undefined) {
                     if (userDtx.admin) {
-                        if (window.screen.width > 740) {
-                            document.querySelector('.admin_page').style.display = 'block'
-                        }
-                        document.querySelector('.admin_panel').style.display = 'block'
+                        if(userDtx.admin==='admin'){
+                             if (window.screen.width > 740) {
+                                 document.querySelector('.admin_page').style.display = 'block'
+                             }
 
+                             document.querySelector('.admin_panel').style.display = 'block'
+                        }
                     }
                 }
 

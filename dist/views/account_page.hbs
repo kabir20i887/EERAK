@@ -127,7 +127,7 @@
     }
 
     .ct_bx_slide_bx .admin_panel,
-    .for_nav_main .ct_bx_slide_bx .admin_page {
+    .for_nav_main  .ct_bx_about_mobile2.admin_page {
         display: none;
     }
 
@@ -9818,12 +9818,13 @@
                 }
                 if (userDtx.admin !== undefined) {
                     if (userDtx.admin) {
-                        if (window.screen.width > 740) {
-                            document.querySelector('.admin_page').style.display = 'block'
+                        if(userDtx.admin==='admin'){
+                             if (window.screen.width > 740) {
+                                 document.querySelector('.admin_page').style.display = 'block'
+                             }
+        
+                             document.querySelector('.admin_panel').style.display = 'block'
                         }
-
-
-                        document.querySelector('.admin_panel').style.display = 'block'
 
                     }
                 }

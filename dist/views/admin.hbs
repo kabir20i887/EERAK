@@ -5092,7 +5092,10 @@
                             order_dt.delivered = {
                                 date: date,
                             }
-
+                            socket.emit('confirmed_order_sms', data.user.name, order_dt.total_amount, 'http://krickfoods/account#orders', data.user.phone)
+                            socket.emit('sent_conf_order',()=>{
+                                console.log('sms order confirmed sent!!')
+                            })
                             await dbCollection2.doc(cur.id).set({
                                 user: data.user,
                                 orderDt: order_dt,
@@ -5166,6 +5169,9 @@
                                 orders: data.orders,
                                 reffer: data.reffer,
                             })
+                            
+
+
                         }
                     })
                     confirm_btn.style.pointerEvents = 'auto'
@@ -5174,6 +5180,7 @@
                     window.scrollTo(0, 0)
                     document.querySelector('.ct_info_requested.sucess_div').style.display = 'flex'
                     document.querySelector('.ct_info_requested.sucess_div p').innerText = `Order successfully confirmed`
+
 
                 }
                 confirmed()
@@ -5280,7 +5287,10 @@
             localStorage.setItem('accepted_ord', JSON.stringify(arr))
             accept_ord.parentElement.style.display = 'none'
             console.log(accept_ord.parentElement.parentElement.classList.value)
-            //   socket.emit('on_way_sms')
+            socket.emit('on_way_sms', name,total_amount,phone)
+            socket.on('sent_sms_on_way',()=>{
+                alert('delivery on way sms sent')
+            })
 
         }
 
@@ -5288,7 +5298,8 @@
     async function load_influ() {
         let dbCollection2 = db.collection("users")
         let res = await dbCollection2.get()
-        let found='false'
+        let found=false
+        let found_admin=false
         res.docs.forEach(async cur => {
             let dt = cur.data()
             if(dt.admin){
@@ -5308,12 +5319,22 @@
                                 </div>`
                         document.querySelector('.ct_inner_inf').insertAdjacentHTML('beforeend', html)
             }
+            let dt_user = JSON.parse(getCookie('userData'))
+                if(dt.admin==='admin'){
+                           if(dt.id===dt_user.id){
+                                found_admin=true
+                            }
+                }
+
 }
 
 
         })
         if(!found){
 document.querySelector('.ct_influncer_list').style.display='none'
+        }
+        if(!found_admin){
+window.location.replace('/magicmix')
         }
     }
     load_influ()
@@ -5324,7 +5345,7 @@ document.querySelector('.ct_influncer_list').style.display='none'
             let dt = cur.data()
             let orders = dt.orderDt
             let user_data = dt.user
-            let total = 0
+            let total =dt.orderDt.total_amount
             let blur_it = ''
             let returned = false
             let order_arr = orders.arr.map(cu1 => {
@@ -5351,7 +5372,7 @@ document.querySelector('.ct_influncer_list').style.display='none'
                     })
                 }
 
-                total += parseFloat(cu1.am)
+                
 
                 let html_x = `                                    <div class="g28rk ${cu1.name.split(' ').join('_')}" ${blur_it}>
 

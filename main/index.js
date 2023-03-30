@@ -325,7 +325,6 @@ app.get('/events', (req, res) => {
 
 })
 app.get('/admin', (req, res) => {
-console.log(req.params)
         res.render('admin')
 })
 // app.get('/admin', (req, res) => {
@@ -481,29 +480,67 @@ io.on('connection', (sock) => {
     sock.on('signup_msg',(phone)=>{
     })
     sock.on('on_way_sms',(name,am,phone)=>{
-        //Hello kabir, your order of rs ... is out for delivery. Please use the code to verify order
-     // fst.query({
-     //     authorization: authfst,
-     //     route: 'dlt',
-     //     sender_id: 'krickG',
-     //     message: 145388,
-     //     variables_values: `${name}|${am}|`,
-     //     numbers: phone,
-     //     flash: "0",
-     // });
-     // console.log(phone)
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 153099,
+          variables_values: `${name}|${am}|`,
+          numbers: phone,
+          flash: "0",
+      });
+      fst.headers({
+          "cache-control": "no-cache"
+      })
+      fst.end(function (res) {
+          if (!res.error) {
+            sock.emit('sent_sms_on_way')
+          }
 
-     // fst.headers({
-     //     "cache-control": "no-cache"
-     // });
-
-
-     // fst.end(function (res) {
-     //     if (res.error) console.log(res.error);
-
-     //     console.log(res.body);
-     // });
+          console.log(res.body);
+      }); 
     })
+    sock.on('confirmed_order_sms',(name,am,link,phone)=>{
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: 'krickG',
+          message: 153099,
+          variables_values: `${name}|${am}|${link}|`,
+          numbers: phone,
+          flash: "0",
+      });
+      fst.headers({
+          "cache-control": "no-cache"
+      })
+      fst.end(function (res) {
+          if (!res.error) {
+            sock.emit('sent_conf_order')
+          }
+
+          console.log(res.body);
+      }); 
+    })
+    
+    sock.on('claim_cpn_sms',(name,cpn,off,phone)=>{
+      fst.query({
+          authorization: authfst,
+          route: 'dlt',
+          sender_id: '879870',
+          message: 152310,
+          variables_values: `${name}|${cpn}|${off}|`,
+          numbers: phone,
+          flash: "0",
+      });
+      fst.headers({
+          "cache-control": "no-cache"
+      })
+      fst.end(function (res) {
+          if (res.error) console.log(res.error)
+          console.log(res.body);
+      }); 
+    })
+    
     let doneTime1=0
     sock.on('send_cd', () => {
         
