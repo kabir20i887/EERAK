@@ -140,7 +140,7 @@
             background-color: #ffffff96;
             height: 100vh;
             width: 100vw;
-            z-index: 99999999;
+            z-index: 9999999999;
             position: fixed;
             display: none;
         }
@@ -7802,7 +7802,7 @@
             display: block;
             width: 700px;
             position: fixed;
-            z-index: 9999999999999999999;
+            z-index: 99999999999;
             overflow: hidden;
             height: 750px;
             top: 120px;
@@ -18647,7 +18647,9 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
-
+.ct_bx_flex_sub_list {
+    padding: 0 13px;
+}
             .empty_cart img {
                 width: 75px;
             }
@@ -21556,6 +21558,8 @@
         </div>
     </div>
     <div class="ct_outer_account_bx login_bx">
+
+        <div class="box_pop_up_accounts forlogin">
         <div class="ct_load_review_verf">
             <div class="ct_load_items">
                 <div class="lds-ring">
@@ -21566,8 +21570,6 @@
                 </div>
             </div>
         </div>
-        <div class="box_pop_up_accounts forlogin">
-
             <div class="ct_inner_bottom_box">
                 <div class="ct_bx_go_back">
                     <ion-icon name="arrow-back-outline" role="img" class="md hydrated"
@@ -24278,8 +24280,8 @@ ${desc_htm_cpn.join('')}
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
 
                     document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully created account and logged in'
-                    document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
-                    document.querySelector('.login_bx.ct_outer_account_bx').style.display = 'none'
+                  //  document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                     document.querySelector('.login_bx .box_pop_up_accounts').classList.remove('active')
                     document.querySelector('.ct_overflow_customize').style.display = 'none'
                     load_basic_dt()
 
@@ -25836,16 +25838,18 @@ ${desc_htm_cpn.join('')}
                         const login = async () => {
                             let matched = false
                             let dbCollection = db.collection("users")
-                            document.querySelector('.ct_load_review_verf').style.display = 'flex'
+                            document.querySelector('.login_bx .ct_load_review_verf').style.display = 'flex'
+                            document.querySelector('.login_bx .ct_load_items').style.display = 'block'
                             let res = await dbCollection.get()
-                            document.querySelector('.ct_load_review_verf').style.display = 'none'
+                            document.querySelector('.login_bx .ct_load_review_verf').style.display = 'none'
+                            document.querySelector('.login_bx .ct_load_items').style.display = 'none'
                             res.docs.forEach(cur11 => {
                                 let itmDb = cur11.data()
                                 console.log(phoneNum, itmDb.phone)
                                 if (phoneNum === itmDb.phone) {
                                     matched = true
                                     socket.emit('sendt_otp',itmDb.phone)
-                                    socket.on('sendt_otp2',(err)=>{
+                                    socket.on('sendt_otp2',(err,token)=>{
                                         if(err){
                                             document.querySelector('.phone_error p').innerText = 'Invalid phone number'
                                             document.querySelector('.phone_error').style.display = 'block' 
@@ -25861,6 +25865,7 @@ ${desc_htm_cpn.join('')}
                                             cpns_used: itmDb.cpns_used,
                                             admin: itmDb.admin,
                                         }
+                                        
                                         document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objXs) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
@@ -26251,10 +26256,9 @@ ${desc_htm_cpn.join('')}
                                         // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
                                         // document.querySelector('.error_account').style.display = 'none'
                                         console.log('yo yo.......')
+                                        socket.emit('getCode_id');
                                         let send_onetime = false
-                                        socket.emit('getCode');
-                                        let send_onetime = false
-                                        socket.on('sendCode', (id, token, number, key) => {
+                                        socket.on('sendCode_id', (id, token) => {
                                             //sessionStorage.setItem("ct_9
                                             let objUserData = {
                                                 id: id,
@@ -26325,7 +26329,7 @@ ${desc_htm_cpn.join('')}
                                                 }
                                             })
                                             
-
+                                        })
 
             } else {
                 // account exist already
