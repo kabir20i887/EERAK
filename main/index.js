@@ -443,12 +443,7 @@ io.on('connection', (sock) => {
     console.log('connected')
     var a = 1
 
-    sock.on('getCode', () => {
-        let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
-        let uniqueId= otpGenerator.generate(12, { digits:true,lowerCaseAlphabets:true,upperCaseAlphabets:true,specialChars:false});
-        var token = jwt.sign({ n: unique_num }, 'shhhhh');
-        io.emit('sendCode',uniqueId,token,unique_num,authfst)
-    })
+
     sock.on('get_refer', (id,name,offer) => {
         var token = jwt.sign({id:id, name: name,off:offer }, 'shhhhh');
         console.log(token)
@@ -500,6 +495,27 @@ io.on('connection', (sock) => {
           console.log(res.body);
       }); 
     })
+
+    sock.on('sendt_otp',(phone)=>{
+        let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+        fst.query({
+            authorization: authfst,
+            route: 'dlt',
+            sender_id: 'krickG',
+            message: 151021,
+            variables_values: `${unique_num}|`,
+            numbers: phone,
+            flash: "0",
+        });
+        fst.headers({
+            "cache-control": "no-cache"
+        })
+        fst.end(function (res) {
+            sock.emit('sendt_otp2',res.error)
+            console.log(res.body);
+        }); 
+    })
+
     sock.on('confirmed_order_sms',(name,am,link,phone)=>{
       fst.query({
           authorization: authfst,
@@ -521,7 +537,59 @@ io.on('connection', (sock) => {
           console.log(res.body);
       }); 
     })
-    
+    sock.on('vm34_xc',(phone)=>{
+        let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+        console.log(unique_num,phone)
+      //  fst.query({
+      //      authorization: authfst,
+      //      route: 'dlt',
+      //      sender_id: 'krickG',
+      //      message: 151021,
+      //      variables_values: `${unique_num}`,
+      //      numbers: phone,
+      //      flash: "0",
+      //  });
+      //  fst.headers({
+      //      "cache-control": "no-cache"
+      //  })
+      //  fst.end(function (res) {
+      //      if (res.error) {
+      //        sock.emit('vm34_xc2',res.error)
+      //      }
+  //
+      //  }); 
+      })
+      let uniquex = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
+
+      let uniqueId= otpGenerator.generate(12, { digits:true,lowerCaseAlphabets:true,upperCaseAlphabets:true,specialChars:false});
+      var token = jwt.sign({ n: uniquex }, 'shhhhh');
+      sock.on('getCode_id',()=>{
+      sock.emit('sendCode_id',uniqueId,token)
+      })
+
+      sock.on('sent_order_sms',(name,code,nick,phone)=>{
+        console.log(name,code,nick,phone)
+       // fst.query({
+       //     authorization: authfst,
+       //     route: 'dlt',
+       //     sender_id: 'krickG',
+       //     message: 151167,
+       //     variables_values: `${name}|${code}|${nick}|`,
+       //     numbers: phone,
+       //     flash: "0",
+       // });
+       // fst.headers({
+       //     "cache-control": "no-cache"
+       // })
+       // fst.end(function (res) {
+       //     console.log(res.body)
+       //     if (res.error) {
+       //         console.log(res.error)
+       //     }
+  //
+       // }); 
+      })
+      
     sock.on('claim_cpn_sms',(name,cpn,off,phone)=>{
       fst.query({
           authorization: authfst,

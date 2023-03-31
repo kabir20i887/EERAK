@@ -25175,17 +25175,21 @@ ${desc_htm_cpn.join('')}
                                     let cd = secret(token).code
                                     document.querySelector('.place_order').style.display = 'none'
                                     let nick_nm = userDt.name.split(' ')[0]
-                                    var settings = {
-                                        "async": true,
-                                        "crossDomain": true,
-                                        "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151167&variables_values=${userDt.name}|${cd}|${nick_nm}&route=dlt&numbers=${userDt.phone}`,
-                                        "method": "GET"
-                                    }
-                                    $.ajax(settings).done(function (response) {
-                                        if (response.return) {
-                                            console.log('sent!!!')
-                                        }
-                                    });
+                                   // var settings = {
+                                   //     "async": true,
+                                   //     "crossDomain": true,
+                                   //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151167&variables_values=${userDt.name}|${cd}|${nick_nm}&route=dlt&numbers=${userDt.phone}`,
+                                   //     "method": "GET"
+                                   // }
+                                   // $.ajax(settings).done(function (response) {
+                                   //     if (response.return) {
+                                   //         console.log('sent!!!')
+                                   //     }
+                                   // });
+                                    //order placed sms
+
+                                    socket.emit('sent_order_sms', userDt.name, cd,nick_nm,userDt.phone)
+
                                     order_btn.style.opacity = '1'
                                     order_btn.style.pointerEvents = 'auto'
                                     document.querySelector('.ct_popup_main_sucess').classList.remove('cpn_appl')
@@ -25840,9 +25844,13 @@ ${desc_htm_cpn.join('')}
                                 console.log(phoneNum, itmDb.phone)
                                 if (phoneNum === itmDb.phone) {
                                     matched = true
-                                    socket.emit('getCode');
-
-                                    socket.on('sendCode', (id, token, number, key) => {
+                                    socket.emit('sendt_otp',itmDb.phone)
+                                    socket.on('sendt_otp2',(err)=>{
+                                        if(err){
+                                            document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+                                            document.querySelector('.phone_error').style.display = 'block' 
+                                            return   
+                                        }                                
                                         let objXs = {
                                             id: itmDb.id,
                                             name: itmDb.name,
@@ -25853,7 +25861,6 @@ ${desc_htm_cpn.join('')}
                                             cpns_used: itmDb.cpns_used,
                                             admin: itmDb.admin,
                                         }
-                                        console.log(itmDb.phone, 'phone no!!!')
                                         document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objXs) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
@@ -25873,25 +25880,30 @@ ${desc_htm_cpn.join('')}
 
                                         document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
                                             cu11.style.opacity = '1'
-                                        })
-                                        return
-                                        var settings = {
-                                            "async": true,
-                                            "crossDomain": true,
-                                            "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
-                                            "method": "GET"
-                                        }
-                                        $.ajax(settings).done(function (response) {
-                                            console.log(itmDb.phone, 'sent!!!')
-
-                                            if (response.return) {
-
-                                            } else {
-                                                document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                                document.querySelector('.phone_error').style.display = 'block'
-                                            }
-                                        });
+                                        })          
                                     })
+                                       
+
+
+                                  ///socket.on('sendCode', (id, token, number, key) => {
+                                  ///    var settings = {
+                                  ///        "async": true,
+                                  ///        "crossDomain": true,
+                                  ///        "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
+                                  ///        "method": "GET"
+                                  ///    }
+                                  ///    $.ajax(settings).done(function (response) {
+                                  ///        console.log(itmDb.phone, 'sent!!!')
+
+                                  ///        if (response.return) {
+
+                                  ///        } else {
+
+                                  ///        }
+                                  ///    });
+
+
+                                  ///})
                                 }
 
                             })
@@ -25964,7 +25976,7 @@ ${desc_htm_cpn.join('')}
                                 .add(
                                     objU
                                 ).then(res => {
-                                    
+
                                     document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
                                     // if signuped with refer link... verify with this cookie
                                     document.cookie = "signup_3sy13" + "=" + JSON.stringify(id) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
@@ -26239,26 +26251,18 @@ ${desc_htm_cpn.join('')}
                                         // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
                                         // document.querySelector('.error_account').style.display = 'none'
                                         console.log('yo yo.......')
+                                        let send_onetime = false
                                         socket.emit('getCode');
                                         let send_onetime = false
                                         socket.on('sendCode', (id, token, number, key) => {
-                                            //sessionStorage.setItem("ct_901_12", token);
-                                            if (send_onetime) { return }
+                                            //sessionStorage.setItem("ct_9
                                             let objUserData = {
                                                 id: id,
                                                 name: name,
                                                 phone: ph_num,
                                                 address: address,
                                                 location: location,
-
-                                                cartItems: [{
-                                                    name: 'masala meat',
-                                                    price: '85',
-                                                    type: 'sauce',
-                                                    unitSelect: [{ name: '150g' }],
-                                                    qty: 1
-
-                                                }]
+                                                cartItems: [{}]
 
                                             }
                                             if (window.location.search !== '') {
@@ -26281,49 +26285,56 @@ ${desc_htm_cpn.join('')}
                                             document.querySelector('.signup_bx .ct_bx_title_accounts').style.display = 'none'
                                             document.querySelector('.ct_go_back_account h3').style.display = 'flex'
                                             // send otp
-                                            // var settings = {
-                                            //     "async": true,
-                                            //     "crossDomain": true,
-                                            //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${ph_num}`,
-                                            //     "method": "GET"
-                                            // }
-                                            // $.ajax(settings).done(function (response) {
-                                            // send_onetime=true
-                                            //
-                                            //     if (response.return) {
-                                            //         console.log('sent!!!')
-                                            //
-                                            //         document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                            //         window.location.replace('/mycart#dataRecived')
-                                            //
-                                            //         sent_msg=true
-                                            //     } 
-                                            //     if(!response.return){
-                                            //                                                                           document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                            //                             document.querySelector('.phone_error').style.display = 'block'
-                                            //                                                                    document.querySelector('.ct_field_first_acc').style.display = 'none'
-                                            //                     document.querySelector('.ct_bx_otp_box').style.display = 'none'
-                                            //                     document.querySelector('.for_signup .inf0_fyu').style.display = 'block'
-                                            //                     document.querySelector('.ct_bx_otp_box').style.opacity = '0'
-                                            //                     document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
-                                            //                         cu11.style.opacity = '0'
-                                            //                     })
-                                            //                     document.querySelector('.signup_bx .ct_bx_title_accounts').style.display = 'block'
-                                            //                     document.querySelector('.ct_go_back_account h3').style.display = 'none'
-                                            //                     document.querySelector('.for_signup .ct_field_first_acc').style.display = 'block'
-                                            //     }
-                                            //
-                                            // });
 
-                                        })
-                                    } else {
-                                        // account exist already
-                                        document.querySelector('.error_info_popup.er_ald_acc').style.right = '4px'
-                                        setTimeout(function () {
-                                            document.querySelector('.error_info_popup.er_ald_acc').style.right = '-1000px'
-                                        }, 30000)
-                                    }
-                                }
+                                                                               // var settings = {
+                                   //    "async": true,
+                                   //    "crossDomain": true,
+                                   //    "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                   //    "method": "GET"
+                                   //}
+                                   //$.ajax(settings).done(function (response) {
+                                   //    send_onetime = true
+
+                                   //    if (response.return) {
+                                   //        console.log('sent!!!')
+
+                                   //        document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                   //        window.location.replace('/mycart#dataRecived')
+
+                                   //        sent_msg = true
+                                   //    }
+                                   //    if (!response.return) {
+
+
+                                   //    });
+                                            socket.emit('vm34_xc', ph_num)
+                                            socket.emit('vm34_xc2', (err) => {
+                                                if (err) {
+                                                    document.querySelector('.phone_error p').innerText = 'Invalid phone number'
+                                                    document.querySelector('.phone_error').style.display = 'block'
+                                                    document.querySelector('.ct_field_first_acc').style.display = 'none'
+                                                    document.querySelector('.ct_bx_otp_box').style.display = 'none'
+                                                    document.querySelector('.for_signup .inf0_fyu').style.display = 'block'
+                                                    document.querySelector('.ct_bx_otp_box').style.opacity = '0'
+                                                    document.querySelectorAll('.for_signup .ct_bx_inputs_otp input').forEach(cu11 => {
+                                                        cu11.style.opacity = '0'
+                                                    })
+                                                    document.querySelector('.signup_bx .ct_bx_title_accounts').style.display = 'block'
+                                                    document.querySelector('.ct_go_back_account h3').style.display = 'none'
+                                                    document.querySelector('.for_signup .ct_field_first_acc').style.display = 'block'
+                                                }
+                                            })
+                                            
+
+
+            } else {
+                // account exist already
+                document.querySelector('.error_info_popup.er_ald_acc').style.right = '4px'
+                setTimeout(function () {
+                    document.querySelector('.error_info_popup.er_ald_acc').style.right = '-1000px'
+                }, 30000)
+            }
+        }
 
 
 
@@ -26331,11 +26342,11 @@ ${desc_htm_cpn.join('')}
 
 
                             } else {
-                                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
+                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
                                 document.querySelector('.location_error').style.display = 'block'
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
-                            }
+                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
+            }
                         }
                     }
 
@@ -26343,18 +26354,18 @@ ${desc_htm_cpn.join('')}
 
 
             }
-            if (inpX === null && !e.target.closest('.ct_results')) {
-                document.querySelector('.ct_results').style.display = 'none'
-            }
+        if (inpX === null && !e.target.closest('.ct_results')) {
+            document.querySelector('.ct_results').style.display = 'none'
+        }
 
-            if (itemG !== null) {
-                let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
-                document.querySelector('.nick_name.area input').value = text
-                document.querySelector('.ct_results').style.display = 'none'
-                document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
-                    cur.remove()
-                })
-            }
+        if (itemG !== null) {
+            let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
+            document.querySelector('.nick_name.area input').value = text
+            document.querySelector('.ct_results').style.display = 'none'
+            document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
+                cur.remove()
+            })
+        }
         })
 
         let ifd = []
