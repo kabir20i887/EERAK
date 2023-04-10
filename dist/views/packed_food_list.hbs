@@ -46,6 +46,15 @@
         .ratings_bx {
             display: flex;
         }
+.crousel_items .ct_flex_offer{
+    background-color: rgb(255, 0, 64);
+    padding: 3px 15px;
+    margin: 10px 0 0 4px;
+    width: max-content;
+
+}
+.ct_flex_offer p{color: white;
+font-size: 12px;font-family: 'roboto';}
 
         .ratings_bx span {
             color: red;
@@ -13815,6 +13824,31 @@ let avg=sum/tot_Reviews
 return avg
 
 }
+
+                    let offer_val=null
+                    let price_off=0
+                    itm.off=0
+                    let price_box_y=`
+                    <p class="price_pr">${itm.price_real}</p>
+                    <p class="price_off"></p>`
+                    let off_htm=``
+                    if(itm.off!==null&&itm.off!==undefined){
+                        offer_val=parseFloat(itm.off)
+                        price_off=itm.price_real-(itm.price_real*(offer_val/100))
+                    price_box_y=`
+                    <p class="price_pr">${price_off}</p>
+                    <p class="price_off">${itm.price_real}</p>`
+                    priceBX = `
+                  <div class="ct_bx_price_fd hasoffPrice">
+                 <del class="pricenooff">₹ ${price_off}</del>
+                 <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
+             </div>
+                 `
+                 off_htm=`<div class="ct_flex_offer">
+                     <p>${itm.off}% off</p>
+                    </div>`
+                        
+                    }
 let averageRating = calculateAverage(itm.ratings);
 if(!isNaN(averageRating)){
     averageRating=String(averageRating)
@@ -13854,6 +13888,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
+                                                        ${off_htm}
                                                         ${ratings_bx}
                                                         <h4>${itm.name}</h4>
                                                         <p class="item_intro">${string_short}</p>
@@ -13864,8 +13899,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                         <div class="ct_bx_item_details_hide">
                                                             <p class="name">${itm.name}</p>
                                                             <p class="stock">${15}</p>
-                                                            <p class="price_pr">${itm.price_real}</p>
-                                                            <p class="price_off"></p>
+                                                            ${price_box_y}
                                                             <p class="offer">${itm.offer}</p>
                                                             <p class="about_list">${itm.about}</p>
                                                             <p class="qty">${itm.weight_sh}</p>

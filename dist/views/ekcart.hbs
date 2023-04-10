@@ -48,6 +48,15 @@
             display: flex;
             justify-content: center;
         }
+.crousel_items .ct_flex_offer{
+    background-color: rgb(255, 0, 64);
+    padding: 3px 15px;
+    margin: 10px 0 0 4px;
+    width: max-content;
+
+}
+.ct_flex_offer p{color: white;
+font-size: 12px;font-family: 'roboto';}
 
         .ct_popup_main_sucess a {
             font-size: 14px;
@@ -4886,13 +4895,13 @@
         }
 
         .ct_bx_price_fd * {
-            margin-right: 10px;
+         margin-right: 3px;
         }
 
         .ct_bx_price_fd del {
             font-size: 12px;
             color: #000;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
@@ -5094,8 +5103,7 @@
 
 
             .ct_bx_fooditm .ct_bx_price_fd del {
-                margin-top: 10px;
-                font-size: 13px;
+                font-size: 13px;margin-top: 5px;margin-right: 7px;
             }
 
             .ct_bx_price_fd .price:nth-child(2) {
@@ -5167,6 +5175,7 @@
             .ct_bx_fooditm .ct_bx_price_fd del {
                 margin-top: 0;
                 font-size: 11px;
+                margin-right: 10px;
             }
 
             .ct_bx_fooditm .ct_bx_price_fd p {
@@ -18647,8 +18656,15 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
+            .ct_bx_fooditm .ct_bx_price_fd del{
+              font-size: 12px;
+            }
 .ct_bx_flex_sub_list {
     padding: 0 13px;
+    
+}
+.ct_bx_price_fd .price:nth-child(2) {
+    font-size: 16px;
 }
             .empty_cart img {
                 width: 75px;
@@ -23284,7 +23300,33 @@
                             rattings_stars.push(htm_sr)
                         }
                     }
+                    let offer_val=null
+                    let price_off=0
+                    itm.off=0
+                    let price_box_y=`
+                    <p class="price_pr">${itm.price_real}</p>
+                    <p class="price_off"></p>`
+                    let off_htm=``
+                    if(itm.off!==null&&itm.off!==undefined){
+                        offer_val=parseFloat(itm.off)
+                        price_off=itm.price_real-(itm.price_real*(offer_val/100))
+                    price_box_y=`
+                    <p class="price_pr">${price_off}</p>
+                    <p class="price_off">${itm.price_real}</p>`
+                    priceBX = `
+                  <div class="ct_bx_price_fd hasoffPrice">
+                 <del class="pricenooff">₹ ${price_off}</del>
+                 <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
+             </div>
+                 `
+                 off_htm=`<div class="ct_flex_offer">
+                     <p>${itm.off}% off</p>
+                    </div>`
+                        
+                    }
+                    console.log(price_off,'-----------------------------------offer prices')
                     let string_short = truncateString(itm.tagline, 20)
+                    
                     //<ion-icon name="star-half-sharp"></ion-icon>
                     let ratings_bx = `<div class="ratings_bx">
                                                             <div class="rating_itm">
@@ -23305,6 +23347,7 @@
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
+                                                        ${off_htm}
                                                         ${ratings_bx}
                                                         <h4>${itm.name}</h4>
                                                         <p class="item_intro">${string_short}</p>
@@ -23315,8 +23358,7 @@
                                                         <div class="ct_bx_item_details_hide">
                                                             <p class="name">${itm.name}</p>
                                                             <p class="stock">${15}</p>
-                                                            <p class="price_pr">${itm.price_real}</p>
-                                                            <p class="price_off"></p>
+                                                            ${price_box_y}
                                                             <p class="offer">${itm.offer}</p>
                                                             <p class="about_list">${itm.about}</p>
                                                             <p class="qty">${itm.weight_sh}</p>
