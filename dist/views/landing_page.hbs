@@ -23,6 +23,8 @@
 </head>
 <style>
     /*! CSS Used from: Embedded */
+    @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700&display=swap');
+
     @font-face {
         font-family: 'Montserrat';
         font-style: normal;
@@ -50,6 +52,10 @@
     width: max-content;
 
 }
+a:active {
+  text-decoration: none;
+}
+.ct_bx_fooditm a{display: block; text-decoration: none;}
 .ct_flex_offer p{color: white;
 font-size: 12px;font-family: 'roboto';}
 
@@ -770,7 +776,7 @@ a{text-decoration:none;}
 .ct_bx_fooditm h4{width:100%;}
 .ct_bx_fooditm a{height:auto;}
 .ct_bx_fooditm h4{font-size:18px;color:#000000;}
-.ct_bx_fooditm .ct_bx_price_fd del{margin-top:10px;font-size:13px;}
+.ct_bx_fooditm .ct_bx_price_fd del{margin-top:16px;font-size:13px;}
 .ct_bx_price_fd .price:nth-child(2){margin-top:3px;}
 .ct_bx_fooditm a{height:auto;}
 }
@@ -5330,7 +5336,7 @@ ion-icon{pointer-events:none;}
     .ct_bx_price_fd del {
         font-size: 12px;
         color: #000;
-        margin-top: 7px;
+        margin-top: 5px;
     }
 
     .ct_bx_price_fd .price:nth-child(2) {
@@ -5400,7 +5406,6 @@ ion-icon{pointer-events:none;}
 
     .ct_bx_fooditm .ct_bx_price_fd p {
         font-size: 18px;
-        color: #e30c0c;
         font-family: Montserrat;
     }
 
@@ -5498,7 +5503,8 @@ ion-icon{pointer-events:none;}
 
         .ct_main_crousel_box {
             margin-top: 0;
-            background: #fffff4;
+               background: #ffffff;
+    padding-top: 42px;
         }
 
         .how-it-works {
@@ -5763,12 +5769,11 @@ ion-icon{pointer-events:none;}
         .ct_bx_fooditm .ct_bx_price_fd p {
             font-size: 22px;
             margin-left: 1px;
-            color: #ee2727;
         }
 
         .ct_bx_fooditm .ct_bx_price_fd del {
-            margin-top: 10px;
-            font-size: 13px;
+            margin-top: 6px;
+            font-size: 11px;
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
@@ -6635,18 +6640,20 @@ ion-icon{pointer-events:none;}
         text-decoration: none;
     }
 
-    .ct_bx_fooditm .ct_bx_price_fd p {
-        font-size: 18px;
-        font-weight: 700;
-        font-size: 27px;
-        font-family: 'Montserrat';
-    }
+.ct_bx_fooditm .ct_bx_price_fd p {
+    font-size: 18px;
+    font-weight: 800;
+    font-size: 27px;
+    font-family: 'Montserrat';
+}
 
-    .ct_bx_fooditm .ct_bx_price_fd del {
-        color: #686868;
-        font-family: 'Montserrat';
-        font-size: 10px;
-    }
+.ct_bx_fooditm .ct_bx_price_fd del {
+    color: #7c7c7c;
+    font-family: 'Montserrat';
+    font-size: 10px;
+    font-weight: 800;
+    margin: 4px 8px 0 0;
+}
 
     @media only screen and (min-width:1550px) {
         .ct_bx_fooditm h4 {
@@ -6742,8 +6749,8 @@ ion-icon{pointer-events:none;}
         }
 
         .ct_bx_fooditm .ct_bx_price_fd del {
-            margin-top: 10px;
-            font-size: 13px;
+            margin-top: 6px;
+            font-size: 11px;
         }
 
         .ct_bx_price_fd .price:nth-child(2) {
@@ -8779,7 +8786,6 @@ ion-icon{pointer-events:none;}
                 position: relative;
                 margin-top: 0;
                 padding-top: 18px;
-                background-color: #fffff4;
             }
 
             .crousel_items {
@@ -10265,7 +10271,7 @@ ion-icon{pointer-events:none;}
         }
 
         .ct_field_small_size {
-        margin: 10px 4px 0 0;         border: 1px solid #00000042;
+        margin: -4px 4px 0 0;         border: 1px solid #00000042;
             border-radius: 50%;
             padding: 7px 4px 0 9px;
             height: 47px;
@@ -11480,7 +11486,13 @@ ion-icon{pointer-events:none;}
 .crousel_items .product {
     min-width: 175px;
 }
-.crousel_items{width: 100vw;margin-left: 0;padding-left: 40px;padding-bottom: 40px;}
+.crousel_items {
+    width: 100vw;
+    margin-left: 0;
+    padding-left: 37px;
+    padding-top: 0;
+    padding-bottom: 40px;
+}
 .crousel_btns{display: none;}
 .how-it-works .ct_inner{display: flex;justify-content: center;}
 .how-it-works .steps {
@@ -11553,6 +11565,11 @@ ion-icon{pointer-events:none;}
         }
         .btn_bottom_nav.for_refer img {
     width: 48px;
+}
+.ct_bx_price_fd del {
+    font-size: 12px;
+    color: #000;
+    margin-top: 5px;
 }
 .cta-button {
     width: 153px;
@@ -11650,6 +11667,9 @@ ion-icon{pointer-events:none;}
     font-size:25px;
     margin-top: 8px;
 }
+
+               .ct_field_small_size {
+        margin: 10px 4px 0 0;   }
         .ct_banner h2 {
     font-size: 47px;
     line-height: 53px;
@@ -11724,6 +11744,9 @@ ion-icon{pointer-events:none;}
             width: 19px;
             padding: 6px 0 3px 0;
         }
+        .how-it-works .title {
+    margin-bottom: 5px;
+}
         .ct_main_crousel_box h4.title {
     padding: 0;}
            .btn_bottom_nav .material-symbols-outlined {
@@ -14785,18 +14808,20 @@ ion-icon{pointer-events:none;}
                                     <div
                                         class="img_right lg:px-0 lg:m-0 lg:relative lg:h-full lg:flex lg:items-center pl-4 sm:-mr-48 sm:-mr-6 sm:pl-6 md:-mr-16">
                                         <img class="w-full lg:absolute lg:w-auto lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl rounded lg:left-0"
-                                            src="https://images.unsplash.com/photo-1547592180-85f173990554?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwzMzczODV8MHwxfHNlYXJjaHw0fHxjb29raW5nfGVufDB8MHx8fDE2NzgzNDQ4MzM&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                            src="../img/natural_ing_photo.jpg"
                                             alt="All-natural ingredients">
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">All-natural
-                                        ingredients<span class="text-primary">.</span></h2>
-                                    <p class="mt-4 text-lg leading-relaxed text-gray-500 sm:text-xl">Our ingredients are
-                                        100%
+                                    <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">All Pure
+                                        Ingredients<span class="text-primary">.</span></h2>
+                                    <p class="mt-4 text-lg leading-relaxed text-gray-500 sm:text-xl">
+                                        {{!-- 100%
                                         natural with no preservatives, artificial flavours or colours. Enjoy healthy,
                                         delicious
-                                        meals every time.</p>
+                                        meals every time.--}}
+                                        Everything that you use in your kitchen is everything we use to make our product
+                                        </p> 
                                 </div>
                                 <div><!----></div><!---->
                             </div>
@@ -15047,7 +15072,7 @@ function truncateString(str, limit) {
                 } 
 
             },
-            offset: '65%'
+            offset: '75%'
 
         })
 
@@ -15320,7 +15345,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                      
                                                      <div class="product">
                                                      <div class="ct_bx_fooditm">
-                                            <a rel="nofollow">
+                                            <a href="/magicmix#${itm.name.split(' ').join('')}">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
                                                                     <div class="main_im sauces">
