@@ -58,6 +58,9 @@
 }
 .ct_flex_offer p{color: white;
 font-size: 12px;font-family: 'roboto';}
+.ct_pop_up_items_order .crousel_items  .ct_flex_offer{
+    margin: 10px 0 0px 6px ;
+}
 
         .ratings_bx span {
             color: red;
@@ -71,7 +74,11 @@ font-size: 12px;font-family: 'roboto';}
             padding-bottom: 40px;
             background: #fffff4;
         }
-
+.ct_bx_price_fd.hasoffPrice {
+    margin-top: 10px;
+    margin-left: 3px;
+    margin-bottom: 7px;
+}
 .ct_special_ing {
     background: #fcfffb;
     border: 1px solid green;
@@ -4380,7 +4387,7 @@ p{margin-bottom:auto;}
         }
 
         ._2wzgFH {
-            padding: 24px;
+            padding: 24px 8px;
             padding-bottom: 0;
             width: 100%;
             -webkit-filter: none !important;
@@ -4730,9 +4737,8 @@ p{margin-bottom:auto;}
         }
 
         .prod_desc {
-            color: #272626;
-            font-family: 'roboto';
-            font-weight: 500;
+                       color: #5e5e5e;
+            font-family: 'open sans';
             display: block;
             font-size: 10px;
             line-height: 13px;
@@ -5849,6 +5855,9 @@ p{margin-bottom:auto;}
             padding-left: 15px;
             border-bottom: 1px solid #b6b6b6;
         }
+        .ct_select_qty_bx h3 span{
+            color: black;
+        }
 
         .reviews-container .ct_flex {
             display: flex;
@@ -5895,10 +5904,34 @@ p{margin-bottom:auto;}
 
         .ct_for_bx1 {
             border: 1px solid #cbcbcb;
-            padding: 10px 35px 10px 15px;
+            padding: 8px 0 0px 0;
             border-radius: 14px;
+            overflow: hidden;  
+background-color: rgb(249 249 249 / 72%);
             margin-right: 11px;
+            min-width: 130px;
             /* background: #1c1d1e; */
+        }
+.ct_for_bx1 .ct_desc_pack li {
+    color: rgb(0 0 0);
+    font-size: 10px;
+    margin-bottom: 3px;
+    list-style: disc;
+    margin-left: 16px;
+    font-family: 'open sans';
+}
+
+        .ct_for_bx1 .ct_desc_pack{
+            background-color:rgb(255, 255, 255);
+            margin-top: 4px;    padding: 5px 7px;
+
+        }
+        .ct_for_bx1 .ct_desc_pack p{
+            color: rgb(66, 66, 66);
+            font-size: 12px;
+            margin-bottom: 5px;
+            font-family: 'open sans';
+            
         }
 
         .remove_itm,
@@ -5983,7 +6016,7 @@ margin: 9px 0 16px 20px;
             font-size: 14px;
             color: #5d5d5d;
             font-weight: 600;
-            margin-left: 0;
+            margin-left: 5px;
             padding-left: 9px;
         }
 
@@ -5991,12 +6024,13 @@ margin: 9px 0 16px 20px;
             font-size: 10px;
             color: black;
             font-family: 'open sans';
-            margin: 6px 9px;
+            margin: 6px 9px 0 0;
         }
 
         .ct_for_bx1 .ct_pr_bx {
             display: flex;
             margin-top: 2px;
+            margin-left: 10px;
         }
 
         .ct_for_bx1 .ct_pr_bx p {
@@ -6005,7 +6039,7 @@ margin: 9px 0 16px 20px;
             margin-top: 4px;
             font-weight: 600;
             color: #5d5d5d;
-            margin-left: 11px;
+            margin-left:3px;
         }
 
         .ct_for_bx1.active h4 {
@@ -6153,7 +6187,7 @@ margin: 9px 0 16px 20px;
         .ct_bx_for_ingredients p {
             color: #020202;
             margin: 10px 18px;
-            font-size: 14px;
+            font-size: 14px;    word-break: break-word;
             font-family: 'Open sans';
             line-height: 20px;
         }
@@ -10247,6 +10281,15 @@ font-size: 18px;
             .erak_fd_body .for_nav_main .logo {
                 margin-top:2px
             }
+            .ct_prod_info {margin-top: 20px;}
+
+            .ct_pop_up_items_order .name_of_itm {
+    font-size: 22px;
+            }
+            .ct_bx_total_amount_to_pay del, .ct_bx_total_amount_to_pay h3 {
+    color: #cd1313;
+    margin: 0px 6px 20px 6px;
+    font-size: 23px;}
                    .ct_bx_total_amount_to_pay del {
                         color: #3f3d3d;
                         display: block;
@@ -11098,11 +11141,6 @@ font-size: 15px;margin: 4px 6px 14px 16px;
                 overflow: hidden;
                 margin-top: -8px;
                 margin-left: 8px;
-            }
-
-            .ct_bx_price_fd.hasoffPrice {
-                margin-top: 1px;
-                margin-left: 3px;
             }
 
             .ct_loading_bx .ct_for_img_load {
@@ -12009,6 +12047,8 @@ font-size: 15px;margin: 4px 6px 14px 16px;
             .ct_offer_box_cook2 span {
                 font-size: 12px;
             }
+            .ct_select_qty_bx h3 {
+    font-size: 14px;}
 
             .ct_items_img {
                 margin-top: 62px;
@@ -12896,7 +12936,7 @@ line-height: 15px;                    font-family: 'roboto';
                 <div class="ct_flex_offer">
                      <p></p>
                     </div>
-                <span class="prod_desc">Loading..</span>
+                <span class="prod_desc"></span>
                 <a href="#ratings" class="ratings_itm_info">
                     <div class="ct_rat_bx_stat">
                          <ion-icon name="star-sharp"></ion-icon>
@@ -12932,6 +12972,27 @@ line-height: 15px;                    font-family: 'roboto';
             <div class="ct_select_qty_bx ">
                 <h3>Please select a quantity</h3>
                 <div class="ct_flexbx">
+
+<div class="ct_for_bx1 active">
+                        <h4>150g</h4>
+                        <span class="info_package">undefined</span>
+                        <div class="ct_pr_bx">
+                            <del>₹ 24</del>
+                            <p>₹ 45</p>
+
+                        </div>
+                        <div class="ct_desc_pack">
+                           <ul>
+                            <li>
+                                For 1kg chicken 
+                            </li>
+                             <li>
+                            For 1kg chicken 
+                            </li>
+                           </ul>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -14305,7 +14366,9 @@ cux.style.right='-1000px'
                 let name11 = qty_bx_itm.childNodes[1].innerText
                 let info = qty_bx_itm.childNodes[3].innerText
                 console.log(qty_bx_itm.childNodes)
-                if (qty_bx_itm.childNodes[7] !== undefined) {
+                                    document.querySelector('.ct_select_qty_bx h3').innerHTML=`selected quantity: <span>${name11}</span>`
+
+                if (qty_bx_itm.childNodes[9] !== undefined) {
                     name11 = qty_bx_itm.childNodes[3].innerText
                     info = qty_bx_itm.childNodes[5].innerText
                     if (qty_bx_itm.childNodes[7] !== undefined) {
@@ -14317,9 +14380,9 @@ cux.style.right='-1000px'
                     }
 
                 } else {
-                    if (qty_bx_itm.childNodes[7] !== undefined) {
-                        del = qty_bx_itm.childNodes[7].childNodes[1].innerText
-                        pr = qty_bx_itm.childNodes[7].childNodes[3].innerText
+                    if (qty_bx_itm.childNodes[5] !== undefined) {
+                        del = qty_bx_itm.childNodes[5].childNodes[1].innerText
+                        pr = qty_bx_itm.childNodes[5].childNodes[3].innerText
                     } else {
                         del = 0
                         pr = qty_bx_itm.childNodes[5].childNodes[1].innerText
@@ -14421,6 +14484,7 @@ cux.style.right='-1000px'
                     name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[1].innerHTML
                     stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[3].innerHTML
                     tagline_html = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[23].innerHTML
+
                     price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[7].innerHTML
                     price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[7].innerHTML
                     offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[9].innerHTML
@@ -14446,10 +14510,9 @@ cux.style.right='-1000px'
 
                 }
                 document.querySelector('.ct_pop_up_items_order  .ct_flex_offer p').innerText=`${offer}% off`
-
-                
                 document.querySelector('.prod_desc').innerText=tagline_html
-                console.log(name,images_prod,qtys)
+
+                                console.log(name,images_prod,qtys)
                 console.log(JSON.parse(images_prod), '  ---------------wjhsdahsadhsd')
                 document.querySelector('.req_essen .ct_box_innside_reccom .crousel_items').innerHTML = ''
                 document.querySelector('.ct_load_items').style.display = 'flex'
@@ -14676,7 +14739,7 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
 
 
                 // document.querySelector('.ct_bx_img img').src = imgsrc
-                document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
+              //  document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                 let allfd = JSON.parse(localStorage.getItem('sauce'))
                                 if(offer!==null&&offer!==undefined){
                         offer=parseFloat(offer)
@@ -14717,6 +14780,10 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
                         active_btn = 'unactive'
                         // price of active qty
                     }
+                    if(active_btn!=='unactive'){
+                    document.querySelector('.ct_select_qty_bx h3').innerHTML=`selected quantity: <span>${name}</span>`
+
+                    }
 
                     let html = `<div class="ct_for_bx1 ${active_btn}">
                         <h4>${name}</h4>
@@ -14730,7 +14797,7 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
 
 
 
-                    document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+               //     document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
                 })
 
                 //  if (getCookie('userData') === '') {
@@ -14753,7 +14820,7 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
 
                             document.querySelector('.ct_qty_box input').value = cu11.qty
                             let qty_obj = JSON.parse(qtys)
-                            document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
+                           // document.querySelector('.ct_select_qty_bx .ct_flexbx').innerHTML = ''
                             qty_obj.forEach((cur11, ind) => {
                                 let price = cur11.price
                                 let pack = cur11.pack
@@ -14797,7 +14864,7 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
 
 
 
-                                document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
+                           //     document.querySelector('.ct_select_qty_bx .ct_flexbx').insertAdjacentHTML('beforeend', html)
                             })
                         }
                     })
@@ -14842,7 +14909,8 @@ document.querySelectorAll('.req_essen .crousel_btns').forEach(cux=>cux.style.dis
 
                 if(item.name.split(' ').join('').toLowerCase()===itm_id){
                     let tot_Reviews=0
-                    
+                document.querySelector('.prod_desc').innerText=item.tagline
+
                     item.ques_and_ans.forEach(itm=>{
                         let htm=`<div class="ct_qns_bx">
                     <h4>Ques. ${itm.q}</h4>
@@ -14978,7 +15046,7 @@ document.querySelector('.ct_allreviews .inner_x') .insertAdjacentHTML("beforeend
                     itm_added += 1
 let string_short=truncateString(itm.tagline,20)
 if(window.screen.width<=400){
-   string_short=truncateString(itm.tagline,35) 
+   string_short=truncateString(itm.tagline,15) 
 }
 
                             let rattings_stars=[]
