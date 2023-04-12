@@ -27,6 +27,8 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@700;800&display=swap"
         rel="stylesheet">
+            {{>favicon}}
+
 </head>
 <style>
     @font-face {
@@ -64,7 +66,9 @@
     ._2QhOV .awo_x.balance {
         display: none;
     }
-
+.ct_inner_itms{
+    border-top: 1px solid rgb(139, 139, 139);
+}
     .account_name_sec .ct_inner span.typ {
         background-color: rgb(255 213 235);
         font-size: 10px;
@@ -84,6 +88,40 @@
         z-index: 9999999999999;
         height: 100%;
     }
+/*! CSS Used from: Embedded */
+.btn_bottom_nav.for_refer img{width:42px;margin-top:-3px;}
+a.for_referx{
+    display: none;
+}
+        .btn_bottom_nav.for_refer {
+            display: flex;
+            justify-content: center
+        }
+.btn_bottom_nav.for_refer p{margin-top:2px;}
+.btn_bottom_nav .ct_inner{position:relative;width:max-content;}
+.btn_bottom_nav{padding:7px 23px;display:block;position:relative;margin:3px 10px;text-align:center;}
+.btn_bottom_nav p{font-size:12px;font-family:'Inter Tight', sans-serif;font-weight:600;text-align:center;color:black;}
+@media only screen and (max-width:740px){
+.btn_bottom_nav.for_refer img{width:48px;}
+.account_created .btn_bottom_nav{padding:6px 16px 16px 15px;}
+.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
+.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 0;background:#f8f8f8;text-align:center;}
+}
+@media only screen and (max-width:550px){
+.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
+.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 3px;background:#f8f8f8;text-align:center;}
+}
+@media only screen and (max-width:360px){
+.btn_bottom_nav p{font-size:10px;}
+.btn_bottom_nav{padding:7px 10px;}
+}
+@media only screen and (max-width:470px){
+.btn_bottom_nav.for_refer img{margin-top:-5px;margin-left:6px;}
+.btn_bottom_nav p{font-size:9px;}
+.btn_bottom_nav.for_refer img{margin-top:-6px;}
+.btn_bottom_nav p{display:block;}
+.btn_bottom_nav{padding:8px 23px 17px 23px;}
+}
 
     .ct_btn_rate_this_prod {
         display: block;
@@ -1632,21 +1670,24 @@
 
         .btn_bottom_nav .material-symbols-outlined {
             color: #545454;
-            font-size: 21px;
+            font-size: 26px;
         }
-
+.btn_bottom_nav p {
+    font-size: 10px;}
         .ct_bx_div_bottom_nav .ct_flex_bx {
             height: 55px;
         }
 
         .btn_bottom_nav {
-            padding: 4px 23px 20px 23px;
+            padding: 5px 23px 20px 23px;
             display: block;
             margin: 3px 3px;
             background: #f8f8f8;
             text-align: center;
         }
-
+.ct_bx_div_bottom_nav {
+    height: 64px;
+}
         .ct_bx_div_bottom_nav a {
             width: 100%;
         }
@@ -1663,17 +1704,12 @@
 
     @media only screen and (max-width:550px) {
         .btn_bottom_nav p {
-            font-size: 8px;
+            font-size:10px;
             margin-top: -1px;
         }
 
         .pac-item-query {
             font-size: 14px;
-        }
-
-        .btn_bottom_nav .material-symbols-outlined {
-            color: #545454;
-            font-size: 21px;
         }
 
         .ct_bx_div_bottom_nav .ct_flex_bx {
@@ -1694,9 +1730,6 @@
     }
 
     @media only screen and (max-width:400px) {
-        .btn_bottom_nav p {
-            font-size: 11px;
-        }
 
         .ct_bx_div_bottom_nav .ct_flex_bx {
             padding: 0px;
@@ -1704,10 +1737,6 @@
     }
 
     @media only screen and (max-width:360px) {
-        .btn_bottom_nav p {
-            font-size: 10px;
-        }
-
         .btn_bottom_nav {
             padding: 7px 10px;
         }
@@ -1738,27 +1767,8 @@
             width: 19px;
             padding: 6px 0 3px 0;
         }
-
-        .btn_bottom_nav p {
-            display: none;
-        }
-
         .btn_bottom_nav .ct_info_cart p {
-            font-size: 7px;
-            margin-top: -2px;
-            display: block;
-        }
-
-        .btn_bottom_nav .material-symbols-outlined {
-            font-size: 24px;
-        }
-
-        .btn_bottom_nav {
-            padding: 13px 23px 20px 23px;
-        }
-
-        .btn_bottom_nav .ct_info_cart p {
-            font-size: 7px;
+            font-size:12px;
             margin-top: -2px;
         }
     }
@@ -4150,8 +4160,8 @@
     font-size: 28px;
     margin: 10px;
     border: 1px solid #ababab;
-    border-radius: 20px;
-    padding: 5px 6px;
+    border-radius: 25px;
+    padding: 4px 6px;
     transform: translate(0px, 5px);
     display: none;
     cursor: pointer;
@@ -6746,9 +6756,10 @@
 
 
     ._3SKK0 {
-        padding-top: 20px;
         position: relative;
         padding: 22px;
+                padding-top: 5px;
+
     }
 
     ._2XWVq {
@@ -8567,7 +8578,7 @@
             width: 100%;
             font-size: 14px;
             line-height: initial;
-            height: 27px;
+            height: 31px;
             padding: 0 15px;
             margin-top: 0px;
             padding: 7px;
@@ -8853,11 +8864,6 @@
         .ct_notify P {
             font-size: 11px;
         }
-
-        .btn_bottom_nav {
-            padding: 13px 23px 20px 23px;
-        }
-
         .account_name_sec .ct_inner {
             margin: 11px 0 0 11px;
         }
@@ -9800,13 +9806,8 @@
             let userDtx = getCookie('userData')
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
-
-                //if(dt_user.split(' ')[0]!==undefined){
-                //document.querySelector('.ct_acc_dt_ov h4').innerText=dt_user.split(' ')[0]
-
-                //}
-
-                // remove the banner of signup offer
+                document.querySelector('.ct_bx_div_bottom_nav').classList.add('account_created')
+                document.querySelector('a.for_referx').style.display='block'
                 document.querySelector('.account_nav2').style.display = 'block'
                 document.querySelector('.account_name_sec h4').innerText = dt_user.name
                 document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
@@ -10648,7 +10649,7 @@
                                 if (cu11.delivered) {
                                     if (itm.typ === 'sauce') {
                                         console.log('00000000000000000000000000')
-                                        rate_bx = `<a  href="/magicmix#${name_id}?ratings=true" class="ct_btn_rate_this_prod">
+                                        rate_bx = `<a  href="/magicmix#${name_id}?ratings" class="ct_btn_rate_this_prod">
                                             <p>Rate this product</p>
                                         </a>`
                                     }
@@ -10709,18 +10710,20 @@
                                                     <span>order placed on, ${cu11.date}</span>
                                                 </div>
                                             </div>
+
                                             ${accepted_hm}
                                             ${delivered_html}
-                                            <div class="ct_inner_itms">
-                                                ${arr_itms.join('')}
-                                             </div>
-                                            
-                                            <div class="_3SKK0">
+                                                                                                                                    <div class="_3SKK0">
                                                 <div class="_33I3_">Payment mode: ${cu11.payMode}</div>
                                                 <div class="_23DHc">${total_txt}: <span class="_1jGfr"> ${total.toLocaleString()} </span> </div>
 
 
                                             </div>
+                                            <div class="ct_inner_itms">
+                                                ${arr_itms.join('')}
+                                             </div>
+                                            
+
                                         </div>`
 
                             document.querySelectorAll('.order_lst').forEach(cux => {

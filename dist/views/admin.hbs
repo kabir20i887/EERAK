@@ -2744,8 +2744,9 @@
             font-size: 15px;
             padding-right: 240px;
             color: #282c3f;
-            line-height: 20px;
+            line-height: 20px;width: 100vw;
         }
+        .dtime p.bold{color: black;width: max-content;padding: 10px;display: block;font-size: 18px;background: rgb(255, 243, 227);}
 
         ._23DHc {
             color: #535665;
@@ -5102,13 +5103,14 @@
 
                             })
                             // add balance to influencer if thier cpn used in this order
-                            let id_influ = order_dt.coupn_usd.ofid
-                            // id_influ -> only of the influencer
-                            let commision_influ = parseFloat(order_dt.coupn_usd.val)
+
 
                             let order_sauce_am = order_dt.am_sauce
 
                             if (order_dt.coupn_usd !== null) {
+                                                            let id_influ = order_dt.coupn_usd.ofid
+                            // id_influ -> only of the influencer
+                            let commision_influ = parseFloat(order_dt.coupn_usd.val)
                                 let dbCollection2x = db.collection("users")
                                 let res2 = await dbCollection2x.get()
                                 res2.docs.forEach(async curx => {
@@ -5454,7 +5456,11 @@ ${return_hm}
                                 <div class="ct_other_av">
                                     <div class="_2fkm7">
                                         <span>order placed on, ${orders.date}</span>
+
+                                                                            <div class="dtime"><p class='bold'>Delivery time selected: ${orders.dtime_selected}</p></div>
+
                                     </div>
+                                    
                                 </div>
                                 
 ${html_deliv}

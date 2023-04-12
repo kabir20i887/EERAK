@@ -48,15 +48,20 @@
             display: flex;
             justify-content: center;
         }
-.crousel_items .ct_flex_offer{
-    background-color: rgb(255, 0, 64);
-    padding: 3px 15px;
-    margin: 10px 0 0 4px;
-    width: max-content;
 
-}
-.ct_flex_offer p{color: white;
-font-size: 12px;font-family: 'roboto';}
+        .crousel_items .ct_flex_offer {
+            background-color: rgb(255, 0, 64);
+            padding: 3px 15px;
+            margin: 10px 0 0 4px;
+            width: max-content;
+
+        }
+
+        .ct_flex_offer p {
+            color: white;
+            font-size: 12px;
+            font-family: 'roboto';
+        }
 
         .ct_popup_main_sucess a {
             font-size: 14px;
@@ -3614,7 +3619,7 @@ font-size: 12px;font-family: 'roboto';}
             border-radius: 50%;
             width: 28px;
             padding: 6px;
-            border: 1px solid orange;
+     border: 1px solid rgb(0, 89, 255);
             height: 28px;
             margin: 5px 5px 0 9px;
             background-color: white;
@@ -3625,17 +3630,12 @@ font-size: 12px;font-family: 'roboto';}
             width: 14px;
             display: none;
             height: 13px;
-            background-color: orange;
+            background-color: #1569e6;      
         }
 
         .ct_select_payment_typ .ct_option_pay.active {
-            background-color: #fffcf3;
+            background-color: #f3f3f3;
         }
-
-        .ct_select_payment_typ .ct_option_pay.active {
-            background-color: #fffcf3;
-        }
-
         .ct_apply_coupons {
             margin-top: 26px;
         }
@@ -3680,7 +3680,9 @@ font-size: 12px;font-family: 'roboto';}
             border-radius: 29px;
             box-shadow: 0 0 14px #0000000f;
         }
-
+.delivery_tyime .ct_option_pay{
+        padding: 8px 0 8px 13px;
+}
         .ct_option_pay p {
             color: #939493;
             font-family: 'roboto';
@@ -3698,7 +3700,10 @@ font-size: 12px;font-family: 'roboto';}
             font-weight: 700;
             margin-left: 17px;
         }
+.delivery_tyime .ct_option_pay h4{
+                margin-top: 5px;
 
+}
         .ct_apply_coupons .ct_bx1 img {
             width: auto;
             height: 23px;
@@ -4895,7 +4900,7 @@ font-size: 12px;font-family: 'roboto';}
         }
 
         .ct_bx_price_fd * {
-         margin-right: 3px;
+            margin-right: 3px;
         }
 
         .ct_bx_price_fd del {
@@ -5103,7 +5108,9 @@ font-size: 12px;font-family: 'roboto';}
 
 
             .ct_bx_fooditm .ct_bx_price_fd del {
-                font-size: 13px;margin-top: 5px;margin-right: 7px;
+                font-size: 13px;
+                margin-top: 5px;
+                margin-right: 7px;
             }
 
             .ct_bx_price_fd .price:nth-child(2) {
@@ -10284,7 +10291,7 @@ font-size: 12px;font-family: 'roboto';}
             }
 
             .ek_cart {
-                background-color: #f5f5f5;
+                background-color: #ffffff;
                 padding: 0px;
                 margin-top: 0;
                 padding-top: 24px;
@@ -13840,7 +13847,7 @@ font-size: 12px;font-family: 'roboto';}
         }
 
         .ek_cart {
-            background-color: #f5f5f5;
+            background-color: #ffffff;
             padding: 40px 0 0 0;
             margin-top: 0;
             padding-left: 30px;
@@ -18656,16 +18663,20 @@ font-size: 12px;font-family: 'roboto';}
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
-            .ct_bx_fooditm .ct_bx_price_fd del{
-              font-size: 12px;
+
+            .ct_bx_fooditm .ct_bx_price_fd del {
+                font-size: 12px;
             }
-.ct_bx_flex_sub_list {
-    padding: 0 13px;
-    
-}
-.ct_bx_price_fd .price:nth-child(2) {
-    font-size: 16px;
-}
+
+            .ct_bx_flex_sub_list {
+                padding: 0 13px;
+
+            }
+
+            .ct_bx_price_fd .price:nth-child(2) {
+                font-size: 16px;
+            }
+
             .empty_cart img {
                 width: 75px;
             }
@@ -20458,6 +20469,10 @@ font-size: 12px;font-family: 'roboto';}
                 margin-left: 9px;
             }
 
+            .crousel_items .ct_flex_offer {
+                margin: 10px 0 0 4px;
+            }
+
             .ct_search_cpns input {
                 font-size: 10px;
                 width: 52%;
@@ -21576,16 +21591,16 @@ font-size: 12px;font-family: 'roboto';}
     <div class="ct_outer_account_bx login_bx">
 
         <div class="box_pop_up_accounts forlogin">
-        <div class="ct_load_review_verf">
-            <div class="ct_load_items">
-                <div class="lds-ring">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+            <div class="ct_load_review_verf">
+                <div class="ct_load_items">
+                    <div class="lds-ring">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
-        </div>
             <div class="ct_inner_bottom_box">
                 <div class="ct_bx_go_back">
                     <ion-icon name="arrow-back-outline" role="img" class="md hydrated"
@@ -22242,7 +22257,7 @@ font-size: 12px;font-family: 'roboto';}
                             <div class="ct_bx1">
                                 <img src="../img/coupons_icon_m.png" alt="coupon">
                                 <div class="ct_inner">
-                                    <h4>Check for coupons</h4>
+                                    <h4>Apply coupons</h4>
                                     <p></p>
                                 </div>
                                 {{!-- <div class="ct_apply_btn">
@@ -22255,8 +22270,34 @@ font-size: 12px;font-family: 'roboto';}
 
                         </div>
 
-                        <div class="ct_select_payment_typ">
+                        <div class="ct_select_payment_typ option_pay_btn">
                             <h3>Select payment option</h3>
+
+                        </div>
+                        <div class="ct_select_payment_typ delivery_tyime">
+                            <h3>Selected Delivery time: delivery within 1 hour</h3>
+                            <div class="ct_option_pay Cash_On_Delivery active">
+                                <div class="ct_select_btn">
+                                    <div></div>
+                                </div>
+                                <div class="ct_inner">
+                                    <h4>Delivery within 1 hour</h4>
+                                    <p>₹ 25 </p>
+
+                                </div>
+                            </div>
+                            <div class="ct_option_pay">
+                                <div class="ct_select_btn">
+                                    <div></div>
+
+                                </div>
+                                <div class="ct_inner">
+                                    <h4>Delivery within 24 hour</h4>
+                                    <p>Free</p>
+
+                                </div>
+                            </div>
+
 
                         </div>
 
@@ -22382,7 +22423,7 @@ font-size: 12px;font-family: 'roboto';}
 
                         </div>
 
-                        <div class="ct_delivery_info">
+                        {{!-- <div class="ct_delivery_info">
                             <div class="ct_bx_deliv active">
                                 <img src="../img/delivery_icon.png" alt="">
 
@@ -22394,7 +22435,7 @@ font-size: 12px;font-family: 'roboto';}
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -22826,6 +22867,7 @@ font-size: 12px;font-family: 'roboto';}
                     let clas = ''
                     if (cu11.act) {
                         clas = 'active'
+                        document.querySelector('.ct_select_payment_typ h3').innerText=`Selected payment option: ${cu11.name} `
                     }
                     if (!cu11.av) {
                         clas = 'unactive'
@@ -22852,6 +22894,7 @@ font-size: 12px;font-family: 'roboto';}
 
                     } else if (cu11.act) {
                         document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + cu11.pr.toLocaleString()
+                        document.querySelector('.delivery_tyime .Cash_On_Delivery p').innerText = "₹" + cu11.pr.toLocaleString()
                     }
                     document.querySelector('.ct_select_payment_typ').insertAdjacentHTML('beforeend', html)
 
@@ -23300,33 +23343,35 @@ font-size: 12px;font-family: 'roboto';}
                             rattings_stars.push(htm_sr)
                         }
                     }
-                    let offer_val=null
-                    let price_off=0
-                    itm.off=0
-                    let price_box_y=`
+                    let offer_val = null
+                    let price_off = 0
+                    itm.off = 0
+                    let price_box_y = `
                     <p class="price_pr">${itm.price_real}</p>
                     <p class="price_off"></p>`
-                    let off_htm=``
-                    if(itm.off!==null&&itm.off!==undefined){
-                        offer_val=parseFloat(itm.off)
-                        price_off=itm.price_real-(itm.price_real*(offer_val/100))
-                    price_box_y=`
+                    let off_htm = ``
+                    if (itm.off !== null && itm.off !== undefined) {
+                        offer_val = parseFloat(itm.off)
+                        price_off = itm.price_real - (itm.price_real * (offer_val / 100))
+                        price_off = Math.round(price_off)
+                        price_off = price_off.toLocaleString()
+                        price_box_y = `
                     <p class="price_pr">${price_off}</p>
                     <p class="price_off">${itm.price_real}</p>`
-                    priceBX = `
+                        priceBX = `
                   <div class="ct_bx_price_fd hasoffPrice">
                  <del class="pricenooff">₹ ${price_off}</del>
                  <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
              </div>
                  `
-                 off_htm=`<div class="ct_flex_offer">
+                        off_htm = `<div class="ct_flex_offer">
                      <p>${itm.off}% off</p>
                     </div>`
-                        
+
                     }
-                    console.log(price_off,'-----------------------------------offer prices')
+                    console.log(price_off, '-----------------------------------offer prices')
                     let string_short = truncateString(itm.tagline, 20)
-                    
+
                     //<ion-icon name="star-half-sharp"></ion-icon>
                     let ratings_bx = `<div class="ratings_bx">
                                                             <div class="rating_itm">
@@ -24322,8 +24367,8 @@ ${desc_htm_cpn.join('')}
                     document.querySelector('.popup_info.sucess_account').style.display = 'flex'
 
                     document.querySelector('.popup_info.sucess_account p').innerText = 'Successfully created account and logged in'
-                  //  document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
-                     document.querySelector('.login_bx .box_pop_up_accounts').classList.remove('active')
+                    //  document.querySelector('.box_pop_up_accounts.forlogin').style.display = 'none'
+                    document.querySelector('.login_bx .box_pop_up_accounts').classList.remove('active')
                     document.querySelector('.ct_overflow_customize').style.display = 'none'
                     load_basic_dt()
 
@@ -24720,7 +24765,8 @@ ${desc_htm_cpn.join('')}
             let qty_inc = e.target.closest('.ct_items_bx .ct_bx_item_add')
             let qty_dec = e.target.closest('.ct_items_bx .ct_bx_item_rem')
             let remove_item = e.target.closest('.remove_fd_itm_ct')
-            let select_pay = e.target.closest('.ct_option_pay')
+            let select_pay = e.target.closest('.option_pay_btn .ct_option_pay')
+            let select_pay2 = e.target.closest('.delivery_tyime .ct_option_pay')
             let order_btn = e.target.closest('.check_out_btn_order')
             let goback_signup_pn = e.target.closest('.for_signup  .ct_bx_go_back')
             let goback_login_pn = e.target.closest('.login_bx .ct_bx_go_back')
@@ -25008,14 +25054,23 @@ ${desc_htm_cpn.join('')}
                                 })
 
                             })
+                            objItms.dtime_selected = '24 hour'
                             let dvpr = getEncodedDt(sessionStorage.getItem('app_i8m89x5'))
                             dvpr = parseFloat(dvpr)
                             if (pay_typ.replace(/[ ,]+/g, "").toLowerCase() === 'payonline') {
                                 objItms.payMode = pay_typ
                                 dvpr = 0
-                            } else if (dvpr > 0) {
+                            }else{
                                 objItms.payMode = 'cash'
+                                if (document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
+                                objItms.dtime_selected = '1 hour'
+                                
+                                }else{
+                                    dvpr=0
+                                }
+
                             }
+                        
                             let domPr = document.querySelector('.to_pay_cahge span b').innerText.split('₹')[1].split(',').join('')
                             domPr = parseFloat(domPr)
                             document.querySelectorAll('.pr_itm.block_1_charge span')[0].innerText = '₹' + tot_am.toLocaleString()
@@ -25219,20 +25274,20 @@ ${desc_htm_cpn.join('')}
                                     let cd = secret(token).code
                                     document.querySelector('.place_order').style.display = 'none'
                                     let nick_nm = userDt.name.split(' ')[0]
-                                   // var settings = {
-                                   //     "async": true,
-                                   //     "crossDomain": true,
-                                   //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151167&variables_values=${userDt.name}|${cd}|${nick_nm}&route=dlt&numbers=${userDt.phone}`,
-                                   //     "method": "GET"
-                                   // }
-                                   // $.ajax(settings).done(function (response) {
-                                   //     if (response.return) {
-                                   //         console.log('sent!!!')
-                                   //     }
-                                   // });
+                                    // var settings = {
+                                    //     "async": true,
+                                    //     "crossDomain": true,
+                                    //     "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151167&variables_values=${userDt.name}|${cd}|${nick_nm}&route=dlt&numbers=${userDt.phone}`,
+                                    //     "method": "GET"
+                                    // }
+                                    // $.ajax(settings).done(function (response) {
+                                    //     if (response.return) {
+                                    //         console.log('sent!!!')
+                                    //     }
+                                    // });
                                     //order placed sms
 
-                                    socket.emit('sent_order_sms', userDt.name, cd,nick_nm,userDt.phone)
+                                   // socket.emit('sent_order_sms', userDt.name, cd, nick_nm, userDt.phone)
 
                                     order_btn.style.opacity = '1'
                                     order_btn.style.pointerEvents = 'auto'
@@ -25271,14 +25326,34 @@ ${desc_htm_cpn.join('')}
                 prd = parseFloat(JSON.parse(prd))
 
                 if (document.querySelector('.ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
+                        document.querySelector('.ct_select_payment_typ h3').innerText=`Selected payment option: Cash on Delivery `
+
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
                 } else {
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
+                        document.querySelector('.ct_select_payment_typ h3').innerText=`Selected payment option: Pay online `
 
                 }
                 addAmount()
                 console.log(document.querySelector('.ct_option_pay.active').classList.value.split(' ')[0])
 
+            }
+            if(select_pay2!==null){
+                           document.querySelector('.delivery_tyime .ct_option_pay.active').classList.remove('active')
+                select_pay2.classList.add('active')
+                let prd = getEncodedDt(sessionStorage.getItem('app_i8m89x5'))
+                prd = parseFloat(JSON.parse(prd))
+
+                if (document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
+                        document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText=`Selected payment option: Delivery within 1 hour `
+                    document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
+                } else {
+                    document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
+                        document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText=`Selected payment option: Delivery within 24 hour `
+                }
+                addAmount()
+                console.log(document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[0])
+     
             }
 
             if (remove_item !== null) {
@@ -25890,13 +25965,13 @@ ${desc_htm_cpn.join('')}
                                 console.log(phoneNum, itmDb.phone)
                                 if (phoneNum === itmDb.phone) {
                                     matched = true
-                                    socket.emit('sendt_otp',itmDb.phone)
-                                    socket.on('sendt_otp2',(err,token)=>{
-                                        if(err){
+                                    socket.emit('sendt_otp', itmDb.phone)
+                                    socket.on('sendt_otp2', (err, token) => {
+                                        if (err) {
                                             document.querySelector('.phone_error p').innerText = 'Invalid phone number'
-                                            document.querySelector('.phone_error').style.display = 'block' 
-                                            return   
-                                        }                                
+                                            document.querySelector('.phone_error').style.display = 'block'
+                                            return
+                                        }
                                         let objXs = {
                                             id: itmDb.id,
                                             name: itmDb.name,
@@ -25907,7 +25982,7 @@ ${desc_htm_cpn.join('')}
                                             cpns_used: itmDb.cpns_used,
                                             admin: itmDb.admin,
                                         }
-                                        
+
                                         document.cookie = "ct_901_12_x" + "=" + token + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
                                         document.cookie = "one_tm_dt2" + "=" + JSON.stringify(objXs) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
@@ -25927,30 +26002,30 @@ ${desc_htm_cpn.join('')}
 
                                         document.querySelectorAll('.forlogin .ct_bx_inputs_otp input').forEach(cu11 => {
                                             cu11.style.opacity = '1'
-                                        })          
+                                        })
                                     })
-                                       
 
 
-                                  ///socket.on('sendCode', (id, token, number, key) => {
-                                  ///    var settings = {
-                                  ///        "async": true,
-                                  ///        "crossDomain": true,
-                                  ///        "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
-                                  ///        "method": "GET"
-                                  ///    }
-                                  ///    $.ajax(settings).done(function (response) {
-                                  ///        console.log(itmDb.phone, 'sent!!!')
 
-                                  ///        if (response.return) {
+                                    ///socket.on('sendCode', (id, token, number, key) => {
+                                    ///    var settings = {
+                                    ///        "async": true,
+                                    ///        "crossDomain": true,
+                                    ///        "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${itmDb.phone}`,
+                                    ///        "method": "GET"
+                                    ///    }
+                                    ///    $.ajax(settings).done(function (response) {
+                                    ///        console.log(itmDb.phone, 'sent!!!')
 
-                                  ///        } else {
+                                    ///        if (response.return) {
 
-                                  ///        }
-                                  ///    });
+                                    ///        } else {
+
+                                    ///        }
+                                    ///    });
 
 
-                                  ///})
+                                    ///})
                                 }
 
                             })
@@ -26332,27 +26407,27 @@ ${desc_htm_cpn.join('')}
                                             document.querySelector('.ct_go_back_account h3').style.display = 'flex'
                                             // send otp
 
-                                                                               // var settings = {
-                                   //    "async": true,
-                                   //    "crossDomain": true,
-                                   //    "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${ph_num}`,
-                                   //    "method": "GET"
-                                   //}
-                                   //$.ajax(settings).done(function (response) {
-                                   //    send_onetime = true
+                                            // var settings = {
+                                            //    "async": true,
+                                            //    "crossDomain": true,
+                                            //    "url": `https://www.fast2sms.com/dev/bulkV2?authorization=${key}&sender_id=krickG&message=151021&variables_values=${number}&route=dlt&numbers=${ph_num}`,
+                                            //    "method": "GET"
+                                            //}
+                                            //$.ajax(settings).done(function (response) {
+                                            //    send_onetime = true
 
-                                   //    if (response.return) {
-                                   //        console.log('sent!!!')
+                                            //    if (response.return) {
+                                            //        console.log('sent!!!')
 
-                                   //        document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
-                                   //        window.location.replace('/mycart#dataRecived')
+                                            //        document.cookie = "account_data" + "=" + true + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
+                                            //        window.location.replace('/mycart#dataRecived')
 
-                                   //        sent_msg = true
-                                   //    }
-                                   //    if (!response.return) {
+                                            //        sent_msg = true
+                                            //    }
+                                            //    if (!response.return) {
 
 
-                                   //    });
+                                            //    });
                                             socket.emit('vm34_xc', ph_num)
                                             socket.emit('vm34_xc2', (err) => {
                                                 if (err) {
@@ -26370,17 +26445,17 @@ ${desc_htm_cpn.join('')}
                                                     document.querySelector('.for_signup .ct_field_first_acc').style.display = 'block'
                                                 }
                                             })
-                                            
+
                                         })
 
-            } else {
-                // account exist already
-                document.querySelector('.error_info_popup.er_ald_acc').style.right = '4px'
-                setTimeout(function () {
-                    document.querySelector('.error_info_popup.er_ald_acc').style.right = '-1000px'
-                }, 30000)
-            }
-        }
+                                    } else {
+                                        // account exist already
+                                        document.querySelector('.error_info_popup.er_ald_acc').style.right = '4px'
+                                        setTimeout(function () {
+                                            document.querySelector('.error_info_popup.er_ald_acc').style.right = '-1000px'
+                                        }, 30000)
+                                    }
+                                }
 
 
 
@@ -26388,11 +26463,11 @@ ${desc_htm_cpn.join('')}
 
 
                             } else {
-                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
+                                document.querySelector('.location_error p').innerText = 'Sorry, we donot deliver to this location.'
                                 document.querySelector('.location_error').style.display = 'block'
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
-            }
+                                document.querySelector('.nick_name.area input').style.background = 'rgb(255 241 241)'
+                            }
                         }
                     }
 
@@ -26400,18 +26475,18 @@ ${desc_htm_cpn.join('')}
 
 
             }
-        if (inpX === null && !e.target.closest('.ct_results')) {
-            document.querySelector('.ct_results').style.display = 'none'
-        }
+            if (inpX === null && !e.target.closest('.ct_results')) {
+                document.querySelector('.ct_results').style.display = 'none'
+            }
 
-        if (itemG !== null) {
-            let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
-            document.querySelector('.nick_name.area input').value = text
-            document.querySelector('.ct_results').style.display = 'none'
-            document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
-                cur.remove()
-            })
-        }
+            if (itemG !== null) {
+                let text = `${itemG.childNodes[1].innerText}, ${itemG.childNodes[2].innerText}`
+                document.querySelector('.nick_name.area input').value = text
+                document.querySelector('.ct_results').style.display = 'none'
+                document.querySelectorAll('.ct_results .pac-item').forEach(cur => {
+                    cur.remove()
+                })
+            }
         })
 
         let ifd = []
@@ -26568,14 +26643,14 @@ ${desc_htm_cpn.join('')}
                 }
                 if (typ_fd === 'sauce') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
-                    console.log(addItem.parentElement.childNodes[1].childNodes)
+                    console.log(addItem.parentElement.childNodes[1].childNodes[3].childNodes)
 
                     let inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
                     // price , nt weight, qty
                     let obj = {
-                        name: inner_bx[3].innerText,
+                        name: inner_bx[5].innerText,
                         qty: 1,
-                        slt_nm: inner_bx[7].innerText.split(':')[1].split(' ').join(''),
+                        slt_nm: inner_bx[9].innerText.split(':')[1].split(' ').join(''),
                         slt_p: "pouch pack",
                         type: "sauce",
 

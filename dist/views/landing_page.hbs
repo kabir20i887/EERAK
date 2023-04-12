@@ -68,8 +68,14 @@ font-size: 12px;font-family: 'roboto';}
   .btn_bottom_nav.for_refer img {
     width: 42px;    margin-top: -3px;
 }
-.btn_bottom_nav.for_refer{display: flex;justify-content: center;}
-.btn_bottom_nav.for_refer p {
+a.for_referx{
+    display: none;
+}
+        .btn_bottom_nav.for_refer {
+            display: flex;
+            justify-content: center
+        }
+        .btn_bottom_nav.for_refer p {
     margin-top: 2px;
 }
         .ct_load_items {
@@ -11566,6 +11572,12 @@ ion-icon{pointer-events:none;}
         .btn_bottom_nav.for_refer img {
     width: 48px;
 }
+.account_created .btn_bottom_nav {
+    padding: 6px 16px 16px 15px;
+}
+.account_created.ct_bx_div_bottom_nav a {
+    margin-right: 2px;
+}
 .ct_bx_price_fd del {
     font-size: 12px;
     color: #000;
@@ -11644,9 +11656,6 @@ ion-icon{pointer-events:none;}
             width: 100%;
         }
 
-        .btn_bottom_nav .ct_info_cart p {
-            font-size: 8px;
-        }
 
         .ct_info_cart {
             width: 19px;
@@ -11654,7 +11663,7 @@ ion-icon{pointer-events:none;}
         }
 
         .btn_bottom_nav .ct_info_cart p {
-            font-size: 10px;
+            font-size: 12px;
         }
     }
 
@@ -11859,7 +11868,7 @@ ion-icon{pointer-events:none;}
  
 
         .btn_bottom_nav .ct_info_cart p {
-            font-size: 7px;
+            font-size: 12px;
             margin-top: -2px;
             display: block;
         }
@@ -11870,11 +11879,6 @@ ion-icon{pointer-events:none;}
 
         .btn_bottom_nav {
             padding: 8px 23px 17px 23px;
-        }
-
-        .btn_bottom_nav .ct_info_cart p {
-            font-size: 7px;
-            margin-top: -2px;
         }
     }
 
@@ -14813,7 +14817,7 @@ ion-icon{pointer-events:none;}
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">All Pure
+                                    <h2 class="text-4xl font-extrabold tracking-tight text-gray-900">All Real
                                         Ingredients<span class="text-primary">.</span></h2>
                                     <p class="mt-4 text-lg leading-relaxed text-gray-500 sm:text-xl">
                                         {{!-- 100%
@@ -15190,6 +15194,8 @@ function truncateString(str, limit) {
             }
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
+                document.querySelector('.ct_bx_div_bottom_nav').classList.add('account_created')
+                document.querySelector('a.for_referx').style.display='block'
 
                 if (dt_user.name.split(' ')[0] !== undefined) {
                     document.querySelector('.ct_acc_dt_ov h4').innerText = dt_user.name.split(' ')[0]
@@ -15345,7 +15351,7 @@ let ratings_bx=`<div class="ratings_bx">
                                                      
                                                      <div class="product">
                                                      <div class="ct_bx_fooditm">
-                                            <a href="/magicmix#${itm.name.split(' ').join('')}">
+                                            <a href="/magicmix#${itm.name.split(' ').join('').toLowerCase()}?searched">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
                                                                     <div class="main_im sauces">
