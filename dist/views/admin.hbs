@@ -5068,6 +5068,7 @@
         let return_order = e.target.closest('.accept_return')
         let confirm_btn = e.target.closest('.ct_box_verify_order .f4Ovn')
         if (confirm_btn !== null) {
+            // order is confirmed by this btn by getting otp from customers
             confirm_btn.style.pointerEvents = 'none'
             confirm_btn.style.opacity = '.5'
 
@@ -5118,7 +5119,6 @@
                                     if (datax.id === id_influ) {
                                         // commision_influ -> 5%  etc
                                         let users_tot_influ = parseFloat(datax.ref_balen.user_tot)
-                                        console.log(order_sauce_am, commision_influ, 'hoollagsfd----------------------')
                                         let pirce_m = parseFloat(order_sauce_am) * (commision_influ / 100)
                                         let ref_am = parseFloat(datax.ref_balen.val)
                                         console.log(ref_am)
