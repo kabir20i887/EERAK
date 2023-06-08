@@ -3611,6 +3611,17 @@ margin: 14px 0 21px 10px;
     font-family: 'Montserrat';
         }
 
+.ct_pop_additonal_detls.roll-out {
+    bottom: -120vh;
+            transition: bottom 1s ease;
+
+}
+.ct_pop_additonal_detls_pay.roll-in {
+    bottom: 0;
+            transition: bottom 1s ease;
+
+}
+
         .ct_apply_coupons h3 {
             margin-top: 0;
         }
@@ -3633,9 +3644,6 @@ margin: 14px 0 21px 10px;
             background-color: #1569e6;      
         }
 
-        .ct_select_payment_typ .ct_option_pay.active {
-            background-color: #f3f3f3;
-        }
         .ct_apply_coupons {
             margin-top: 26px;
         }
@@ -3680,6 +3688,7 @@ margin: 14px 0 21px 10px;
             border-radius: 4px;
             box-shadow: 0 0 14px #0000000f;
         }
+        .ct_option_pay:active{background-color: whitesmoke;}
 .delivery_tyime .ct_option_pay{
         padding: 8px 0 8px 13px;
 }
@@ -14030,9 +14039,10 @@ margin: 14px 0 21px 10px;
             text-align: center;
             text-decoration: none;
         }
+        .ct_pop_additonal_detls_pay,
         .ct_pop_additonal_detls{
 position: fixed;
-    display: none;
+    display: block;
     bottom: 0;
     width: 100%;
     background-color: white;
@@ -14040,6 +14050,7 @@ position: fixed;
     padding: 6px 10px 12px 10px;
     z-index: 9999999;
         }
+        .ct_pop_additonal_detls_pay{bottom: -1000px;}
 
         .check_out_btn_order::before {
             content: '';
@@ -18464,6 +18475,12 @@ position: fixed;
             .ct_box_info {
                 width: 93vw;
             }
+            .ct_select_btn{display: none;}
+            .ct_option_pay{
+                background-color: #ffffff;
+    box-shadow: 0 0 14px #0000001f;
+}
+            }
 
             .for_nav_main .logo {
 
@@ -21393,11 +21410,9 @@ position: fixed;
             </div>
         </div>
     </div>
+{{!--  delivery payent popup order confirm --}}
     <div class="ct_pop_additonal_detls">
-                                {{!-- <div class="ct_select_payment_typ option_pay_btn">
-                            <h3>Select payment option</h3>
-
-                        </div> --}}
+ 
                         <div class="ct_select_payment_typ delivery_tyime">
                             <h3>Select Delivery Time: Choose your convenience.
 
@@ -21425,6 +21440,16 @@ position: fixed;
 
                                 </div>
                             </div>
+
+
+                        </div>
+    </div>
+    <div class="ct_pop_additonal_detls_pay">
+        
+                                 <div class="ct_select_payment_typ option_pay_btn">
+                            <h3>Select payment option</h3>
+
+                        </div>
 
 
                         </div>
@@ -22884,7 +22909,7 @@ position: fixed;
                     let clas = ''
                     if (cu11.act) {
                         clas = 'active'
-                        document.querySelector('.ct_select_payment_typ h3').innerText=`Selected payment option: ${cu11.name} `
+                        document.querySelector('.ct_select_payment_typ.option_pay_btn h3').innerText=`Selected payment option `
                     }
                     if (!cu11.av) {
                         clas = 'unactive'
@@ -22913,7 +22938,7 @@ position: fixed;
                         document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + cu11.pr.toLocaleString()
                         document.querySelector('.delivery_tyime .Cash_On_Delivery p').innerText = "₹" + cu11.pr.toLocaleString()
                     }
-                    document.querySelector('.ct_select_payment_typ').insertAdjacentHTML('beforeend', html)
+                    document.querySelector('.ct_select_payment_typ.option_pay_btn').insertAdjacentHTML('beforeend', html)
 
                 })
             }
@@ -23017,8 +23042,10 @@ position: fixed;
                                     let offer_del = ''
 
                                     if (offer !== null) {
-                                        price_off = priceX * 100 / (100 - offer)
-                                        price_off = Math.round(price_off) * itm_qt
+                                       // price_off = priceX * 100 / (100 - offer)
+                                       // price_off = Math.round(price_off) * itm_qt
+                                                            price_off = parseFloat(priceX) - (parseFloat(priceX) * (offer / 100))
+                                                            price_off = Math.round(price_off) * itm_qt
                                         tot_pr_itm += price_off
                                         price_off = price_off.toLocaleString()
                                         if (price_off.split('.')[1] !== undefined) {
@@ -23027,7 +23054,7 @@ position: fixed;
 
 
                                         price = price.toLocaleString()
-                                        offer_del = ` <del>₹ ${price_off}</del>`
+                                        offer_del = ` <del>₹ ${priceX * itm_qt}</del>`
                                     }
 
                                     console.log(name === elem.slt_nm.replace(/[ ,]+/g, "").toLowerCase())
@@ -23036,9 +23063,9 @@ position: fixed;
                                         active_btn = 'active'
                                         let del_x = ``
 
-                                        let pr_x = `<p>₹ ${(priceX * itm_qt).toLocaleString()}</p>`
+                                        let pr_x = `<p>₹ ${(price_off).toLocaleString()}</p>`
                                         if (offer !== null) {
-                                            del_x = `<p>₹ ${price_off.toLocaleString()}</p>`
+                                            del_x = `<p>₹ ${priceX * itm_qt.toLocaleString()}</p>`
                                         }
                                         tot_pr_itm += (priceX * itm_qt)
 
@@ -25351,7 +25378,11 @@ ${desc_htm_cpn.join('')}
                         document.querySelector('.ct_select_payment_typ h3').innerText=`Selected payment option: Pay online `
 
                 }
+                console.log(document.querySelector('.ct_pop_additonal_detls'))
+                                document.querySelector('.ct_pop_additonal_detls').classList.add('roll-out')
+
                 addAmount()
+                
                 console.log(document.querySelector('.ct_option_pay.active').classList.value.split(' ')[0])
 
             }
@@ -25368,6 +25399,10 @@ ${desc_htm_cpn.join('')}
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
                         document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText=`Selected payment option: Delivery within 24 hour `
                 }
+                                                document.querySelector('.ct_pop_additonal_detls').classList.add('roll-out')
+                                            
+                                                document.querySelector('.ct_pop_additonal_detls_pay').classList.add('roll-in')
+
                 addAmount()
                 console.log(document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[0])
      
