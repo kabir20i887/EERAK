@@ -34,11 +34,65 @@
         }
 
         .ct_div_influ {
-            width: 90vw;
-            border-radius: 20px;
+            width: 100%;
+            border-radius: 0;
             background-color: rgb(255, 232, 189);
-            padding: 10px 15px;
+            padding: 15px 36px 21px 15px;
             margin-bottom: 30px;
+        }
+
+        .ct_div_influ .ct_list_of_comison h3 {
+            padding: 0;
+            margin-top: 10px;
+            color: black;
+            font-size: 15px;
+            font-family: 'Roboto';
+            font-weight: 500;
+            border-bottom: 1px solid black;
+            padding-bottom: 6px;
+        }
+
+        .ct_submmit_commm {
+            margin-top: 20px;
+        }
+
+        .ct_submmit_commm input {
+            margin-bottom: 0px;
+            padding: 10px;
+        }
+
+        .ct_submit_commis {
+            background-color: rgb(0, 0, 0);
+            font-family: 'open sans';
+            padding: 10px 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            border-radius: 6px;
+            color: rgb(255, 255, 255);
+            width: max-content;
+        }
+
+        .ct_list_of_comison {
+            width: 100%
+        }
+
+        .ct_list_of_comison span,
+        .ct_div_influ .ct_list_of_comison p {
+            color: black;
+            width: 100%;
+            text-align: start;
+            font-size: 13px;
+        }
+
+        .ct_order_commison {
+            padding: 15px 10px;
+            border: 1px solid rgb(100, 100, 100);
+            margin-top: 10px;
+        }
+
+        .ct_div_influ .ct_list_of_comison span {
+            margin-top: 6px;
+            color: rgb(49, 185, 14);
         }
 
         .ct_div_influ .ct_flex {
@@ -61,7 +115,11 @@
             margin: 0;
             margin-top: 4px;
         }
-.ct_div_influ .ct_inner_x{width: 50%;}
+
+        .ct_div_influ .ct_inner_x {
+            width: 50%;
+        }
+
         .ct_div_influ p {
             font-size: 15px;
             width: 50%;
@@ -2744,9 +2802,18 @@
             font-size: 15px;
             padding-right: 240px;
             color: #282c3f;
-            line-height: 20px;width: 100vw;
+            line-height: 20px;
+            width: 100vw;
         }
-        .dtime p.bold{color: black;width: max-content;padding: 10px;display: block;font-size: 18px;background: rgb(255, 243, 227);}
+
+        .dtime p.bold {
+            color: black;
+            width: max-content;
+            padding: 10px;
+            display: block;
+            font-size: 18px;
+            background: rgb(255, 243, 227);
+        }
 
         ._23DHc {
             color: #535665;
@@ -3436,8 +3503,7 @@
                 margin: 20px -4px;
             }
 
-     =
-            .ct_slect_date_bx {
+            =.ct_slect_date_bx {
                 right: 14px;
             }
 
@@ -4304,16 +4370,22 @@
             .ct_nav_mobile_adm .ct_bx_inner {
                 width: 46%;
             }
-            .ct_div_influ {padding-top: 20px;}
-        .ct_div_influ p {
-            font-size: 15px;
-            width:max-content;
-            text-align: start;
-            margin: 10px 0;
-        }
-        .ct_div_influ .ct_flex {
-    display: block;
-}
+
+            .ct_div_influ {
+                padding-top: 20px;
+            }
+
+            .ct_div_influ p {
+                font-size: 15px;
+                width: max-content;
+                text-align: start;
+                margin: 10px 0;
+            }
+
+            .ct_div_influ .ct_flex {
+                display: block;
+            }
+
             .ct_bx_stock_message {
                 padding: 13px 12px 9px 12px;
             }
@@ -4906,7 +4978,7 @@
                 <div class="ct_view_order">
 
                     <div class="order_lst" style="display: block;">
-                        
+
                         <div class="ct_info_requested sucess_div">
                             <ion-icon name="checkmark-done-circle" role="img" class="md hydrated"
                                 aria-label="checkmark done circle"></ion-icon>
@@ -4922,7 +4994,7 @@
                         <div class="ct_influncer_list">
                             <h2>Influencers</h2>
                             <div class="ct_inner_inf">
-  
+ 
                             </div>
 
                         </div>
@@ -5095,7 +5167,7 @@
                                 date: date,
                             }
                             socket.emit('confirmed_order_sms', data.user.name, order_dt.total_amount, 'http://krickfoods/account#orders', data.user.phone)
-                            socket.emit('sent_conf_order',()=>{
+                            socket.emit('sent_conf_order', () => {
                                 console.log('sms order confirmed sent!!')
                             })
                             await dbCollection2.doc(cur.id).set({
@@ -5109,9 +5181,9 @@
                             let order_sauce_am = order_dt.am_sauce
 
                             if (order_dt.coupn_usd !== null) {
-                                                            let id_influ = order_dt.coupn_usd.ofid
-                            // id_influ -> only of the influencer
-                            let commision_influ = parseFloat(order_dt.coupn_usd.val)
+                                let id_influ = order_dt.coupn_usd.ofid
+                                // id_influ -> only of the influencer
+                                let commision_influ = parseFloat(order_dt.coupn_usd.val)
                                 let dbCollection2x = db.collection("users")
                                 let res2 = await dbCollection2x.get()
                                 res2.docs.forEach(async curx => {
@@ -5171,7 +5243,7 @@
                                 orders: data.orders,
                                 reffer: data.reffer,
                             })
-                            
+
 
 
                         }
@@ -5289,8 +5361,8 @@
             localStorage.setItem('accepted_ord', JSON.stringify(arr))
             accept_ord.parentElement.style.display = 'none'
             console.log(accept_ord.parentElement.parentElement.classList.value)
-            socket.emit('on_way_sms', name,total_amount,phone)
-            socket.on('sent_sms_on_way',()=>{
+            socket.emit('on_way_sms', name, total_amount, phone)
+            socket.on('sent_sms_on_way', () => {
                 alert('delivery on way sms sent')
             })
 
@@ -5300,14 +5372,14 @@
     async function load_influ() {
         let dbCollection2 = db.collection("users")
         let res = await dbCollection2.get()
-        let found=false
-        let found_admin=false
+        let found = false
+        let found_admin = false
         res.docs.forEach(async cur => {
             let dt = cur.data()
-            if(dt.admin){
-                if(dt.admin==='influencer'){
-                    found=true
-                    let html=`<div class="ct_div_influ">
+            if (dt.admin) {
+                if (dt.admin === 'influencer') {
+                    found = true
+                    let html = `<div class="ct_div_influ">
                                     <div class="ct_flex">
                                         <div class="ct_inner_x">
                                             <h4>${dt.name}</h4>
@@ -5318,25 +5390,50 @@
                                         <p>₹ ${dt.ref_balen.val}</p>
                                     </div>
     
-                                </div>`
-                        document.querySelector('.ct_inner_inf').insertAdjacentHTML('beforeend', html)
-            }
-            let dt_user = JSON.parse(getCookie('userData'))
-                if(dt.admin==='admin'){
-                           if(dt.id===dt_user.id){
-                                found_admin=true
-                            }
+                                </div>
+                                                               <div class="ct_div_influ">
+                                    <div class="ct_flex">
+                                        <div class="ct_inner_x">
+                                            <h4>${dt.name}</h4>
+                                            <span>${dt.phone}</span>
+                                            <span>COUPON:${dt.ref_balen.code}</span>
+                                        </div>
+
+                                        <p>₹ ${dt.ref_balen.val}</p>
+                                    </div>
+                                    <div class="ct_list_of_comison">
+                                        <h3>Details</h3>
+                                        <div class="ct_order_commison">
+                                            <p>March 30, 2023 3:16 PM</p>
+                                            <span>Amount: 35rs of 260rs order</span>
+                                        </div>
+                                    </div>
+                                    <div class="ct_submmit_commm">
+                                        <input type="text" placeholder="Change the amount">
+                                        <div class="ct_submit_commis">
+                                            Submit
+                                        </div>
+                                    </div>
+                                </div>
+                                `
+                    document.querySelector('.ct_inner_inf').insertAdjacentHTML('beforeend', html)
+                }
+                let dt_user = JSON.parse(getCookie('userData'))
+                if (dt.admin === 'admin') {
+                    if (dt.id === dt_user.id) {
+                        found_admin = true
+                    }
                 }
 
-}
+            }
 
 
         })
-        if(!found){
-document.querySelector('.ct_influncer_list').style.display='none'
+        if (!found) {
+            document.querySelector('.ct_influncer_list').style.display = 'none'
         }
-        if(!found_admin){
-window.location.replace('/magicmix')
+        if (!found_admin) {
+            window.location.replace('/magicmix')
         }
     }
     load_influ()
@@ -5347,7 +5444,7 @@ window.location.replace('/magicmix')
             let dt = cur.data()
             let orders = dt.orderDt
             let user_data = dt.user
-            let total =dt.orderDt.total_amount
+            let total = dt.orderDt.total_amount
             let blur_it = ''
             let returned = false
             let order_arr = orders.arr.map(cu1 => {
@@ -5374,7 +5471,7 @@ window.location.replace('/magicmix')
                     })
                 }
 
-                
+
 
                 let html_x = `                                    <div class="g28rk ${cu1.name.split(' ').join('_')}" ${blur_it}>
 
