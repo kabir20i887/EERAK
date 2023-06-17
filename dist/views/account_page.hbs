@@ -27,7 +27,7 @@
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@700;800&display=swap"
         rel="stylesheet">
-            {{>favicon}}
+    {{>favicon}}
 
 </head>
 <style>
@@ -66,9 +66,11 @@
     ._2QhOV .awo_x.balance {
         display: none;
     }
-.ct_inner_itms{
-    border-top: 1px solid rgb(139, 139, 139);
-}
+
+    .ct_inner_itms {
+        border-top: 1px solid rgb(139, 139, 139);
+    }
+
     .account_name_sec .ct_inner span.typ {
         background-color: rgb(255 213 235);
         font-size: 12px;
@@ -88,40 +90,117 @@
         z-index: 9999999999999;
         height: 100%;
     }
-/*! CSS Used from: Embedded */
-.btn_bottom_nav.for_refer img{width:42px;margin-top:-3px;}
-a.for_referx{
-    display: none;
-}
-        .btn_bottom_nav.for_refer {
-            display: flex;
-            justify-content: center
+
+    /*! CSS Used from: Embedded */
+    .btn_bottom_nav.for_refer img {
+        width: 42px;
+        margin-top: -3px;
+    }
+
+    a.for_referx {
+        display: none;
+    }
+
+    .btn_bottom_nav.for_refer {
+        display: flex;
+        justify-content: center
+    }
+
+    .btn_bottom_nav.for_refer p {
+        margin-top: 2px;
+    }
+
+    .btn_bottom_nav .ct_inner {
+        position: relative;
+        width: max-content;
+    }
+
+    .btn_bottom_nav {
+        padding: 7px 23px;
+        display: block;
+        position: relative;
+        margin: 3px 10px;
+        text-align: center;
+    }
+
+    .btn_bottom_nav p {
+        font-size: 12px;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 600;
+        text-align: center;
+        color: black;
+    }
+
+    @media only screen and (max-width:740px) {
+        .btn_bottom_nav.for_refer img {
+            width: 48px;
         }
-.btn_bottom_nav.for_refer p{margin-top:2px;}
-.btn_bottom_nav .ct_inner{position:relative;width:max-content;}
-.btn_bottom_nav{padding:7px 23px;display:block;position:relative;margin:3px 10px;text-align:center;}
-.btn_bottom_nav p{font-size:12px;font-family:'Inter Tight', sans-serif;font-weight:600;text-align:center;color:black;}
-@media only screen and (max-width:740px){
-.btn_bottom_nav.for_refer img{width:48px;}
-.account_created .btn_bottom_nav{padding:6px 16px 16px 15px;}
-.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
-.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 0;background:#f8f8f8;text-align:center;}
-}
-@media only screen and (max-width:550px){
-.btn_bottom_nav p{font-size:8px;margin-top:-1px;}
-.btn_bottom_nav{padding:4px 23px 20px 23px;display:block;margin:3px 3px;background:#f8f8f8;text-align:center;}
-}
-@media only screen and (max-width:360px){
-.btn_bottom_nav p{font-size:10px;}
-.btn_bottom_nav{padding:7px 10px;}
-}
-@media only screen and (max-width:470px){
-.btn_bottom_nav.for_refer img{margin-top:-5px;margin-left:6px;}
-.btn_bottom_nav p{font-size:9px;}
-.btn_bottom_nav.for_refer img{margin-top:-6px;}
-.btn_bottom_nav p{display:block;}
-.btn_bottom_nav{padding:8px 23px 17px 23px;}
-}
+
+        .account_created .btn_bottom_nav {
+            padding: 6px 16px 16px 15px;
+        }
+
+        .btn_bottom_nav p {
+            font-size: 8px;
+            margin-top: -1px;
+        }
+
+        .btn_bottom_nav {
+            padding: 4px 23px 20px 23px;
+            display: block;
+            margin: 3px 0;
+            background: #f8f8f8;
+            text-align: center;
+        }
+    }
+
+    @media only screen and (max-width:550px) {
+        .btn_bottom_nav p {
+            font-size: 8px;
+            margin-top: -1px;
+        }
+
+        .btn_bottom_nav {
+            padding: 4px 23px 20px 23px;
+            display: block;
+            margin: 3px 3px;
+            background: #f8f8f8;
+            text-align: center;
+        }
+    }
+
+    @media only screen and (max-width:360px) {
+        .btn_bottom_nav p {
+            font-size: 10px;
+        }
+
+        .btn_bottom_nav {
+            padding: 7px 10px;
+        }
+    }
+
+    @media only screen and (max-width:470px) {
+        .btn_bottom_nav.for_refer img {
+            margin-top: -5px;
+            margin-left: 6px;
+        }
+
+        .btn_bottom_nav p {
+            font-size: 9px;
+        }
+
+        .btn_bottom_nav.for_refer img {
+            margin-top: -6px;
+        }
+
+        .btn_bottom_nav p {
+            display: block;
+        }
+
+        .btn_bottom_nav {
+            padding: 8px 23px 17px 23px;
+        }
+    }
 
     .ct_btn_rate_this_prod {
         display: block;
@@ -165,7 +244,7 @@ a.for_referx{
     }
 
     .ct_bx_slide_bx .admin_panel,
-    .for_nav_main  .ct_bx_about_mobile2.admin_page {
+    .for_nav_main .ct_bx_about_mobile2.admin_page {
         display: none;
     }
 
@@ -1672,8 +1751,11 @@ a.for_referx{
             color: #545454;
             font-size: 26px;
         }
-.btn_bottom_nav p {
-    font-size: 10px;}
+
+        .btn_bottom_nav p {
+            font-size: 10px;
+        }
+
         .ct_bx_div_bottom_nav .ct_flex_bx {
             height: 55px;
         }
@@ -1685,9 +1767,11 @@ a.for_referx{
             background: #f8f8f8;
             text-align: center;
         }
-.ct_bx_div_bottom_nav {
-    height: 64px;
-}
+
+        .ct_bx_div_bottom_nav {
+            height: 64px;
+        }
+
         .ct_bx_div_bottom_nav a {
             width: 100%;
         }
@@ -1704,7 +1788,7 @@ a.for_referx{
 
     @media only screen and (max-width:550px) {
         .btn_bottom_nav p {
-            font-size:10px;
+            font-size: 10px;
             margin-top: -1px;
         }
 
@@ -1767,8 +1851,9 @@ a.for_referx{
             width: 19px;
             padding: 6px 0 3px 0;
         }
+
         .btn_bottom_nav .ct_info_cart p {
-            font-size:12px;
+            font-size: 12px;
             margin-top: -2px;
         }
     }
@@ -4155,17 +4240,17 @@ a.for_referx{
         justify-content: center;
     }
 
-.ct_field_small_size {
-    color: #000;
-    font-size: 28px;
-    margin: 10px;
-    border: 1px solid #ababab;
-    border-radius: 25px;
-    padding: 4px 6px;
-    transform: translate(0px, 5px);
-    display: none;
-    cursor: pointer;
-}
+    .ct_field_small_size {
+        color: #000;
+        font-size: 28px;
+        margin: 10px;
+        border: 1px solid #ababab;
+        border-radius: 25px;
+        padding: 4px 6px;
+        transform: translate(0px, 5px);
+        display: none;
+        cursor: pointer;
+    }
 
     .for_ain_home_logo a {
         display: flex;
@@ -4837,10 +4922,11 @@ a.for_referx{
             display: none;
         }
 
-.ct_field_small_size span {
-    font-size: 23px;
-    margin: 4px;
-    margin-top: 4px;}
+        .ct_field_small_size span {
+            font-size: 23px;
+            margin: 4px;
+            margin-top: 4px;
+        }
 
         .ct_bx_about_mobile2 a {
             padding: 24px 10px;
@@ -6758,7 +6844,7 @@ a.for_referx{
     ._3SKK0 {
         position: relative;
         padding: 22px;
-                padding-top: 5px;
+        padding-top: 5px;
 
     }
 
@@ -6828,7 +6914,7 @@ a.for_referx{
 
     ._33I3_ {
         font-size: 15px;
-        padding-right: 240px;
+        padding-right: 0;
         color: #282c3f;
         line-height: 20px;
     }
@@ -7867,7 +7953,7 @@ a.for_referx{
     }
 
     .ct_flex_bx_notif {
-        display: none;
+        display: block;
         margin-bottom: 40px;
     }
 
@@ -7879,6 +7965,23 @@ a.for_referx{
         margin-top: 13px;
         font-weight: 500;
         width: 80%;
+    }
+
+    .notif_refer h2 {
+        font-size: 40px;
+        margin-top: 40px;
+    }
+
+    .notif_refer a {
+        color: orange;
+        width: 200px;
+        padding: 20px;
+        display: block;
+    }
+
+    .notif_refer p {
+        color: black;
+        font-size: 13px;
     }
 
     .balance_influ {
@@ -8552,9 +8655,11 @@ a.for_referx{
         .g28rk {
             padding: 20px 27px 30px 8px;
         }
-.ct_field_small_size {
-    margin: 0px 4px 0 0;
-}
+
+        .ct_field_small_size {
+            margin: 0px 4px 0 0;
+        }
+
         .ct_logox {
             width: 24%;
         }
@@ -8636,7 +8741,7 @@ a.for_referx{
         }
 
         .account_name_sec p {
-            font-size:12px;
+            font-size: 12px;
         }
 
         .account_name_sec ion-icon {
@@ -8835,14 +8940,15 @@ a.for_referx{
             font-size: 13px;
         }
 
-.ct_field_small_size span {
-    font-size: 23px;
-    /* margin-top: 10px; */
-    margin: 4px 4px;
-}
-.ct_field_small_size {
-    margin: -1px 5px;
-}
+        .ct_field_small_size span {
+            font-size: 23px;
+            /* margin-top: 10px; */
+            margin: 4px 4px;
+        }
+
+        .ct_field_small_size {
+            margin: -1px 5px;
+        }
 
         .ct_refer_panel h2,
         .ct_refer_panel h3 {
@@ -8864,6 +8970,7 @@ a.for_referx{
         .ct_notify P {
             font-size: 11px;
         }
+
         .account_name_sec .ct_inner {
             margin: 11px 0 0 11px;
         }
@@ -8903,11 +9010,13 @@ a.for_referx{
             font-size: 9px;
             transform: translate(5px, -1px);
         }
-.ct_field_small_size {
-    display: block;
-    padding: 2px 5px;
-    margin: -5px 7px 0 0;
-}
+
+        .ct_field_small_size {
+            display: block;
+            padding: 2px 5px;
+            margin: -5px 7px 0 0;
+        }
+
         .yt-loader {
             top: 63px;
         }
@@ -9296,7 +9405,7 @@ a.for_referx{
         }
 
         .account_name_sec .ct_inner span.typ {
-            font-size:12px;
+            font-size: 12px;
         }
 
         .ct_acc_dt_ov p {
@@ -9475,7 +9584,7 @@ a.for_referx{
                     <div class="_3R9IF">
                         <div class="_2gu8R">
                             <ul>
-  <li class="awo_x  balance">
+                                <li class="awo_x  balance">
                                     <div class="inner_ms">
 
                                         <div class="ct_icon_img">
@@ -9526,21 +9635,29 @@ a.for_referx{
 
                                             <div class="ct_notify_refer_btn">
                                                 <div class="ct_flex_bx_notif notif_refer">
-                                                    <h4>Notifications</h4>
-                                                    <button>Remove All</button>
+                                                        <h4>Account Balance</h4>
+                                                        <div class="ct_inner">
+
+                                                            <h2>₹59.00</h2>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                                Fugiar.</p>
+                                                            <a href="tel:9233054806">Call and claim now</a>
+
+
+                                                        </div>
+                                                        <button>Remove All</button>
+                                                    <div class="ct_notif_inner">
+
+                                                    </div>
                                                 </div>
-                                                <div class="ct_notif_inner">
+                                                <div class="ct_flex_bx_notif for_ref">
+                                                    <h4>Refer and Earn</h4>
+                                                </div>
+                                                <div class="inner_x">
 
                                                 </div>
-                                            </div>
-                                            <div class="ct_flex_bx_notif for_ref">
-                                                <h4>Refer and Earn</h4>
-                                            </div>
-                                            <div class="inner_x">
-
                                             </div>
                                         </div>
-                                    </div>
 
                                 </li>
 
@@ -9581,7 +9698,7 @@ a.for_referx{
 
                                 </li>
 
-                              
+
                                 <li class="awo_x  edit_89jjs">
                                     <div class="inner_ms">
 
@@ -9641,7 +9758,15 @@ a.for_referx{
 
                                 <div class="ct_notify_refer_btn">
                                     <div class="ct_flex_bx_notif notif_refer">
-                                        <h4>Notifications</h4>
+                                        <h4>Account Balance</h4>
+                                        <div class="ct_inner">
+
+                                            <h2>₹59.00</h2>
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiar.</p>
+                                            <a href="tel:9233054806p000">Call and claim now</a>
+
+
+                                        </div>
                                         <button>Remove All</button>
                                     </div>
                                     <div class="ct_notif_inner">
@@ -9656,7 +9781,9 @@ a.for_referx{
                                 </div>
                             </div>
                             <div class="balance_influ main">
-
+<div class="ct_inner_lst">
+    
+</div>
                                 <h3>Refer Balance</h3>
                                 <div class="bx_flex">
                                     <div class="ct_inner">
@@ -9807,7 +9934,7 @@ a.for_referx{
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
                 document.querySelector('.ct_bx_div_bottom_nav').classList.add('account_created')
-                document.querySelector('a.for_referx').style.display='block'
+                document.querySelector('a.for_referx').style.display = 'block'
                 document.querySelector('.account_nav2').style.display = 'block'
                 document.querySelector('.account_name_sec h4').innerText = dt_user.name
                 document.querySelector('.account_name_sec h4').style.textTransform = "capitalize";
@@ -9819,12 +9946,12 @@ a.for_referx{
                 }
                 if (userDtx.admin !== undefined) {
                     if (userDtx.admin) {
-                        if(userDtx.admin==='admin'){
-                             if (window.screen.width > 740) {
-                                 document.querySelector('.admin_page').style.display = 'block'
-                             }
-        
-                             document.querySelector('.admin_panel').style.display = 'block'
+                        if (userDtx.admin === 'admin') {
+                            if (window.screen.width > 740) {
+                                document.querySelector('.admin_page').style.display = 'block'
+                            }
+
+                            document.querySelector('.admin_panel').style.display = 'block'
                         }
 
                     }
@@ -9842,13 +9969,13 @@ a.for_referx{
                 let dt = cur.data()
                 if (dt.id === userDt.id) {
                     if (dt.admin === 'influencer') {
-                       document.querySelectorAll('.balance_influ h2').forEach(itm=>{
-                        itm.innerText=`₹${dt.ref_balen.val}`
-                       })
-                                             document.querySelectorAll('.balance_influ p').forEach(itm=>{
-                        itm.innerText=`${dt.ref_balen.user_tot} users used your COUPON:${dt.ref_balen.code}`
-                       })
-                       document.querySelector('.account_name_sec span.typ').style.display = 'block'
+                        document.querySelectorAll('.balance_influ h2').forEach(itm => {
+                            itm.innerText = `₹${dt.ref_balen.val}`
+                        })
+                        document.querySelectorAll('.balance_influ p').forEach(itm => {
+                            itm.innerText = `${dt.ref_balen.user_tot} users used your COUPON:${dt.ref_balen.code}`
+                        })
+                        document.querySelector('.account_name_sec span.typ').style.display = 'block'
                         document.querySelector('.awo_x.balance').style.display = 'block'
                         document.querySelector('.awo_x.balance').style.display = 'block'
 
@@ -9857,21 +9984,21 @@ a.for_referx{
             })
         }
         check_user()
-     if(window.screen.width>1300){
+        if (window.screen.width > 1300) {
             window.location.replace('/notavailable')
-            }
+        }
 
         let initialOrientation = window.orientation;
-            // Check for a device rotation event
-            window.addEventListener("orientationchange", function() {
+        // Check for a device rotation event
+        window.addEventListener("orientationchange", function () {
             // Get the new orientation of the device
             let newOrientation = window.orientation;
 
             // Compare the new orientation to the initial orientation
             if (newOrientation !== initialOrientation) {
-            if(window.screen.width>1300){
-            window.location.replace('/notavailable')
-            }
+                if (window.screen.width > 1300) {
+                    window.location.replace('/notavailable')
+                }
                 // The device has been rotated
                 // Do something here, such as updating the layout or UI
             }
@@ -9887,9 +10014,9 @@ a.for_referx{
             document.querySelectorAll('.ct_refer_panel_outer').forEach(cux => {
                 cux.style.display = 'none'
             })
-            document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
-                cux.innerHTML = ''
-            })
+            // document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
+            //     cux.innerHTML = ''
+            // })
             document.querySelectorAll('.ct_bx_account .inner_x').forEach(cux => {
                 cux.innerHTML = ''
             })
@@ -10053,9 +10180,9 @@ a.for_referx{
                         document.querySelector('.add_ress span').innerText = dt.address.replace(/(\r\n|\n|\r)/gm, " ")
                         let dbCollection23 = db.collection("reffer")
                         let res2 = await dbCollection23.get()
-                        document.querySelectorAll('.ct_notify_refer_btn .ct_notif_inner').forEach(cux => {
-                            cux.innerHTML = ''
-                        })
+                        //     document.querySelectorAll('.ct_notify_refer_btn .ct_notif_inner').forEach(cux => {
+                        //         cux.innerHTML = ''
+                        //     })
                         let mached = false
                         let cpns_reffer_arr = res2.docs[0].data().cpns
                         cpns_reffer_arr.forEach(async elem => {
@@ -10080,7 +10207,7 @@ a.for_referx{
 
                                                     cu1.by.forEach(cu => {
 
-                                                        document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                       // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                         let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10108,13 +10235,13 @@ a.for_referx{
                                                         }
 
 
-                                                        document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+                                                        //    document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
                                                     })
                                                 } else {
 
                                                     //if view_refer_info ->> removed by user
 
-                                                    document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                   // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                     let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10136,11 +10263,11 @@ a.for_referx{
                                                     }
 
 
-                                                    document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+                                                    // document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
 
                                                 }
                                             } else {
-                                                document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                               // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                 let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10162,7 +10289,7 @@ a.for_referx{
                                                 }
 
 
-                                                document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
+                                                // document.querySelector('.ct_notify_refer_btn .ct_notif_inner').insertAdjacentHTML('beforeend', html)
                                             }
 
                                         }
@@ -10246,9 +10373,9 @@ a.for_referx{
                             document.querySelectorAll('.ct_refer_panel_outer').forEach(cux => {
                                 cux.style.display = 'block'
                             })
-                            document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
-                                cux.innerHTML = html
-                            })
+                            //  document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
+                            //      cux.innerHTML = html
+                            //  })
                             //document.querySelector('.ct_refer_panel_outer').classList.add('toggle_area_nav')
                             document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
                             document.querySelector('._1B5rE').classList.remove('_1B5rE')
@@ -11045,7 +11172,7 @@ a.for_referx{
                                     }
                                     await dbCollection2.doc(cur.id).set({
                                         admin: false,
-                                        ref_balen:new_dt.ref_balen,
+                                        ref_balen: new_dt.ref_balen,
                                         id: dt.id,
                                         name: new_dt.name,
                                         phone: new_dt.phone,
