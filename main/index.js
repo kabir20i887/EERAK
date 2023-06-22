@@ -500,23 +500,23 @@ io.on('connection', (sock) => {
         let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
         var tokenx = jwt.sign({ n: unique_num }, 'shhhhh');
 
-        fst.query({
-            authorization: authfst,
-            route: 'dlt',
-            sender_id: 'krickG',
-            message: 151021,
-            variables_values: `${unique_num}|`,
-            numbers: phone,
-            flash: "0",
-        });
-        fst.headers({
-            "cache-control": "no-cache"
-        })
-        fst.end(function (res) {
+      ///fst.query({
+      ///    authorization: authfst,
+      ///    route: 'dlt',
+      ///    sender_id: 'krickG',
+      ///    message: 151021,
+      ///    variables_values: `${unique_num}|`,
+      ///    numbers: phone,
+      ///    flash: "0",
+      ///});
+      ///fst.headers({
+      ///    "cache-control": "no-cache"
+      ///})
+      ///fst.end(function (res) {
 
-            sock.emit('sendt_otp2',res.error,tokenx)
-            console.log(res.body);
-        }); 
+      ///    sock.emit('sendt_otp2',res.error,tokenx)
+      ///    console.log(res.body);
+      ///}); 
     })
 
     sock.on('confirmed_order_sms',(name,am,link,phone)=>{

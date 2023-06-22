@@ -7967,21 +7967,35 @@
         width: 80%;
     }
 
+    .ct_flex_bx_notif h1 {
+        color: black;
+        font-size: 15px;
+                font-family: 'poppins';
+
+    }
     .notif_refer h2 {
         font-size: 40px;
-        margin-top: 40px;
+        margin: 40px 0 0 30%;
+
     }
 
-    .notif_refer a {
-        color: orange;
-        width: 200px;
-        padding: 20px;
-        display: block;
+    .notif_refer li {
+        margin-left: 30px;
+        list-style: disc;
     }
 
-    .notif_refer p {
+    .notif_refer ul h4 {
+        color: rgb(54, 54, 54);
+        margin-top: 0;
+        font-size: 15px;
+        font-family: 'roboto';
+    }
+
+    .notif_refer ul p {
         color: black;
         font-size: 13px;
+        font-family: 'roboto';
+        font-weight: 500;
     }
 
     .balance_influ {
@@ -9635,23 +9649,26 @@
 
                                             <div class="ct_notify_refer_btn">
                                                 <div class="ct_flex_bx_notif notif_refer">
-                                                        <h4>Account Balance</h4>
-                                                        <div class="ct_inner">
+                                                    <h1>Total Refered amount</h1>
+                                                    <div class="ct_inner">
 
-                                                            <h2>₹59.00</h2>
-                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                                Fugiar.</p>
-                                                            <a href="tel:9233054806">Call and claim now</a>
+                                                        <h2>₹59.00</h2>
+                                                        <ul>
+                                                            <h4>Details</h4>
+                                                            <li>
+                                                                                                                            <p>This amount wll be deposited within 7 days For More details please call on this number 7005328132.</p>
+
+                                                            </li>
+                                                        </ul>
 
 
-                                                        </div>
-                                                        <button>Remove All</button>
-                                                    <div class="ct_notif_inner">
+
 
                                                     </div>
+                   
                                                 </div>
                                                 <div class="ct_flex_bx_notif for_ref">
-                                                    <h4>Refer and Earn</h4>
+                                                    <h1>Refer and Earn</h1>
                                                 </div>
                                                 <div class="inner_x">
 
@@ -9781,9 +9798,9 @@
                                 </div>
                             </div>
                             <div class="balance_influ main">
-<div class="ct_inner_lst">
-    
-</div>
+                                <div class="ct_inner_lst">
+
+                                </div>
                                 <h3>Refer Balance</h3>
                                 <div class="bx_flex">
                                     <div class="ct_inner">
@@ -10207,7 +10224,7 @@
 
                                                     cu1.by.forEach(cu => {
 
-                                                       // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                        // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                         let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10241,7 +10258,7 @@
 
                                                     //if view_refer_info ->> removed by user
 
-                                                   // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                    // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                     let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10267,7 +10284,7 @@
 
                                                 }
                                             } else {
-                                               // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
+                                                // document.querySelector('.ct_flex_bx_notif.notif_refer').style.display = 'flex'
                                                 let html = `<div class="ct_notify ${elem.name.split(' ').join('_')}">
 
                                         <div class="ct_inner">
@@ -10373,9 +10390,9 @@
                             document.querySelectorAll('.ct_refer_panel_outer').forEach(cux => {
                                 cux.style.display = 'block'
                             })
-                            //  document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
-                            //      cux.innerHTML = html
-                            //  })
+                            document.querySelectorAll('.ct_refer_panel_outer .inner_x').forEach(cux => {
+                                cux.innerHTML = html
+                            })
                             //document.querySelector('.ct_refer_panel_outer').classList.add('toggle_area_nav')
                             document.querySelector('.ct_wallet_h6781sgh').innerHTML = ''
                             document.querySelector('._1B5rE').classList.remove('_1B5rE')

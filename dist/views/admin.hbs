@@ -5369,47 +5369,58 @@
         }
 
     })
-    async function load_influ() {
-        let dbCollection2 = db.collection("users")
+   // async function load_influ() {
+ 
+    //}
+    //load_influ()
+    async function loadOrders() {
+        let dbCollection2 = db.collection("orders")
         let res = await dbCollection2.get()
+        let dbCollection21 = db.collection("users")
+  let res1 = await dbCollection21.get()
+  let arr_id_influ=[]
         let found = false
         let found_admin = false
-        res.docs.forEach(async cur => {
-            let dt = cur.data()
-            if (dt.admin) {
-                if (dt.admin === 'influencer') {
+             res1.docs.forEach(async cur => {
+            let dtx = cur.data()
+            if(dtx.ref_balen!==null){
+            arr_id_influ.push(dtx.ref_balen.code)
+
+            }
+
+            //if (dtx.admin) {
+                if (dtx.admin === 'influencer') {
                     found = true
-                    let html = `<div class="ct_div_influ">
+                        console.log(dtx.ref_balen.code)
+
+                    let html = `<div class="ct_div_influ ">
                                     <div class="ct_flex">
                                         <div class="ct_inner_x">
-                                            <h4>${dt.name}</h4>
-                                            <span>${dt.phone}</span>
-                                            <span>COUPON:${dt.ref_balen.code}</span>
+                                            <h4>${dtx.name}</h4>
+                                            <span>${dtx.phone}</span>
+                                            <span>COUPON:${dtx.ref_balen.code}</span>
                                         </div>
     
-                                        <p>₹ ${dt.ref_balen.val}</p>
+                                        <p>₹ ${dtx.ref_balen.val}</p>
                                     </div>
     
                                 </div>
                                                                <div class="ct_div_influ">
                                     <div class="ct_flex">
                                         <div class="ct_inner_x">
-                                            <h4>${dt.name}</h4>
-                                            <span>${dt.phone}</span>
-                                            <span>COUPON:${dt.ref_balen.code}</span>
+                                            <h4>${dtx.name}</h4>
+                                            <span>${dtx.phone}</span>
+                                            <span>COUPON:${dtx.ref_balen.code}</span>
                                         </div>
 
-                                        <p>₹ ${dt.ref_balen.val}</p>
+                                        <p>₹ ${dtx.ref_balen.val}</p>
                                     </div>
-                                    <div class="ct_list_of_comison">
+                                    <div class="ct_list_of_comison ${dtx.ref_balen.code}_idx">
                                         <h3>Details</h3>
                                         <div class="ct_inner_lst">
     
 </div>
-                                        <div class="ct_order_commison">
-                                            <p>March 30, 2023 3:16 PM</p>
-                                            <span>Amount: 35rs of 260rs order</span>
-                                        </div>
+     
                                     </div>
                                     <div class="ct_submmit_commm">
                                         <input type="text" placeholder="Change the amount">
@@ -5419,30 +5430,29 @@
                                     </div>
                                 </div>
                                 `
+                                                    alert('hiix')
+
                     document.querySelector('.ct_inner_inf').insertAdjacentHTML('beforeend', html)
                 }
                 let dt_user = JSON.parse(getCookie('userData'))
-                if (dt.admin === 'admin') {
-                    if (dt.id === dt_user.id) {
+                if (dtx.admin === 'admin') {
+                    if (dtx.id === dt_user.id) {
                         found_admin = true
                     }
                 }
 
-            }
-
+           // }
+       // if (!found) {
+       //     document.querySelector('.ct_influncer_list').style.display = 'none'
+       // }
+        if (!found_admin) {
+         //   window.location.replace('/magicmix')
+        }
 
         })
-        if (!found) {
-            document.querySelector('.ct_influncer_list').style.display = 'none'
-        }
-        if (!found_admin) {
-            window.location.replace('/magicmix')
-        }
-    }
-    load_influ()
-    async function loadOrders() {
-        let dbCollection2 = db.collection("orders")
-        let res = await dbCollection2.get()
+
+        // ---- influ -----------//
+       
         res.docs.forEach(async cur => {
             let dt = cur.data()
             let orders = dt.orderDt
@@ -5450,6 +5460,18 @@
             let total = dt.orderDt.total_amount
             let blur_it = ''
             let returned = false
+                      arr_id_influ.forEach(idmx=>{
+                        console.log(idmx===orders.coupn_usd)
+if(idmx===orders.coupn_usd){
+    console.log(document.querySelector(`.${idmx}_idx`))
+                let html_influ_bx=`                                   <div class="ct_order_commison">
+                                            <p>March 30, 2023 3:16 PM</p>
+                                            <span>Amount: ₹35 of ₹${total} order</span>
+                                        </div>`
+                                        document.querySelector(`.${idmx}_idx .ct_inner_lst`).insertAdjacentHTML('beforeend', html_influ_bx)
+}
+                      })
+
             let order_arr = orders.arr.map(cu1 => {
                 let return_acc = `                                                <div class="ct_btns">
                                                     <div class="_2a27y"><a class="_3PUy8 f4Ovn accept_return">Accept return</a></div>
@@ -5461,6 +5483,7 @@
                     return_hm = `                                                    <div class="_2haEe" style='color:red'>Item returned</div>
 `
                 }
+
                 let arrx = JSON.parse(localStorage.getItem('retu_ord'))
                 if (arrx !== null) {
                     arrx.forEach(cuxm => {
