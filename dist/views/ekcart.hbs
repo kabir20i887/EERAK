@@ -3610,13 +3610,13 @@
             width: 84%;
             font-family: 'Montserrat';
         }
-
-        .ct_pop_additonal_detls.roll-out {
+       .ct_pop_additonal_detls_pay.roll-out,
+       .ct_pop_additonal_detls.roll-out {
             bottom: -120vh;
             transition: bottom 1s ease;
 
         }
-
+.ct_pop_additonal_detls.roll-in,
         .ct_pop_additonal_detls_pay.roll-in {
             bottom: 0;
             transition: bottom 1s ease;
@@ -3990,6 +3990,7 @@
             .ct_bx_div_bottom_nav {
                 display: block;
             }
+        .ct_billing_info .ct_select_payment_typ{display: none;}
 
             .btn_bottom_nav p {
                 font-size: 8px;
@@ -14051,7 +14052,7 @@
         .ct_pop_additonal_detls_pay,
         .ct_pop_additonal_detls {
             position: fixed;
-            display: none;
+            display: block;
             bottom: 0;
             width: 100%;
             background-color: white;
@@ -14059,7 +14060,7 @@
             padding: 6px 10px 12px 10px;
             z-index: 9999999;
         }
-
+.ct_pop_additonal_detls,
         .ct_pop_additonal_detls_pay {
             bottom: -1000px;
         }
@@ -18492,10 +18493,12 @@
                 display: none;
             }
 
-            .ct_option_pay {
-                background-color: #ffffff;
-                box-shadow: 0 0 14px #0000001f;
-            }
+       .ct_option_pay {
+    background-color: #ffffff;
+    border: 1px solid #a1a1a1;
+    border-radius: 29px;
+}
+.ct_option_pay 
         }
 
         .for_nav_main .logo {
@@ -21426,7 +21429,8 @@
         </div>
     </div>
     {{!-- delivery payent popup order confirm --}}
-    <div class="ct_pop_additonal_detls">
+    <div class="ct_pop_additonal_detls pop_up_options">
+
 
         <div class="ct_select_payment_typ delivery_tyime">
             <h3>Select Delivery Time: Choose your convenience.
@@ -21459,7 +21463,7 @@
 
         </div>
     </div>
-    <div class="ct_pop_additonal_detls_pay">
+    <div class="ct_pop_additonal_detls_pay pop_up_options">
 
         <div class="ct_select_payment_typ option_pay_btn">
             <h3>Select payment option</h3>
@@ -25001,6 +25005,11 @@ ${desc_htm_cpn.join('')}
                 history.pushState(null, null, ' ')
 
             }
+               if(document.querySelector('.pop_up_options.roll-in')!==null && order_btn===null){
+                     document.querySelectorAll('.pop_up_options').forEach(cux=>{
+    cux.classList.remove('roll-in')
+})
+            }
             if (order_btn !== null) {
                 // # check for valid total amount
                 // # get coupon if exist
@@ -25011,6 +25020,23 @@ ${desc_htm_cpn.join('')}
                     return
 
                 }
+                let for_pay_mdh_btn=false
+                let for_deliv_btn=false
+                if(!for_deliv_btn){
+              //  document.querySelector('.ct_pop_additonal_detls').classList.add('roll-in')
+document.querySelectorAll('.pop_up_options').forEach(cux=>{
+    cux.classList.remove('roll-in')
+
+})
+                document.querySelector('.ct_pop_additonal_detls').classList.remove('roll-out')
+
+                document.querySelector('.ct_pop_additonal_detls').classList.add('roll-in')
+                }
+                let btn_pay_mdh_opt=false
+                alert('iam here')
+             if(!btn_pay_mdh_opt){
+return
+             }
                 let time_emit = 0
                 order_btn.style.opacity = '.5'
                 order_btn.style.pointerEvents = 'none'
@@ -25432,18 +25458,25 @@ ${desc_htm_cpn.join('')}
                 if (document.querySelector('.ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
                     document.querySelector('.ct_select_payment_typ h3').innerText = `Selected payment option: Cash on Delivery `
 
+                                           select_pay.classList.add('Cash_On_Delivery|selected')
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
                 } else {
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
                     document.querySelector('.ct_select_payment_typ h3').innerText = `Selected payment option: Pay online `
+                                           select_pay.classList.add('payonline|selected')
+                                           
 
                 }
+                document.querySelectorAll('.pop_up_options').forEach(cux=>{
+    cux.classList.remove('roll-in')
+})
+
                 console.log(document.querySelector('.ct_pop_additonal_detls'))
                 document.querySelector('.ct_pop_additonal_detls').classList.add('roll-out')
 
                 addAmount()
-
                 console.log(document.querySelector('.ct_option_pay.active').classList.value.split(' ')[0])
+document.querySelector('.check_out_btn_order').click()
 
             }
             if (select_pay2 !== null) {
@@ -25455,10 +25488,21 @@ ${desc_htm_cpn.join('')}
                 if (document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
                     document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText = `Selected payment option: Delivery within 1 hour `
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
+                                                            if (window.screen.width <= 740) {
+                                                                 document.querySelector('.ct_option_pay').remove('24hr_deliv|selected')
+                                            select_pay2.classList.add('1hr_deliv|selected')
+
+                                        }
                 } else {
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
                     document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText = `Selected payment option: Delivery within 24 hour `
+                                                            if (window.screen.width <= 740) {
+                                                                 document.querySelector('.ct_option_pay').remove('1hr_deliv|selected')
+
+                                           select_pay2.classList.add('24hr_deliv|selected')
+                                        }
                 }
+
                 document.querySelector('.ct_pop_additonal_detls').classList.add('roll-out')
 
                 document.querySelector('.ct_pop_additonal_detls_pay').classList.add('roll-in')
@@ -26732,6 +26776,8 @@ ${desc_htm_cpn.join('')}
                 movePer = 50.36;
                 maxMove = 504;
             }
+         
+   
 
             let addItem = e.target.closest('.ct_addbtns');
 
