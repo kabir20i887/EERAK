@@ -7721,7 +7721,7 @@
         font-size: 49px;
         margin-top: 0px;
         line-height: 53px;
-        margin-bottom: 13px;
+        margin-bottom: 5px;
     }
 
     .ct_refer_panel h2 span {
@@ -7966,11 +7966,32 @@
         font-weight: 500;
         width: 80%;
     }
-
+    .ct_show_noif_btn h4{width: 100%;}
+    .ct_show_noif_btn {display: flex;}
+    .ct_show_noif_btn ion-icon{
+      margin-left: auto;
+      position: absolute;
+      right: 10px;  
+    }
+    .ct_notif_tab_bns{margin-top: 30px;}
+    .ct_notif_tab_bns h4{
+        margin:10px 0 0 10px;
+    }
+    .ct_flex_bx_notif h1{margin: 20px 0 0 10px;}
+.ct_notif_tab_bns h4,
     .ct_flex_bx_notif h1 {
         color: black;
         font-size: 15px;
                 font-family: 'poppins';
+
+    }
+    .ct_notif_tab_bns li{background-color: rgb(255, 255, 255);padding: 6px 8px;width: 96%;margin: 5px  0 0 10px;background-color: rgb(255, 243, 211);border-radius: 8px;}
+    .ct_notif_tab_bns li p{
+        color: red;font-family: 'roboto';        font-size: 17px;
+
+    }
+        .ct_notif_tab_bns li span{
+        color: rgb(70, 70, 70);font-family: 'roboto';        font-size: 15px;
 
     }
     .notif_refer h2 {
@@ -8158,7 +8179,7 @@
 
         .ct_refer_panel h2 {
             margin-top: 3px;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
             line-height: 49px;
         }
 
@@ -8394,7 +8415,10 @@
         .ct_refer_panel h3 {
             font-size: 27px;
         }
-
+.ct_refer_panel h3 {
+    line-height: 28px;
+    margin-bottom: 8px;
+}
         .ct_refer_panel h2 {
             font-size: 34px;
             line-height: 36px;
@@ -8968,12 +8992,16 @@
         .ct_refer_panel h3 {
             font-size: 17px;
         }
-
-        .ct_refer_panel h2 {
-            font-size: 28px;
-            margin-top: 6px;
-            line-height: 32px;
-        }
+.ct_refer_panel h3 {
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+ .ct_refer_panel h2 {
+    font-size: 24px;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    line-height: 28px;
+}
 
         .ct_area_toggle {
             width: 96%;
@@ -9598,6 +9626,57 @@
                     <div class="_3R9IF">
                         <div class="_2gu8R">
                             <ul>
+                                                               <li class="awo_x  balance_acc">
+                                    <div class="inner_ms">
+
+                                        <div class="ct_icon_img">
+                                            <img src="../img/refer_balance_icon.webp" alt="">
+                                        </div>
+                                        <span class="_1ZYny">Refer Bonus</span>
+                                        <div class="ct_icon_x_dwn">
+                                            <ion-icon name="chevron-down-outline"></ion-icon>
+                                        </div>
+                                        <div class="ct_icon_x_up">
+                                            <ion-icon name="chevron-up-outline"></ion-icon>
+                                        </div>
+                                    </div>                                    <div class="ct_notif_tab_bns">
+                                        <div class="ct_show_noif_btn">
+                                        <h4>Notifications</h4>
+                                        <ion-icon name="caret-up-outline"></ion-icon>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <span>Bonus recived:- ₹9</span>
+                                            </li>
+                                           <li>
+                                                <span>Bonus recived:- ₹29</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                                                                   <div class="ct_flex_bx_notif notif_refer">
+                                               <h1>Total Refered Bonus</h1>
+                                                    <div class="ct_inner">
+
+                                                        <h2>₹59.00</h2>
+                                                        <ul>
+                                                            <h4>Details</h4>
+                                                            <li>
+                                                               <p>This amount wll be deposited within 7 days For More details please call on this number 7005328132.</p>
+
+                                                            </li>
+                                                        </ul>
+
+
+
+
+                                                    </div>
+                   
+                                                </div>
+
+
+                                </li>
                                 <li class="awo_x  balance">
                                     <div class="inner_ms">
 
@@ -9648,25 +9727,7 @@
                                         <div class="ct_refer_panel_outer">
 
                                             <div class="ct_notify_refer_btn">
-                                                <div class="ct_flex_bx_notif notif_refer">
-                                                    <h1>Total Refered amount</h1>
-                                                    <div class="ct_inner">
 
-                                                        <h2>₹59.00</h2>
-                                                        <ul>
-                                                            <h4>Details</h4>
-                                                            <li>
-                                                                                                                            <p>This amount wll be deposited within 7 days For More details please call on this number 7005328132.</p>
-
-                                                            </li>
-                                                        </ul>
-
-
-
-
-                                                    </div>
-                   
-                                                </div>
                                                 <div class="ct_flex_bx_notif for_ref">
                                                     <h1>Refer and Earn</h1>
                                                 </div>
@@ -10339,18 +10400,16 @@
                     
                                      </div>
                                      <div class="ct_inner_txt">
-                                         <h3>Refer your friends And</h3>
-                                         <h2>Both Earn a <b> ${use_cpn.off}% </b> discount coupon </h2>
-                                         <p>Refer your friends and Both Earn a ${use_cpn.off}% discount coupon, when created an account and logged in. Coupons are only applicable for MagicMix.
-                                             
+
+                                         <h2> Earn 5% &mdash; 15% cash from your friend's first order by referring them.
+                                             </h2>
+                                        <h3>Invite and grab the rewards!</h3>
+
+                                         <p>
+                                          Earn 5%-15% cash from your friend's first order by referring them. But that's not all – your friends will also enjoy a 20% discount on their first purchase of MagicMix only. 
                                          </p>
                                      </div>
-                                     <div class="ct_coupon_code">
-                                         <span>Invite and unlock the coupon</span>
-                                         <div class="ct_bx_coupon">
-                                             <h4>${use_cpn.name}</h4>
-                                         </div>
-                                     </div>
+                                    
                     
                                         <div class="ct_inv_sn671sn">
                                             <div class="ct_share_box">

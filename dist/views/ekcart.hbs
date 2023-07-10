@@ -3618,7 +3618,7 @@
         }
 .ct_pop_additonal_detls.roll-in,
         .ct_pop_additonal_detls_pay.roll-in {
-            bottom: 0;
+            bottom: 70px;
             transition: bottom 1s ease;
 
         }
@@ -14058,7 +14058,7 @@
             background-color: white;
             box-shadow: 0 0 10px #0000004a;
             padding: 6px 10px 12px 10px;
-            z-index: 9999999;
+            z-index:9999;
         }
 .ct_pop_additonal_detls,
         .ct_pop_additonal_detls_pay {
@@ -15406,7 +15406,7 @@
             position: absolute;
             right: 20px;
         }
-
+.ct_overflow_customize_opt,
         .ct_overflow_customize {
             position: fixed;
             z-index: 999999999;
@@ -15415,7 +15415,10 @@
             width: 100%;
             height: 100%;
         }
+.ct_overflow_customize_opt{
+                z-index: 9999;
 
+}
         .ct_bx_information_cart .ct_inner_bx_info {
             width: 100%;
         }
@@ -21361,6 +21364,9 @@
     <div class="ct_overflow_customize">
 
     </div>
+   <div class="ct_overflow_customize_opt">
+
+    </div>
 
     <div class="ct_bx_customize_product">
         <p class="hidden id_g"></p>
@@ -22948,7 +22954,7 @@
 
             }
 
-
+// delivery amount inserting
             if (itm_typ === '') {
 
                 let dbCollection2 = db.collection("paymentMode")
@@ -22979,20 +22985,21 @@
                                     ${text}
                                 </div>
                             </div>`
-                    if (cu11.pr === null) {
-                        sessionStorage.setItem('app_i8m89x5', encodeData(`0`))
-                    } else {
-                        sessionStorage.setItem('app_i8m89x5', encodeData(JSON.stringify(cu11.pr)))
-
-                    }
+                   if (cu11.pr === null) {
+                       sessionStorage.setItem('app_i8m89x5', encodeData(`0`))
+                   } else {
+                       sessionStorage.setItem('app_i8m89x5', encodeData(JSON.stringify(cu11.pr)))
+//
+                   }
+                   document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + '0'
                     document.querySelectorAll('.pr_itm.block_1_charge')[1].style.display = 'flex'
-                    if (cu11.pr === null && cu11.act) {
-                        document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + '0'
+                 //  if (cu11.pr === null && cu11.act) {
+                 //      document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + '0'
 
-                    } else if (cu11.act) {
-                        document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + cu11.pr.toLocaleString()
-                        document.querySelector('.delivery_tyime .Cash_On_Delivery p').innerText = "₹" + cu11.pr.toLocaleString()
-                    }
+                 //  } else if (cu11.act) {
+                 //      document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹" + cu11.pr.toLocaleString()
+                 //      document.querySelector('.delivery_tyime .Cash_On_Delivery p').innerText = "₹" + cu11.pr.toLocaleString()
+                 //  }
                     document.querySelectorAll('.ct_select_payment_typ.option_pay_btn').forEach(cux=>{
                         cux.insertAdjacentHTML('beforeend', html)
                     })
@@ -24875,6 +24882,7 @@ ${desc_htm_cpn.join('')}
             let remove_item = e.target.closest('.remove_fd_itm_ct')
             let select_pay = e.target.closest('.option_pay_btn .ct_option_pay')
             let select_pay2 = e.target.closest('.delivery_tyime .ct_option_pay')
+            let remove_options_order=e.target.closest('.ct_overflow_customize_opt')
             let order_btn = e.target.closest('.check_out_btn_order')
             let goback_signup_pn = e.target.closest('.for_signup  .ct_bx_go_back')
             let goback_login_pn = e.target.closest('.login_bx .ct_bx_go_back')
@@ -25005,11 +25013,31 @@ ${desc_htm_cpn.join('')}
                 history.pushState(null, null, ' ')
 
             }
+            
+            if(remove_options_order!==null){
+                            if(document.querySelector('.selected_payop ')!==null){
+                            document.querySelector('.selected_payop ').classList.remove('selected_payop')
+
+                            }
+                                                        if(document.querySelector('.selected_deliv ')!==null){                            document.querySelector('.selected_deliv ').classList.remove('selected_deliv')
+
+                            }
+                              document.querySelector('.for_checkout_order p').innerText='Order now'
+document.querySelector('.ct_overflow_customize_opt').style.display='none'
+                document.querySelector('.for_checkout_order').style.background='rgb(0, 77, 255)'
+                document.querySelector('.for_checkout_order').style.pointerEvents = 'auto'
+            }               
                if(document.querySelector('.pop_up_options.roll-in')!==null && order_btn===null){
                      document.querySelectorAll('.pop_up_options').forEach(cux=>{
     cux.classList.remove('roll-in')
+    cux.classList.remove('roll-out')
+
 })
+                                                   
+               
+            
             }
+            
             if (order_btn !== null) {
                 // # check for valid total amount
                 // # get coupon if exist
@@ -25020,9 +25048,16 @@ ${desc_htm_cpn.join('')}
                     return
 
                 }
-                let for_pay_mdh_btn=false
-                let for_deliv_btn=false
-                if(!for_deliv_btn){
+
+                document.querySelector('.for_checkout_order').style.background='rgb(110 110 110)'
+                document.querySelector('.for_checkout_order p').innerText='Ordering..'
+                order_btn.style.pointerEvents = 'none'
+document.querySelector('.ct_overflow_customize_opt').style.display='block'
+                //document.querySelector('.selected_deliv .ct_inner h4').innerText
+                let for_deliv_btn=document.querySelector('.selected_deliv')
+                
+
+                if(for_deliv_btn===null){
               //  document.querySelector('.ct_pop_additonal_detls').classList.add('roll-in')
 document.querySelectorAll('.pop_up_options').forEach(cux=>{
     cux.classList.remove('roll-in')
@@ -25032,14 +25067,17 @@ document.querySelectorAll('.pop_up_options').forEach(cux=>{
 
                 document.querySelector('.ct_pop_additonal_detls').classList.add('roll-in')
                 }
-                let btn_pay_mdh_opt=false
-                alert('iam here')
-             if(!btn_pay_mdh_opt){
-return
-             }
+
+                let btn_pay_mdh_opt=document.querySelector('.selected_payop')
+                 if(btn_pay_mdh_opt===null){
+                    return
+                 }
+                                 document.querySelector('.for_checkout_order p').innerText='Order now'
+document.querySelector('.ct_overflow_customize_opt').style.display='none'
+                document.querySelector('.for_checkout_order').style.background='rgb(0, 77, 255)'
+
                 let time_emit = 0
                 order_btn.style.opacity = '.5'
-                order_btn.style.pointerEvents = 'none'
                 let userDt = JSON.parse(getCookie('userData'))
                 socket.emit('send_cd')
                 socket.on('get_cd', (token, id_order, key) => {
@@ -25184,20 +25222,33 @@ return
                                 })
 
                             })
-                            objItms.dtime_selected = '24 hour'
+                            objItms.dtime_selected = document.querySelector('.selected_payop .ct_inner h4').innerText
                             let dvpr = getEncodedDt(sessionStorage.getItem('app_i8m89x5'))
                             dvpr = parseFloat(dvpr)
+                            if(window.screen.width<=740){
+                               pay_typ= document.querySelector('.selected_payop .ct_inner h4').innerText
+                            }
                             if (pay_typ.replace(/[ ,]+/g, "").toLowerCase() === 'payonline') {
                                 objItms.payMode = pay_typ
                                 dvpr = 0
                             } else {
-                                objItms.payMode = 'cash'
+                                                            if(window.screen.width<=740){
+                                                               objItms.payMode = document.querySelector('.selected_payop .ct_inner h4').innerText
+                            }else{
+                                                                objItms.payMode = 'cash'
+
+                            }
                                 if (document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
-                                    objItms.dtime_selected = '1 hour'
+                                    objItms.dtime_selected = document.querySelector('.selected_payop .ct_inner h4').innerText
 
                                 } else {
                                     dvpr = 0
                                 }
+
+                            }
+                            if(document.querySelector('.selected_payop ')!==null){
+                            document.querySelector('.selected_payop ').classList.remove('selected_payop')
+                            document.querySelector('.selected_deliv ').classList.remove('selected_deliv')
 
                             }
 
@@ -25457,13 +25508,20 @@ return
 
                 if (document.querySelector('.ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
                     document.querySelector('.ct_select_payment_typ h3').innerText = `Selected payment option: Cash on Delivery `
+                    if(document.querySelector('.selected_payop')!==null){
+document.querySelector('.selected_payop').classList.remove('selected_payop')
 
-                                           select_pay.classList.add('Cash_On_Delivery|selected')
+                    }
+                                           select_pay.classList.add('selected_payop')
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
                 } else {
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
                     document.querySelector('.ct_select_payment_typ h3').innerText = `Selected payment option: Pay online `
-                                           select_pay.classList.add('payonline|selected')
+                                       if(document.querySelector('.selected_payop')!==null){
+document.querySelector('.selected_payop').classList.remove('selected_payop')
+
+                    }
+                                           select_pay.classList.add('selected_payop')
                                            
 
                 }
@@ -25488,18 +25546,26 @@ document.querySelector('.check_out_btn_order').click()
                 if (document.querySelector('.delivery_tyime .ct_option_pay.active').classList.value.split(' ')[1] === 'Cash_On_Delivery') {
                     document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText = `Selected payment option: Delivery within 1 hour `
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + prd
+                    sessionStorage.setItem('app_i8m89x5', encodeData(JSON.stringify(prd)))
                                                             if (window.screen.width <= 740) {
-                                                                 document.querySelector('.ct_option_pay').remove('24hr_deliv|selected')
-                                            select_pay2.classList.add('1hr_deliv|selected')
+                                      if(document.querySelector('.selected_deliv')!==null){
+document.querySelector('.selected_deliv').classList.remove('selected_deliv')
 
+                    }
+
+                                           select_pay2.classList.add('selected_deliv')
                                         }
                 } else {
                     document.querySelectorAll('.pr_itm.block_1_charge span')[1].innerText = "₹ " + 0
+                                        sessionStorage.setItem('app_i8m89x5', encodeData('0'))
+
                     document.querySelector('.delivery_tyime.ct_select_payment_typ h3').innerText = `Selected payment option: Delivery within 24 hour `
                                                             if (window.screen.width <= 740) {
-                                                                 document.querySelector('.ct_option_pay').remove('1hr_deliv|selected')
+                                   if(document.querySelector('.selected_deliv')!==null){
+                                     document.querySelector('.selected_deliv').classList.remove('selected_deliv')
+                                 }                   
+                                select_pay2.classList.add('selected_deliv')
 
-                                           select_pay2.classList.add('24hr_deliv|selected')
                                         }
                 }
 
