@@ -48,7 +48,7 @@
 .crousel_items .ct_flex_offer{
     background-color: rgb(255, 0, 64);
     padding: 3px 15px;
-    margin: 10px 0 0 4px;
+    margin:5px 0 0 4px;
     width: max-content;
 
 }
@@ -934,7 +934,7 @@ a{padding:6px 10px;}
 .ct_bx_flex{display:flex;}
 .ct_bx_fooditm .item_intro{font-size:10px;border-radius:5px;color:#3b3b3b;font-family:'open sans';width:100%;line-height:12px;font-weight:500;margin:3px 0 6px 3px;}
 .ct_bx_item_details_hide{display:none;}
-.for_unit_itm{font-size:11px;margin-left:3px;margin-top:6px;color:#0c0c0c;font-family:'Inter Tight';font-weight:600;}
+.for_unit_itm{font-size:11px;margin-left:3px;margin-top:3px;color:#0c0c0c;font-family:'Inter Tight';font-weight:600;}
 .ct_bx_price_fd.hasoffPrice{margin-top:15px;}
 *{padding:0;box-sizing:border-box;margin:0;}
 h4{font-weight:600;margin-bottom:0;}
@@ -1556,7 +1556,7 @@ ion-icon{pointer-events:none;}
 
     .rating_itm {
         display: flex;
-        margin: 6px 2px;
+        margin: 2px 2px;
     }
 
     .back_shsgs {
@@ -5089,7 +5089,10 @@ ion-icon{pointer-events:none;}
             margin-top: -22px;
             padding-bottom: 28px;
         }
+                .ct_money_bck_grnt h1,
+        .ct_money_bck_grnt h3 q,
 
+        .ct_money_bck_grnt h2,
         .text-4xl {
             font-size: 35px;
             line-height: 34px;
@@ -5100,7 +5103,28 @@ ion-icon{pointer-events:none;}
             width: 90%;
             margin-top: 34px;
         }
+        .ct_money_bck_grnt{
+            padding: 10px;
+            margin-bottom: 40px;
+        }
+        .ct_money_bck_grnt img{
+        width: 160px;
+    
+        margin-top: 50px;
+        }
+        .money_bck_icon{width: 100%;display: flex;justify-content: center;}
+        .ct_money_bck_grnt .inner{margin-left: 20px;margin-top: -40px;}
+        .ct_money_bck_grnt h1{color: black;opacity: 1;font-size: 40px;width: 100%;}
+                .ct_money_bck_grnt h3 q{color: black;opacity: 1;font-size: 27px; text-decoration: underline;}
 
+.ct_money_bck_grnt h2 {
+    color: black;
+    opacity: 1;
+    font-size: 31px;
+    line-height: 29px;
+    margin-top: 7px;
+    width: 100%;
+}
         .pt-16 .text-4xl {
             color: black;
         }
@@ -5450,7 +5474,8 @@ ion-icon{pointer-events:none;}
     .for_unit_itm {
         font-size: 11px;
         margin-left: 3px;
-        margin-top: 6px;
+        margin-top: 2px;
+        margin-bottom: 3px;
         color: #0c0c0c;
         font-family: 'Inter Tight';
         font-weight: 600;
@@ -5934,7 +5959,6 @@ ion-icon{pointer-events:none;}
 
         .for_unit_itm {
             font-size: 12px;
-            margin: 10px 3px;
         }
 
         .ct_bx_fooditm {
@@ -6673,7 +6697,6 @@ ion-icon{pointer-events:none;}
     .for_unit_itm {
         font-size: 11px;
         margin-left: 3px;
-        margin-top: 6px;
         color: #0c0c0c;
         font-family: 'Inter Tight';
         font-weight: 600;
@@ -6826,6 +6849,7 @@ ion-icon{pointer-events:none;}
         width: 100%;
         line-height: 1.3;
         padding: 0;
+        margin-top: 10px;
         color: #252525;
         font-weight: 500;
         font-family: 'roboto';
@@ -14893,6 +14917,7 @@ ion-icon{pointer-events:none;}
                                                 Ghosh</div>
       </div>
     </div>
+  
     {{!-- <div class="testimonials-arrows">
       <div class="arrow arrow-left">
         <label for="input-testimonial1"></label>
@@ -14940,12 +14965,22 @@ ion-icon{pointer-events:none;}
       </label>
     </div> --}}
   </div>
+  <div class="ct_money_bck_grnt">
+             <div class="money_bck_icon">
+                 <img src="../img/money_bck_img.avif" alt="" class="src">
+             </div>
+    <div class="inner">
+                                    <h1>Try It. </h1>
+                                     <h2>Did't liked the product ? 100% Money Back Gaurantee</h2>
+                                    <h3><q> No questions asked </q></h3>
 
+    </div>
+
+    </div>
    <div class="ct_offer_banner">
                     <a href="/cart"> <img src="../img/banner_offer.webp" alt=""></a>
                     <a href="/cart"><img src="../img/offer-2.webp" alt=""></a>
                 </div>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, voluptates illo nam reiciendis voluptatem nihil nisi corrupti beatae voluptatum
 
                 </div>
 
@@ -15487,12 +15522,16 @@ function truncateString(str, limit) {
                     let dt = cux.data()
                     let itm = dt.item
                     let offHtml = ``
-                    
+                                        let off_htm=``
+                                          off_htm=`<div class="ct_flex_offer">
+                     <p>${itm.offer}% off</p>
+                    </div>`
                     if (itm.offer !== null) {
                         offHtml = `<div class="ct_offer_box_cook2">
          <span>${itm.offer}%</span>
          <p>off</p>
      </div>`
+
                     }
                     let itm_qt = 1
 
@@ -15554,7 +15593,7 @@ return avg
                     let price_box_y=`
                     <p class="price_pr">${itm.price_real}</p>
                     <p class="price_off"></p>`
-                    let off_htm=``
+
                     if(itm.off!==null&&itm.off!==undefined){
                         offer_val=parseFloat(itm.off)
                         price_off=itm.price_real-(itm.price_real*(offer_val/100))
@@ -15567,9 +15606,7 @@ return avg
                  <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
              </div>
                  `
-                 off_htm=`<div class="ct_flex_offer">
-                     <p>${itm.off}% off</p>
-                    </div>`
+
                         
                     }
 let averageRating = calculateAverage(itm.ratings);
@@ -15591,12 +15628,14 @@ htm_sr=` <ion-icon name="star-sharp" role="img" class="md hydrated" aria-label="
 rattings_stars.push(htm_sr)
 }
 }
+// <p class="item_intro">${string_short}</p>
 //<ion-icon name="star-half-sharp"></ion-icon>
+//                                                            <span>(${tot_Reviews})</span>
+
 let ratings_bx=`<div class="ratings_bx">
                                                             <div class="rating_itm">
                                                                 ${rattings_stars.join('')}
                                                             </div>
-                                                            <span>(${tot_Reviews})</span>
                                                         </div>`
 
 
@@ -15606,16 +15645,17 @@ let ratings_bx=`<div class="ratings_bx">
                                                      <div class="ct_bx_fooditm">
                                             <a href="/magicmix#${itm.name.split(' ').join('').toLowerCase()}?searched">
                                                 <div class="ct_bx_flex">
-                                                    ${offHtml}
                                                                     <div class="main_im sauces">
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
-                                                        ${off_htm}
-                                                        ${ratings_bx}
+  
                                                         <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${string_short}</p>
-                                                        <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+                                                                                                                <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
+
+                                                                                                                ${ratings_bx}
+
+                                                                                                             ${off_htm}
 
                                                         ${priceBX}
 
