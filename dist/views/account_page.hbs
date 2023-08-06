@@ -10389,8 +10389,9 @@
                         // cpn can used and show it
                         let use_cpn = cpns_reffer_arr[0]
 
-                        socket.emit('get_refer', userDt.id, use_cpn.name, use_cpn.off)
+                        socket.emit('get_refer', userDt.id,userDt.name, use_cpn.name, use_cpn.off)
                         socket.on('send_refer', (tcn) => {
+                            console.log(tcn)
                             document.querySelector('.ct_flex_bx_notif.for_ref').style.display = 'flex'
                             let html = ` 
                                     <div class="ct_refer_panel">

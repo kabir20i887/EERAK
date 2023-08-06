@@ -444,8 +444,8 @@ io.on('connection', (sock) => {
     var a = 1
 
 
-    sock.on('get_refer', (id,name,offer) => {
-        var token = jwt.sign({id:id, name: name,off:offer }, 'shhhhh');
+    sock.on('get_refer', (id,ref_nam,name,offer) => {
+        var token = jwt.sign({id:id,ref_nam:ref_nam, name: name,off:offer }, 'shhhhh');
         console.log(token)
         io.emit('send_refer',token)
     })
@@ -499,24 +499,24 @@ io.on('connection', (sock) => {
     sock.on('sendt_otp',(phone)=>{
         let unique_num = otpGenerator.generate(4, { digits:true,lowerCaseAlphabets:false,upperCaseAlphabets:false,specialChars:false});
         var tokenx = jwt.sign({ n: unique_num }, 'shhhhh');
+        sock.emit('sendt_otp2',false,tokenx)
 
-      ///fst.query({
-      ///    authorization: authfst,
-      ///    route: 'dlt',
-      ///    sender_id: 'krickG',
-      ///    message: 151021,
-      ///    variables_values: `${unique_num}|`,
-      ///    numbers: phone,
-      ///    flash: "0",
-      ///});
-      ///fst.headers({
-      ///    "cache-control": "no-cache"
-      ///})
-      ///fst.end(function (res) {
-
-      ///    sock.emit('sendt_otp2',res.error,tokenx)
-      ///    console.log(res.body);
-      ///}); 
+    // fst.query({
+    //     authorization: authfst,
+    //     route: 'dlt',
+    //     sender_id: 'krickG',
+    //     message: 151021,
+    //     variables_values: `${unique_num}|`,
+    //     numbers: phone,
+    //     flash: "0",
+    // });
+    // fst.headers({
+    //     "cache-control": "no-cache"
+    // })
+    // fst.end(function (res) {
+    //    sock.emit('sendt_otp2',res.error,tokenx)
+    //    console.log(res.body);
+    //); 
     })
 
     sock.on('confirmed_order_sms',(name,am,link,phone)=>{

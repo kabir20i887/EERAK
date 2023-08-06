@@ -36,8 +36,7 @@
         .ct_div_influ {
             width: 100%;
             border-radius: 0;
-            background-color: rgb(255, 232, 189);
-            padding: 15px 36px 21px 15px;
+    background-color: rgb(251 248 242);            padding: 15px 36px 21px 15px;
             margin-bottom: 30px;
         }
 
@@ -88,12 +87,14 @@
             padding: 15px 10px;
             border: 1px solid rgb(100, 100, 100);
             margin-top: 10px;
+            display: flex;
         }
-
+.ct_order_commison .ct_inner{
+    width: 90%;
+}
         .ct_div_influ .ct_list_of_comison span {
             margin-top: 6px;
-            color: rgb(49, 185, 14);
-        }
+color: rgb(42 145 15);        }
 
         .ct_div_influ .ct_flex {
             display: flex;
@@ -110,7 +111,7 @@
         }
 
         .ct_div_influ span {
-            font-size: 10px;
+            font-size: 11px;
             display: block;
             margin: 0;
             margin-top: 4px;
@@ -5413,7 +5414,7 @@
                                             <span>COUPON:${dtx.ref_balen.code}</span>
                                         </div>
 
-                                        <p>₹ ${dtx.ref_balen.val}</p>
+                                        <p>Total balance: ₹ ${dtx.ref_balen.val}</p>
                                     </div>
                                     <div class="ct_list_of_comison ${dtx.ref_balen.code}_idx">
                                         <h3>Details</h3>
@@ -5465,8 +5466,18 @@
 if(idmx===orders.coupn_usd){
     console.log(document.querySelector(`.${idmx}_idx`))
                 let html_influ_bx=`                                   <div class="ct_order_commison">
-                                            <p>March 30, 2023 3:16 PM</p>
+                                    <div class="ct_inner">
+                                                                <p>March 30, 2023 3:16 PM</p>
                                             <span>Amount: ₹35 of ₹${total} order</span>
+                                                                                        <p class='hide_influ'>Aprroved!!</p>
+                                <div class="ct_btn_approve">
+    Approve it
+</div>
+                </div>
+<div class="ct_rem_influ_dt">
+    <ion-icon name="close-outline"></ion-icon>
+</div>
+
                                         </div>`
                                         document.querySelector(`.${idmx}_idx .ct_inner_lst`).insertAdjacentHTML('beforeend', html_influ_bx)
 }
