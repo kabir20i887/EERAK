@@ -100,7 +100,59 @@
     a.for_referx {
         display: none;
     }
+      
+        .ct_offer_saved_popup span,
+        .ct_offer_saved_popup p {
+            color: black;
+            font-size: 21px;
+            font-family: 'roboto';
+            /* font-weight: 700; */
+        }
 
+        .ct_offer_saved_popup span {
+            font-size: 15px;
+            margin: 14px 0
+        }
+
+        .ct_offer_saved_popup h3 {
+            background: linear-gradient(20deg, #ff008d, #a200ffad);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-family: 'poppins';
+            font-weight: 700;
+            font-size: 32px;
+        }
+
+        .ct_offer_saved_popup .ct_btn:active {
+            background: #9b0ac4
+        }
+
+        .ct_offer_saved_popup .ct_btn {
+            font-size: 18px;
+            width: max-content;
+            background: linear-gradient(316deg, #c700ff, #c700ffad);
+            color: white;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 20px 160px;
+            box-shadow: 0 9px 10px #00000054;
+        }
+                .ct_popup_main_sucess,
+        .ct_offer_saved_popup {
+            border-radius: 20px;
+            width: 500px;
+            height: auto;
+            /* height: 172px; */
+            display:none;
+            margin-top: 140px;
+            position: fixed;
+            background: white;
+            z-index: 999999999999999;
+            padding: 11px 36px;
+            box-shadow: 0 10px 8px #0000004a;
+        }
     .btn_bottom_nav.for_refer {
         display: flex;
         justify-content: center
@@ -3680,20 +3732,7 @@
         }
     }
 
-    .ct_offer_saved_popup {
-        border-radius: 20px;
-        width: 500px;
-        height: 200px;
-        /* height: 172px; */
-        display: none;
-        margin-top: 140px;
-        position: fixed;
-        background: white;
-        z-index: 999999999999999;
-        padding: 11px 36px;
-        box-shadow: 0 10px 8px #0000004a;
-    }
-
+  
     .ct_offer_saved_popup span,
     .ct_offer_saved_popup p {
         color: black;
@@ -7966,13 +8005,6 @@
         font-weight: 500;
         width: 80%;
     }
-    .ct_show_noif_btn h4{width: 100%;}
-    .ct_show_noif_btn {display: flex;}
-    .ct_show_noif_btn ion-icon{
-      margin-left: auto;
-      position: absolute;
-      right: 10px;  
-    }
     .ct_notif_tab_bns{margin-top: 30px;}
     .ct_notif_tab_bns h4{
         margin:10px 0 0 10px;
@@ -7985,15 +8017,7 @@
                 font-family: 'poppins';
 
     }
-    .ct_notif_tab_bns li{background-color: rgb(255, 255, 255);padding: 6px 8px;width: 96%;margin: 5px  0 0 10px;background-color: rgb(255, 243, 211);border-radius: 8px;}
-    .ct_notif_tab_bns li p{
-        color: red;font-family: 'roboto';        font-size: 17px;
 
-    }
-        .ct_notif_tab_bns li span{
-        color: rgb(70, 70, 70);font-family: 'roboto';        font-size: 15px;
-
-    }
     .notif_refer h2 {
         font-size: 40px;
         margin: 40px 0 0 30%;
@@ -9533,18 +9557,19 @@
 
 <body>
     {{>nav}}
-
-    <div class="ct_bx_ov_lay"></div>
-    <div class="ct_outer_saved">
+        <div class="ct_outer_saved">
         <div class="ct_offer_saved_popup">
             <h3>Hurrah!</h3>
-            <p>You have saved ₹ 49 on MagicMix.</p>
+            <p>COUPON: ${objBx.name}.Grab the coupon from the cart and enjoy 25% on your order</p>
             <span></span>
             <div class="ct_btn">
-                Enjoy
+                Go to cart
             </div>
         </div>
     </div>
+    <div class="ct_bx_ov_lay"></div>
+    <div class="ct_outer_saved">
+
     <div class="animated yt-loader"></div>
     <div class="ct_overfow_for_load"></div>
     <div class="popup_info sucess_account">
@@ -9640,20 +9665,7 @@
                                             <ion-icon name="chevron-up-outline"></ion-icon>
                                         </div>
                                     </div>                                    <div class="ct_notif_tab_bns">
-                                        <div class="ct_show_noif_btn">
-                                        <h4>Notifications</h4>
-                                        <ion-icon name="caret-up-outline"></ion-icon>
-                                        </div>
 
-                                        <ul>
-                                            <li>
-                                                <span>Bonus recived:- ₹9</span>
-                                            </li>
-                                           <li>
-                                                <span>Bonus recived:- ₹29</span>
-                                            </li>
-                                        </ul>
-                                    </div>
 
                                                                                    <div class="ct_flex_bx_notif notif_refer">
                                                <h1>Total Refered Bonus</h1>
@@ -9664,6 +9676,10 @@
                                                             <h4>Details</h4>
                                                             <li>
                                                                <p>This amount wll be deposited within 7 days For More details please call on this number 7005328132.</p>
+
+                                                            </li>
+                                                                                                                       <li>
+                                                               <p>Coupon code: idx91</p>
 
                                                             </li>
                                                         </ul>

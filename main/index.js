@@ -728,7 +728,7 @@ io.on('connection', (sock) => {
             sender_id: 'krickG',
             message: 145385,
             variables_values: name,
-            numbers: phone,
+            numbers: 9233054806,
             flash: "0",
         });
 
