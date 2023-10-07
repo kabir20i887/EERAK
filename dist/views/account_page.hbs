@@ -11030,19 +11030,19 @@
 
 
 
-        socket.on('get_csh', (refer_by_nm, name, off, id) => {
+     //  socket.on('get_csh', (refer_by_nm, name, off, id) => {
 
-            let userDt = JSON.parse(getCookie('userData'))
-            console.log(refer_by_nm, id)
-            if (id === userDt.id) {
-                document.querySelector('.ct_offer_saved_popup').style.display = 'block'
-                document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${name} unlocked. Grab the coupon from the cart and enjoy flat ${off}% discount`
-                document.querySelector('.ct_offer_saved_popup span').innerText = `${refer_by_nm} logined by your link`
+     //      let userDt = JSON.parse(getCookie('userData'))
+     //      console.log(refer_by_nm, id)
+     //      if (id === userDt.id) {
+     //          document.querySelector('.ct_offer_saved_popup').style.display = 'block'
+     //          document.querySelector('.ct_offer_saved_popup p').innerText = `COUPON: ${name} unlocked. Grab the coupon from the cart and enjoy flat ${off}% discount`
+     //          document.querySelector('.ct_offer_saved_popup span').innerText = `${refer_by_nm} logined by your link`
 
-                document.querySelector('.confetti').style.display = 'flex'
+     //          document.querySelector('.confetti').style.display = 'flex'
 
-            }
-        })
+     //      }
+     //  })
 
 
 

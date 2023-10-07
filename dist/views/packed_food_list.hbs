@@ -18563,13 +18563,13 @@
 
                             let offer_val = null
                             let price_off = 0
-                            itm.off = 0
+                             itm.offer = 0
                             let price_box_y = `
                     <p class="price_pr">${itm.price_real}</p>
                     <p class="price_off"></p>`
                             let off_htm = ``
-                            if (itm.off !== null && itm.off !== undefined) {
-                                offer_val = parseFloat(itm.off)
+                            if ( itm.offer !== null &&  itm.offer !== undefined) {
+                                offer_val = parseFloat( itm.offer)
                                 price_off = itm.price_real - (itm.price_real * (offer_val / 100))
                                 price_off = Math.round(price_off)
                                 price_box_y = `
@@ -18582,7 +18582,7 @@
              </div>
                  `
                                 off_htm = `<div class="ct_flex_offer">
-                     <p>${itm.off}% off</p>
+                     <p>${ itm.offer}% off</p>
                     </div>`
 
                             }
@@ -18637,7 +18637,7 @@
                                                             <p class="stock">${15}</p>
                                                             ${price_box_y}
                                                             
-                                                            <p class="offer">${itm.off}</p>
+                                                            <p class="offer">${ itm.offer}</p>
                                                             <p class="about_list">${itm.about}</p>
                                                             <p class="qty">${itm.weight_sh}</p>
                                                             <p class="desc">''</p>

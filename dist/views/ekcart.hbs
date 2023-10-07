@@ -23406,11 +23406,16 @@
                     let dt = cux.data()
                     let itm = dt.item
                     let offHtml = ``
+                                        let off_htm = ``
+
                     if (itm.offer !== null) {
-                        offHtml = `<div class="ct_offer_box_cook2">
-         <span>${itm.offer}%</span>
-         <p>off</p>
-     </div>`
+                        off_htm = `<div class="ct_flex_offer">
+                     <p>${itm.offer}% off</p>
+           </div>`
+  //                     offHtml = `<div class="ct_offer_box_cook2">
+  //      <span>${itm.offer}%</span>
+  //      <p>off</p>
+  //  </div>`
                     }
                     let itm_qt = 1
 
@@ -23464,7 +23469,6 @@
                     let price_box_y = `
                     <p class="price_pr">${itm.price_real}</p>
                     <p class="price_off"></p>`
-                    let off_htm = ``
                     if (itm.off !== null && itm.off !== undefined) {
                         offer_val = parseFloat(itm.off)
                         price_off = itm.price_real - (itm.price_real * (offer_val / 100))
@@ -23479,9 +23483,7 @@
                  <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
              </div>
                  `
-                        off_htm = `<div class="ct_flex_offer">
-                     <p>${itm.off}% off</p>
-                    </div>`
+                        
 
                     }
                     console.log(price_off, '-----------------------------------offer prices')
@@ -23709,7 +23711,7 @@
                 let objCpns = getEncodedDt(getCookie('cpns_appl'))
                 let offerMn = objCpns.itmoff
                 console.log(objCpns, '000000000000000000000000jsfhfhfhfhfh=============+++++')
-                if (objCpns.cpnfor === 'sauce' || objCpns.cpnfor === 'groc') {
+                if (objCpns.cpnfor) {
                     document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'block'
                     document.querySelector('.ct_apply_coupons .ct_inner p').innerText = `COUPON:${objCpns.name} applied`
                     document.querySelector('.ct_info_offfer_saved').style.display = 'block'
@@ -23733,7 +23735,7 @@
                         })
                     }
 
-                    console.log(conditionX, parseFloat(objCpns.conditions.upto) >= tot_pr_itm)
+                    console.log(conditionX,objCpns,objCpns.conditions.upto,tot_pr_itm, parseFloat(objCpns.conditions.upto) >= tot_pr_itm)
                     if (conditionX) {
                         if (offerMn.type === 'per') {
                             let dicounted_pr = (offerMn.am) / 100 * tot_pr_itm
@@ -24725,8 +24727,8 @@ ${desc_htm_cpn.join('')}
                 let uptoX = true
                 if (objCpns.conditions.upto !== null) {
                     let upto = parseFloat(objCpns.conditions.upto)
-                    if (objCpns.cpnfor === 'sauce') {
-                        if (cli_bx === 'sauce_pr') {
+                    if (objCpns.cpnfor !== 'essen_pr') {
+                        if (cli_bx !== 'essen_pr') {
                             uptoX = upto >= tot2
                         }
                     } else {
@@ -24742,7 +24744,7 @@ ${desc_htm_cpn.join('')}
                     document.querySelector('.ct_apply_coupons .ct_inner p').innerText = `COUPON:${objCpns.name} applied`
                     document.querySelector('.ct_info_offfer_saved').style.display = 'block'
                     document.querySelector('.ct_info_offfer_saved p').innerText = `With COUPON:${objCpns.name}`
-                    if (objCpns.cpnfor === 'sauce' && cli_bx === 'sauce_pr') {
+                    if (objCpns.cpnfor!=='') {
                         // if price of sauce changed
 
                         if (offerMn.type === 'per') {
@@ -25930,6 +25932,7 @@ document.querySelector('.selected_deliv').classList.remove('selected_deliv')
                         res.docs.forEach(async cur => {
                             let data = cur.data()
                             let nm = data.name
+                            console.log(name , nm,'eyyyyyyyyyyyyyyyyyyyyy')
                             if (name === nm) {
                                 // checking if user used this coupon if already..
                                 //            let cpn_used_max = false
@@ -25963,14 +25966,14 @@ document.querySelector('.selected_deliv').classList.remove('selected_deliv')
                                 apply_cpns.parentElement.childNodes[1].innerText = 'Remove'
                                 apply_cpns.parentElement.childNodes[1].style.display = 'block'
                                 remove_cpns_panel()
-
+console.log(data.off.split('%')[1])
                                 if (data.off.split('%')[1] !== undefined) {
                                     offerMn = { type: 'per', am: parseFloat(data.off.split('%')[0]) }
                                 } else {
                                     offerMn = { type: 'rs', am: parseFloat(data.off) }
 
                                 }
-
+console.log(offerMn)
                                 document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'block'
                                 document.querySelector('.ct_apply_coupons .ct_inner p').innerText = `COUPON:${name} applied`
                                 document.querySelector('.ct_info_offfer_saved').style.display = 'none'
@@ -25984,9 +25987,10 @@ document.querySelector('.selected_deliv').classList.remove('selected_deliv')
                                 document.querySelector('.ct_info_offfer_saved p').innerText = `With COUPON:${name}`
                                 let tkn_code = encodeData(JSON.stringify({ itmoff: offerMn, name: name, cpnfor: data.for, conditions: data.conditions }))
                                 document.cookie = "cpns_appl" + "=" + tkn_code + ";" + "expires=18 Dec 9999 12:00:00 UTC;"
-                                if (data.for === 'sauce' || data.for === 'groc') {
-
+                                if (data.for!=='') {
+console.log(offerMn.type === 'per')
                                     if (offerMn.type === 'per') {
+                                        alert('heyyy')
                                         let dicounted_pr = (offerMn.am) / 100 * tot_pr_itm
                                         dicounted_pr = Math.round(dicounted_pr)
                                         dicounted_pr = dicounted_pr.toLocaleString()
@@ -26341,7 +26345,7 @@ console.log(obj_cpns,'yo yo honeysingh')
                                     objU
                                 ).then(res => {
 
-                                    document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
+                                    //document.querySelector('.signup_bx.ct_outer_account_bx').style.display = 'none'
                                     // if signuped with refer link... verify with this cookie
                                     document.cookie = "signup_3sy13" + "=" + JSON.stringify(id) + ";" + "expires=18 Dec 9999 12:00:00 UTC;path=/";
 
@@ -26443,6 +26447,7 @@ console.log(obj_cpns,'yo yo honeysingh')
                                                                 cps_allow.forEach(elem => {
                                                                     console.log(elem.name, dt_x.name,elem.name.split(' ').join('') === dt_x.name.split(' ').join(''), 'heyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
                                                                     if (elem.name.split(' ').join('') === dt_x.name.split(' ').join('')) {
+                                                                        alert('hey,mf')
                                                                         let use = parseFloat(elem.use)
                                                                         use+=use_max
                                                                         elem.use=use
@@ -26498,7 +26503,7 @@ console.log(obj_cpns,'yo yo honeysingh')
                                                     })
                                                     console.log( objUser.name, objBx.name, objBx.off,objBx.id, 'heyyyyyyyy,-----------------------')
 
-                                           socket.emit('get_csh', objUser.name, objBx.name, objBx.off,objBx.id)
+                                           socket.emit('cash_oth4', objUser.name, objBx.name, objBx.off,objBx.id)
 
                                                 }
 

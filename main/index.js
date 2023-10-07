@@ -631,6 +631,7 @@ io.on('connection', (sock) => {
 
     })
     sock.on('cash_oth4', (nm1,name,off,id) => {
+        console.log(nm1,name,off,id)
         io.emit('get_csh',nm1,name,off,id)  
     })
     sock.on('acceptedOr4', () => {
@@ -728,7 +729,7 @@ io.on('connection', (sock) => {
             sender_id: 'krickG',
             message: 145385,
             variables_values: name,
-            numbers: 9233054806,
+            numbers: phone,
             flash: "0",
         });
 
