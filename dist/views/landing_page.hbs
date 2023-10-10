@@ -14539,7 +14539,45 @@ ion-icon{pointer-events:none;}
         .carousel-indicators li {
             height: 1.6px;
         }
+        .benifits_slide {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    background: #fffff4;
+    border-radius: 20px;
+    overflow: scroll;
 
+}
+.ct_inner_benifits_slide{
+    display: flex;
+    justify-content: center;
+}
+        .benifits_slide p{
+            color: rgb(41, 40, 40);
+            font-size: 15px;
+            text-align: center;
+            width: 80%;
+        
+        }
+        .benifits_slide .carousel-item{
+            margin-right: 20px;
+         min-width: 56vw;
+                        max-width:64vw ;
+        }
+            .benifits_slide::-webkit-scrollbar {
+        display: none;
+    }
+        .benifits_slide img{
+                   width:80%;    
+border-radius:20%;
+        }
+.benifits_slide h4{
+    margin-top: 5px;
+        font-family: 'Poppins';
+font-size: 20px;
+margin-left: 5px;
+color: black;
+}
         .carousel-control-next-icon,
         .carousel-control-prev-icon {
             width: auto;
@@ -14830,6 +14868,36 @@ ion-icon{pointer-events:none;}
                         </div>
                     </div>
 
+                </div>
+              <div id="carouselExampleIndicators" class="carousel slide  benifits_slide" data-ride="carousel">
+
+                        <div class="carousel-item  active">
+
+                           
+                           <div class="ct_inner_benifits_slide">
+                          <img src="../img/natural_ing_icon.jpg" style='width:180px' alt="" class="src">
+
+                           </div>
+                          <h4>All Real Ingredients</h4>
+                          <p>Everything that you use in your kitchen is everything we use to make our product</p>
+                        </div>
+                        <div class="carousel-item  active">
+
+                           <div class="ct_inner_benifits_slide">
+                          <img src="../img/enjoy_foods.jpg" style='margin-top: 34px;margin-bottom: 10px;' alt="" class="src">
+
+                           </div>
+                          <h4>Enjoy Healthy recipes</h4>
+                          <p>Our sterilisation process ensures that our ingredients are safe from harmful bacteria, so you can cook with confidence.</p>
+                        </div>
+                        {{!-- <div class="carousel-item  active"> --}}
+
+                           
+                          {{!-- <img src="../img/natural_ing_icon.jpg" alt="" class="src">
+                          <h4>All Real Ingredients</h4>
+                          <p>Everything that you use in your kitchen is everything we use to make our product</p>
+                        </div> --}}
+           
                 </div>
                  <div id="how-it-works" class="how-it-works" data-v-92df1e84="">
                     <h1 class="title outer_main" data-v-92df1e84="">How it works</h1>
