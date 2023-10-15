@@ -3409,8 +3409,8 @@
 
         .sucess_order,
         .ct_info_offfer_saved {
-            background-image: linear-gradient(to left, #c574f2, #ff7cdc);
-            padding: 17px 20px;
+        background-image: linear-gradient(to left, #ffb900, #ff870c);
+    padding: 17px 20px;
             width: 98%;
             display: none;
         }
@@ -23723,6 +23723,11 @@
 
 
                         dt_user_cpn.forEach(cux => {
+                            console.log(parseFloat(objCpns.conditions.max) , parseFloat(cux.use),cux.name.split(' ').join('') , objCpns.name.split(' ').join(''),cux.name.split(' ').join('') === objCpns.name.split(' ').join(''),'sexyyyyyyy')
+                            if(objCpns.conditions.max===null){
+                                //it means there is no limitt
+    objCpns.conditions.max=cux.use+1
+}
                             if (cux.name.split(' ').join('') === objCpns.name.split(' ').join('')) {
                                 if (parseFloat(objCpns.conditions.max) >= parseFloat(cux.use)) {
                                     if (objCpns.conditions.upto === null) {
@@ -25071,6 +25076,7 @@ document.querySelectorAll('.pop_up_options').forEach(cux=>{
                 }
 
                 let btn_pay_mdh_opt=document.querySelector('.selected_payop')
+                console.log(btn_pay_mdh_opt,'--------')
                  if(btn_pay_mdh_opt===null){
                     return
                  }
@@ -25083,6 +25089,7 @@ document.querySelector('.ct_overflow_customize_opt').style.display='none'
                 let userDt = JSON.parse(getCookie('userData'))
                 socket.emit('send_cd')
                 socket.on('get_cd', (token, id_order, key) => {
+                    alert('start_order')
                     time_emit += 1
                     if (time_emit <= 1) {
                         // not emit more than 1 times on btn click
@@ -25123,25 +25130,25 @@ document.querySelector('.ct_overflow_customize_opt').style.display='none'
                         if (sauce === null) {
                             sauce = []
                         }
-                        let userDtx = getCookie('userData')
 
                         if (getCookie('cpns_appl') !== '') {
                             let objCpns = getEncodedDt(getCookie('cpns_appl'))
                             async function user_influ() {
+                                alert('syidfdgfuf')
                                 let dbCollection = db.collection("users")
                                 let res = await dbCollection.get()
                                 res.docs.forEach(async curx => {
                                     let datax = curx.data()
-                                    if (datax.admin === 'influencer') {
-                                        if (datax.id !== userDtx.id) {
+                                    //if (datax.admin === 'influencer') {
+                                        if (datax.id=== userDt.id) {
                                             // cannot use if itself is the influencer
-
+console.log(datax.ref_balen.code.split(' ').join('') === objCpns.name.split(' ').join(''),datax.ref_balen.code.split(' ').join('') , objCpns.name.split(' ').join(''),'sexxyyyyyyyyyyy')
                                             if (datax.ref_balen.code.split(' ').join('') === objCpns.name.split(' ').join('')) {
                                                 objItms.coupn_usd = { ofid: datax.id, val: 5, code: datax.ref_balen.code }
                                             }
-                                        }
-
                                     }
+
+                                   // }
                                 })
                             }
                             user_influ()
@@ -25324,14 +25331,16 @@ let for_ref_commis=0
                                 objItms.total_amount = tot_am
                                 addAmount()
                             }
-                                                                   for_ref_commis=  (tot_am_sauce-dicounted_pr)*(25/100)
-for_ref_commis=Math.round(for_ref_commis)
-                            alert(for_ref_commis)
-                            return
-                            obj_refered_dt_od.amount=for_ref_commis
-                            obj_refered_dt_od.id=data.refferedBy.id
-                            obj_refered_dt_od.ref_nam=data.refferedBy.objBx.name
-
+                            // add commison only if order is placed using influncer's coupon code (not required now)
+                        
+                          //  for_ref_commis=  (tot_am_sauce-dicounted_pr)*(25/100)
+                          //  for_ref_commis=Math.round(for_ref_commis)
+                          //  alert(for_ref_commis+' commmison')
+                            
+                          //  obj_refered_dt_od.amount=for_ref_commis
+                          //  obj_refered_dt_od.id=data.refferedBy.id
+                          //  obj_refered_dt_od.ref_nam=data.refferedBy.objBx.name
+//
 
                             let dbCollection3 = db.collection("users")
                             let res3 = await dbCollection3.get()
@@ -25468,6 +25477,7 @@ for_ref_commis=Math.round(for_ref_commis)
                                     // also add orders
                                     console.log(objItms, '----------------jiryfugdfgf8888889999999999999999')
                                     let dbCollectidbCollection31 = db.collection("orders")
+                                    // adding the refered commison amount that will be added when confirmed by admin
                                     await dbCollectidbCollection31.add({
                                         user: { id: data.id, name: data.name, phone: data.phone, address: data.address, location: data.location, verf_cd: token,obj_refered_dt_od },
                                         orderDt: objItms,
