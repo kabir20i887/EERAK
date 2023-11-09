@@ -430,6 +430,10 @@ jwt.verify('eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyjuyw1lijoiu1vqrvi0mcisim9mzii
 //     }
 //     res.render('myaccount')
 // })
+app.get('/buynow', (req, res) => {
+    res.render('myaccount')
+    //res.render('deliv')
+})
  app.get('/acc', (req, res) => {
     res.render('myaccount')
     //res.render('deliv')
@@ -820,6 +824,7 @@ io.on('connection', (sock) => {
             console.log(res.body);
         });
     })
+    
     sock.on('giveNumber',()=>{
         sock.emit('send_number',number1,authfst)
 

@@ -48,21 +48,32 @@
             display: flex;
             justify-content: center;
         }
-
-        .crousel_items .ct_flex_offer {
-            background-color: rgb(255, 0, 64);
-            padding: 3px 15px;
-            margin: 10px 0 0 4px;
-            width: max-content;
-
-        }
-
+.crousel_items .ct_flex_offer {
+    background-color: rgb(255, 0, 64);
+    padding: 3px 15px;
+    position: absolute;
+    margin: 10px 0 0 4px;
+    right: 8px;
+    height: 48px;
+    border-radius: 58%;
+    width: 48px;
+    display: flex;
+    /* margin-top: 6px; */
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 0 10px #0000001c;
+}
+.ct_flex_offer span,
         .ct_flex_offer p {
             color: white;
             font-size: 12px;
+            margin-top: 6px;
             font-family: 'roboto';
         }
-
+.ct_flex_offer span{
+    font-size: 10px;
+    margin-top: -1px;
+}
         .ct_popup_main_sucess a {
             font-size: 14px;
             display: block;
@@ -2640,6 +2651,7 @@
         .ct_addbtns.added {
             pointer-events: none;
             background: #e4ffe9;
+            pad
         }
 
         .ct_addbtns.added p {
@@ -3409,7 +3421,7 @@
 
         .sucess_order,
         .ct_info_offfer_saved {
-        background-image: linear-gradient(to left, #ffb900, #ff870c);
+    background-image: linear-gradient(to left, #e7fcec, #e7fcec);
     padding: 17px 20px;
             width: 98%;
             display: none;
@@ -3418,8 +3430,8 @@
         .sucess_order h4,
         .ct_info_offfer_saved h4 {
             font-family: 'roboto';
-            color: #ffffff;
-            font-size: 15px;
+        color: #0baf3f;
+    font-size: 15px;
         }
 
         .sucess_order h4 {
@@ -3433,7 +3445,7 @@
         .sucess_order p,
         .ct_info_offfer_saved P {
             font-family: 'roboto';
-            color: #ffffff;
+            color: #22853d;
             margin-top: 5px;
             font-size: 12px;
         }
@@ -4932,9 +4944,9 @@
             font-size: 15px;
         }
 
-        .ct_bx_price_fd.hasoffPrice {
-            margin-top: 8px;
-            margin-left: 8px;
+  .ct_bx_price_fd.hasoffPrice {
+    margin-top: 4px;
+    margin-left: 3px;
         }
 
         .ct_bx_fooditm .main_im {
@@ -19283,7 +19295,7 @@
 
             .sucess_order,
             .ct_info_offfer_saved {
-                margin: 30px 0 0 8px;
+                margin: 10px 0 0 8px;
             }
 
             .empty_cart {
@@ -23410,7 +23422,10 @@
 
                     if (itm.offer !== null) {
                         off_htm = `<div class="ct_flex_offer">
-                     <p>${itm.offer}% off</p>
+                         <div class="ct_innr">
+                             <p>${itm.offer}%</p>
+<span>Off</span>
+    </div>
            </div>`
   //                     offHtml = `<div class="ct_offer_box_cook2">
   //      <span>${itm.offer}%</span>
@@ -23505,14 +23520,16 @@
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
                                                     ${offHtml}
+                                                                                                            ${off_htm}
+
                                                                     <div class="main_im sauces">
+
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
-                                                        ${off_htm}
                                                         ${ratings_bx}
                                                         <h4>${itm.name}</h4>
-                                                        <p class="item_intro">${string_short}</p>
+                                                        <p class="item_intro"></p>
                                                         <p class="for_unit_itm">Net.weight: ${itm.weight_sh}</p>
 
                                                         ${priceBX}
@@ -25089,7 +25106,6 @@ document.querySelector('.ct_overflow_customize_opt').style.display='none'
                 let userDt = JSON.parse(getCookie('userData'))
                 socket.emit('send_cd')
                 socket.on('get_cd', (token, id_order, key) => {
-                    alert('start_order')
                     time_emit += 1
                     if (time_emit <= 1) {
                         // not emit more than 1 times on btn click
@@ -25134,7 +25150,6 @@ document.querySelector('.ct_overflow_customize_opt').style.display='none'
                         if (getCookie('cpns_appl') !== '') {
                             let objCpns = getEncodedDt(getCookie('cpns_appl'))
                             async function user_influ() {
-                                alert('syidfdgfuf')
                                 let dbCollection = db.collection("users")
                                 let res = await dbCollection.get()
                                 res.docs.forEach(async curx => {
@@ -25512,6 +25527,24 @@ let for_ref_commis=0
                                     document.querySelector('.ct_bx_ov_lay_x').style.display = 'block'
                                     document.querySelector('.ct_popup_main_sucess h4').innerText = `Thankyou! Order successfully placed`
                                     document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+                                     // items from the cart should be revomed from the cart
+
+                localStorage.setItem('essentials','[]')
+                                localStorage.setItem('sauce','[]')
+
+        addItems('', false)
+                                                                                // coupns should be revomed from the cart
+
+                document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
+                document.querySelector('.disocunted.block_1_charge').style.display = 'none'
+                document.querySelector('.disocunted.block_1_charge span').innerText = 0
+                document.querySelector('.ct_apply_coupons .ct_inner p').style.display = 'none'
+                document.querySelector('.ct_info_offfer_saved').style.display = 'none'
+                addAmount()
+                document.querySelector('.ct_coupons_all .ct_load_items').style.display = 'flex'
+                document.querySelector('.ct_coupons_all .ct_inner_itms').innerHTML = ''
+                addCpns('')
+
                                     setTimeout(function () {
                                         document.querySelector('.ct_info_offfer_saved').style.display = 'none'
                                     }, 30000)
@@ -26000,7 +26033,6 @@ console.log(offerMn)
                                 if (data.for!=='') {
 console.log(offerMn.type === 'per')
                                     if (offerMn.type === 'per') {
-                                        alert('heyyy')
                                         let dicounted_pr = (offerMn.am) / 100 * tot_pr_itm
                                         dicounted_pr = Math.round(dicounted_pr)
                                         dicounted_pr = dicounted_pr.toLocaleString()
@@ -26225,7 +26257,6 @@ console.log(offerMn.type === 'per')
                                         if (err) {
                                             document.querySelector('.phone_error p').innerText = 'Invalid phone number'
                                             document.querySelector('.phone_error').style.display = 'block'
-                                            alert('huaua')
                                             return
                                         }
                                         let objXs = {
@@ -26451,13 +26482,10 @@ console.log(obj_cpns,'yo yo honeysingh')
                                                         let dt_x = cux
                                                         if (dt_x.name === objBx.name) {
                                                             if (dt_x.use === null) {
-                                                                                                                                    alert('heyyy')
-
                                                                 //if dtx.use is null then only this cpn formed otherwise just inc the use val
                                                                 cps_allow.forEach(elem => {
                                                                     console.log(elem.name, dt_x.name,elem.name.split(' ').join('') === dt_x.name.split(' ').join(''), 'heyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
                                                                     if (elem.name.split(' ').join('') === dt_x.name.split(' ').join('')) {
-                                                                        alert('hey,mf')
                                                                         let use = parseFloat(elem.use)
                                                                         use+=use_max
                                                                         elem.use=use
@@ -26938,14 +26966,16 @@ console.log(obj_cpns,'yo yo honeysingh')
                 }
                 if (typ_fd === 'sauce') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
-                    console.log(addItem.parentElement.childNodes[1].childNodes[3].childNodes)
+                                        console.log( addItem.parentElement.childNodes[1].childNodes[3].childNodes)
 
                     let inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
+
                     // price , nt weight, qty
+                    //inner_bx[9].innerText.split(':')[1].split(' ').join(''),
                     let obj = {
-                        name: inner_bx[5].innerText,
+                        name: inner_bx[3].innerText,
                         qty: 1,
-                        slt_nm: inner_bx[9].innerText.split(':')[1].split(' ').join(''),
+                        slt_nm: inner_bx[7].innerText.split(':')[1].split(' ').join(''),
                         slt_p: "pouch pack",
                         type: "sauce",
 

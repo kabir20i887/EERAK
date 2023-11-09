@@ -105,7 +105,7 @@
             width: 500px;
             height: auto;
             /* height: 172px; */
-            display:block;
+            display:none;
             margin-top: 140px;
             position: fixed;
             background: white;
@@ -9135,7 +9135,7 @@
 
         .btn_qtys {
             background: #d7d7d7;
-            border-radius: 20px 0 0 22px;
+            border-radius:0px;
             padding: 1px 7px;
             cursor: pointer;
             border: 1px solid #bfbfbf;
@@ -9147,10 +9147,8 @@
 
         .itm_food_list_ek .btn_qtys {
             cursor: pointer;
-            background: #e6e6e6;
-            border-radius: 5px 0 0 5px;
+            background: #ececec;
             padding: 1px 6px;
-            box-shadow: 0 0 3px #0000008a
         }
 
         .ct_qty_box input {
@@ -9465,7 +9463,6 @@
             background-color: #1660e8;
             color: #fff;
             text-transform: uppercase;
-            text-align: center;
             font-size: 15px;
             font-family: 'poppins';
             padding: 9px 15px;
@@ -9473,6 +9470,13 @@
             cursor: pointer;
             margin: 9px 0 16px 20px
         }
+          .remove_itm,
+        .buy_now,
+        .add_cart_btn
+                    {
+                        text-align: center;
+                    }
+
 
         .ct_block_addtocart {
             padding-bottom: 20px
@@ -9506,19 +9510,35 @@
 
         .remove_itm,
         .ct_addded {
-            background-color: #d7ffe8;
+            background-color: transparent;
             color: #000;
-            display: none
+            display: none;
+
+        }
+        .ct_addded{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(218, 255, 218);
+            border-radius: 12px;
+            text-transform: capitalize;
+
         }
 
         .remove_itm:active {
             background-color: #383838
         }
+        .ct_addded p{display: block;}
 
         .ct_addded {
             pointer-events: none;
             cursor: auto
         }
+        .ct_addded ion-icon{
+        color: green;font-size: 23px;
+    margin-top: -1px;
+    margin-right: 10px;
+}
+        
 
         .remove_itm {
             background-color: #eaeaea;
@@ -9808,8 +9828,8 @@
             margin-left: 3px;
             margin-top: 6px;
             color: #0c0c0c;
-            font-family: 'Inter Tight';
-            font-weight: 600
+    font-family: 'Roboto';
+    font-weight: 400;
         }
 
         .ct_bx_btn_place_order .place_order_btn,
@@ -11388,7 +11408,7 @@
 
         .ct_bx_fooditm .ct_bx_price_fd p {
             font-size: 18px;
-            color: #e30c0c;
+            color: #000000;
             font-family: Montserrat
         }
 
@@ -14603,7 +14623,7 @@
             .ct_bx_fooditm .ct_bx_price_fd p {
                 font-size: 22px;
                 margin-left: 1px;
-                color: #ee2727
+                color: black
             }
 
             .ct_bx_fooditm .ct_bx_price_fd del {
@@ -16391,13 +16411,13 @@
 
                 <div class="add_cart_btn">Add to cart</div>
                 <div class="ct_addded">
-                    Added to cart
+                   <ion-icon name="checkmark-circle"></ion-icon> <p>1 item added to cart</p> 
                 </div>
                 <div class="remove_itm">
                     Remove
                 </div>
             </div>
-            <div class="ct_benefits">
+            {{!-- <div class="ct_benefits">
                 <div class="benifit_1">
                     <img alt="SPN- LO4C5 Chicken Masala"
                         src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/1644514f-3119-4ae2-9f94-bf68c47c1465.__CR0,0,600,600_PT0_SX300_V1___.png"
@@ -16408,7 +16428,7 @@
                     </p>
 
                 </div>
-            </div>
+            </div> --}}
             <div class="ct_bx_for_ingredients ingred">
                 <h4>Ingredients</h4>
                 {{!-- <div class="ct_special_ing">
@@ -17899,7 +17919,7 @@
 
                                 document.querySelector('.buy_now').style.display = 'none'
                                 document.querySelector('.add_cart_btn').style.display = 'none'
-                                document.querySelector('.ct_addded').style.display = 'block'
+                                document.querySelector('.ct_addded').style.display = 'flex'
                                 document.querySelector('.remove_itm').style.display = 'block'
 
                                 document.querySelector('.ct_qty_box input').value = cu11.qty
@@ -17957,7 +17977,7 @@
                 let images_prod = ``
 
                 let essen_ids = ``
-                console.log(view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes)
+                console.log(view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes)
                 if (view_itm.childNodes[1].childNodes[1].childNodes[5] === undefined) {
                     imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[1].src
                     name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[1].innerHTML
@@ -18313,7 +18333,7 @@
                             document.querySelector('.add_cart_btn').style.display = 'none'
                             document.querySelector('.remove_itm').style.display = 'block'
 
-                            document.querySelector('.ct_addded').style.display = 'block'
+                            document.querySelector('.ct_addded').style.display = 'flex'
 
                             document.querySelector('.ct_qty_box input').value = cu11.qty
                             let qty_obj = JSON.parse(qtys)
@@ -19315,6 +19335,9 @@
 
                 console.log(rattings_stars.join(''))
                 //<ion-icon name="star-half-sharp"></ion-icon>
+                //                                                      
+
+
                 let ratings_bx = `<div class="ratings_bx">
                                                             <div class="rating_itm">
                                                                 ${rattings_stars.join('')}
@@ -19333,10 +19356,9 @@
                                                     <div class="ct_bx_inner_food_groc">
                                                         <h4>${name}</h4>
                                                         ${ratings_bx}
-                                                        <p class="item_intro">${string_short}</p>
+                                                        <p class="item_intro"></p>
                                                         <p class="for_unit_itm">Net.weight: ${weight_sh}</p>
-                                                        ${off_htm}
-
+  ${off_htm}
                                                         ${priceBX}
 
                                                         <div class="ct_bx_item_details_hide">
@@ -19576,7 +19598,7 @@
 
                 }
                 document.querySelector('.add_cart_btn').style.display = 'none'
-                document.querySelector('.ct_addded').style.display = 'block'
+                document.querySelector('.ct_addded').style.display = 'flex'
                 document.querySelector('.remove_itm').style.display = 'block'
 
                 if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
