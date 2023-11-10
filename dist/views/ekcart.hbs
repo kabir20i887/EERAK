@@ -48,6 +48,103 @@
             display: flex;
             justify-content: center;
         }
+        body {
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  background-color: #FC6042;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.loading_sceen_best_cnt{
+    position: fixed;
+    background: #fffef6;
+    z-index: 99999999;
+    display: none;
+    transition: all 1s ease;
+    justify-content: center;
+    width: 100%;height: 100vh;
+}
+
+       
+
+        .Itm_added_pop .inner_x {
+            width: 100%
+        }
+
+     .Itm_added_pop  ion-icon {
+            color: #fff;
+            font-size: 25px;
+            margin-right:8px
+        }
+
+        .Itm_added_pop h4 {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 4px;
+            font-family: 'Roboto';
+            font-weight: 500
+        }
+
+      
+
+.Itm_added_pop{
+              position: fixed;
+            bottom: 80px;
+            display: flex;
+            width: 96vw;
+            border-radius: 8px;
+            margin-left: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.322);
+            padding: 14px 16px;
+            background-color: #f3ad15;
+            z-index: 999999;
+            right: -170vw;
+            transition: all .7s ease
+}
+.loading_sceen_best {
+	 width: 8vmax;
+	 height: 8vmax;
+         position: absolute;
+    top: 40vh;
+
+	 border-right: 4px solid #ffae00;
+	 border-radius: 100%;
+	 animation: spinRight 800ms linear infinite;
+}
+ .loading_sceen_best:before, .loading_sceen_best:after {
+	 content: '';
+	 width: 6vmax;
+	 height: 6vmax;
+	 display: block;
+	 position: absolute;
+	 top: calc(50% - 3vmax);
+	 left: calc(50% - 3vmax);
+	 border-left: 3px solid #ffae00;
+	 border-radius: 100%;
+	 animation: spinLeft 800ms linear infinite;
+}
+ .loading_sceen_best:after {
+	 width: 4vmax;
+	 height: 4vmax;
+	 top: calc(50% - 2vmax);
+	 left: calc(50% - 2vmax);
+	 border: 0;
+	 border-right: 2px solid #ffae00;
+	 animation: none;
+}
+ 
+@keyframes spinLeft {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(720deg);}
+}
+
+@keyframes spinRight {
+  from {transform:rotate(360deg);}
+  to {transform:rotate(0deg);}
+}
 .crousel_items .ct_flex_offer {
     background-color: rgb(255, 0, 64);
     padding: 3px 15px;
@@ -63,6 +160,14 @@
     z-index: 999;
     box-shadow: 0 0 10px #0000001c;
 }
+    .btn_bottom_nav {
+            padding: 7px 0;
+            display: block;
+            margin: 3px 0px;
+            text-align: center;
+            width: 100%;
+        }
+
 .ct_flex_offer span,
         .ct_flex_offer p {
             color: white;
@@ -71,8 +176,8 @@
             font-family: 'roboto';
         }
 .ct_flex_offer span{
-    font-size: 10px;
-    margin-top: -1px;
+    font-size: 10px;display: block;
+    margin-top: 1px;
 }
         .ct_popup_main_sucess a {
             font-size: 14px;
@@ -195,7 +300,23 @@
             display: flex;
             margin: 6px 2px;
         }
+   .btn_bottom_nav.for_refer img {
+        width: 42px;
+        margin-top: -3px;
+    }
 
+    a.for_referx {
+        display: none;
+    }
+
+    .btn_bottom_nav.for_refer {
+        display: flex;
+        justify-content: center
+    }
+
+    .btn_bottom_nav.for_refer p {
+        margin-top: 2px;
+    }
         .rating_itm ion-icon {
             color: #ff3800;
             margin: 0;
@@ -3014,6 +3135,7 @@
             right: -800px;
             height: 100vh;
             width: 690px;
+            top: 0;
             overflow: hidden;
             transition: all .7s ease-in-out;
             position: fixed;
@@ -4002,6 +4124,9 @@
             .ct_bx_div_bottom_nav {
                 display: block;
             }
+             .account_created .btn_bottom_nav {
+                padding: 6px 16px 16px 15px
+            }
         .ct_billing_info .ct_select_payment_typ{display: none;}
 
             .btn_bottom_nav p {
@@ -4062,14 +4187,17 @@
                 font-size: 8px;
                 margin-top: -1px;
             }
-
+       .btn_bottom_nav.for_refer p {
+                margin-top: 0;
+                margin-left: 4px
+            }
             .btn_bottom_nav .material-symbols-outlined {
                 color: #545454;
                 font-size: 21px;
             }
 
             .ct_bx_div_bottom_nav .ct_flex_bx {
-                height: 55px;
+                height: 65px;
             }
 
             .btn_bottom_nav {
@@ -4132,7 +4260,7 @@
             }
 
             .btn_bottom_nav p {
-                display: none;
+                display: block;
             }
 
             .btn_bottom_nav .ct_info_cart p {
@@ -4145,9 +4273,6 @@
                 font-size: 24px;
             }
 
-            .btn_bottom_nav {
-                padding: 13px 23px 20px 23px;
-            }
 
             .btn_bottom_nav .ct_info_cart p {
                 font-size: 7px;
@@ -5334,6 +5459,7 @@
 
         .bx_evt_cart_item li {
             background: white;
+            transition: all .8s ease-in-out;
             width: 100%;
             border-radius: 8px;
             padding: 16px 17px 17px 16px;
@@ -8526,14 +8652,7 @@
 
 
 
-        .btn_bottom_nav {
-            padding: 7px 0;
-            display: block;
-            margin: 3px 0px;
-            text-align: center;
-            width: 100%;
-        }
-
+    
         .login_mob_a {
             display: none;
         }
@@ -15061,18 +15180,17 @@
             font-size: 15px;
         }
 
-        .empty_cart a {
-            margin-left: 3px;
-            font-size: 12px;
-            color: rgb(232 232 232);
-            background: #1c5df2;
-            padding: 13px;
-            font-family: 'roboto';
-            border-radius: 21px;
-            margin: 20px 0 0 80px;
-            box-shadow: 0 3px 4px #00000054;
-        }
-
+    .empty_cart a {
+    margin-left: 3px;
+    font-size: 12px;
+    color: rgb(0 0 0);
+    background: #ffb300;
+    padding: 13px;
+    font-family: 'roboto';
+    border-radius: 21px;
+    margin: 20px 0 0 80px;
+    /* box-shadow: 0 3px 4px #00000054; */
+}
         .empty_cart a:hover {
             color: rgb(255, 255, 255);
             text-decoration: none;
@@ -18724,7 +18842,10 @@
             .ct_nav_erak .for_seravh_in_nav {
                 margin-left: 21px;
             }
-
+   
+        .btn_bottom_nav.for_refer img {
+            width: 48px;
+        }
             .ct_bx_fooditm .ct_bx_price_fd del {
                 font-size: 12px;
             }
@@ -19322,13 +19443,12 @@
                 font-size: 13px;
             }
 
-            .empty_cart a {
-                border-radius: 0;
-                font-size: 9px;
-                margin: 13px 0 0 47px;
-                padding: 10px 10px;
-            }
-
+.empty_cart a {
+    border-radius: 20px;
+    font-size: 11px;
+    margin: 13px 0 0 28px;
+    padding: 12px 11px;
+}
             .ct_offer_saved_popup .ct_btn {
                 margin: 20px 60px;
             }
@@ -19620,6 +19740,10 @@
                 padding-bottom: 44px;
             }
 
+      .btn_bottom_nav.for_refer img {
+            margin-top: -6px;
+            margin-left: 6px;
+        }
             .ct_apply_coupons .ct_inner p {
                 margin-bottom: 0;
             }
@@ -21299,7 +21423,15 @@
         <ion-icon name="arrow-back-outline"></ion-icon>
         <p>SHOPPING CART</p>
     </div>
+    <div class="loading_sceen_best_cnt">
+<div class="loading_sceen_best"></div>
 
+    </div>
+         <div class="Itm_added_pop">
+<ion-icon name="checkmark"></ion-icon>                    <h4>Item sucessfully added to cart
+
+                    </h4>
+                </div>
     <div class="ct_bx_under_maintenance">
         <article>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24">
@@ -21528,6 +21660,7 @@
     <div class="ct_bx_layer">
 
     </div>
+           
     <div class="ct_outer_account_bx signup_bx">
         <div class="box_pop_up_accounts for_signup">
 
@@ -22920,7 +23053,7 @@
 
         // add items in to the shopping cart
 
-        async function addItems(itm_typ, cpns) {
+        async function addItems(itm_typ, cpns,added_btn) {
             // # add the items that user selected
             // # apply coupons if any
             // # display the total amount 
@@ -23041,7 +23174,10 @@
                     return !sauce.some(cItem => cItem.name.replace(/[ ,]+/g, "").toLowerCase() === dt.name.replace(/[ ,]+/g, "").toLowerCase())
                 })
 
+         if(added_btn===true){
+              document.querySelector('.Itm_added_pop').style.right = '10px'
 
+            }
 
                 res.docs.forEach(async cur => {
                     let data = cur.data()
@@ -23241,6 +23377,11 @@
 
             let dbCollection = db.collection("essentials")
             let res = await dbCollection.get()
+            if(added_btn===true){
+                                                                            document.querySelector('.Itm_added_pop').style.right = '10px'
+
+            }
+
             document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'none'
             if (essentials !== null) {
 
@@ -23823,7 +23964,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         document.querySelector('.bx_evt_cart_item .ct_load_items').style.display = 'flex'
-        addItems('', false)
+        addItems('', false,false)
 
         async function addCpns(secret) {
             // # check for coupons applied
@@ -24845,6 +24986,7 @@ ${desc_htm_cpn.join('')}
             })
             if (userDtx !== '') {
                 let dt_user = JSON.parse(userDtx)
+                document.querySelector('a.for_referx').style.display = 'block'
 
                 document.querySelectorAll('.for_checkout_order').forEach(cu => {
                     cu.style.background = 'rgb(0 77 255)'
@@ -25532,7 +25674,7 @@ let for_ref_commis=0
                 localStorage.setItem('essentials','[]')
                                 localStorage.setItem('sauce','[]')
 
-        addItems('', false)
+        addItems('', false,false)
                                                                                 // coupns should be revomed from the cart
 
                 document.cookie = "cpns_appl" + "=" + '' + ";" + "expires=18 Dec 1970 12:00:00 UTC;"
@@ -26693,7 +26835,6 @@ console.log(obj_cpns,'yo yo honeysingh')
                                     if (!checked_ph) {
                                         // document.querySelector('.ct_info_reffer_offer').style.display = 'block'
                                         // document.querySelector('.error_account').style.display = 'none'
-                                        console.log('yo yo.......')
                                         socket.emit('getCode_id');
                                         let send_onetime = false
                                         socket.on('sendCode_id', (id, token) => {
@@ -26942,7 +27083,8 @@ console.log(obj_cpns,'yo yo honeysingh')
                 maxMove = 504;
             }
          
-   
+                                                                   document.querySelector('.Itm_added_pop').style.right = '-170vw'
+
 
             let addItem = e.target.closest('.ct_addbtns');
 
@@ -26966,9 +27108,14 @@ console.log(obj_cpns,'yo yo honeysingh')
                 }
                 if (typ_fd === 'sauce') {
                     let allfd = JSON.parse(localStorage.getItem('sauce'))
-                                        console.log( addItem.parentElement.childNodes[1].childNodes[3].childNodes)
+                    let inner_bx =''
+if(addItem.parentElement.childNodes[1].childNodes[5]===undefined){
+                     inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
 
-                    let inner_bx = addItem.parentElement.childNodes[1].childNodes[3].childNodes
+}else{
+                         inner_bx = addItem.parentElement.childNodes[1].childNodes[5].childNodes
+
+}
 
                     // price , nt weight, qty
                     //inner_bx[9].innerText.split(':')[1].split(' ').join(''),
@@ -26980,10 +27127,18 @@ console.log(obj_cpns,'yo yo honeysingh')
                         type: "sauce",
 
                     }
+                                                                                       document.querySelector('.Itm_added_pop').style.right = '-170vw'
+
+
+
+                                document.querySelector('.ct_inner_bottom_place .ct_load_items').style.display='block'
+              window.scrollTo({top: 0, behavior: 'smooth'});
+
+                        document.querySelector('.ct_total-amount').style.display='none'
                     allfd.push(obj)
                     localStorage.setItem('sauce', JSON.stringify(allfd))
 
-                    addItems('sauce', false)
+                    addItems('sauce', false,true)
 
                 } else if (typ_fd === 'essen') {
                     let allfd = JSON.parse(localStorage.getItem('essentials'))
@@ -26993,7 +27148,7 @@ console.log(obj_cpns,'yo yo honeysingh')
                     let obj = { name: nm, qt: 1, unit: unit }
                     allfd.push(obj)
                     localStorage.setItem('essentials', JSON.stringify(allfd))
-                    addItems('essen', false)
+                    addItems('essen', false,true)
 
                 }
             }

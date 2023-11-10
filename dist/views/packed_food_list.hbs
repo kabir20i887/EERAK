@@ -372,17 +372,54 @@
             margin: 10px 0 0 4px;
             width: max-content
         }
-
+ .ct_flex_offer {
+    background-color: rgb(255, 0, 64);
+    padding: 3px 15px;
+    position: absolute;
+    margin: 0px 0 0 4px;
+    left: 138px;
+    height: 48px;
+    border-radius: 58%;
+    width: 48px;
+    display: flex;
+    /* margin-top: 6px; */
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 0 10px #0000001c;
+}
+.ct_prod_info .ct_flex_offer {
+   background-color: rgb(0 0 0);
+    padding: 0px 15px 6px 15px;
+    position: relative;
+    margin: 0px 0 0 4px;
+    left: 0;
+    height: auto;
+    /* height: 48px; */
+    border-radius: 0;
+    width: max-content;
+    display: flex;
+    /* margin-top: 6px; */
+    justify-content: center;
+    z-index: 99999;
+    box-shadow: 0 0 10px #0000001c;
+}
+.ct_flex_offer span,
+        .ct_flex_offer p {
+            color: white;
+            font-size: 15px;
+            margin-top: 4px;
+            font-family: 'roboto';
+        }
+.ct_flex_offer span{
+    font-size: 10px;
+    display: block;
+    margin-top: 1px;
+}
         .ct_pop_up_items_order .ct_flex_offer {
             margin: 0 0 10px 10px
         }
 
-        .ct_flex_offer p {
-            color: #fff;
-            font-size: 12px;
-            font-family: 'roboto'
-        }
-
+       
         .ct_pop_up_items_order .crousel_items .ct_flex_offer {
             margin: 10px 0 0 6px
         }
@@ -8321,11 +8358,10 @@
         .ct_prod_info {
             margin-top: 41px
         }
-
-        .ct_rat_bx_stat ion-icon {
-            color: red
-        }
-
+.ct_rat_bx_stat ion-icon {
+    color: #ff9b00;
+    font-size: 19px;
+}
         .ct_texts {
             display: flex;
             margin-top: 2px;
@@ -9133,13 +9169,14 @@
             font-variation-settings: FILL 0, wght 400, GRAD 0, opsz 48
         }
 
-        .btn_qtys {
-            background: #d7d7d7;
-            border-radius:0px;
-            padding: 1px 7px;
-            cursor: pointer;
-            border: 1px solid #bfbfbf;
-        }
+    .btn_qtys {
+    background: #efefef;
+    border-radius: 0px;
+    padding: 1px 7px;
+    cursor: pointer;
+    border: 1px solid #dbdbdb;
+ 
+}
 
         .btn_qtys:active {
             background-color: #b3afaf
@@ -9176,17 +9213,19 @@
             font-family: 'open sans';
             margin: 10px 15px 0 4px
         }
-
-        .btn_qtys .material-symbols-outlined {
-            color: #4b4b4b;
-            margin-top: 7px;
-            font-size: 18px
-        }
+.btn_qtys .material-symbols-outlined {
+    color: #000000;
+    margin-top: 7px;
+    font-size: 18px;
+}
 
         .btn_qtys.inc_btn {
             border-radius: 0 20px 20px 0
         }
-
+  .btn_qtys.dec_btn {
+    border-radius: 20px 0 0px 20px;
+    margin-top: -1px;
+}
         .btn_qtys ion-icon {
             color: #fff;
             font-size: 19px;
@@ -9411,7 +9450,7 @@
         .ct_flexbx {
             display: flex;
             margin: 16px 0 19px;
-            padding: 10px 50px 20px 10px;
+    padding: 0px 40px 0px 10px;
             overflow-x: scroll;
             border-bottom: 1px solid #a3a3a3;
             overflow-x: scroll;
@@ -13403,7 +13442,7 @@
             }
 
             .ct_bx_div_bottom_nav .ct_flex_bx {
-                height: 55px
+                height: 65px
             }
 
             .btn_bottom_nav {
@@ -13751,7 +13790,9 @@
             .erak_fd_body .for_nav_main .logo {
                 margin-top: 2px
             }
-
+.ct_rat_bx_stat ion-icon {
+    font-size: 19px;
+}
             .btn_bottom_nav .material-symbols-outlined {
                 color: #545454;
                 font-size: 25px;
@@ -13775,7 +13816,7 @@
             .ct_bx_total_amount_to_pay del,
             .ct_bx_total_amount_to_pay h3 {
                 color: #cd1313;
-                margin: 0 6px 20px;
+                margin: 0 6px 0px;
                 font-size: 23px
             }
 
@@ -16413,9 +16454,9 @@
                 <div class="ct_addded">
                    <ion-icon name="checkmark-circle"></ion-icon> <p>1 item added to cart</p> 
                 </div>
-                <div class="remove_itm">
-                    Remove
-                </div>
+                {{!-- <div class="remove_itm"> --}}
+                    {{!-- Remove --}}
+                {{!-- </div> --}}
             </div>
             {{!-- <div class="ct_benefits">
                 <div class="benifit_1">
@@ -17920,7 +17961,7 @@
                                 document.querySelector('.buy_now').style.display = 'none'
                                 document.querySelector('.add_cart_btn').style.display = 'none'
                                 document.querySelector('.ct_addded').style.display = 'flex'
-                                document.querySelector('.remove_itm').style.display = 'block'
+                               // document.querySelector('.remove_itm').style.display = 'block'
 
                                 document.querySelector('.ct_qty_box input').value = cu11.qty
                             }
@@ -17980,19 +18021,19 @@
                 console.log(view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes)
                 if (view_itm.childNodes[1].childNodes[1].childNodes[5] === undefined) {
                     imgsrc = view_itm.childNodes[1].childNodes[1].childNodes[1].src
-                    name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[1].innerHTML
-                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[3].innerHTML
-                    tagline_html = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[23].innerHTML
+                    name = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[1].innerHTML
+                    stock_itm_global = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[3].innerHTML
+                    tagline_html = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[23].innerHTML
 
-                    price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[7].innerHTML
-                    price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[7].innerHTML
-                    offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[9].innerHTML
-                    about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[11].innerHTML
-                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[13].innerHTML
-                    desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[15].innerHTML
-                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[17].innerHTML
-                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[19].innerHTML
-                    images_prod = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[13].childNodes[21].innerHTML
+                    price = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[7].innerHTML
+                    price_off = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[7].innerHTML
+                    offer = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[9].innerHTML
+                    about = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[11].innerHTML
+                    qtys = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[13].innerHTML
+                    desc = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[15].innerHTML
+                    essen_ids = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[17].innerHTML
+                    images_itm = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[19].innerHTML
+                    images_prod = view_itm.childNodes[1].childNodes[1].childNodes[3].childNodes[11].childNodes[21].innerHTML
 
                 } else {
                     name = view_itm.childNodes[1].childNodes[1].childNodes[5].childNodes[9].childNodes[1].innerHTML
@@ -18321,7 +18362,7 @@
                 document.querySelector('.buy_now').style.display = 'block'
                 document.querySelector('.add_cart_btn').style.display = 'block'
                 document.querySelector('.ct_addded').style.display = 'none'
-                document.querySelector('.remove_itm').style.display = 'none'
+               // document.querySelector('.remove_itm').style.display = 'none'
                 if (allfd !== null) {
 
                     allfd.forEach(cu11 => {
@@ -18331,7 +18372,7 @@
 
                             document.querySelector('.buy_now').style.display = 'none'
                             document.querySelector('.add_cart_btn').style.display = 'none'
-                            document.querySelector('.remove_itm').style.display = 'block'
+                          //  document.querySelector('.remove_itm').style.display = 'block'
 
                             document.querySelector('.ct_addded').style.display = 'flex'
 
@@ -18601,9 +18642,15 @@
                  <p class="price">₹ ${(itm.price_real).toLocaleString()}</p>
              </div>
                  `
-                                off_htm = `<div class="ct_flex_offer">
-                     <p>${ itm.offer}% off</p>
-                    </div>`
+                //                off_htm = `<div class="ct_flex_offer">
+                //     <p>${ itm.offer}% off</p>
+                //    </div>`
+                            off_htm = `<div class="ct_flex_offer">
+                         <div class="ct_innr">
+                             <p>${itm.offer}%</p>
+<span>Off</span>
+    </div>
+           </div>`
 
                             }
                             let averageRating = calculateAverage(itm.ratings);
@@ -18640,11 +18687,11 @@
                                                      <div class="ct_bx_fooditm">
                                             <a rel="nofollow">
                                                 <div class="ct_bx_flex">
+                                                        ${off_htm}
                                                                     <div class="main_im sauces">
                                                     <img  alt="${itm.name}" src="${itm.images[0]}">
                 </div>
                                                     <div class="ct_bx_inner_food_groc">
-                                                        ${off_htm}
                                                         ${ratings_bx}
                                                         <h4>${itm.name}</h4>
                                                         <p class="item_intro">${string_short}</p>
@@ -19302,9 +19349,15 @@
                  <p class="price">₹ ${(price_off)}</p>
              </div>
                  `
-                    off_htm = `<div class="ct_flex_offer">
-                     <p>${item.off}% off</p>
-                    </div>`
+                           off_htm = `<div class="ct_flex_offer">
+                         <div class="ct_innr">
+                             <p>${item.offer}%</p>
+<span>Off</span>
+    </div>
+           </div>`
+                  ///  off_htm = `<div class="ct_flex_offer">
+                  ///   <p>${item.off}% off</p>
+                  ///  </div>`
 
                 }
                 let averageRating = calculateAverage(item.ratings);
@@ -19350,15 +19403,17 @@
                                             <a href="#${name_id}">
                                                 <div class="ct_bx_flex">
                                                     <div class="ct_img_layer">
+                                                                                                               ${off_htm}
+
                                                     <img class="main_im" alt="${name}" src="${img[0]}">
 
                                                      </div>
+
                                                     <div class="ct_bx_inner_food_groc">
                                                         <h4>${name}</h4>
                                                         ${ratings_bx}
                                                         <p class="item_intro"></p>
                                                         <p class="for_unit_itm">Net.weight: ${weight_sh}</p>
-  ${off_htm}
                                                         ${priceBX}
 
                                                         <div class="ct_bx_item_details_hide">
@@ -19547,25 +19602,25 @@
 
             if (removeItm !== null) {
 
-                let name = document.querySelector('.name_of_itm').innerText
+           //    let name = document.querySelector('.name_of_itm').innerText
 
-                let allfd = JSON.parse(localStorage.getItem('sauce'))
-                if (allfd !== null) {
-                    let nameM = name.split(' ').join('').toLowerCase()
-                    allfd.forEach((cu11, ind) => {
-                        console.log(cu11.name.split(' ').join('').toLowerCase(), nameM)
-                        if (cu11.name.split(' ').join('').toLowerCase() === nameM) {
-                            allfd.splice(ind, 1)
-                        }
-                    })
-                    localStorage.setItem('sauce', JSON.stringify(allfd))
-                    load_basic_dt()
+           //    let allfd = JSON.parse(localStorage.getItem('sauce'))
+           //    if (allfd !== null) {
+           //        let nameM = name.split(' ').join('').toLowerCase()
+           //        allfd.forEach((cu11, ind) => {
+           //            console.log(cu11.name.split(' ').join('').toLowerCase(), nameM)
+           //            if (cu11.name.split(' ').join('').toLowerCase() === nameM) {
+           //                allfd.splice(ind, 1)
+           //            }
+           //        })
+           //        localStorage.setItem('sauce', JSON.stringify(allfd))
+           //        load_basic_dt()
 
-                    document.querySelector('.buy_now').style.display = 'block'
-                    document.querySelector('.add_cart_btn').style.display = 'block'
-                    document.querySelector('.ct_addded').style.display = 'none'
-                    document.querySelector('.remove_itm').style.display = 'none'
-                }
+           //        document.querySelector('.buy_now').style.display = 'block'
+           //        document.querySelector('.add_cart_btn').style.display = 'block'
+           //        document.querySelector('.ct_addded').style.display = 'none'
+           //        document.querySelector('.remove_itm').style.display = 'none'
+           //    }
 
             }
 
@@ -19599,7 +19654,7 @@
                 }
                 document.querySelector('.add_cart_btn').style.display = 'none'
                 document.querySelector('.ct_addded').style.display = 'flex'
-                document.querySelector('.remove_itm').style.display = 'block'
+             //   document.querySelector('.remove_itm').style.display = 'block'
 
                 if (localStorage.getItem('sauce') === '[]' || localStorage.getItem('sauce') === null) {
                     localStorage.setItem('sauce', JSON.stringify([obj]))
