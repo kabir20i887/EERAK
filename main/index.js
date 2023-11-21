@@ -133,7 +133,10 @@ app.get('/magicmix', (req, res) => {
    res.render('packed_food_list')
 
 })
-
+app.get('/product', (req, res) => {
+    res.render('prod_page')
+ 
+ })
  app.get('/', (req, res) => {
     res.render('landing_page')
  
